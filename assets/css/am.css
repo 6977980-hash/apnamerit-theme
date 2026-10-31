@@ -163,7 +163,7 @@ a.am-stat-card:hover,a.am-guide:hover,.am-card:hover{border-color:var(--am-accen
 .am-card-actions{display:flex;gap:.5rem;align-items:center;margin-top:auto}
 .am-card-link{font-weight:600;padding:0 .5rem;line-height:44px}
 .am-badge{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;color:#fff;background:#0b6e4f}
-.am-badge--medical{background:#b03a48}.am-badge--engineering{background:#1f5fa8}.am-badge--computing{background:#6a3fb5}.am-badge--general{background:#b5651d}
+.am-badge--medical{background:#b03a48}.am-badge--engineering{background:#1f5fa8}.am-badge--computing{background:#6a3fb5}.am-badge--general{background:#8f4a10}
 .am-steps{list-style:none;padding:0;display:grid;gap:1rem}
 .am-steps li{display:flex;gap:.75rem}
 .am-steps h3{margin:.2rem 0 .25rem}
