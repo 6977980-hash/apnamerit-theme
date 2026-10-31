@@ -224,25 +224,25 @@
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
    "updated": "2026-10-31",
-   "answer": "In the final {data_year} UHS selection list, Punjab public MBBS colleges closed between 94.87% (King Edward Medical University) and 93.51% (Narowal Medical College) on open merit, about 0.7 to 1.2 points lower than in 2024. Private MBBS colleges closed between 90.84% and 61.00%, and public BDS colleges at about 93.4%.",
+   "answer": "In the final 2025 UHS selection list, Punjab public MBBS colleges closed between 94.87% (King Edward Medical University) and 93.51% (Narowal Medical College) on open merit, about 0.7 to 1.2 points lower than in 2024. Private MBBS colleges closed between 90.84% and 61.00%, and public BDS colleges at about 93.4%.",
    "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
    "content_file": "mdcat-merit-list.html",
    "faq": [
     {
      "q": "What was the MBBS closing merit in {data_year} in Punjab?",
-     "a": "In the 13th and final UHS list for {data_year}, public MBBS colleges closed between 93.51% and 94.87% on open merit. King Edward Medical University was highest and Narowal Medical College lowest."
+     "a": "In the 13th and final UHS list for 2025, public MBBS colleges closed between 93.51% and 94.87% on open merit. King Edward Medical University was highest and Narowal Medical College lowest."
     },
     {
      "q": "What was the KEMU closing merit in {data_year}?",
-     "a": "King Edward Medical University, Lahore closed at 94.87% on open merit in the final {data_year} list (94.92% in the 1st list), down from 96.06% in the last 2024 list."
+     "a": "King Edward Medical University, Lahore closed at 94.87% on open merit in the final 2025 list (94.92% in the 1st list), down from 96.06% in the last 2024 list."
     },
     {
      "q": "What is the lowest merit for private MBBS in Punjab?",
-     "a": "In the 5th and final {data_year} UHS private MBBS list, the lowest open-merit closing aggregate was 61.00% (Queens Medical College, Kasur, for women only). Most private colleges closed well above that; check each college in the table."
+     "a": "In the 5th and final 2025 UHS private MBBS list, the lowest open-merit closing aggregate was 61.00% (Queens Medical College, Kasur, for women only). Most private colleges closed well above that; check each college in the table."
     },
     {
      "q": "What was the BDS closing merit in {data_year}?",
-     "a": "Public BDS colleges in Punjab closed between 93.42% and 93.46% in the 13th {data_year} list. Private BDS colleges closed between 73.13% and 55.87% in the 3rd list."
+     "a": "Public BDS colleges in Punjab closed between 93.42% and 93.46% in the 13th 2025 list. Private BDS colleges closed between 73.13% and 55.87% in the 3rd list."
     },
     {
      "q": "Why is the 1st merit list higher than the final list?",
@@ -1143,13 +1143,13 @@
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
    "updated": "2026-10-31",
-   "answer": "Punjab University's official closing merit for {data_year} ran from 91.34% for Pharm-D and 87.18% for PUCIT Computer Science (New Campus) down to below 40% for some evening and campus programs. BBA at IBA closed at 81.79%, Electrical Engineering at 76.691% and English Literature at 77.73% (morning). Source: PU, Merit of Last Year 2025.",
+   "answer": "Punjab University's official closing merit for 2025 ran from 91.34% for Pharm-D and 87.18% for PUCIT Computer Science (New Campus) down to below 40% for some evening and campus programs. BBA at IBA closed at 81.79%, Electrical Engineering at 76.691% and English Literature at 77.73% (morning). Source: PU, Merit of Last Year 2025.",
    "answer_source": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
    "content_file": "pu-merit-list.html",
    "faq": [
     {
      "q": "What was the PU closing merit for BS Computer Science?",
-     "a": "PUCIT BS Computer Science closed at 87.18% (New Campus, morning), 86.02% (Old Campus) and 83.33% (New Campus, evening/self-support) in {data_year}."
+     "a": "PUCIT BS Computer Science closed at 87.18% (New Campus, morning), 86.02% (Old Campus) and 83.33% (New Campus, evening/self-support) in 2025."
     },
     {
      "q": "Which Punjab University program has the highest merit?",
@@ -1169,7 +1169,7 @@
     },
     {
      "q": "PU mein BS CS ka merit kitna jata hai?",
-     "a": "{data_year} mein PUCIT New Campus CS 87.18%, Old Campus 86.02% aur evening 83.33% par close hua.",
+     "a": "2025 mein PUCIT New Campus CS 87.18%, Old Campus 86.02% aur evening 83.33% par close hua.",
      "lang": "ur-Latn"
     },
     {
@@ -1213,13 +1213,13 @@
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
    "updated": "2026-10-31",
-   "answer": "In KU's official closing list for Admissions 2027 (19 October {season_year}), Pharm-D closed at 84.27% (morning), BS Computer Science at 80.00%, Artificial Intelligence at 79.73% and Software Engineering at 78.82%, for candidates with at least 50 in the entrance test. BBA closed at 73.82% and BE Chemical Engineering at 63.64%.",
+   "answer": "In KU's official closing list for Admissions 2027 (19 October 2026), Pharm-D closed at 84.27% (morning), BS Computer Science at 80.00%, Artificial Intelligence at 79.73% and Software Engineering at 78.82%, for candidates with at least 50 in the entrance test. BBA closed at 73.82% and BE Chemical Engineering at 63.64%.",
    "answer_source": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf",
    "content_file": "ku-merit-list.html",
    "faq": [
     {
      "q": "What was the KU closing percentage for BS Computer Science?",
-     "a": "80.00% academic percentage, with a minimum entrance test score of 50, in the Admissions 2027 list dated 19 October {season_year}. Software Engineering closed at 78.82% and Artificial Intelligence at 79.73%."
+     "a": "80.00% academic percentage, with a minimum entrance test score of 50, in the Admissions 2027 list dated 19 October 2026. Software Engineering closed at 78.82% and Artificial Intelligence at 79.73%."
     },
     {
      "q": "What is KU's open merit closing percentage?",
@@ -1640,7 +1640,7 @@
    "template": "calculator",
    "published": "2026-10-31",
    "updated": "2026-10-31",
-   "answer": "The merit predictor compares your aggregate with the higher of the last two official closing merits of each program. More than 1.5 points above is Strong, within 1.5 points is Borderline, and lower is Unlikely. In {data_year}, public MBBS in Punjab closed at 93.51% to 94.87% and PUCIT Computer Science at 87.18%.",
+   "answer": "The merit predictor compares your aggregate with the higher of the last two official closing merits of each program. More than 1.5 points above is Strong, within 1.5 points is Borderline, and lower is Unlikely. In 2025, public MBBS in Punjab closed at 93.51% to 94.87% and PUCIT Computer Science at 87.18%.",
    "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
    "content_file": "predictor.html",
    "faq": [
@@ -1658,7 +1658,7 @@
     },
     {
      "q": "What aggregate is needed for MBBS in a public college in Punjab?",
-     "a": "In the final {data_year} UHS list, public MBBS colleges closed between 93.51% and 94.87% on open merit."
+     "a": "In the final 2025 UHS list, public MBBS colleges closed between 93.51% and 94.87% on open merit."
     },
     {
      "q": "Why are some universities missing from the predictor?",
@@ -1794,7 +1794,7 @@
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
    "updated": "2026-10-31",
-   "answer": "Official closing merits on Apna Merit: Punjab public MBBS 93.51% to 94.87% in {data_year} (UHS final list), Punjab University from 91.34% for Pharm-D and 87.18% for PUCIT CS, Karachi University Pharm-D 84.27% and CS 80.00% (Admissions 2027), and UET Taxila Software Engineering 79.435% (2024 entry).",
+   "answer": "Official closing merits on Apna Merit: Punjab public MBBS 93.51% to 94.87% in 2025 (UHS final list), Punjab University from 91.34% for Pharm-D and 87.18% for PUCIT CS, Karachi University Pharm-D 84.27% and CS 80.00% (Admissions 2027), and UET Taxila Software Engineering 79.435% (2024 entry).",
    "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
    "content_file": "merit-list.html",
    "faq": [

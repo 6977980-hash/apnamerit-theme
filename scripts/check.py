@@ -219,6 +219,15 @@ def check_pages(loaded: dict[str, object]) -> None:
                        and not (k in ("answer", "faq") and f"[am_{k}" in str(p.get("content", "")))]
             if missing:
                 warn("pages", f"{path}: content page missing rule-7 blocks: {', '.join(missing)}")
+        # A sentence quoting a fixed figure must carry a literal year: {data_year}/{season_year}
+        # move on their own every season and would re-date an old number (Phase 6 answer audit).
+        texts = [p.get("answer", "")] + [q.get("a", "") for q in p.get("faq", []) or []]
+        cf_text = (ROOT / "content" / Path(cf).name).read_text(encoding="utf-8") if cf and (ROOT / "content" / Path(cf).name).exists() else ""
+        for t in texts + [cf_text, str(p.get("content", ""))]:
+            plain = re.sub(r"<a [^>]*>.*?</a>", "", str(t))
+            for sent in re.split(r"(?<=[.!?])\s+|<li>|<p>|<h2", plain):
+                if re.search(r"\{(data|season)_year\}", sent) and re.search(r"\d\.\d+%", sent):
+                    warn("pages", f"{path}: year token next to a fixed figure, use a literal year: {sent[:90]!r}")
         slug = re.sub(r"[^a-z0-9]+", "-", path.lower()).strip("-") or "home"
         if not p.get("noindex") and not (ROOT / "assets/og" / (p.get("og_image") or f"{slug}.png")).exists():
             warn("pages", f"{path}: no OG image (run python3 scripts/og.py)")

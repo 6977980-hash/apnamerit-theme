@@ -121,3 +121,5 @@ input[type=url],.am-submit input:not([type]){font:inherit;min-height:44px;paddin
 .am-embed-title{margin:0 0 .5rem}.am-powered{font-size:.85rem;margin:1rem 0 0}
 @media (min-width:48rem){h1{font-size:2.1rem}.am-calc,.am-predictor{padding:1.5rem}}
 @media print{.am-header,.am-footer,.am-share,.am-actions{display:none}}
+.am-facts{background:var(--am-soft);border-left:3px solid var(--am-accent);padding:.6rem 1rem;margin:0 0 1.5rem}.am-facts p{margin:0 0 .3rem}.am-facts ul{margin:0;padding-left:1.1rem}
+.am-srcs{font-size:.85rem;margin:-1rem 0 1.5rem;padding-left:1.4rem;overflow-wrap:anywhere}p.am-srcs{padding-left:0}

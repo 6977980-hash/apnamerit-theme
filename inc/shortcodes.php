@@ -97,6 +97,29 @@ function am_pct( $value ): string {
 }
 
 /**
+ * Readable name of an official document URL: its label in data/sources.json, else host + file name.
+ */
+function am_source_label( string $url ): string {
+	static $labels = null;
+	if ( null === $labels ) {
+		$labels = array();
+		foreach ( (array) ( am_data( 'sources' )['universities'] ?? array() ) as $u ) {
+			foreach ( (array) ( $u['documents'] ?? array() ) as $d ) {
+				if ( ! empty( $d['url'] ) && ! empty( $d['label'] ) ) {
+					$labels[ (string) $d['url'] ] = (string) $d['label'];
+				}
+			}
+		}
+	}
+	if ( isset( $labels[ $url ] ) ) {
+		return $labels[ $url ];
+	}
+	$host = (string) wp_parse_url( $url, PHP_URL_HOST );
+	$file = basename( (string) wp_parse_url( $url, PHP_URL_PATH ) );
+	return preg_replace( '/^www\./', '', $host ) . ( $file ? ': ' . rawurldecode( $file ) : '' );
+}
+
+/**
  * Reference closing merit per program for the predictor (master plan 4.3; method on /methodology/):
  * default list + category, last two years up to data_year, reference = the higher closing.
  *
@@ -284,20 +307,38 @@ function am_sc_merit_table( $atts ): string {
 		$filters .= '</select></div>';
 	}
 
+	// Columns that would repeat one value on every row (PU: one year, one list, one category)
+	// move into the caption; data-* filter attributes only for facets that have a filter.
+	$multi = array_map( fn( $v ) => count( $v ) > 1, $values );
+	$fixed = array();
+	foreach ( array( 'category', 'list', 'year' ) as $key ) {
+		if ( ! $multi[ $key ] && $values[ $key ] ) {
+			$fixed[] = 'list' === $key ? $values[ $key ][0] . ' list' : $values[ $key ][0];
+		}
+	}
+	$show_campus = $multi['campus'] || $multi['shift'];
+	if ( ! $show_campus && $values['campus'] ) {
+		$fixed[] = $values['campus'][0] . ( $values['shift'] ? ' (' . $values['shift'][0] . ')' : '' );
+	}
+	$show_delta = $multi['year'];
+	$srcs       = array_values( array_unique( array_map( fn( $r ) => (string) $r['source_url'], $rows ) ) );
+	$src_no     = array_flip( $srcs );
+	$multi_src  = count( $srcs ) > 1;
+
 	$body    = '';
 	$anchors = array();
-	$years   = array();
 	foreach ( $rows as $r ) {
-		$years[] = (int) $r['year'];
 		$prevkey = implode( '|', array( $r['year'] - 1, $r['program'], $r['campus'] ?? '', $r['category'] ?? '', $r['list'] ?? '', $r['shift'] ?? '' ) );
 		$delta   = isset( $index[ $prevkey ] ) ? (float) $r['closing'] - $index[ $prevkey ] : null;
 		$is_def  = true;
 		$attrs   = '';
 		foreach ( $facets as $key => $label ) {
-			$v      = (string) ( $r[ $key ] ?? '' );
-			$attrs .= ' data-' . $key . '="' . esc_attr( $v ) . '"';
-			if ( isset( $def[ $key ] ) && count( $values[ $key ] ) > 1 && $def[ $key ] !== $v ) {
-				$is_def = false;
+			$v = (string) ( $r[ $key ] ?? '' );
+			if ( $multi[ $key ] ) {
+				$attrs .= ' data-' . $key . '="' . esc_attr( $v ) . '"';
+				if ( isset( $def[ $key ] ) && $def[ $key ] !== $v ) {
+					$is_def = false;
+				}
 			}
 		}
 		$anchor = 'p-' . am_slug( ( '' !== $only && $only !== (string) ( $uni['defaults']['list'] ?? 'Final' ) ? $only . ' ' : '' ) . $r['program'] . ' ' . ( $r['campus'] ?? '' ) . ' ' . ( $r['shift'] ?? '' ) );
@@ -306,26 +347,42 @@ function am_sc_merit_table( $atts ): string {
 			$anchors[ $anchor ] = true;
 			$idattr             = ' id="' . esc_attr( $anchor ) . '"';
 		}
-		$dtxt  = null === $delta ? '—' : ( $delta > 0 ? '+' : '' ) . number_format( $delta, 2 );
 		$body .= '<tr' . $idattr . $attrs . ( $is_def ? '' : ' class="am-off"' ) . '>'
 			. '<th scope="row">' . esc_html( (string) $r['program'] ) . ( ! empty( $r['note'] ) ? '<small>' . esc_html( (string) $r['note'] ) . '</small>' : '' ) . '</th>'
-			. '<td>' . esc_html( (string) ( $r['campus'] ?? '' ) ) . ( ! empty( $r['shift'] ) ? '<small>' . esc_html( (string) $r['shift'] ) . '</small>' : '' ) . '</td>'
-			. '<td>' . esc_html( (string) ( $r['category'] ?? '' ) ) . '</td>'
-			. '<td>' . esc_html( (string) ( $r['list'] ?? '' ) ) . '</td>'
-			. '<td>' . esc_html( (string) $r['year'] ) . '</td>'
+			. ( $show_campus ? '<td>' . esc_html( (string) ( $r['campus'] ?? '' ) ) . ( ! empty( $r['shift'] ) ? '<small>' . esc_html( (string) $r['shift'] ) . '</small>' : '' ) . '</td>' : '' )
+			. ( $multi['category'] ? '<td>' . esc_html( (string) ( $r['category'] ?? '' ) ) . '</td>' : '' )
+			. ( $multi['list'] ? '<td>' . esc_html( (string) ( $r['list'] ?? '' ) ) . '</td>' : '' )
+			. ( $multi['year'] ? '<td>' . esc_html( (string) $r['year'] ) . '</td>' : '' )
 			. '<td data-v="' . esc_attr( (string) (float) $r['closing'] ) . '"><strong>' . esc_html( am_pct( $r['closing'] ) ) . '</strong></td>'
-			. '<td data-v="' . esc_attr( null === $delta ? '' : (string) $delta ) . '">' . esc_html( $dtxt ) . '</td>'
-			. '<td><a href="' . esc_url( (string) $r['source_url'] ) . '" rel="nofollow noopener" target="_blank">Source</a></td>'
+			. ( $show_delta ? ( null === $delta ? '<td>—</td>' : '<td data-v="' . esc_attr( (string) round( $delta, 3 ) ) . '">' . esc_html( ( $delta > 0 ? '+' : '' ) . number_format( $delta, 2 ) ) . '</td>' ) : '' )
+			. ( $multi_src ? '<td><a href="#am-src-' . esc_attr( $id . '-' . ( $src_no[ (string) $r['source_url'] ] + 1 ) ) . '">[' . ( $src_no[ (string) $r['source_url'] ] + 1 ) . ']</a></td>' : '' )
 			. '</tr>';
 	}
 
-	$cols = array( 'Program', 'Campus', 'Category', 'List', 'Year', 'Closing aggregate', 'Change vs previous year', 'Source' );
+	$cols = array( array( 'Program', false ) );
+	$show_campus && ( $cols[] = array( 'Campus', false ) );
+	$multi['category'] && ( $cols[] = array( 'Category', false ) );
+	$multi['list'] && ( $cols[] = array( 'List', false ) );
+	$multi['year'] && ( $cols[] = array( 'Year', false ) );
+	$cols[] = array( 'Closing aggregate', true );
+	$show_delta && ( $cols[] = array( 'Change vs previous year', true ) );
 	$head = '';
 	foreach ( $cols as $i => $c ) {
-		$head .= $i < 7
-			? '<th scope="col"><button type="button" data-am-sort="' . $i . '"' . ( 5 === $i ? ' data-num' : '' ) . ( 6 === $i ? ' data-num' : '' ) . '>' . esc_html( $c ) . '</button></th>'
-			: '<th scope="col">' . esc_html( $c ) . '</th>';
+		$head .= '<th scope="col"><button type="button" data-am-sort="' . $i . '"' . ( $c[1] ? ' data-num' : '' ) . '>' . esc_html( $c[0] ) . '</button></th>';
 	}
+	$multi_src && ( $head .= '<th scope="col">Source</th>' );
+
+	// One source → one line under the table; several → numbered list the [n] cells point to.
+	if ( $multi_src ) {
+		$src_html = '<ol class="am-muted am-srcs">';
+		foreach ( $srcs as $n => $u ) {
+			$src_html .= '<li id="am-src-' . esc_attr( $id . '-' . ( $n + 1 ) ) . '"><a href="' . esc_url( $u ) . '" rel="nofollow noopener" target="_blank">' . esc_html( am_source_label( $u ) ) . '</a></li>';
+		}
+		$src_html .= '</ol>';
+	} else {
+		$src_html = '<p class="am-muted am-srcs">Source of every row: <a href="' . esc_url( $srcs[0] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( am_source_label( $srcs[0] ) ) . '</a></p>';
+	}
+	$caption = $short . ' merit list: closing aggregates' . ( '' !== $only ? ' (' . $only . ')' : '' ) . ( $fixed ? ', ' . implode( ', ', $fixed ) : '' );
 
 	$all     = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) ) );
 	$years   = array_map( fn( $r ) => (int) $r['year'], $all );
@@ -349,8 +406,10 @@ function am_sc_merit_table( $atts ): string {
 	return '<div class="am-merit" data-am-table="' . esc_attr( $id ) . '">'
 		. ( $filters ? '<div class="am-filters">' . $filters . '</div>' : '' )
 		. '<p class="am-muted am-count" aria-live="polite"></p>'
-		. '<div class="am-table-wrap"><table class="am-table am-sortable"><caption>' . esc_html( $short . ' merit list: closing aggregates' . ( '' !== $only ? ' (' . $only . ')' : '' ) ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $body . '</tbody></table></div>'
+		. '<div class="am-table-wrap"><table class="am-table am-sortable"><caption>' . esc_html( $caption ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $body . '</tbody></table></div>'
+		. $src_html
 		. '<p class="am-muted am-data-link">Download this data: <a href="' . esc_url( am_data_url( (string) ( $uni['slug'] ?? $atts['uni'] ) ) ) . '">' . esc_html( $short ) . ' JSON</a> (' . esc_html( (string) am_site( 'data_license.attribution' ) ) . ', ' . esc_html( (string) am_site( 'data_license.name' ) ) . ').</p>'
+		. am_facts_html( $uni, $def['list'], $def['category'] )
 		. am_trend_svg( $uni, $def['list'], $def['category'] )
 		. '</div>'
 		. am_check_box( $uni );

@@ -42,3 +42,35 @@ add_action(
 		}
 	}
 );
+
+// Site icon from the theme (no wp-admin Site Icon): SVG + PNG for Google results and home screens.
+add_action(
+	'wp_head',
+	function () {
+		$v = AM_VERSION;
+		echo '<link rel="icon" href="' . esc_url( AM_URI . '/assets/icons/icon.svg?ver=' . $v ) . '" type="image/svg+xml">' . "\n";
+		echo '<link rel="icon" href="' . esc_url( AM_URI . '/assets/icons/icon-48.png?ver=' . $v ) . '" sizes="48x48" type="image/png">' . "\n";
+		echo '<link rel="apple-touch-icon" href="' . esc_url( AM_URI . '/assets/icons/icon-180.png?ver=' . $v ) . '">' . "\n";
+	},
+	2
+);
+
+// /favicon.ico (requested by browsers and crawlers whatever the <link> says) → the PNG icon.
+add_action(
+	'do_faviconico',
+	function () {
+		wp_redirect( AM_URI . '/assets/icons/icon-48.png', 301 );
+		exit;
+	},
+	1
+);
+add_action(
+	'template_redirect',
+	function () {
+		if ( '/favicon.ico' === am_request_path() ) {
+			wp_redirect( AM_URI . '/assets/icons/icon-48.png', 301 );
+			exit;
+		}
+	},
+	-3
+);

@@ -36,5 +36,6 @@ add_action(
 		}
 		do_action( 'litespeed_purge_all' );
 		wp_cache_flush();
+		do_action( 'am_deployed' );
 	}
 );
