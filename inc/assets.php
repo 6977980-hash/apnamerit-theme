@@ -74,3 +74,16 @@ add_action(
 	},
 	-3
 );
+
+// The server answers /favicon.ico itself (static 404) before WordPress runs, so copy the icon
+// into the WordPress root after each deploy. Never overwrite an icon someone else put there.
+add_action(
+	'am_deployed',
+	function () {
+		$src = AM_DIR . '/assets/icons/favicon.ico';
+		$dst = ABSPATH . 'favicon.ico';
+		if ( is_readable( $src ) && ( ! file_exists( $dst ) || get_option( 'am_favicon_md5' ) === md5_file( $dst ) ) && @copy( $src, $dst ) ) {
+			update_option( 'am_favicon_md5', md5_file( $dst ), false );
+		}
+	}
+);

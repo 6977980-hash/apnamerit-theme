@@ -257,6 +257,16 @@
     if (saved) run(true);
   });
 
+  // ---------------------------------------------------------------- scrollable tables
+  // A table wider than the screen scrolls inside its wrapper: make that region keyboard-reachable.
+  $$('.am-table-wrap').forEach(function (w) {
+    if (w.scrollWidth <= w.clientWidth) return;
+    var cap = $('caption', w);
+    w.tabIndex = 0;
+    w.setAttribute('role', 'region');
+    w.setAttribute('aria-label', cap ? cap.textContent : 'Table');
+  });
+
   // ---------------------------------------------------------------- merit table
   $$('[data-am-table]').forEach(function (box) {
     var table = $('table', box);
