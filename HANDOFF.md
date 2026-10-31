@@ -8,6 +8,13 @@ Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `
 - Have: `sources/uet/` (PDF + .txt + README, 269 rows, "Fourth Merit List", year not printed) and the owner's draft `New Ideas/apnamerit-data/uet-lahore.json` (269 rows, raw codes in `category`, `formulas: []`).
 - Missing (asked owner 2026-10-31): official aggregate formula, meaning of category codes, confirmation the list is the 2025 cycle. No page ships without the formula from an official notice.
 
+## Fix 4: NUST closing positions (blocked)
+- nust.edu.pk returns 403 to the container. Owner checked NUST closing-merit pages (mgt/cs/eng) on 2026-10-31 and they were empty (Phase 3). Needs owner screenshots/PDF of an official "Closing Merit Positions" page for ≥ 2 years before any schema or page work.
+
+## Fix 5: merit table closing % column off-screen on mobile (v0.13.1)
+- Verified live at 375 px (Playwright, 2026-10-31): `/mdcat-merit-list/` header cells Program 16-115, Campus 115-234, List 234-296, Year 296-366, Closing aggregate 366-537 (viewport 375, page scrollWidth 375). KU: Closing at 423-594. PU 262-434. COMSATS 290-462. Reproduced on all but UET Taxila (2 columns).
+- Fix: `am_sc_merit_table()` puts Closing aggregate second (after Program) in head and body; sort indexes follow the header order. Still a real `<table>`.
+
 ## Fix 3 part B: COMSATS closing merit found on official domains (v0.13.0)
 - Earlier phases said COMSATS has no closing merit online (admissions.comsats.edu.pk, www.comsats.edu.pk 403). A site-restricted search on 2026-10-31 found two official pages, both reachable from the container:
   - https://lahore.comsats.edu.pk/news/merit.aspx: "Merit List Fall 2026", "Closing aggregate merits for various undergraduate programs in the 2nd Merit List Fall 2026" (9 programs); the page says no 3rd/further lists. Stored as year 2026, list Final, shift "Fall intake", note says 2nd list.

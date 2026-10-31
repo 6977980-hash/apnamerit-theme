@@ -382,22 +382,22 @@ function am_sc_merit_table( $atts ): string {
 		}
 		$body .= '<tr' . $idattr . $attrs . ( $is_def ? '' : ' class="am-off"' ) . '>'
 			. '<th scope="row">' . esc_html( (string) $r['program'] ) . ( ! empty( $r['note'] ) ? '<small>' . esc_html( (string) $r['note'] ) . '</small>' : '' ) . '</th>'
+			// Closing % second, so it stays on screen at 375 px (Fix 5, 2026-11-01).
+			. '<td data-v="' . esc_attr( (string) (float) $r['closing'] ) . '"><strong>' . esc_html( am_pct( $r['closing'] ) ) . '</strong></td>'
 			. ( $show_campus ? '<td>' . esc_html( (string) ( $r['campus'] ?? '' ) ) . ( ! empty( $r['shift'] ) ? '<small>' . esc_html( (string) $r['shift'] ) . '</small>' : '' ) . '</td>' : '' )
 			. ( $multi['category'] ? '<td>' . esc_html( (string) ( $r['category'] ?? '' ) ) . '</td>' : '' )
 			. ( $multi['list'] ? '<td>' . esc_html( (string) ( $r['list'] ?? '' ) ) . '</td>' : '' )
 			. ( $multi['year'] ? '<td>' . esc_html( (string) $r['year'] ) . '</td>' : '' )
-			. '<td data-v="' . esc_attr( (string) (float) $r['closing'] ) . '"><strong>' . esc_html( am_pct( $r['closing'] ) ) . '</strong></td>'
 			. ( $show_delta ? ( null === $delta ? '<td>—</td>' : '<td data-v="' . esc_attr( (string) round( $delta, 3 ) ) . '">' . esc_html( ( $delta > 0 ? '+' : '' ) . number_format( $delta, 2 ) ) . '</td>' ) : '' )
 			. ( $multi_src ? '<td><a href="#am-src-' . esc_attr( $id . '-' . ( $src_no[ (string) $r['source_url'] ] + 1 ) ) . '">[' . ( $src_no[ (string) $r['source_url'] ] + 1 ) . ']</a></td>' : '' )
 			. '</tr>';
 	}
 
-	$cols = array( array( 'Program', false ) );
+	$cols = array( array( 'Program', false ), array( 'Closing aggregate', true ) );
 	$show_campus && ( $cols[] = array( 'Campus', false ) );
 	$multi['category'] && ( $cols[] = array( 'Category', false ) );
 	$multi['list'] && ( $cols[] = array( 'List', false ) );
 	$multi['year'] && ( $cols[] = array( 'Year', false ) );
-	$cols[] = array( 'Closing aggregate', true );
 	$show_delta && ( $cols[] = array( 'Change vs previous year', true ) );
 	$head = '';
 	foreach ( $cols as $i => $c ) {
