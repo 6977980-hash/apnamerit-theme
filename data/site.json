@@ -1,0 +1,32 @@
+{
+  "domain": "apnamerit.com",
+  "url": "https://apnamerit.com",
+  "canonical_host": {
+    "scheme": "https",
+    "www": false,
+    "trailing_slash": true,
+    "note": "Force https + non-www with a 301 in the root .htaccess (Phase 1)."
+  },
+  "brand": "Apna Merit",
+  "tagline": "Aggregate Calculator & Merit Lists for Pakistani Universities",
+  "language": "en-PK",
+  "helper_language": "ur-Latn",
+  "timezone": "Asia/Karachi",
+  "season_year": 2026,
+  "data_year": 2025,
+  "author": {
+    "name": "Ali Ahmad",
+    "url": "https://apnamerit.com/about/#author",
+    "role": "Founder and editor"
+  },
+  "organization": {
+    "name": "Apna Merit",
+    "logo": "",
+    "same_as": []
+  },
+  "data_license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Data © Apna Merit, cite as apnamerit.com"
+  }
+}

@@ -1,0 +1,19 @@
+# Official PDFs and anything with personal data stay on the owner's machine (plan 9.2).
+sources/*
+!sources/INDEX.md
+*.pdf
+
+# Secrets / local config
+scripts/wp/.env
+.env
+*.pem
+id_*
+
+# Tooling
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

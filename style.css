@@ -1,0 +1,15 @@
+/*
+Theme Name: Apna Merit
+Theme URI: https://apnamerit.com/
+Author: Apna Merit
+Author URI: https://apnamerit.com/about/
+Description: Minimal custom theme for apnamerit.com. Aggregate calculators, merit predictor and closing-merit tables rendered by shortcodes from data/*.json.
+Version: 0.1.0
+Requires at least: 6.4
+Requires PHP: 8.2
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: apnamerit
+*/
+
+/* Real styles live in assets/css/am.css (critical part is inlined by inc/assets.php). */
