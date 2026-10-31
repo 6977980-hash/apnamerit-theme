@@ -183,7 +183,7 @@
         '<div class="am-table-wrap"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
         '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button></div>';
       if (cfg.rows && cfg.rows.length) {
-        html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' newest official closing merits (open merit, final list; the year is shown on each row). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
+        html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' newest official closing merits (open merit, the main list of the merit table; the year is shown on each row). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
           chanceList(predict(agg, cfg.rows, cfg.band), 'No programs to compare yet.');
       } else if (cfg.noRows) {
         html += cfg.noRows;

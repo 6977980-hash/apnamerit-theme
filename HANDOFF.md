@@ -48,6 +48,8 @@ Owner's consulting chat delivered `apnamerit-data/{uet-lahore,comsats,nums}.json
 - **COMSATS**: +17 rows Islamabad Fall 2026 "3rd Closing Merits" image (official ww2.comsats.edu.pk, same bytes as owner copy), list "3rd" (not default, not in predictor). Values checked by eye against the image.
 - KMU / Sindh: owner notes confirm no college-wise closing in the public lists; nothing published. IST, NUST: unchanged.
 - Predictor now 416 programs.
+- Live check (2026-10-31, fresh render): `/uet-aggregate-calculator/`, `/uet-merit-list/`, `/nums-merit-list/`, `/comsats-merit-list/` all 200 with planned titles; `/data/index.json`: uet 593, nums 13, comsats 47; `/data/uet.json` every row has source_url. UET table default 75 visible rows (4th list, A1), no horizontal scroll at 375 px. Calculator 280/480/1000 → 82.19% and "Where can you get in?" lists UET programs. Mobile perf (Playwright, 4x CPU, slow 4G): UET merit list LCP 0.56 s, TBT 20 ms, DOM 6,316 nodes (PU: LCP 1.37 s, DOM 1,843). Lighthouse CLI could not be run from the container (blocked); owner to run PageSpeed.
+- Owner still to spot-check 3 UET rows against the PDF (brief "done when").
 
 ## Fix 3 part A: "no closing merit" line on calculators without data (v0.12.2)
 - Verified live: `/comsats-aggregate-calculator/` config `"rows":[]`, so am.js printed no "Where can you get in?" block and no explanation (same for the other 10 with `records: 0` in `/data/index.json`).

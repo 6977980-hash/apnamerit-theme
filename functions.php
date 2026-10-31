@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'AM_VERSION', '0.14.0' );
+define( 'AM_VERSION', '0.14.1' );
 define( 'AM_DIR', get_template_directory() );
 define( 'AM_URI', get_template_directory_uri() );
 
