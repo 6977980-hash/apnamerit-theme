@@ -1,20 +1,22 @@
-# HANDOFF — after Phase 1 (Foundation and trust) — 2026-10-31
+# HANDOFF — Phase 2 (MDCAT / medical cluster), part 1: UHS Punjab — 2026-10-31
 
 ## Status
-- Live at https://apnamerit.com, theme v0.4.0, `main` deployed by Hostinger Git (Phase 1 commit 81c0ef8 + this handoff).
-- Live pages (all 200, in `/wp-sitemap.xml`): `/`, `/about/`, `/methodology/`, `/data-sources/`, `/editorial-policy/`, `/contact/`, `/privacy-policy/`, `/terms/`, `/disclaimer/`.
-- No university data yet, so no calculator or merit-list page is live. The engines are built and tested with a local fixture (not committed).
+- Live at https://apnamerit.com, theme v0.5.0 (`main` 4920bf4 + this handoff).
+- New live pages (200, in sitemap, one H1, FAQPage + BreadcrumbList JSON-LD): `/mdcat-aggregate-calculator/` (WebApplication), `/mdcat-merit-list/` (Dataset, CollectionPage), `/guides/mdcat-aggregate-formula/`, `/guides/what-is-closing-merit/`. Homepage links them; header nav = MDCAT calculator, MDCAT merit list, Methodology, About.
+- Data: `data/universities/uhs.json` — PMDC formula + 161 closing-merit records (Punjab, UHS): 2025 public MBBS (1st, 13th=final), public BDS (1st, 13th), private MBBS (1st, 5th=final), private BDS (1st, 3rd=latest); 2024 public MBBS (17th = last list). Every record has `source_url`.
+- Phase 2 part 2 still to do: KMU (KP public `cas.kmu.edu.pk`, private `caspr.kmu.edu.pk/list.php` — PDFs), Sindh (DUHS `admissions.duhs.edu.pk/doc/…`, JSMU, LUMHS, SZABMU), NUMS (site returns 403 to this container), UHS 2024 public BDS / private lists (not linked from the UHS homepage any more; probe `uhs.edu.pk/<n>thselectionlistpublic24.php`-style URLs), PAA file `data/paa/mdcat.json`, owner spot-check of 10 records, GSC indexing request.
 
-## Next phase must do (Phase 2 — MDCAT / medical cluster)
-- MASTER-PLAN section 8 Phase 2, adjusted: data goes in `data/universities/<slug>.json` (shape documented at the top of `inc/shortcodes.php`); pages are `data/pages.json` entries (`template: calculator|meritlist`, `type: content`).
-- A content page needs (rule 7; `check.py` warns if missing): `answer` (or `[am_answer]`), `faq` (or `[am_faq]`), `roman_urdu`, `sources`, `related` (3+ paths), plus `parents` for the breadcrumb once hubs exist.
-- Calculator page content example: `[am_calculator uni="uhs"]` + "How it is calculated" HTML with a worked example. Merit page: `[am_merit_table uni="uhs"]`.
-- Add the documents used to `data/sources.json` → `documents` (label, url, fetched) for each university that goes live; add the URL to `sources/INDEX.md`.
-- Add header nav items (`data/nav.json`) for the new hub/calculator pages.
-- Run `python3 scripts/og.py` after adding pages (`--force` after a `season_year` change, the homepage image shows the year).
-- Owner still owes (see Open items): contact email, city, GSC/Bing codes.
+## Next phase must do
+- Finish Phase 2 part 2 above (each new university = `data/universities/<slug>.json`, rows on `/mdcat-merit-list/` via another `[am_merit_table uni="…"]` under its own H2; add its documents to `data/sources.json` and `sources/INDEX.md`). Ask the owner before downloading PDFs (rule 10), with names and sizes.
+- Then Phase 3 (engineering).
 
 ## How things work now (only what changed)
+- **Formula:** PMDC 50/40/10 from PM&DC Admissions, Curriculum and Conduct Policy and Regulations 2026, reg. 6(3) (same in Admissions Regulations 2025, reg. 4(3)). MDCAT total 180 (PMDC "New Syllabus for MDCAT 2025"); FSc/Matric totals default 1100, editable. No Hafiz bonus in PMDC regs.
+- **Medical record shape:** `program` = "MBBS (public)" / "MBBS (private)" / "BDS (public)" / "BDS (private)", `campus` = college name exactly as UHS prints it (keep identical across years so the Δ column matches), `category` = "Open merit", `list` = "1st" / "Final" / "3rd", optional `note` (e.g. "17th (last) selection list").
+- **Closing merit rule (UHS):** lowest aggregate among Open-quota candidates per college ("Upgraded To" / "Current College" / "Assigned College" column) in that list. `scripts/uhs_closing.py LISTS.json --pdf-dir DIR` rebuilds the records from UHS HTML lists (fetched live) and 2024-style per-college PDFs; it never writes names/IDs. 2025+ UHS lists are HTML (`uhs.edu.pk/<n>selecionlist<public|private>[bds]om25.php`), 2024 lists are PDFs.
+- `data/sources.json`: PMDC and UHS documents filled (shown on `/data-sources/`).
+
+## How things work (from Phase 1, still true)
 - **Rendering:** `am_render_page()` (`inc/template-tags.php`) builds the whole main column for every repo page and the homepage: breadcrumb → H1 → subtitle → updated date → answer → body (`content` and/or `content_file` from `content/`) → FAQ → Roman Urdu → sources → share + author box + disclaimer (content pages) → related. `type: trust` pages skip share/author box and show the updated date at the bottom. The body renders **before** `get_header()` so shortcodes can register JSON-LD nodes (`am_registry()`).
 - **New pages.json fields:** `type`, `crumb`, `schema_type` (WebPage/AboutPage/ContactPage/CollectionPage), `parents`, `subtitle`, `answer`, `answer_source`, `content_file`, `faq`, `roman_urdu`, `sources`, `related`, `og_image`, `published`. Token `{founded}` added.
 - **Navigation:** `data/nav.json` (header, footer). wp-admin menus are no longer used.
@@ -34,7 +36,12 @@
 - GSC verified and `wp-sitemap.xml` submitted by owner 2026-10-31. **Owner:** Bing Webmaster via "Import from Google Search Console"; create the contact@apnamerit.com mailbox (no MX record on 2026-10-31).
 - PageSpeed Insights API quota was exhausted from this container; Lighthouse CLI not run. Proxy measurement below; owner/next phase should run pagespeed.web.dev once.
 
-## Verification done (2026-10-31, live)
+## Verification done (2026-10-31, live, Phase 2 part 1)
+- 4 new pages 200, `/mdcat-merit-list` → 301; sitemap lists all 4; check.py 0 errors 0 warnings.
+- Calculator live at 360px (Playwright): 150/180, 1000/1100, 1000/1100 → 87.12% (hand: 41.6667 + 36.3636 + 9.0909); 160/1020/1050 → 91.08%; 165/1050/1050 → 93.5606. Strong/Borderline/Unlikely list renders. No horizontal scroll, no JS errors.
+- Merit table: 161 rows server-rendered, default view 54 rows (2025 Final open merit), list=1st → 72 rows. Closing figures cross-checked against UHS tables (e.g. KEMU 2025 final 94.8677, 2024 17th list 96.0576).
+
+## Verification done (2026-10-31, live, Phase 1)
 - All 9 pages 200; `/about` → 301 `/about/`; `/nope/` 404; `…/themes/apnamerit/content/about.html` 404.
 - `/about/`: one H1, title, canonical, OG image 200, one JSON-LD block (Organization, WebSite, Person, BreadcrumbList, AboutPage); page 25 KB; first load `x-litespeed-cache: miss` after deploy (auto purge works).
 - Sitemap lists all 9 URLs.
