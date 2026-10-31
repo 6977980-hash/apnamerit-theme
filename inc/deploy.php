@@ -42,3 +42,19 @@ add_action(
 		do_action( 'am_deployed' );
 	}
 );
+
+/**
+ * HTML cache lifetime for shared caches (Fix 6, 2026-11-01). Without a Cache-Control header,
+ * Hostinger's CDN (hCDN) kept serving pages from before a deploy for 10+ minutes after
+ * LiteSpeed had been purged. s-maxage=300 caps that at five minutes; LiteSpeed's own page cache
+ * still answers the CDN's revalidation, so speed does not change. Browsers always revalidate.
+ */
+add_action(
+	'send_headers',
+	function () {
+		if ( is_admin() || is_user_logged_in() || ( isset( $_SERVER['REQUEST_METHOD'] ) && 'GET' !== $_SERVER['REQUEST_METHOD'] ) ) {
+			return;
+		}
+		header( 'Cache-Control: public, max-age=0, s-maxage=300' );
+	}
+);

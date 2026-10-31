@@ -11,6 +11,19 @@ Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `
 ## Fix 4: NUST closing positions (blocked)
 - nust.edu.pk returns 403 to the container. Owner checked NUST closing-merit pages (mgt/cs/eng) on 2026-10-31 and they were empty (Phase 3). Needs owner screenshots/PDF of an official "Closing Merit Positions" page for ≥ 2 years before any schema or page work.
 
+## Fix 6: speed and caching (partly; owner numbers needed)
+- From the container (not Pakistan), 5 cached home requests: TTFB 0.32, 0.20, 0.26, 0.43, 0.14 s. Pakistan TTFB and PageSpeed numbers still need the owner's machine (brief step 1-2).
+- Found: after each deploy the plain URLs kept serving old HTML for 10+ minutes (home `age: 702`, `x-hcdn-cache-status: HIT`, no COMSATS card, while `?x=` showed it). HTML had no `Cache-Control` header. `/data/*.json` sends `public, max-age=3600`; `am.js?ver=` sends `max-age=31536000, immutable` (fine).
+- Change (v0.13.2, `inc/deploy.php`): anonymous GET HTML sends `Cache-Control: public, max-age=0, s-maxage=300`, so the CDN keeps a page at most 5 minutes; LiteSpeed's page cache still serves the revalidation.
+- Owner: confirm in hPanel that the CDN is on for apnamerit.com; run the 5 TTFB curls and PageSpeed (mobile) on `/`, `/mdcat-aggregate-calculator/`, `/mdcat-merit-list/`.
+
+## Fix 7: ads.txt
+- Verified 404 (2026-10-31). Nothing to do until the owner gives the AdSense publisher ID (owner already has an account).
+
+## Fix 8: Merit Data Report wording (v0.13.2)
+- Verified: H1 "Merit Data Report 2026: How Closing Merit Moved", subtitle "Every official closing merit we hold at the end of the 2026 season", while UHS/PU/UET Taxila had no 2026 lists.
+- Changed: title "Merit Data Report 2026: 2025 Season Closing Merit Trends", H1 per brief, subtitle and description say mostly 2025-season data, intro has "Last data added: 31 October 2026 (COMSATS)". URL kept. **Update the "Last data added" line whenever a list is added.**
+
 ## Fix 5: merit table closing % column off-screen on mobile (v0.13.1)
 - Verified live at 375 px (Playwright, 2026-10-31): `/mdcat-merit-list/` header cells Program 16-115, Campus 115-234, List 234-296, Year 296-366, Closing aggregate 366-537 (viewport 375, page scrollWidth 375). KU: Closing at 423-594. PU 262-434. COMSATS 290-462. Reproduced on all but UET Taxila (2 columns).
 - Fix: `am_sc_merit_table()` puts Closing aggregate second (after Program) in head and body; sort indexes follow the header order. Still a real `<table>`.
