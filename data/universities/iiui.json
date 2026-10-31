@@ -1,0 +1,65 @@
+{
+ "slug": "iiui",
+ "name": "International Islamic University, Islamabad (IIUI)",
+ "short": "IIUI",
+ "field": "general",
+ "province": "Islamabad",
+ "website": "https://www.iiu.edu.pk/",
+ "calculator_path": "/iiui-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Weights from the IIUI Admission Policy (03-06-2025), sections 1.6 and 1.8. www.iiu.edu.pk pages return 403 to the container; no official program-wise closing merit found, merit empty.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "pqm",
+   "label": "BS programs on previous qualification (no test)",
+   "source_url": "https://www.iiu.edu.pk/wp-content/uploads/2025/06/Admission-Policy-03062025.pdf",
+   "source_note": "Admission Policy 1.6: SSC 40%, HSSC 60%; for result-awaited candidates merit uses the marks obtained in HSSC Part-I.",
+   "parts": [
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 40
+    },
+    {
+     "key": "fsc",
+     "label": "FSc / HSSC (or Part-I if result awaited)",
+     "total": 1100,
+     "weight": 60
+    }
+   ]
+  },
+  {
+   "id": "test",
+   "label": "BS programs with a mandatory admission test",
+   "source_url": "https://www.iiu.edu.pk/wp-content/uploads/2025/06/Admission-Policy-03062025.pdf",
+   "source_note": "Admission Policy 1.8: where accreditation bodies give no other guideline, PQM 40% (SSC 15%, HSSC 25%) + test 60%.",
+   "parts": [
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 15
+    },
+    {
+     "key": "fsc",
+     "label": "FSc / HSSC",
+     "total": 1100,
+     "weight": 25
+    },
+    {
+     "key": "test",
+     "label": "Admission test",
+     "total": 100,
+     "weight": 60,
+     "hint": "Weight 60%; type your marks and the test total"
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

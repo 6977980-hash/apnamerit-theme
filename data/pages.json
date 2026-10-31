@@ -7,7 +7,7 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/mdcat-aggregate-calculator/",
@@ -1186,6 +1186,145 @@
     "/guides/1st-2nd-final-merit-list/",
     "/uet-taxila-merit-list/",
     "/mdcat-merit-list/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/ku-merit-list/",
+   "keyword": "ku merit list",
+   "title": "KU Merit List {season_year}: Karachi University Closing Percentage",
+   "description": "KU merit list {season_year}: University of Karachi's official closing percentages for test-based BS, BE, DPT and Pharm-D programmes, plus Visual Studies points.",
+   "h1": "Karachi University (KU) Merit List {season_year}: Closing Percentages",
+   "crumb": "KU merit list",
+   "subtitle": "Admissions 2027 closing lists, Directorate of Admissions, October {season_year}",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "In KU's official closing list for Admissions 2027 (19 October {season_year}), Pharm-D closed at 84.27% (morning), BS Computer Science at 80.00%, Artificial Intelligence at 79.73% and Software Engineering at 78.82%, for candidates with at least 50 in the entrance test. BBA closed at 73.82% and BE Chemical Engineering at 63.64%.",
+   "answer_source": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf",
+   "content_file": "ku-merit-list.html",
+   "faq": [
+    {
+     "q": "What was the KU closing percentage for BS Computer Science?",
+     "a": "80.00% academic percentage, with a minimum entrance test score of 50, in the Admissions 2027 list dated 19 October {season_year}. Software Engineering closed at 78.82% and Artificial Intelligence at 79.73%."
+    },
+    {
+     "q": "What is the minimum test score for KU test-based programmes?",
+     "a": "Usually 50 out of 100. For some programmes KU also admitted candidates with 40, 35 or 25, against a separate academic closing percentage."
+    },
+    {
+     "q": "What was the KU Pharm-D merit?",
+     "a": "84.27% for the morning programme and 80.00% for the evening programme, with a minimum test score of 50."
+    },
+    {
+     "q": "How is the Visual Studies merit calculated at KU?",
+     "a": "Final points = 20% academic + 60% aptitude test + 20% interview. Fine Art closed at 60.13% and Architecture at 57.92%."
+    },
+    {
+     "q": "Where are the official KU merit lists?",
+     "a": "On uokadmission.edu.pk, linked from the Admissions page of uok.edu.pk. Every row here links to the official PDF."
+    },
+    {
+     "q": "KU mein BSCS ka merit kitna gaya?",
+     "a": "Admissions 2027 mein BSCS 80.00%, BSAI 79.73% aur BSSE 78.82% par close hua, test mein kam az kam 50 marks ke saath.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Karachi University mein test ke kitne marks chahiye?",
+     "a": "Zyada tar test-based programs mein 100 mein se 50. Kuch programs mein 40 ya 35 wale candidates ka alag closing percentage tha.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Karachi University test-based programs mein pehle <strong>test ka minimum score</strong> (aam taur par 50) dekhti hai, phir academic percentage ke hisaab se admission deti hai. Table mein woh academic % hai jis par aakhri admission hua.</p><p>Pharm-D 84.27%, BSCS 80.00%, BSAI 79.73%, BSSE 78.82% aur BBA 73.82% par close hue. Punjab ke liye <a href=\"/pu-merit-list/\">PU merit list</a> dekhein.</p>",
+   "sources": [
+    {
+     "label": "University of Karachi: Closing percentages, entrance test based BS / B.Ed.(H) / B.E. / DPT and Pharm-D, Admissions 2027 (19-10-2026)",
+     "url": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "University of Karachi: Visual Studies closing final points, Admissions 2027 (26-10-2026)",
+     "url": "https://uokadmission.edu.pk/uploads/links/vst-closing-final-points-2027-20261026191124.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "University of Karachi: Admissions page",
+     "url": "https://www.uok.edu.pk/admissions",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/pu-merit-list/",
+    "/mdcat-merit-list/",
+    "/guides/what-is-closing-merit/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/ned-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/iiui-aggregate-calculator/",
+   "keyword": "iiui aggregate calculator",
+   "title": "IIUI Aggregate Calculator {season_year} (Islamic University)",
+   "description": "IIUI aggregate calculator {season_year}: SSC 40% + HSSC 60% for most BS programs, or 15% SSC, 25% HSSC and 60% test, from IIUI's official admission policy.",
+   "h1": "IIUI Aggregate Calculator {season_year}",
+   "crumb": "IIUI aggregate calculator",
+   "subtitle": "BS on qualification: 40% SSC + 60% HSSC · With test: 15% + 25% + 60% test",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The IIUI aggregate for most undergraduate programs = 40% SSC (Matric) + 60% HSSC (FSc), with no admission test. Where a test is mandatory, IIUI uses 15% SSC + 25% HSSC + 60% test. Example: 1000/1100 Matric and 950/1100 FSc give 88.18%. Source: IIUI Admission Policy, sections 1.6 and 1.8.",
+   "answer_source": "https://www.iiu.edu.pk/wp-content/uploads/2025/06/Admission-Policy-03062025.pdf",
+   "content_file": "iiui-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the IIUI merit formula?",
+     "a": "For undergraduate programs admitted on previous qualification: SSC 40% and HSSC 60%. For programs with a mandatory test: SSC 15%, HSSC 25% and test 60%, unless an accreditation body sets other weights."
+    },
+    {
+     "q": "Is there an entry test for IIUI BS admission?",
+     "a": "Not for most programs. IIUI's policy says there is no admission test at undergraduate level except where the accreditation body requires one, such as engineering or law."
+    },
+    {
+     "q": "Which FSc marks does IIUI use if my result is awaited?",
+     "a": "IIUI calculates merit on the marks obtained in HSSC Part-I. Enter your Part-I marks with a total of 550."
+    },
+    {
+     "q": "Does IIUI round up percentages?",
+     "a": "No. Its policy states that 49.99% is considered 49.99%, not 50%."
+    },
+    {
+     "q": "Does IIUI publish closing merit?",
+     "a": "IIUI displays program-wise merit lists on its website for the male and female campuses but no single closing-merit document, so we do not show closing figures."
+    },
+    {
+     "q": "IIUI ka aggregate kaise nikalain?",
+     "a": "Matric ka 40% aur FSc ka 60% jama karein. Misaal: 1000/1100 aur 950/1100 par 88.18% banta hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "IIUI mein test dena zaroori hai?",
+     "a": "Zyada tar BS programs mein nahin. Jahan test zaroori hai wahan test 60%, FSc 25% aur Matric 15% count hota hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>IIUI zyada tar BS programs mein <strong>Matric 40% + FSc 60%</strong> par merit banati hai, koi test nahin. Jin programs mein test zaroori hai wahan <strong>Matric 15% + FSc 25% + test 60%</strong>.</p><p>Misaal: Matric 1000/1100 aur FSc 950/1100 par aggregate 88.18% banta hai. Agar FSc ka result nahin aaya to Part-I ke marks (550 mein se) dalein.</p>",
+   "sources": [
+    {
+     "label": "International Islamic University, Islamabad: Admission Policy (03-06-2025), sections 1.5-1.8",
+     "url": "https://www.iiu.edu.pk/wp-content/uploads/2025/06/Admission-Policy-03062025.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/pu-aggregate-calculator/",
+    "/pu-merit-list/",
+    "/comsats-aggregate-calculator/",
+    "/nust-aggregate-calculator/",
+    "/guides/what-is-closing-merit/",
     "/methodology/"
    ]
   }

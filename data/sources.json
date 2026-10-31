@@ -333,6 +333,35 @@
      "fetched": "2026-10-31"
     }
    ]
+  },
+  {
+   "name": "University of Karachi (KU)",
+   "website": "https://www.uok.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Closing percentages, entrance test based programmes and Pharm-D, Admissions 2027 (19-10-2026)",
+     "url": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Visual Studies closing final points, Admissions 2027 (26-10-2026)",
+     "url": "https://uokadmission.edu.pk/uploads/links/vst-closing-final-points-2027-20261026191124.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "International Islamic University, Islamabad (IIUI)",
+   "website": "https://www.iiu.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Admission Policy (03-06-2025): undergraduate merit formula",
+     "url": "https://www.iiu.edu.pk/wp-content/uploads/2025/06/Admission-Policy-03062025.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
   }
  ]
 }

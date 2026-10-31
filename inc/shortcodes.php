@@ -109,7 +109,7 @@ function am_predict_rows( array $uni ): array {
 	$rows = array();
 	foreach ( (array) ( $uni['merit'] ?? array() ) as $r ) {
 		$year = (int) ( $r['year'] ?? 0 );
-		if ( $year > $dy || $year < $dy - 1 || ( $r['list'] ?? '' ) !== $list || ( $r['category'] ?? '' ) !== $cat || ! is_numeric( $r['closing'] ?? null ) ) {
+		if ( false === ( $r['predict'] ?? true ) || $year > $dy || $year < $dy - 1 || ( $r['list'] ?? '' ) !== $list || ( $r['category'] ?? '' ) !== $cat || ! is_numeric( $r['closing'] ?? null ) ) {
 			continue;
 		}
 		$key = ( $r['program'] ?? '' ) . '|' . ( $r['campus'] ?? '' ) . '|' . ( $r['shift'] ?? '' );
