@@ -1,0 +1,11 @@
+{
+  "_note": "SEO for every URL (no Rank Math). path = URL path with trailing slash. Tokens: {season_year}, {data_year}, {brand}. title <= 60 chars, description 140-155 chars after token replacement. One primary keyword per page (MASTER-PLAN 3.2).",
+  "pages": [
+    {
+      "path": "/",
+      "keyword": "aggregate calculator",
+      "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
+      "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in."
+    }
+  ]
+}

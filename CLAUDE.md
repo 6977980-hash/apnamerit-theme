@@ -12,9 +12,15 @@ This repo **is** the WordPress theme `apnamerit`. Hostinger Git deploys branch `
 5. Every number has a `source_url`. No source, no number. Never commit personal data or PDFs.
 6. One URL per keyword; titles' years from `data/site.json`; no doorway pages.
 7. Every content page: answer block, H1, table where comparable, FAQ with schema, Roman Urdu helper, author, updated date, disclaimer, sources, share, related links.
-8. PageSpeed mobile ≥ 90 and Rich Results Test pass before merge; Rank Math schema module stays OFF.
+8. PageSpeed mobile ≥ 90 and Rich Results Test pass before merge. (No Rank Math: theme outputs all meta and JSON-LD.)
 9. Reply to the owner in Roman Urdu; code and content in English.
 10. Before downloading any file, name it, its source and size, and ask once; "download all" from the owner covers the batch.
+
+## Owner decisions (override MASTER-PLAN)
+
+- **No Rank Math** (2026-10-31). The theme handles all SEO from `data/pages.json`; ignore plan mentions of Rank Math settings/variables. Sitemap = WordPress core `/wp-sitemap.xml`. Plugins: LiteSpeed Cache (+ Site Kit, Redirection only if needed).
+- **Auto-merge** (2026-10-31): after `scripts/check.py` passes, Claude ff-merges its branch into `main` and pushes; no PR review wait. Hostinger deploys `main` within seconds.
+- Author name: **Ali Ahmad**.
 
 ## Repo map
 
@@ -25,7 +31,8 @@ This repo **is** the WordPress theme `apnamerit`. Hostinger Git deploys branch `
 | `inc/data.php` | `am_data('name')` JSON loader, `am_site('dot.key')` config reader |
 | `inc/cleanup.php` | Emojis, embeds, XML-RPC, comments, REST users, author/date/tag/attachment archives, block CSS, jQuery off |
 | `inc/assets.php` | Inlines `assets/css/am.css` (≤ 14 KB), enqueues deferred `assets/js/am.js` |
-| `inc/seo.php` | Rank Math `%am_season_year%` / `%am_data_year%`; JSON-LD via `am_jsonld_graph` filter |
+| `inc/seo.php` | SEO without Rank Math: title, description, canonical, robots, OG, JSON-LD (`am_jsonld_graph`), core sitemap, robots.txt |
+| `data/pages.json` | Per-URL title, description, keyword (tokens `{season_year}`, `{data_year}`). Add every new page here. |
 | `inc/shortcodes.php` | `am_calculator`, `am_merit_table`, `am_predictor`, `am_faq`, `am_answer` |
 | `templates/` | Page templates (`page-calculator.php`, `page-meritlist.php`) |
 | `data/site.json` | Domain, brand, author, `season_year`, `data_year`. Never hard-code years. |

@@ -9,6 +9,7 @@ Checks:
              every merit record under data/universities/ has a source_url
   template - page templates have a Template Name header, at most one <h1>, wp_head/wp_footer present,
              no debug output, no jQuery or web fonts
+  pages    - data/pages.json: title <= 60, description 140-155, unique path/title/description/keyword
   links    - internal links in data/templates resolve to slugs in data/pages.json (once that file exists)
   privacy  - no PDFs, CNIC-like numbers or private keys committed
   size     - am.css within the 14 KB inline budget
@@ -154,6 +155,45 @@ def check_templates() -> None:
             err("template", f"{rel(f)}: console.log left in")
 
 
+# ---------------------------------------------------------------- pages (SEO, no Rank Math)
+def check_pages(loaded: dict[str, object]) -> None:
+    pages = loaded.get("data/pages.json")
+    site = loaded.get("data/site.json") or {}
+    if not isinstance(pages, dict) or not isinstance(pages.get("pages"), list):
+        err("pages", "data/pages.json missing or has no 'pages' list")
+        return
+    tokens = {"{season_year}": str(site.get("season_year", "")), "{data_year}": str(site.get("data_year", "")),
+              "{brand}": str(site.get("brand", ""))}
+
+    def fill(t: str) -> str:
+        for k, v in tokens.items():
+            t = t.replace(k, v)
+        return t
+
+    seen: dict[str, set] = {"path": set(), "title": set(), "description": set(), "keyword": set()}
+    for i, p in enumerate(pages["pages"]):
+        where = f"data/pages.json pages[{i}]"
+        if not isinstance(p, dict):
+            err("pages", f"{where}: not an object")
+            continue
+        path = p.get("path", "")
+        if not (isinstance(path, str) and path.startswith("/") and path.endswith("/")):
+            err("pages", f"{where}: path must start and end with '/'")
+        title, desc = fill(p.get("title", "")), fill(p.get("description", ""))
+        if not title or len(title) > 60:
+            err("pages", f"{where} {path}: title must be 1-60 chars (is {len(title)})")
+        if not 140 <= len(desc) <= 155:
+            err("pages", f"{where} {path}: description must be 140-155 chars (is {len(desc)})")
+        if re.search(r"\{[a-z_]+\}", title + desc):
+            err("pages", f"{where} {path}: unknown token left in title/description")
+        if not p.get("noindex") and not p.get("keyword"):
+            err("pages", f"{where} {path}: primary keyword missing")
+        for key, val in (("path", path), ("title", title), ("description", desc), ("keyword", p.get("keyword"))):
+            if val and val in seen[key]:
+                err("pages", f"{where}: duplicate {key} '{val}' (one URL per keyword)")
+            seen[key].add(val)
+
+
 # ---------------------------------------------------------------- links
 HREF = re.compile(r"""href=["'](/[^"'#?]*)""")
 
@@ -163,12 +203,8 @@ def check_links(loaded: dict[str, object]) -> None:
     if pages is None:
         warn("links", "data/pages.json not present yet; internal link check skipped")
         return
-    slugs = {"/"}
-    items = pages.get("pages", []) if isinstance(pages, dict) else pages
-    for p in items:
-        if isinstance(p, dict) and p.get("slug"):
-            s = "/" + p["slug"].strip("/") + "/"
-            slugs.add(s)
+    items = pages.get("pages", []) if isinstance(pages, dict) else []
+    slugs = {p["path"] for p in items if isinstance(p, dict) and isinstance(p.get("path"), str)}
     for f in files("*.php") + files("*.json"):
         for m in HREF.finditer(f.read_text(encoding="utf-8")):
             url = m.group(1)
@@ -214,6 +250,7 @@ def main() -> int:
     check_php()
     loaded = check_json()
     check_templates()
+    check_pages(loaded)
     check_links(loaded)
     check_privacy()
     check_size()
