@@ -1,12 +1,36 @@
-# HANDOFF — Phase 4 (PU and general universities), part 1 — 2026-10-31
+# HANDOFF — Phase 5 (universal predictor, hubs, growth features) — 2026-10-31
 
 ## Status
-- Live at https://apnamerit.com, theme v0.7.3.
-- New live pages (200, in sitemap, one H1, FAQPage + BreadcrumbList JSON-LD): `/pu-aggregate-calculator/` (WebApplication), `/pu-merit-list/` (CollectionPage + Dataset, 257 rows, `#pucit` section), `/ku-merit-list/` (161 rows in two tables), `/iiui-aggregate-calculator/`, `/uaf-aggregate-calculator/`, `/bahria-aggregate-calculator/`, `/itu-aggregate-calculator/`, `/air-aggregate-calculator/`. Homepage has a "Punjab University and general universities" section.
-- Data: `pu.json` (formulas `basic` = (Matric/4 + FSc)/(total/4 + total), `test` = 75% academic + 25% test; **257 records**, year 2025, list "Last merit", category "Open merit", shift Morning / Evening / Replica / Self-support / "Evening / Replica / Self-support"; 47 "(5th semester)" rows carry `predict: false`), `ku.json` (no formula; list "Test-based": 2026 = Admissions 2027 PDFs, 38 rows + 8 Visual Studies "final points"; 2025 = Prospectus 2027 Appendix I, 42 rows; category "Test score ≥ N". List "Open merit": 2025, Appendix G, 73 rows, category "K (Karachi)" only; `defaults.year` "2026"), `iiui.json` (PQM 40/60, test 15/25/60; `merit: []`), `uaf.json` (30% Matric + 30% Part-I + 40% test; `merit: []`), `bahria.json` (Admissions Policy 2.11.3: test 60 + HSSC 30 + SSC 10; `merit: []`), `itu.json` (BS CS/AI only: 15 Matric + 35 Inter + 50 test; other programs give no Matric/Inter split; `merit: []`). PU formulas have Hafiz +20 (`bonus`, Admission Regulations p. 23).
-- Phase 3 part 2 (UET Lahore, site down) and Phase 2 part 2 (KMU/Sindh/NUMS) stay open in their own threads.
+- Live at https://apnamerit.com, theme v0.8.0, main `b3f0f8e` (+ this handoff commit).
+- New pages (200, one H1, in `wp-sitemap-ampages-1.xml`): `/predictor/` (WebApplication + FAQPage), `/aggregate-calculator/` and `/merit-list/` hubs (CollectionPage + FAQPage), `/embed/`, `/submit-merit-list/` (ContactPage), `/data/` (CollectionPage + DataCatalog). Header nav = Calculators, Merit lists, Predictor, Methodology; footer adds Open data, Embed, Submit a merit list. Homepage links the three hubs.
+- New routes (not pages, not in sitemap): `/data/<slug>.json`, `/data/index.json` (CORS `*`, `X-Robots-Tag: noindex`, `Link: rel=license`, licence fields prepended), `/embed/<slug>/` for every university with a calculator + `/embed/predictor/` (noindex, canonical → real page, `<base target="_blank">`, "Powered by Apna Merit").
+- Predictor covers 305 programs: UHS 54, PU 210, KU 29 (2025 rows; KU 2026 rows enter when data_year → 2026), UET Taxila 12. "305" is typed in `/predictor/` subtitle and the homepage: update when data grows.
 
-## Next phase must do (Phase 4 part 2, then Phase 5)
+## Next phase must do (Phase 6, plus pending data from Phase 2/3/4 threads)
+- Phase 6 per MASTER-PLAN section 8 (llms.txt, AEO audit, accessibility, PageSpeed ≥ 95 on the 10 heaviest pages, IndexNow, broken links). Heaviest HTML now: `/pu-merit-list/` (~170 KB, over the 150 KB budget), `/ku-merit-list/`, `/mdcat-merit-list/` (~136 KB), `/predictor/` (~116 KB; 305 rows of JSON). Consider trimming row HTML (shorter source links) or lazy-rendering non-default rows.
+- `/submit-merit-list/` is a mailto form (nothing stored, no third-party script). The plan's Tally embed + email list needs an owner Tally account: ask the owner if they want it.
+- Program standalone pages: none built (4.6 doorway rule: needs ≥ 2 years + search demand evidence). Programs stay as row anchors `#p-<program-campus-shift>` on merit-list pages; predictor and calculator results link to them.
+- Trend SVG appears only where a program has ≥ 2 years in the default list/category (now UHS and KU). PU and UET Taxila get one automatically when a second year is added.
+
+## How things work now (Phase 5 changes)
+- `inc/growth.php` (new): `[am_hub type="calculator|meritlist"]` (tables from every `data/universities/*.json`; link text = the target page's `crumb`), `am_trend_svg()` (dot plot of the 8 highest programs with ≥ 2 years, default list + category, server-side SVG, CSS classes `am-tr-*`), `am_check_box()` ("What can I get with my aggregate?" GET form → `/predictor/?agg=&uni=`, once per university per page), `[am_data_catalog]` (+ DataCatalog node, `@id /data/#catalog`), `[am_embed_builder]`, `[am_submit]`, routes at `template_redirect` priority -1.
+- `[am_merit_table]` now appends: JSON download line, trend SVG, check box. Dataset `distribution.contentUrl` = `https://apnamerit.com/data/<slug>.json`; Dataset has `includedInDataCatalog`.
+- `[am_predictor]`: new University select (filter `uni` = university `short`), reads `?agg=&uni=` from the URL, shows "Your saved aggregates" buttons from calculator localStorage (`am:calc:<slug>` now also stores `agg`). Calculator results link "Open this aggregate in the merit predictor".
+- Calculator share URL goes through filter `am_calc_url` (embeds share the real calculator page).
+- `assets/js/am.js`: embed builder, iframe height `postMessage({amEmbed:<slug>, h})` (snippet listens only to the apnamerit.com origin), mailto submit form. CSS 8.3 KB.
+
+## Verification done (2026-10-31, live, Phase 5)
+- All 6 new pages 200, one H1, JSON-LD parses (types listed above), no horizontal scroll at 360px, no JS errors; `/embed/pu` → 301 `/embed/pu/`; `/embed/nope/` 404; `/data/pu.json` 200 JSON with CORS/licence headers; `scripts/check.py` 0 errors 0 warnings.
+- Calculator → predictor: MDCAT 170/180, 1050/1100, 1050/1100 → 94.95%, link `/predictor/?agg=94.95&uni=UHS Punjab` prefilled, saved-aggregate button shown, 35 Strong programs.
+- Embed: code from `/embed/` pasted into a foreign test page; PU widget computes 1000/950 → 87.27% and the iframe height follows the content (1563 → 6613 px).
+- Trend SVG checked by screenshot on `/mdcat-merit-list/` (8 public MBBS colleges, 2024 vs 2025) and `/ku-merit-list/`.
+- Not done from the container: PageSpeed Insights and Rich Results Test (owner or Phase 6).
+
+---
+
+# Earlier phases (still true)
+
+## Phase 4 open items (Phase 4 part 2)
 - **UAF closing merit**: ~1,400 candidate-wise PDFs at `web.uaf.edu.pk/Downloads/MeritListsView` (names; derive closing like UHS only for final lists, never store names). No summary published.
 - **KU**: Admissions 2027 open-merit closing not published yet (re-check uokadmission.edu.pk). Prospectus Appendices J/K/L = Admissions 2025 (year 2024), H/K = BS 3rd year, S/P columns of G: not stored yet (images; read visually at 220 dpi). No KU calculator: the prospectus gives no academic % formula.
 - **Air University**: au.edu.pk blocks the container (Cloudflare; do not try to get past it). Calculator `/air-aggregate-calculator/` built from page text the owner copied on 2026-10-31; re-check via the owner each season.
