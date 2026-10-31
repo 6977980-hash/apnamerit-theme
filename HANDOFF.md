@@ -1,37 +1,43 @@
-# HANDOFF — Phase 0 (Setup) — IN PROGRESS — 2026-10-31
+# HANDOFF — after Phase 0 (Setup) — 2026-10-31
 
 ## Status
-- Hostinger Git deploys `main` of `6977980-hash/apnamerit-theme` (public) to `wp-content/themes/apnamerit`; webhook works (commit ce121ac went live in seconds).
-- Owner activated the theme on 2026-10-31; homepage shows the placeholder.
-- Owner decisions: **no Rank Math** (theme does SEO from `data/pages.json`), **auto-merge** to `main` after checks, author **Ali Ahmad**.
+- Live at https://apnamerit.com: theme `apnamerit` active, deployed by Hostinger Git from `main` of `6977980-hash/apnamerit-theme` (public). Pushes go live within seconds (webhook verified with commits ce121ac, 1fead5a, 82a73c8).
+- Homepage shows the placeholder H1 "Aggregate Calculator for Pakistani Universities (2026)".
+- WordPress (done by owner): title "Apna Merit", tagline set, timezone Asia/Karachi, default plugins/themes removed, LiteSpeed Cache kept. Hostinger already 301s http → https and www → non-www.
 
-## Owner still owes (Phase 0)
-1. ~~Hostinger Git~~ done. ~~Webhook~~ done. ~~Activate theme~~ done.
-2. SSH: hPanel → Advanced → SSH Access → enable; share host, port, username, WordPress path (or add Claude's public key). Otherwise Claude uses wp-admin in the browser pane.
-3. WordPress: permalinks `/%postname%/`; LiteSpeed Cache (+ Site Kit optional; NO Rank Math); delete default plugins and themes except one fallback (e.g. Twenty Twenty-Five); timezone Asia/Karachi; title "Apna Merit"; tagline "Aggregate Calculator & Merit Lists for Pakistani Universities". (With SSH, `scripts/wp/site-setup.sh` does the settings part.)
+## Owner decisions (override MASTER-PLAN; also in CLAUDE.md)
+- **No Rank Math.** Theme does title, meta description, canonical, robots, OG, JSON-LD, sitemap and robots.txt.
+- **No wp-admin pages, no SSH.** Every URL is an entry in `data/pages.json`; push → live.
+- **Auto-merge:** Claude ff-merges to `main` after `scripts/check.py` passes.
+- Author name **Ali Ahmad**.
 
-## Next steps for Claude (finish Phase 0)
-- Live check (plan 9.3, basic): homepage placeholder, view-source has no emoji/embed/jQuery scripts, `/wp-content/themes/apnamerit/MASTER-PLAN.md` returns 403, `/wp-content/themes/apnamerit/data/site.json` returns 200.
-- Rewrite this file as "after Phase 0" and start Phase 1.
+## Next phase must do (Phase 1 — Foundation and trust)
+- Everything in MASTER-PLAN section 8 Phase 1, adjusted: trust pages = `data/pages.json` entries (content HTML in the entry, or a `content_file` field if they get long — add support in `inc/router.php`); skip all Rank Math steps; robots.txt already done (`inc/seo.php`).
+- Add BreadcrumbList / WebApplication / FAQPage / Dataset nodes through the `am_jsonld_graph` filter.
+- GSC + Bing verification: add verification meta via `data/site.json` (e.g. `verification.google`) and print in `inc/seo.php`; submit `https://apnamerit.com/wp-sitemap.xml`.
+- Header/footer menus: WordPress menus are empty; build nav from data (e.g. `data/nav.json`) instead of wp-admin menus.
 
 ## How things work now
-- Shortcodes registered as editor-only stubs: `am_calculator`, `am_merit_table`, `am_predictor`, `am_faq`, `am_answer` (`inc/shortcodes.php`).
-- Config: `data/site.json` (`season_year` 2026, `data_year` 2025, canonical https + non-www + trailing slash). Read with `am_site('key')`.
-- SEO (`inc/seo.php`, no Rank Math): `<title>` + meta description from `data/pages.json` keyed by `path` (tokens `{season_year}`, `{data_year}`, `{brand}`), self canonical, `wp_robots` noindex for search/404/paged/non-category archives, OG/Twitter tags, Organization + WebSite JSON-LD (extend via `am_jsonld_graph` filter), core sitemap without users/tags, virtual robots.txt with AI bots allowed.
-- Every new WordPress page needs an entry in `data/pages.json`; `scripts/check.py` enforces title ≤ 60, description 140–155, unique path/title/description/keyword.
-- Page templates: `templates/page-calculator.php` ("Calculator"), `templates/page-meritlist.php` ("Merit list").
-- Scripts: `python3 scripts/check.py` (php lint, JSON/site.json, source_url on records, templates, links once `data/pages.json` exists, privacy, CSS size). `scripts/wp/*.sh` WP-CLI over SSH (see `scripts/wp/README.md`; secrets in git-ignored `scripts/wp/.env`).
-- Theme `.htaccess` blocks `.md/.py/.sh` files and `scripts/`, `sources/` from the web; `data/` is public on purpose.
+- `data/pages.json`: `path`, `keyword`, `title` (≤ 60), `description` (140–155), `h1`, `template` (default|calculator|meritlist), `content` (HTML + shortcodes), `updated`, `noindex`. Tokens `{season_year}`, `{data_year}`, `{brand}`. The `/` entry drives the homepage (`front-page.php`).
+- `inc/router.php`: serves those paths with `templates/virtual.php`, 301 adds a missing trailing slash, registers the `ampages` core-sitemap provider. WP `page` type is removed from the sitemap.
+- `inc/deploy.php`: on the first request after theme files change, runs `litespeed_purge_all` and flushes object cache.
+- `inc/seo.php`: SEO layer (see top of file). `inc/cleanup.php`: emojis, embeds, XML-RPC, comments, REST users, author/date/tag/attachment archives, block CSS, front-end jQuery all off.
+- `data/site.json`: domain, brand, tagline, author, `season_year` 2026, `data_year` 2025, license.
+- Shortcodes are editor-only stubs: `am_calculator`, `am_merit_table`, `am_predictor`, `am_faq`, `am_answer`.
+- `python3 scripts/check.py`: php lint, JSON + site.json, `source_url` on merit records, pages.json SEO rules, templates (one H1, no debug, no jQuery/fonts), internal links vs pages.json, privacy (PDF/CNIC/secrets), CSS size.
+- Theme `.htaccess` blocks `.md/.py/.sh` and `scripts/`, `sources/`; `data/*.json` is public on purpose.
 
 ## Open items / blockers
-- SSH details or wp-admin decision (owner). WordPress settings: title, tagline, timezone, permalinks.
-- MASTER-PLAN still mentions Rank Math; CLAUDE.md "Owner decisions" overrides it.
-- Repo is **public**: fine for code and data, but never commit secrets. `scripts/wp/.env` is git-ignored.
+- None blocking. MASTER-PLAN text still mentions Rank Math and WP-CLI pages; CLAUDE.md decisions win.
 
-## Verification done
-- `python3 scripts/check.py`: 0 errors, 0 warnings.
-- Live 2026-10-31: theme active, no emoji/jQuery/block-library on front end, `MASTER-PLAN.md` 403, `data/site.json` 200, xmlrpc 405, `/wp-json/wp/v2/users` 404, 404 page 404, LiteSpeed header present.
+## Verification done (2026-10-31, live)
+- Homepage 200 with title, description, canonical, OG, Organization + WebSite JSON-LD; no emoji/jQuery/block-library.
+- Temporary repo page `/am-router-test/` served 200 with noindex, canonical and H1; no-slash URL 301 → slash; unknown URL 404. Test entry removed afterwards.
+- `/wp-sitemap.xml` lists `wp-sitemap-ampages-1.xml` (homepage). robots.txt shows AI bots + sitemap line.
+- `MASTER-PLAN.md` in theme folder 403; `data/site.json` 200; `xmlrpc.php` 405; `/wp-json/wp/v2/users` 404.
+- PageSpeed not run yet (placeholder page only); do it in Phase 1 on the base template.
 
 ## Do not
-- Do not edit theme files in wp-admin/FTP.
-- Do not install page builders or extra plugins.
+- Do not create pages in wp-admin or install Rank Math / page builders.
+- Do not edit theme files on the server.
+- Do not commit secrets, PDFs or personal data (repo is public).

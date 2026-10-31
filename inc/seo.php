@@ -180,7 +180,15 @@ add_action(
 	20
 );
 
-// Core sitemap (/wp-sitemap.xml): pages, posts and categories only.
+// Core sitemap (/wp-sitemap.xml): repo pages (inc/router.php), guide posts and categories only.
+// WP 'page' post type is dropped: pages live in data/pages.json, and it would duplicate the homepage.
+add_filter(
+	'wp_sitemaps_post_types',
+	function ( $types ) {
+		unset( $types['page'] );
+		return $types;
+	}
+);
 add_filter( 'wp_sitemaps_add_provider', fn( $provider, $name ) => 'users' === $name ? false : $provider, 10, 2 );
 add_filter(
 	'wp_sitemaps_taxonomies',

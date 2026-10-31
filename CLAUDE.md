@@ -6,9 +6,9 @@ This repo **is** the WordPress theme `apnamerit`. Hostinger Git deploys branch `
 ## Standing rules (MASTER-PLAN section 11)
 
 1. Read `HANDOFF.md` and your phase in `MASTER-PLAN.md` section 8 only; open other sections on demand.
-2. WordPress theme in git → Hostinger Git deploy. Never edit theme files in wp-admin/FTP. Pages/settings via WP-CLI scripts or documented wp-admin steps.
+2. WordPress theme in git → Hostinger Git deploy. Never edit theme files in wp-admin/FTP. Pages are entries in `data/pages.json` (no wp-admin pages).
 3. Minimal theme: one CSS, one deferred JS, no web fonts, no jQuery front end, no page builders. Shortcodes render from `data/*.json`.
-4. Branch `phase-N-<slug>` → checks → `--ff-only` merge to `main` → push → owner purges cache → live check → `HANDOFF.md`.
+4. Branch `phase-N-<slug>` → checks → `--ff-only` merge to `main` → push → (cache purges itself) → live check → `HANDOFF.md`.
 5. Every number has a `source_url`. No source, no number. Never commit personal data or PDFs.
 6. One URL per keyword; titles' years from `data/site.json`; no doorway pages.
 7. Every content page: answer block, H1, table where comparable, FAQ with schema, Roman Urdu helper, author, updated date, disclaimer, sources, share, related links.
@@ -20,6 +20,8 @@ This repo **is** the WordPress theme `apnamerit`. Hostinger Git deploys branch `
 
 - **No Rank Math** (2026-10-31). The theme handles all SEO from `data/pages.json`; ignore plan mentions of Rank Math settings/variables. Sitemap = WordPress core `/wp-sitemap.xml`. Plugins: LiteSpeed Cache (+ Site Kit, Redirection only if needed).
 - **Auto-merge** (2026-10-31): after `scripts/check.py` passes, Claude ff-merges its branch into `main` and pushes; no PR review wait. Hostinger deploys `main` within seconds.
+- **No wp-admin pages** (2026-10-31): every URL is an entry in `data/pages.json`, served by `inc/router.php` + `templates/virtual.php`. Adding a page = add an entry + push. Ignore plan mentions of WP-CLI page creation; SSH is not used.
+- **Cache purge is automatic**: `inc/deploy.php` purges LiteSpeed on the first request after files change. The owner does not need to purge.
 - Author name: **Ali Ahmad**.
 
 ## Repo map
@@ -34,10 +36,12 @@ This repo **is** the WordPress theme `apnamerit`. Hostinger Git deploys branch `
 | `inc/seo.php` | SEO without Rank Math: title, description, canonical, robots, OG, JSON-LD (`am_jsonld_graph`), core sitemap, robots.txt |
 | `data/pages.json` | Per-URL title, description, keyword (tokens `{season_year}`, `{data_year}`). Add every new page here. |
 | `inc/shortcodes.php` | `am_calculator`, `am_merit_table`, `am_predictor`, `am_faq`, `am_answer` |
-| `templates/` | Page templates (`page-calculator.php`, `page-meritlist.php`) |
+| `inc/router.php` | Serves `data/pages.json` paths (200, trailing-slash 301, sitemap provider) |
+| `inc/deploy.php` | Purges LiteSpeed once after each deploy |
+| `templates/virtual.php` | Layout for repo pages; `template` field = default / calculator / meritlist |
 | `data/site.json` | Domain, brand, author, `season_year`, `data_year`. Never hard-code years. |
 | `scripts/check.py` | Pre-merge checks. Run `python3 scripts/check.py` before every merge. |
-| `scripts/wp/` | WP-CLI over SSH helpers (see its README) |
+| `scripts/wp/` | Optional WP-CLI over SSH helpers (not used; owner chose no SSH) |
 | `sources/INDEX.md` | Official source URLs. PDFs stay local (git-ignored). |
 | `.htaccess` | Blocks `.md/.py/.sh`, `scripts/`, `sources/` from the web; `data/` stays public |
 

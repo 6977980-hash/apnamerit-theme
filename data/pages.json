@@ -9,16 +9,6 @@
       "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
       "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p class=\"am-soon\">Calculators are launching soon.</p>",
       "updated": "2026-10-31"
-    },
-    {
-      "path": "/am-router-test/",
-      "noindex": true,
-      "title": "Router test",
-      "description": "Temporary page used once to verify that pages defined in data/pages.json are served by the theme. It will be removed in the very next commit, right away.",
-      "h1": "Router test",
-      "template": "default",
-      "content": "<p>[am_calculator uni=\"uet\"]</p><p>Router works.</p>",
-      "updated": "2026-10-31"
     }
   ]
 }

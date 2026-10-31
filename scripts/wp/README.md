@@ -1,12 +1,11 @@
-# WP-CLI helpers
+# WP-CLI helpers (optional)
 
-Run from the repo root. All scripts go through `wp.sh`, which reads SSH details from `scripts/wp/.env` (git-ignored; copy `.env.example`).
+Pages are **not** created in WordPress: they live in `data/pages.json` and the theme serves them
+(owner decision 2026-10-31). These scripts are only for occasional server tasks, if the owner
+shares SSH details. They read `scripts/wp/.env` (git-ignored; copy `.env.example`).
 
 | Script | Purpose |
 |---|---|
 | `wp.sh <args>` | Run any WP-CLI command on the server |
-| `site-setup.sh` | Phase 0 settings: title, tagline, timezone, permalinks, comments off, activate theme |
-| `page-upsert.sh <slug> <title> <template> <content>` | Create/update a page by slug (idempotent) |
-| `cache-purge.sh` | Purge LiteSpeed + object cache |
-
-If SSH is not available, the same steps are written in `HANDOFF.md` as wp-admin clicks.
+| `site-setup.sh` | Title, tagline, timezone, permalinks, comments off, activate theme (already done by owner) |
+| `cache-purge.sh` | Purge LiteSpeed + object cache (normally not needed: the theme purges itself after each deploy) |

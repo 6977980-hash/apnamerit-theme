@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'AM_VERSION', '0.3.0' );
+define( 'AM_VERSION', '0.3.1' );
 define( 'AM_DIR', get_template_directory() );
 define( 'AM_URI', get_template_directory_uri() );
 
@@ -15,6 +15,7 @@ require_once AM_DIR . '/inc/data.php';
 require_once AM_DIR . '/inc/setup.php';
 require_once AM_DIR . '/inc/cleanup.php';
 require_once AM_DIR . '/inc/assets.php';
+require_once AM_DIR . '/inc/deploy.php';
 require_once AM_DIR . '/inc/router.php';
 require_once AM_DIR . '/inc/seo.php';
 require_once AM_DIR . '/inc/shortcodes.php';
