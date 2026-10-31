@@ -7,7 +7,7 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<p>UET Lahore, NUST, COMSATS and general universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<p>UET Lahore, COMSATS and general universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/mdcat-aggregate-calculator/",
@@ -422,6 +422,74 @@
    ]
   },
   {
+   "path": "/nust-aggregate-calculator/",
+   "keyword": "nust aggregate calculator",
+   "title": "NUST Aggregate Calculator {season_year} (NET Formula)",
+   "description": "NUST aggregate calculator {season_year}: 75% NET, 15% FSc Part-1 and 10% Matric from NUST's merit generation criteria, plus the A level formula. Try it.",
+   "h1": "NUST Aggregate Calculator {season_year}",
+   "crumb": "NUST aggregate calculator",
+   "subtitle": "Official formula: 75% NET + 15% FSc Part-1 + 10% Matric",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The NUST aggregate for {season_year} = 75% NUST Entry Test (NET) + 15% HSSC Part-1 + 10% SSC (Matric), per NUST's merit generation criteria for NET-basis admission. A level students get 25% on O level equivalence instead. Example: 70% in NET, 480/550 in FSc Part-1 and 1000/1100 in Matric give 74.68%.",
+   "answer_source": "https://nust.edu.pk/admissions/undergraduates/merit-criteria-for-admission-on-net-basis/",
+   "content_file": "nust-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the NUST aggregate formula for {season_year}?",
+     "a": "75% NUST Entry Test (NET), 15% HSSC Part-1 (or HSSC, A level, equivalent or DAE) and 10% SSC (or O level / equivalent)."
+    },
+    {
+     "q": "Which FSc marks does NUST use?",
+     "a": "HSSC Part-1 (first-year) marks, or full HSSC, A level, equivalent or DAE marks where those apply."
+    },
+    {
+     "q": "What is the NUST formula for A level students?",
+     "a": "Candidates in their final A level year get 25% weight on their O level equivalence marks from IBCC, plus 75% NET."
+    },
+    {
+     "q": "How much does NET matter in the NUST aggregate?",
+     "a": "NET is 75% of the merit, so each NET percentage point adds 0.75 to your aggregate, far more than FSc or Matric."
+    },
+    {
+     "q": "Does NUST publish closing merit in percent?",
+     "a": "No. NUST publishes closing merit positions (ranks) per programme, and says they are a reference only and change every year."
+    },
+    {
+     "q": "NUST ka aggregate kaise nikalta hai?",
+     "a": "NET ka 75%, FSc Part-1 ka 15% aur Matric ka 10%. Teeno ko jama karein, yehi aap ka NUST aggregate hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "NUST mein FSc ke marks ka kitna asar hai?",
+     "a": "Sirf 15%. Asal farq NET se padta hai jis ka weight 75% hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>NUST ka formula: <strong>NET 75%, FSc Part-1 15% aur Matric 10%</strong>. A level students ke liye NET 75% aur O level equivalence 25%.</p><p>Misaal: NET 70%, FSc Part-1 480/550 aur Matric 1000/1100 ho to aggregate 74.68% banta hai. Is liye NUST mein sab se zyada mehnat NET par karein.</p>",
+   "sources": [
+    {
+     "label": "NUST: General Merit Generation Criteria for UG admission on NET basis",
+     "url": "https://nust.edu.pk/admissions/undergraduates/merit-criteria-for-admission-on-net-basis/",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "NUST UG admissions: Closing Merit Positions 2025",
+     "url": "https://ugadmissions.nust.edu.pk/result/closingmerit.aspx?sprog=mgt",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/uet-taxila-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
+    "/giki-aggregate-calculator/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/methodology/"
+   ]
+  },
+  {
    "path": "/uet-taxila-aggregate-calculator/",
    "keyword": "uet taxila aggregate calculator",
    "title": "UET Taxila Aggregate Calculator {season_year} (ECAT Formula)",
@@ -496,7 +564,7 @@
     "/uet-peshawar-aggregate-calculator/",
     "/ned-aggregate-calculator/",
     "/fast-aggregate-calculator/",
-    "/methodology/"
+    "/nust-aggregate-calculator/"
    ]
   },
   {
@@ -698,7 +766,7 @@
     "/uet-taxila-aggregate-calculator/",
     "/uet-peshawar-aggregate-calculator/",
     "/ned-aggregate-calculator/",
-    "/methodology/"
+    "/nust-aggregate-calculator/"
    ]
   },
   {
@@ -762,7 +830,7 @@
     "/uet-taxila-aggregate-calculator/",
     "/uet-peshawar-aggregate-calculator/",
     "/ned-aggregate-calculator/",
-    "/methodology/"
+    "/nust-aggregate-calculator/"
    ]
   },
   {

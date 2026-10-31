@@ -1,0 +1,64 @@
+{
+ "slug": "nust",
+ "name": "National University of Sciences and Technology (NUST), Islamabad",
+ "short": "NUST",
+ "field": "engineering",
+ "province": "Islamabad",
+ "website": "https://nust.edu.pk/",
+ "calculator_path": "/nust-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "General Merit Generation Criteria for UG admission on NET basis (official page; read via owner's screenshot 2026-10-31 because nust.edu.pk returns 403 to the container). NUST publishes closing merit as merit positions (ranks), not aggregates; none stored yet.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "net",
+   "label": "BE / BS programmes (NET basis)",
+   "source_url": "https://nust.edu.pk/admissions/undergraduates/merit-criteria-for-admission-on-net-basis/",
+   "source_note": "NUST Entry Test 75%, SSC / O level / equivalent 10%, HSSC (Part-1) / HSSC / A level / equivalent / DAE 15%. O/A level candidates in final-year A level: 25% weight on O level IBCC equivalence.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "NET score in %",
+     "total": 100,
+     "weight": 75
+    },
+    {
+     "key": "fsc",
+     "label": "FSc Part-1 (HSSC 1st year)",
+     "total": 550,
+     "weight": 15
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 10
+    }
+   ]
+  },
+  {
+   "id": "olevel",
+   "label": "A level students (O level equivalence)",
+   "source_url": "https://nust.edu.pk/admissions/undergraduates/merit-criteria-for-admission-on-net-basis/",
+   "source_note": "O/A level candidates in final-year A level: 25% weight to O level equivalence marks (IBCC), NET 75%.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "NET score in %",
+     "total": 100,
+     "weight": 75
+    },
+    {
+     "key": "olevel",
+     "label": "O level equivalence in % (IBCC)",
+     "total": 100,
+     "weight": 25
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

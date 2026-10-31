@@ -26,3 +26,4 @@ Every number in `data/` must point to one of these via its `source_url`.
 | FAST-NUCES | 2026 | Eligibility Criteria page (computing 50/40/10, engineering 33/50/17) | https://nu.edu.pk/Admissions/EligibilityCriteria | 2026-10-31 | — | HTML, updated 10-Aug-2026 |
 | FAST-NUCES | 2026 | Prospectus 2026: Admission Information | https://www.nu.edu.pk/Admissions/ProspectusUpload/Admission%20Information.pdf | 2026-10-31 | fast_info.pdf | 1.1 MB |
 | GIKI | 2026 | Eligibility and Comparative Assessment Criteria (85% test, 15% SSC) | https://giki.edu.pk/admissions/admissions-undergraduates/eligibility-criteria/ | 2026-10-31 | — | HTML |
+| NUST | 2026 | Merit Generation Criteria, UG on NET basis (75% NET, 10% SSC, 15% HSSC Part-1; A level 25% O level) | https://nust.edu.pk/admissions/undergraduates/merit-criteria-for-admission-on-net-basis/ | 2026-10-31 | — | read from owner screenshot (403 to container) |
