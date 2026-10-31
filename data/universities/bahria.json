@@ -1,0 +1,45 @@
+{
+ "slug": "bahria",
+ "name": "Bahria University",
+ "short": "Bahria",
+ "field": "general",
+ "province": "",
+ "website": "https://www.bahria.edu.pk/",
+ "calculator_path": "/bahria-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Weights from the Bahria University Admissions Policy, Edition 2 (in force from Spring 2022; copy uploaded on bahria.edu.pk April 2026), section 2.11.3: undergraduate = BU admission test / ETS score 60%, HSSC 30%, SSC 10% (ACM item 3525). MBBS/BDS use the PM&DC formula instead (bahria.edu.pk merit criteria page). No official closing merit found.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "ug",
+   "label": "Undergraduate programs (BS, BBA, BE, LLB)",
+   "source_url": "https://www.bahria.edu.pk/content/Downloads/fba5713a-0270-411c-a5c7-2ff96678e727.pdf",
+   "source_note": "Admissions Policy 2.11.3: Under Graduates: BU Admission Test / ETS Score 60%, HSSC 30% & SSC 10%. 2.10: UG test passing marks 33%. 2.11.2: best score counts if more than one test is taken.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "Bahria admission test (BUET/CBT) or ETS score",
+     "total": 100,
+     "weight": 60,
+     "hint": "Weight 60%; type your marks and the test total"
+    },
+    {
+     "key": "fsc",
+     "label": "FSc / HSSC",
+     "total": 1100,
+     "weight": 30
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 10
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

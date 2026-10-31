@@ -7,7 +7,7 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/mdcat-aggregate-calculator/",
@@ -1416,6 +1416,144 @@
     "/iiui-aggregate-calculator/",
     "/mdcat-aggregate-calculator/",
     "/guides/what-is-closing-merit/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/bahria-aggregate-calculator/",
+   "keyword": "bahria aggregate calculator",
+   "title": "Bahria Aggregate Calculator {season_year} (60% Test Formula)",
+   "description": "Bahria aggregate calculator {season_year}: Bahria University merit = 60% admission test + 30% HSSC + 10% SSC for undergraduate programs, from its Admissions Policy.",
+   "h1": "Bahria University Aggregate Calculator {season_year}",
+   "crumb": "Bahria aggregate calculator",
+   "subtitle": "60% admission test + 30% FSc + 10% Matric (undergraduate programs)",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The Bahria aggregate for undergraduate programs = 60% admission test (BU test or ETS score) + 30% HSSC + 10% SSC, per Bahria University's Admissions Policy, section 2.11.3. Example: 60/100 in the test, 950/1100 FSc and 1000/1100 Matric give 71.00%. Test passing marks are 33%.",
+   "answer_source": "https://www.bahria.edu.pk/content/Downloads/fba5713a-0270-411c-a5c7-2ff96678e727.pdf",
+   "content_file": "bahria-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the Bahria University merit formula?",
+     "a": "For undergraduate programs: BU admission test or ETS score 60%, HSSC 30% and SSC 10% (Admissions Policy 2.11.3)."
+    },
+    {
+     "q": "What are the passing marks in the Bahria entry test?",
+     "a": "33% for undergraduate programs."
+    },
+    {
+     "q": "Can I take the Bahria test more than once?",
+     "a": "Yes. If you take more than one test, Bahria uses your best score."
+    },
+    {
+     "q": "Does this formula apply to Bahria MBBS?",
+     "a": "No. MBBS and BDS follow the PM&DC formula: 50% MDCAT, 40% FSc and 10% Matric."
+    },
+    {
+     "q": "Does Bahria publish closing merit?",
+     "a": "Bahria announces merit lists per campus but no closing-merit summary, so we do not show closing figures."
+    },
+    {
+     "q": "Bahria University ka aggregate kaise nikalain?",
+     "a": "Test ka 60%, FSc ka 30% aur Matric ka 10% jama karein. Test 60/100, FSc 950 aur Matric 1000 par 71.00% banta hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Bahria test mein kitne number chahiye?",
+     "a": "Undergraduate ke liye kam az kam 33%. Lekin test ka wazan 60% hai, is liye achha score merit bohat barhata hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Bahria University mein undergraduate admission ka formula: <strong>test 60% + FSc 30% + Matric 10%</strong>. Test ka wazan sab se zyada hai.</p><p>Misaal: test 60/100, FSc 950/1100 aur Matric 1000/1100 par aggregate 71.00% banta hai. Test pass karne ke liye 33% chahiye. MBBS/BDS ke liye <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> istemal karein.</p>",
+   "sources": [
+    {
+     "label": "Bahria University Admissions Policy, Edition 2, section 2.11.3 (undergraduate weightages)",
+     "url": "https://www.bahria.edu.pk/content/Downloads/fba5713a-0270-411c-a5c7-2ff96678e727.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Bahria University: Merit calculation criteria (MBBS / BDS)",
+     "url": "https://bahria.edu.pk/page/PageTemplate4?pageContentId=4675&WebsiteID=5",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/comsats-aggregate-calculator/",
+    "/nust-aggregate-calculator/",
+    "/iiui-aggregate-calculator/",
+    "/mdcat-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/itu-aggregate-calculator/",
+   "keyword": "itu aggregate calculator",
+   "title": "ITU Aggregate Calculator {season_year} (ITU Lahore BS CS)",
+   "description": "ITU aggregate calculator {season_year}: ITU Lahore BS CS and AI merit = 15% Matric + 35% Intermediate + 50% admission test, from ITU's Norms & Criteria page.",
+   "h1": "ITU Lahore Aggregate Calculator {season_year}",
+   "crumb": "ITU aggregate calculator",
+   "subtitle": "BS CS / AI: 15% Matric + 35% Intermediate + 50% ITU test / SAT / USAT",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The ITU aggregate for BS Computer Science and BS Artificial Intelligence = 15% Matric + 35% Intermediate (or Part-I) + 50% ITU admission test, SAT-I or USAT, per ITU's Norms & Criteria page. Example: 1000/1100 Matric, 950/1100 FSc and 60% in the test give 73.86%. You need at least 50% in the ITU test.",
+   "answer_source": "https://itu.edu.pk/admissions/application-process/",
+   "content_file": "itu-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the ITU Lahore merit formula?",
+     "a": "For BS CS and BS AI: Matric 15% + Intermediate 35% + admission test 50%. With O-Level only or A-Level awaited: academic record 35% + test 65%."
+    },
+    {
+     "q": "What is the formula for ITU engineering programs?",
+     "a": "BS Electrical, Software and Computer Engineering use academic record 50% + admission test 50% (ITU test, ECAT, USAT or NTS). ITU does not state the Matric/Inter split for them."
+    },
+    {
+     "q": "What score do I need in the ITU test?",
+     "a": "At least 50% for CS, AI, M&T and FinTech, and 40% for Economics with Data Science."
+    },
+    {
+     "q": "Can I skip the ITU admission test?",
+     "a": "Yes, with SAT I of at least 550 in each section or a USAT-CS, USAT-E or USAT-GS score of 50% or more."
+    },
+    {
+     "q": "Does ITU publish closing merit?",
+     "a": "ITU posts program-wise merit lists but no closing-merit summary, so we do not show closing figures."
+    },
+    {
+     "q": "ITU ka aggregate kaise nikalain?",
+     "a": "BS CS ke liye Matric ka 15%, FSc ka 35% aur test ka 50% jama karein. 1000, 950 aur test 60% par 73.86% banta hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "ITU test mein kitne marks chahiye?",
+     "a": "CS, AI, M&T aur FinTech ke liye kam az kam 50%, Economics with Data Science ke liye 40%.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>ITU Lahore mein BS CS aur AI ka formula: <strong>Matric 15% + FSc 35% + test 50%</strong>. Test mein kam az kam 50% chahiye, ya SAT/USAT se exemption le sakte hain.</p><p>Misaal: Matric 1000/1100, FSc 950/1100 aur test 60% par aggregate 73.86% banta hai. Lahore mein computing ka official closing merit dekhne ke liye <a href=\"/pu-merit-list/#pucit\">PUCIT merit list</a> dekhein.</p>",
+   "sources": [
+    {
+     "label": "Information Technology University: Norms & Criteria, selection criteria (updated 12 August 2026)",
+     "url": "https://itu.edu.pk/admissions/application-process/",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Information Technology University: BS Computer Science eligibility",
+     "url": "https://itu.edu.pk/admissions/bs-computer-science/",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/pu-merit-list/",
+    "/fast-aggregate-calculator/",
+    "/comsats-aggregate-calculator/",
+    "/nust-aggregate-calculator/",
+    "/pu-aggregate-calculator/",
     "/methodology/"
    ]
   }

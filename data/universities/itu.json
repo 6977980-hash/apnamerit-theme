@@ -1,0 +1,45 @@
+{
+ "slug": "itu",
+ "name": "Information Technology University (ITU), Lahore",
+ "short": "ITU",
+ "field": "computing",
+ "province": "Punjab",
+ "website": "https://itu.edu.pk/",
+ "calculator_path": "/itu-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Weights from ITU 'Norms & Criteria' (updated 2026-08-12), Selection Criteria. Only BS Computer Science / BS Artificial Intelligence give the Matric vs Inter split; other BS programs give one 'Academic Record' weight (EE/SE/CE 50 + test 50; M&T/FinTech 40 + 60; Economics with Data Science 50 + 50) without saying how it is formed, so no formula is stored for them. No closing merit published.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "cs",
+   "label": "BS Computer Science / BS Artificial Intelligence (with HSSC or HSSC Part-I)",
+   "source_url": "https://itu.edu.pk/admissions/application-process/",
+   "source_note": "Applicants with HSSC (Part 1)/HSSC: Academic Record 50% (Matric/O-Level 15% + Inter part I/Inter/A-Level 35%) + Admission Test/SAT-I/USAT 50%. Minimum 50% in the ITU Admissions Test.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "ITU admission test / SAT-I / USAT",
+     "total": 100,
+     "weight": 50,
+     "hint": "Weight 50%; type your marks and the test total"
+    },
+    {
+     "key": "fsc",
+     "label": "FSc / ICS (or Part-I)",
+     "total": 1100,
+     "weight": 35
+    },
+    {
+     "key": "matric",
+     "label": "Matric / O-Level",
+     "total": 1100,
+     "weight": 15
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

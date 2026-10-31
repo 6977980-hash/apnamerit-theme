@@ -386,6 +386,30 @@
      "fetched": "2026-10-31"
     }
    ]
+  },
+  {
+   "name": "Bahria University",
+   "website": "https://www.bahria.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Admissions Policy, Edition 2, section 2.11.3 (UG: test 60%, HSSC 30%, SSC 10%)",
+     "url": "https://www.bahria.edu.pk/content/Downloads/fba5713a-0270-411c-a5c7-2ff96678e727.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "Information Technology University (ITU), Lahore",
+   "website": "https://itu.edu.pk/",
+   "field": "computing",
+   "documents": [
+    {
+     "label": "Norms & Criteria: selection criteria (updated 2026-08-12)",
+     "url": "https://itu.edu.pk/admissions/application-process/",
+     "fetched": "2026-10-31"
+    }
+   ]
   }
  ]
 }
