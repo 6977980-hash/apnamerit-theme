@@ -15,6 +15,7 @@ Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `
 - From the container (not Pakistan), 5 cached home requests: TTFB 0.32, 0.20, 0.26, 0.43, 0.14 s. Pakistan TTFB and PageSpeed numbers still need the owner's machine (brief step 1-2).
 - Found: after each deploy the plain URLs kept serving old HTML for 10+ minutes (home `age: 702`, `x-hcdn-cache-status: HIT`, no COMSATS card, while `?x=` showed it). HTML had no `Cache-Control` header. `/data/*.json` sends `public, max-age=3600`; `am.js?ver=` sends `max-age=31536000, immutable` (fine).
 - Change (v0.13.2, `inc/deploy.php`): anonymous GET HTML sends `Cache-Control: public, max-age=0, s-maxage=300`, so the CDN keeps a page at most 5 minutes; LiteSpeed's page cache still serves the revalidation.
+- Diagnosis (v0.13.3, header `X-AM-Deploy` on uncached responses: version, time/path/SAPI of the purging request, LSCWP version): the post-deploy purge does run (`2026-10-31T22:36:15Z /about/ litespeed header-ok lscwp=7.9.2`), so LiteSpeed is purged. The stale layer is hCDN: plain `/` returned `x-hcdn-cache-status: MISS` at the edge but `age: 2458` (copy from an hCDN shield tier, cached before the s-maxage header existed), other edges `HIT age 7-136`. Copies cached from now on carry `s-maxage=300`; old ones need one hPanel CDN flush.
 - Owner: confirm in hPanel that the CDN is on for apnamerit.com; run the 5 TTFB curls and PageSpeed (mobile) on `/`, `/mdcat-aggregate-calculator/`, `/mdcat-merit-list/`.
 
 ## Fix 7: ads.txt
