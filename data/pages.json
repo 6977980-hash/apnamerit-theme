@@ -1,5 +1,5 @@
 {
-  "_note": "Every URL of the site lives here (owner decision 2026-10-31: no wp-admin pages, no Rank Math). Fields: path (with trailing slash), keyword, title (<=60), description (140-155), h1, template (default|calculator|meritlist), content (HTML + shortcodes), updated (YYYY-MM-DD), noindex. Tokens: {season_year}, {data_year}, {brand}.",
+  "_note": "Every URL of the site lives here (owner decision 2026-10-31: no wp-admin pages, no Rank Math). Fields: path (trailing slash), keyword, title (<=60), description (140-155), h1, crumb (short label for breadcrumbs/links), type (content|trust; trust pages skip share and author box), template (default|calculator|meritlist), schema_type (WebPage|AboutPage|ContactPage|CollectionPage), parents (breadcrumb parent paths), subtitle, answer (40-60 words) + answer_source, content (HTML + shortcodes) and/or content_file (file in content/), faq [{q,a,lang}], roman_urdu (HTML), sources [{label,url,fetched}], related [paths], og_image (file in assets/og/), published, updated (YYYY-MM-DD), noindex. Tokens: {season_year}, {data_year}, {brand}, {founded}.",
   "pages": [
     {
       "path": "/",
@@ -7,7 +7,119 @@
       "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
       "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
       "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-      "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p class=\"am-soon\">Calculators are launching soon.</p>",
+      "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p>Calculators and merit lists are being added university by university, starting with MDCAT. Every number will link to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+      "updated": "2026-10-31",
+      "related": [
+        "/methodology/",
+        "/data-sources/",
+        "/about/"
+      ]
+    },
+    {
+      "path": "/about/",
+      "keyword": "about apna merit",
+      "title": "About Apna Merit – Who We Are and Why",
+      "description": "Apna Merit is a free, independent site for Pakistani students: official aggregate formulas and closing merits, each linked to its official source.",
+      "h1": "About Apna Merit",
+      "crumb": "About",
+      "schema_type": "AboutPage",
+      "content_file": "about.html",
+      "type": "trust",
+      "template": "default",
+      "published": "2026-10-31",
+      "updated": "2026-10-31"
+    },
+    {
+      "path": "/methodology/",
+      "keyword": "merit calculation methodology",
+      "title": "Methodology: How We Collect Merits and Predict Chances",
+      "description": "How Apna Merit collects closing merits from official lists, calculates aggregates and labels your chances as Strong, Borderline or Unlikely.",
+      "h1": "Methodology: how we collect merits and estimate chances",
+      "crumb": "Methodology",
+      "content_file": "methodology.html",
+      "type": "trust",
+      "template": "default",
+      "published": "2026-10-31",
+      "updated": "2026-10-31"
+    },
+    {
+      "path": "/data-sources/",
+      "keyword": "official merit list sources",
+      "title": "Data Sources: Official University Merit Lists",
+      "description": "The official university websites, prospectuses and merit lists behind every number on Apna Merit, with the date each document was last checked.",
+      "h1": "Data sources",
+      "crumb": "Data sources",
+      "schema_type": "CollectionPage",
+      "content_file": "data-sources.html",
+      "type": "trust",
+      "template": "default",
+      "published": "2026-10-31",
+      "updated": "2026-10-31"
+    },
+    {
+      "path": "/editorial-policy/",
+      "keyword": "apna merit editorial policy",
+      "title": "Editorial Policy and Corrections | Apna Merit",
+      "description": "How Apna Merit writes, checks and updates its pages: official sources only, no paid placement, and confirmed errors corrected within 48 hours.",
+      "h1": "Editorial policy",
+      "crumb": "Editorial policy",
+      "content_file": "editorial-policy.html",
+      "type": "trust",
+      "template": "default",
+      "published": "2026-10-31",
+      "updated": "2026-10-31"
+    },
+    {
+      "path": "/contact/",
+      "keyword": "contact apna merit",
+      "title": "Contact Apna Merit – Report a Mistake",
+      "description": "Contact Apna Merit to report a wrong figure, a broken source link or a newer official merit list. Confirmed errors are corrected within 48 hours.",
+      "h1": "Contact us",
+      "crumb": "Contact",
+      "schema_type": "ContactPage",
+      "content_file": "contact.html",
+      "type": "trust",
+      "template": "default",
+      "published": "2026-10-31",
+      "updated": "2026-10-31"
+    },
+    {
+      "path": "/privacy-policy/",
+      "keyword": "apna merit privacy policy",
+      "title": "Privacy Policy | Apna Merit",
+      "description": "Apna Merit needs no account; calculator inputs stay in your browser. Read what the site and its host collect, cookies, and how merit data is handled.",
+      "h1": "Privacy policy",
+      "crumb": "Privacy policy",
+      "content_file": "privacy-policy.html",
+      "type": "trust",
+      "template": "default",
+      "published": "2026-10-31",
+      "updated": "2026-10-31"
+    },
+    {
+      "path": "/terms/",
+      "keyword": "apna merit terms of use",
+      "title": "Terms of Use | Apna Merit",
+      "description": "Terms for using Apna Merit's aggregate calculators, merit tables and predictor, including the CC BY 4.0 data licence and limits of our liability.",
+      "h1": "Terms of use",
+      "crumb": "Terms",
+      "content_file": "terms.html",
+      "type": "trust",
+      "template": "default",
+      "published": "2026-10-31",
+      "updated": "2026-10-31"
+    },
+    {
+      "path": "/disclaimer/",
+      "keyword": "apna merit disclaimer",
+      "title": "Disclaimer: Not an Official University Website",
+      "description": "Apna Merit is independent and not affiliated with any university, UHS, PMDC or HEC. Our figures are for information; always confirm with the university.",
+      "h1": "Disclaimer",
+      "crumb": "Disclaimer",
+      "content_file": "disclaimer.html",
+      "type": "trust",
+      "template": "default",
+      "published": "2026-10-31",
       "updated": "2026-10-31"
     }
   ]

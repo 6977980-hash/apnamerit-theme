@@ -5,7 +5,7 @@
     "scheme": "https",
     "www": false,
     "trailing_slash": true,
-    "note": "Force https + non-www with a 301 in the root .htaccess (Phase 1)."
+    "note": "Hostinger already 301s http->https and www->non-www at the server (verified 2026-10-31); the theme only sets canonical tags."
   },
   "brand": "Apna Merit",
   "tagline": "Aggregate Calculator & Merit Lists for Pakistani Universities",
@@ -17,7 +17,10 @@
   "author": {
     "name": "Ali Ahmad",
     "url": "https://apnamerit.com/about/#author",
-    "role": "Founder and editor"
+    "role": "Founder and editor",
+    "city": "",
+    "bio": "Ali Ahmad started Apna Merit to put official aggregate formulas and closing merits for Pakistani universities in one place, with a link to the official source behind every number.",
+    "same_as": []
   },
   "organization": {
     "name": "Apna Merit",
@@ -28,5 +31,22 @@
     "name": "CC BY 4.0",
     "url": "https://creativecommons.org/licenses/by/4.0/",
     "attribution": "Data © Apna Merit, cite as apnamerit.com"
+  },
+  "founded": 2026,
+  "contact": {
+    "email": ""
+  },
+  "verification": {
+    "google": "",
+    "bing": "",
+    "note": "Paste only the content=\"...\" value of the HTML-tag method from Google Search Console / Bing Webmaster Tools."
+  },
+  "disclaimer": "Apna Merit is an independent website and is not affiliated with any university, UHS, PMDC or HEC. Figures are copied from official sources and may contain errors; always confirm with the university's official notice before applying.",
+  "ads": {
+    "enabled": false,
+    "note": "Reserved ad slots render only when true (after AdSense approval). Never above a calculator."
+  },
+  "share": {
+    "whatsapp": "Mera {uni} aggregate {aggregate}% hai, apna check karo: {url}"
   }
 }

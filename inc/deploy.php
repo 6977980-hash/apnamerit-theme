@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
  */
 function am_deploy_fingerprint(): string {
 	$parts = array( AM_VERSION );
-	foreach ( array( 'data/*.json', 'data/*/*.json', 'assets/css/*.css', 'assets/js/*.js', '*.php', 'inc/*.php', 'templates/*.php' ) as $glob ) {
+	foreach ( array( 'data/*.json', 'data/*/*.json', 'content/*.html', 'assets/css/*.css', 'assets/js/*.js', '*.php', 'inc/*.php', 'templates/*.php' ) as $glob ) {
 		foreach ( (array) glob( AM_DIR . '/' . $glob ) as $file ) {
 			$parts[] = $file . ':' . (int) @filemtime( $file ) . ':' . (int) @filesize( $file );
 		}

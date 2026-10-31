@@ -1,5 +1,275 @@
-/* Apna Merit front-end JS (vanilla, deferred). Calculator/predictor/table engines arrive in Phase 1. */
-(function () {
+/* Apna Merit front-end (vanilla, deferred, no dependencies).
+ * Engines (pure, testable in Node): aggregate(), chance(), predict().
+ * UI: calculators, predictor, merit-table filter/sort, share, localStorage.
+ */
+(function (root) {
   'use strict';
-  document.documentElement.classList.add('am-js');
-})();
+
+  // ---------------------------------------------------------------- engines
+  function num(v) {
+    var n = parseFloat(String(v == null ? '' : v).replace(',', '.'));
+    return isFinite(n) ? n : NaN;
+  }
+
+  /**
+   * Weighted aggregate. formula = {parts:[{key,total,weight}], bonus:[{key,part,marks}]}
+   * values = {o_<key>: obtained, t_<key>: total, b_<key>: true}
+   * Returns {aggregate, parts:[{key,label,obtained,total,weight,share}]} or {error}.
+   */
+  function aggregate(formula, values) {
+    var out = { aggregate: 0, parts: [] };
+    var extra = {};
+    (formula.bonus || []).forEach(function (b) {
+      if (values['b_' + b.key]) extra[b.part] = (extra[b.part] || 0) + num(b.marks);
+    });
+    for (var i = 0; i < formula.parts.length; i++) {
+      var p = formula.parts[i];
+      var obtained = num(values['o_' + p.key]);
+      var total = num(values['t_' + p.key] != null && values['t_' + p.key] !== '' ? values['t_' + p.key] : p.total);
+      if (isNaN(obtained) || obtained < 0) return { error: 'Enter your ' + p.label + ' marks.', key: p.key };
+      if (isNaN(total) || total <= 0) return { error: 'Enter the total marks for ' + p.label + '.', key: p.key };
+      if (obtained > total) return { error: p.label + ' marks cannot be more than ' + total + '.', key: p.key };
+      var got = Math.min(obtained + (extra[p.key] || 0), total);
+      var share = (got / total) * num(p.weight);
+      out.parts.push({ key: p.key, label: p.label, obtained: got, total: total, weight: num(p.weight), share: share });
+      out.aggregate += share;
+    }
+    out.aggregate = Math.round(out.aggregate * 10000) / 10000;
+    return out;
+  }
+
+  /** Chance label against a reference closing merit with a ± band. */
+  function chance(agg, ref, band) {
+    if (agg > ref + band) return 'strong';
+    if (agg >= ref - band) return 'borderline';
+    return 'unlikely';
+  }
+
+  /** Rows [{ref,...}] → rows with chance + gap, filtered, best first. */
+  function predict(agg, rows, band, filter) {
+    filter = filter || {};
+    return rows
+      .filter(function (r) {
+        for (var k in filter) if (filter[k] && r[k] !== filter[k]) return false;
+        return true;
+      })
+      .map(function (r) {
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o.gap = Math.round((agg - r.ref) * 100) / 100;
+        o.chance = chance(agg, r.ref, band);
+        return o;
+      })
+      .sort(function (a, b) { return b.ref - a.ref; });
+  }
+
+  var AM = { aggregate: aggregate, chance: chance, predict: predict };
+  root.AM = AM;
+  if (typeof module !== 'undefined' && module.exports) module.exports = AM;
+  if (typeof document === 'undefined') return;
+
+  // ---------------------------------------------------------------- helpers
+  var LABEL = { strong: 'Strong', borderline: 'Borderline', unlikely: 'Unlikely' };
+  var store = {
+    get: function (k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* private mode */ } }
+  };
+  function $(sel, el) { return (el || document).querySelector(sel); }
+  function $$(sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+  }
+  function pct(n) { return n.toFixed(2) + '%'; }
+  function data(el, cls) {
+    var s = $('script.' + cls, el);
+    try { return s ? JSON.parse(s.textContent) : null; } catch (e) { return null; }
+  }
+  function waLink(text) { return 'https://wa.me/?text=' + encodeURIComponent(text); }
+
+  function chanceList(list, empty) {
+    if (!list.length) return '<p>' + esc(empty) + '</p>';
+    var groups = { strong: [], borderline: [], unlikely: [] };
+    list.forEach(function (r) { groups[r.chance].push(r); });
+    var html = '';
+    ['strong', 'borderline', 'unlikely'].forEach(function (g) {
+      if (!groups[g].length) return;
+      html += '<h3><span class="am-chip am-chip--' + g + '">' + LABEL[g] + '</span> ' + groups[g].length + ' program' + (groups[g].length > 1 ? 's' : '') + '</h3><ul class="am-plist">';
+      groups[g].slice(0, g === 'unlikely' ? 10 : 50).forEach(function (r) {
+        var name = (r.uni ? r.uni + ': ' : '') + r.program + (r.campus ? ' (' + r.campus + (r.shift ? ', ' + r.shift : '') + ')' : '');
+        var link = r.url ? '<a href="' + esc(r.url) + '">' + esc(name) + '</a>' : esc(name);
+        html += '<li>' + link + ' <span class="am-muted">closed at ' + pct(r.ref) + ' (' + r.year + '), you are ' + (r.gap >= 0 ? '+' : '') + r.gap.toFixed(2) + '</span></li>';
+      });
+      html += '</ul>';
+    });
+    return html;
+  }
+
+  function formValues(scope) {
+    var v = {};
+    $$('input', scope).forEach(function (i) { v[i.name] = i.type === 'checkbox' ? i.checked : i.value; });
+    return v;
+  }
+
+  // ---------------------------------------------------------------- calculator
+  $$('form[data-am-calc]').forEach(function (form) {
+    var cfg = data(form, 'am-calc-data');
+    if (!cfg) return;
+    var key = 'am:calc:' + form.getAttribute('data-am-calc');
+    var out = $('.am-result', form);
+    var pick = $('[data-am-formula]', form);
+
+    function current() {
+      var id = pick ? pick.value : cfg.formulas[0].id;
+      for (var i = 0; i < cfg.formulas.length; i++) if (cfg.formulas[i].id === id) return cfg.formulas[i];
+      return cfg.formulas[0];
+    }
+    function fieldset(f) { return $('fieldset[data-am-fid="' + f.id + '"]', form); }
+    function show() {
+      $$('fieldset[data-am-fid]', form).forEach(function (fs) {
+        var on = fs.getAttribute('data-am-fid') === current().id;
+        fs.hidden = !on;
+        $$('input', fs).forEach(function (i) { i.disabled = !on; });
+      });
+    }
+
+    var saved = store.get(key);
+    if (saved) {
+      if (pick && saved.formula) pick.value = saved.formula;
+      $$('input', form).forEach(function (i) {
+        var fs = i.closest('fieldset');
+        var v = saved.values && fs && fs.getAttribute('data-am-fid') === saved.formula ? saved.values[i.name] : undefined;
+        if (v === undefined) return;
+        if (i.type === 'checkbox') i.checked = !!v; else i.value = v;
+      });
+    }
+    show();
+    if (pick) pick.addEventListener('change', function () { show(); out.hidden = true; });
+
+    function run(quiet) {
+      var f = current();
+      var values = formValues(fieldset(f));
+      var r = aggregate(f, values);
+      if (r.error) {
+        if (quiet) return;
+        out.hidden = false;
+        out.innerHTML = '<p class="am-error" role="alert">' + esc(r.error) + '</p>';
+        var bad = $('[name="o_' + r.key + '"]', fieldset(f));
+        if (bad) bad.focus();
+        return;
+      }
+      store.set(key, { formula: f.id, values: values });
+      var agg = r.aggregate;
+      var text = cfg.share.replace('{uni}', cfg.uni).replace('{aggregate}', agg.toFixed(2)).replace('{url}', cfg.url);
+      var rows = '';
+      r.parts.forEach(function (p) {
+        rows += '<tr><td>' + esc(p.label) + '</td><td>' + p.obtained + ' / ' + p.total + '</td><td>' + p.weight + '%</td><td>' + p.share.toFixed(4) + '</td></tr>';
+      });
+      var html = '<p class="am-result-main">Your ' + esc(cfg.uni) + ' aggregate is <strong>' + pct(agg) + '</strong></p>' +
+        '<div class="am-table-wrap"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+        '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button></div>';
+      if (cfg.rows && cfg.rows.length) {
+        html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' closing merits of the last two years (final list, open merit). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
+          chanceList(predict(agg, cfg.rows, cfg.band), 'No programs to compare yet.');
+      }
+      out.hidden = false;
+      out.innerHTML = html;
+      if (!quiet) out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
+    form.addEventListener('reset', function () {
+      out.hidden = true;
+      store.set(key, null);
+      setTimeout(show, 0);
+    });
+    if (saved) run(true);
+  });
+
+  // ---------------------------------------------------------------- predictor
+  $$('form[data-am-predictor]').forEach(function (form) {
+    var cfg = data(form, 'am-pred-data');
+    if (!cfg) return;
+    var out = $('.am-result', form);
+    var key = 'am:predictor';
+    var saved = store.get(key);
+    if (saved) $$('input,select', form).forEach(function (i) { if (saved[i.name] != null) i.value = saved[i.name]; });
+
+    function run(quiet) {
+      var agg = num(form.agg.value);
+      if (isNaN(agg) || agg <= 0 || agg > 100) {
+        if (quiet) return;
+        out.hidden = false;
+        out.innerHTML = '<p class="am-error" role="alert">Enter an aggregate between 0 and 100.</p>';
+        form.agg.focus();
+        return;
+      }
+      var filter = { field: form.field ? form.field.value : '', prov: form.prov ? form.prov.value : '' };
+      store.set(key, { agg: form.agg.value, field: filter.field, prov: filter.prov });
+      out.hidden = false;
+      out.innerHTML = chanceList(predict(agg, cfg.rows, cfg.band, filter), 'No programs match these filters yet.');
+    }
+    form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
+    if (saved) run(true);
+  });
+
+  // ---------------------------------------------------------------- merit table
+  $$('[data-am-table]').forEach(function (box) {
+    var table = $('table', box);
+    var tbody = table.tBodies[0];
+    var count = $('.am-count', box);
+    var selects = $$('[data-am-filter]', box);
+
+    function apply() {
+      var shown = 0;
+      $$('tr', tbody).forEach(function (tr) {
+        var on = selects.every(function (s) { return !s.value || tr.getAttribute('data-' + s.getAttribute('data-am-filter')) === s.value; });
+        tr.classList.toggle('am-off', !on);
+        if (on) shown++;
+      });
+      if (count) count.textContent = 'Showing ' + shown + ' of ' + tbody.rows.length + ' rows.';
+    }
+    selects.forEach(function (s) { s.addEventListener('change', apply); });
+    apply();
+
+    $$('[data-am-sort]', table).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var col = +btn.getAttribute('data-am-sort');
+        var isNum = btn.hasAttribute('data-num');
+        var th = btn.parentNode;
+        var dir = th.getAttribute('aria-sort') === 'descending' ? 1 : -1;
+        if (!isNum && !th.getAttribute('aria-sort')) dir = 1;
+        $$('th[aria-sort]', table).forEach(function (h) { h.removeAttribute('aria-sort'); });
+        th.setAttribute('aria-sort', dir === 1 ? 'ascending' : 'descending');
+        var rows = Array.prototype.slice.call(tbody.rows);
+        rows.sort(function (a, b) {
+          var x = a.cells[col], y = b.cells[col];
+          if (isNum) {
+            var nx = parseFloat(x.getAttribute('data-v')), ny = parseFloat(y.getAttribute('data-v'));
+            if (isNaN(nx)) return 1;
+            if (isNaN(ny)) return -1;
+            return (nx - ny) * dir;
+          }
+          return x.textContent.localeCompare(y.textContent) * dir;
+        });
+        rows.forEach(function (r) { tbody.appendChild(r); });
+      });
+    });
+  });
+
+  // ---------------------------------------------------------------- share
+  document.addEventListener('click', function (e) {
+    var copy = e.target.closest('[data-am-copy]');
+    if (copy) {
+      var text = copy.getAttribute('data-am-copy');
+      var done = function () { var t = copy.textContent; copy.textContent = 'Copied'; setTimeout(function () { copy.textContent = t; }, 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () {});
+      return;
+    }
+    var share = e.target.closest('[data-am-share]');
+    if (share && navigator.share) {
+      var box = share.closest('.am-share');
+      navigator.share({ title: box.getAttribute('data-title'), url: box.getAttribute('data-url') }).catch(function () {});
+    }
+  });
+  if (navigator.share) $$('[data-am-share]').forEach(function (b) { b.hidden = false; });
+})(typeof window !== 'undefined' ? window : globalThis);

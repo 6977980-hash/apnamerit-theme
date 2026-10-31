@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Replace {season_year}, {data_year} and {brand} tokens.
+ * Replace {season_year}, {data_year}, {brand} and {founded} tokens.
  */
 function am_tokens( string $text ): string {
 	return strtr(
@@ -19,6 +19,7 @@ function am_tokens( string $text ): string {
 			'{season_year}' => (string) am_site( 'season_year' ),
 			'{data_year}'   => (string) am_site( 'data_year' ),
 			'{brand}'       => (string) am_site( 'brand', 'Apna Merit' ),
+			'{founded}'     => (string) am_site( 'founded' ),
 		)
 	);
 }
@@ -77,6 +78,37 @@ function am_description(): string {
 	return (string) am_site( 'tagline' );
 }
 
+/**
+ * OG image URL: the entry's "og_image" (file in assets/og/), else assets/og/<page-slug>.png made by
+ * scripts/og.py, else assets/og/default.png.
+ */
+function am_og_image(): string {
+	$seo   = am_page_seo();
+	$names = array();
+	if ( ! empty( $seo['og_image'] ) ) {
+		$names[] = basename( (string) $seo['og_image'] );
+	}
+	if ( ! empty( $seo['path'] ) ) {
+		$names[] = am_path_slug( (string) $seo['path'] ) . '.png';
+	}
+	$names[] = 'default.png';
+	foreach ( $names as $name ) {
+		$file = AM_DIR . '/assets/og/' . $name;
+		if ( is_readable( $file ) ) {
+			return AM_URI . '/assets/og/' . $name . '?v=' . (int) filemtime( $file );
+		}
+	}
+	return '';
+}
+
+/**
+ * File-safe slug of a page path: "/" → "home", "/uet/merit-list/" → "uet-merit-list" (same rule as scripts/og.py).
+ */
+function am_path_slug( string $path ): string {
+	$slug = trim( (string) preg_replace( '/[^a-z0-9]+/', '-', strtolower( $path ) ), '-' );
+	return '' === $slug ? 'home' : $slug;
+}
+
 // <title>.
 add_filter(
 	'pre_get_document_title',
@@ -112,9 +144,15 @@ add_action(
 		$desc  = am_description();
 		$canon = am_canonical();
 		$title = wp_get_document_title();
-		$image = am_page_seo()['og_image'] ?? '';
+		$image = am_og_image();
 		$out   = array();
 		$out[] = '<meta name="description" content="' . esc_attr( $desc ) . '">';
+		foreach ( array( 'google' => 'google-site-verification', 'bing' => 'msvalidate.01' ) as $key => $meta ) {
+			$code = (string) am_site( 'verification.' . $key );
+			if ( '' !== $code && is_front_page() ) {
+				$out[] = '<meta name="' . $meta . '" content="' . esc_attr( $code ) . '">';
+			}
+		}
 		if ( $canon && ! is_paged() ) {
 			$out[] = '<link rel="canonical" href="' . esc_url( $canon ) . '">';
 		}
@@ -127,7 +165,10 @@ add_action(
 			$out[] = '<meta property="og:url" content="' . esc_url( $canon ) . '">';
 		}
 		if ( $image ) {
-			$out[] = '<meta property="og:image" content="' . esc_url( AM_URI . '/assets/og/' . $image ) . '">';
+			$out[] = '<meta property="og:image" content="' . esc_url( $image ) . '">';
+			$out[] = '<meta property="og:image:width" content="1200">';
+			$out[] = '<meta property="og:image:height" content="630">';
+			$out[] = '<meta property="og:image:alt" content="' . esc_attr( $title ) . '">';
 		}
 		$out[] = '<meta name="twitter:card" content="' . ( $image ? 'summary_large_image' : 'summary' ) . '">';
 		echo implode( "\n", $out ) . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput
@@ -148,6 +189,8 @@ add_filter(
 				'url'    => $url,
 				'logo'   => am_site( 'organization.logo' ) ?: null,
 				'sameAs' => am_site( 'organization.same_as' ) ?: null,
+				'foundingDate' => am_site( 'founded' ) ? (string) am_site( 'founded' ) : null,
+				'founder'      => am_site( 'author.name' ) ? array( '@id' => $url . 'about/#author' ) : null,
 			)
 		);
 		$graph['site']   = array(

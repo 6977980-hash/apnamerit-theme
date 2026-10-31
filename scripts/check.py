@@ -9,8 +9,11 @@ Checks:
              every merit record under data/universities/ has a source_url
   template - page templates have a Template Name header, at most one <h1>, wp_head/wp_footer present,
              no debug output, no jQuery or web fonts
-  pages    - data/pages.json: title <= 60, description 140-155, unique path/title/description/keyword
-  links    - internal links in data/templates resolve to slugs in data/pages.json (once that file exists)
+  pages    - data/pages.json: title <= 60, description 140-155, unique path/title/description/keyword,
+             content_file exists (no <h1> inside), rule-7 blocks on content pages, OG image present
+  nav      - data/nav.json paths exist in data/pages.json
+  unis     - data/universities/*.json: formulas (weights add up to 100), merit records complete
+  links    - internal links in PHP/JSON/content HTML resolve to paths in data/pages.json
   privacy  - no PDFs, CNIC-like numbers or private keys committed
   size     - am.css within the 14 KB inline budget
 """
@@ -194,10 +197,90 @@ def check_pages(loaded: dict[str, object]) -> None:
             err("pages", f"{where} {path}: updated must be YYYY-MM-DD")
         if not p.get("noindex") and not p.get("keyword"):
             err("pages", f"{where} {path}: primary keyword missing")
+        if p.get("type", "content") not in {"content", "trust"}:
+            err("pages", f"{where} {path}: type must be content or trust")
+        cf = p.get("content_file")
+        if cf:
+            f = ROOT / "content" / Path(cf).name
+            if not f.exists():
+                err("pages", f"{where} {path}: content_file content/{cf} missing")
+            elif "<h1" in f.read_text(encoding="utf-8").lower():
+                err("pages", f"{where} {path}: content/{cf} must not contain <h1> (the theme prints it)")
+        if "<h1" in str(p.get("content", "")).lower():
+            err("pages", f"{where} {path}: content must not contain <h1>")
+        for s_ in p.get("sources", []) or []:
+            if not str(s_.get("url", "")).startswith("https://"):
+                err("pages", f"{where} {path}: source without https url")
+        for q in p.get("faq", []) or []:
+            if not q.get("q") or not q.get("a"):
+                err("pages", f"{where} {path}: FAQ item needs q and a")
+        if p.get("type", "content") == "content" and path != "/" and not p.get("noindex"):
+            missing = [k for k in ("answer", "faq", "roman_urdu", "sources", "related") if not p.get(k)
+                       and not (k in ("answer", "faq") and f"[am_{k}" in str(p.get("content", "")))]
+            if missing:
+                warn("pages", f"{path}: content page missing rule-7 blocks: {', '.join(missing)}")
+        slug = re.sub(r"[^a-z0-9]+", "-", path.lower()).strip("-") or "home"
+        if not p.get("noindex") and not (ROOT / "assets/og" / (p.get("og_image") or f"{slug}.png")).exists():
+            warn("pages", f"{path}: no OG image (run python3 scripts/og.py)")
         for key, val in (("path", path), ("title", title), ("description", desc), ("keyword", p.get("keyword"))):
             if val and val in seen[key]:
                 err("pages", f"{where}: duplicate {key} '{val}' (one URL per keyword)")
             seen[key].add(val)
+
+
+# ---------------------------------------------------------------- nav + universities
+def page_paths(loaded: dict[str, object]) -> set[str]:
+    pages = loaded.get("data/pages.json")
+    items = pages.get("pages", []) if isinstance(pages, dict) else []
+    return {p["path"] for p in items if isinstance(p, dict) and isinstance(p.get("path"), str)}
+
+
+def check_nav(loaded: dict[str, object]) -> None:
+    nav = loaded.get("data/nav.json")
+    if not isinstance(nav, dict):
+        return
+    paths = page_paths(loaded)
+    for where in ("header", "footer"):
+        for item in nav.get(where, []):
+            if item.get("path") not in paths:
+                err("nav", f"data/nav.json {where}: {item.get('path')} is not in data/pages.json")
+
+
+def check_unis(loaded: dict[str, object]) -> None:
+    paths = page_paths(loaded)
+    for name, u in loaded.items():
+        if not name.startswith("data/universities/") or Path(name).name.startswith("_"):
+            continue
+        if not isinstance(u, dict):
+            err("unis", f"{name}: not an object")
+            continue
+        for key in ("slug", "name", "short"):
+            if not u.get(key):
+                err("unis", f"{name}: '{key}' missing")
+        for key in ("calculator_path", "meritlist_path"):
+            if u.get(key) and u[key] not in paths:
+                err("unis", f"{name}: {key} {u[key]} is not in data/pages.json")
+        for f in u.get("formulas", []):
+            parts = f.get("parts", [])
+            total = sum(float(p.get("weight", 0)) for p in parts)
+            if abs(total - 100) > 0.001:
+                err("unis", f"{name} formula {f.get('id')}: weights add up to {total}, not 100")
+            if not f.get("source_url"):
+                err("unis", f"{name} formula {f.get('id')}: source_url missing")
+            for p in parts:
+                if not p.get("key") or not p.get("label") or not float(p.get("total", 0)) > 0:
+                    err("unis", f"{name} formula {f.get('id')}: part needs key, label and total > 0")
+        counts: dict[int, int] = {}
+        for i, r in enumerate(u.get("merit", [])):
+            for key in ("year", "list", "category", "program", "closing", "source_url"):
+                if r.get(key) in (None, ""):
+                    err("unis", f"{name} merit[{i}]: '{key}' missing")
+            c = r.get("closing")
+            if isinstance(c, (int, float)) and not 0 < c <= 100:
+                err("unis", f"{name} merit[{i}]: closing {c} out of range")
+            counts[r.get("year")] = counts.get(r.get("year"), 0) + 1
+        if counts:
+            print(f"INFO  [unis] {name}: " + ", ".join(f"{y}: {n}" for y, n in sorted(counts.items(), key=str)) + " records")
 
 
 # ---------------------------------------------------------------- links
@@ -211,10 +294,12 @@ def check_links(loaded: dict[str, object]) -> None:
         return
     items = pages.get("pages", []) if isinstance(pages, dict) else []
     slugs = {p["path"] for p in items if isinstance(p, dict) and isinstance(p.get("path"), str)}
-    for f in files("*.php") + files("*.json"):
+    for f in files("*.php") + files("*.json") + files("*.html"):
         for m in HREF.finditer(f.read_text(encoding="utf-8")):
             url = m.group(1)
             if url.startswith(("/wp-", "/data/")):
+                continue
+            if url.startswith("/wp-content/"):
                 continue
             if not url.endswith("/"):
                 err("links", f"{rel(f)}: internal link without trailing slash: {url}")
@@ -257,6 +342,8 @@ def main() -> int:
     loaded = check_json()
     check_templates()
     check_pages(loaded)
+    check_nav(loaded)
+    check_unis(loaded)
     check_links(loaded)
     check_privacy()
     check_size()

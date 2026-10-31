@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme supports and menus.
+ * Theme supports. Menus come from data/nav.json, not wp-admin.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -11,11 +11,5 @@ add_action(
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 		add_theme_support( 'post-thumbnails' );
-		register_nav_menus(
-			array(
-				'primary' => 'Primary',
-				'footer'  => 'Footer',
-			)
-		);
 	}
 );

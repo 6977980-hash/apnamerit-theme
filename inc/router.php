@@ -4,8 +4,7 @@
  * every URL is an entry in data/pages.json and the theme serves it directly. Push to git →
  * Hostinger deploys → the page exists. No WP-CLI, no database rows.
  *
- * Entry fields: path, keyword, title, description, h1, template (default|calculator|meritlist),
- * content (HTML + shortcodes, trusted: it comes from the repo), updated (YYYY-MM-DD), noindex.
+ * Entry fields: see the _note in data/pages.json. Rendering: am_render_page() in inc/template-tags.php.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -74,13 +73,6 @@ add_action(
 	},
 	0
 );
-
-/**
- * Render an entry's body (HTML + shortcodes).
- */
-function am_render_page_content( array $page ): string {
-	return do_shortcode( (string) ( $page['content'] ?? '' ) );
-}
 
 /**
  * "Updated" date for an entry: its "updated" field, else pages.json mtime.

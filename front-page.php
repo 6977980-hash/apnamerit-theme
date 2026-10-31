@@ -1,20 +1,23 @@
 <?php
 /**
- * Homepage: the "/" entry of data/pages.json (h1 + content). Falls back to a placeholder.
+ * Homepage: the "/" entry of data/pages.json, rendered like every other repo page.
  */
 
 defined( 'ABSPATH' ) || exit;
-get_header();
+
 $am_page = am_find_page( '/' );
-$am_h1   = am_tokens( (string) ( $am_page['h1'] ?? 'Aggregate Calculator for Pakistani Universities ({season_year})' ) );
+if ( ! $am_page ) {
+	$am_page = array(
+		'path' => '/',
+		'h1'   => 'Aggregate Calculator for Pakistani Universities ({season_year})',
+	);
+}
+$am_main = am_render_page( $am_page );
+
+get_header();
 ?>
-<div class="am-wrap am-hero">
-	<h1><?php echo esc_html( $am_h1 ); ?></h1>
-	<?php
-	if ( ! empty( $am_page['content'] ) ) {
-		echo am_render_page_content( $am_page ); // phpcs:ignore WordPress.Security.EscapeOutput -- trusted repo content
-	}
-	?>
-</div>
+<article class="am-wrap am-page am-page--home">
+	<?php echo $am_main; // phpcs:ignore WordPress.Security.EscapeOutput -- built from escaped parts + trusted repo content ?>
+</article>
 <?php
 get_footer();

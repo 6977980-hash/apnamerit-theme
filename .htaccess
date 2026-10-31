@@ -1,5 +1,6 @@
 # This file protects the THEME folder only (public_html/wp-content/themes/apnamerit/).
 # The repo is deployed as-is, so block docs, scripts and source notes from the web.
+# content/*.html (page bodies) is served only through the pages, never directly.
 # data/*.json stays public on purpose (master plan section 6: public data).
 
 Options -Indexes
@@ -9,5 +10,5 @@ Options -Indexes
 </FilesMatch>
 
 <IfModule mod_alias.c>
-	RedirectMatch 404 /(scripts|sources|\.git)(/|$)
+	RedirectMatch 404 /(scripts|sources|content|\.git)(/|$)
 </IfModule>
