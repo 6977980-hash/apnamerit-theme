@@ -1,13 +1,26 @@
-# HANDOFF — Phase 3 (engineering / computing), part 1 — 2026-10-31
+# HANDOFF — Phase 4 (PU and general universities), part 1 — 2026-10-31
 
 ## Status
-- Live at https://apnamerit.com, theme v0.6.2.
-- New live pages (200, in sitemap, one H1, FAQPage + BreadcrumbList JSON-LD): `/uet-taxila-aggregate-calculator/`, `/uet-peshawar-aggregate-calculator/`, `/ned-aggregate-calculator/`, `/fast-aggregate-calculator/`, `/giki-aggregate-calculator/`, `/nust-aggregate-calculator/`, `/comsats-aggregate-calculator/` (WebApplication), `/uet-taxila-merit-list/` (Dataset, CollectionPage), `/guides/1st-2nd-final-merit-list/`. Homepage has an "Engineering and computing" section linking all of them.
-- Data (`data/universities/`): `comsats.json` (10/40/50, UG Prospectus 2024-25 p. 44 on ww2.comsats.edu.pk; no closing merit), `nust.json` (75% NET, 15% HSSC Part-1, 10% SSC; A level 25% O level; read from owner screenshot of the official page; closing merit = merit positions, not stored yet), `uet-taxila.json` (formulas 33/50/17 + Hafiz +20 on FSc Part-I, BS Math/Physics 70/30; **12 records**, 2024 open merit from Prospectus 2025 p. 136 "Merit Position Entry – 2024"), `uet-peshawar.json` (10/40/50 engineering, BS CS 40/60 SSC/Part-I), `ned.json` (40% HSC-I + 60% test), `fast.json` (computing 50/40/10, engineering 33/50/17), `giki.json` (85% test + 15% SSC). Last four have `merit: []`.
-- Phase 2 part 2 (KMU/Sindh/NUMS medical) still open in its own thread; see "Phase 2 notes" below.
-- Owner: contact@apnamerit.com mailbox created; MX = mx1/mx2.hostinger.com (checked 2026-10-31).
+- Live at https://apnamerit.com, theme v0.7.0.
+- New live pages (200, in sitemap, one H1, FAQPage + BreadcrumbList JSON-LD): `/pu-aggregate-calculator/` (WebApplication), `/pu-merit-list/` (CollectionPage + Dataset, 257 rows, `#pucit` section), `/ku-merit-list/` (46 rows), `/iiui-aggregate-calculator/`. Homepage has a "Punjab University and general universities" section.
+- Data: `pu.json` (formulas `basic` = (Matric/4 + FSc)/(total/4 + total), `test` = 75% academic + 25% test; **257 records**, year 2025, list "Last merit", category "Open merit", shift Morning / Evening / Replica / Self-support / "Evening / Replica / Self-support"; 47 "(5th semester)" rows carry `predict: false`), `ku.json` (no formula; 38 test-based rows, category "Test score ≥ N", + 8 Visual Studies "final points" rows; year **2026**, list "Closing"), `iiui.json` (PQM 40/60, test 15/25/60; `merit: []`).
+- Phase 3 part 2 (UET Lahore, site down) and Phase 2 part 2 (KMU/Sindh/NUMS) stay open in their own threads.
 
-## Next phase must do (Phase 3 part 2, then Phase 4)
+## Next phase must do (Phase 4 part 2, then Phase 5)
+- **UAF**: `web.uaf.edu.pk/Contents/admissions/un/adm_overview.html` → "Details/Advertisement of Undergraduate Admissions 2026-27" PDF (12.2 MB, `UploadFiles/Announcements/0b3c6ddc-….pdf`) should hold the merit formula; owner approval needed. Merit lists 2026-27 = ~1,400 candidate-wise PDFs at `web.uaf.edu.pk/Downloads/MeritListsView` (names; derive closing like UHS only for final lists, never store names).
+- **KU calculator**: academic % definition is in `uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf` (14.5 MB, ask). Open-merit (non-test) department closing figures not published yet.
+- **PU Hafiz/additional marks**: in `pu.edu.pk/downloads/Admission-Regulations-Book.pdf` (2.1 MB, ask) → add `bonus` to `pu.json`.
+- **Air University** (`au.edu.pk`, `portals.au.edu.pk` 403), **Bahria** (criteria not in page HTML; `cms.bahria.edu.pk` 403), **ITU** (eligibility only, no weights published), **IST** (Next.js page has no criteria): need owner screenshots/links of official merit criteria. Never use third-party weights.
+- `data_year` → 2026 in November (Phase 7): KU rows (year 2026) then enter the predictor; PU 2025 rows remain the previous-year reference.
+- TLS: `uaf.edu.pk` and `pucit.edu.pk` send incomplete chains. Fetch with a CA file = `/root/.ccr/ca-bundle.crt` + intermediates from the certs' AIA URLs (RapidSSL TLS RSA CA G1, Sectigo Public Server Authentication CA DV R36); never `-k`.
+
+## How things work now (only what changed)
+- **Pooled parts** (`assets/js/am.js` `aggregate()`): parts with the same `pool` are summed with `scale` (default 1) before dividing, pool weight = sum of their weights. PU: matric `scale 0.25`, fsc `scale 1`. Display weights (20/80, 15/60) are only exact at default totals; `hint` text replaces "Weight X%" under the input and in the formula table. Hand-checked: PU 1000/1100 + 950/1100 → 87.27 (= 1200/1375), +60/100 test → 80.45; 1200 Matric total → 85.71; IIUI → 88.18 / 71.23; UET Taxila example unchanged 82.84.
+- Merit tables show `shift` under the campus name. Calculator text says "open merit, latest list of each year" (not "final list").
+- Record field `predict: false` keeps a row out of the calculator/predictor (used for PU 5th-semester rows).
+- PU source PDF cells given in marks (Pakistan Studies), "Nil", "new program", the ambiguous IBIT BSBA evening cell, Sheikh Zayed boys/girls, Chemistry 5th semester and Energy & Environmental 5th semester are not stored. All 257 values were re-matched against the PDF text automatically (0 missing).
+
+## Phase 3 part 2 notes (engineering, still open in its own thread)
 - **NUST closing merit positions**: `ugadmissions.nust.edu.pk/result/closingmerit.aspx?sprog=<code>`; owner checked `sprog=mgt`, `cs`, `eng` on 2026-10-31: all empty (site moved to "Admission 2027"). No official NUST closing data online now; do not use third-party NUST positions. Re-check when the next cycle publishes. Ranks, not %, so they need their own column/page design.
 - **UET Lahore** (main gap; NUST + COMSATS calculators done): `apply.uet.edu.pk`, `admission.uet.edu.pk`, `uet.edu.pk` return 522; `nust.edu.pk`, `ugadmissions.nust.edu.pk`, `comsats.edu.pk`, `admissions.comsats.edu.pk`, `cuiatd.edu.pk` return 403 to this container; web.archive.org is cut off by the proxy. Owner was asked (2026-10-31) to upload: UET Lahore `MinimumAggregate2-1.pdf` + any 2025/2026 closing list, NUST merit criteria + closing/merit-position list, COMSATS campus-wise closing merit 2025. `lahore.comsats.edu.pk` (COMSATS Lahore campus site) **is** reachable — check it for the merit formula/closing lists before waiting on the owner. Then add `uet.json`, `nust.json`, `comsats.json` + `/uet-…/`, `/nust-…/`, `/comsats-…/` calculator and merit-list pages (keywords in MASTER-PLAN 3.2).
 - No official program-wise closing merit exists for FAST, NED (call lists in order of merit only: `neduet.edu.pk/sites/default/files/Admissions-2026/*_Call_List/Merit_Main.htm` → board-wise PDFs with names) or GIKI, and none found for UET Peshawar (notice board only). Do not add merit-list pages for them without an official per-program figure; never use third-party estimates.
@@ -19,7 +32,7 @@
 - To do: KMU (KP public `cas.kmu.edu.pk`, private `caspr.kmu.edu.pk/list.php`), Sindh (DUHS, JSMU, LUMHS, SZABMU), NUMS (`numspak.edu.pk` 403), UHS 2024 public BDS / private lists, `data/paa/mdcat.json`. Each new university = `data/universities/<slug>.json`, rows on `/mdcat-merit-list/` via another `[am_merit_table uni="…"]` under its own H2.
 - KMU private final lists and DUHS MBBS final list 2025-26 are orders of merit without college allocation (with CNICs): no closing merit; files deleted. Needs college-wise selection lists or KMU "closing aggregates" (owner will upload).
 
-## How things work now (only what changed)
+## How things work (from Phase 3, still true)
 - Calculator pages with `merit: []` still work: no "where can you get in" list, no `meritlist_path`. Test/score parts whose total the university does not state are labelled "score in %" (FAST, GIKI) with total 100.
 - UET Taxila record shape: `program` = "BSc … Engineering" / "BS Computer Science" / "BS Computer Science (pre-medical)", `campus` = "Main campus, Taxila", `field` computing/engineering, `list` = "Final", note = "Merit position at entry 2024 (Prospectus 2025, p. 136)". Reserved-category columns (J, L, N, R, T, S, X) are in the same table and not stored.
 - Hand-checked examples (Node `AM.aggregate` + live browser): UET Taxila 300/400, 500/550 + Hafiz, 700/1100 → 82.84 (prospectus says 82.841); UET Peshawar 70/100, 480/550, 1000/1100 → 79.00; NED 70/100, 480/550 → 76.91; FAST computing 60, 950/1100, 1000/1100 → 73.64 (engineering 78.44); GIKI 70, 1000/1100 → 73.14.
@@ -47,9 +60,13 @@
 - Rank Math / root `.htaccess` steps skipped: owner decision + Hostinger already forces https/non-www.
 
 ## Open items / blockers
-- **Owner:** upload UET Lahore / NUST / COMSATS files (above). Optional: city for `site.json author.city`.
+- **Owner:** approve UAF advertisement / KU prospectus / PU regulations downloads; send Air, Bahria, ITU, IST merit-criteria links or screenshots. Upload UET Lahore / NUST / COMSATS files (Phase 3 notes). Optional: city for `site.json author.city`.
 - **Deferred by owner decision:** GSC "Request indexing" and Bing import until the whole site is complete.
 - PageSpeed Insights not run from this container (quota). Owner/next phase: pagespeed.web.dev once on a calculator page.
+
+## Verification done (2026-10-31, live, Phase 4 part 1)
+- `/pu-aggregate-calculator/`, `/pu-merit-list/`, `/ku-merit-list/`, `/iiui-aggregate-calculator/`: 200, one H1, canonical, JSON-LD parses (calculators: WebPage + FAQPage + WebApplication; merit lists: CollectionPage + FAQPage + Dataset), all in `wp-sitemap-ampages-1.xml`; `scripts/check.py` 0 errors 0 warnings.
+- Playwright 360px live: PU 1000/950 → 87.27%, IIUI → 88.18%, no horizontal scroll, no JS errors; PU table 257 rows (HTML 169 KB), KU 46 rows with 27 visible by default.
 
 ## Verification done (2026-10-31, live, Phase 3 part 1)
 - All 7 new pages 200, one H1, canonical, title from tokens, JSON-LD parses (calculators: WebPage + FAQPage + WebApplication; merit list: CollectionPage + FAQPage + Dataset); sitemap lists all 20 pages; `scripts/check.py` 0 errors 0 warnings.
