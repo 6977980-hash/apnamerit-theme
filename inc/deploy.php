@@ -35,6 +35,9 @@ add_action(
 			header( 'X-LiteSpeed-Purge: *' );
 		}
 		do_action( 'litespeed_purge_all' );
+		// The Hostinger plugin clears its CDN (hCDN) when LiteSpeed reports a full purge; LiteSpeed
+		// only queues ours, so announce it ourselves. Without the plugin nothing listens.
+		did_action( 'litespeed_purged_all' ) || do_action( 'litespeed_purged_all' );
 		wp_cache_flush();
 		do_action( 'am_deployed' );
 	}
