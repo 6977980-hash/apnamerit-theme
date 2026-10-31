@@ -304,6 +304,18 @@
      "fetched": "2026-10-31"
     }
    ]
+  },
+  {
+   "name": "COMSATS University Islamabad (CUI)",
+   "website": "https://www.comsats.edu.pk/",
+   "field": "computing",
+   "documents": [
+    {
+     "label": "UG Prospectus 2024-25, p. 44 (merit weightage 10/40/50)",
+     "url": "https://ww2.comsats.edu.pk/ro/Prospectus/UG_Prospectus/UG-Prospectus-24-25.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
   }
  ]
 }

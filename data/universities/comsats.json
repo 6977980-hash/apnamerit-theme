@@ -1,0 +1,44 @@
+{
+ "slug": "comsats",
+ "name": "COMSATS University Islamabad (CUI)",
+ "short": "COMSATS",
+ "field": "computing",
+ "province": "",
+ "website": "https://www.comsats.edu.pk/",
+ "calculator_path": "/comsats-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Weightage from the UG Prospectus 2024-25 (p. 44), the latest UG prospectus on ww2.comsats.edu.pk (linked from lahore.comsats.edu.pk/new/prospectus). admissions.comsats.edu.pk returns 403 to the container; no closing merit stored.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "nts",
+   "label": "BS / BE programmes (NTS NAT)",
+   "source_url": "https://ww2.comsats.edu.pk/ro/Prospectus/UG_Prospectus/UG-Prospectus-24-25.pdf",
+   "source_note": "UG Prospectus 2024-25, p. 44: Matriculation 10%, Intermediate 40%, NTS test 50%, for both engineering and non-engineering bachelor's programs. Engineering needs a valid NTS score of at least 33% (PEC policy).",
+   "parts": [
+    {
+     "key": "test",
+     "label": "NTS NAT score in %",
+     "total": 100,
+     "weight": 50
+    },
+    {
+     "key": "fsc",
+     "label": "Intermediate / FSc",
+     "total": 1100,
+     "weight": 40
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 10
+    }
+   ]
+  }
+ ],
+ "merit": []
+}
