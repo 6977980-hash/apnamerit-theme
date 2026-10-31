@@ -17,6 +17,10 @@
 - llms.txt / llms-full.txt URLs now come from `site.json url` (`am_llms_url()`): after the Phase 7 deploy the file was written on the first post-deploy request, which arrived on Hostinger's temporary domain (`*.hostingersite.com`), so every link pointed there. Fixed in the follow-up commit.
 - `am_season_status()` prints `data/calendar.json → universities.<slug>.status` (with source link and "checked" date) once per university per page. `scripts/check.py` validates calendar.json (status + https source, official events need date + source, estimates need window + basis).
 
+## Indexing (owner approved 2026-10-31, after Phase 7; owner has an AdSense account, do NOT apply)
+- `inc/indexnow.php` (v0.10.1): key in `site.json → indexnow.key`, served at `/<key>.txt`. On `am_deployed`, pages whose entry/content file/university JSON changed are queued and sent to api.indexnow.org by WP-Cron (`am_indexnow_send`). Last result: response header `X-AM-IndexNow-Last` on the key file (time, URL count, HTTP code; 200/202 = accepted).
+- Google does not use IndexNow: owner requests indexing in GSC by hand (list in the thread); Bing: import the site from GSC in Bing Webmaster Tools.
+
 ## Recurring season ops (MASTER-PLAN Phase 7; also `data/calendar.json → ops`)
 - **Now → March 2027**: watch uhs.edu.pk for 2026-27 MBBS/BDS selection lists (rebuild with `scripts/uhs_closing.py`, 2026 rows, list names like 2025), pu.edu.pk for Merit-of-Last-Year-2026.pdf, KU open-merit Admissions 2027. Each new list: data JSON → check.py → merge → live check → update the calendar status line.
 - **May–June 2027**: `season_year` → 2027; "expected merit 2027" guides only for programs with ≥ 2 official years; refresh calendar statuses and events.

@@ -48,5 +48,10 @@
   },
   "share": {
     "whatsapp": "Mera {uni} aggregate {aggregate}% hai, apna check karo: {url}"
+  },
+  "indexnow": {
+    "enabled": true,
+    "key": "0d83509021466dd87ca164d3eabef1ad",
+    "note": "IndexNow (Bing, Yandex, Seznam, Naver). Key is public by design, served at /<key>.txt by inc/indexnow.php. After each deploy, pages whose content changed are submitted once (owner approved indexing 2026-10-31)."
   }
 }
