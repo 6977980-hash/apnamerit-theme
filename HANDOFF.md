@@ -8,7 +8,7 @@
 
 ## Next phase must do (Phase 6, plus pending data from Phase 2/3/4 threads)
 - Phase 6 per MASTER-PLAN section 8 (llms.txt, AEO audit, accessibility, PageSpeed ≥ 95 on the 10 heaviest pages, IndexNow, broken links). Heaviest HTML now: `/pu-merit-list/` (~170 KB, over the 150 KB budget), `/ku-merit-list/`, `/mdcat-merit-list/` (~136 KB), `/predictor/` (~116 KB; 305 rows of JSON). Consider trimming row HTML (shorter source links) or lazy-rendering non-default rows.
-- `/submit-merit-list/` is a mailto form (nothing stored, no third-party script). The plan's Tally embed + email list needs an owner Tally account: ask the owner if they want it.
+- `/submit-merit-list/` is a mailto form (nothing stored, no third-party script). Owner decided (2026-10-31): **no Tally**, keep the mailto form; ignore the plan's Tally embed / email list.
 - Program standalone pages: none built (4.6 doorway rule: needs ≥ 2 years + search demand evidence). Programs stay as row anchors `#p-<program-campus-shift>` on merit-list pages; predictor and calculator results link to them.
 - Trend SVG appears only where a program has ≥ 2 years in the default list/category (now UHS and KU). PU and UET Taxila get one automatically when a second year is added.
 
