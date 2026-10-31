@@ -163,6 +163,7 @@ add_filter(
 					'license'             => am_site( 'data_license.url' ),
 					'creditText'          => am_site( 'data_license.attribution' ),
 					'creator'             => array( '@id' => $base . '#organization' ),
+					'includedInDataCatalog' => am_find_page( '/data/' ) ? array( '@id' => home_url( '/data/#catalog' ) ) : null,
 					'isBasedOn'           => $ds['based_on'] ?? null,
 					'variableMeasured'    => $ds['variables'] ?? null,
 					'distribution'        => array(

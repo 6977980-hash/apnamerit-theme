@@ -2,20 +2,20 @@
  "_note": "Site navigation (no wp-admin menus). Every path must exist in data/pages.json (scripts/check.py enforces it).",
  "header": [
   {
-   "label": "MDCAT calculator",
-   "path": "/mdcat-aggregate-calculator/"
+   "label": "Calculators",
+   "path": "/aggregate-calculator/"
   },
   {
-   "label": "MDCAT merit list",
-   "path": "/mdcat-merit-list/"
+   "label": "Merit lists",
+   "path": "/merit-list/"
+  },
+  {
+   "label": "Predictor",
+   "path": "/predictor/"
   },
   {
    "label": "Methodology",
    "path": "/methodology/"
-  },
-  {
-   "label": "About",
-   "path": "/about/"
   }
  ],
  "footer": [
@@ -30,6 +30,18 @@
   {
    "label": "Data sources",
    "path": "/data-sources/"
+  },
+  {
+   "label": "Open data",
+   "path": "/data/"
+  },
+  {
+   "label": "Embed a calculator",
+   "path": "/embed/"
+  },
+  {
+   "label": "Submit a merit list",
+   "path": "/submit-merit-list/"
   },
   {
    "label": "Editorial policy",

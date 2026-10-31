@@ -172,7 +172,7 @@
         if (bad) bad.focus();
         return;
       }
-      store.set(key, { formula: f.id, values: values });
+      store.set(key, { formula: f.id, values: values, agg: r.aggregate });
       var agg = r.aggregate;
       var text = cfg.share.replace('{uni}', cfg.uni).replace('{aggregate}', agg.toFixed(2)).replace('{url}', cfg.url);
       var rows = '';
@@ -185,6 +185,9 @@
       if (cfg.rows && cfg.rows.length) {
         html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' closing merits of the last two years (open merit, latest list of each year). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
           chanceList(predict(agg, cfg.rows, cfg.band), 'No programs to compare yet.');
+      }
+      if (cfg.predUrl) {
+        html += '<p><a href="' + esc(cfg.predUrl + '?agg=' + agg.toFixed(2) + (cfg.rows && cfg.rows.length ? '&uni=' + encodeURIComponent(cfg.uni) : '')) + '">Open this aggregate in the merit predictor</a></p>';
       }
       out.hidden = false;
       out.innerHTML = html;
@@ -208,6 +211,33 @@
     var key = 'am:predictor';
     var saved = store.get(key);
     if (saved) $$('input,select', form).forEach(function (i) { if (saved[i.name] != null) i.value = saved[i.name]; });
+    // ?agg=81.5&uni=PU (from calculators and merit-list pages) wins over the saved values.
+    var qs = {};
+    location.search.replace(/[?&]([^=&]+)=([^&]*)/g, function (m, k, v) { qs[k] = decodeURIComponent(v.replace(/\+/g, ' ')); });
+    if (qs.agg) {
+      form.agg.value = qs.agg;
+      if (form.uni) form.uni.value = qs.uni || '';
+      saved = true;
+    }
+    // Aggregates saved by the calculators on this device → one-tap buttons.
+    var box = $('.am-saved', form);
+    var mine = (cfg.saved || []).map(function (s) {
+      var v = store.get('am:calc:' + s.id);
+      return v && typeof v.agg === 'number' ? { uni: s.uni, agg: v.agg } : null;
+    }).filter(Boolean);
+    if (box && mine.length) {
+      box.innerHTML = '<p class="am-muted">Your saved aggregates:</p>' + mine.map(function (m) {
+        return '<button type="button" class="am-btn" data-uni="' + esc(m.uni) + '" data-agg="' + m.agg.toFixed(2) + '">' + esc(m.uni) + ' ' + pct(m.agg) + '</button>';
+      }).join(' ');
+      box.hidden = false;
+      box.addEventListener('click', function (e) {
+        var b = e.target.closest('button[data-agg]');
+        if (!b) return;
+        form.agg.value = b.getAttribute('data-agg');
+        if (form.uni) form.uni.value = b.getAttribute('data-uni');
+        run(false);
+      });
+    }
 
     function run(quiet) {
       var agg = num(form.agg.value);
@@ -218,8 +248,8 @@
         form.agg.focus();
         return;
       }
-      var filter = { field: form.field ? form.field.value : '', prov: form.prov ? form.prov.value : '' };
-      store.set(key, { agg: form.agg.value, field: filter.field, prov: filter.prov });
+      var filter = { uni: form.uni ? form.uni.value : '', field: form.field ? form.field.value : '', prov: form.prov ? form.prov.value : '' };
+      store.set(key, { agg: form.agg.value, uni: filter.uni, field: filter.field, prov: filter.prov });
       out.hidden = false;
       out.innerHTML = chanceList(predict(agg, cfg.rows, cfg.band, filter), 'No programs match these filters yet.');
     }
@@ -268,6 +298,69 @@
         });
         rows.forEach(function (r) { tbody.appendChild(r); });
       });
+    });
+  });
+
+  // ---------------------------------------------------------------- embed builder
+  $$('[data-am-embed]').forEach(function (box) {
+    var cfg = data(box, 'am-embed-data');
+    if (!cfg) return;
+    var pick = $('select', box), code = $('textarea', box), copy = $('[data-am-copy]', box), prev = $('.am-embed-preview', box);
+    var origin = location.origin;
+    function snippet(slug) {
+      var t = cfg[slug], id = 'am-embed-' + slug;
+      return '<iframe id="' + id + '" src="' + t.src + '" title="' + t.label + '" style="width:100%;max-width:640px;height:720px;border:1px solid #dfe3e1;border-radius:8px" loading="lazy"></iframe>\n' +
+        '<p style="font-size:14px"><a href="' + t.page + '">' + t.label + '</a> by Apna Merit</p>\n' +
+        '<script>addEventListener("message",function(e){if(e.origin==="' + origin + '"&&e.data&&e.data.amEmbed==="' + slug + '"){document.getElementById("' + id + '").style.height=e.data.h+"px"}})</' + 'script>';
+    }
+    function update() {
+      code.value = snippet(pick.value);
+      copy.setAttribute('data-am-copy', code.value);
+      prev.hidden = true;
+      prev.innerHTML = '';
+    }
+    pick.addEventListener('change', update);
+    $('[data-am-preview]', box).addEventListener('click', function () {
+      var t = cfg[pick.value];
+      prev.innerHTML = '<iframe src="' + esc(t.src) + '" title="' + esc(t.label) + '" style="width:100%;height:720px;border:1px solid #dfe3e1;border-radius:8px"></iframe>';
+      prev.hidden = false;
+    });
+    addEventListener('message', function (e) {
+      var f = $('iframe', prev);
+      if (f && e.origin === origin && e.data && e.data.amEmbed === pick.value) f.style.height = e.data.h + 'px';
+    });
+  });
+
+  // ---------------------------------------------------------------- embedded widget: report height to the parent page
+  var embedId = document.body && document.body.getAttribute('data-am-embed-id');
+  if (embedId && window.parent !== window) {
+    var lastH = 0;
+    var report = function () {
+      var h = Math.ceil(document.documentElement.scrollHeight);
+      if (Math.abs(h - lastH) > 2) { lastH = h; window.parent.postMessage({ amEmbed: embedId, h: h }, '*'); }
+    };
+    if (window.ResizeObserver) new ResizeObserver(report).observe(document.body);
+    addEventListener('load', report);
+    report();
+  }
+
+  // ---------------------------------------------------------------- submit a merit list (mailto, nothing stored)
+  $$('form[data-am-submit]').forEach(function (form) {
+    var out = $('.am-result', form);
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var uni = form.uni.value.trim(), url = form.url.value.trim();
+      if (!uni || !/^https?:\/\/\S+\.\S+/.test(url)) {
+        out.hidden = false;
+        out.innerHTML = '<p class="am-error" role="alert">Enter the university and the official link (starting with https://).</p>';
+        (uni ? form.url : form.uni).focus();
+        return;
+      }
+      var subject = 'Merit list: ' + uni + ' ' + form.year.value + ' (' + form.list.value + ')';
+      var body = 'University: ' + uni + '\nList: ' + form.list.value + '\nYear: ' + form.year.value + '\nOfficial link: ' + url + '\n\n' + form.note.value;
+      location.href = 'mailto:' + form.getAttribute('data-am-submit') + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      out.hidden = false;
+      out.innerHTML = '<p>Your email app should open now. If nothing happens, send the link to <a href="mailto:' + esc(form.getAttribute('data-am-submit')) + '">' + esc(form.getAttribute('data-am-submit')) + '</a>. Shukriya!</p>';
     });
   });
 

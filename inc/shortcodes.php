@@ -201,8 +201,9 @@ function am_sc_calculator( $atts ): string {
 		'rows'     => am_predict_rows( $uni ),
 		'band'     => AM_BAND,
 		'meritUrl' => ! empty( $uni['meritlist_path'] ) ? home_url( (string) $uni['meritlist_path'] ) : '',
-		'url'      => home_url( am_request_path() ),
+		'url'      => (string) apply_filters( 'am_calc_url', home_url( am_request_path() ), $uni ),
 		'share'    => (string) am_site( 'share.whatsapp' ),
+		'predUrl'  => am_find_page( '/predictor/' ) ? home_url( '/predictor/' ) : '',
 	);
 
 	return '<form class="am-calc" data-am-calc="' . esc_attr( $id ) . '" novalidate>'
@@ -340,7 +341,7 @@ function am_sc_merit_table( $atts ): string {
 			'temporal'    => min( $years ) . '/' . max( $years ),
 			'based_on'    => $sources,
 			'variables'   => array( 'Closing aggregate (%)' ),
-			'json_url'    => AM_URI . '/data/universities/' . rawurlencode( (string) ( $uni['slug'] ?? $atts['uni'] ) ) . '.json',
+			'json_url'    => am_data_url( (string) ( $uni['slug'] ?? $atts['uni'] ) ),
 			'modified'    => (string) ( $uni['updated'] ?? '' ) ?: null,
 		)
 	);
@@ -349,7 +350,10 @@ function am_sc_merit_table( $atts ): string {
 		. ( $filters ? '<div class="am-filters">' . $filters . '</div>' : '' )
 		. '<p class="am-muted am-count" aria-live="polite"></p>'
 		. '<div class="am-table-wrap"><table class="am-table am-sortable"><caption>' . esc_html( $short . ' merit list: closing aggregates' . ( '' !== $only ? ' (' . $only . ')' : '' ) ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $body . '</tbody></table></div>'
-		. '</div>';
+		. '<p class="am-muted am-data-link">Download this data: <a href="' . esc_url( am_data_url( (string) ( $uni['slug'] ?? $atts['uni'] ) ) ) . '">' . esc_html( $short ) . ' JSON</a> (' . esc_html( (string) am_site( 'data_license.attribution' ) ) . ', ' . esc_html( (string) am_site( 'data_license.name' ) ) . ').</p>'
+		. am_trend_svg( $uni, $def['list'], $def['category'] )
+		. '</div>'
+		. am_check_box( $uni );
 }
 
 // ------------------------------------------------------------------ [am_predictor]
@@ -357,11 +361,23 @@ function am_sc_predictor( $atts ): string {
 	$rows   = array();
 	$fields = array();
 	$provs  = array();
+	$unis   = array();
+	$saved  = array();
 	foreach ( am_unis() as $slug => $uni ) {
 		$short = (string) ( $uni['short'] ?? $uni['name'] ?? $slug );
 		$url   = ! empty( $uni['meritlist_path'] ) ? home_url( (string) $uni['meritlist_path'] ) : '';
 		$prov  = (string) ( $uni['province'] ?? '' );
-		foreach ( am_predict_rows( $uni ) as $r ) {
+		$prows = am_predict_rows( $uni );
+		if ( $prows ) {
+			$unis[ $short ] = true;
+			if ( ! empty( $uni['formulas'] ) ) {
+				$saved[] = array(
+					'id'  => am_slug( (string) ( $uni['slug'] ?? $slug ) ),
+					'uni' => $short,
+				);
+			}
+		}
+		foreach ( $prows as $r ) {
 			$r['uni']  = $short;
 			$r['prov'] = $prov;
 			$r['url']  = $url ? $url . '#' . $r['anchor'] : '';
@@ -398,8 +414,11 @@ function am_sc_predictor( $atts ): string {
 	};
 	ksort( $fields );
 	ksort( $provs );
+	ksort( $unis, SORT_FLAG_CASE | SORT_STRING );
 	return '<form class="am-predictor" data-am-predictor novalidate>'
-		. '<div class="am-field"><label for="am-pr-agg">Your aggregate (%)</label><input id="am-pr-agg" name="agg" type="number" inputmode="decimal" min="0" max="100" step="any" required></div>'
+		. '<div class="am-saved" hidden></div>'
+		. '<div class="am-field"><label for="am-pr-agg">Your aggregate (%)</label><input id="am-pr-agg" name="agg" type="number" inputmode="decimal" min="0" max="100" step="any" required><small>Each university uses its own formula, so use the aggregate you got from that university\'s calculator and pick the university below.</small></div>'
+		. $select( 'uni', 'University', $unis )
 		. $select( 'field', 'Field', $fields )
 		. $select( 'prov', 'Province', $provs )
 		. '<div class="am-actions"><button type="submit" class="am-btn am-btn--primary">Show my chances</button></div>'
@@ -408,8 +427,9 @@ function am_sc_predictor( $atts ): string {
 		. am_json_script(
 			'am-pred-data',
 			array(
-				'rows' => $rows,
-				'band' => AM_BAND,
+				'rows'  => $rows,
+				'band'  => AM_BAND,
+				'saved' => $saved,
 			)
 		)
 		. '</form>';

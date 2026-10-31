@@ -21,3 +21,4 @@ require_once AM_DIR . '/inc/seo.php';
 require_once AM_DIR . '/inc/template-tags.php';
 require_once AM_DIR . '/inc/schema.php';
 require_once AM_DIR . '/inc/shortcodes.php';
+require_once AM_DIR . '/inc/growth.php';
