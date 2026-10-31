@@ -30,6 +30,9 @@ add_action(
 			return;
 		}
 		update_option( 'am_deploy_fingerprint', $now, true );
+		// Which request ran the purge (diagnostics for Fix 6): time, path, SAPI, whether headers could still be sent.
+		$path = (string) wp_parse_url( (string) ( $_SERVER['REQUEST_URI'] ?? '' ), PHP_URL_PATH ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		update_option( 'am_deploy_last', gmdate( 'Y-m-d\\TH:i:s\\Z' ) . ' ' . substr( sanitize_text_field( $path ), 0, 80 ) . ' ' . PHP_SAPI . ' ' . ( headers_sent() ? 'headers-sent' : 'header-ok' ) . ' lscwp=' . ( defined( 'LSCWP_V' ) ? LSCWP_V : 'none' ), false );
 		// The server itself honours this header, with or without the plugin.
 		if ( ! headers_sent() ) {
 			header( 'X-LiteSpeed-Purge: *' );
@@ -56,5 +59,6 @@ add_action(
 			return;
 		}
 		header( 'Cache-Control: public, max-age=0, s-maxage=300' );
+		header( 'X-AM-Deploy: ' . AM_VERSION . ' purged ' . (string) get_option( 'am_deploy_last', '-' ) );
 	}
 );
