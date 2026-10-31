@@ -1,0 +1,39 @@
+{
+ "slug": "ned",
+ "name": "NED University of Engineering and Technology, Karachi",
+ "short": "NED",
+ "field": "engineering",
+ "province": "Sindh",
+ "website": "https://www.neduet.edu.pk/",
+ "calculator_path": "/ned-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Merit Score from the Admissions Schedule 2026 (section 2) and FAQ 2026 (Q4). NED publishes call lists in order of merit, not program-wise closing merits, so there are no merit records.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "ned",
+   "label": "BE / BS programmes (NED entry test)",
+   "source_url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/ADMISSIONS_SCHEDULE_2026.pdf",
+   "source_note": "MS = 40% (HSC Part I / O-level / equivalent) + 60% (NED entry test). FAQ 2026 entry test Q8: four sections of 25 marks each (100).",
+   "parts": [
+    {
+     "key": "test",
+     "label": "NED entry test",
+     "total": 100,
+     "weight": 60,
+     "total_source_url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/FAQ.pdf"
+    },
+    {
+     "key": "fsc",
+     "label": "HSC Part-I (Inter 1st year)",
+     "total": 550,
+     "weight": 40
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

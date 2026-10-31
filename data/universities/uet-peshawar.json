@@ -1,0 +1,65 @@
+{
+ "slug": "uet-peshawar",
+ "name": "University of Engineering and Technology (UET), Peshawar",
+ "short": "UET Peshawar",
+ "field": "engineering",
+ "province": "Khyber Pakhtunkhwa",
+ "website": "https://www.uetpeshawar.edu.pk/",
+ "calculator_path": "/uet-peshawar-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Formulas from UG Prospectus 2026-27, admission rules section 6.1 (BSc Engineering) and BS programmes section 6.1 (BS Computer Science). No official program-wise closing merit found yet.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "etea",
+   "label": "BSc Engineering (ETEA / entrance test)",
+   "source_url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
+   "source_note": "UG Prospectus 2026-27, Determination of Merit 6.1: 10% SSC, 40% Intermediate Part-I (adjusted marks), 50% entrance test. Rule 5.3: the test has 100 MCQs, one mark each, no negative marking.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "Entrance test",
+     "total": 100,
+     "weight": 50,
+     "total_source_url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf"
+    },
+    {
+     "key": "fsc",
+     "label": "FSc Part-I (adjusted marks)",
+     "total": 550,
+     "weight": 40
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 10
+    }
+   ]
+  },
+  {
+   "id": "bscs",
+   "label": "BS Computer Science (no entry test)",
+   "source_url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
+   "source_note": "UG Prospectus 2026-27, BS programmes, Determination of Merit 6.1: 40% SSC, 60% Intermediate Part-I (adjusted marks).",
+   "parts": [
+    {
+     "key": "fsc",
+     "label": "FSc Part-I (adjusted marks)",
+     "total": 550,
+     "weight": 60
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 40
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

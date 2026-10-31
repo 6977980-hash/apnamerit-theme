@@ -1,0 +1,70 @@
+{
+ "slug": "fast",
+ "name": "FAST National University of Computer and Emerging Sciences (FAST-NUCES)",
+ "short": "FAST",
+ "field": "computing",
+ "province": "",
+ "website": "https://nu.edu.pk/",
+ "calculator_path": "/fast-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Weights from the official Eligibility Criteria page (last updated 10-Aug-2026). FAST does not publish program-wise closing merits.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "computing",
+   "label": "BS Computing (CS, AI, Data Science, Cyber Security, Software Engineering)",
+   "source_url": "https://nu.edu.pk/Admissions/EligibilityCriteria",
+   "source_note": "Selection criteria for BS computing programs: admission test 50%, HSSC 40%, SSC 10%.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "Admission test score in % (FAST / NTS NAT)",
+     "total": 100,
+     "weight": 50
+    },
+    {
+     "key": "fsc",
+     "label": "FSc / HSSC",
+     "total": 1100,
+     "weight": 40
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 10
+    }
+   ]
+  },
+  {
+   "id": "engineering",
+   "label": "BS Engineering (Civil, Electrical, Computer)",
+   "source_url": "https://nu.edu.pk/Admissions/EligibilityCriteria",
+   "source_note": "Selection criteria for BS engineering programs: admission test 33%, HSSC 50%, SSC 17%.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "Admission test score in % (FAST / NTS NAT-IE)",
+     "total": 100,
+     "weight": 33
+    },
+    {
+     "key": "fsc",
+     "label": "FSc / HSSC",
+     "total": 1100,
+     "weight": 50
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 17
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

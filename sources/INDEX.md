@@ -17,3 +17,12 @@ Every number in `data/` must point to one of these via its `source_url`.
 | UHS | 2025 | Private MBBS 5th (final) / 1st selection lists | https://uhs.edu.pk/5selecionlistprivateom25.php , https://uhs.edu.pk/1selecionlistprivateom25.php | 2026-10-31 | — | HTML |
 | UHS | 2025 | Private BDS 3rd / 1st selection lists | https://uhs.edu.pk/3selecionlistprivatebdsom25.php , https://uhs.edu.pk/1selecionlistprivatebdsom25.php | 2026-10-31 | — | HTML; 3rd is the latest published |
 | UHS | 2024 | Public MBBS 17th (last) selection list, open merit | https://uhs.edu.pk/17thselectionlistpublic24.php (17 PDFs `admissions2024data/17<college>24.pdf`) | 2026-10-31 | 17*24.pdf | 4.4 MB total |
+| UET Taxila | 2026 | Admission eligibility page (merit formula 33/50/17; BS Math/Physics 70/30) | https://admissions.uettaxila.edu.pk/Admission_Eligibility.php | 2026-10-31 | — | HTML |
+| UET Taxila | 2026 | Merit / aggregate calculator (default totals: SSC 1100, test 400) | https://admissions.uettaxila.edu.pk/Calculator.php | 2026-10-31 | — | HTML |
+| UET Taxila | 2025 | UG Prospectus 2025: 24.11 formula + Hafiz example; p. 136 Merit Position Entry 2024 (closing, all categories) | https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf | 2026-10-31 | uett_pros25.pdf | 16 MB, 165 pages; open merit column used |
+| UET Peshawar | 2026 | UG Prospectus 2026-27 (merit 10/40/50; BS CS 40/60; test 100 MCQs) | https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf | 2026-10-31 | uetp_pros26.pdf | 18 MB; no closing merit inside |
+| NED | 2026 | Admissions Schedule 2026 (MS = 40% HSC-I + 60% test) | https://www.neduet.edu.pk/sites/default/files/Admissions-2026/ADMISSIONS_SCHEDULE_2026.pdf | 2026-10-31 | ned_sched.pdf | 0.5 MB |
+| NED | 2026 | Undergraduate FAQ 2026 (test 4 x 25 marks, 50% pass) | https://www.neduet.edu.pk/sites/default/files/Admissions-2026/FAQ.pdf | 2026-10-31 | ned_faq.pdf | 0.3 MB; call lists (Merit_Main.htm) are order of merit only |
+| FAST-NUCES | 2026 | Eligibility Criteria page (computing 50/40/10, engineering 33/50/17) | https://nu.edu.pk/Admissions/EligibilityCriteria | 2026-10-31 | — | HTML, updated 10-Aug-2026 |
+| FAST-NUCES | 2026 | Prospectus 2026: Admission Information | https://www.nu.edu.pk/Admissions/ProspectusUpload/Admission%20Information.pdf | 2026-10-31 | fast_info.pdf | 1.1 MB |
+| GIKI | 2026 | Eligibility and Comparative Assessment Criteria (85% test, 15% SSC) | https://giki.edu.pk/admissions/admissions-undergraduates/eligibility-criteria/ | 2026-10-31 | — | HTML |

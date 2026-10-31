@@ -1,0 +1,209 @@
+{
+ "slug": "uet-taxila",
+ "name": "University of Engineering and Technology (UET), Taxila",
+ "short": "UET Taxila",
+ "field": "engineering",
+ "province": "Punjab",
+ "website": "https://www.uettaxila.edu.pk/",
+ "calculator_path": "/uet-taxila-aggregate-calculator/",
+ "meritlist_path": "/uet-taxila-merit-list/",
+ "updated": "2026-10-31",
+ "_note": "Formula from the admissions portal eligibility page and Prospectus 2025 section 24.11. Merit = 'Merit Position Entry - 2024' table (open merit column A), Prospectus 2025 p. 136: last admitted aggregate per department, based on complete HSSC results.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "ecat",
+   "label": "BSc Engineering / BS Computer Science (ECAT or TCAT)",
+   "source_url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+   "source_note": "Eligibility page: 50% HSSC (Part-I) + 33% ECAT + 17% SSC. Prospectus 2025, 24.11 case 1: 33 x test/total + 17 x SSC/total + 50 x (HSSC Part-I + NCC + Hifz-e-Quran)/total; worked example adds 20 marks for Hafiz-e-Quran. Default totals (SSC 1100, test 400) from the portal calculator.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "Entry test (ECAT / TCAT)",
+     "total": 400,
+     "weight": 33,
+     "total_source_url": "https://admissions.uettaxila.edu.pk/Calculator.php"
+    },
+    {
+     "key": "fsc",
+     "label": "FSc Part-I (HSSC 1st year)",
+     "total": 550,
+     "weight": 50,
+     "total_source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf"
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 17,
+     "total_source_url": "https://admissions.uettaxila.edu.pk/Calculator.php"
+    }
+   ],
+   "bonus": [
+    {
+     "key": "hafiz",
+     "label": "Hafiz-e-Quran (+20 marks in FSc Part-I)",
+     "part": "fsc",
+     "marks": 20
+    }
+   ]
+  },
+  {
+   "id": "science",
+   "label": "BS Mathematics / BS Physics (no entry test)",
+   "source_url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+   "source_note": "Eligibility page, group 02: 70% HSSC (Part-I) + 30% SSC.",
+   "parts": [
+    {
+     "key": "fsc",
+     "label": "FSc Part-I (HSSC 1st year)",
+     "total": 550,
+     "weight": 70
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 30
+    }
+   ]
+  }
+ ],
+ "merit": [
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Software Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 79.435,
+   "field": "computing",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BS Computer Science",
+   "campus": "Main campus, Taxila",
+   "closing": 77.979,
+   "field": "computing",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BS Computer Science (pre-medical)",
+   "campus": "Main campus, Taxila",
+   "closing": 78.184,
+   "field": "computing",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Computer Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 70.824,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Civil Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 65.519,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Mechatronics Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 63.563,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Electronics Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 62.334,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Telecommunication Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 59.547,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Mechanical Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 59.009,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Electrical Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 58.063,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Industrial & Manufacturing Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 53.781,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  },
+  {
+   "year": 2024,
+   "list": "Final",
+   "category": "Open merit",
+   "program": "BSc Environmental Engineering",
+   "campus": "Main campus, Taxila",
+   "closing": 53.071,
+   "field": "engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "note": "Merit position at entry 2024 (Prospectus 2025, p. 136)"
+  }
+ ]
+}

@@ -4,14 +4,16 @@
   {
    "path": "/",
    "keyword": "aggregate calculator",
-   "title": "Aggregate Calculator Pakistan {season_year} \u2013 All Universities",
+   "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<p>Engineering and general universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<p>UET Lahore, NUST, COMSATS and general universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/mdcat-aggregate-calculator/",
     "/mdcat-merit-list/",
+    "/uet-taxila-aggregate-calculator/",
+    "/uet-taxila-merit-list/",
     "/methodology/",
     "/data-sources/",
     "/about/"
@@ -20,7 +22,7 @@
   {
    "path": "/about/",
    "keyword": "about apna merit",
-   "title": "About Apna Merit \u2013 Who We Are and Why",
+   "title": "About Apna Merit – Who We Are and Why",
    "description": "Apna Merit is a free, independent site for Pakistani students: official aggregate formulas and closing merits, each linked to its official source.",
    "h1": "About Apna Merit",
    "crumb": "About",
@@ -74,7 +76,7 @@
   {
    "path": "/contact/",
    "keyword": "contact apna merit",
-   "title": "Contact Apna Merit \u2013 Report a Mistake",
+   "title": "Contact Apna Merit – Report a Mistake",
    "description": "Contact Apna Merit to report a wrong figure, a broken source link or a newer official merit list. Confirmed errors are corrected within 48 hours.",
    "h1": "Contact us",
    "crumb": "Contact",
@@ -417,6 +419,501 @@
     "/mdcat-aggregate-calculator/",
     "/guides/mdcat-aggregate-formula/",
     "/methodology/"
+   ]
+  },
+  {
+   "path": "/uet-taxila-aggregate-calculator/",
+   "keyword": "uet taxila aggregate calculator",
+   "title": "UET Taxila Aggregate Calculator {season_year} (ECAT Formula)",
+   "description": "UET Taxila aggregate calculator {season_year}: 33% ECAT, 50% FSc Part-I, 17% Matric, with Hafiz marks. Compare your aggregate with last closing merits.",
+   "h1": "UET Taxila Aggregate Calculator {season_year}",
+   "crumb": "UET Taxila aggregate calculator",
+   "subtitle": "Official formula: 33% ECAT/TCAT + 50% FSc Part-I + 17% Matric",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The UET Taxila aggregate for {season_year} = 33% entry test (ECAT or TCAT) + 50% FSc Part-I + 17% Matric, per the university's admission rules. Example from the UET Taxila prospectus: 300/400 test, 500/550 FSc Part-I plus 20 Hafiz marks and 700/1100 Matric give 82.84%. Enter your marks below.",
+   "answer_source": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+   "content_file": "uet-taxila-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the UET Taxila aggregate formula for {season_year}?",
+     "a": "For BSc Engineering and BS Computer Science: 33% entry test (ECAT or TCAT), 50% FSc Part-I and 17% Matric. BS Mathematics and BS Physics use 70% FSc Part-I and 30% Matric."
+    },
+    {
+     "q": "Is ECAT out of 400 for UET Taxila?",
+     "a": "UET Taxila's own calculator uses 400 as the entry test total. If your test has another total, change it in the calculator."
+    },
+    {
+     "q": "Does UET Taxila add Hafiz-e-Quran marks?",
+     "a": "Yes. The prospectus adds 20 Hafiz-e-Quran marks (and NCC marks, where applicable) to FSc Part-I marks for merit only, not for eligibility."
+    },
+    {
+     "q": "Why does UET Taxila use FSc Part-I marks?",
+     "a": "The merit lists are made before FSc Part-II results are out, so the formula uses first-year (Part-I) marks. DAE holders use their diploma marks instead."
+    },
+    {
+     "q": "What aggregate is needed for Software Engineering at UET Taxila?",
+     "a": "Software Engineering closed at 79.435% on open merit for 2024 entry, the highest of all UET Taxila programs. Computer Science closed at 77.979%."
+    },
+    {
+     "q": "What is the lowest closing merit at UET Taxila?",
+     "a": "For 2024 entry, Environmental Engineering closed lowest at 53.071% on open merit, followed by Industrial & Manufacturing at 53.781%."
+    },
+    {
+     "q": "UET Taxila ka aggregate kaise nikalain?",
+     "a": "Entry test marks ko total se divide kar ke 33 se multiply karein, FSc Part-I ko total se divide kar ke 50 se aur Matric ko total se divide kar ke 17 se. Teeno ko jama kar lein.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UET Taxila mein kitna aggregate chahiye?",
+     "a": "2024 mein Software Engineering 79.435% par aur Computer Science 77.979% par close hui. Zyada tar engineering programs 58% se 66% ke darmiyan close hue.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>UET Taxila ka formula: <strong>entry test (ECAT/TCAT) 33%, FSc Part-I 50% aur Matric 17%</strong>. Hafiz-e-Quran ho to FSc mein 20 marks barh jate hain.</p><p>Misaal: test 300/400, FSc Part-I 500/550 (+20 Hafiz) aur Matric 700/1100 ho to aggregate 82.84% banta hai. Phir <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> se pichle saal ka closing merit milayein.</p>",
+   "sources": [
+    {
+     "label": "UET Taxila admissions: Admission eligibility and merit formula",
+     "url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Taxila UG Prospectus 2025, section 24.11 (weighted percentage) and p. 136 (Merit Position Entry 2024)",
+     "url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Taxila admissions: merit / aggregate calculator (default totals)",
+     "url": "https://admissions.uettaxila.edu.pk/Calculator.php",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/uet-taxila-merit-list/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/uet-peshawar-aggregate-calculator/",
+    "/ned-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/uet-peshawar-aggregate-calculator/",
+   "keyword": "uet peshawar aggregate calculator",
+   "title": "UET Peshawar Aggregate Calculator {season_year} (ETEA Formula)",
+   "description": "UET Peshawar aggregate calculator {season_year}: 50% entrance test, 40% FSc Part-I and 10% Matric for BSc Engineering, plus the BS Computer Science formula.",
+   "h1": "UET Peshawar Aggregate Calculator {season_year}",
+   "crumb": "UET Peshawar aggregate calculator",
+   "subtitle": "Official formula: 50% entrance test + 40% FSc Part-I + 10% Matric",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The UET Peshawar aggregate for BSc Engineering = 50% entrance test + 40% Intermediate Part-I (adjusted marks) + 10% SSC, per the UG Prospectus 2026-27. The test has 100 one-mark MCQs. Example: 70/100 test, 480/550 Part-I and 1000/1100 Matric give 79.00%. Enter your marks below.",
+   "answer_source": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
+   "content_file": "uet-peshawar-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the UET Peshawar aggregate formula?",
+     "a": "For BSc Engineering: 50% entrance test, 40% Intermediate Part-I (adjusted marks) and 10% SSC, according to the UG Prospectus 2026-27."
+    },
+    {
+     "q": "How many marks is the UET Peshawar entrance test?",
+     "a": "For 2026-27 the engineering paper has 100 MCQs, one mark each, with no negative marking. The pre-medical paper has 65 MCQs, and 65 marks count as 100%."
+    },
+    {
+     "q": "What is the BS Computer Science formula at UET Peshawar?",
+     "a": "BS Computer Science has no entrance test: 40% SSC and 60% Intermediate Part-I (adjusted marks)."
+    },
+    {
+     "q": "What are adjusted marks?",
+     "a": "UET Peshawar deducts marks for papers passed in a later attempt (at most 20 marks) and 10 marks for Mathematics taken as an additional subject. Hafiz-e-Quran candidates who pass the university's test get 20 extra marks."
+    },
+    {
+     "q": "Where can I see the UET Peshawar closing merit?",
+     "a": "UET Peshawar puts revised merit lists on its main campus notice board. We have not found an official program-wise closing merit online, so we do not show one yet."
+    },
+    {
+     "q": "UET Peshawar ka aggregate kaise nikalta hai?",
+     "a": "Entrance test ka 50%, FSc Part-I ka 40% aur Matric ka 10%. Har marks ko total se divide karein, weight se multiply karein aur jama kar lein.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Kya UET Peshawar ke test mein negative marking hai?",
+     "a": "Nahi. 2026-27 ke prospectus ke mutabiq har sahi jawab ka aik mark hai aur negative marking nahi hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>UET Peshawar BSc Engineering ka formula: <strong>entrance test 50%, FSc Part-I 40% aur Matric 10%</strong>. Test 100 MCQs ka hai, negative marking nahi.</p><p>Misaal: test 70/100, Part-I 480/550 aur Matric 1000/1100 ho to aggregate 79.00% banta hai. BS Computer Science mein test nahi: Matric 40% aur Part-I 60%.</p>",
+   "sources": [
+    {
+     "label": "UET Peshawar UG Prospectus 2026-27: Admission Rules 5.3, 6.1, 6.3; BS programmes 6.1",
+     "url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/uet-taxila-merit-list/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/uet-taxila-aggregate-calculator/",
+    "/ned-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/ned-aggregate-calculator/",
+   "keyword": "ned aggregate calculator",
+   "title": "NED Aggregate Calculator {season_year} (Merit Score Formula)",
+   "description": "NED aggregate calculator {season_year}: merit score = 40% HSC Part-I + 60% NED entry test (out of 100). Enter your marks and get your NED merit score.",
+   "h1": "NED Aggregate Calculator {season_year}",
+   "crumb": "NED aggregate calculator",
+   "subtitle": "Official formula: 40% HSC Part-I + 60% NED entry test",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "NED University's merit score for {season_year} = 40% HSC Part-I (or O-level / equivalent) + 60% NED entry test, per its Admissions Schedule 2026. The test has four 25-mark sections (100). Example: 70/100 in the test and 480/550 in HSC Part-I give a merit score of 76.91%. Enter your marks below.",
+   "answer_source": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/ADMISSIONS_SCHEDULE_2026.pdf",
+   "content_file": "ned-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the NED merit formula for {season_year}?",
+     "a": "Merit Score = 40% HSC Part-I (or O-level / equivalent) marks + 60% NED entry test marks, as set in the Admissions Schedule 2026."
+    },
+    {
+     "q": "Are Matric marks counted at NED?",
+     "a": "No. For HSC candidates the NED merit score uses only HSC Part-I and the entry test."
+    },
+    {
+     "q": "How many marks is the NED entry test?",
+     "a": "The pre-admission test is computer based with four sections of 25 marks each, so 100 in total. You need at least 50% to qualify."
+    },
+    {
+     "q": "Can I take the NED entry test twice?",
+     "a": "Yes. NED holds the test twice and counts the higher of your two scores."
+    },
+    {
+     "q": "Does NED publish a closing percentage?",
+     "a": "No. NED publishes provisional call lists in order of merit, not a closing percentage per discipline."
+    },
+    {
+     "q": "NED ka merit kaise banta hai?",
+     "a": "NED entry test ka 60% aur HSC Part-I ka 40%. Matric ke marks shamil nahi hote.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "NED test mein pass hone ke liye kitne marks chahiye?",
+     "a": "Test mein kam az kam 50% marks chahiye, yani 100 mein se 50.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>NED ka merit score: <strong>entry test 60% aur HSC Part-I 40%</strong>. Matric ke marks is mein nahi aate. Test 100 marks ka hai aur pass hone ke liye 50% chahiye.</p><p>Misaal: test 70/100 aur HSC Part-I 480/550 ho to merit score 76.91% banta hai.</p>",
+   "sources": [
+    {
+     "label": "NED Admissions Schedule 2026, section 2 (Merit Score)",
+     "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/ADMISSIONS_SCHEDULE_2026.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "NED Undergraduate Admissions FAQ 2026 (merit criteria, entry test)",
+     "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/FAQ.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/guides/1st-2nd-final-merit-list/",
+    "/uet-taxila-merit-list/",
+    "/uet-taxila-aggregate-calculator/",
+    "/uet-peshawar-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/fast-aggregate-calculator/",
+   "keyword": "fast aggregate calculator",
+   "title": "FAST Aggregate Calculator {season_year} (Computing & Engineering)",
+   "description": "FAST aggregate calculator {season_year}: computing 50% test, 40% FSc, 10% Matric; engineering 33% test, 50% FSc, 17% Matric, from FAST-NUCES eligibility rules.",
+   "h1": "FAST Aggregate Calculator {season_year}",
+   "crumb": "FAST aggregate calculator",
+   "subtitle": "Computing: 50% test + 40% FSc + 10% Matric · Engineering: 33% + 50% + 17%",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The FAST-NUCES aggregate for BS Computing = 50% admission test + 40% FSc (HSSC) + 10% Matric; for BS Engineering it is 33% test + 50% FSc + 17% Matric, per FAST's eligibility criteria. Example: 60% test, 950/1100 FSc and 1000/1100 Matric give 73.64% for computing. Enter your marks below.",
+   "answer_source": "https://nu.edu.pk/Admissions/EligibilityCriteria",
+   "content_file": "fast-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the FAST aggregate formula for computing programs?",
+     "a": "BS Computer Science, AI, Data Science, Cyber Security and Software Engineering use 50% admission test, 40% HSSC and 10% SSC."
+    },
+    {
+     "q": "What is the FAST formula for engineering?",
+     "a": "BS Civil, Electrical and Computer Engineering use 33% admission test, 50% HSSC and 17% SSC."
+    },
+    {
+     "q": "Which test does FAST accept?",
+     "a": "FAST's own admission test or NTS NAT (NAT-IE for engineering; NAT-IE or NAT-ICS for computing). Test results from other universities are not accepted."
+    },
+    {
+     "q": "Which FSc marks does FAST use?",
+     "a": "HSSC Part I and II marks, or Part I alone if Part II is not available when the merit list is compiled. A-level students use their IBCC equivalence."
+    },
+    {
+     "q": "What is the FAST closing merit?",
+     "a": "FAST does not publish program-wise closing merits; the university determines merit cut-offs each year. Figures on other websites are estimates."
+    },
+    {
+     "q": "FAST ka aggregate kaise nikalain?",
+     "a": "Computing ke liye test ka 50%, FSc ka 40% aur Matric ka 10% jama karein. Engineering ke liye test 33%, FSc 50% aur Matric 17%.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "FAST mein admission ke liye kitne FSc marks chahiye?",
+     "a": "Engineering ke liye Matric aur FSc dono mein 60%, computing ke liye Matric mein 60% aur FSc mein 50%.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>FAST ke do formule hain: <strong>computing (CS, AI, SE waghera) mein test 50%, FSc 40%, Matric 10%</strong>, aur <strong>engineering mein test 33%, FSc 50%, Matric 17%</strong>.</p><p>Misaal: test 60%, FSc 950/1100 aur Matric 1000/1100 ho to computing aggregate 73.64% aur engineering aggregate 78.44% banta hai.</p>",
+   "sources": [
+    {
+     "label": "FAST-NUCES: Eligibility Criteria, undergraduate selection criteria",
+     "url": "https://nu.edu.pk/Admissions/EligibilityCriteria",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "FAST-NUCES Prospectus 2026: Admission Information",
+     "url": "https://www.nu.edu.pk/Admissions/ProspectusUpload/Admission%20Information.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/guides/1st-2nd-final-merit-list/",
+    "/uet-taxila-merit-list/",
+    "/uet-taxila-aggregate-calculator/",
+    "/uet-peshawar-aggregate-calculator/",
+    "/ned-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/giki-aggregate-calculator/",
+   "keyword": "giki aggregate calculator",
+   "title": "GIKI Aggregate Calculator {season_year} (85% Test Formula)",
+   "description": "GIKI aggregate calculator {season_year}: 85% GIKI admission test + 15% Matric (SSC), from GIKI's official assessment criteria. See your merit score now.",
+   "h1": "GIKI Aggregate Calculator {season_year}",
+   "crumb": "GIKI aggregate calculator",
+   "subtitle": "Official formula: 85% admission test + 15% Matric",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The GIKI aggregate for {season_year} = 85% GIKI admission test + 15% SSC (Matric) or equivalent, per GIKI's Comparative Assessment Criteria. FSc marks only decide eligibility. Example: 70% in the test and 1000/1100 in Matric give 73.14%. Enter your marks below.",
+   "answer_source": "https://giki.edu.pk/admissions/admissions-undergraduates/eligibility-criteria/",
+   "content_file": "giki-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the GIKI aggregate formula?",
+     "a": "GIKI ranks applicants by 85% admission test score and 15% SSC (Matric) or equivalent."
+    },
+    {
+     "q": "Are FSc marks counted in GIKI merit?",
+     "a": "No. FSc marks are only for eligibility: 60% or more each in Mathematics, Physics and overall for engineering and computing programs."
+    },
+    {
+     "q": "What do A-level students use for the 15% part?",
+     "a": "Their O-level result converted by IBCC equivalence. Diploma, IB or DAE holders use their last completed qualification."
+    },
+    {
+     "q": "How much does one test mark matter at GIKI?",
+     "a": "Each percentage point in the test adds 0.85 to your aggregate, so the test decides almost all of your merit."
+    },
+    {
+     "q": "Does GIKI publish a closing merit?",
+     "a": "We have not found an official program-wise closing aggregate from GIKI, so we do not show one."
+    },
+    {
+     "q": "GIKI ka merit kaise banta hai?",
+     "a": "Admission test ka 85% aur Matric ka 15%. FSc ke marks sirf eligibility ke liye hain.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "GIKI ke liye FSc mein kitne marks chahiye?",
+     "a": "Engineering aur computing ke liye Math, Physics aur overall teeno mein 60% ya zyada.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>GIKI ka formula seedha hai: <strong>admission test 85% aur Matric 15%</strong>. FSc ke marks merit mein nahi aate, sirf eligibility (60%) ke liye dekhe jate hain.</p><p>Misaal: test 70% aur Matric 1000/1100 ho to aggregate 73.14% banta hai. Is liye GIKI mein sab se zyada farq test se padta hai.</p>",
+   "sources": [
+    {
+     "label": "GIKI: Eligibility and Comparative Assessment Criteria (undergraduate)",
+     "url": "https://giki.edu.pk/admissions/admissions-undergraduates/eligibility-criteria/",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/guides/1st-2nd-final-merit-list/",
+    "/uet-taxila-merit-list/",
+    "/uet-taxila-aggregate-calculator/",
+    "/uet-peshawar-aggregate-calculator/",
+    "/ned-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/uet-taxila-merit-list/",
+   "keyword": "uet taxila merit list",
+   "title": "UET Taxila Merit List {season_year}: Closing Merit by Program",
+   "description": "UET Taxila merit list: last official open-merit closing aggregate for every program, from Software Engineering 79.435% to Environmental 53.071%.",
+   "h1": "UET Taxila Merit List {season_year} & Closing Merit by Program",
+   "crumb": "UET Taxila merit list",
+   "subtitle": "Open merit, last admitted aggregate per department (2024 entry, official prospectus)",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "UET Taxila's latest official closing merits (open merit, 2024 entry) run from 79.435% for Software Engineering and 77.979% for Computer Science down to 53.071% for Environmental Engineering. Most engineering programs closed between 58% and 66%. Source: UET Taxila UG Prospectus 2025, Merit Position Entry 2024.",
+   "answer_source": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+   "content_file": "uet-taxila-merit-list.html",
+   "faq": [
+    {
+     "q": "What was the UET Taxila closing merit for Software Engineering?",
+     "a": "79.435% on open merit for 2024 entry, the highest at UET Taxila."
+    },
+    {
+     "q": "What was the UET Taxila Computer Science closing merit?",
+     "a": "BS Computer Science closed at 77.979% and the pre-medical Computer Science seats at 78.184% for 2024 entry."
+    },
+    {
+     "q": "Which UET Taxila program has the lowest merit?",
+     "a": "Environmental Engineering at 53.071%, then Industrial & Manufacturing Engineering at 53.781% (open merit, 2024 entry)."
+    },
+    {
+     "q": "Why is there no {data_year} closing merit for UET Taxila?",
+     "a": "UET Taxila publishes its program-wise closing table in the next year's prospectus. The latest one on its site is 'Merit Position Entry – 2024' in the 2025 prospectus. We will add newer figures when an official document has them."
+    },
+    {
+     "q": "Where is the official UET Taxila merit list?",
+     "a": "Merit lists are posted on admissions.uettaxila.edu.pk during admissions, and the closing table is in the UG prospectus. Every row here links to the prospectus."
+    },
+    {
+     "q": "UET Taxila ka merit kitna jata hai?",
+     "a": "2024 mein Software Engineering 79.435%, Computer Science 77.979% aur Civil 65.519% par close hui. Environmental sab se kam 53.071% par.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UET Taxila mein Electrical Engineering ka merit kya tha?",
+     "a": "2024 mein Electrical Engineering open merit par 58.063% par close hui.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Yeh UET Taxila ka official <strong>closing merit</strong> hai, yani har department mein open merit par aakhri admission kis aggregate par hua (2024 entry, prospectus 2025 ka table).</p><p>Software Engineering 79.435% par sab se upar, Computer Science 77.979% aur zyada tar engineering programs 58% se 66% ke darmiyan. Apna aggregate <a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> se nikalein.</p>",
+   "sources": [
+    {
+     "label": "UET Taxila UG Prospectus 2025, p. 136: Merit Position Entry 2024",
+     "url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Taxila admissions: Admission eligibility and merit formula",
+     "url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/uet-taxila-aggregate-calculator/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/guides/what-is-closing-merit/",
+    "/uet-peshawar-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/guides/1st-2nd-final-merit-list/",
+   "keyword": "2nd merit list",
+   "title": "1st, 2nd and Final Merit List: How Much Does Merit Drop?",
+   "description": "1st vs 2nd vs final merit list explained with real UHS 2025 figures: public MBBS dropped 0.08 points on average, private MBBS 9 points. Know which to use.",
+   "h1": "1st vs 2nd vs Final Merit List",
+   "crumb": "1st, 2nd and final merit list",
+   "type": "content",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The 1st merit list offers seats to the top applicants; the 2nd and later lists fill seats that students leave, so the closing aggregate falls with each list. How much depends on demand: in UHS Punjab's 2025 lists, public MBBS fell only 0.08 points on average from the 1st to the final list, private MBBS about 9 points.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content_file": "guide-1st-2nd-final-merit-list.html",
+   "faq": [
+    {
+     "q": "How much does merit drop in the 2nd merit list?",
+     "a": "It depends on the program. For Punjab public MBBS in 2025 the drop from 1st to final list was under 0.15 points per college, but private MBBS colleges dropped about 9 points on average."
+    },
+    {
+     "q": "Is the final merit list lower than the 1st list?",
+     "a": "Almost always, because each later list fills seats left by students who moved or declined, reaching further down the merit order."
+    },
+    {
+     "q": "Which merit list should I compare my aggregate with?",
+     "a": "Last year's final list, because it shows the lowest aggregate that still got a seat. Compare with the 1st list too to see how safe you are."
+    },
+    {
+     "q": "Can I get admission in the 2nd merit list if not in the 1st?",
+     "a": "Yes. Many students are admitted in later lists, especially in programs and private colleges where many top applicants leave."
+    },
+    {
+     "q": "What is an upgrade in a merit list?",
+     "a": "An admitted student is moved to a higher-choice program or college when a seat opens there. UHS lists show this in an 'Upgraded To' column."
+    },
+    {
+     "q": "2nd merit list mein merit kitna girta hai?",
+     "a": "Har program mein alag. 2025 mein Punjab ke government MBBS colleges ka merit 1st se final list tak sirf 0.04 se 0.13 gira, lekin private MBBS ka average 9 points.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Pehli list mein naam na aaye to kya karein?",
+     "a": "Agli lists ka intezar karein aur har list ki deadline par nazar rakhein. Seat khali hone par agle students ko mauqa milta hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Pehli merit list mein top students ko seat milti hai. Jo students chhor dete hain ya dusri jagah chale jate hain, un ki seats <strong>2nd aur agli lists</strong> mein agle students ko milti hain, is liye merit har list ke saath neeche aata hai.</p><p>2025 mein Punjab ke government MBBS ka merit 1st se final list tak sirf 0.08 gira, lekin private MBBS ka taqreeban 9 points. Apna aggregate hamesha pichle saal ki <strong>final list</strong> se milayein, jaise <a href=\"/mdcat-merit-list/\">MDCAT merit list</a> par.</p>",
+   "sources": [
+    {
+     "label": "UHS 1st selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st and 5th (final) selection lists, private MBBS 2025-26",
+     "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Peshawar UG Prospectus 2026-27, rule 7.7 (adjustment to higher choices)",
+     "url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Taxila UG Prospectus 2025, p. 136",
+     "url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/guides/what-is-closing-merit/",
+    "/mdcat-merit-list/",
+    "/uet-taxila-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/uet-taxila-aggregate-calculator/"
    ]
   }
  ]

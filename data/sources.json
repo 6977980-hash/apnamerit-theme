@@ -212,6 +212,86 @@
    "website": "https://www.ist.edu.pk/",
    "field": "engineering",
    "documents": []
+  },
+  {
+   "name": "University of Engineering and Technology (UET), Taxila",
+   "website": "https://www.uettaxila.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "Admission eligibility and merit formula (33% test, 50% HSSC Part-I, 17% SSC)",
+     "url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UG Prospectus 2025: section 24.11 (weighted percentage) and p. 136 Merit Position Entry 2024",
+     "url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Merit / aggregate calculator (default totals)",
+     "url": "https://admissions.uettaxila.edu.pk/Calculator.php",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "University of Engineering and Technology (UET), Peshawar",
+   "website": "https://www.uetpeshawar.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "UG Prospectus 2026-27 (merit determination, entrance test)",
+     "url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "NED University of Engineering and Technology, Karachi",
+   "website": "https://www.neduet.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "Admissions Schedule 2026 (Merit Score formula)",
+     "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/ADMISSIONS_SCHEDULE_2026.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Undergraduate Admissions FAQ 2026 (entry test)",
+     "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/FAQ.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "FAST National University of Computer and Emerging Sciences (FAST-NUCES)",
+   "website": "https://nu.edu.pk/",
+   "field": "computing",
+   "documents": [
+    {
+     "label": "Eligibility Criteria (undergraduate selection criteria)",
+     "url": "https://nu.edu.pk/Admissions/EligibilityCriteria",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Prospectus 2026: Admission Information",
+     "url": "https://www.nu.edu.pk/Admissions/ProspectusUpload/Admission%20Information.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "GIK Institute of Engineering Sciences and Technology (GIKI), Topi",
+   "website": "https://giki.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "Eligibility and Comparative Assessment Criteria (undergraduate)",
+     "url": "https://giki.edu.pk/admissions/admissions-undergraduates/eligibility-criteria/",
+     "fetched": "2026-10-31"
+    }
+   ]
   }
  ]
 }

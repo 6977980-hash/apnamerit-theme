@@ -1,0 +1,38 @@
+{
+ "slug": "giki",
+ "name": "Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI), Topi",
+ "short": "GIKI",
+ "field": "engineering",
+ "province": "Khyber Pakhtunkhwa",
+ "website": "https://giki.edu.pk/",
+ "calculator_path": "/giki-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Comparative Assessment Criteria from the official eligibility page. GIKI does not publish program-wise closing merits.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "giki",
+   "label": "BS Engineering / Computing (GIKI admission test)",
+   "source_url": "https://giki.edu.pk/admissions/admissions-undergraduates/eligibility-criteria/",
+   "source_note": "Comparative Assessment Criteria (Merit List): admission test 85%, SSC / equivalent 15%.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "GIKI admission test score in %",
+     "total": 100,
+     "weight": 85
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 15
+    }
+   ]
+  }
+ ],
+ "merit": []
+}
