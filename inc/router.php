@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /** Allowed values for an entry's "template" field. */
-const AM_PAGE_TEMPLATES = array( 'default', 'calculator', 'meritlist' );
+const AM_PAGE_TEMPLATES = array( 'default', 'calculator', 'meritlist', 'home' );
 
 /**
  * Normalised path of the current request ("/", "/uet-merit-list/"), query string stripped.

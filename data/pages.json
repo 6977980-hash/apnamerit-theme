@@ -20,7 +20,32 @@
     "/pu-merit-list/",
     "/methodology/",
     "/data-sources/"
-   ]
+   ],
+   "template": "home",
+   "faq": [
+    {
+     "q": "How do I calculate my aggregate?",
+     "a": "Pick your university above, enter your Matric, FSc and entry-test marks, and the calculator applies that university's official weights. For MDCAT the PMDC formula is 50% MDCAT, 40% FSc and 10% Matric."
+    },
+    {
+     "q": "Is the aggregate the same at every university?",
+     "a": "No. Each university sets its own weights, so the same marks give a different aggregate at UET, NUST, COMSATS or PU. Always use the calculator for the university you are applying to."
+    },
+    {
+     "q": "Where do your closing merits come from?",
+     "a": "Only from official merit lists and prospectuses published by the universities and UHS. Every row links to its source, and we never publish estimates as merit."
+    },
+    {
+     "q": "Can I tell if I will get admission?",
+     "a": "The merit predictor compares your aggregate with the last two years of official closing merits and marks each program Strong, Borderline or Unlikely. It is a guide, not a guarantee."
+    },
+    {
+     "q": "Aggregate kaise nikalte hain?",
+     "a": "Upar apni university chunein, Matric, FSc aur test ke marks likhein. Calculator university ke official formula se aggregate nikal deta hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Apna Merit par har university ka official formula aur pichhle saal ka closing merit ek jagah hai. Marks likhein, aggregate dekhein aur pata karein ke kis college ya program mein chance hai.</p><p>Har number ke saath university ka official link diya gaya hai.</p>"
   },
   {
    "path": "/about/",

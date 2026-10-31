@@ -206,7 +206,7 @@ def check_pages(loaded: dict[str, object]) -> None:
             err("pages", f"{where} {path}: description must be 140-155 chars (is {len(desc)})")
         if re.search(r"\{[a-z_]+\}", title + desc):
             err("pages", f"{where} {path}: unknown token left in title/description")
-        if p.get("template", "default") not in {"default", "calculator", "meritlist"}:
+        if p.get("template", "default") not in {"default", "calculator", "meritlist", "home"}:
             err("pages", f"{where} {path}: unknown template '{p.get('template')}'")
         if path != "/" and not p.get("h1"):
             err("pages", f"{where} {path}: h1 missing")

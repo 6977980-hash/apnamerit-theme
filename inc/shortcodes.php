@@ -157,7 +157,7 @@ function am_predict_rows( array $uni ): array {
 
 // ------------------------------------------------------------------ [am_calculator]
 function am_sc_calculator( $atts ): string {
-	$atts = shortcode_atts( array( 'uni' => '' ), (array) $atts, 'am_calculator' );
+	$atts = shortcode_atts( array( 'uni' => '', 'compact' => '' ), (array) $atts, 'am_calculator' );
 	$uni  = am_uni( am_uni_attr( $atts ) );
 	if ( empty( $uni['formulas'] ) ) {
 		return am_stub( 'am_calculator', $atts );
@@ -237,7 +237,7 @@ function am_sc_calculator( $atts ): string {
 		. '<noscript><p>The calculator needs JavaScript. You can still use the formula table below by hand.</p></noscript>'
 		. am_json_script( 'am-calc-data', $config )
 		. '</form>'
-		. am_formula_table( $uni );
+		. ( '' === $atts['compact'] ? am_formula_table( $uni ) : '' );
 }
 
 /**

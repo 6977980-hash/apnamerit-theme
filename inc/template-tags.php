@@ -295,6 +295,12 @@ function am_render_page( array $page ): string {
 	$is_home = '/' === ( $page['path'] ?? '' );
 	$url     = home_url( (string) ( $page['path'] ?? '/' ) );
 	$h1      = am_tokens( (string) ( $page['h1'] ?? $page['title'] ?? '' ) );
+	if ( $is_home && 'home' === ( $page['template'] ?? '' ) && function_exists( 'am_home_html' ) ) {
+		return am_home_html( $page )
+			. am_faq_html( (array) ( $page['faq'] ?? array() ) )
+			. am_roman_urdu_html( (string) ( $page['roman_urdu'] ?? '' ) )
+			. am_disclaimer_html();
+	}
 	$out     = am_breadcrumb_html( $page );
 	$out    .= '<h1>' . esc_html( $h1 ) . '</h1>';
 	if ( ! empty( $page['subtitle'] ) ) {
