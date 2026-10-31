@@ -7,7 +7,7 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/mdcat-aggregate-calculator/",
@@ -1082,6 +1082,10 @@
      "a": "(Matric ÷ 4 + FA/FSc ÷ 5 + BA/BSc + additional marks) divided by the same totals. It is for students who already hold a 2-year bachelor's degree or ADP."
     },
     {
+     "q": "How many marks does a Hafiz-e-Quran get at PU?",
+     "a": "20 additional marks, added to the marks earned before dividing (PU Admission Regulations, page 23). A certificate and a departmental interview are required."
+    },
+    {
      "q": "Is this the exact merit PU will show?",
      "a": "It is the basic merit. PU notes that departments make certain additions or subtractions (for example additional marks) before they display merit lists."
     },
@@ -1106,6 +1110,11 @@
     {
      "label": "University of the Punjab: Basic Criteria Merit Calculator",
      "url": "https://journals.pu.edu.pk/old/fee/basicadmission/calculator/",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "University of the Punjab: Admission Regulations Book (additional marks, p. 23)",
+     "url": "https://pu.edu.pk/downloads/Admission-Regulations-Book.pdf",
      "fetched": "2026-10-31"
     }
    ],
@@ -1193,10 +1202,10 @@
    "path": "/ku-merit-list/",
    "keyword": "ku merit list",
    "title": "KU Merit List {season_year}: Karachi University Closing Percentage",
-   "description": "KU merit list {season_year}: University of Karachi's official closing percentages for test-based BS, BE, DPT and Pharm-D programmes, plus Visual Studies points.",
+   "description": "KU merit list {season_year}: University of Karachi's official closing percentages for test-based and open-merit BS programmes, Pharm-D and Visual Studies.",
    "h1": "Karachi University (KU) Merit List {season_year}: Closing Percentages",
    "crumb": "KU merit list",
-   "subtitle": "Admissions 2027 closing lists, Directorate of Admissions, October {season_year}",
+   "subtitle": "Admissions 2027 closing lists (October {season_year}) and Admissions 2026 closing percentages (KU Prospectus 2027)",
    "type": "content",
    "template": "meritlist",
    "schema_type": "CollectionPage",
@@ -1209,6 +1218,14 @@
     {
      "q": "What was the KU closing percentage for BS Computer Science?",
      "a": "80.00% academic percentage, with a minimum entrance test score of 50, in the Admissions 2027 list dated 19 October {season_year}. Software Engineering closed at 78.82% and Artificial Intelligence at 79.73%."
+    },
+    {
+     "q": "What is KU's open merit closing percentage?",
+     "a": "For Admissions 2026 (category K, Karachi), Psychology for 1st-division candidates closed at 79.82%, Digital Media Marketing 75.29%, Microbiology 70.91% and English 68.09%. Many departments closed at the 45% or 50% minimum."
+    },
+    {
+     "q": "What are K, S and P categories at Karachi University?",
+     "a": "K = Matric, Intermediate or graduation from institutions in Karachi; S = at least one of them from the rest of Sindh; P = from outside Sindh. K candidates get preference for open-merit seats."
     },
     {
      "q": "What is the minimum test score for KU test-based programmes?",
@@ -1247,6 +1264,11 @@
     {
      "label": "University of Karachi: Visual Studies closing final points, Admissions 2027 (26-10-2026)",
      "url": "https://uokadmission.edu.pk/uploads/links/vst-closing-final-points-2027-20261026191124.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "University of Karachi Prospectus 2027: Appendix G (open merit BS, Admissions 2026) and Appendix I (test based, Admissions 2026)",
+     "url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
      "fetched": "2026-10-31"
     },
     {
@@ -1324,6 +1346,75 @@
     "/pu-merit-list/",
     "/comsats-aggregate-calculator/",
     "/nust-aggregate-calculator/",
+    "/guides/what-is-closing-merit/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/uaf-aggregate-calculator/",
+   "keyword": "uaf aggregate calculator",
+   "title": "UAF Aggregate Calculator {season_year} (Agriculture University)",
+   "description": "UAF aggregate calculator {season_year}: University of Agriculture Faisalabad merit = 30% Matric + 30% FSc Part-I + 40% entry test, from UAF's admissions notice.",
+   "h1": "UAF Aggregate Calculator {season_year}",
+   "crumb": "UAF aggregate calculator",
+   "subtitle": "30% Matric + 30% FSc Part-I + 40% UAF entry test",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The UAF aggregate = 30% Matric + 30% Intermediate Part-I + 40% entry test, per the University of Agriculture Faisalabad's undergraduate admissions advertisement 2026-27. Example: 1000/1100 Matric, 480/550 FSc Part-I and 60/100 in the test give 77.45%. The test is compulsory; DVM and Pharm-D need at least 50% in it.",
+   "answer_source": "https://web.uaf.edu.pk/UploadFiles/Announcements/0b3c6ddc-4e43-46ca-9809-75cd6fd09553.pdf",
+   "content_file": "uaf-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the UAF merit formula?",
+     "a": "Matric 30%, Intermediate Part-I 30% and the UAF entry test 40%, as stated in the undergraduate admissions advertisement 2026-27."
+    },
+    {
+     "q": "Is the UAF entry test compulsory?",
+     "a": "Yes, for every undergraduate program, including students who have already passed Intermediate."
+    },
+    {
+     "q": "What is the passing score in the UAF entry test?",
+     "a": "33% for Faculty of Agricultural Engineering & Technology programs, 50% for DVM and Pharm-D, and no minimum for other programs."
+    },
+    {
+     "q": "Does UAF use FSc Part-II marks?",
+     "a": "Admission is given on Matric, Part-I and test marks before the Part-II result, and confirmed once your Intermediate result meets the program's minimum eligibility."
+    },
+    {
+     "q": "Does UAF publish closing merit?",
+     "a": "UAF posts program-wise merit list PDFs for each list and campus but no closing-merit summary, so we do not show closing figures."
+    },
+    {
+     "q": "UAF ka aggregate kaise nikalain?",
+     "a": "Matric ka 30%, FSc Part-I ka 30% aur entry test ka 40% jama karein. Misaal: 1000/1100, 480/550 aur test 60/100 par 77.45% banta hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UAF test mein kitne number chahiye?",
+     "a": "Agricultural Engineering wale programs ke liye 33%, DVM aur Pharm-D ke liye 50%. Baqi programs ke liye koi minimum nahin, lekin test dena zaroori hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Zarai University Faisalabad (UAF) ka formula: <strong>Matric 30% + FSc Part-I 30% + entry test 40%</strong>. Admission Part-II ke result se pehle isi par milta hai.</p><p>Misaal: Matric 1000/1100, Part-I 480/550 aur test 60/100 par aggregate 77.45% banta hai. Test sab ke liye zaroori hai; DVM aur Pharm-D mein kam az kam 50% chahiye.</p>",
+   "sources": [
+    {
+     "label": "University of Agriculture, Faisalabad: Details/Advertisement of Undergraduate Admissions 2026-27 (merit basis p. 1, test pass marks p. 2)",
+     "url": "https://web.uaf.edu.pk/UploadFiles/Announcements/0b3c6ddc-4e43-46ca-9809-75cd6fd09553.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "University of Agriculture, Faisalabad: Undergraduate merit lists 2026-27",
+     "url": "https://web.uaf.edu.pk/Downloads/MeritListsView",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/pu-aggregate-calculator/",
+    "/pu-merit-list/",
+    "/iiui-aggregate-calculator/",
+    "/mdcat-aggregate-calculator/",
     "/guides/what-is-closing-merit/",
     "/methodology/"
    ]

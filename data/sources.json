@@ -169,13 +169,25 @@
    "name": "University of the Punjab (PU)",
    "website": "https://pu.edu.pk/",
    "field": "general",
-   "documents": []
+   "documents": [
+    {
+     "label": "Admission Regulations Book (p. 23: additional marks, Hafiz-e-Quran = 20)",
+     "url": "https://pu.edu.pk/downloads/Admission-Regulations-Book.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
   },
   {
    "name": "University of Karachi",
    "website": "https://www.uok.edu.pk/",
    "field": "general",
-   "documents": []
+   "documents": [
+    {
+     "label": "Prospectus 2027: Appendix G (open merit BS closing, Admissions 2026) and Appendix I (test based closing, Admissions 2026)",
+     "url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
   },
   {
    "name": "Air University",
@@ -359,6 +371,18 @@
     {
      "label": "Admission Policy (03-06-2025): undergraduate merit formula",
      "url": "https://www.iiu.edu.pk/wp-content/uploads/2025/06/Admission-Policy-03062025.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "University of Agriculture, Faisalabad (UAF)",
+   "website": "https://uaf.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Details/Advertisement of Undergraduate Admissions 2026-27 (30% Matric + 30% Part-I + 40% test)",
+     "url": "https://web.uaf.edu.pk/UploadFiles/Announcements/0b3c6ddc-4e43-46ca-9809-75cd6fd09553.pdf",
      "fetched": "2026-10-31"
     }
    ]

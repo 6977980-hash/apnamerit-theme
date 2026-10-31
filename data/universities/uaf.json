@@ -1,0 +1,45 @@
+{
+ "slug": "uaf",
+ "name": "University of Agriculture, Faisalabad (UAF)",
+ "short": "UAF",
+ "field": "general",
+ "province": "Punjab",
+ "website": "https://uaf.edu.pk/",
+ "calculator_path": "/uaf-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Weights from the official 'Details/Advertisement of Undergraduate Admissions 2026-27' (Urdu, p. 1): admission on Matric 30% + Intermediate Part-I 30% + entry test 40%; entry test mandatory; pass marks 33% (Agricultural Engineering & Technology faculty), 50% (DVM, Pharm-D), none for other programs (p. 2). Merit lists are ~1,400 candidate-wise PDFs (web.uaf.edu.pk/Downloads/MeritListsView); no closing figures stored. uaf.edu.pk sends an incomplete TLS chain.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "main",
+   "label": "Undergraduate programs (Matric + FSc Part-I + entry test)",
+   "source_url": "https://web.uaf.edu.pk/UploadFiles/Announcements/0b3c6ddc-4e43-46ca-9809-75cd6fd09553.pdf",
+   "source_note": "Advertisement 2026-27, p. 1: provisional admission is given on the marks of Matric (30%), Intermediate first year (30%) and the entry test (40%); final admission is confirmed after the Intermediate result meets the program's minimum eligibility.",
+   "parts": [
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 30
+    },
+    {
+     "key": "fsc",
+     "label": "FSc Part-I (Intermediate 1st year)",
+     "total": 550,
+     "weight": 30
+    },
+    {
+     "key": "test",
+     "label": "UAF entry test",
+     "total": 100,
+     "weight": 40,
+     "hint": "Weight 40%; type your marks and the test total"
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

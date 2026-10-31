@@ -233,19 +233,22 @@ function am_formula_table( array $uni ): string {
 
 // ------------------------------------------------------------------ [am_merit_table]
 function am_sc_merit_table( $atts ): string {
-	$atts = shortcode_atts( array( 'uni' => '' ), (array) $atts, 'am_merit_table' );
+	// Optional list="…" shows only that merit list (several tables per page); category="…" overrides the default filter.
+	$atts = shortcode_atts( array( 'uni' => '', 'list' => '', 'category' => '' ), (array) $atts, 'am_merit_table' );
 	$uni  = am_uni( am_uni_attr( $atts ) );
-	$rows = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) ) );
+	$only = (string) $atts['list'];
+	$rows = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) && ( '' === $only || ( $r['list'] ?? '' ) === $only ) ) );
 	if ( ! $rows ) {
 		return am_stub( 'am_merit_table', $atts );
 	}
 	$short = (string) ( $uni['short'] ?? $uni['name'] ?? '' );
-	$id    = am_slug( (string) ( $uni['slug'] ?? $atts['uni'] ) );
+	$base  = am_slug( (string) ( $uni['slug'] ?? $atts['uni'] ) );
+	$id    = '' === $only ? $base : $base . '-' . am_slug( $only );
 	$dy    = (int) am_site( 'data_year' );
 	$def   = array(
-		'year'     => (string) $dy,
-		'list'     => (string) ( $uni['defaults']['list'] ?? 'Final' ),
-		'category' => (string) ( $uni['defaults']['category'] ?? 'Open merit' ),
+		'year'     => (string) ( $uni['defaults']['year'] ?? $dy ),
+		'list'     => '' !== $only ? $only : (string) ( $uni['defaults']['list'] ?? 'Final' ),
+		'category' => '' !== (string) $atts['category'] ? (string) $atts['category'] : (string) ( $uni['defaults']['category'] ?? 'Open merit' ),
 	);
 
 	// Previous-year value for the Δ column.
@@ -296,7 +299,7 @@ function am_sc_merit_table( $atts ): string {
 				$is_def = false;
 			}
 		}
-		$anchor = 'p-' . am_slug( $r['program'] . ' ' . ( $r['campus'] ?? '' ) . ' ' . ( $r['shift'] ?? '' ) );
+		$anchor = 'p-' . am_slug( ( '' !== $only && $only !== (string) ( $uni['defaults']['list'] ?? 'Final' ) ? $only . ' ' : '' ) . $r['program'] . ' ' . ( $r['campus'] ?? '' ) . ' ' . ( $r['shift'] ?? '' ) );
 		$idattr = '';
 		if ( $is_def && ! isset( $anchors[ $anchor ] ) ) {
 			$anchors[ $anchor ] = true;
@@ -323,11 +326,14 @@ function am_sc_merit_table( $atts ): string {
 			: '<th scope="col">' . esc_html( $c ) . '</th>';
 	}
 
-	$sources = array_values( array_unique( array_map( fn( $r ) => (string) $r['source_url'], $rows ) ) );
-	am_registry(
+	$all     = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) ) );
+	$years   = array_map( fn( $r ) => (int) $r['year'], $all );
+	$sources = array_values( array_unique( array_map( fn( $r ) => (string) $r['source_url'], $all ) ) );
+	$known   = array_column( am_registry( 'dataset' ), 'id' );
+	in_array( $base, $known, true ) || am_registry(
 		'dataset',
 		array(
-			'id'          => $id,
+			'id'          => $base,
 			'name'        => $short . ' closing merits ' . min( $years ) . '–' . max( $years ),
 			'description' => 'Program-wise closing aggregates (last admitted candidate) for ' . ( $uni['name'] ?? $short ) . ', by year, merit list, category and campus, copied from official merit lists.',
 			'keywords'    => array( $short . ' merit list', $short . ' closing merit', 'aggregate' ),
@@ -342,7 +348,7 @@ function am_sc_merit_table( $atts ): string {
 	return '<div class="am-merit" data-am-table="' . esc_attr( $id ) . '">'
 		. ( $filters ? '<div class="am-filters">' . $filters . '</div>' : '' )
 		. '<p class="am-muted am-count" aria-live="polite"></p>'
-		. '<div class="am-table-wrap"><table class="am-table am-sortable"><caption>' . esc_html( $short . ' merit list: closing aggregates' ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $body . '</tbody></table></div>'
+		. '<div class="am-table-wrap"><table class="am-table am-sortable"><caption>' . esc_html( $short . ' merit list: closing aggregates' . ( '' !== $only ? ' (' . $only . ')' : '' ) ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $body . '</tbody></table></div>'
 		. '</div>';
 }
 

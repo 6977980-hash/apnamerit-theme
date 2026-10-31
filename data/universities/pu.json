@@ -8,7 +8,7 @@
  "calculator_path": "/pu-aggregate-calculator/",
  "meritlist_path": "/pu-merit-list/",
  "updated": "2026-10-31",
- "_note": "Basic criteria (Matric/4 + FA/FSc + additional marks over Matric total/4 + FA/FSc total) and closing figures from 'Undergraduate Programs Merit of Last Year 2025' (Directorate of Students Affairs, pu.edu.pk). Test-based formula (75% academic + 25% entry test) from PU's official basic merit calculator. Records: BS 1st semester and BS 5th semester, morning and evening/replica/self-support columns as printed; figures given in marks, 'Nil', 'new program', ambiguous cells and gender-split Sheikh Zayed figures are not stored.",
+ "_note": "Basic criteria (Matric/4 + FA/FSc + additional marks over Matric total/4 + FA/FSc total) and closing figures from 'Undergraduate Programs Merit of Last Year 2025' (Directorate of Students Affairs, pu.edu.pk). Test-based formula (75% academic + 25% entry test) from PU's official basic merit calculator. Records: BS 1st semester and BS 5th semester, morning and evening/replica/self-support columns as printed; figures given in marks, 'Nil', 'new program', ambiguous cells and gender-split Sheikh Zayed figures are not stored. Hafiz-e-Quran +20 from the Admission Regulations Book (p. 23).",
  "defaults": {
   "list": "Last merit",
   "category": "Open merit"
@@ -18,7 +18,7 @@
    "id": "basic",
    "label": "BS 1st semester, basic criteria (no entry test)",
    "source_url": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
-   "source_note": "Merit of Last Year 2025, p. 1, 'Basic Criteria for BS (4-Yrs) Program': marks earned (1/4 of Matric + FA/FSc + additional marks) / total marks (1/4 of Matric + FA/FSc). With 1100 + 1100 totals Matric counts 20% and FSc 80%.",
+   "source_note": "Merit of Last Year 2025, p. 1, 'Basic Criteria for BS (4-Yrs) Program': marks earned (1/4 of Matric + FA/FSc + additional marks) / total marks (1/4 of Matric + FA/FSc). With 1100 + 1100 totals Matric counts 20% and FSc 80%. Additional marks (Admission Regulations Book, p. 23): Hafiz-e-Quran = 20, added to marks earned.",
    "parts": [
     {
      "key": "matric",
@@ -37,6 +37,14 @@
      "pool": "academic",
      "scale": 1,
      "hint": "Full marks, added to Matric ÷ 4"
+    }
+   ],
+   "bonus": [
+    {
+     "key": "hafiz",
+     "label": "Hafiz-e-Quran (+20 additional marks)",
+     "part": "fsc",
+     "marks": 20
     }
    ]
   },
@@ -70,6 +78,14 @@
      "total": 100,
      "weight": 25,
      "hint": "Weight 25%; type your marks and the test total"
+    }
+   ],
+   "bonus": [
+    {
+     "key": "hafiz",
+     "label": "Hafiz-e-Quran (+20 additional marks)",
+     "part": "fsc",
+     "marks": 20
     }
    ]
   }
