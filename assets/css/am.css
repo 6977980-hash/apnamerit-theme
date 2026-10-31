@@ -81,7 +81,7 @@ input[type=number],select{font:inherit;min-height:44px;padding:.4rem .6rem;borde
 .am-table th,.am-table td{border-bottom:1px solid var(--am-line);padding:.5rem .6rem;text-align:left;vertical-align:top}
 .am-table thead th{background:var(--am-soft);white-space:nowrap}
 .am-table tbody th{font-weight:600}
-.am-table tbody th small{display:block;font-weight:400;color:var(--am-muted)}
+.am-table tbody th small,.am-table td small{display:block;font-weight:400;color:var(--am-muted)}
 .am-table tbody tr:nth-child(even){background:#fafbfa}
 .am-table ul{margin:0;padding-left:1rem}
 .am-sortable thead button{all:unset;cursor:pointer;display:inline-block;min-height:32px}

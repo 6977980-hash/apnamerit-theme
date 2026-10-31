@@ -7,13 +7,14 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<p>UET Lahore and general universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/mdcat-aggregate-calculator/",
     "/mdcat-merit-list/",
     "/uet-taxila-aggregate-calculator/",
     "/uet-taxila-merit-list/",
+    "/pu-merit-list/",
     "/methodology/",
     "/data-sources/",
     "/about/"
@@ -1046,6 +1047,146 @@
     "/uet-taxila-merit-list/",
     "/mdcat-aggregate-calculator/",
     "/uet-taxila-aggregate-calculator/"
+   ]
+  },
+  {
+   "path": "/pu-aggregate-calculator/",
+   "keyword": "pu aggregate calculator",
+   "title": "PU Aggregate Calculator {season_year} (Punjab University)",
+   "description": "PU aggregate calculator {season_year}: Punjab University merit = (Matric ÷ 4 + FSc) ÷ 1375, or 75% academic + 25% entry test, from PU's official criteria.",
+   "h1": "Punjab University Aggregate Calculator {season_year}",
+   "crumb": "PU aggregate calculator",
+   "subtitle": "Basic criteria: (Matric ÷ 4 + FA/FSc) ÷ (Matric total ÷ 4 + FA/FSc total)",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The PU aggregate calculator uses Punjab University's basic criteria: merit = (Matric marks ÷ 4 + FA/FSc marks + additional marks) ÷ (Matric total ÷ 4 + FA/FSc total) × 100. With 1000/1100 Matric and 950/1100 FSc that is 1200 ÷ 1375 = 87.27%. Programs with an entry test count this academic merit 75% and the test 25%.",
+   "answer_source": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
+   "content_file": "pu-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the Punjab University merit formula?",
+     "a": "For BS 1st semester: (one quarter of Matric marks + FA/FSc marks + additional marks) divided by (one quarter of the Matric total + the FA/FSc total), times 100. It is printed on page 1 of PU's Merit of Last Year document."
+    },
+    {
+     "q": "Does PU count Matric marks?",
+     "a": "Yes, but only one quarter of them. With 1100 total marks each, Matric counts about 20% and FA/FSc about 80%."
+    },
+    {
+     "q": "How does the PU entry test count?",
+     "a": "For programs that hold a test, PU's official merit calculator gives the test 25% and the Matric ÷ 4 + FSc academic merit 75%."
+    },
+    {
+     "q": "What is the PU formula for BS 5th semester?",
+     "a": "(Matric ÷ 4 + FA/FSc ÷ 5 + BA/BSc + additional marks) divided by the same totals. It is for students who already hold a 2-year bachelor's degree or ADP."
+    },
+    {
+     "q": "Is this the exact merit PU will show?",
+     "a": "It is the basic merit. PU notes that departments make certain additions or subtractions (for example additional marks) before they display merit lists."
+    },
+    {
+     "q": "PU ka aggregate kaise nikalain?",
+     "a": "Matric ke marks ko 4 se divide karein, FSc ke poore marks jama karein, phir (Matric total ÷ 4 + FSc total) se divide kar ke 100 se zarb dein. 1000 aur 950 marks par 87.27% banta hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Punjab University mein Matric ke kitne marks count hote hain?",
+     "a": "Sirf ek chothai (÷ 4). Yani 1100 mein se Matric ka hissa taqreeban 20% aur FSc ka 80% hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Punjab University ka basic formula: <strong>(Matric ÷ 4 + FSc + additional marks) ÷ (Matric total ÷ 4 + FSc total) × 100</strong>. Matric sirf ek chothai count hota hai.</p><p>Misaal: Matric 1000/1100 aur FSc 950/1100 → 1200 ÷ 1375 = 87.27%. Jin programs mein entry test hai un mein yeh 75% aur test 25% count hota hai. Pichhle saal ka merit <a href=\"/pu-merit-list/\">PU merit list</a> par dekhein.</p>",
+   "sources": [
+    {
+     "label": "University of the Punjab: Undergraduate Programs Merit of Last Year 2025 (basic criteria + closing merit)",
+     "url": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "University of the Punjab: Basic Criteria Merit Calculator",
+     "url": "https://journals.pu.edu.pk/old/fee/basicadmission/calculator/",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/pu-merit-list/",
+    "/guides/what-is-closing-merit/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/uet-taxila-aggregate-calculator/",
+    "/comsats-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/pu-merit-list/",
+   "keyword": "pu merit list",
+   "title": "PU Merit List {season_year}: Punjab University Closing Merit {data_year}",
+   "description": "PU merit list: Punjab University's official closing merit {data_year} for 257 BS programs and shifts, from Pharm-D 91.34% and PUCIT CS 87.18% downwards.",
+   "h1": "Punjab University (PU) Merit List {season_year} & Closing Merit {data_year}",
+   "crumb": "PU merit list",
+   "subtitle": "Official 'Merit of Last Year' figures: BS 1st and 5th semester, morning and evening, all campuses",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "Punjab University's official closing merit for {data_year} ran from 91.34% for Pharm-D and 87.18% for PUCIT Computer Science (New Campus) down to below 40% for some evening and campus programs. BBA at IBA closed at 81.79%, Electrical Engineering at 76.691% and English Literature at 77.73% (morning). Source: PU, Merit of Last Year 2025.",
+   "answer_source": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
+   "content_file": "pu-merit-list.html",
+   "faq": [
+    {
+     "q": "What was the PU closing merit for BS Computer Science?",
+     "a": "PUCIT BS Computer Science closed at 87.18% (New Campus, morning), 86.02% (Old Campus) and 83.33% (New Campus, evening/self-support) in {data_year}."
+    },
+    {
+     "q": "Which Punjab University program has the highest merit?",
+     "a": "Pharm-D at 91.34% (morning), followed by PUCIT Computer Science 87.18% and Data Science 86.1%."
+    },
+    {
+     "q": "What was the PU BBA merit?",
+     "a": "BBA at the Institute of Business Administration closed at 81.79% (morning) and 72.84% (evening/self-support); BBIT at 81.829%."
+    },
+    {
+     "q": "Are evening programs easier to get into at PU?",
+     "a": "Usually yes. In {data_year}, evening, replica and self-supporting seats closed 5 to 25 points below the morning seats of the same department."
+    },
+    {
+     "q": "Where is the official PU merit list?",
+     "a": "Candidate-wise lists are on admissions.pu.edu.pk under Merit Lists, and the summary 'Merit of Last Year' PDF is on pu.edu.pk. Every row here links to that PDF."
+    },
+    {
+     "q": "PU mein BS CS ka merit kitna jata hai?",
+     "a": "{data_year} mein PUCIT New Campus CS 87.18%, Old Campus 86.02% aur evening 83.33% par close hua.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Punjab University ka merit kab aata hai?",
+     "a": "Merit lists admission ke dauran admissions.pu.edu.pk par aati hain. Pichhle saal ka closing merit is page par hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Yeh Punjab University ka official <strong>closing merit {data_year}</strong> hai, yani har program mein pichhle saal admission kis merit par band hua. Pharm-D 91.34%, PUCIT CS 87.18% aur BBA (IBA) 81.79% sab se upar the.</p><p>Evening aur self-supporting seats ka merit aam taur par morning se 5 se 25 number kam hota hai. Apna merit <a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a> se nikalein.</p>",
+   "sources": [
+    {
+     "label": "University of the Punjab: Undergraduate Programs Merit of Last Year 2025 (basic criteria + closing merit)",
+     "url": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "University of the Punjab admissions portal: Merit Lists",
+     "url": "https://admissions.pu.edu.pk/admissions/applicant/meritlist",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/pu-aggregate-calculator/",
+    "/guides/what-is-closing-merit/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/uet-taxila-merit-list/",
+    "/mdcat-merit-list/",
+    "/methodology/"
    ]
   }
  ]

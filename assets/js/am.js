@@ -12,13 +12,16 @@
   }
 
   /**
-   * Weighted aggregate. formula = {parts:[{key,total,weight}], bonus:[{key,part,marks}]}
+   * Weighted aggregate. formula = {parts:[{key,total,weight,pool?,scale?}], bonus:[{key,part,marks}]}
+   * Parts sharing a `pool` are added up first (each multiplied by its `scale`, default 1)
+   * and the pool gets the sum of their weights: PU uses (Matric/4 + Inter) / (total/4 + total).
    * values = {o_<key>: obtained, t_<key>: total, b_<key>: true}
    * Returns {aggregate, parts:[{key,label,obtained,total,weight,share}]} or {error}.
    */
   function aggregate(formula, values) {
     var out = { aggregate: 0, parts: [] };
     var extra = {};
+    var pools = {};
     (formula.bonus || []).forEach(function (b) {
       if (values['b_' + b.key]) extra[b.part] = (extra[b.part] || 0) + num(b.marks);
     });
@@ -30,10 +33,22 @@
       if (isNaN(total) || total <= 0) return { error: 'Enter the total marks for ' + p.label + '.', key: p.key };
       if (obtained > total) return { error: p.label + ' marks cannot be more than ' + total + '.', key: p.key };
       var got = Math.min(obtained + (extra[p.key] || 0), total);
-      var share = (got / total) * num(p.weight);
-      out.parts.push({ key: p.key, label: p.label, obtained: got, total: total, weight: num(p.weight), share: share });
-      out.aggregate += share;
+      var row = { key: p.key, label: p.label, obtained: got, total: total, weight: num(p.weight), share: (got / total) * num(p.weight) };
+      if (p.pool) {
+        var sc = p.scale == null ? 1 : num(p.scale);
+        var pl = pools[p.pool] || (pools[p.pool] = { w: 0, den: 0, rows: [] });
+        pl.w += row.weight;
+        pl.den += sc * total;
+        row.scaled = sc * got;
+        pl.rows.push(row);
+      }
+      out.parts.push(row);
     }
+    Object.keys(pools).forEach(function (k) {
+      var pl = pools[k];
+      pl.rows.forEach(function (r) { r.share = pl.den > 0 ? pl.w * r.scaled / pl.den : 0; delete r.scaled; });
+    });
+    out.parts.forEach(function (r) { out.aggregate += r.share; });
     out.aggregate = Math.round(out.aggregate * 10000) / 10000;
     return out;
   }
@@ -168,7 +183,7 @@
         '<div class="am-table-wrap"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
         '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button></div>';
       if (cfg.rows && cfg.rows.length) {
-        html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' closing merits of the last two years (final list, open merit). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
+        html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' closing merits of the last two years (open merit, latest list of each year). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
           chanceList(predict(agg, cfg.rows, cfg.band), 'No programs to compare yet.');
       }
       out.hidden = false;

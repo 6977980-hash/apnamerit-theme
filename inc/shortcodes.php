@@ -170,6 +170,8 @@ function am_sc_calculator( $atts ): string {
 					'label'  => (string) $p['label'],
 					'total'  => (float) $p['total'],
 					'weight' => (float) $p['weight'],
+					'pool'   => (string) ( $p['pool'] ?? '' ),
+					'scale'  => (float) ( $p['scale'] ?? 1 ),
 				),
 				(array) $f['parts']
 			),
@@ -182,7 +184,7 @@ function am_sc_calculator( $atts ): string {
 				. '<input id="am-o-' . $k . '" name="o_' . esc_attr( (string) $p['key'] ) . '" type="number" inputmode="decimal" min="0" step="any" required>'
 				. '<span>out of</span>'
 				. '<input aria-label="' . esc_attr( (string) $p['label'] ) . ' total marks" name="t_' . esc_attr( (string) $p['key'] ) . '" type="number" inputmode="decimal" min="1" step="any" value="' . esc_attr( (string) $p['total'] ) . '" required>'
-				. '</div><small>Weight ' . esc_html( (string) $p['weight'] ) . '%</small></div>';
+				. '</div><small>' . esc_html( ! empty( $p['hint'] ) ? (string) $p['hint'] : 'Weight ' . $p['weight'] . '%' ) . '</small></div>';
 		}
 		foreach ( (array) ( $f['bonus'] ?? array() ) as $b ) {
 			$html .= '<label class="am-check"><input type="checkbox" name="b_' . esc_attr( (string) $b['key'] ) . '"> ' . esc_html( (string) $b['label'] ) . '</label>';
@@ -222,7 +224,7 @@ function am_formula_table( array $uni ): string {
 	foreach ( (array) ( $uni['formulas'] ?? array() ) as $f ) {
 		$rows = '';
 		foreach ( (array) $f['parts'] as $p ) {
-			$rows .= '<tr><td>' . esc_html( (string) $p['label'] ) . '</td><td>' . esc_html( (string) $p['weight'] ) . '%</td><td>' . esc_html( (string) $p['total'] ) . '</td></tr>';
+			$rows .= '<tr><td>' . esc_html( (string) $p['label'] ) . '</td><td>' . esc_html( ! empty( $p['hint'] ) ? (string) $p['hint'] : $p['weight'] . '%' ) . '</td><td>' . esc_html( (string) $p['total'] ) . '</td></tr>';
 		}
 		$out .= '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( $short . ' aggregate formula: ' . $f['label'] ) . '</caption><thead><tr><th scope="col">Part</th><th scope="col">Weight</th><th scope="col">Usual total marks</th></tr></thead><tbody>' . $rows . '</tbody></table></div>';
 	}
@@ -303,7 +305,7 @@ function am_sc_merit_table( $atts ): string {
 		$dtxt  = null === $delta ? '—' : ( $delta > 0 ? '+' : '' ) . number_format( $delta, 2 );
 		$body .= '<tr' . $idattr . $attrs . ( $is_def ? '' : ' class="am-off"' ) . '>'
 			. '<th scope="row">' . esc_html( (string) $r['program'] ) . ( ! empty( $r['note'] ) ? '<small>' . esc_html( (string) $r['note'] ) . '</small>' : '' ) . '</th>'
-			. '<td>' . esc_html( (string) ( $r['campus'] ?? '' ) ) . '</td>'
+			. '<td>' . esc_html( (string) ( $r['campus'] ?? '' ) ) . ( ! empty( $r['shift'] ) ? '<small>' . esc_html( (string) $r['shift'] ) . '</small>' : '' ) . '</td>'
 			. '<td>' . esc_html( (string) ( $r['category'] ?? '' ) ) . '</td>'
 			. '<td>' . esc_html( (string) ( $r['list'] ?? '' ) ) . '</td>'
 			. '<td>' . esc_html( (string) $r['year'] ) . '</td>'

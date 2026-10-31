@@ -316,6 +316,23 @@
      "fetched": "2026-10-31"
     }
    ]
+  },
+  {
+   "name": "University of the Punjab (PU), Lahore",
+   "website": "https://pu.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Undergraduate Programs Merit of Last Year 2025 (basic criteria and closing merit)",
+     "url": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Basic Criteria Merit Calculator (75% academic + 25% entry test)",
+     "url": "https://journals.pu.edu.pk/old/fee/basicadmission/calculator/",
+     "fetched": "2026-10-31"
+    }
+   ]
   }
  ]
 }
