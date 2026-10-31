@@ -205,7 +205,7 @@ function am_merit_markdown( array $uni ): string {
 	if ( ! $rows ) {
 		return '';
 	}
-	$year  = am_uni_year( $uni, $list, $cat );
+	$year  = am_uni_year( $uni );
 	$cur   = array_values( array_filter( $rows, fn( $r ) => (int) $r['year'] === $year ) );
 	usort( $cur, fn( $a, $b ) => (float) $b['closing'] <=> (float) $a['closing'] );
 	$cell = fn( $s ) => str_replace( array( '|', "\n" ), array( '/', ' ' ), (string) $s );
