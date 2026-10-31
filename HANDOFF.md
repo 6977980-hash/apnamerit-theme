@@ -29,9 +29,9 @@
 - Rank Math / root `.htaccess` steps skipped: owner decision + Hostinger already forces https/non-www.
 
 ## Open items / blockers
-- **Owner:** contact email for `/contact/` and `/about/` (now shows "Email address coming soon") → `site.json contact.email`.
+- Contact email set: contact@apnamerit.com (owner must make sure this mailbox exists in Hostinger Emails).
 - **Owner:** city for the about page/Person schema → `site.json author.city` (optional).
-- **Owner:** Google Search Console (URL-prefix property, HTML tag method) and Bing Webmaster codes → `site.json verification.*`; then verify and submit `https://apnamerit.com/wp-sitemap.xml` (Bing can import from GSC).
+- Google verification code set 2026-10-31 (owner clicks Verify in GSC). **Owner:** Bing Webmaster code (or import from GSC) → `site.json verification.*`; then verify and submit `https://apnamerit.com/wp-sitemap.xml` (Bing can import from GSC).
 - PageSpeed Insights API quota was exhausted from this container; Lighthouse CLI not run. Proxy measurement below; owner/next phase should run pagespeed.web.dev once.
 
 ## Verification done (2026-10-31, live)
