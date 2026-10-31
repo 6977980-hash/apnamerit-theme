@@ -1,22 +1,22 @@
 # HANDOFF — Phase 4 (PU and general universities), part 1 — 2026-10-31
 
 ## Status
-- Live at https://apnamerit.com, theme v0.7.0.
-- New live pages (200, in sitemap, one H1, FAQPage + BreadcrumbList JSON-LD): `/pu-aggregate-calculator/` (WebApplication), `/pu-merit-list/` (CollectionPage + Dataset, 257 rows, `#pucit` section), `/ku-merit-list/` (46 rows), `/iiui-aggregate-calculator/`. Homepage has a "Punjab University and general universities" section.
-- Data: `pu.json` (formulas `basic` = (Matric/4 + FSc)/(total/4 + total), `test` = 75% academic + 25% test; **257 records**, year 2025, list "Last merit", category "Open merit", shift Morning / Evening / Replica / Self-support / "Evening / Replica / Self-support"; 47 "(5th semester)" rows carry `predict: false`), `ku.json` (no formula; 38 test-based rows, category "Test score ≥ N", + 8 Visual Studies "final points" rows; year **2026**, list "Closing"), `iiui.json` (PQM 40/60, test 15/25/60; `merit: []`).
+- Live at https://apnamerit.com, theme v0.7.1.
+- New live pages (200, in sitemap, one H1, FAQPage + BreadcrumbList JSON-LD): `/pu-aggregate-calculator/` (WebApplication), `/pu-merit-list/` (CollectionPage + Dataset, 257 rows, `#pucit` section), `/ku-merit-list/` (161 rows in two tables), `/iiui-aggregate-calculator/`, `/uaf-aggregate-calculator/`. Homepage has a "Punjab University and general universities" section.
+- Data: `pu.json` (formulas `basic` = (Matric/4 + FSc)/(total/4 + total), `test` = 75% academic + 25% test; **257 records**, year 2025, list "Last merit", category "Open merit", shift Morning / Evening / Replica / Self-support / "Evening / Replica / Self-support"; 47 "(5th semester)" rows carry `predict: false`), `ku.json` (no formula; list "Test-based": 2026 = Admissions 2027 PDFs, 38 rows + 8 Visual Studies "final points"; 2025 = Prospectus 2027 Appendix I, 42 rows; category "Test score ≥ N". List "Open merit": 2025, Appendix G, 73 rows, category "K (Karachi)" only; `defaults.year` "2026"), `iiui.json` (PQM 40/60, test 15/25/60; `merit: []`), `uaf.json` (30% Matric + 30% Part-I + 40% test; `merit: []`). PU formulas have Hafiz +20 (`bonus`, Admission Regulations p. 23).
 - Phase 3 part 2 (UET Lahore, site down) and Phase 2 part 2 (KMU/Sindh/NUMS) stay open in their own threads.
 
 ## Next phase must do (Phase 4 part 2, then Phase 5)
-- **UAF**: `web.uaf.edu.pk/Contents/admissions/un/adm_overview.html` → "Details/Advertisement of Undergraduate Admissions 2026-27" PDF (12.2 MB, `UploadFiles/Announcements/0b3c6ddc-….pdf`) should hold the merit formula; owner approval needed. Merit lists 2026-27 = ~1,400 candidate-wise PDFs at `web.uaf.edu.pk/Downloads/MeritListsView` (names; derive closing like UHS only for final lists, never store names).
-- **KU calculator**: academic % definition is in `uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf` (14.5 MB, ask). Open-merit (non-test) department closing figures not published yet.
-- **PU Hafiz/additional marks**: in `pu.edu.pk/downloads/Admission-Regulations-Book.pdf` (2.1 MB, ask) → add `bonus` to `pu.json`.
+- **UAF closing merit**: ~1,400 candidate-wise PDFs at `web.uaf.edu.pk/Downloads/MeritListsView` (names; derive closing like UHS only for final lists, never store names). No summary published.
+- **KU**: Admissions 2027 open-merit closing not published yet (re-check uokadmission.edu.pk). Prospectus Appendices J/K/L = Admissions 2025 (year 2024), H/K = BS 3rd year, S/P columns of G: not stored yet (images; read visually at 220 dpi). No KU calculator: the prospectus gives no academic % formula.
 - **Air University** (`au.edu.pk`, `portals.au.edu.pk` 403), **Bahria** (criteria not in page HTML; `cms.bahria.edu.pk` 403), **ITU** (eligibility only, no weights published), **IST** (Next.js page has no criteria): need owner screenshots/links of official merit criteria. Never use third-party weights.
-- `data_year` → 2026 in November (Phase 7): KU rows (year 2026) then enter the predictor; PU 2025 rows remain the previous-year reference.
+- `data_year` → 2026 in November (Phase 7): KU 2026 rows then enter the predictor; remove `ku.json defaults.year` then (it only exists because KU's latest year is ahead of data_year).
 - TLS: `uaf.edu.pk` and `pucit.edu.pk` send incomplete chains. Fetch with a CA file = `/root/.ccr/ca-bundle.crt` + intermediates from the certs' AIA URLs (RapidSSL TLS RSA CA G1, Sectigo Public Server Authentication CA DV R36); never `-k`.
 
 ## How things work now (only what changed)
 - **Pooled parts** (`assets/js/am.js` `aggregate()`): parts with the same `pool` are summed with `scale` (default 1) before dividing, pool weight = sum of their weights. PU: matric `scale 0.25`, fsc `scale 1`. Display weights (20/80, 15/60) are only exact at default totals; `hint` text replaces "Weight X%" under the input and in the formula table. Hand-checked: PU 1000/1100 + 950/1100 → 87.27 (= 1200/1375), +60/100 test → 80.45; 1200 Matric total → 85.71; IIUI → 88.18 / 71.23; UET Taxila example unchanged 82.84.
 - Merit tables show `shift` under the campus name. Calculator text says "open merit, latest list of each year" (not "final list").
+- `[am_merit_table uni="…" list="…" category="…"]`: several tables per page, each restricted to one list, with its own default category; one Dataset per university; anchors get the list prefix when the list is not the university's default. `defaults.year` (optional) overrides data_year for the default view.
 - Record field `predict: false` keeps a row out of the calculator/predictor (used for PU 5th-semester rows).
 - PU source PDF cells given in marks (Pakistan Studies), "Nil", "new program", the ambiguous IBIT BSBA evening cell, Sheikh Zayed boys/girls, Chemistry 5th semester and Energy & Environmental 5th semester are not stored. All 257 values were re-matched against the PDF text automatically (0 missing).
 
@@ -60,13 +60,13 @@
 - Rank Math / root `.htaccess` steps skipped: owner decision + Hostinger already forces https/non-www.
 
 ## Open items / blockers
-- **Owner:** approve UAF advertisement / KU prospectus / PU regulations downloads; send Air, Bahria, ITU, IST merit-criteria links or screenshots. Upload UET Lahore / NUST / COMSATS files (Phase 3 notes). Optional: city for `site.json author.city`.
+- **Owner:** send Air, Bahria, ITU, IST merit-criteria links or screenshots. Upload UET Lahore / NUST / COMSATS files (Phase 3 notes). Optional: city for `site.json author.city`.
 - **Deferred by owner decision:** GSC "Request indexing" and Bing import until the whole site is complete.
 - PageSpeed Insights not run from this container (quota). Owner/next phase: pagespeed.web.dev once on a calculator page.
 
 ## Verification done (2026-10-31, live, Phase 4 part 1)
 - `/pu-aggregate-calculator/`, `/pu-merit-list/`, `/ku-merit-list/`, `/iiui-aggregate-calculator/`: 200, one H1, canonical, JSON-LD parses (calculators: WebPage + FAQPage + WebApplication; merit lists: CollectionPage + FAQPage + Dataset), all in `wp-sitemap-ampages-1.xml`; `scripts/check.py` 0 errors 0 warnings.
-- Playwright 360px live: PU 1000/950 → 87.27%, IIUI → 88.18%, no horizontal scroll, no JS errors; PU table 257 rows (HTML 169 KB), KU 46 rows with 27 visible by default.
+- Playwright 360px live: PU 1000/950 → 87.27% (Hafiz → 88.73%), IIUI → 88.18%, UAF 1000/480/60 → 77.45%, KU tables 27 + 73 visible rows, no duplicate ids, no horizontal scroll, no JS errors; PU table 257 rows (HTML 169 KB), KU 46 rows with 27 visible by default.
 
 ## Verification done (2026-10-31, live, Phase 3 part 1)
 - All 7 new pages 200, one H1, canonical, title from tokens, JSON-LD parses (calculators: WebPage + FAQPage + WebApplication; merit list: CollectionPage + FAQPage + Dataset); sitemap lists all 20 pages; `scripts/check.py` 0 errors 0 warnings.
