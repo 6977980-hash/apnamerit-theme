@@ -25,7 +25,9 @@
 
 ## Verification done (2026-10-31)
 - PHP harness (stubbed WP): default visible rows UHS 54, PU 257, KU 27 (+73 open merit), UET Taxila 12; one status line per university; tokens PU 2025 / UHS 2025 / KU 2026 / UET Taxila 2024; predictor 306.
-- `scripts/check.py` 0 errors 0 warnings. Live checks: see the commit after deploy.
+- `scripts/check.py` 0 errors 0 warnings.
+- Live (main `d53db96`): all merit pages, `/merit-list/`, `/merit-data-report-2026/`, `/predictor/`, `/data/` 200, one H1, JSON-LD parses, no PHP warnings; titles PU/MDCAT "… Closing Merit 2025", KU/UET Taxila unchanged; status line on the 4 merit pages; predictor + homepage say 306; report in the sitemap and llms.txt "Data reports"; llms.txt and llms-full.txt (92 KB) rebuilt on apnamerit.com URLs.
+- Bug found and fixed during the live check: the first deploy left `am_merit_markdown()` calling `am_uni_year()` with undefined vars → TypeError while building llms-full.txt on the first post-deploy request (one 500 for that request, llms-full not rebuilt). Lesson: run the PHP harness over `am_llms_full_txt()` too before merging (stub WP functions; see Phase 7 notes in this file).
 
 ## Still owner-gated (unchanged)
 - GSC/Bing indexing, IndexNow, AdSense: wait for the owner's "site complete".
