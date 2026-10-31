@@ -16,6 +16,7 @@ Checks:
   links    - internal links in PHP/JSON/content HTML resolve to paths in data/pages.json
   privacy  - no PDFs, CNIC-like numbers or private keys committed
   size     - am.css within the 14 KB inline budget
+  predict  - scripts/tests/predict_rows.php: predictor value + year = merit table default row
 """
 from __future__ import annotations
 
@@ -391,6 +392,19 @@ def check_size() -> None:
         warn("size", f"am.css is {css.stat().st_size} bytes (> 14 KB): it will load as a file, not inline")
 
 
+def check_predict() -> None:
+    php = shutil.which("php")
+    if not php:
+        warn("predict", "php not installed; predictor test skipped")
+        return
+    r = subprocess.run([php, str(ROOT / "scripts/tests/predict_rows.php")], capture_output=True, text=True)
+    out = (r.stdout + r.stderr).strip()
+    if r.returncode != 0:
+        err("predict", out)
+    else:
+        print("INFO  [predict]", out.splitlines()[-1] if out else "ok")
+
+
 def main() -> int:
     check_php()
     loaded = check_json()
@@ -402,6 +416,7 @@ def main() -> int:
     check_links(loaded)
     check_privacy()
     check_size()
+    check_predict()
     for w in warnings:
         print("WARN ", w)
     for e in errors:

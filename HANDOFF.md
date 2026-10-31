@@ -1,3 +1,26 @@
+# HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
+
+Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `REVIEW-2026-11-01.md`. UET Lahore sources: `sources/uet/` (git-ignored; README has provenance).
+
+## Fix 1: predictor printed the older year's figure with the newest year's label (v0.12.1)
+
+**Verified on live before the fix (2026-10-31 22:3x UTC, curl of the embedded predictor config):**
+- `/mdcat-aggregate-calculator/`: `"program":"MBBS (public)","campus":"King Edward Medical University (KEMC), Lahore","ref":96.0576,"year":2025`; AIMC `"ref":95.5955,"year":2025`. `/data/uhs.json` KEMC: 2025 Final 94.8677, 2025 1st 94.9167, 2024 Final 96.0576. Reproduced.
+- `/predictor/`: same KEMC row (`ref 96.0576, year 2025`). Reproduced.
+- Homepage "Highest closing merits" card: UHS Punjab · 2025 94.87% KEMC — correct (it uses `am_default_rows` + `am_uni_year`, not the predictor rows). The merit-list "What can I get with my aggregate?" block only links to `/predictor/`, so it shared the bug through the predictor.
+
+**Actual cause (differs from the brief's guess):** not list-name matching. `am_predict_rows()` (`inc/shortcodes.php`) deliberately took the *higher* closing of the last two years (documented "cautious" method) but set `year` to the *newest* year separately, so value and label came from different records. Both UHS 2024 and 2025 rows are named "Final", so the list filter was fine.
+
+**Fix:** per program, the newest year's default-list, default-category record wins (year before only when the newest year has no row); value and printed year come from the same record. Methodology text updated everywhere it said "higher of the last two years" (am.js "Where can you get in?" note, `/predictor/`, `/methodology/`, `/disclaimer/`, `/about/`, pages.json predictor/home FAQ + WebApplication description).
+
+**Test:** `scripts/tests/predict_rows.php` (stubbed WP, CLI) asserts every predictor row's value + year equal the merit table default row (newest year, default list, default category). Run by `scripts/check.py` (`predict`). On the old code: 24 of 306 programs failed; now 0.
+
+**Programs whose predictor value changed (old → new, all labelled 2025/2026 before and after):**
+- UHS 2025, MBBS (public), 17 colleges: KEMC 96.06 → 94.87, AIMC 95.60 → 94.45, SIMS 95.27 → 94.23, NMC 95.14 → 94.15, AMC 94.73 → 94.01, RMC 94.74 → 93.93, FJMC 94.66 → 93.81, PMC 94.57 → 93.79, QAMC 94.53 → 93.72, GMC 94.47 → 93.67, SLMC 94.43 → 93.66, KMSMC 94.40 → 93.63, NSMC 94.35 → 93.60, SMC 94.34 → 93.59, SZMC 94.32 → 93.54, DGMC 94.30 → 93.53, Narowal 94.24 → 93.51. Private colleges unchanged (UHS has no 2024 private rows).
+- KU 2026 (test-based, score ≥ 50), 7 programs (the same bug: 2025 figure under a 2026 label): BE Chemical Engineering (DAE) 74.44 → 70.84, BS Human Nutrition & Dietetics 79.64 → 77.73, BS International Relations (Arts …) 52.82 → 45.36, BS International Relations (Commerce / Science) 60.19 → 60.09, BS Mass Communication 60.73 → 60.18, BS Public Administration 62.09 → 61.91, B.Ed. (Hons.) Teacher Education 51.00 → 50.09.
+
+**Live check:** see below (filled after deploy).
+
 # HANDOFF — Phase 7 (season operations), November 2026 step — 2026-10-31
 
 ## Status

@@ -37,7 +37,7 @@
     },
     {
      "q": "Can I tell if I will get admission?",
-     "a": "The merit predictor compares your aggregate with the last two years of official closing merits and marks each program Strong, Borderline or Unlikely. It is a guide, not a guarantee."
+     "a": "The merit predictor compares your aggregate with the newest official closing merit of each program and marks each program Strong, Borderline or Unlikely. It is a guide, not a guarantee."
     },
     {
      "q": "Aggregate kaise nikalte hain?",
@@ -1660,12 +1660,12 @@
    "description": "Merit predictor: enter your aggregate and see which MBBS, BDS, PU, KU and UET Taxila programs you could get, based on official closing merits.",
    "h1": "Merit Predictor {season_year}: Which University Can You Get Into?",
    "crumb": "Merit predictor",
-   "subtitle": "Your aggregate against the last two years of official closing merits, {predict_count} programs",
+   "subtitle": "Your aggregate against the newest official closing merits, {predict_count} programs",
    "type": "content",
    "template": "calculator",
    "published": "2026-10-31",
    "updated": "2026-10-31",
-   "answer": "The merit predictor compares your aggregate with the higher of the last two official closing merits of each program. More than 1.5 points above is Strong, within 1.5 points is Borderline, and lower is Unlikely. In 2025, public MBBS in Punjab closed at 93.51% to 94.87% and PUCIT Computer Science at 87.18%.",
+   "answer": "The merit predictor compares your aggregate with the newest official closing merit of each program (final list, open merit). More than 1.5 points above is Strong, within 1.5 points is Borderline, and lower is Unlikely. In 2025, public MBBS in Punjab closed at 93.51% to 94.87% and PUCIT Computer Science at 87.18%.",
    "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
    "content_file": "predictor.html",
    "faq": [
@@ -1675,7 +1675,7 @@
     },
     {
      "q": "How accurate is the merit predictor?",
-     "a": "It is a guide based on the last two years of official closing merits. Merit can rise or fall by a point or more each year, which is why results within 1.5 points are marked Borderline."
+     "a": "It is a guide based on the newest official closing merits. Merit can rise or fall by a point or more each year, which is why results within 1.5 points are marked Borderline."
     },
     {
      "q": "Can I use my MDCAT aggregate for PU or UET?",

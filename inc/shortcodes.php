@@ -121,8 +121,8 @@ function am_source_label( string $url ): string {
 
 /**
  * Reference closing merit per program for the predictor (master plan 4.3; method on /methodology/):
- * default list + category, the university's newest year (am_uni_year) and the year before,
- * reference = the higher closing.
+ * default list + category, the newest year of each program (am_uni_year, or the year before
+ * when a program has no row that year). Reference = that one record's closing, labelled with its own year.
  *
  * @return array<int, array> rows: program, campus, shift, ref, year, field, anchor
  */
@@ -149,8 +149,11 @@ function am_predict_rows( array $uni ): array {
 			);
 			continue;
 		}
-		$rows[ $key ]['ref']  = max( $rows[ $key ]['ref'], (float) $r['closing'] );
-		$rows[ $key ]['year'] = max( $rows[ $key ]['year'], $year );
+		// Newest year wins; value and printed year always come from the same record (Fix 1, 2026-11-01).
+		if ( $year > $rows[ $key ]['year'] ) {
+			$rows[ $key ]['ref']  = (float) $r['closing'];
+			$rows[ $key ]['year'] = $year;
+		}
 	}
 	return array_values( $rows );
 }
@@ -459,7 +462,7 @@ function am_sc_predictor( $atts ): string {
 		array(
 			'id'          => 'predictor',
 			'name'        => 'Admission Chance Predictor',
-			'description' => 'Compares your aggregate with the last two years of final-list open-merit closing aggregates across Pakistani universities.',
+			'description' => 'Compares your aggregate with the newest official final-list, open-merit closing aggregate of each program across Pakistani universities.',
 		)
 	);
 	$select = function ( string $key, string $label, array $opts ): string {
