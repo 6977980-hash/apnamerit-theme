@@ -141,7 +141,7 @@ def check_templates() -> None:
                 err("template", f"{r}: {why}")
         if src.lower().count("<h1") > 1:
             err("template", f"{r}: more than one <h1>")
-        if r.startswith("templates/") and "Template Name:" not in src:
+        if r.startswith("templates/page-") and "Template Name:" not in src:
             err("template", f"{r}: missing 'Template Name:' header")
     for f, needle in (("header.php", "wp_head()"), ("footer.php", "wp_footer()")):
         p = ROOT / f
@@ -186,6 +186,12 @@ def check_pages(loaded: dict[str, object]) -> None:
             err("pages", f"{where} {path}: description must be 140-155 chars (is {len(desc)})")
         if re.search(r"\{[a-z_]+\}", title + desc):
             err("pages", f"{where} {path}: unknown token left in title/description")
+        if p.get("template", "default") not in {"default", "calculator", "meritlist"}:
+            err("pages", f"{where} {path}: unknown template '{p.get('template')}'")
+        if path != "/" and not p.get("h1"):
+            err("pages", f"{where} {path}: h1 missing")
+        if p.get("updated") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(p["updated"])):
+            err("pages", f"{where} {path}: updated must be YYYY-MM-DD")
         if not p.get("noindex") and not p.get("keyword"):
             err("pages", f"{where} {path}: primary keyword missing")
         for key, val in (("path", path), ("title", title), ("description", desc), ("keyword", p.get("keyword"))):

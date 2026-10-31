@@ -1,11 +1,24 @@
 {
-  "_note": "SEO for every URL (no Rank Math). path = URL path with trailing slash. Tokens: {season_year}, {data_year}, {brand}. title <= 60 chars, description 140-155 chars after token replacement. One primary keyword per page (MASTER-PLAN 3.2).",
+  "_note": "Every URL of the site lives here (owner decision 2026-10-31: no wp-admin pages, no Rank Math). Fields: path (with trailing slash), keyword, title (<=60), description (140-155), h1, template (default|calculator|meritlist), content (HTML + shortcodes), updated (YYYY-MM-DD), noindex. Tokens: {season_year}, {data_year}, {brand}.",
   "pages": [
     {
       "path": "/",
       "keyword": "aggregate calculator",
       "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
-      "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in."
+      "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
+      "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
+      "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p class=\"am-soon\">Calculators are launching soon.</p>",
+      "updated": "2026-10-31"
+    },
+    {
+      "path": "/am-router-test/",
+      "noindex": true,
+      "title": "Router test",
+      "description": "Temporary page used once to verify that pages defined in data/pages.json are served by the theme. It will be removed in the very next commit, right away.",
+      "h1": "Router test",
+      "template": "default",
+      "content": "<p>[am_calculator uni=\"uet\"]</p><p>Router works.</p>",
+      "updated": "2026-10-31"
     }
   ]
 }

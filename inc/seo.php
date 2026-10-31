@@ -27,6 +27,9 @@ function am_tokens( string $text ): string {
  * Path of the current request as used in data/pages.json: "/" or "/some/slug/".
  */
 function am_current_path(): string {
+	if ( am_virtual_page() ) {
+		return (string) am_virtual_page()['path'];
+	}
 	if ( is_front_page() ) {
 		return '/';
 	}
@@ -41,23 +44,15 @@ function am_current_path(): string {
  * SEO entry for the current page from data/pages.json, or an empty array.
  */
 function am_page_seo(): array {
-	static $entry = null;
-	if ( null !== $entry ) {
-		return $entry;
-	}
-	$entry = array();
-	$path  = am_current_path();
-	foreach ( (array) ( am_data( 'pages' )['pages'] ?? array() ) as $page ) {
-		if ( is_array( $page ) && isset( $page['path'] ) && $page['path'] === $path ) {
-			$entry = $page;
-			break;
-		}
-	}
-	return $entry;
+	$path = am_current_path();
+	return '' === $path ? array() : am_find_page( $path );
 }
 
 /** Canonical URL for the current request (empty when the page should not have one). */
 function am_canonical(): string {
+	if ( am_virtual_page() ) {
+		return home_url( am_virtual_page()['path'] );
+	}
 	if ( is_front_page() ) {
 		return home_url( '/' );
 	}

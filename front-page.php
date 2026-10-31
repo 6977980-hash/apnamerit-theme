@@ -1,16 +1,20 @@
 <?php
 /**
- * Homepage. Phase 0 placeholder; Phase 1+ renders the all-universities aggregate calculator here.
+ * Homepage: the "/" entry of data/pages.json (h1 + content). Falls back to a placeholder.
  */
 
 defined( 'ABSPATH' ) || exit;
 get_header();
-$season_year = (int) am_site( 'season_year' );
+$am_page = am_find_page( '/' );
+$am_h1   = am_tokens( (string) ( $am_page['h1'] ?? 'Aggregate Calculator for Pakistani Universities ({season_year})' ) );
 ?>
 <div class="am-wrap am-hero">
-	<h1>Aggregate Calculator for Pakistani Universities (<?php echo esc_html( (string) $season_year ); ?>)</h1>
-	<p class="am-lead">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>
-	<p class="am-soon">Calculators are launching soon.</p>
+	<h1><?php echo esc_html( $am_h1 ); ?></h1>
+	<?php
+	if ( ! empty( $am_page['content'] ) ) {
+		echo am_render_page_content( $am_page ); // phpcs:ignore WordPress.Security.EscapeOutput -- trusted repo content
+	}
+	?>
 </div>
 <?php
 get_footer();
