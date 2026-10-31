@@ -31,7 +31,7 @@
 ## Open items / blockers
 - Contact email set: contact@apnamerit.com (owner must make sure this mailbox exists in Hostinger Emails).
 - **Owner:** city for the about page/Person schema → `site.json author.city` (optional).
-- Google verification code set 2026-10-31 (owner clicks Verify in GSC). **Owner:** Bing Webmaster code (or import from GSC) → `site.json verification.*`; then verify and submit `https://apnamerit.com/wp-sitemap.xml` (Bing can import from GSC).
+- GSC verified and `wp-sitemap.xml` submitted by owner 2026-10-31. **Owner:** Bing Webmaster via "Import from Google Search Console"; create the contact@apnamerit.com mailbox (no MX record on 2026-10-31).
 - PageSpeed Insights API quota was exhausted from this container; Lighthouse CLI not run. Proxy measurement below; owner/next phase should run pagespeed.web.dev once.
 
 ## Verification done (2026-10-31, live)
