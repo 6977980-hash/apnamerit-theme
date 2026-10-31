@@ -55,6 +55,102 @@ function am_default_rows( array $uni, string $list = '', string $cat = '' ): arr
 	);
 }
 
+/**
+ * Year of a university's default view: `defaults.year` when it has rows, else the newest year
+ * up to site data_year, else the newest year at all. Universities move to a new year one by one,
+ * when their official figures exist (Phase 7), so pages never show an empty year.
+ */
+function am_uni_year( array $uni, string $list = '', string $cat = '' ): int {
+	$years = array_unique( array_map( fn( $r ) => (int) $r['year'], am_default_rows( $uni, $list, $cat ) ) );
+	if ( ! $years ) {
+		return 0;
+	}
+	$want = (int) ( $uni['defaults']['year'] ?? 0 );
+	if ( $want && in_array( $want, $years, true ) ) {
+		return $want;
+	}
+	$dy   = (int) am_site( 'data_year' );
+	$upto = array_filter( $years, fn( $y ) => $y <= $dy );
+	return $upto ? max( $upto ) : max( $years );
+}
+
+/**
+ * "Season status" line from data/calendar.json, once per university per page (above its first table).
+ */
+function am_season_status( array $uni ): string {
+	static $done = array();
+	$slug = (string) ( $uni['slug'] ?? '' );
+	$row  = (array) ( am_data( 'calendar' )['universities'][ $slug ] ?? array() );
+	if ( isset( $done[ $slug ] ) || empty( $row['status'] ) || empty( $row['source_url'] ) ) {
+		return '';
+	}
+	$done[ $slug ] = true;
+	$when          = ! empty( $row['checked'] ) ? ' (checked ' . gmdate( 'j M Y', (int) strtotime( (string) $row['checked'] ) ) . ')' : '';
+	return '<p class="am-muted am-status"><strong>Season status' . esc_html( $when ) . ':</strong> ' . esc_html( (string) $row['status'] )
+		. ' <a href="' . esc_url( (string) $row['source_url'] ) . '" rel="nofollow noopener" target="_blank">Official page</a></p>';
+}
+
+// ------------------------------------------------------------------ [am_report]
+/**
+ * Yearly data report (Phase 7, November): one summary row + key figures per university with
+ * closing data, frozen at year="YYYY" (rows after that year are ignored, so the report keeps
+ * its numbers when new seasons are added).
+ */
+function am_sc_report( $atts ): string {
+	$atts = shortcode_atts( array( 'year' => (string) am_site( 'data_year' ) ), (array) $atts, 'am_report' );
+	$upto = (int) $atts['year'];
+	$unis = am_unis();
+	uasort( $unis, fn( $a, $b ) => strcasecmp( (string) ( $a['short'] ?? '' ), (string) ( $b['short'] ?? '' ) ) );
+	$rows  = '';
+	$parts = '';
+	$total = 0;
+	foreach ( $unis as $uni ) {
+		$uni['merit'] = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => (int) ( $r['year'] ?? 0 ) <= $upto ) );
+		unset( $uni['defaults']['year'] );
+		$def = am_default_rows( $uni );
+		if ( ! $def || empty( $uni['meritlist_path'] ) ) {
+			continue;
+		}
+		$total += count( array_filter( $uni['merit'], fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) ) );
+		$year   = am_uni_year( $uni );
+		$cur    = array_filter( $def, fn( $r ) => (int) $r['year'] === $year );
+		$vals   = array_map( fn( $r ) => (float) $r['closing'], $cur );
+		$prev   = array();
+		foreach ( $def as $r ) {
+			if ( (int) $r['year'] === $year - 1 ) {
+				$prev[ $r['program'] . '|' . ( $r['campus'] ?? '' ) . '|' . ( $r['shift'] ?? '' ) ] = (float) $r['closing'];
+			}
+		}
+		$moves = array();
+		foreach ( $cur as $r ) {
+			$k = $r['program'] . '|' . ( $r['campus'] ?? '' ) . '|' . ( $r['shift'] ?? '' );
+			isset( $prev[ $k ] ) && ( $moves[] = (float) $r['closing'] - $prev[ $k ] );
+		}
+		$avg   = $moves ? array_sum( $moves ) / count( $moves ) : null;
+		$short = (string) ( $uni['short'] ?? '' );
+		$view  = ( $uni['defaults']['list'] ?? 'Final' ) . ' list, ' . strtolower( (string) ( $uni['defaults']['category'] ?? 'Open merit' ) );
+		$rows .= '<tr><th scope="row"><a href="' . esc_url( home_url( (string) $uni['meritlist_path'] ) ) . '">' . esc_html( $short ) . '</a><small>' . esc_html( $view ) . '</small></th>'
+			. '<td>' . esc_html( (string) $year ) . '</td>'
+			. '<td data-v="' . count( $cur ) . '">' . count( $cur ) . '</td>'
+			. '<td data-v="' . esc_attr( (string) max( $vals ) ) . '">' . esc_html( am_pct( max( $vals ) ) ) . '</td>'
+			. '<td data-v="' . esc_attr( (string) min( $vals ) ) . '">' . esc_html( am_pct( min( $vals ) ) ) . '</td>'
+			. ( null === $avg ? '<td>— <small>one year only</small></td>' : '<td data-v="' . esc_attr( (string) round( $avg, 3 ) ) . '">' . esc_html( ( $avg > 0 ? '+' : '' ) . number_format( $avg, 2 ) ) . '<small>' . count( $moves ) . ' programs, vs ' . ( $year - 1 ) . '</small></td>' )
+			. '</tr>';
+		$srcs   = array_values( array_unique( array_map( fn( $r ) => (string) $r['source_url'], $cur ) ) );
+		$links  = implode( ', ', array_map( fn( $u ) => '<a href="' . esc_url( $u ) . '" rel="nofollow noopener" target="_blank">' . esc_html( am_source_label( $u ) ) . '</a>', $srcs ) );
+		$parts .= '<h3>' . esc_html( (string) ( $uni['name'] ?? $short ) ) . '</h3><ul>';
+		foreach ( am_quotables( $uni ) as $q ) {
+			$parts .= '<li>' . esc_html( $q ) . '</li>';
+		}
+		$parts .= '</ul><p class="am-muted">Source: ' . $links . '. Full table: <a href="' . esc_url( home_url( (string) $uni['meritlist_path'] ) ) . '">' . esc_html( am_path_label( (string) $uni['meritlist_path'] ) ) . '</a>.</p>';
+	}
+	if ( ! $rows ) {
+		return am_stub( 'am_report', $atts );
+	}
+	return '<div class="am-table-wrap"><table class="am-table"><caption>Newest official closing merits by university, up to ' . esc_html( (string) $upto ) . ' (' . esc_html( (string) $total ) . ' records)</caption><thead><tr><th scope="col">University and view</th><th scope="col">Newest year</th><th scope="col">Programs</th><th scope="col">Highest closing</th><th scope="col">Lowest closing</th><th scope="col">Average change</th></tr></thead><tbody>' . $rows . '</tbody></table></div>'
+		. '<h2>University by university</h2>' . $parts;
+}
+
 // ------------------------------------------------------------------ [am_hub]
 function am_sc_hub( $atts ): string {
 	$atts = shortcode_atts( array( 'type' => 'calculator' ), (array) $atts, 'am_hub' );
@@ -64,7 +160,6 @@ function am_sc_hub( $atts ): string {
 	if ( 'meritlist' === $atts['type'] ) {
 		$body = '';
 		$none = array();
-		$dy   = (int) am_site( 'data_year' );
 		foreach ( $unis as $uni ) {
 			$all = array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) );
 			if ( ! $all || empty( $uni['meritlist_path'] ) ) {
@@ -76,9 +171,7 @@ function am_sc_hub( $atts ): string {
 			$years = array_unique( array_map( fn( $r ) => (int) $r['year'], $all ) );
 			sort( $years );
 			$def   = am_default_rows( $uni );
-			$dys   = array_map( fn( $r ) => (int) $r['year'], $def );
-			$want  = (int) ( $uni['defaults']['year'] ?? $dy );
-			$ly    = in_array( $want, $dys, true ) ? $want : ( $dys ? max( $dys ) : 0 );
+			$ly    = am_uni_year( $uni );
 			$vals  = array_map( fn( $r ) => (float) $r['closing'], array_filter( $def, fn( $r ) => (int) $r['year'] === $ly ) );
 			$range = $vals ? am_pct( max( $vals ) ) . ' to ' . am_pct( min( $vals ) ) . ' <small>' . esc_html( $ly . ', ' . ( $uni['defaults']['list'] ?? 'Final' ) . ', ' . ( $uni['defaults']['category'] ?? 'Open merit' ) ) . '</small>' : '—';
 			$body .= '<tr><th scope="row"><a href="' . esc_url( home_url( (string) $uni['meritlist_path'] ) ) . '">' . esc_html( am_path_label( (string) $uni['meritlist_path'] ) ) . '</a><small>' . esc_html( (string) $uni['name'] ) . '</small></th>'
@@ -478,5 +571,6 @@ add_action(
 		add_shortcode( 'am_data_catalog', 'am_sc_data_catalog' );
 		add_shortcode( 'am_embed_builder', 'am_sc_embed_builder' );
 		add_shortcode( 'am_submit', 'am_sc_submit' );
+		add_shortcode( 'am_report', 'am_sc_report' );
 	}
 );

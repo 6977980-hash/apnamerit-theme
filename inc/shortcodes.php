@@ -121,12 +121,13 @@ function am_source_label( string $url ): string {
 
 /**
  * Reference closing merit per program for the predictor (master plan 4.3; method on /methodology/):
- * default list + category, last two years up to data_year, reference = the higher closing.
+ * default list + category, the university's newest year (am_uni_year) and the year before,
+ * reference = the higher closing.
  *
  * @return array<int, array> rows: program, campus, shift, ref, year, field, anchor
  */
 function am_predict_rows( array $uni ): array {
-	$dy   = (int) am_site( 'data_year' );
+	$dy   = am_uni_year( $uni );
 	$list = (string) ( $uni['defaults']['list'] ?? 'Final' );
 	$cat  = (string) ( $uni['defaults']['category'] ?? 'Open merit' );
 	$rows = array();
@@ -268,9 +269,8 @@ function am_sc_merit_table( $atts ): string {
 	$short = (string) ( $uni['short'] ?? $uni['name'] ?? '' );
 	$base  = am_slug( (string) ( $uni['slug'] ?? $atts['uni'] ) );
 	$id    = '' === $only ? $base : $base . '-' . am_slug( $only );
-	$dy    = (int) am_site( 'data_year' );
 	$def   = array(
-		'year'     => (string) ( $uni['defaults']['year'] ?? $dy ),
+		'year'     => (string) am_uni_year( $uni, '' !== $only ? $only : '', (string) $atts['category'] ),
 		'list'     => '' !== $only ? $only : (string) ( $uni['defaults']['list'] ?? 'Final' ),
 		'category' => '' !== (string) $atts['category'] ? (string) $atts['category'] : (string) ( $uni['defaults']['category'] ?? 'Open merit' ),
 	);
@@ -403,7 +403,8 @@ function am_sc_merit_table( $atts ): string {
 		)
 	);
 
-	return '<div class="am-merit" data-am-table="' . esc_attr( $id ) . '">'
+	return am_season_status( $uni )
+		. '<div class="am-merit" data-am-table="' . esc_attr( $id ) . '">'
 		. ( $filters ? '<div class="am-filters">' . $filters . '</div>' : '' )
 		. '<p class="am-muted am-count" aria-live="polite"></p>'
 		. '<div class="am-table-wrap"><table class="am-table am-sortable"><caption>' . esc_html( $caption ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $body . '</tbody></table></div>'

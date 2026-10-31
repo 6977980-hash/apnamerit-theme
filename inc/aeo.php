@@ -41,9 +41,7 @@ function am_quotables( array $uni, string $list = '', string $cat = '' ): array 
 	if ( ! $rows ) {
 		return array();
 	}
-	$years = array_map( fn( $r ) => (int) $r['year'], $rows );
-	$want  = (int) ( $uni['defaults']['year'] ?? am_site( 'data_year' ) );
-	$year  = in_array( $want, $years, true ) ? $want : max( $years );
+	$year  = am_uni_year( $uni, $list, $cat );
 	$cur   = array_values( array_filter( $rows, fn( $r ) => (int) $r['year'] === $year ) );
 	usort( $cur, fn( $a, $b ) => (float) $b['closing'] <=> (float) $a['closing'] );
 	$short = (string) ( $uni['short'] ?? $uni['name'] ?? '' );
@@ -126,6 +124,7 @@ function am_llms_groups(): array {
 		'Merit lists'           => array(),
 		'Tools and open data'   => array(),
 		'Guides'                => array(),
+		'Data reports'          => array(),
 		'About and policies'    => array(),
 	);
 	foreach ( (array) ( am_data( 'pages' )['pages'] ?? array() ) as $p ) {
@@ -138,6 +137,8 @@ function am_llms_groups(): array {
 			$key = 'About and policies';
 		} elseif ( str_starts_with( $path, '/guides/' ) ) {
 			$key = 'Guides';
+		} elseif ( str_starts_with( $path, '/merit-data-report-' ) ) {
+			$key = 'Data reports';
 		} elseif ( 'calculator' === $tpl && '/predictor/' !== $path ) {
 			$key = 'Aggregate calculators';
 		} elseif ( 'meritlist' === $tpl && '/merit-list/' !== $path ) {
@@ -161,7 +162,7 @@ function am_llms_head(): string {
 	$out  .= $brand . ' (' . am_site_url() . ') publishes aggregate calculators, program-wise closing merits and an admission chance predictor for Pakistani universities. ';
 	$out  .= 'Every formula and closing aggregate is copied from an official university, UHS or PMDC document and links to it. ';
 	$out  .= $brand . ' is independent and not affiliated with any university.' . "\n\n";
-	$out  .= '- Admission season: ' . am_site( 'season_year' ) . '; latest complete merit year: ' . am_site( 'data_year' ) . ".\n";
+	$out  .= '- Admission season: ' . am_site( 'season_year' ) . '; newest merit data year: ' . am_site( 'data_year' ) . " (each university shows its own newest official year).\n";
 	$out  .= '- Closing aggregate = aggregate of the last candidate admitted in that merit list; percentages have 2 decimals unless the source prints more.' . "\n";
 	$out  .= '- Data licence: ' . am_site( 'data_license.name' ) . ' (' . am_site( 'data_license.url' ) . '); ' . am_site( 'data_license.attribution' ) . ".\n";
 	$out  .= '- Machine-readable data: ' . home_url( '/data/index.json' ) . ' (one JSON file per university).' . "\n";
@@ -196,9 +197,7 @@ function am_merit_markdown( array $uni ): string {
 	if ( ! $rows ) {
 		return '';
 	}
-	$years = array_map( fn( $r ) => (int) $r['year'], $rows );
-	$want  = (int) ( $uni['defaults']['year'] ?? am_site( 'data_year' ) );
-	$year  = in_array( $want, $years, true ) ? $want : max( $years );
+	$year  = am_uni_year( $uni, $list, $cat );
 	$cur   = array_values( array_filter( $rows, fn( $r ) => (int) $r['year'] === $year ) );
 	usort( $cur, fn( $a, $b ) => (float) $b['closing'] <=> (float) $a['closing'] );
 	$cell = fn( $s ) => str_replace( array( '|', "\n" ), array( '/', ' ' ), (string) $s );

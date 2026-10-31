@@ -168,10 +168,27 @@ def check_pages(loaded: dict[str, object]) -> None:
     tokens = {"{season_year}": str(site.get("season_year", "")), "{data_year}": str(site.get("data_year", "")),
               "{brand}": str(site.get("brand", ""))}
 
+    def uni_year(slug: str) -> str:
+        # Mirrors am_uni_year(): defaults.year if it has rows, else newest year <= data_year, else newest.
+        u = loaded.get(f"data/universities/{slug}.json")
+        if not isinstance(u, dict):
+            err("pages", f"token {{year:{slug}}}: data/universities/{slug}.json missing")
+            return str(site.get("data_year", ""))
+        dflt = u.get("defaults", {}) or {}
+        lst, cat = dflt.get("list", "Final"), dflt.get("category", "Open merit")
+        years = {int(r["year"]) for r in u.get("merit", []) if r.get("list") == lst and r.get("category") == cat
+                 and isinstance(r.get("closing"), (int, float)) and r.get("source_url")}
+        if not years:
+            return str(site.get("data_year", ""))
+        if dflt.get("year") and int(dflt["year"]) in years:
+            return str(dflt["year"])
+        upto = [y for y in years if y <= int(site.get("data_year", 0))]
+        return str(max(upto) if upto else max(years))
+
     def fill(t: str) -> str:
         for k, v in tokens.items():
             t = t.replace(k, v)
-        return t
+        return re.sub(r"\{year:([a-z0-9-]+)\}", lambda m: uni_year(m.group(1)), t)
 
     seen: dict[str, set] = {"path": set(), "title": set(), "description": set(), "keyword": set()}
     for i, p in enumerate(pages["pages"]):
@@ -226,7 +243,7 @@ def check_pages(loaded: dict[str, object]) -> None:
         for t in texts + [cf_text, str(p.get("content", ""))]:
             plain = re.sub(r"<a [^>]*>.*?</a>", "", str(t))
             for sent in re.split(r"(?<=[.!?])\s+|<li>|<p>|<h2", plain):
-                if re.search(r"\{(data|season)_year\}", sent) and re.search(r"\d\.\d+%", sent):
+                if re.search(r"\{(data_year|season_year|year:[a-z0-9-]+)\}", sent) and re.search(r"\d\.\d+%", sent):
                     warn("pages", f"{path}: year token next to a fixed figure, use a literal year: {sent[:90]!r}")
         slug = re.sub(r"[^a-z0-9]+", "-", path.lower()).strip("-") or "home"
         if not p.get("noindex") and not (ROOT / "assets/og" / (p.get("og_image") or f"{slug}.png")).exists():
@@ -316,6 +333,34 @@ def check_links(loaded: dict[str, object]) -> None:
                 err("links", f"{rel(f)}: link to unknown page {url}")
 
 
+# ---------------------------------------------------------------- season calendar
+def check_calendar(loaded: dict[str, object]) -> None:
+    cal = loaded.get("data/calendar.json")
+    if cal is None:
+        return
+    site = loaded.get("data/site.json") or {}
+    if not isinstance(cal, dict):
+        err("calendar", "data/calendar.json must be an object")
+        return
+    if cal.get("season_year") not in (site.get("season_year"), (site.get("season_year") or 0) + 1):
+        err("calendar", f"season_year {cal.get('season_year')} should be site season_year or the next one")
+    for slug, row in (cal.get("universities") or {}).items():
+        if f"data/universities/{slug}.json" not in loaded:
+            err("calendar", f"universities.{slug}: no data/universities/{slug}.json")
+        if not row.get("status") or not str(row.get("source_url", "")).startswith("https://"):
+            err("calendar", f"universities.{slug}: status and https source_url required (no source, no fact)")
+        if row.get("checked") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(row["checked"])):
+            err("calendar", f"universities.{slug}: checked must be YYYY-MM-DD")
+    for i, ev in enumerate(cal.get("events") or []):
+        kind = ev.get("kind")
+        if kind == "official" and (not ev.get("date") or not str(ev.get("source_url", "")).startswith("https://")):
+            err("calendar", f"events[{i}]: official event needs date and https source_url")
+        elif kind == "estimate" and (not ev.get("window") or not ev.get("basis")):
+            err("calendar", f"events[{i}]: estimate needs window and basis")
+        elif kind not in ("official", "estimate"):
+            err("calendar", f"events[{i}]: kind must be official or estimate")
+
+
 # ---------------------------------------------------------------- privacy
 CNIC = re.compile(r"\b\d{5}-\d{7}-\d\b")
 SECRET = re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----|(?i:password\s*=\s*['\"][^'\"]+)")
@@ -353,6 +398,7 @@ def main() -> int:
     check_pages(loaded)
     check_nav(loaded)
     check_unis(loaded)
+    check_calendar(loaded)
     check_links(loaded)
     check_privacy()
     check_size()

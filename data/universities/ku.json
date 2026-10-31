@@ -9,7 +9,6 @@
  "updated": "2026-10-31",
  "_note": "Closing figures from KU Directorate of Admissions. Year = calendar year the lists were made: 'Admissions 2027' lists (Oct 2026, uokadmission.edu.pk PDFs) = 2026; 'Admissions 2026' (Prospectus 2027 Appendix G open merit BS, Appendix I test-based) = 2025. Test-based: academic closing % among candidates with at least the stated test score. Open merit: category K (Karachi institutions) only; S and P columns and BS 3rd year (Appendix H) not stored. Visual Studies 2027 = final points (20% academic + 60% test + 20% interview); 2026 Visual Studies table not stored (column header and note disagree). No calculator: the prospectus gives no academic % formula.",
  "defaults": {
-  "year": "2026",
   "list": "Test-based",
   "category": "Test score ≥ 50"
  },

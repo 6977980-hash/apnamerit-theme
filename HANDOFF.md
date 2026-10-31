@@ -1,3 +1,38 @@
+# HANDOFF — Phase 7 (season operations), November 2026 step — 2026-10-31
+
+## Status
+- Theme v0.10.0. `data_year` 2025 → **2026**; `season_year` stays 2026 (moves to 2027 in May–June 2027).
+- Official 2026 closing data checked on 2026-10-31 for every university with a merit table:
+  - **KU**: 2026 rows (Admissions 2027 test-based/Pharm-D 19 Oct, Visual Studies 26 Oct) already in; now the default view without `defaults.year` (removed). KU 2026 rows now feed the predictor (306 programs, was 305). Open-merit Admissions 2027 closing not out (dates extended).
+  - **UHS**: MDCAT 2026 held 20 Sep 2026; no 2026-27 MBBS/BDS selection lists yet. Stays 2025 (+2024).
+  - **PU**: `Merit-of-Last-Year-2026.pdf` 404. Fall 2026 portal lists (admissions.pu.edu.pk/admissions/applicant/meritlist → show-merit-list/<id>) are candidate-wise and can include candidates beyond the seats (e.g. "First 42 seats on merit and other will be availability of vacant seat"), so the last row is not the closing merit: do not derive PU 2026 from them; wait for PU's summary PDF. Stays 2025.
+  - **UET Taxila**: Prospectus 2026 (with 2025 entry) not on Downloads.php. Stays 2024.
+- New page `/merit-data-report-2026/` (yearly data report; linked from home, `/merit-list/`, `/data/`; llms.txt group "Data reports").
+- New `data/calendar.json`: season status line above each university's first merit table, last cycle's official dates, estimate windows, recurring ops.
+
+## How things work now (Phase 7 changes)
+- `am_uni_year( $uni, $list, $cat )` (`inc/growth.php`): year of a university's default view = `defaults.year` if it has rows, else newest year ≤ `data_year`, else newest. Used by the merit table default, Key figures, hub, llms-full table and predictor (window = that year and the year before). So `data_year` can move before every university has new data; no page shows an empty year.
+- Tokens: `{year:<slug>}` (e.g. `{year:pu}`) = `am_uni_year()` of that university; used in titles/H1s of `/mdcat-merit-list/` and `/pu-merit-list/`, homepage, mdcat content. `{predict_count}` = programs in the predictor (homepage, `/predictor/` subtitle). `{data_year}` is no longer used in pages (sentences with fixed figures carry literal years). `scripts/check.py` and `scripts/og.py` resolve `{year:<slug>}` the same way; check.py warns on any year token next to a fixed figure.
+- `[am_report year="2026"]`: summary table (newest year ≤ year, programs, highest, lowest, average change vs previous year) + Key figures per university, ignoring rows after `year`. **The prose in `content/merit-data-report-2026.html` and its pages.json entry quotes 591 records and fixed figures as of 31 Oct 2026**: if UHS/PU/UET Taxila rows for ≤ 2026 are added later, the shortcode table changes; either leave the prose dated "on 31 October 2026" (it is) or add a short "Update" line.
+- `am_season_status()` prints `data/calendar.json → universities.<slug>.status` (with source link and "checked" date) once per university per page. `scripts/check.py` validates calendar.json (status + https source, official events need date + source, estimates need window + basis).
+
+## Recurring season ops (MASTER-PLAN Phase 7; also `data/calendar.json → ops`)
+- **Now → March 2027**: watch uhs.edu.pk for 2026-27 MBBS/BDS selection lists (rebuild with `scripts/uhs_closing.py`, 2026 rows, list names like 2025), pu.edu.pk for Merit-of-Last-Year-2026.pdf, KU open-merit Admissions 2027. Each new list: data JSON → check.py → merge → live check → update the calendar status line.
+- **May–June 2027**: `season_year` → 2027; "expected merit 2027" guides only for programs with ≥ 2 official years; refresh calendar statuses and events.
+- **July–October 2027**: each new official list within 48 h: parse → JSON → push → live check → short merit-drop guide → share text for the owner.
+- **November 2027**: `data_year` → 2027, report `/merit-data-report-2027/` (copy the 2026 entry, `[am_report year="2027"]`), refresh calendar.json.
+
+## Verification done (2026-10-31)
+- PHP harness (stubbed WP): default visible rows UHS 54, PU 257, KU 27 (+73 open merit), UET Taxila 12; one status line per university; tokens PU 2025 / UHS 2025 / KU 2026 / UET Taxila 2024; predictor 306.
+- `scripts/check.py` 0 errors 0 warnings. Live checks: see the commit after deploy.
+
+## Still owner-gated (unchanged)
+- GSC/Bing indexing, IndexNow, AdSense: wait for the owner's "site complete".
+- Hostinger CDN may keep stale HTML after deploys: hPanel → Cache / CDN → Flush cache.
+- Pending data threads stay separate: UET Lahore, IST, KP/NUMS.
+
+---
+
 # HANDOFF — Phase 6 (AEO/GEO polish, performance, audit) — 2026-10-31
 
 ## Status

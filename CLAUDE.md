@@ -34,13 +34,14 @@ This repo **is** the WordPress theme `apnamerit`. Hostinger Git deploys branch `
 | `inc/cleanup.php` | Emojis, embeds, XML-RPC, comments, REST users, author/date/tag/attachment archives, block CSS, jQuery off |
 | `inc/assets.php` | Inlines `assets/css/am.css` (≤ 14 KB), enqueues deferred `assets/js/am.js` |
 | `inc/seo.php` | SEO without Rank Math: title, description, canonical, robots, OG, JSON-LD (`am_jsonld_graph`), core sitemap, robots.txt |
-| `data/pages.json` | Per-URL title, description, keyword (tokens `{season_year}`, `{data_year}`). Add every new page here. |
+| `data/pages.json` | Per-URL title, description, keyword (tokens `{season_year}`, `{data_year}`, `{year:<slug>}` = that university's newest official year, `{predict_count}`). Add every new page here. |
+| `data/calendar.json` | Season status line per university (above its merit table), last cycle's official dates, estimate windows, recurring ops. |
 | `inc/shortcodes.php` | `am_calculator`, `am_merit_table`, `am_predictor`, `am_faq`, `am_answer` |
 | `inc/router.php` | Serves `data/pages.json` paths (200, trailing-slash 301, sitemap provider) |
 | `inc/deploy.php` | Purges LiteSpeed once after each deploy |
 | `inc/growth.php` | Hubs (`am_hub`), trend SVG, `/data/<slug>.json` + `/data/index.json`, `/embed/<slug>/` widgets, `am_embed_builder`, `am_submit`, `am_data_catalog` |
 | `templates/virtual.php` | Layout for repo pages; `template` field = default / calculator / meritlist |
-| `data/site.json` | Domain, brand, author, `season_year`, `data_year`. Never hard-code years. |
+| `data/site.json` | Domain, brand, author, `season_year`, `data_year`. Never hard-code years. Each university shows its newest year up to `data_year` (`am_uni_year()`), so `data_year` can move before every university has new data. |
 | `scripts/check.py` | Pre-merge checks. Run `python3 scripts/check.py` before every merge. |
 | `scripts/wp/` | Optional WP-CLI over SSH helpers (not used; owner chose no SSH) |
 | `sources/INDEX.md` | Official source URLs. PDFs stay local (git-ignored). |

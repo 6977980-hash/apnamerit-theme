@@ -87,10 +87,26 @@ def main() -> int:
     tokens = {"{season_year}": str(site["season_year"]), "{data_year}": str(site["data_year"]),
               "{brand}": site["brand"], "{founded}": str(site.get("founded", ""))}
 
+    def uni_year(slug_: str) -> str:
+        # Same rule as am_uni_year(): defaults.year, else newest year <= data_year, else newest.
+        f = ROOT / "data/universities" / f"{slug_}.json"
+        if not f.exists():
+            return str(site["data_year"])
+        u = json.loads(f.read_text(encoding="utf-8"))
+        d = u.get("defaults", {})
+        ys = {int(r["year"]) for r in u.get("merit", []) if r.get("list") == d.get("list", "Final")
+              and r.get("category") == d.get("category", "Open merit") and r.get("source_url")}
+        if not ys:
+            return str(site["data_year"])
+        if d.get("year") and int(d["year"]) in ys:
+            return str(d["year"])
+        upto = [y for y in ys if y <= int(site["data_year"])]
+        return str(max(upto) if upto else max(ys))
+
     def fill(t: str) -> str:
         for k, v in tokens.items():
             t = t.replace(k, v)
-        return t
+        return re.sub(r"\{year:([a-z0-9-]+)\}", lambda m: uni_year(m.group(1)), t)
 
     OUT.mkdir(parents=True, exist_ok=True)
     jobs = [("default", site["tagline"])] + [(slug(p["path"]), fill(p.get("h1") or p["title"])) for p in pages

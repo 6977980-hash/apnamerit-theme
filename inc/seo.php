@@ -4,15 +4,27 @@
  * <title>, meta description, canonical, robots, Open Graph, JSON-LD, core sitemap and robots.txt.
  *
  * Per-page titles/descriptions live in data/pages.json (edited through git), keyed by URL path.
- * Tokens {season_year} and {data_year} are replaced from data/site.json, so years are never typed.
+ * Tokens {season_year}, {data_year} and {year:<slug>} are replaced from data/site.json, so years are never typed.
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Replace {season_year}, {data_year}, {brand} and {founded} tokens.
+ * Replace {season_year}, {data_year}, {brand} and {founded} tokens, plus {year:<slug>} = the
+ * year of that university's default merit view (am_uni_year), e.g. {year:pu}, and
+ * {predict_count} = programs the predictor covers.
  */
 function am_tokens( string $text ): string {
+	if ( str_contains( $text, '{year:' ) ) {
+		$text = (string) preg_replace_callback(
+			'/\{year:([a-z0-9-]+)\}/',
+			fn( $m ) => (string) ( am_uni_year( am_uni( $m[1] ) ) ?: am_site( 'data_year' ) ),
+			$text
+		);
+	}
+	if ( str_contains( $text, '{predict_count}' ) ) {
+		$text = str_replace( '{predict_count}', (string) array_sum( array_map( fn( $u ) => count( am_predict_rows( $u ) ), am_unis() ) ), $text );
+	}
 	return strtr(
 		$text,
 		array(

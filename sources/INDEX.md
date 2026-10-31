@@ -41,3 +41,8 @@ Every number in `data/` must point to one of these via its `source_url`.
 | ITU | 2026 | Norms & Criteria page, selection criteria (updated 2026-08-12) | https://itu.edu.pk/admissions/application-process/ | 2026-10-31 | — | HTML |
 | Air University | 2026 | Prepare for Admission Test page: Aggregate Merit Formulation Criteria for UG (eng 10/50/40, non-eng 15/35/50), AU-CBT composition, exemptions | https://webdata.au.edu.pk/Pages/Admission/prepare_adm_test.aspx | 2026-10-31 | — | HTML; Cloudflare blocks the container, text copied by the owner |
 | Air University | 2026 | Eligibility Criteria, Bachelor programs (eng HSSC ≥ 60%, others ≥ 50%, PEC test pass 33%) | https://webdata.au.edu.pk/Pages/Admission/eligibility_criteria.aspx | 2026-10-31 | — | HTML; text copied by the owner |
+| PU | 2026 | Admission notice 719: 2nd phase (vacant seats) UG 2026-27, 8-28 Sep 2026 | https://pu.edu.pk/home/admission_notice/719 | 2026-10-31 | — | HTML; data/calendar.json |
+| PU | 2026 | Candidate-wise merit lists Fall 2026 (portal) | https://admissions.pu.edu.pk/admissions/applicant/meritlist | 2026-10-31 | — | names; lists can include candidates beyond seats, so no closing merit derived; Merit-of-Last-Year-2026.pdf 404 on 2026-10-31 |
+| UHS | 2026 | Home page: MDCAT 2026 held 20 Sep 2026; no 2026-27 MBBS/BDS selection lists yet | https://www.uhs.edu.pk/ | 2026-10-31 | — | HTML; data/calendar.json |
+| KU | 2026 | Admissions 2027 links page (schedule, closing PDFs, open-merit extension) | https://uokadmission.edu.pk/links | 2026-10-31 | — | HTML; data/calendar.json |
+| UET Taxila | 2026 | Downloads page (newest prospectus = 2025) | https://admissions.uettaxila.edu.pk/Downloads.php | 2026-10-31 | — | HTML; data/calendar.json |
