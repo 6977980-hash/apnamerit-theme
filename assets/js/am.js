@@ -185,6 +185,8 @@
       if (cfg.rows && cfg.rows.length) {
         html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' newest official closing merits (open merit, final list; the year is shown on each row). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
           chanceList(predict(agg, cfg.rows, cfg.band), 'No programs to compare yet.');
+      } else if (cfg.noRows) {
+        html += cfg.noRows;
       }
       if (cfg.predUrl) {
         html += '<p><a href="' + esc(cfg.predUrl + '?agg=' + agg.toFixed(2) + (cfg.rows && cfg.rows.length ? '&uni=' + encodeURIComponent(cfg.uni) : '')) + '">Open this aggregate in the merit predictor</a></p>';

@@ -158,6 +158,34 @@ function am_predict_rows( array $uni ): array {
 	return array_values( $rows );
 }
 
+/**
+ * Line under a calculator result when the university has no official closing merit in our data
+ * (Fix 3A, FIX-BRIEF 2026-11-01): names the nearest merit list (same field, else PU) and the hub.
+ */
+function am_no_merit_html( array $uni ): string {
+	$short = (string) ( $uni['short'] ?? $uni['name'] ?? '' );
+	$near  = null;
+	$best  = -1;
+	foreach ( am_unis() as $slug => $u ) {
+		if ( empty( $u['meritlist_path'] ) || ! am_predict_rows( $u ) || ! am_find_page( (string) $u['meritlist_path'] ) ) {
+			continue;
+		}
+		// Same field counts most, then same province; PU breaks ties (largest general list).
+		$score = 4 * (int) ( ( $u['field'] ?? '' ) === ( $uni['field'] ?? '-' ) ) + 2 * (int) ( '' !== ( $uni['province'] ?? '' ) && ( $u['province'] ?? '' ) === $uni['province'] ) + (int) ( 'pu' === $slug );
+		if ( $score > $best ) {
+			$best = $score;
+			$near = $u;
+		}
+	}
+	$html = 'We do not have an official closing merit (aggregate) for ' . esc_html( $short ) . ' yet, so there is no "Where can you get in?" list here. ';
+	if ( $near ) {
+		$html .= 'Compare with the <a href="' . esc_url( home_url( (string) $near['meritlist_path'] ) ) . '">' . esc_html( (string) $near['short'] ) . ' merit list</a> or see <a href="' . esc_url( home_url( '/merit-list/' ) ) . '">all merit lists</a>.';
+	} else {
+		$html .= 'See <a href="' . esc_url( home_url( '/merit-list/' ) ) . '">all merit lists</a>.';
+	}
+	return '<p class="am-muted am-nodata">' . $html . '</p>';
+}
+
 // ------------------------------------------------------------------ [am_calculator]
 function am_sc_calculator( $atts ): string {
 	$atts = shortcode_atts( array( 'uni' => '', 'compact' => '' ), (array) $atts, 'am_calculator' );
@@ -222,10 +250,12 @@ function am_sc_calculator( $atts ): string {
 		$html .= '</fieldset>';
 	}
 
+	$prows  = am_predict_rows( $uni );
 	$config = array(
 		'uni'      => $short,
 		'formulas' => $formulas,
-		'rows'     => am_predict_rows( $uni ),
+		'rows'     => $prows,
+		'noRows'   => $prows ? '' : am_no_merit_html( $uni ),
 		'band'     => AM_BAND,
 		'meritUrl' => ! empty( $uni['meritlist_path'] ) ? home_url( (string) $uni['meritlist_path'] ) : '',
 		'url'      => (string) apply_filters( 'am_calc_url', home_url( am_request_path() ), $uni ),

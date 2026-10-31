@@ -2,6 +2,16 @@
 
 Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `REVIEW-2026-11-01.md`. UET Lahore sources: `sources/uet/` (git-ignored; README has provenance).
 
+## Fix 2: UET Lahore (blocked, 2026-10-31)
+- Verified: `/uet-aggregate-calculator/` and `/uet-merit-list/` 404; `/data/index.json` has only `uet-taxila`, `uet-peshawar`.
+- uet.edu.pk, apply.uet.edu.pk, admission.uet.edu.pk: Cloudflare 522 (20 s) at 22:4x UTC; web.archive.org closed by the container proxy.
+- Have: `sources/uet/` (PDF + .txt + README, 269 rows, "Fourth Merit List", year not printed) and the owner's draft `New Ideas/apnamerit-data/uet-lahore.json` (269 rows, raw codes in `category`, `formulas: []`).
+- Missing (asked owner 2026-10-31): official aggregate formula, meaning of category codes, confirmation the list is the 2025 cycle. No page ships without the formula from an official notice.
+
+## Fix 3 part A: "no closing merit" line on calculators without data (v0.12.2)
+- Verified live: `/comsats-aggregate-calculator/` config `"rows":[]`, so am.js printed no "Where can you get in?" block and no explanation (same for the other 10 with `records: 0` in `/data/index.json`).
+- Fix: `am_no_merit_html()` (`inc/shortcodes.php`) → config `noRows`; am.js prints it under the result when `rows` is empty. Nearest list: same field, then same province, PU on ties (engineering → UET Taxila, others → PU). Shared calculator shortcode, so all 11 calculators without rows get it.
+
 ## Fix 1: predictor printed the older year's figure with the newest year's label (v0.12.1)
 
 **Verified on live before the fix (2026-10-31 22:3x UTC, curl of the embedded predictor config):**
