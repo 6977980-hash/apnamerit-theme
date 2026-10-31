@@ -152,6 +152,14 @@ function am_llms_groups(): array {
 }
 
 /**
+ * Absolute URL on the canonical domain (site.json url). The llms files are written on the first
+ * request after a deploy, which can arrive on Hostinger's temporary domain, so home_url() is not safe here.
+ */
+function am_llms_url( string $path ): string {
+	return untrailingslashit( am_site_url() ) . '/' . ltrim( $path, '/' );
+}
+
+/**
  * Header shared by llms.txt and llms-full.txt.
  */
 function am_llms_head(): string {
@@ -165,8 +173,8 @@ function am_llms_head(): string {
 	$out  .= '- Admission season: ' . am_site( 'season_year' ) . '; newest merit data year: ' . am_site( 'data_year' ) . " (each university shows its own newest official year).\n";
 	$out  .= '- Closing aggregate = aggregate of the last candidate admitted in that merit list; percentages have 2 decimals unless the source prints more.' . "\n";
 	$out  .= '- Data licence: ' . am_site( 'data_license.name' ) . ' (' . am_site( 'data_license.url' ) . '); ' . am_site( 'data_license.attribution' ) . ".\n";
-	$out  .= '- Machine-readable data: ' . home_url( '/data/index.json' ) . ' (one JSON file per university).' . "\n";
-	$out  .= '- Editor: ' . am_site( 'author.name' ) . ' (' . home_url( '/about/' ) . '). Corrections: ' . am_site( 'contact.email' ) . ".\n";
+	$out  .= '- Machine-readable data: ' . am_llms_url( '/data/index.json' ) . ' (one JSON file per university).' . "\n";
+	$out  .= '- Editor: ' . am_site( 'author.name' ) . ' (' . am_llms_url( '/about/' ) . '). Corrections: ' . am_site( 'contact.email' ) . ".\n";
 	$out  .= '- Last generated: ' . gmdate( 'Y-m-d' ) . ".\n\n";
 	return $out;
 }
@@ -179,13 +187,13 @@ function am_llms_txt(): string {
 	foreach ( am_llms_groups() as $label => $pages ) {
 		$out .= '## ' . $label . "\n\n";
 		foreach ( $pages as $p ) {
-			$out .= '- [' . am_plain( (string) ( $p['h1'] ?? $p['title'] ?? '' ) ) . '](' . home_url( (string) $p['path'] ) . '): ' . am_plain( (string) ( $p['description'] ?? '' ) ) . "\n";
+			$out .= '- [' . am_plain( (string) ( $p['h1'] ?? $p['title'] ?? '' ) ) . '](' . am_llms_url( (string) $p['path'] ) . '): ' . am_plain( (string) ( $p['description'] ?? '' ) ) . "\n";
 		}
 		$out .= "\n";
 	}
 	$out .= "## Optional\n\n";
-	$out .= '- [Full text for LLMs](' . home_url( '/llms-full.txt' ) . '): every answer, formula, FAQ and default merit table on one page, in Markdown.' . "\n";
-	$out .= '- [Open data index](' . home_url( '/data/index.json' ) . '): JSON list of every university dataset.' . "\n\n";
+	$out .= '- [Full text for LLMs](' . am_llms_url( '/llms-full.txt' ) . '): every answer, formula, FAQ and default merit table on one page, in Markdown.' . "\n";
+	$out .= '- [Open data index](' . am_llms_url( '/data/index.json' ) . '): JSON list of every university dataset.' . "\n\n";
 	return $out . AM_LLMS_SIGNATURE . "\n";
 }
 
@@ -229,7 +237,7 @@ function am_llms_full_txt(): string {
 		$out .= '## ' . $label . "\n\n";
 		foreach ( $pages as $p ) {
 			$path = (string) $p['path'];
-			$out .= '### ' . am_plain( (string) ( $p['h1'] ?? $p['title'] ?? '' ) ) . "\n\n" . 'URL: ' . home_url( $path ) . "\n\n";
+			$out .= '### ' . am_plain( (string) ( $p['h1'] ?? $p['title'] ?? '' ) ) . "\n\n" . 'URL: ' . am_llms_url( $path ) . "\n\n";
 			$answer = am_plain( (string) ( $p['answer'] ?? '' ) );
 			$out   .= ( '' !== $answer ? $answer : am_plain( (string) ( $p['description'] ?? '' ) ) ) . "\n\n";
 			foreach ( $by[ $path ] ?? array() as list( $kind, $uni ) ) {
@@ -257,7 +265,7 @@ function am_llms_full_txt(): string {
 	}
 	$out .= "## About and policies\n\n";
 	foreach ( am_llms_groups()['About and policies'] ?? array() as $p ) {
-		$out .= '- [' . am_plain( (string) ( $p['h1'] ?? $p['title'] ?? '' ) ) . '](' . home_url( (string) $p['path'] ) . '): ' . am_plain( (string) ( $p['description'] ?? '' ) ) . "\n";
+		$out .= '- [' . am_plain( (string) ( $p['h1'] ?? $p['title'] ?? '' ) ) . '](' . am_llms_url( (string) $p['path'] ) . '): ' . am_plain( (string) ( $p['description'] ?? '' ) ) . "\n";
 	}
 	return $out . "\n" . AM_LLMS_SIGNATURE . "\n";
 }
