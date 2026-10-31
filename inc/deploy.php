@@ -21,16 +21,20 @@ function am_deploy_fingerprint(): string {
 	return md5( implode( '|', $parts ) );
 }
 
+// wp_loaded: the LiteSpeed Cache plugin has registered its listeners by then.
 add_action(
-	'init',
+	'wp_loaded',
 	function () {
 		$now = am_deploy_fingerprint();
 		if ( get_option( 'am_deploy_fingerprint' ) === $now ) {
 			return;
 		}
 		update_option( 'am_deploy_fingerprint', $now, true );
-		do_action( 'litespeed_purge_all' ); // No-op if LiteSpeed Cache is not active.
+		// The server itself honours this header, with or without the plugin.
+		if ( ! headers_sent() ) {
+			header( 'X-LiteSpeed-Purge: *' );
+		}
+		do_action( 'litespeed_purge_all' );
 		wp_cache_flush();
-	},
-	1
+	}
 );
