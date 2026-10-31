@@ -1,44 +1,47 @@
-# HANDOFF — after Phase 0 (Setup) — 2026-10-31
+# HANDOFF — after Phase 1 (Foundation and trust) — 2026-10-31
 
 ## Status
-- Live at https://apnamerit.com: theme `apnamerit` active, deployed by Hostinger Git from `main` of `6977980-hash/apnamerit-theme` (public). Pushes go live within seconds (webhook verified with commits ce121ac, 1fead5a, 82a73c8).
-- Homepage shows the placeholder H1 "Aggregate Calculator for Pakistani Universities (2026)".
-- WordPress (done by owner): title "Apna Merit", tagline set, timezone Asia/Karachi, default plugins/themes removed, LiteSpeed Cache kept. Hostinger already 301s http → https and www → non-www.
+- Live at https://apnamerit.com, theme v0.4.0, `main` deployed by Hostinger Git (Phase 1 commit 81c0ef8 + this handoff).
+- Live pages (all 200, in `/wp-sitemap.xml`): `/`, `/about/`, `/methodology/`, `/data-sources/`, `/editorial-policy/`, `/contact/`, `/privacy-policy/`, `/terms/`, `/disclaimer/`.
+- No university data yet, so no calculator or merit-list page is live. The engines are built and tested with a local fixture (not committed).
 
-## Owner decisions (override MASTER-PLAN; also in CLAUDE.md)
-- **No Rank Math.** Theme does title, meta description, canonical, robots, OG, JSON-LD, sitemap and robots.txt.
-- **No wp-admin pages, no SSH.** Every URL is an entry in `data/pages.json`; push → live.
-- **Auto-merge:** Claude ff-merges to `main` after `scripts/check.py` passes.
-- Author name **Ali Ahmad**.
+## Next phase must do (Phase 2 — MDCAT / medical cluster)
+- MASTER-PLAN section 8 Phase 2, adjusted: data goes in `data/universities/<slug>.json` (shape documented at the top of `inc/shortcodes.php`); pages are `data/pages.json` entries (`template: calculator|meritlist`, `type: content`).
+- A content page needs (rule 7; `check.py` warns if missing): `answer` (or `[am_answer]`), `faq` (or `[am_faq]`), `roman_urdu`, `sources`, `related` (3+ paths), plus `parents` for the breadcrumb once hubs exist.
+- Calculator page content example: `[am_calculator uni="uhs"]` + "How it is calculated" HTML with a worked example. Merit page: `[am_merit_table uni="uhs"]`.
+- Add the documents used to `data/sources.json` → `documents` (label, url, fetched) for each university that goes live; add the URL to `sources/INDEX.md`.
+- Add header nav items (`data/nav.json`) for the new hub/calculator pages.
+- Run `python3 scripts/og.py` after adding pages (`--force` after a `season_year` change, the homepage image shows the year).
+- Owner still owes (see Open items): contact email, city, GSC/Bing codes.
 
-## Next phase must do (Phase 1 — Foundation and trust)
-- Everything in MASTER-PLAN section 8 Phase 1, adjusted: trust pages = `data/pages.json` entries (content HTML in the entry, or a `content_file` field if they get long — add support in `inc/router.php`); skip all Rank Math steps; robots.txt already done (`inc/seo.php`).
-- Add BreadcrumbList / WebApplication / FAQPage / Dataset nodes through the `am_jsonld_graph` filter.
-- GSC + Bing verification: add verification meta via `data/site.json` (e.g. `verification.google`) and print in `inc/seo.php`; submit `https://apnamerit.com/wp-sitemap.xml`.
-- Header/footer menus: WordPress menus are empty; build nav from data (e.g. `data/nav.json`) instead of wp-admin menus.
-
-## How things work now
-- `data/pages.json`: `path`, `keyword`, `title` (≤ 60), `description` (140–155), `h1`, `template` (default|calculator|meritlist), `content` (HTML + shortcodes), `updated`, `noindex`. Tokens `{season_year}`, `{data_year}`, `{brand}`. The `/` entry drives the homepage (`front-page.php`).
-- `inc/router.php`: serves those paths with `templates/virtual.php`, 301 adds a missing trailing slash, registers the `ampages` core-sitemap provider. WP `page` type is removed from the sitemap.
-- `inc/deploy.php`: on the first uncached PHP request after theme files change (hook `wp_loaded`), sends `X-LiteSpeed-Purge: *`, runs `litespeed_purge_all` and flushes object cache. LiteSpeed Cache 7.9.2 is active. If a page still looks stale right after a push, open any URL with `?nc=123` once to trigger it.
-- `inc/seo.php`: SEO layer (see top of file). `inc/cleanup.php`: emojis, embeds, XML-RPC, comments, REST users, author/date/tag/attachment archives, block CSS, front-end jQuery all off.
-- `data/site.json`: domain, brand, tagline, author, `season_year` 2026, `data_year` 2025, license.
-- Shortcodes are editor-only stubs: `am_calculator`, `am_merit_table`, `am_predictor`, `am_faq`, `am_answer`.
-- `python3 scripts/check.py`: php lint, JSON + site.json, `source_url` on merit records, pages.json SEO rules, templates (one H1, no debug, no jQuery/fonts), internal links vs pages.json, privacy (PDF/CNIC/secrets), CSS size.
-- Theme `.htaccess` blocks `.md/.py/.sh` and `scripts/`, `sources/`; `data/*.json` is public on purpose.
+## How things work now (only what changed)
+- **Rendering:** `am_render_page()` (`inc/template-tags.php`) builds the whole main column for every repo page and the homepage: breadcrumb → H1 → subtitle → updated date → answer → body (`content` and/or `content_file` from `content/`) → FAQ → Roman Urdu → sources → share + author box + disclaimer (content pages) → related. `type: trust` pages skip share/author box and show the updated date at the bottom. The body renders **before** `get_header()` so shortcodes can register JSON-LD nodes (`am_registry()`).
+- **New pages.json fields:** `type`, `crumb`, `schema_type` (WebPage/AboutPage/ContactPage/CollectionPage), `parents`, `subtitle`, `answer`, `answer_source`, `content_file`, `faq`, `roman_urdu`, `sources`, `related`, `og_image`, `published`. Token `{founded}` added.
+- **Navigation:** `data/nav.json` (header, footer). wp-admin menus are no longer used.
+- **Shortcodes (real now):** `am_calculator` (multi-formula select, editable totals, bonus checkboxes like Hafiz, breakdown table, WhatsApp/copy share, "where can you get in" list, formula weights table), `am_merit_table` (server-rendered `<table>`, default view = `data_year` + `defaults.list` + `defaults.category`, filters, sort, Δ vs previous year, row anchors `#p-<program-campus-shift>`), `am_predictor` (all universities, field + province filters), `am_faq`, `am_answer`, `am_sources_table`, `am_contact`. Missing data → nothing for visitors, a stub for logged-in editors.
+- **Predictor rule** (also on `/methodology/`): reference = higher of the last two years' closing (final list, open merit); Strong > ref + 1.5, Borderline within ±1.5, Unlikely < ref − 1.5 (`AM_BAND`).
+- **JS** `assets/js/am.js`: pure engines `AM.aggregate/chance/predict` (Node-testable: `node -e 'const AM=require("./assets/js/am.js")'`), calculator/predictor UI with localStorage (`am:calc:<uni>`, `am:predictor`), table filter/sort, copy/native share. Inline `am-js` class in `<head>` hides non-default rows without CLS.
+- **JSON-LD** `inc/schema.php`: WebPage (subtype) + BreadcrumbList + Person (`/about/#author`) on every repo page; FAQPage, WebApplication, Dataset (with JSON distribution `…/data/universities/<slug>.json`) from shortcodes. Organization has founder + foundingDate.
+- **SEO:** `site.json → verification.google / verification.bing` print `google-site-verification` / `msvalidate.01` on the homepage. OG image per page (`assets/og/<slug>.png`, fallback `default.png`) with width/height/alt.
+- **Scripts:** `scripts/og.py` (Pillow) → OG PNGs. `scripts/check.py` adds: content_file exists/no H1, nav paths, university schema (weights = 100, formula `source_url`, record fields, closing 0–100, record counts printed), rule-7 warnings, OG presence, links inside `content/*.html`.
+- `.htaccess` also blocks `content/`; `inc/deploy.php` fingerprint includes `content/*.html`.
+- `site.json` new keys: `founded`, `author.city/bio/same_as`, `contact.email`, `verification`, `disclaimer`, `ads.enabled` (false; `am_ad_slot()` prints nothing until true), `share.whatsapp`.
+- Rank Math / root `.htaccess` steps skipped: owner decision + Hostinger already forces https/non-www.
 
 ## Open items / blockers
-- None blocking. MASTER-PLAN text still mentions Rank Math and WP-CLI pages; CLAUDE.md decisions win.
+- **Owner:** contact email for `/contact/` and `/about/` (now shows "Email address coming soon") → `site.json contact.email`.
+- **Owner:** city for the about page/Person schema → `site.json author.city` (optional).
+- **Owner:** Google Search Console (URL-prefix property, HTML tag method) and Bing Webmaster codes → `site.json verification.*`; then verify and submit `https://apnamerit.com/wp-sitemap.xml` (Bing can import from GSC).
+- PageSpeed Insights API quota was exhausted from this container; Lighthouse CLI not run. Proxy measurement below; owner/next phase should run pagespeed.web.dev once.
 
 ## Verification done (2026-10-31, live)
-- Homepage 200 with title, description, canonical, OG, Organization + WebSite JSON-LD; no emoji/jQuery/block-library.
-- Temporary repo page `/am-router-test/` served 200 with noindex, canonical and H1; no-slash URL 301 → slash; unknown URL 404. Test entry removed afterwards.
-- `/wp-sitemap.xml` lists `wp-sitemap-ampages-1.xml` (homepage). robots.txt shows AI bots + sitemap line.
-- `MASTER-PLAN.md` in theme folder 403; `data/site.json` 200; `xmlrpc.php` 405; `/wp-json/wp/v2/users` 404.
-- Auto purge verified after f93c1a6: the stale cached homepage (old title "apnamerit.com") refreshed without a manual purge.
-- PageSpeed not run yet (placeholder page only); do it in Phase 1 on the base template.
+- All 9 pages 200; `/about` → 301 `/about/`; `/nope/` 404; `…/themes/apnamerit/content/about.html` 404.
+- `/about/`: one H1, title, canonical, OG image 200, one JSON-LD block (Organization, WebSite, Person, BreadcrumbList, AboutPage); page 25 KB; first load `x-litespeed-cache: miss` after deploy (auto purge works).
+- Sitemap lists all 9 URLs.
+- Playwright, 360px, slow 4G + 4× CPU: LCP 1.6 s (home), 1.1 s (methodology), CLS 0.000, one request (am.js), no horizontal scroll, no JS errors.
+- Fixture test (local): calculator 1000/1100, 950/1100, 320/400 at 10/40/50 → 83.64% (hand: 9.0909 + 34.5455 + 40.0000); Hafiz +20 FSc and custom totals verified in Node; predictor labels and table filter/sort/reload-restore verified headless.
 
 ## Do not
-- Do not create pages in wp-admin or install Rank Math / page builders.
-- Do not edit theme files on the server.
-- Do not commit secrets, PDFs or personal data (repo is public).
+- Do not create pages in wp-admin, use wp-admin menus, or install Rank Math / page builders.
+- Do not commit a test/demo university file with invented numbers (every number needs a real `source_url`).
+- Do not edit theme files on the server; do not commit PDFs, secrets or personal data.
