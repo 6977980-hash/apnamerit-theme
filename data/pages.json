@@ -7,7 +7,7 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {data_year} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/air-aggregate-calculator/\">Air University aggregate calculator</a> (engineering 10/50/40, other programs 15/35/50).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/mdcat-aggregate-calculator/",
@@ -1554,6 +1554,75 @@
     "/comsats-aggregate-calculator/",
     "/nust-aggregate-calculator/",
     "/pu-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/air-aggregate-calculator/",
+   "keyword": "air university aggregate calculator",
+   "title": "Air University Aggregate Calculator {season_year}",
+   "description": "Air University aggregate calculator {season_year}: engineering 10% SSC + 50% HSSC + 40% test; other programs 15% + 35% + 50%, from AU's merit formulation criteria.",
+   "h1": "Air University Aggregate Calculator {season_year}",
+   "crumb": "Air University aggregate calculator",
+   "subtitle": "Engineering: 10% Matric + 50% FSc + 40% test · Others: 15% + 35% + 50%",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The Air University aggregate for engineering programs = 10% SSC + 50% HSSC + 40% entrance test; for non-engineering programs (computing, business, sciences) it is 15% SSC + 35% HSSC + 50% test, per AU's Aggregate Merit Formulation Criteria. Example: 1000/1100 Matric, 950/1100 FSc and 60% in the test give 73.86% (non-engineering) or 76.27% (engineering).",
+   "answer_source": "https://webdata.au.edu.pk/Pages/Admission/prepare_adm_test.aspx",
+   "content_file": "air-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the Air University merit formula for engineering?",
+     "a": "SSC 10%, HSSC 50% and entrance test 40%."
+    },
+    {
+     "q": "What is the Air University formula for BS Computer Science?",
+     "a": "BS CS and other non-engineering programs use SSC 15%, HSSC 35% and entrance test 50%."
+    },
+    {
+     "q": "Can I get an exemption from the AU entrance test?",
+     "a": "Yes, with a NAT or USAT score of at least 50 related to your HSSC group from the last year; engineering also accepts UET, NED, MUET, NUST and ETEA entry tests."
+    },
+    {
+     "q": "What is in the AU-CBT test?",
+     "a": "English 20%, Analytical 25%, Quantitative 15-25% and subject knowledge by HSSC group, for example Physics, Chemistry and Mathematics 10% each for pre-engineering."
+    },
+    {
+     "q": "Does Air University publish closing merit?",
+     "a": "No program-wise closing-merit summary is published, so we show the formula only."
+    },
+    {
+     "q": "Air University ka aggregate kaise nikalain?",
+     "a": "Engineering: Matric 10% + FSc 50% + test 40%. Baqi programs: Matric 15% + FSc 35% + test 50%.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Air University mein engineering ke liye FSc mein kitne marks chahiye?",
+     "a": "Kam az kam 60%, aur entry test mein PEC ke mutabiq kam az kam 33%.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Air University ke do formule hain: <strong>engineering mein Matric 10% + FSc 50% + test 40%</strong>, aur <strong>baqi programs (CS, BBA waghera) mein Matric 15% + FSc 35% + test 50%</strong>.</p><p>Misaal: Matric 1000/1100, FSc 950/1100 aur test 60% par non-engineering aggregate 73.86% aur engineering 76.27% banta hai.</p>",
+   "sources": [
+    {
+     "label": "Air University: Prepare for Admission Test (Aggregate Merit Formulation Criteria for UG Programs, AU-CBT composition, exemption criteria)",
+     "url": "https://webdata.au.edu.pk/Pages/Admission/prepare_adm_test.aspx",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Air University: Eligibility Criteria, Bachelor programs",
+     "url": "https://webdata.au.edu.pk/Pages/Admission/eligibility_criteria.aspx",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/nust-aggregate-calculator/",
+    "/comsats-aggregate-calculator/",
+    "/bahria-aggregate-calculator/",
+    "/iiui-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
     "/methodology/"
    ]
   }

@@ -410,6 +410,23 @@
      "fetched": "2026-10-31"
     }
    ]
+  },
+  {
+   "name": "Air University, Islamabad",
+   "website": "https://www.au.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Prepare for Admission Test: Aggregate Merit Formulation Criteria for UG Programs (engineering 10/50/40, non-engineering 15/35/50)",
+     "url": "https://webdata.au.edu.pk/Pages/Admission/prepare_adm_test.aspx",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Eligibility Criteria, Bachelor programs",
+     "url": "https://webdata.au.edu.pk/Pages/Admission/eligibility_criteria.aspx",
+     "fetched": "2026-10-31"
+    }
+   ]
   }
  ]
 }

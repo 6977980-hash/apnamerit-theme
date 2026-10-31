@@ -1,0 +1,72 @@
+{
+ "slug": "air",
+ "name": "Air University, Islamabad",
+ "short": "Air University",
+ "field": "general",
+ "province": "Islamabad",
+ "website": "https://www.au.edu.pk/",
+ "calculator_path": "/air-aggregate-calculator/",
+ "updated": "2026-10-31",
+ "_note": "Weights from Air University 'Prepare for Admission Test' page, 'Aggregate Merit Formulation Criteria for UG Programs' (text copied by the owner from webdata.au.edu.pk on 2026-10-31; au.edu.pk blocks the container with Cloudflare). Engineering 10/50/40, non-engineering 15/35/50. Eligibility page: engineering HSSC >= 60%, others >= 50%; PEC test pass 33%. No closing merit published.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "formulas": [
+  {
+   "id": "eng",
+   "label": "Engineering programs (BE Electrical, Mechanical, Mechatronics, Computer, Software, Biomedical)",
+   "source_url": "https://webdata.au.edu.pk/Pages/Admission/prepare_adm_test.aspx",
+   "source_note": "Aggregate Merit Formulation Criteria for UG Programs, For Engineering Programs: SSC 10%, HSSC 50%, Entrance Test 40%.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "AU-CBT entrance test (or exempting NAT / USAT / ECAT)",
+     "total": 100,
+     "weight": 40,
+     "hint": "Weight 40%; type your marks and the test total"
+    },
+    {
+     "key": "fsc",
+     "label": "FSc / HSSC",
+     "total": 1100,
+     "weight": 50
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 10
+    }
+   ]
+  },
+  {
+   "id": "noneng",
+   "label": "Non-engineering programs (BS CS, AI, IT, BBA, English, Psychology and others)",
+   "source_url": "https://webdata.au.edu.pk/Pages/Admission/prepare_adm_test.aspx",
+   "source_note": "Aggregate Merit Formulation Criteria for UG Programs, For Non-Engineering Programs: SSC 15%, HSSC 35%, Entrance Test 50%.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "AU-CBT entrance test (or exempting NAT / USAT / SAT)",
+     "total": 100,
+     "weight": 50,
+     "hint": "Weight 50%; type your marks and the test total"
+    },
+    {
+     "key": "fsc",
+     "label": "FSc / HSSC",
+     "total": 1100,
+     "weight": 35
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 15
+    }
+   ]
+  }
+ ],
+ "merit": []
+}
