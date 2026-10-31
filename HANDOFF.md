@@ -8,6 +8,16 @@ Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `
 - Have: `sources/uet/` (PDF + .txt + README, 269 rows, "Fourth Merit List", year not printed) and the owner's draft `New Ideas/apnamerit-data/uet-lahore.json` (269 rows, raw codes in `category`, `formulas: []`).
 - Missing (asked owner 2026-10-31): official aggregate formula, meaning of category codes, confirmation the list is the 2025 cycle. No page ships without the formula from an official notice.
 
+## Fix 3 part B: COMSATS closing merit found on official domains (v0.13.0)
+- Earlier phases said COMSATS has no closing merit online (admissions.comsats.edu.pk, www.comsats.edu.pk 403). A site-restricted search on 2026-10-31 found two official pages, both reachable from the container:
+  - https://lahore.comsats.edu.pk/news/merit.aspx: "Merit List Fall 2026", "Closing aggregate merits for various undergraduate programs in the 2nd Merit List Fall 2026" (9 programs); the page says no 3rd/further lists. Stored as year 2026, list Final, shift "Fall intake", note says 2nd list.
+  - https://ww2.comsats.edu.pk/ciitblogs/files/Closing%20merits%20Spring%202025.pdf: "Spring 2025 Undergraduate Closing Merits, Admission Office, Islamabad Campus" (21 programs, 13 KB). Year 2025, list Final, shift "Spring intake".
+  - All 30 values checked by script against the extracted page/PDF text (exact match). Copies in `sources/comsats/` (git-ignored).
+- New page `/comsats-merit-list/` (CollectionPage, OG image); `comsats.json → meritlist_path`; calculator FAQ/content updated; `/predictor/` list; home related; `data/sources.json`, `sources/INDEX.md`. Predictor now 336 programs (was 306). Merit table default = 2026 (Lahore); Islamabad under the year filter.
+- Not found yet: Islamabad Fall 2026 closing, other campuses (islamabad.comsats.edu.pk 403).
+- FAST: nu.edu.pk/Admissions 403, nu.edu.pk/Admissions/MeritList 404, admissions.nu.edu.pk (200) has no closing merit; no official program-wise closing merit found as of 2026-10-31 (also Phase 3 finding). FAST keeps the part-A line.
+- `/merit-data-report-2026/`: COMSATS moved out of the "calculator only" list with an "added after this report" line (the 591 count stays as dated).
+
 ## Fix 3 part A: "no closing merit" line on calculators without data (v0.12.2)
 - Verified live: `/comsats-aggregate-calculator/` config `"rows":[]`, so am.js printed no "Where can you get in?" block and no explanation (same for the other 10 with `records: 0` in `/data/index.json`).
 - Fix: `am_no_merit_html()` (`inc/shortcodes.php`) → config `noRows`; am.js prints it under the result when `rows` is empty. Nearest list: same field, then same province, PU on ties (engineering → UET Taxila, others → PU). Shared calculator shortcode, so all 11 calculators without rows get it.

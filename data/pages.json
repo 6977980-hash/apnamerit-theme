@@ -18,6 +18,7 @@
     "/uet-taxila-aggregate-calculator/",
     "/uet-taxila-merit-list/",
     "/pu-merit-list/",
+    "/comsats-merit-list/",
     "/methodology/",
     "/data-sources/"
    ],
@@ -551,7 +552,7 @@
     },
     {
      "q": "Does COMSATS publish a closing merit?",
-     "a": "Campuses display merit lists on the admission portal, but we have not been able to read an official closing merit yet, so we do not show one."
+     "a": "Yes, per campus. COMSATS Lahore published Fall 2026 closing merits (Computer Science 85%) and the Islamabad campus Spring 2025 (Computer Science 88.26%); both are on our COMSATS merit list page."
     },
     {
      "q": "COMSATS ka aggregate kaise nikalain?",
@@ -570,9 +571,15 @@
      "label": "COMSATS University Islamabad UG Prospectus 2024-25, p. 44 (merit weightage)",
      "url": "https://ww2.comsats.edu.pk/ro/Prospectus/UG_Prospectus/UG-Prospectus-24-25.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "COMSATS Lahore campus: Merit List Fall 2026 (closing merits)",
+     "url": "https://lahore.comsats.edu.pk/news/merit.aspx",
+     "fetched": "2026-10-31"
     }
    ],
    "related": [
+    "/comsats-merit-list/",
     "/nust-aggregate-calculator/",
     "/fast-aggregate-calculator/",
     "/uet-taxila-aggregate-calculator/",
@@ -991,6 +998,80 @@
     "/guides/1st-2nd-final-merit-list/",
     "/guides/what-is-closing-merit/",
     "/uet-peshawar-aggregate-calculator/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/comsats-merit-list/",
+   "keyword": "comsats merit list",
+   "title": "COMSATS Merit List {season_year}: Closing Merit by Campus",
+   "description": "COMSATS merit list: official closing merit for Lahore (Fall 2026, CS 85%) and Islamabad (Spring 2025, CS 88.26%) campuses, by program, with sources.",
+   "h1": "COMSATS Merit List {season_year} & Closing Merit by Campus",
+   "crumb": "COMSATS merit list",
+   "subtitle": "Official closing aggregates, Lahore Fall 2026 and Islamabad Spring 2025",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "COMSATS Lahore's Fall 2026 closing merits were 85% for BS Computer Science, 82% for Software Engineering and 78.01% for Computer Engineering (2nd and last merit list). At Islamabad, Spring 2025 Computer Science closed at 88.26% and Artificial Intelligence at 87.69%.",
+   "answer_source": "https://lahore.comsats.edu.pk/news/merit.aspx",
+   "content_file": "comsats-merit-list.html",
+   "faq": [
+    {
+     "q": "What was the COMSATS Lahore closing merit for Computer Science?",
+     "a": "85% in the 2nd merit list of Fall 2026. COMSATS Lahore said no further merit lists would be announced, so this was the last list."
+    },
+    {
+     "q": "What was the COMSATS Islamabad closing merit for Computer Science?",
+     "a": "88.26% in Spring 2025, the final closing merit published by the Islamabad Admission Office."
+    },
+    {
+     "q": "Which COMSATS program has the highest merit?",
+     "a": "Computer Science, then Artificial Intelligence (87.69% at Islamabad, Spring 2025) and Software Engineering."
+    },
+    {
+     "q": "How is the COMSATS aggregate calculated?",
+     "a": "50% NTS NAT test, 40% Intermediate and 10% Matric (UG Prospectus 2024-25). Use the COMSATS aggregate calculator to compare yours with these lists."
+    },
+    {
+     "q": "Why are some COMSATS campuses missing?",
+     "a": "We add a campus only when COMSATS publishes its closing merits on an official site. As of 31 October 2026 we found official figures for Lahore (Fall 2026) and Islamabad (Spring 2025)."
+    },
+    {
+     "q": "COMSATS Lahore mein Computer Science ka merit kitna gaya?",
+     "a": "Fall 2026 ki 2nd (aakhri) merit list mein BS Computer Science 85% par aur Software Engineering 82% par close hui.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "COMSATS Islamabad ka merit kitna jata hai?",
+     "a": "Spring 2025 mein Computer Science 88.26%, AI 87.69% aur zyada tar social science programs 50% se 57% ke darmiyan close hue.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Yeh COMSATS ka official <strong>closing merit</strong> hai, yani har program mein aakhri admission kis aggregate par hua. Lahore campus ke Fall 2026 aur Islamabad campus ke Spring 2025 figures hain.</p><p>Lahore mein BS Computer Science 85% aur Software Engineering 82% par close hui; Islamabad mein Computer Science 88.26%. Apna aggregate <a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> se nikalein.</p>",
+   "sources": [
+    {
+     "label": "COMSATS Lahore campus: Merit List Fall 2026 (closing merits, 2nd merit list)",
+     "url": "https://lahore.comsats.edu.pk/news/merit.aspx",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "COMSATS Islamabad campus: Spring 2025 Undergraduate Closing Merits",
+     "url": "https://ww2.comsats.edu.pk/ciitblogs/files/Closing%20merits%20Spring%202025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "COMSATS UG Prospectus 2024-25, p. 44 (merit weightage)",
+     "url": "https://ww2.comsats.edu.pk/ro/Prospectus/UG_Prospectus/UG-Prospectus-24-25.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/comsats-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
+    "/nust-aggregate-calculator/",
+    "/guides/what-is-closing-merit/",
     "/methodology/"
    ]
   },
