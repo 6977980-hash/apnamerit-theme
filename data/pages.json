@@ -1,126 +1,423 @@
 {
-  "_note": "Every URL of the site lives here (owner decision 2026-10-31: no wp-admin pages, no Rank Math). Fields: path (trailing slash), keyword, title (<=60), description (140-155), h1, crumb (short label for breadcrumbs/links), type (content|trust; trust pages skip share and author box), template (default|calculator|meritlist), schema_type (WebPage|AboutPage|ContactPage|CollectionPage), parents (breadcrumb parent paths), subtitle, answer (40-60 words) + answer_source, content (HTML + shortcodes) and/or content_file (file in content/), faq [{q,a,lang}], roman_urdu (HTML), sources [{label,url,fetched}], related [paths], og_image (file in assets/og/), published, updated (YYYY-MM-DD), noindex. Tokens: {season_year}, {data_year}, {brand}, {founded}.",
-  "pages": [
+ "_note": "Every URL of the site lives here (owner decision 2026-10-31: no wp-admin pages, no Rank Math). Fields: path (trailing slash), keyword, title (<=60), description (140-155), h1, crumb (short label for breadcrumbs/links), type (content|trust; trust pages skip share and author box), template (default|calculator|meritlist), schema_type (WebPage|AboutPage|ContactPage|CollectionPage), parents (breadcrumb parent paths), subtitle, answer (40-60 words) + answer_source, content (HTML + shortcodes) and/or content_file (file in content/), faq [{q,a,lang}], roman_urdu (HTML), sources [{label,url,fetched}], related [paths], og_image (file in assets/og/), published, updated (YYYY-MM-DD), noindex. Tokens: {season_year}, {data_year}, {brand}, {founded}.",
+ "pages": [
+  {
+   "path": "/",
+   "keyword": "aggregate calculator",
+   "title": "Aggregate Calculator Pakistan {season_year} \u2013 All Universities",
+   "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
+   "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<p>Engineering and general universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "updated": "2026-10-31",
+   "related": [
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/",
+    "/methodology/",
+    "/data-sources/",
+    "/about/"
+   ]
+  },
+  {
+   "path": "/about/",
+   "keyword": "about apna merit",
+   "title": "About Apna Merit \u2013 Who We Are and Why",
+   "description": "Apna Merit is a free, independent site for Pakistani students: official aggregate formulas and closing merits, each linked to its official source.",
+   "h1": "About Apna Merit",
+   "crumb": "About",
+   "schema_type": "AboutPage",
+   "content_file": "about.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31"
+  },
+  {
+   "path": "/methodology/",
+   "keyword": "merit calculation methodology",
+   "title": "Methodology: How We Collect Merits and Predict Chances",
+   "description": "How Apna Merit collects closing merits from official lists, calculates aggregates and labels your chances as Strong, Borderline or Unlikely.",
+   "h1": "Methodology: how we collect merits and estimate chances",
+   "crumb": "Methodology",
+   "content_file": "methodology.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31"
+  },
+  {
+   "path": "/data-sources/",
+   "keyword": "official merit list sources",
+   "title": "Data Sources: Official University Merit Lists",
+   "description": "The official university websites, prospectuses and merit lists behind every number on Apna Merit, with the date each document was last checked.",
+   "h1": "Data sources",
+   "crumb": "Data sources",
+   "schema_type": "CollectionPage",
+   "content_file": "data-sources.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31"
+  },
+  {
+   "path": "/editorial-policy/",
+   "keyword": "apna merit editorial policy",
+   "title": "Editorial Policy and Corrections | Apna Merit",
+   "description": "How Apna Merit writes, checks and updates its pages: official sources only, no paid placement, and confirmed errors corrected within 48 hours.",
+   "h1": "Editorial policy",
+   "crumb": "Editorial policy",
+   "content_file": "editorial-policy.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31"
+  },
+  {
+   "path": "/contact/",
+   "keyword": "contact apna merit",
+   "title": "Contact Apna Merit \u2013 Report a Mistake",
+   "description": "Contact Apna Merit to report a wrong figure, a broken source link or a newer official merit list. Confirmed errors are corrected within 48 hours.",
+   "h1": "Contact us",
+   "crumb": "Contact",
+   "schema_type": "ContactPage",
+   "content_file": "contact.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31"
+  },
+  {
+   "path": "/privacy-policy/",
+   "keyword": "apna merit privacy policy",
+   "title": "Privacy Policy | Apna Merit",
+   "description": "Apna Merit needs no account; calculator inputs stay in your browser. Read what the site and its host collect, cookies, and how merit data is handled.",
+   "h1": "Privacy policy",
+   "crumb": "Privacy policy",
+   "content_file": "privacy-policy.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31"
+  },
+  {
+   "path": "/terms/",
+   "keyword": "apna merit terms of use",
+   "title": "Terms of Use | Apna Merit",
+   "description": "Terms for using Apna Merit's aggregate calculators, merit tables and predictor, including the CC BY 4.0 data licence and limits of our liability.",
+   "h1": "Terms of use",
+   "crumb": "Terms",
+   "content_file": "terms.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31"
+  },
+  {
+   "path": "/disclaimer/",
+   "keyword": "apna merit disclaimer",
+   "title": "Disclaimer: Not an Official University Website",
+   "description": "Apna Merit is independent and not affiliated with any university, UHS, PMDC or HEC. Our figures are for information; always confirm with the university.",
+   "h1": "Disclaimer",
+   "crumb": "Disclaimer",
+   "content_file": "disclaimer.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31"
+  },
+  {
+   "path": "/mdcat-aggregate-calculator/",
+   "keyword": "mdcat aggregate calculator",
+   "title": "MDCAT Aggregate Calculator {season_year} (PMDC Formula)",
+   "description": "Free MDCAT aggregate calculator {season_year} with the PMDC formula: 50% MDCAT, 40% FSc, 10% Matric. See your aggregate and last year's MBBS closing merit.",
+   "h1": "MDCAT Aggregate Calculator {season_year}",
+   "crumb": "MDCAT aggregate calculator",
+   "subtitle": "PMDC formula: 50% MDCAT + 40% FSc + 10% Matric",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The MDCAT aggregate for {season_year} = 50% MDCAT + 40% FSc (pre-medical) + 10% Matric, as fixed by PMDC's admission regulations. Divide each score by its total, multiply by its weight and add: 150/180 MDCAT, 1000/1100 FSc and 1000/1100 Matric give 87.12%. Enter your marks below to get yours.",
+   "answer_source": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+   "content_file": "mdcat-aggregate-calculator.html",
+   "faq": [
     {
-      "path": "/",
-      "keyword": "aggregate calculator",
-      "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
-      "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
-      "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-      "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p>Calculators and merit lists are being added university by university, starting with MDCAT. Every number will link to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
-      "updated": "2026-10-31",
-      "related": [
-        "/methodology/",
-        "/data-sources/",
-        "/about/"
-      ]
+     "q": "What is the MDCAT aggregate formula for {season_year}?",
+     "a": "PMDC's 2026 admission regulations set the aggregate as 50% MDCAT, 40% FSc (pre-medical) or equivalent and 10% Matric or equivalent. The 2025 regulations used the same weights."
     },
     {
-      "path": "/about/",
-      "keyword": "about apna merit",
-      "title": "About Apna Merit – Who We Are and Why",
-      "description": "Apna Merit is a free, independent site for Pakistani students: official aggregate formulas and closing merits, each linked to its official source.",
-      "h1": "About Apna Merit",
-      "crumb": "About",
-      "schema_type": "AboutPage",
-      "content_file": "about.html",
-      "type": "trust",
-      "template": "default",
-      "published": "2026-10-31",
-      "updated": "2026-10-31"
+     "q": "Is the MDCAT aggregate formula the same for MBBS and BDS?",
+     "a": "Yes. The same 50/40/10 formula is used for MBBS and BDS; only the closing merits differ, because each college and program fills its seats separately."
     },
     {
-      "path": "/methodology/",
-      "keyword": "merit calculation methodology",
-      "title": "Methodology: How We Collect Merits and Predict Chances",
-      "description": "How Apna Merit collects closing merits from official lists, calculates aggregates and labels your chances as Strong, Borderline or Unlikely.",
-      "h1": "Methodology: how we collect merits and estimate chances",
-      "crumb": "Methodology",
-      "content_file": "methodology.html",
-      "type": "trust",
-      "template": "default",
-      "published": "2026-10-31",
-      "updated": "2026-10-31"
+     "q": "How many marks is MDCAT out of?",
+     "a": "MDCAT 2025 had 180 multiple-choice questions with no negative marking, according to PMDC. If your result shows a different total, change the MDCAT total in the calculator."
     },
     {
-      "path": "/data-sources/",
-      "keyword": "official merit list sources",
-      "title": "Data Sources: Official University Merit Lists",
-      "description": "The official university websites, prospectuses and merit lists behind every number on Apna Merit, with the date each document was last checked.",
-      "h1": "Data sources",
-      "crumb": "Data sources",
-      "schema_type": "CollectionPage",
-      "content_file": "data-sources.html",
-      "type": "trust",
-      "template": "default",
-      "published": "2026-10-31",
-      "updated": "2026-10-31"
+     "q": "What aggregate is needed for a public MBBS college in Punjab?",
+     "a": "In the final 2025 UHS list, public MBBS colleges closed between 93.51% (Narowal Medical College) and 94.87% (King Edward Medical University) on open merit."
     },
     {
-      "path": "/editorial-policy/",
-      "keyword": "apna merit editorial policy",
-      "title": "Editorial Policy and Corrections | Apna Merit",
-      "description": "How Apna Merit writes, checks and updates its pages: official sources only, no paid placement, and confirmed errors corrected within 48 hours.",
-      "h1": "Editorial policy",
-      "crumb": "Editorial policy",
-      "content_file": "editorial-policy.html",
-      "type": "trust",
-      "template": "default",
-      "published": "2026-10-31",
-      "updated": "2026-10-31"
+     "q": "How much MDCAT score is needed for MBBS with 1050 in FSc and Matric?",
+     "a": "With 1050/1100 in both, FSc and Matric give 47.73 points. You would need about 165/180 in MDCAT to reach 93.51%, the lowest public MBBS closing merit in Punjab in 2025."
     },
     {
-      "path": "/contact/",
-      "keyword": "contact apna merit",
-      "title": "Contact Apna Merit – Report a Mistake",
-      "description": "Contact Apna Merit to report a wrong figure, a broken source link or a newer official merit list. Confirmed errors are corrected within 48 hours.",
-      "h1": "Contact us",
-      "crumb": "Contact",
-      "schema_type": "ContactPage",
-      "content_file": "contact.html",
-      "type": "trust",
-      "template": "default",
-      "published": "2026-10-31",
-      "updated": "2026-10-31"
+     "q": "My FSc result is out of 1200. What should I enter?",
+     "a": "Enter your marks and change the FSc total to 1200. The calculator converts marks to a percentage of whatever total you enter."
     },
     {
-      "path": "/privacy-policy/",
-      "keyword": "apna merit privacy policy",
-      "title": "Privacy Policy | Apna Merit",
-      "description": "Apna Merit needs no account; calculator inputs stay in your browser. Read what the site and its host collect, cookies, and how merit data is handled.",
-      "h1": "Privacy policy",
-      "crumb": "Privacy policy",
-      "content_file": "privacy-policy.html",
-      "type": "trust",
-      "template": "default",
-      "published": "2026-10-31",
-      "updated": "2026-10-31"
+     "q": "MDCAT aggregate kaise nikalain?",
+     "a": "MDCAT marks ko total se divide kar ke 50 se multiply karein, FSc marks ko total se divide kar ke 40 se, aur Matric marks ko total se divide kar ke 10 se. Teeno ko jama karein, yehi aap ka aggregate hai.",
+     "lang": "ur-Latn"
     },
     {
-      "path": "/terms/",
-      "keyword": "apna merit terms of use",
-      "title": "Terms of Use | Apna Merit",
-      "description": "Terms for using Apna Merit's aggregate calculators, merit tables and predictor, including the CC BY 4.0 data licence and limits of our liability.",
-      "h1": "Terms of use",
-      "crumb": "Terms",
-      "content_file": "terms.html",
-      "type": "trust",
-      "template": "default",
-      "published": "2026-10-31",
-      "updated": "2026-10-31"
-    },
-    {
-      "path": "/disclaimer/",
-      "keyword": "apna merit disclaimer",
-      "title": "Disclaimer: Not an Official University Website",
-      "description": "Apna Merit is independent and not affiliated with any university, UHS, PMDC or HEC. Our figures are for information; always confirm with the university.",
-      "h1": "Disclaimer",
-      "crumb": "Disclaimer",
-      "content_file": "disclaimer.html",
-      "type": "trust",
-      "template": "default",
-      "published": "2026-10-31",
-      "updated": "2026-10-31"
+     "q": "Kitna aggregate ho to government medical college mil jata hai?",
+     "a": "2025 mein Punjab ke government MBBS colleges ka open merit 93.51% se 94.87% ke darmiyan close hua. Har saal yeh thora upar neeche hota hai.",
+     "lang": "ur-Latn"
     }
-  ]
+   ],
+   "roman_urdu": "<p>MDCAT aggregate ka formula PMDC ne fix kiya hai: <strong>MDCAT ka 50%, FSc ka 40% aur Matric ka 10%</strong>. Apne marks upar calculator mein daalein, aggregate foran aa jaye ga.</p><p>Misaal: MDCAT 150/180, FSc 1000/1100 aur Matric 1000/1100 ho to aggregate 87.12% banta hai. 2025 mein Punjab ke government MBBS colleges 93.51% se 94.87% par close hue, is liye apna aggregate <a href=\"/mdcat-merit-list/\">MDCAT merit list</a> se zaroor milayein.</p>",
+   "sources": [
+    {
+     "label": "PM&DC Admissions, Curriculum and Conduct Policy and Regulations 2026, regulation 6(3)",
+     "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "PM&DC Admissions Regulations 2025, regulation 4(3)",
+     "url": "https://pmdc.pk/Documents/law/Admissions%20Regulations-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "PMDC: New Syllabus for MDCAT 2025 (180 MCQs)",
+     "url": "https://pmdc.pk/Documents/press/New%20Syllabus%20for%20MDCAT%202025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/guides/mdcat-aggregate-formula/",
+    "/guides/what-is-closing-merit/",
+    "/methodology/",
+    "/data-sources/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/",
+   "keyword": "mdcat merit list",
+   "title": "MDCAT Merit List {season_year}: MBBS/BDS Closing Merit {data_year}",
+   "description": "MDCAT merit list: MBBS and BDS closing merit {data_year} for every UHS Punjab public and private college, 1st and final lists, with 2024 comparison and sources.",
+   "h1": "MDCAT Merit List {season_year} & MBBS/BDS Closing Merit {data_year}",
+   "crumb": "MDCAT merit list",
+   "subtitle": "Punjab public and private medical and dental colleges (UHS), open merit",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "In the final {data_year} UHS selection list, Punjab public MBBS colleges closed between 94.87% (King Edward Medical University) and 93.51% (Narowal Medical College) on open merit, about 0.7 to 1.2 points lower than in 2024. Private MBBS colleges closed between 90.84% and 61.00%, and public BDS colleges at about 93.4%.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content_file": "mdcat-merit-list.html",
+   "faq": [
+    {
+     "q": "What was the MBBS closing merit in {data_year} in Punjab?",
+     "a": "In the 13th and final UHS list for {data_year}, public MBBS colleges closed between 93.51% and 94.87% on open merit. King Edward Medical University was highest and Narowal Medical College lowest."
+    },
+    {
+     "q": "What was the KEMU closing merit in {data_year}?",
+     "a": "King Edward Medical University, Lahore closed at 94.87% on open merit in the final {data_year} list (94.92% in the 1st list), down from 96.06% in the last 2024 list."
+    },
+    {
+     "q": "What is the lowest merit for private MBBS in Punjab?",
+     "a": "In the 5th and final {data_year} UHS private MBBS list, the lowest open-merit closing aggregate was 61.00% (Queens Medical College, Kasur, for women only). Most private colleges closed well above that; check each college in the table."
+    },
+    {
+     "q": "What was the BDS closing merit in {data_year}?",
+     "a": "Public BDS colleges in Punjab closed between 93.42% and 93.46% in the 13th {data_year} list. Private BDS colleges closed between 73.13% and 55.87% in the 3rd list."
+    },
+    {
+     "q": "Why is the 1st merit list higher than the final list?",
+     "a": "Students who get a seat in the 1st list move to colleges they prefer or leave, and their seats go to the next students in merit. So the last admitted aggregate usually falls with each list."
+    },
+    {
+     "q": "Where is the official UHS merit list?",
+     "a": "UHS publishes college-wise selection lists on uhs.edu.pk. Every row in our table links to the exact official list the figure came from."
+    },
+    {
+     "q": "Pichle saal MBBS ka merit kitna tha?",
+     "a": "2025 mein Punjab ke government MBBS colleges ka final open merit 93.51% se 94.87% tha. KEMU sab se upar 94.87% par aur Narowal Medical College sab se neeche 93.51% par close hua.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Private medical college ka merit kitna jata hai?",
+     "a": "2025 ki final list mein private MBBS colleges 90.84% se 61.00% tak close hue. Har college ka alag merit hai, table mein apna college dekhein.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Yeh UHS Punjab ki official selection lists se liya gaya <strong>closing merit</strong> hai, yani har college mein open merit par aakhri admission kis aggregate par hua.</p><p>2025 ki final list mein government MBBS colleges 93.51% se 94.87% par close hue, jo 2024 se taqreeban 0.7 se 1.2 points kam hai. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein aur table se milayein.</p>",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 17th selection list, public MBBS 2024-25 (college-wise PDFs)",
+     "url": "https://uhs.edu.pk/17thselectionlistpublic24.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 5th and final selection list, private MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 13th selection list, public BDS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicbdsom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "PM&DC Admissions, Curriculum and Conduct Policy and Regulations 2026, regulation 6(3)",
+     "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-aggregate-calculator/",
+    "/guides/what-is-closing-merit/",
+    "/guides/mdcat-aggregate-formula/",
+    "/methodology/",
+    "/data-sources/"
+   ]
+  },
+  {
+   "path": "/guides/mdcat-aggregate-formula/",
+   "keyword": "mdcat aggregate formula",
+   "title": "How to Calculate MDCAT Aggregate ({season_year} Formula)",
+   "description": "How to calculate MDCAT aggregate in {season_year}: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric), a worked example, what each mark is worth and common mistakes.",
+   "h1": "How to Calculate MDCAT Aggregate in {season_year}",
+   "crumb": "MDCAT aggregate formula",
+   "type": "content",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "To calculate your MDCAT aggregate, take 50% of your MDCAT percentage, 40% of your FSc percentage and 10% of your Matric percentage, then add them. PMDC's 2026 admission regulations fix these weights. Example: MDCAT 160/180, FSc 1020/1100 and Matric 1050/1100 give 44.44 + 37.09 + 9.55 = 91.08%.",
+   "answer_source": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+   "content_file": "guide-mdcat-aggregate-formula.html",
+   "faq": [
+    {
+     "q": "Who decides the MDCAT aggregate formula?",
+     "a": "The Pakistan Medical and Dental Council (PMDC) sets it in its admission regulations. Admitting universities such as UHS apply it when making merit lists."
+    },
+    {
+     "q": "Has the MDCAT formula changed for {season_year}?",
+     "a": "No. The 2026 regulations keep the same weights as 2025: 50% MDCAT, 40% FSc and 10% Matric."
+    },
+    {
+     "q": "How many aggregate points is one MDCAT mark worth?",
+     "a": "With MDCAT out of 180, one mark is worth about 0.28 aggregate points (50 divided by 180)."
+    },
+    {
+     "q": "Can I use FSc Part-I marks?",
+     "a": "Use marks and a total that match. If you only have Part-I marks, enter them with the Part-I total; the admitting university's notice says which marks it accepts."
+    },
+    {
+     "q": "MDCAT aggregate ka formula kya hai?",
+     "a": "MDCAT 50%, FSc 40% aur Matric 10%. Har subject ke marks ko total se divide karein, weight se multiply karein aur jama kar lein.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Aik MDCAT mark se aggregate kitna barhta hai?",
+     "a": "180 marks ke paper mein aik mark se taqreeban 0.28 aggregate barhta hai, is liye MDCAT ke 10 marks taqreeban 2.8 points ka farq daalte hain.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>PMDC ka formula seedha hai: <strong>MDCAT ka 50%, FSc ka 40%, Matric ka 10%</strong>. Misaal: MDCAT 160/180, FSc 1020/1100, Matric 1050/1100 ho to aggregate 91.08% banta hai.</p><p>Khud hisaab nahi lagana to <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> istemal karein.</p>",
+   "sources": [
+    {
+     "label": "PM&DC Admissions, Curriculum and Conduct Policy and Regulations 2026, regulation 6(3)",
+     "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "PM&DC Admissions Regulations 2025, regulation 4(3)",
+     "url": "https://pmdc.pk/Documents/law/Admissions%20Regulations-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "PMDC: New Syllabus for MDCAT 2025 (180 MCQs)",
+     "url": "https://pmdc.pk/Documents/press/New%20Syllabus%20for%20MDCAT%202025.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/",
+    "/guides/what-is-closing-merit/",
+    "/methodology/"
+   ]
+  },
+  {
+   "path": "/guides/what-is-closing-merit/",
+   "keyword": "closing merit",
+   "title": "What Is Closing Merit? (Last Year Merit Explained)",
+   "description": "What closing merit means, why it drops from the 1st to the final merit list, and how to use last year's closing merit to judge your admission chances.",
+   "h1": "What Is Closing Merit and How to Use It",
+   "crumb": "What is closing merit",
+   "type": "content",
+   "template": "default",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "Closing merit is the aggregate of the last student admitted to a program or college in a merit list. For example, Narowal Medical College's open-merit MBBS seats closed at 93.51% in the final 2025 UHS list. Compare your aggregate with the last two years' final-list closing merits to judge your chances.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content_file": "guide-what-is-closing-merit.html",
+   "faq": [
+    {
+     "q": "Is closing merit the same as the merit list?",
+     "a": "No. The merit list is the list of admitted students; closing merit is one number from it, the lowest aggregate admitted for a program or college."
+    },
+    {
+     "q": "Does closing merit go down in later lists?",
+     "a": "Usually yes, because seats left by students who move or leave are given to the next students in merit order."
+    },
+    {
+     "q": "Will this year's closing merit be the same as last year?",
+     "a": "No. It changes with test difficulty, seats and applicants. Use the last two years as a guide, not a guarantee."
+    },
+    {
+     "q": "Closing merit ka kya matlab hai?",
+     "a": "Kisi list mein jis aakhri student ka admission hua, us ka aggregate closing merit kehlata hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Last year merit se kaise pata chale ga ke admission hoga?",
+     "a": "Apna aggregate pichle do saal ke final list, open merit closing merit se milayein. 1.5 points se zyada upar hon to chance strong hai, qareeb hon to borderline.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p><strong>Closing merit</strong> yani kisi college ya program mein aakhri admission kis aggregate par hua. Pehli list ke baad log college badalte hain, is liye final list ka merit aam tor par kam hota hai.</p><p>Misaal ke liye <a href=\"/mdcat-merit-list/\">MDCAT merit list</a> dekhein.</p>",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 5th and final selection list, private MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/guides/mdcat-aggregate-formula/",
+    "/methodology/"
+   ]
+  }
+ ]
 }

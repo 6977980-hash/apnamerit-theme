@@ -1,18 +1,55 @@
 {
-  "_note": "Site navigation (no wp-admin menus). Every path must exist in data/pages.json (scripts/check.py enforces it).",
-  "header": [
-    { "label": "Methodology", "path": "/methodology/" },
-    { "label": "Data sources", "path": "/data-sources/" },
-    { "label": "About", "path": "/about/" }
-  ],
-  "footer": [
-    { "label": "About", "path": "/about/" },
-    { "label": "Methodology", "path": "/methodology/" },
-    { "label": "Data sources", "path": "/data-sources/" },
-    { "label": "Editorial policy", "path": "/editorial-policy/" },
-    { "label": "Contact", "path": "/contact/" },
-    { "label": "Privacy policy", "path": "/privacy-policy/" },
-    { "label": "Terms", "path": "/terms/" },
-    { "label": "Disclaimer", "path": "/disclaimer/" }
-  ]
+ "_note": "Site navigation (no wp-admin menus). Every path must exist in data/pages.json (scripts/check.py enforces it).",
+ "header": [
+  {
+   "label": "MDCAT calculator",
+   "path": "/mdcat-aggregate-calculator/"
+  },
+  {
+   "label": "MDCAT merit list",
+   "path": "/mdcat-merit-list/"
+  },
+  {
+   "label": "Methodology",
+   "path": "/methodology/"
+  },
+  {
+   "label": "About",
+   "path": "/about/"
+  }
+ ],
+ "footer": [
+  {
+   "label": "About",
+   "path": "/about/"
+  },
+  {
+   "label": "Methodology",
+   "path": "/methodology/"
+  },
+  {
+   "label": "Data sources",
+   "path": "/data-sources/"
+  },
+  {
+   "label": "Editorial policy",
+   "path": "/editorial-policy/"
+  },
+  {
+   "label": "Contact",
+   "path": "/contact/"
+  },
+  {
+   "label": "Privacy policy",
+   "path": "/privacy-policy/"
+  },
+  {
+   "label": "Terms",
+   "path": "/terms/"
+  },
+  {
+   "label": "Disclaimer",
+   "path": "/disclaimer/"
+  }
+ ]
 }

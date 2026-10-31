@@ -1,155 +1,217 @@
 {
-  "_note": "Official websites and the documents behind every number. Rendered on /data-sources/ by [am_sources_table]. Add a document (label, url, fetched YYYY-MM-DD) whenever data from it goes live. URLs only; PDFs never enter the repo.",
-  "universities": [
+ "_note": "Official websites and the documents behind every number. Rendered on /data-sources/ by [am_sources_table]. Add a document (label, url, fetched YYYY-MM-DD) whenever data from it goes live. URLs only; PDFs never enter the repo.",
+ "universities": [
+  {
+   "name": "Pakistan Medical and Dental Council (PMDC)",
+   "website": "https://pmdc.pk/",
+   "field": "medical",
+   "documents": [
     {
-      "name": "Pakistan Medical and Dental Council (PMDC)",
-      "website": "https://pmdc.pk/",
-      "field": "medical",
-      "documents": []
+     "label": "PM&DC Admissions, Curriculum and Conduct Policy and Regulations 2026 (aggregate formula)",
+     "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+     "fetched": "2026-10-31"
     },
     {
-      "name": "University of Health Sciences (UHS), Lahore",
-      "website": "https://uhs.edu.pk/",
-      "field": "medical",
-      "documents": []
+     "label": "PM&DC Admissions Regulations 2025 (aggregate formula)",
+     "url": "https://pmdc.pk/Documents/law/Admissions%20Regulations-2025.pdf",
+     "fetched": "2026-10-31"
     },
     {
-      "name": "National University of Medical Sciences (NUMS)",
-      "website": "https://numspak.edu.pk/",
-      "field": "medical",
-      "documents": []
-    },
-    {
-      "name": "Khyber Medical University (KMU)",
-      "website": "https://kmu.edu.pk/",
-      "field": "medical",
-      "documents": []
-    },
-    {
-      "name": "Dow University of Health Sciences (DUHS)",
-      "website": "https://www.duhs.edu.pk/",
-      "field": "medical",
-      "documents": []
-    },
-    {
-      "name": "Jinnah Sindh Medical University (JSMU)",
-      "website": "https://jsmu.edu.pk/",
-      "field": "medical",
-      "documents": []
-    },
-    {
-      "name": "Liaquat University of Medical and Health Sciences (LUMHS)",
-      "website": "https://lumhs.edu.pk/",
-      "field": "medical",
-      "documents": []
-    },
-    {
-      "name": "Shaheed Zulfiqar Ali Bhutto Medical University (SZABMU)",
-      "website": "https://szabmu.edu.pk/",
-      "field": "medical",
-      "documents": []
-    },
-    {
-      "name": "Aga Khan University (AKU)",
-      "website": "https://www.aku.edu/",
-      "field": "medical",
-      "documents": []
-    },
-    {
-      "name": "University of Engineering and Technology (UET), Lahore",
-      "website": "https://uet.edu.pk/",
-      "field": "engineering",
-      "documents": []
-    },
-    {
-      "name": "National University of Sciences and Technology (NUST)",
-      "website": "https://nust.edu.pk/",
-      "field": "engineering",
-      "documents": []
-    },
-    {
-      "name": "COMSATS University Islamabad",
-      "website": "https://comsats.edu.pk/",
-      "field": "engineering",
-      "documents": []
-    },
-    {
-      "name": "FAST National University (NUCES)",
-      "website": "https://nu.edu.pk/",
-      "field": "computing",
-      "documents": []
-    },
-    {
-      "name": "Ghulam Ishaq Khan Institute (GIKI)",
-      "website": "https://giki.edu.pk/",
-      "field": "engineering",
-      "documents": []
-    },
-    {
-      "name": "UET Taxila",
-      "website": "https://uettaxila.edu.pk/",
-      "field": "engineering",
-      "documents": []
-    },
-    {
-      "name": "UET Peshawar",
-      "website": "https://www.uetpeshawar.edu.pk/",
-      "field": "engineering",
-      "documents": []
-    },
-    {
-      "name": "NED University of Engineering and Technology",
-      "website": "https://neduet.edu.pk/",
-      "field": "engineering",
-      "documents": []
-    },
-    {
-      "name": "University of the Punjab (PU)",
-      "website": "https://pu.edu.pk/",
-      "field": "general",
-      "documents": []
-    },
-    {
-      "name": "University of Karachi",
-      "website": "https://www.uok.edu.pk/",
-      "field": "general",
-      "documents": []
-    },
-    {
-      "name": "Air University",
-      "website": "https://au.edu.pk/",
-      "field": "general",
-      "documents": []
-    },
-    {
-      "name": "Bahria University",
-      "website": "https://bahria.edu.pk/",
-      "field": "general",
-      "documents": []
-    },
-    {
-      "name": "International Islamic University Islamabad (IIUI)",
-      "website": "https://iiu.edu.pk/",
-      "field": "general",
-      "documents": []
-    },
-    {
-      "name": "University of Agriculture Faisalabad (UAF)",
-      "website": "https://uaf.edu.pk/",
-      "field": "general",
-      "documents": []
-    },
-    {
-      "name": "Information Technology University (ITU), Lahore",
-      "website": "https://itu.edu.pk/",
-      "field": "computing",
-      "documents": []
-    },
-    {
-      "name": "Institute of Space Technology (IST)",
-      "website": "https://www.ist.edu.pk/",
-      "field": "engineering",
-      "documents": []
+     "label": "New Syllabus for MDCAT 2025 (180 MCQs)",
+     "url": "https://pmdc.pk/Documents/press/New%20Syllabus%20for%20MDCAT%202025.pdf",
+     "fetched": "2026-10-31"
     }
-  ]
+   ]
+  },
+  {
+   "name": "University of Health Sciences (UHS), Lahore",
+   "website": "https://uhs.edu.pk/",
+   "field": "medical",
+   "documents": [
+    {
+     "label": "Public MBBS 2025-26, 13th and final selection list (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Public MBBS 2025-26, 1st selection list (open merit)",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Public MBBS 2024-25, 17th selection list (college-wise PDFs)",
+     "url": "https://uhs.edu.pk/17thselectionlistpublic24.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Public BDS 2025-26, 13th selection list (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicbdsom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Public BDS 2025-26, 1st selection list (open merit)",
+     "url": "https://uhs.edu.pk/1selecionlistpublicbdsom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Private MBBS 2025-26, 5th and final selection list (open merit)",
+     "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Private MBBS 2025-26, 1st selection list (open merit)",
+     "url": "https://uhs.edu.pk/1selecionlistprivateom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Private BDS 2025-26, 3rd selection list (open merit)",
+     "url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Private BDS 2025-26, 1st selection list (open merit)",
+     "url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "National University of Medical Sciences (NUMS)",
+   "website": "https://numspak.edu.pk/",
+   "field": "medical",
+   "documents": []
+  },
+  {
+   "name": "Khyber Medical University (KMU)",
+   "website": "https://kmu.edu.pk/",
+   "field": "medical",
+   "documents": []
+  },
+  {
+   "name": "Dow University of Health Sciences (DUHS)",
+   "website": "https://www.duhs.edu.pk/",
+   "field": "medical",
+   "documents": []
+  },
+  {
+   "name": "Jinnah Sindh Medical University (JSMU)",
+   "website": "https://jsmu.edu.pk/",
+   "field": "medical",
+   "documents": []
+  },
+  {
+   "name": "Liaquat University of Medical and Health Sciences (LUMHS)",
+   "website": "https://lumhs.edu.pk/",
+   "field": "medical",
+   "documents": []
+  },
+  {
+   "name": "Shaheed Zulfiqar Ali Bhutto Medical University (SZABMU)",
+   "website": "https://szabmu.edu.pk/",
+   "field": "medical",
+   "documents": []
+  },
+  {
+   "name": "Aga Khan University (AKU)",
+   "website": "https://www.aku.edu/",
+   "field": "medical",
+   "documents": []
+  },
+  {
+   "name": "University of Engineering and Technology (UET), Lahore",
+   "website": "https://uet.edu.pk/",
+   "field": "engineering",
+   "documents": []
+  },
+  {
+   "name": "National University of Sciences and Technology (NUST)",
+   "website": "https://nust.edu.pk/",
+   "field": "engineering",
+   "documents": []
+  },
+  {
+   "name": "COMSATS University Islamabad",
+   "website": "https://comsats.edu.pk/",
+   "field": "engineering",
+   "documents": []
+  },
+  {
+   "name": "FAST National University (NUCES)",
+   "website": "https://nu.edu.pk/",
+   "field": "computing",
+   "documents": []
+  },
+  {
+   "name": "Ghulam Ishaq Khan Institute (GIKI)",
+   "website": "https://giki.edu.pk/",
+   "field": "engineering",
+   "documents": []
+  },
+  {
+   "name": "UET Taxila",
+   "website": "https://uettaxila.edu.pk/",
+   "field": "engineering",
+   "documents": []
+  },
+  {
+   "name": "UET Peshawar",
+   "website": "https://www.uetpeshawar.edu.pk/",
+   "field": "engineering",
+   "documents": []
+  },
+  {
+   "name": "NED University of Engineering and Technology",
+   "website": "https://neduet.edu.pk/",
+   "field": "engineering",
+   "documents": []
+  },
+  {
+   "name": "University of the Punjab (PU)",
+   "website": "https://pu.edu.pk/",
+   "field": "general",
+   "documents": []
+  },
+  {
+   "name": "University of Karachi",
+   "website": "https://www.uok.edu.pk/",
+   "field": "general",
+   "documents": []
+  },
+  {
+   "name": "Air University",
+   "website": "https://au.edu.pk/",
+   "field": "general",
+   "documents": []
+  },
+  {
+   "name": "Bahria University",
+   "website": "https://bahria.edu.pk/",
+   "field": "general",
+   "documents": []
+  },
+  {
+   "name": "International Islamic University Islamabad (IIUI)",
+   "website": "https://iiu.edu.pk/",
+   "field": "general",
+   "documents": []
+  },
+  {
+   "name": "University of Agriculture Faisalabad (UAF)",
+   "website": "https://uaf.edu.pk/",
+   "field": "general",
+   "documents": []
+  },
+  {
+   "name": "Information Technology University (ITU), Lahore",
+   "website": "https://itu.edu.pk/",
+   "field": "computing",
+   "documents": []
+  },
+  {
+   "name": "Institute of Space Technology (IST)",
+   "website": "https://www.ist.edu.pk/",
+   "field": "engineering",
+   "documents": []
+  }
+ ]
 }
