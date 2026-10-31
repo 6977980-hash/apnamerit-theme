@@ -247,6 +247,46 @@ function am_page_body( array $page ): string {
 }
 
 /**
+ * "Other <field> calculators / merit lists" under a calculator or merit-list page: links to the
+ * same kind of page for every other university in the same field (internal links, ranking plan Nov 2026).
+ */
+function am_siblings_html( array $page ): string {
+	$tpl  = (string) ( $page['template'] ?? 'default' );
+	$key  = array( 'calculator' => 'calculator_path', 'meritlist' => 'meritlist_path' )[ $tpl ] ?? '';
+	$path = (string) ( $page['path'] ?? '' );
+	if ( '' === $key || ! function_exists( 'am_unis' ) ) {
+		return '';
+	}
+	$group = fn( $u ) => in_array( $u['field'] ?? '', array( 'engineering', 'computing' ), true ) ? 'engineering and computing' : (string) ( $u['field'] ?? '' );
+	$unis  = am_unis();
+	$field = '';
+	foreach ( $unis as $uni ) {
+		if ( ( $uni[ $key ] ?? '' ) === $path ) {
+			$field = $group( $uni );
+		}
+	}
+	if ( '' === $field ) {
+		return '';
+	}
+	$links = array();
+	foreach ( $unis as $uni ) {
+		$p = (string) ( $uni[ $key ] ?? '' );
+		if ( '' !== $p && $p !== $path && $group( $uni ) === $field && am_find_page( $p ) ) {
+			$links[ am_path_label( $p ) ] = '<a href="' . esc_url( home_url( $p ) ) . '">' . esc_html( am_path_label( $p ) ) . '</a>';
+		}
+	}
+	if ( ! $links ) {
+		return '';
+	}
+	ksort( $links, SORT_NATURAL | SORT_FLAG_CASE );
+	$label = array( 'medical' => 'medical', 'general' => 'university' )[ $field ] ?? $field;
+	$what  = 'calculator' === $tpl ? 'aggregate calculators' : 'merit lists';
+	$hub   = 'calculator' === $tpl ? '/aggregate-calculator/' : '/merit-list/';
+	return '<section class="am-sibs"><h2>Other ' . esc_html( $label ) . ' ' . esc_html( $what ) . '</h2><p>' . implode( ' · ', $links )
+		. ( am_find_page( $hub ) ? ' · <a href="' . esc_url( home_url( $hub ) ) . '">All ' . esc_html( $what ) . '</a>' : '' ) . '</p></section>';
+}
+
+/**
  * Full main column for a pages.json entry (everything except header/footer). Rendered before
  * get_header() so shortcodes can register FAQ/Dataset/WebApplication nodes for <head>.
  */
@@ -265,6 +305,7 @@ function am_render_page( array $page ): string {
 	}
 	$out .= am_answer_html( (string) ( $page['answer'] ?? '' ), (string) ( $page['answer_source'] ?? '' ) );
 	$out .= '<div class="am-body">' . am_page_body( $page ) . '</div>';
+	$out .= am_siblings_html( $page );
 	$out .= am_faq_html( (array) ( $page['faq'] ?? array() ) );
 	$out .= am_roman_urdu_html( (string) ( $page['roman_urdu'] ?? '' ) );
 	$out .= am_sources_html( (array) ( $page['sources'] ?? array() ) );

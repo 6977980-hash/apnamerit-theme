@@ -7,7 +7,7 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p>Already know your aggregate? The <a href=\"/predictor/\">merit predictor</a> checks it against {predict_count} programs. Or browse <a href=\"/aggregate-calculator/\">all aggregate calculators</a> and <a href=\"/merit-list/\">all merit lists</a>.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {year:uhs} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {year:pu} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/air-aggregate-calculator/\">Air University aggregate calculator</a> (engineering 10/50/40, other programs 15/35/50).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>What changed this year? Read the <a href=\"/merit-data-report-2026/\">merit data report 2026</a>. UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p>Need your Matric or FSc percentage first? Use the <a href=\"/percentage-calculator/\">percentage calculator</a>. Already know your aggregate? The <a href=\"/predictor/\">merit predictor</a> checks it against {predict_count} programs. Or browse <a href=\"/aggregate-calculator/\">all aggregate calculators</a> and <a href=\"/merit-list/\">all merit lists</a>.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {year:uhs} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {year:pu} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/air-aggregate-calculator/\">Air University aggregate calculator</a> (engineering 10/50/40, other programs 15/35/50).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>What changed this year? Read the <a href=\"/merit-data-report-2026/\">merit data report 2026</a>. UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/predictor/",
@@ -1771,6 +1771,7 @@
     }
    ],
    "related": [
+    "/percentage-calculator/",
     "/mdcat-aggregate-calculator/",
     "/nust-aggregate-calculator/",
     "/pu-aggregate-calculator/",
@@ -1779,6 +1780,79 @@
     "/predictor/",
     "/merit-list/",
     "/guides/mdcat-aggregate-formula/"
+   ]
+  },
+  {
+   "path": "/percentage-calculator/",
+   "keyword": "fsc percentage calculator",
+   "title": "Matric & FSc Percentage Calculator (Marks to %)",
+   "description": "Free Matric and FSc percentage calculator: enter your marks and total (1100, 1200 or 550) to get your exact percentage, then work out your aggregate.",
+   "h1": "Matric and FSc Percentage Calculator",
+   "crumb": "Percentage calculator",
+   "type": "content",
+   "template": "default",
+   "schema_type": "WebPage",
+   "parents": [
+    "/aggregate-calculator/"
+   ],
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "subtitle": "Turn your Matric, FSc Part-I or full FSc marks into a percentage",
+   "answer": "Your Matric or FSc percentage = marks obtained ÷ total marks × 100. For example, 1000 out of 1100 is 90.91%, and 480 out of 550 in FSc Part-I is 87.27%. Enter your marks below; universities then combine these percentages with an entry test into an aggregate.",
+   "content_file": "percentage-calculator.html",
+   "faq": [
+    {
+     "q": "How do I calculate my FSc percentage?",
+     "a": "Divide your obtained marks by the total marks and multiply by 100. 950 out of 1100 is 86.36%."
+    },
+    {
+     "q": "What is 1000 out of 1100 in percentage?",
+     "a": "90.91%, because 1000 ÷ 1100 × 100 = 90.909, rounded to two decimals."
+    },
+    {
+     "q": "Is the FSc percentage the same as the aggregate?",
+     "a": "No. The aggregate mixes Matric, FSc and an entry test with weights set by each university, such as 10/40/50 for MDCAT. Use our aggregate calculators for that."
+    },
+    {
+     "q": "Do universities use FSc Part-I or full FSc marks?",
+     "a": "Engineering universities such as UET Taxila and NUST usually use Part-I marks, because admissions close before the Part-II result. MDCAT and Punjab University use the full FSc."
+    },
+    {
+     "q": "FSc ki percentage kaise nikalte hain?",
+     "a": "Hasil kiye gaye marks ko total marks se divide karein aur 100 se zarb dein. Masalan 1000/1100 = 90.91%.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Matric 1200 mein se ho to kya karein?",
+     "a": "Calculator mein total 1100 ki jagah 1200 likh dein. Percentage khud theek aa jaye gi.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Apne Matric ya FSc ke marks aur total marks likhein, percentage foran aa jaye gi. Formula: marks ÷ total × 100.</p><p>Yaad rakhein ke admission percentage par nahi balke <strong>aggregate</strong> par hota hai. Apna aggregate <a href=\"/aggregate-calculator/\">aggregate calculator</a> se nikalein.</p>",
+   "sources": [
+    {
+     "label": "PM&DC Admissions Regulations 2026, reg. 6(3) (MDCAT 50/40/10)",
+     "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Taxila admission eligibility (33/50/17)",
+     "url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "NUST merit generation criteria (75/15/10)",
+     "url": "https://nust.edu.pk/admissions/undergraduates/merit-criteria-for-admission-on-net-basis/",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/aggregate-calculator/",
+    "/mdcat-aggregate-calculator/",
+    "/pu-aggregate-calculator/",
+    "/nust-aggregate-calculator/",
+    "/uet-taxila-aggregate-calculator/",
+    "/predictor/"
    ]
   },
   {

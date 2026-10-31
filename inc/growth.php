@@ -90,6 +90,37 @@ function am_season_status( array $uni ): string {
 		. ' <a href="' . esc_url( (string) $row['source_url'] ) . '" rel="nofollow noopener" target="_blank">Official page</a></p>';
 }
 
+// ------------------------------------------------------------------ [am_percent]
+/**
+ * Matric / FSc percentage calculator: marks ÷ total × 100 for each exam, live (assets/js/am.js).
+ */
+function am_sc_percent(): string {
+	$rows = array(
+		array( 'matric', 'Matric (SSC)', 1100 ),
+		array( 'fsc1', 'FSc / HSSC Part-I', 550 ),
+		array( 'fsc', 'FSc / HSSC (Part-I + II)', 1100 ),
+	);
+	$html = '';
+	foreach ( $rows as list( $k, $label, $total ) ) {
+		$html .= '<div class="am-field am-part"><label for="am-pc-' . $k . '">' . esc_html( $label ) . ' marks</label><div class="am-pair">'
+			. '<input id="am-pc-' . $k . '" name="o_' . $k . '" type="number" inputmode="decimal" min="0" step="any">'
+			. '<span>out of</span>'
+			. '<input aria-label="' . esc_attr( $label ) . ' total marks" name="t_' . $k . '" type="number" inputmode="decimal" min="1" step="any" value="' . $total . '">'
+			. '</div><output class="am-pc-out" for="am-pc-' . $k . '" data-am-pc="' . $k . '"></output></div>';
+	}
+	am_registry(
+		'webapp',
+		array(
+			'id'          => 'percentage',
+			'name'        => 'Matric and FSc Percentage Calculator',
+			'description' => 'Converts Matric, FSc Part-I and FSc marks into percentages.',
+		)
+	);
+	return '<form class="am-calc" data-am-percent novalidate>' . $html
+		. '<p class="am-muted">Percentage = marks obtained ÷ total marks × 100, rounded to 2 decimals. Change the total if your board uses 1200 (Matric) or 600 (Part-I).</p>'
+		. '<noscript><p>The calculator needs JavaScript; use the formula above by hand.</p></noscript></form>';
+}
+
 // ------------------------------------------------------------------ [am_report]
 /**
  * Yearly data report (Phase 7, November): one summary row + key figures per university with
@@ -572,5 +603,6 @@ add_action(
 		add_shortcode( 'am_embed_builder', 'am_sc_embed_builder' );
 		add_shortcode( 'am_submit', 'am_sc_submit' );
 		add_shortcode( 'am_report', 'am_sc_report' );
+		add_shortcode( 'am_percent', 'am_sc_percent' );
 	}
 );

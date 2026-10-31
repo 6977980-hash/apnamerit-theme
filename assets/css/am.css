@@ -123,3 +123,4 @@ input[type=url],.am-submit input:not([type]){font:inherit;min-height:44px;paddin
 @media print{.am-header,.am-footer,.am-share,.am-actions{display:none}}
 .am-facts{background:var(--am-soft);border-left:3px solid var(--am-accent);padding:.6rem 1rem;margin:0 0 1.5rem}.am-facts p{margin:0 0 .3rem}.am-facts ul{margin:0;padding-left:1.1rem}
 .am-srcs{font-size:.85rem;margin:-1rem 0 1.5rem;padding-left:1.4rem;overflow-wrap:anywhere}p.am-srcs{padding-left:0}
+.am-pc-out{display:block;font-weight:700;font-size:1.15em;min-height:1.4em}

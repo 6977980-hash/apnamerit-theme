@@ -21,6 +21,12 @@
 - `inc/indexnow.php` (v0.10.1): key in `site.json → indexnow.key`, served at `/<key>.txt`. On `am_deployed`, pages whose entry/content file/university JSON changed are queued and sent to api.indexnow.org by WP-Cron (`am_indexnow_send`). Last result: response header `X-AM-IndexNow-Last` on the key file (time, URL count, HTTP code; 200/202 = accepted).
 - Google does not use IndexNow: owner requests indexing in GSC by hand (list in the thread); Bing: import the site from GSC in Bing Webmaster Tools.
 
+## Ranking week 1 (v0.11.0)
+- `am_siblings_html()` (`inc/template-tags.php`): calculator and merit-list pages end with "Other <group> aggregate calculators / merit lists" (groups: medical, engineering+computing, university) + link to the hub.
+- `/percentage-calculator/` (`[am_percent]`, live JS in am.js, keyword "fsc percentage calculator"), linked from home and `/aggregate-calculator/`.
+- Ranking plan doc: https://claude.ai/artifact/HEXx55uWiKBDfbTenpqypP (keyword gaps, next pages: UET Lahore calculator needs owner screenshot, ECAT guide, IBCC equivalence calculator, COMSATS merit list).
+- GSC: owner requested indexing for the first 10 URLs on 2026-10-31; give 10 more per day.
+
 ## Recurring season ops (MASTER-PLAN Phase 7; also `data/calendar.json → ops`)
 - **Now → March 2027**: watch uhs.edu.pk for 2026-27 MBBS/BDS selection lists (rebuild with `scripts/uhs_closing.py`, 2026 rows, list names like 2025), pu.edu.pk for Merit-of-Last-Year-2026.pdf, KU open-merit Admissions 2027. Each new list: data JSON → check.py → merge → live check → update the calendar status line.
 - **May–June 2027**: `season_year` → 2027; "expected merit 2027" guides only for programs with ≥ 2 official years; refresh calendar statuses and events.

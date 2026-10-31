@@ -374,6 +374,19 @@
     });
   });
 
+  // ---------------------------------------------------------------- percentage calculator
+  $$('form[data-am-percent]').forEach(function (form) {
+    var run = function () {
+      $$('[data-am-pc]', form).forEach(function (o) {
+        var k = o.getAttribute('data-am-pc');
+        var ob = parseFloat(form['o_' + k].value), t = parseFloat(form['t_' + k].value);
+        o.textContent = ob >= 0 && t > 0 && ob <= t ? (Math.round(ob / t * 10000) / 100).toFixed(2) + '%' : (ob > t ? 'Marks are more than the total' : '');
+      });
+    };
+    form.addEventListener('input', run);
+    form.addEventListener('submit', function (e) { e.preventDefault(); run(); });
+  });
+
   // ---------------------------------------------------------------- share
   document.addEventListener('click', function (e) {
     var copy = e.target.closest('[data-am-copy]');
