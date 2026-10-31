@@ -20,7 +20,7 @@
 ## How things work now
 - `data/pages.json`: `path`, `keyword`, `title` (≤ 60), `description` (140–155), `h1`, `template` (default|calculator|meritlist), `content` (HTML + shortcodes), `updated`, `noindex`. Tokens `{season_year}`, `{data_year}`, `{brand}`. The `/` entry drives the homepage (`front-page.php`).
 - `inc/router.php`: serves those paths with `templates/virtual.php`, 301 adds a missing trailing slash, registers the `ampages` core-sitemap provider. WP `page` type is removed from the sitemap.
-- `inc/deploy.php`: on the first request after theme files change, runs `litespeed_purge_all` and flushes object cache.
+- `inc/deploy.php`: on the first uncached PHP request after theme files change (hook `wp_loaded`), sends `X-LiteSpeed-Purge: *`, runs `litespeed_purge_all` and flushes object cache. LiteSpeed Cache 7.9.2 is active. If a page still looks stale right after a push, open any URL with `?nc=123` once to trigger it.
 - `inc/seo.php`: SEO layer (see top of file). `inc/cleanup.php`: emojis, embeds, XML-RPC, comments, REST users, author/date/tag/attachment archives, block CSS, front-end jQuery all off.
 - `data/site.json`: domain, brand, tagline, author, `season_year` 2026, `data_year` 2025, license.
 - Shortcodes are editor-only stubs: `am_calculator`, `am_merit_table`, `am_predictor`, `am_faq`, `am_answer`.
@@ -35,6 +35,7 @@
 - Temporary repo page `/am-router-test/` served 200 with noindex, canonical and H1; no-slash URL 301 → slash; unknown URL 404. Test entry removed afterwards.
 - `/wp-sitemap.xml` lists `wp-sitemap-ampages-1.xml` (homepage). robots.txt shows AI bots + sitemap line.
 - `MASTER-PLAN.md` in theme folder 403; `data/site.json` 200; `xmlrpc.php` 405; `/wp-json/wp/v2/users` 404.
+- Auto purge verified after f93c1a6: the stale cached homepage (old title "apnamerit.com") refreshed without a manual purge.
 - PageSpeed not run yet (placeholder page only); do it in Phase 1 on the base template.
 
 ## Do not
