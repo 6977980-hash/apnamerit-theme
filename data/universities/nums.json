@@ -1,0 +1,161 @@
+{
+ "slug": "nums",
+ "name": "National University of Medical Sciences (NUMS)",
+ "short": "NUMS",
+ "field": "medical",
+ "province": "Punjab",
+ "website": "https://numspak.edu.pk/",
+ "meritlist_path": "/nums-merit-list/",
+ "updated": "2026-10-31",
+ "_note": "Closing = lowest aggregate in the newest NUMS selection list published for each affiliated private college (MBBS: Sixth Selection / Upgradation List, 27 Jan 2026; QIMS Baluchistan-domicile list 'January 19, 2026'; BDS: Fourth Selection List, 13 Feb 2026). Lists are cumulative (sorted, S No 1..n); min checked by script against every PDF on 31 Oct 2026. NUMS does not say these were the last lists, so the list is 'Latest published'. Aggregate = PM&DC formula (50% MDCAT, 40% FSc, 10% Matric), same as the UHS calculator. PDFs (with names) stay in sources/nums/, never in the repo. Index pages: https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26 and https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-dental-colleges-for-bds-open-merit-session-2025-26",
+ "defaults": {
+  "list": "Latest published",
+  "category": "Open merit"
+ },
+ "formulas": [],
+ "merit": [
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "CMH Institute of Medical Sciences, Bahawalpur Cantt",
+   "closing": 84.8045,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-CMH-BWP_1769507223.pdf",
+   "note": "Sixth selection list, session 2025-26, 27 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "CMH Kharian Medical College, Kharian Cantt",
+   "closing": 84.479,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-CMH-Kharian_1769507227.pdf",
+   "note": "Sixth selection list, session 2025-26, 27 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "CMH Lahore Medical College and Institute of Dentistry, Lahore Cantt",
+   "closing": 85.3227,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-CMH-Lahore_1769507231.pdf",
+   "note": "Sixth selection list, session 2025-26, 27 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "CMH Multan Institute of Medical Sciences, Multan Cantt",
+   "closing": 86.538,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-CMH-Multan_1769507236.pdf",
+   "note": "Sixth selection list, session 2025-26, 27 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "HITEC Institute of Medical Sciences, Taxila Cantt",
+   "closing": 83.9712,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-HITEC-Taxila_1769507242.pdf",
+   "note": "Sixth selection list, session 2025-26, 27 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Karachi Institute of Medical Sciences, Malir Cantt",
+   "closing": 83.8453,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-KIMS-Karachi_1769507248.pdf",
+   "note": "Sixth selection list, session 2025-26, 27 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Baluchistan domicile",
+   "program": "MBBS (private)",
+   "campus": "Quetta Institute of Medical Sciences, Quetta Cantt",
+   "closing": 81.5864,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-QIMS-Baluchistan_1769507257.pdf",
+   "note": "Sixth selection list (Baluchistan domicile seats), session 2025-26, dated 19 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Quetta Institute of Medical Sciences, Quetta Cantt",
+   "closing": 86.7318,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-QIMS-ROC_1769507264.pdf",
+   "note": "Sixth selection list, session 2025-26, 27 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Wah Medical College, Wah Cantt",
+   "closing": 84.1045,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-WMC-Wah_1769507269.pdf",
+   "note": "Sixth selection list, session 2025-26, 27 Jan 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "BDS (private)",
+   "campus": "CMH Lahore Medical College and Institute of Dentistry, Lahore Cantt",
+   "closing": 84.7529,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-4th-meritlist-bds-CMH-Lahore_1770993326.pdf",
+   "note": "Fourth selection list, session 2025-26, 13 Feb 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "BDS (private)",
+   "campus": "CIMS Dental Section, Multan",
+   "closing": 84.8805,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-4th-meritlist-bds-CMH-Multan_1770993332.pdf",
+   "note": "Fourth selection list, session 2025-26, 13 Feb 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "BDS (private)",
+   "campus": "HITEC Dental College, Taxila Cantt",
+   "closing": 85.0636,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-4th-meritlist-bds-HITEC_1770993337.pdf",
+   "note": "Fourth selection list, session 2025-26, 13 Feb 2026; lowest aggregate in the list"
+  },
+  {
+   "year": 2025,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "BDS (private)",
+   "campus": "Quetta College of Dentistry (QCD), Quetta",
+   "closing": 85.2273,
+   "field": "medical",
+   "source_url": "https://numspak.edu.pk/upload/media/2026-4th-meritlist-bds-QCD-ROC_1770993342.pdf",
+   "note": "Fourth selection list, session 2025-26, 13 Feb 2026; lowest aggregate in the list"
+  }
+ ]
+}

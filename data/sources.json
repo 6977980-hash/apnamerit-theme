@@ -79,7 +79,18 @@
    "name": "National University of Medical Sciences (NUMS)",
    "website": "https://numspak.edu.pk/",
    "field": "medical",
-   "documents": []
+   "documents": [
+    {
+     "label": "Merit lists, private-sector affiliated medical colleges, MBBS open merit, session 2025-26 (sixth selection list, 27 Jan 2026)",
+     "url": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Merit lists, private-sector affiliated dental colleges, BDS open merit, session 2025-26 (fourth selection list, 13 Feb 2026)",
+     "url": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-dental-colleges-for-bds-open-merit-session-2025-26",
+     "fetched": "2026-10-31"
+    }
+   ]
   },
   {
    "name": "Khyber Medical University (KMU)",
@@ -121,7 +132,33 @@
    "name": "University of Engineering and Technology (UET), Lahore",
    "website": "https://uet.edu.pk/",
    "field": "engineering",
-   "documents": []
+   "documents": [
+    {
+     "label": "Undergraduate Prospectus Spring 2026: merit formula p. 19, categories pp. 21-24 (read from web.archive.org copy, UET site down)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Fourth Merit List, Fall 2025: minimum aggregate by program, campus and category",
+     "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Walk-in admissions, Fall 2025: minimum aggregate",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/walkin_list.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Change of preference (manual form), Fall 2025: minimum aggregate",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/cop_list.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Change of preference (online), Fall 2025: minimum aggregate",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/COP2.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
   },
   {
    "name": "National University of Sciences and Technology (NUST)",
@@ -335,6 +372,11 @@
     {
      "label": "Islamabad campus: Spring 2025 Undergraduate Closing Merits (Admission Office)",
      "url": "https://ww2.comsats.edu.pk/ciitblogs/files/Closing%20merits%20Spring%202025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Islamabad campus: Fall 2026 Undergraduate 3rd Closing Merits (image)",
+     "url": "https://ww2.comsats.edu.pk/admissionoffice/assets/images/3rdClosingFA26.jpeg",
      "fetched": "2026-10-31"
     }
    ]

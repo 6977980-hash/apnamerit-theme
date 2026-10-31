@@ -2,7 +2,7 @@
 
 Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `REVIEW-2026-11-01.md`. UET Lahore sources: `sources/uet/` (git-ignored; README has provenance).
 
-## Fix 2: UET Lahore (blocked, 2026-10-31)
+## Fix 2: UET Lahore — superseded below (now live)
 - Verified: `/uet-aggregate-calculator/` and `/uet-merit-list/` 404; `/data/index.json` has only `uet-taxila`, `uet-peshawar`.
 - uet.edu.pk, apply.uet.edu.pk, admission.uet.edu.pk: Cloudflare 522 (20 s) at 22:4x UTC; web.archive.org closed by the container proxy.
 - Have: `sources/uet/` (PDF + .txt + README, 269 rows, "Fourth Merit List", year not printed) and the owner's draft `New Ideas/apnamerit-data/uet-lahore.json` (269 rows, raw codes in `category`, `formulas: []`).
@@ -38,6 +38,16 @@ Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `
 - Not found yet: Islamabad Fall 2026 closing, other campuses (islamabad.comsats.edu.pk 403).
 - FAST: nu.edu.pk/Admissions 403, nu.edu.pk/Admissions/MeritList 404, admissions.nu.edu.pk (200) has no closing merit; no official program-wise closing merit found as of 2026-10-31 (also Phase 3 finding). FAST keeps the part-A line.
 - `/merit-data-report-2026/`: COMSATS moved out of the "calculator only" list with an "added after this report" line (the 591 count stays as dated).
+
+## Fix 2 done + owner data drop (v0.14.0, 2026-10-31)
+Owner's consulting chat delivered `apnamerit-data/{uet-lahore,comsats,nums}.json` + NOTES.md + source PDFs (copied to git-ignored `sources/uet|nums|comsats/`). Everything re-verified here before publishing:
+- **UET Lahore** (`data/universities/uet.json`, slug `uet`): 593 rows, Fall 2025 (year 2025): Fourth Merit List 269, walk-in 61, change of preference manual 71, online 192. Checks: 4th list = exact tuple match with the PDF text (269/269); walk-in/manual tuple match (draft missed the first row of each: Faisalabad Chemical A1 61.92386364 and 57.509258, added); COP-online pivot re-parsed by word x-positions (pdfplumber): 179 matched, **13 afternoon-section rows were labelled Morning A1/A1-M in the draft; the afternoon table's columns are A2/A2-M** (fixed, shift Afternoon). Labels shortened to keep the table light (list "4th list", "Pref. change (online)"; category "A1 open merit" etc.; campus "Lahore (main)", "KSK", "Faisalabad", "RCET Gujranwala", "Narowal"); meanings on the page. Default view: 4th list, A1. Non-ECAT programs (BBA, BBIT, Interior Design, Biomedical Sciences) `predict:false`.
+- **Formula**: owner chose the prospectus (Spring 2026 p. 19): ECAT 33 / FSc Part-I 50 / Matric 17; non-ECAT 75/25. Portal image (20 test / 70 academics / 10 interview) matches the Spring 2025 interview notice; mentioned on the page, not used. Hafiz (0-20) and sports (0-10) marks are committee-set, so not in the calculator.
+- Pages: `/uet-aggregate-calculator/`, `/uet-merit-list/` (titles/H1 per brief; first line links Taxila/Peshawar; related on Taxila/Peshawar pages; home related; predictor list). Merit table HTML ~218 KB (594 rows): watch PageSpeed; if < 90 split later lists out.
+- **NUMS** (`nums.json`, `/nums-merit-list/`): 13 rows, session 2025-26 (year 2025), list "Latest published" (MBBS 6th selection list 27 Jan 2026, BDS 4th 13 Feb 2026, QIMS Baluchistan-domicile list "January 19, 2026"). Lists are cumulative; the lowest aggregate of each PDF re-checked by script (13/13). Not marked final by NUMS. Formula = PM&DC 50/40/10 (MDCAT calculator).
+- **COMSATS**: +17 rows Islamabad Fall 2026 "3rd Closing Merits" image (official ww2.comsats.edu.pk, same bytes as owner copy), list "3rd" (not default, not in predictor). Values checked by eye against the image.
+- KMU / Sindh: owner notes confirm no college-wise closing in the public lists; nothing published. IST, NUST: unchanged.
+- Predictor now 416 programs.
 
 ## Fix 3 part A: "no closing merit" line on calculators without data (v0.12.2)
 - Verified live: `/comsats-aggregate-calculator/` config `"rows":[]`, so am.js printed no "Where can you get in?" block and no explanation (same for the other 10 with `records: 0` in `/data/index.json`).

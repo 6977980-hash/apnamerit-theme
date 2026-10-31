@@ -15,6 +15,8 @@
     "/merit-list/",
     "/mdcat-aggregate-calculator/",
     "/mdcat-merit-list/",
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/",
     "/uet-taxila-aggregate-calculator/",
     "/uet-taxila-merit-list/",
     "/pu-merit-list/",
@@ -231,6 +233,7 @@
    ],
    "related": [
     "/mdcat-merit-list/",
+    "/nums-merit-list/",
     "/guides/mdcat-aggregate-formula/",
     "/guides/what-is-closing-merit/",
     "/methodology/",
@@ -319,10 +322,76 @@
    ],
    "related": [
     "/mdcat-aggregate-calculator/",
+    "/nums-merit-list/",
     "/guides/what-is-closing-merit/",
     "/guides/mdcat-aggregate-formula/",
     "/methodology/",
     "/data-sources/"
+   ]
+  },
+  {
+   "path": "/nums-merit-list/",
+   "keyword": "nums merit list",
+   "title": "NUMS Merit List {season_year}: MBBS & BDS Closing Merit",
+   "description": "NUMS merit list: closing merit of every NUMS-affiliated private MBBS and BDS college, session 2025-26, from QIMS 86.73% to KIMS 83.85%, with sources.",
+   "h1": "NUMS Merit List {season_year} & Closing Merit (MBBS, BDS)",
+   "crumb": "NUMS merit list",
+   "subtitle": "Private MBBS and BDS colleges, session 2025-26, newest official selection lists",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "In NUMS's newest 2025-26 selection lists, open-merit MBBS closed between 86.73% (Quetta Institute of Medical Sciences) and 83.85% (Karachi Institute of Medical Sciences), with CMH Lahore at 85.32%. BDS closed between 85.23% (Quetta College of Dentistry) and 84.75% (CMH Lahore).",
+   "answer_source": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26",
+   "content_file": "nums-merit-list.html",
+   "faq": [
+    {
+     "q": "What was the NUMS closing merit for MBBS in 2025-26?",
+     "a": "Between 86.73% (Quetta Institute of Medical Sciences) and 83.85% (Karachi Institute of Medical Sciences) on open merit, in the sixth selection list of 27 January 2026."
+    },
+    {
+     "q": "What was the CMH Lahore MBBS closing merit?",
+     "a": "85.32% in the NUMS sixth selection list for session 2025-26 (open merit)."
+    },
+    {
+     "q": "Is this the final NUMS merit list?",
+     "a": "It is the newest list NUMS had published for each college on its news pages (sixth for MBBS, fourth for BDS). NUMS does not mark it as final, so a later list could have closed slightly lower."
+    },
+    {
+     "q": "Which formula does NUMS use?",
+     "a": "The PM&DC formula: 50% MDCAT, 40% FSc and 10% Matric, the same as the MDCAT aggregate calculator on this site."
+    },
+    {
+     "q": "NUMS ka merit kitna jata hai?",
+     "a": "2025-26 mein private MBBS colleges 83.85% se 86.73% ke darmiyan close hue, aur BDS 84.75% se 85.23% ke darmiyan.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "CMH Lahore MBBS ka merit kya tha?",
+     "a": "Session 2025-26 ki chhati selection list mein 85.32% par close hua.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Yeh NUMS se mutaliq private medical aur dental colleges ka <strong>closing merit</strong> hai, session 2025-26, NUMS ki sab se nayi selection list se.</p><p>MBBS 83.85% (KIMS Karachi) se 86.73% (QIMS Quetta) ke darmiyan close hua. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein; formula wahi 50/40/10 hai.</p>",
+   "sources": [
+    {
+     "label": "NUMS: merit lists for private-sector affiliated medical colleges, MBBS open merit, session 2025-26",
+     "url": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "NUMS: merit lists for private-sector affiliated dental colleges, BDS open merit, session 2025-26",
+     "url": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-dental-colleges-for-bds-open-merit-session-2025-26",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/predictor/",
+    "/guides/what-is-closing-merit/",
+    "/methodology/"
    ]
   },
   {
@@ -588,6 +657,74 @@
    ]
   },
   {
+   "path": "/uet-aggregate-calculator/",
+   "keyword": "uet aggregate calculator",
+   "title": "UET Aggregate Calculator {season_year} (ECAT Formula)",
+   "description": "UET Lahore aggregate calculator {season_year}: 33% ECAT, 50% FSc Part-I and 17% Matric from the official prospectus. Compare with Fall 2025 closing merit.",
+   "h1": "UET Lahore Aggregate Calculator {season_year}",
+   "crumb": "UET aggregate calculator",
+   "subtitle": "Official formula: 33% ECAT + 50% FSc Part-I + 17% Matric",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "The UET Lahore aggregate = 33% ECAT + 50% FSc Part-I (first year) + 17% Matric, per the UET Undergraduate Prospectus Spring 2026 (p. 19). Non-ECAT programs use 75% first-year Intermediate + 25% Matric. Example: 280/400 ECAT, 480/550 FSc Part-I and 1000/1100 Matric give 82.19%.",
+   "answer_source": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
+   "content_file": "uet-aggregate-calculator.html",
+   "faq": [
+    {
+     "q": "What is the UET Lahore aggregate formula?",
+     "a": "33% entry test (ECAT), 50% first-year Intermediate (FSc Part-I) and 17% Matric for ECAT programs; 75% first-year Intermediate and 25% Matric for non-ECAT programs (UET Undergraduate Prospectus Spring 2026, p. 19)."
+    },
+    {
+     "q": "Is ECAT out of 400?",
+     "a": "Yes, the calculator uses 400 as the ECAT total. If UET announces another total for your test, change it in the calculator."
+    },
+    {
+     "q": "Does UET Lahore use FSc Part-I or Part-II marks?",
+     "a": "First-year (Part-I) marks. The prospectus says Part-I is used even if you have already completed Intermediate."
+    },
+    {
+     "q": "What aggregate is needed for Computer Science at UET Lahore?",
+     "a": "In the Fall 2025 Fourth Merit List, Computer Science at the main campus closed at 85.83% on A1 open merit, the highest UET Lahore figure."
+    },
+    {
+     "q": "Is the UET Lahore calculator the same as UET Taxila?",
+     "a": "The weights are the same (33% test, 50% FSc Part-I, 17% Matric), but the two universities hold separate admissions and publish separate merit lists."
+    },
+    {
+     "q": "UET Lahore ka aggregate kaise nikalain?",
+     "a": "ECAT marks ko 400 se divide kar ke 33 se, FSc Part-I ko total se divide kar ke 50 se aur Matric ko 1100 se divide kar ke 17 se multiply karein. Teeno ko jama kar lein.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UET Lahore mein Computer Science ka merit kitna gaya?",
+     "a": "Fall 2025 ki Fourth Merit List mein main campus par A1 open merit 85.83% par close hua.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>UET Lahore ka formula: <strong>ECAT 33%, FSc Part-I 50% aur Matric 17%</strong>. BBA aur BBIT jaise non-ECAT programs mein FSc Part-I 75% aur Matric 25%.</p><p>Misaal: ECAT 280/400, FSc Part-I 480/550 aur Matric 1000/1100 ho to aggregate 82.19% banta hai. Fall 2025 mein main campus par Computer Science 85.83% par close hui. Poori list <a href=\"/uet-merit-list/\">UET merit list</a> par dekhein.</p>",
+   "sources": [
+    {
+     "label": "UET Lahore Undergraduate Prospectus Spring 2026, p. 19 (Determination of Merit)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore Fourth Merit List, Fall 2025 (minimum aggregate)",
+     "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/uet-merit-list/",
+    "/uet-taxila-aggregate-calculator/",
+    "/uet-peshawar-aggregate-calculator/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/methodology/"
+   ]
+  },
+  {
    "path": "/uet-taxila-aggregate-calculator/",
    "keyword": "uet taxila aggregate calculator",
    "title": "UET Taxila Aggregate Calculator {season_year} (ECAT Formula)",
@@ -657,6 +794,8 @@
     }
    ],
    "related": [
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/",
     "/uet-taxila-merit-list/",
     "/guides/1st-2nd-final-merit-list/",
     "/uet-peshawar-aggregate-calculator/",
@@ -721,6 +860,8 @@
     }
    ],
    "related": [
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/",
     "/uet-taxila-merit-list/",
     "/guides/1st-2nd-final-merit-list/",
     "/uet-taxila-aggregate-calculator/",
@@ -933,6 +1074,90 @@
    ]
   },
   {
+   "path": "/uet-merit-list/",
+   "keyword": "uet merit list",
+   "title": "UET Merit List {season_year}: Closing Merit {year:uet} (All Campuses)",
+   "description": "UET Lahore merit list: official Fall 2025 closing merit for every program, campus and category, from Computer Science 85.83% down. With all later lists.",
+   "h1": "UET Lahore Merit List {season_year} & Closing Merit {year:uet}",
+   "crumb": "UET merit list",
+   "subtitle": "Fall 2025 minimum aggregates: Fourth Merit List, walk-in and change of preference",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-10-31",
+   "updated": "2026-10-31",
+   "answer": "In UET Lahore's Fall 2025 Fourth Merit List (A1 open merit, main campus), Computer Science closed at 85.83%, Data Science at 82.19%, Computer Engineering at 81.56%, Electrical at 80.35% and Mechanical at 80.25%. Sub-campuses closed lower, e.g. Computer Science 77.19% at KSK and 71.29% at Faisalabad.",
+   "answer_source": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+   "content_file": "uet-merit-list.html",
+   "faq": [
+    {
+     "q": "What was the UET Lahore closing merit for Computer Science?",
+     "a": "85.83% on A1 open merit at the main campus in the Fall 2025 Fourth Merit List."
+    },
+    {
+     "q": "What is the UET Lahore merit for Electrical and Mechanical Engineering?",
+     "a": "Electrical closed at 80.35% and Mechanical at 80.25% (A1 open merit, main campus, Fall 2025 Fourth Merit List)."
+    },
+    {
+     "q": "What does A1 mean in the UET merit list?",
+     "a": "A1 is open merit for Punjab-domiciled candidates with subsidized fee. A2 is open merit with partly subsidized fee, and '-Med' marks seats for FSc Pre-Medical students (UET prospectus, pp. 21-24)."
+    },
+    {
+     "q": "Which UET Lahore list is final?",
+     "a": "UET published the Fourth Merit List and then walk-in and change-of-preference lists for Fall 2025. The later lists cover only programs with open seats, so the Fourth Merit List is the complete one; all four are on this page."
+    },
+    {
+     "q": "Why do the sources link to UET but say web.archive.org?",
+     "a": "UET's websites were down (error 522) on 31 October 2026, so we read each official PDF from its web.archive.org copy. Every row keeps the original UET address."
+    },
+    {
+     "q": "UET Lahore ka merit kitna jata hai?",
+     "a": "Fall 2025 mein main campus par Computer Science 85.83%, Data Science 82.19%, Electrical 80.35% aur Mechanical 80.25% par close hui (A1 open merit).",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UET KSK campus ka merit kya tha?",
+     "a": "Fall 2025 mein KSK par Software Engineering 79.99% aur Computer Science 77.19% par close hui (A1).",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Yeh UET Lahore ka official <strong>closing merit</strong> hai, yani har program, campus aur category mein aakhri admission kis aggregate par hua (Fall 2025).</p><p>Main campus par Computer Science 85.83%, Electrical 80.35% aur Mechanical 80.25% par close hui. A1 Punjab open merit hai, A2 kam subsidy wali open merit. Apna aggregate <a href=\"/uet-aggregate-calculator/\">UET aggregate calculator</a> se nikalein.</p>",
+   "sources": [
+    {
+     "label": "UET Lahore Fourth Merit List, Fall 2025 (minimum aggregate)",
+     "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore walk-in admissions, Fall 2025 (minimum aggregate)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/walkin_list.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore change of preference (manual), Fall 2025",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/cop_list.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore change of preference (online), Fall 2025",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/COP2.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore Undergraduate Prospectus Spring 2026, pp. 21-24 (categories)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/uet-aggregate-calculator/",
+    "/uet-taxila-merit-list/",
+    "/uet-peshawar-aggregate-calculator/",
+    "/guides/what-is-closing-merit/",
+    "/methodology/"
+   ]
+  },
+  {
    "path": "/uet-taxila-merit-list/",
    "keyword": "uet taxila merit list",
    "title": "UET Taxila Merit List {season_year}: Closing Merit by Program",
@@ -994,6 +1219,8 @@
     }
    ],
    "related": [
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/",
     "/uet-taxila-aggregate-calculator/",
     "/guides/1st-2nd-final-merit-list/",
     "/guides/what-is-closing-merit/",
