@@ -27,6 +27,10 @@
 - Ranking plan doc: https://claude.ai/artifact/HEXx55uWiKBDfbTenpqypP (keyword gaps, next pages: UET Lahore calculator needs owner screenshot, ECAT guide, IBCC equivalence calculator, COMSATS merit list).
 - GSC: owner requested indexing for the first 10 URLs on 2026-10-31; give 10 more per day.
 
+## Homepage redesign (v0.12.x, owner asked 2026-10-31: "home page boring")
+- `/` has `"template": "home"` → `am_home_html()` (`inc/home.php`): hero (H1, live counts, MDCAT calculator via `am_sc_calculator(['uni'=>'uhs','compact'=>'1'])`, university pills), chances box → `/predictor/?agg=&uni=`, highest closing merit per university (newest year), university cards (badge by field, formula summary, buttons), how-it-works, guides; then FAQ + Roman Urdu + disclaimer. All numbers computed from data. CSS in am.css "/* home */" (am.css 12.8 KB, 14 KB inline limit).
+- Live: Lighthouse mobile 100/100/100/100, calculator 150/180 + 1000 + 1000 → 87.12%, no horizontal scroll.
+
 ## Recurring season ops (MASTER-PLAN Phase 7; also `data/calendar.json → ops`)
 - **Now → March 2027**: watch uhs.edu.pk for 2026-27 MBBS/BDS selection lists (rebuild with `scripts/uhs_closing.py`, 2026 rows, list names like 2025), pu.edu.pk for Merit-of-Last-Year-2026.pdf, KU open-merit Admissions 2027. Each new list: data JSON → check.py → merge → live check → update the calendar status line.
 - **May–June 2027**: `season_year` → 2027; "expected merit 2027" guides only for programs with ≥ 2 official years; refresh calendar statuses and events.
