@@ -510,10 +510,12 @@
     var more = $('template.am-more', box);
     function expand() {
       if (!more) return;
-      tbody.innerHTML = '';
       tbody.appendChild(document.importNode(more.content, true));
       more.parentNode.removeChild(more);
       more = null;
+      Array.prototype.slice.call(tbody.rows)
+        .sort(function (a, b) { return a.getAttribute('data-i') - b.getAttribute('data-i'); })
+        .forEach(function (r) { tbody.appendChild(r); });
     }
 
     var qbox = $('[data-am-q]', box), q = '';

@@ -587,8 +587,10 @@ function am_sc_merit_table( $atts ): string {
 		$show_delta = $n_def > 0 && $n_prev / $n_def >= 0.2;
 	}
 
+	$many    = count( $rows ) > 150; // may need the <template> below: rows carry their order (data-i)
 	$all_tr  = array(); // every row, in table order
 	$def_tr  = '';      // rows of the default view
+	$more_tr = '';      // the other rows
 	$n_more  = 0;       // rows outside it
 	$anchors = array();
 	foreach ( $rows as $r ) {
@@ -611,7 +613,7 @@ function am_sc_merit_table( $atts ): string {
 			$anchors[ $anchor ] = true;
 			$idattr             = ' id="' . esc_attr( $anchor ) . '"';
 		}
-		$tr = '<tr' . $idattr . $attrs . ( $is_def ? '' : ' class="am-off"' ) . '>'
+		$tr = '<tr' . $idattr . $attrs . ( $is_def ? '' : ' class="am-off"' ) . ( $many ? ' data-i="' . count( $all_tr ) . '"' : '' ) . '>'
 			// On phones the campus moves under the program (am-mcamp) and its column hides (audit FE:
 			// the sticky Program column showed "MBBS (private)" ×30 with the college cut off).
 			. '<th scope="row">' . esc_html( (string) $r['program'] ) . ( $show_campus && ! empty( $r['campus'] ) ? '<small class="am-mcamp">' . esc_html( (string) $r['campus'] . ( ! empty( $r['shift'] ) ? ', ' . $r['shift'] : '' ) ) . '</small>' : '' ) . ( ! empty( $r['note'] ) ? '<small>' . esc_html( (string) $r['note'] ) . '</small>' : '' ) . '</th>'
@@ -628,6 +630,7 @@ function am_sc_merit_table( $atts ): string {
 		if ( $is_def ) {
 			$def_tr .= $tr;
 		} else {
+			$more_tr .= $tr;
 			++$n_more;
 		}
 	}
@@ -680,15 +683,15 @@ function am_sc_merit_table( $atts ): string {
 		)
 	);
 
-	$big = $n_more > 100;
+	$big = $many && $n_more > 100;
 	return am_season_status( $uni )
 		. '<div class="am-merit" data-am-table="' . esc_attr( $id ) . '">'
 		. ( $filters ? '<div class="am-filters">' . $filters . ( count( $all_tr ) > 20 ? '<div class="am-field am-js-only"><label for="am-mq-' . esc_attr( $id ) . '">Search program or campus</label><input id="am-mq-' . esc_attr( $id ) . '" type="search" data-am-q placeholder="e.g. Computer, Nishtar"></div>' : '' ) . '</div>' : '' )
 		. '<p class="am-muted am-count" aria-live="polite"></p>'
 		. '<div class="am-table-wrap"><table class="am-table am-sortable"><caption>' . esc_html( $caption ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . ( $big ? $def_tr : implode( '', $all_tr ) ) . '</tbody></table></div>'
-		// Big lists (UET 700+, PU 600+ rows): the full table waits in a <template>, out of the page's DOM,
-		// until a filter or sort needs it (audit CI-04/TS-05: 8,700 nodes on /uet-merit-list/).
-		. ( $big ? '<template class="am-more" data-rows="' . count( $all_tr ) . '">' . implode( '', $all_tr ) . '</template>' : '' )
+		// Big lists (UET 700+, PU 600+ rows): rows outside the default view wait in a <template>, out of
+		// the page's DOM, until a filter or sort needs them; data-i restores the table order (audit CI-04/TS-05).
+		. ( $big ? '<template class="am-more" data-rows="' . count( $all_tr ) . '">' . $more_tr . '</template>' : '' )
 		. $src_html
 		. '<p class="am-muted am-data-link">Download this data: <a href="' . esc_url( am_data_url( (string) ( $uni['slug'] ?? $atts['uni'] ) ) ) . '">' . esc_html( $short ) . ' JSON</a> (' . esc_html( (string) am_site( 'data_license.attribution' ) ) . ', ' . esc_html( (string) am_site( 'data_license.name' ) ) . ').</p>'
 		. am_facts_html( $uni, $def['list'], $def['category'] )
