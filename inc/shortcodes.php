@@ -97,6 +97,35 @@ function am_pct( $value ): string {
 }
 
 /**
+ * "4th list", "Last list", "Final list": appends " list" only when the name does not already end with it.
+ */
+function am_list_label( string $list ): string {
+	return preg_match( '/\blist$/i', $list ) ? $list : $list . ' list';
+}
+
+/**
+ * Category for running text: "Open merit" → "open merit", but codes such as "A1 open merit"
+ * or "K (Karachi)" keep their case (audit F-15: "a1 open merit").
+ */
+function am_cat_label( string $cat ): string {
+	$first = (string) strtok( $cat, ' ' );
+	return preg_match( '/^[A-Z][a-z]+$/', $first ) ? lcfirst( $cat ) : $cat;
+}
+
+/**
+ * Source link HTML for a record's document: the official URL, or, when the record carries an
+ * archive_url (origin down, data read from a Wayback copy), the archived copy first and the
+ * origin second (audit F-12).
+ */
+function am_source_link( string $url, string $archive = '' ): string {
+	$a = fn( $href, $text ) => '<a href="' . esc_url( $href ) . '" rel="nofollow noopener" target="_blank">' . esc_html( $text ) . '</a>';
+	if ( '' === $archive ) {
+		return $a( $url, am_source_label( $url ) );
+	}
+	return esc_html( am_source_label( $url ) ) . ': ' . $a( $archive, 'official (archived copy)' ) . ' · ' . $a( $url, 'original address' );
+}
+
+/**
  * Readable name of an official document URL: its label in data/sources.json, else host + file name.
  */
 function am_source_label( string $url ): string {
@@ -346,17 +375,39 @@ function am_sc_merit_table( $atts ): string {
 	$fixed = array();
 	foreach ( array( 'category', 'list', 'year' ) as $key ) {
 		if ( ! $multi[ $key ] && $values[ $key ] ) {
-			$fixed[] = 'list' === $key ? $values[ $key ][0] . ' list' : $values[ $key ][0];
+			$fixed[] = 'list' === $key ? am_list_label( $values[ $key ][0] ) : $values[ $key ][0];
 		}
 	}
 	$show_campus = $multi['campus'] || $multi['shift'];
 	if ( ! $show_campus && $values['campus'] ) {
 		$fixed[] = $values['campus'][0] . ( $values['shift'] ? ' (' . $values['shift'][0] . ')' : '' );
 	}
-	$show_delta = $multi['year'];
-	$srcs       = array_values( array_unique( array_map( fn( $r ) => (string) $r['source_url'], $rows ) ) );
-	$src_no     = array_flip( $srcs );
-	$multi_src  = count( $srcs ) > 1;
+	$src_key   = fn( $r ) => (string) $r['source_url'] . '|' . (string) ( $r['archive_url'] ?? '' );
+	$srcs      = array_values( array_unique( array_map( $src_key, $rows ) ) );
+	$src_no    = array_flip( $srcs );
+	$multi_src = count( $srcs ) > 1;
+
+	// Change column only when enough rows of the default view have a previous-year value
+	// (audit F-11: UHS 1st-list rows had no 2024 match, so the column was mostly "—").
+	$show_delta = false;
+	if ( $multi['year'] ) {
+		$n_def  = 0;
+		$n_prev = 0;
+		foreach ( $rows as $r ) {
+			$on = true;
+			foreach ( $def as $key => $v ) {
+				if ( $multi[ $key ] && (string) ( $r[ $key ] ?? '' ) !== $v ) {
+					$on = false;
+				}
+			}
+			if ( ! $on ) {
+				continue;
+			}
+			++$n_def;
+			$n_prev += (int) isset( $index[ implode( '|', array( $r['year'] - 1, $r['program'], $r['campus'] ?? '', $r['category'] ?? '', $r['list'] ?? '', $r['shift'] ?? '' ) ) ] );
+		}
+		$show_delta = $n_def > 0 && $n_prev / $n_def >= 0.2;
+	}
 
 	$body    = '';
 	$anchors = array();
@@ -389,7 +440,7 @@ function am_sc_merit_table( $atts ): string {
 			. ( $multi['list'] ? '<td>' . esc_html( (string) ( $r['list'] ?? '' ) ) . '</td>' : '' )
 			. ( $multi['year'] ? '<td>' . esc_html( (string) $r['year'] ) . '</td>' : '' )
 			. ( $show_delta ? ( null === $delta ? '<td>—</td>' : '<td data-v="' . esc_attr( (string) round( $delta, 3 ) ) . '">' . esc_html( ( $delta > 0 ? '+' : '' ) . number_format( $delta, 2 ) ) . '</td>' ) : '' )
-			. ( $multi_src ? '<td><a href="#am-src-' . esc_attr( $id . '-' . ( $src_no[ (string) $r['source_url'] ] + 1 ) ) . '">[' . ( $src_no[ (string) $r['source_url'] ] + 1 ) . ']</a></td>' : '' )
+			. ( $multi_src ? '<td><a href="#am-src-' . esc_attr( $id . '-' . ( $src_no[ $src_key( $r ) ] + 1 ) ) . '">[' . ( $src_no[ $src_key( $r ) ] + 1 ) . ']</a></td>' : '' )
 			. '</tr>';
 	}
 
@@ -408,12 +459,17 @@ function am_sc_merit_table( $atts ): string {
 	// One source → one line under the table; several → numbered list the [n] cells point to.
 	if ( $multi_src ) {
 		$src_html = '<ol class="am-muted am-srcs">';
-		foreach ( $srcs as $n => $u ) {
-			$src_html .= '<li id="am-src-' . esc_attr( $id . '-' . ( $n + 1 ) ) . '"><a href="' . esc_url( $u ) . '" rel="nofollow noopener" target="_blank">' . esc_html( am_source_label( $u ) ) . '</a></li>';
+		foreach ( $srcs as $n => $k ) {
+			list( $u, $arch ) = explode( '|', $k, 2 );
+			$src_html        .= '<li id="am-src-' . esc_attr( $id . '-' . ( $n + 1 ) ) . '">' . am_source_link( $u, $arch ) . '</li>';
 		}
 		$src_html .= '</ol>';
 	} else {
-		$src_html = '<p class="am-muted am-srcs">Source of every row: <a href="' . esc_url( $srcs[0] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( am_source_label( $srcs[0] ) ) . '</a></p>';
+		list( $u, $arch ) = explode( '|', $srcs[0], 2 );
+		$src_html         = '<p class="am-muted am-srcs">Source of every row: ' . am_source_link( $u, $arch ) . '</p>';
+	}
+	if ( ! empty( $uni['table_note'] ) ) {
+		$src_html .= '<p class="am-muted am-tnote">' . esc_html( (string) $uni['table_note'] ) . '</p>';
 	}
 	$caption = $short . ' merit list: closing aggregates' . ( '' !== $only ? ' (' . $only . ')' : '' ) . ( $fixed ? ', ' . implode( ', ', $fixed ) : '' );
 
@@ -529,20 +585,58 @@ function am_sc_predictor( $atts ): string {
 }
 
 // ------------------------------------------------------------------ [am_sources_table]
+/**
+ * Official sources per university (data/sources.json, one entry per body). For an entry with a
+ * slug, the merit-list documents behind data/universities/<slug>.json rows are added from the data
+ * itself, so a university with rows never reads "not published" (audit F-03).
+ */
 function am_sc_sources_table(): string {
 	$items = (array) ( am_data( 'sources' )['universities'] ?? array() );
 	if ( ! $items ) {
 		return '';
 	}
+	$li   = fn( string $link, string $extra = '' ) => '<li>' . $link . ( '' !== $extra ? ' <span class="am-muted">(' . esc_html( $extra ) . ')</span>' : '' ) . '</li>';
 	$body = '';
 	foreach ( $items as $u ) {
 		$docs = '';
+		$seen = array();
 		foreach ( (array) ( $u['documents'] ?? array() ) as $d ) {
-			$docs .= '<li><a href="' . esc_url( (string) $d['url'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) $d['label'] ) . '</a>' . ( ! empty( $d['fetched'] ) ? ' <span class="am-muted">(checked ' . esc_html( (string) $d['fetched'] ) . ')</span>' : '' ) . '</li>';
+			$seen[ (string) $d['url'] ] = true;
+			$docs                      .= $li( '<a href="' . esc_url( (string) $d['url'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) $d['label'] ) . '</a>', ! empty( $d['fetched'] ) ? 'checked ' . (string) $d['fetched'] : '' );
+		}
+		$uni  = ! empty( $u['slug'] ) ? am_uni( sanitize_key( (string) $u['slug'] ) ) : array();
+		$rows = array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) );
+		$by   = array();
+		foreach ( $rows as $r ) {
+			$k = (string) $r['source_url'] . '|' . (string) ( $r['archive_url'] ?? '' );
+			$by[ $k ]['years'][ (int) $r['year'] ]            = true;
+			$by[ $k ]['lists'][ (string) ( $r['list'] ?? '' ) ] = true;
+			$by[ $k ]['n']                                    = ( $by[ $k ]['n'] ?? 0 ) + 1;
+		}
+		$merit = '';
+		foreach ( $by as $k => $m ) {
+			list( $url, $arch ) = explode( '|', $k, 2 );
+			if ( isset( $seen[ $url ] ) && '' === $arch ) {
+				continue;
+			}
+			$years = array_keys( $m['years'] );
+			sort( $years );
+			$lists  = array_map( 'am_list_label', array_filter( array_keys( $m['lists'] ) ) );
+			$merit .= $li( am_source_link( $url, $arch ), implode( ', ', $years ) . ( $lists ? ', ' . implode( '; ', $lists ) : '' ) . ', ' . $m['n'] . ' closing merits' );
+		}
+		if ( $merit ) {
+			$docs .= count( $by ) > 6
+				? '<li><details><summary>' . esc_html( count( $by ) . ' merit-list documents behind ' . count( $rows ) . ' closing merits' ) . '</summary><ul>' . $merit . '</ul></details></li>'
+				: $merit;
+		}
+		if ( $docs ) {
+			$cell = '<ul>' . $docs . '</ul>' . ( $uni && ! $rows ? '<p class="am-muted">No official program-wise closing merit published (calculator only).</p>' : '' );
+		} else {
+			$cell = $uni ? 'No official program-wise closing merit published (calculator only).' : 'No official closing merit online yet.';
 		}
 		$body .= '<tr><th scope="row">' . esc_html( (string) $u['name'] ) . '</th>'
-			. '<td><a href="' . esc_url( (string) $u['website'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) wp_parse_url( (string) $u['website'], PHP_URL_HOST ) ) . '</a></td>'
-			. '<td>' . ( $docs ? '<ul>' . $docs . '</ul>' : 'Not published yet' ) . '</td></tr>';
+			. '<td><a href="' . esc_url( (string) $u['website'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) preg_replace( '/^www\./', '', (string) wp_parse_url( (string) $u['website'], PHP_URL_HOST ) ) ) . '</a></td>'
+			. '<td>' . $cell . '</td></tr>';
 	}
 	return '<div class="am-table-wrap"><table class="am-table"><caption>Official sources by university</caption><thead><tr><th scope="col">University / body</th><th scope="col">Official website</th><th scope="col">Documents we use</th></tr></thead><tbody>' . $body . '</tbody></table></div>';
 }

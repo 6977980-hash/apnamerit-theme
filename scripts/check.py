@@ -17,6 +17,9 @@ Checks:
   privacy  - no PDFs, CNIC-like numbers or private keys committed
   size     - am.css within the 14 KB inline budget
   predict  - scripts/tests/predict_rows.php: predictor value + year = merit table default row
+  sources  - data/sources.json: one entry per body, every data/universities slug exactly once
+  copy     - one predictor rule everywhere (no "last two years" / "do saal"); data sentences use
+             {year:<slug>}, not {data_year}/{season_year}; predictor "no closing merit" FAQ = data
 """
 from __future__ import annotations
 
@@ -246,6 +249,10 @@ def check_pages(loaded: dict[str, object]) -> None:
             for sent in re.split(r"(?<=[.!?])\s+|<li>|<p>|<h2", plain):
                 if re.search(r"\{(data_year|season_year|year:[a-z0-9-]+)\}", sent) and re.search(r"\d\.\d+%", sent):
                     warn("pages", f"{path}: year token next to a fixed figure, use a literal year: {sent[:90]!r}")
+                # A sentence describing data ("final list", "closing merit"...) names the data's own
+                # year: {year:<slug>}. {data_year}/{season_year} move every season (audit F-02).
+                if re.search(r"\{(data_year|season_year)\}", sent) and DATA_WORDS.search(re.sub(r"<[^>]+>", "", sent)):
+                    err("copy", f"{path}: data sentence uses {{data_year}}/{{season_year}}, use {{year:<slug>}}: {sent[:90]!r}")
         slug = re.sub(r"[^a-z0-9]+", "-", path.lower()).strip("-") or "home"
         if not p.get("noindex") and not (ROOT / "assets/og" / (p.get("og_image") or f"{slug}.png")).exists():
             warn("pages", f"{path}: no OG image (run python3 scripts/og.py)")
@@ -254,6 +261,8 @@ def check_pages(loaded: dict[str, object]) -> None:
                 err("pages", f"{where}: duplicate {key} '{val}' (one URL per keyword)")
             seen[key].add(val)
 
+
+DATA_WORDS = re.compile(r"final list|closing merit|closing aggregate|closing percentage|open merit", re.I)
 
 # ---------------------------------------------------------------- nav + universities
 def page_paths(loaded: dict[str, object]) -> set[str]:
@@ -405,6 +414,54 @@ def check_predict() -> None:
         print("INFO  [predict]", out.splitlines()[-1] if out else "ok")
 
 
+# ---------------------------------------------------------------- sources + copy (audit 2026-11-01)
+def check_sources(loaded: dict[str, object]) -> None:
+    src = loaded.get("data/sources.json")
+    if not isinstance(src, dict):
+        err("sources", "data/sources.json missing")
+        return
+    items = src.get("universities", [])
+    names = [u.get("name") for u in items]
+    for n in {n for n in names if names.count(n) > 1}:
+        err("sources", f"data/sources.json: '{n}' listed more than once")
+    slugs = [u.get("slug") for u in items if u.get("slug")]
+    for name, u in loaded.items():
+        if name.startswith("data/universities/") and not Path(name).name.startswith("_") and isinstance(u, dict):
+            n = slugs.count(u.get("slug"))
+            if n != 1:
+                err("sources", f"data/sources.json: slug '{u.get('slug')}' appears {n} times (needs exactly one entry)")
+    for s_ in slugs:
+        if f"data/universities/{s_}.json" not in loaded:
+            err("sources", f"data/sources.json: slug '{s_}' has no data/universities/{s_}.json")
+
+
+TWO_YEARS = re.compile(r"last two years|past two years|do saal|zyada wala", re.I)
+
+
+def check_copy(loaded: dict[str, object]) -> None:
+    # One predictor rule (newest official year per program, audit F-04): no "two years" wording.
+    texts = [(rel(f), f.read_text(encoding="utf-8")) for f in files("*.html") if "content" in f.parts]
+    texts.append(("data/pages.json", (ROOT / "data/pages.json").read_text(encoding="utf-8")))
+    for where, t in texts:
+        for m in TWO_YEARS.finditer(t):
+            err("copy", f"{where}: '{m.group(0)}' contradicts the predictor rule (newest official year per program)")
+    # The predictor FAQ naming universities without closing merits must match the data (audit F-09).
+    pages = (loaded.get("data/pages.json") or {}).get("pages", [])
+    pred = next((p for p in pages if p.get("path") == "/predictor/"), {})
+    faq = next((q.get("a", "") for q in pred.get("faq", []) or [] if "do not publish them online" in q.get("a", "")), "")
+    if not faq:
+        return
+    for name, u in loaded.items():
+        if not name.startswith("data/universities/") or not isinstance(u, dict) or not u.get("formulas"):
+            continue
+        has_rows = any(isinstance(r.get("closing"), (int, float)) and r.get("source_url") for r in u.get("merit", []))
+        named = re.search(r"(?<![\w-])" + re.escape(str(u.get("short", ""))) + r"(?![\w-])", faq) is not None
+        if has_rows and named:
+            err("copy", f"/predictor/ FAQ says {u.get('short')} publishes no closing merit, but {name} has merit rows")
+        if not has_rows and not named:
+            err("copy", f"/predictor/ FAQ: add {u.get('short')} to the universities without closing merits")
+
+
 def main() -> int:
     check_php()
     loaded = check_json()
@@ -417,6 +474,8 @@ def main() -> int:
     check_privacy()
     check_size()
     check_predict()
+    check_sources(loaded)
+    check_copy(loaded)
     for w in warnings:
         print("WARN ", w)
     for e in errors:

@@ -45,7 +45,7 @@ function am_quotables( array $uni, string $list = '', string $cat = '' ): array 
 	$cur   = array_values( array_filter( $rows, fn( $r ) => (int) $r['year'] === $year ) );
 	usort( $cur, fn( $a, $b ) => (float) $b['closing'] <=> (float) $a['closing'] );
 	$short = (string) ( $uni['short'] ?? $uni['name'] ?? '' );
-	$ctx   = 'the ' . $year . ' ' . $list . ' list (' . strtolower( $cat ) . ')';
+	$ctx   = 'the ' . $year . ' ' . am_list_label( $list ) . ' (' . am_cat_label( $cat ) . ')';
 	$out   = array();
 
 	$top = $cur[0];
@@ -213,7 +213,7 @@ function am_merit_markdown( array $uni ): string {
 	foreach ( $cur as $r ) {
 		$out .= '| ' . $cell( $r['program'] ) . ' | ' . $cell( $r['campus'] ?? '' ) . ' | ' . $cell( $r['shift'] ?? '' ) . ' | ' . am_pct( $r['closing'] ) . ' | ' . $cell( $r['source_url'] ) . " |\n";
 	}
-	return '**' . ( $uni['short'] ?? '' ) . ', ' . $year . ', ' . ( $uni['defaults']['list'] ?? 'Final' ) . ' list, ' . strtolower( (string) ( $uni['defaults']['category'] ?? 'Open merit' ) ) . "**\n\n" . $out . "\n";
+	return '**' . ( $uni['short'] ?? '' ) . ', ' . $year . ', ' . am_list_label( (string) ( $uni['defaults']['list'] ?? 'Final' ) ) . ', ' . am_cat_label( (string) ( $uni['defaults']['category'] ?? 'Open merit' ) ) . "**\n\n" . $out . "\n";
 }
 
 /**

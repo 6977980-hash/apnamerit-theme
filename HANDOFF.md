@@ -1,5 +1,20 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Audit 2026-11-01, Phase 3: content and trust (v0.16.0, branch `phase-9-content-trust`)
+Handoff: `/mnt/project-files/apnamerit.com/audit/2026-11-01/handoff/phase-3-content-trust.md`.
+- **F-02** `/mdcat-merit-list/` intro uses `{year:uhs}` ("or earlier years"); KU intro "Admissions 2026 (made in 2025)" (was `{data_year}`). New `check.py [copy]` rule: a body sentence with "final list / closing merit / closing aggregate / closing percentage / open merit" must not use `{data_year}`/`{season_year}` (use `{year:<slug>}`).
+- **F-03** `data/sources.json`: one entry per body (duplicate second roster merged), entries for universities carry `slug`. `[am_sources_table]` adds the merit-list documents behind each university's rows from its JSON (years, lists, count; archived copy first when `archive_url`), collapsed in `<details>` above 6 documents; universities without rows print "No official program-wise closing merit published (calculator only)". `check.py [sources]`: every `data/universities` slug exactly once.
+- **F-04** One predictor rule everywhere (newest official final-list, open-merit year per program; older years = trend): closing-merit guide (answer, FAQ, Roman Urdu FAQ, body), predictor Roman Urdu FAQ. `check.py [copy]` forbids "last two years / do saal / zyada wala".
+- **F-09** Predictor FAQ names exactly the calculator-only universities (NUST, FAST, NED, GIKI, UET Peshawar, IIUI, UAF, Bahria, Air University); `check.py [copy]` fails when a named university gets rows or a new calculator-only one is missing. Predictor and `/merit-list/` descriptions list UET, COMSATS, NUMS, ITU; predictor intro adds ITU.
+- **F-05** Report: `am_report_stats()` + `[am_report_stat what="records|unis|updated"]` (growth.php); intro count, university list and "Last data added" come from the data and equal the table caption. Page field `updated_from_data: true` (router.php `am_page_updated`) makes the "Updated" date the newest university `updated`. Answer/description no longer carry a fixed count.
+- **F-10** KU: sentence on "Admissions 2027" naming. Title unchanged (would need a hard-coded 2027).
+- **F-11** Change column shows only when ≥ 20 % of default-view rows have a previous-year value (UET Lahore now hides it: 2024 portal lists ≠ 4th list). New university field `table_note` printed under the table; UHS: MDCAT 200 (2024) vs 180 (2025).
+- **F-12** `am_source_link()`: rows with `archive_url` link "official (archived copy)" first, "original address" second, in merit tables, report and data-sources (sources keyed by url + archive, so two Wayback captures of one URL stay separate).
+- **F-13** Home hero and lead: "for universities that publish closing merits, see where you could get in".
+- **F-14** UET Lahore answer + intro: the Fourth Merit List is the closing merit (last regular list); Walk-in / Change-of-preference figures are "after closing".
+- **F-15** `am_list_label()` (no "list list"), `am_cat_label()` (codes such as "A1 open merit" keep their case) in key figures, report, trend caption, llms-full; `/merit-list/` answer 79.44% (two decimals, as the table); COMSATS province "Punjab / Islamabad". ("marks marks" is Phase 1/4, JS.)
+- **F-26** No change needed: `uaf.json` formula already cites UAF's own "Advertisement of Undergraduate Admissions 2026-27" on web.uaf.edu.pk (HTTP 200, 12.7 MB PDF, checked 2026-11-01); the audit missed the subdomain.
+
 Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `REVIEW-2026-11-01.md`. UET Lahore sources: `sources/uet/` (git-ignored; README has provenance).
 
 

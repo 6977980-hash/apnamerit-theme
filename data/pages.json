@@ -7,7 +7,7 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate, see where last year's closing merit says you can get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p>Need your Matric or FSc percentage first? Use the <a href=\"/percentage-calculator/\">percentage calculator</a>. Already know your aggregate? The <a href=\"/predictor/\">merit predictor</a> checks it against {predict_count} programs. Or browse <a href=\"/aggregate-calculator/\">all aggregate calculators</a> and <a href=\"/merit-list/\">all merit lists</a>.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {year:uhs} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {year:pu} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/air-aggregate-calculator/\">Air University aggregate calculator</a> (engineering 10/50/40, other programs 15/35/50).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>What changed this year? Read the <a href=\"/merit-data-report-2026/\">merit data report 2026</a>. UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate and, for universities that publish closing merits, see where you could get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p>Need your Matric or FSc percentage first? Use the <a href=\"/percentage-calculator/\">percentage calculator</a>. Already know your aggregate? The <a href=\"/predictor/\">merit predictor</a> checks it against {predict_count} programs. Or browse <a href=\"/aggregate-calculator/\">all aggregate calculators</a> and <a href=\"/merit-list/\">all merit lists</a>.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {year:uhs} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {year:pu} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/air-aggregate-calculator/\">Air University aggregate calculator</a> (engineering 10/50/40, other programs 15/35/50).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>What changed this year? Read the <a href=\"/merit-data-report-2026/\">merit data report 2026</a>. UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/predictor/",
@@ -490,7 +490,7 @@
    "template": "default",
    "published": "2026-10-31",
    "updated": "2026-10-31",
-   "answer": "Closing merit is the aggregate of the last student admitted to a program or college in a merit list. For example, Narowal Medical College's open-merit MBBS seats closed at 93.51% in the final 2025 UHS list. Compare your aggregate with the last two years' final-list closing merits to judge your chances.",
+   "answer": "Closing merit is the aggregate of the last student admitted to a program or college in a merit list. For example, Narowal Medical College's open-merit MBBS seats closed at 93.51% in the final 2025 UHS list. Compare your aggregate with the newest official final list (older years show the trend) to judge your chances.",
    "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
    "content_file": "guide-what-is-closing-merit.html",
    "faq": [
@@ -504,7 +504,7 @@
     },
     {
      "q": "Will this year's closing merit be the same as last year?",
-     "a": "No. It changes with test difficulty, seats and applicants. Use the last two years as a guide, not a guarantee."
+     "a": "No. It changes with test difficulty, seats and applicants. Use the newest official final list as a guide (older years show the trend), not a guarantee."
     },
     {
      "q": "Closing merit ka kya matlab hai?",
@@ -513,7 +513,7 @@
     },
     {
      "q": "Last year merit se kaise pata chale ga ke admission hoga?",
-     "a": "Apna aggregate pichle do saal ke final list, open merit closing merit se milayein. 1.5 points se zyada upar hon to chance strong hai, qareeb hon to borderline.",
+     "a": "Apna aggregate har program ke sab se naye saal ki official final list, open merit closing merit se milayein (purane saal sirf trend dikhate hain). 1.5 points se zyada upar hon to chance strong hai, qareeb hon to borderline.",
      "lang": "ur-Latn"
     }
    ],
@@ -1104,7 +1104,7 @@
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
    "updated": "2026-11-01",
-   "answer": "In UET Lahore's Fall 2025 Fourth Merit List (A1 open merit, main campus), Computer Science closed at 85.83%, Data Science at 82.19%, Computer Engineering at 81.56%, Electrical at 80.35% and Mechanical at 80.25%. Sub-campuses closed lower, e.g. Computer Science 77.19% at KSK and 71.29% at Faisalabad.",
+   "answer": "UET Lahore's closing merit is its Fourth Merit List, the last regular list (walk-in and preference-change lists after it are after closing). Fall 2025, A1 open merit, main campus: Computer Science 85.83%, Data Science 82.19%, Computer Engineering 81.56%, Electrical 80.35%, Mechanical 80.25%; KSK Computer Science 77.19%.",
    "answer_source": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
    "content_file": "uet-merit-list.html",
    "faq": [
@@ -2091,7 +2091,7 @@
    "path": "/predictor/",
    "keyword": "merit predictor",
    "title": "Merit Predictor {season_year}: Which University Can You Get?",
-   "description": "Merit predictor: enter your aggregate and see which MBBS, BDS, PU, KU and UET Taxila programs you could get, based on official closing merits.",
+   "description": "Merit predictor: enter your aggregate and see which MBBS, BDS, PU, KU, UET, COMSATS, NUMS and ITU programs you could get, from official closing merits.",
    "h1": "Merit Predictor {season_year}: Which University Can You Get Into?",
    "crumb": "Merit predictor",
    "subtitle": "Your aggregate against the newest official closing merits, {predict_count} programs",
@@ -2121,7 +2121,7 @@
     },
     {
      "q": "Why are some universities missing from the predictor?",
-     "a": "We only use official program-wise closing merits. NUST, COMSATS, FAST, NED and GIKI do not publish them online, so they have calculators but no predictor rows yet."
+     "a": "We only use official program-wise closing merits. NUST, FAST, NED, GIKI, UET Peshawar, IIUI, UAF, Bahria and Air University do not publish them online, so they have calculators but no predictor rows yet."
     },
     {
      "q": "Mera aggregate 85% hai, kahan admission mil sakta hai?",
@@ -2130,7 +2130,7 @@
     },
     {
      "q": "Merit predictor kaise kaam karta hai?",
-     "a": "Yeh pichhle do saal ke official closing merit mein se zyada wala leta hai. Aap 1.5 se zyada upar hon to Strong, 1.5 ke andar Borderline, warna Unlikely.",
+     "a": "Yeh har program ke sab se naye saal ka official final-list, open-merit closing merit leta hai. Aap 1.5 se zyada upar hon to Strong, 1.5 ke andar Borderline, warna Unlikely.",
      "lang": "ur-Latn"
     }
    ],
@@ -2394,7 +2394,7 @@
    "path": "/merit-list/",
    "keyword": "university merit lists",
    "title": "Merit Lists {season_year}: Closing Merit of All Universities",
-   "description": "Merit lists {season_year}: latest official closing merits of MBBS/BDS colleges, Punjab University, Karachi University and UET Taxila, with the source on every row.",
+   "description": "Merit lists {season_year}: latest official closing merits of MBBS/BDS colleges, PU, KU, UET Lahore, UET Taxila, COMSATS, NUMS and ITU, with a source on every row.",
    "h1": "Merit Lists {season_year} & Closing Merits of Pakistani Universities",
    "crumb": "Merit lists",
    "subtitle": "Official closing merits by university, program, campus and year",
@@ -2403,7 +2403,7 @@
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
    "updated": "2026-10-31",
-   "answer": "Official closing merits on Apna Merit: Punjab public MBBS 93.51% to 94.87% in 2025 (UHS final list), Punjab University from 91.34% for Pharm-D and 87.18% for PUCIT CS, Karachi University Pharm-D 84.27% and CS 80.00% (Admissions 2027), and UET Taxila Software Engineering 79.435% (2024 entry).",
+   "answer": "Official closing merits on Apna Merit: Punjab public MBBS 93.51% to 94.87% in 2025 (UHS final list), Punjab University from 91.34% for Pharm-D and 87.18% for PUCIT CS, Karachi University Pharm-D 84.27% and CS 80.00% (Admissions 2027), and UET Taxila Software Engineering 79.44% (2024 entry).",
    "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
    "content_file": "merit-list.html",
    "faq": [
@@ -2472,7 +2472,7 @@
    "path": "/merit-data-report-2026/",
    "keyword": "merit data report 2026",
    "title": "Merit Data Report 2026: 2025 Season Closing Merit Trends",
-   "description": "Merit data report 2026: 591 official closing merits, mostly from the 2025 season (UHS, PU, KU, UET Taxila), how merit moved, updated as 2026 lists arrive.",
+   "description": "Merit data report 2026: every official closing merit we hold, mostly 2025 season (UHS, PU, KU, UET, COMSATS, NUMS, ITU), and how merit moved since 2024.",
    "h1": "Merit Data Report 2026: Closing Merit Trends (2025 season data, updated as 2026 lists arrive)",
    "crumb": "Merit data report 2026",
    "type": "content",
@@ -2482,9 +2482,10 @@
     "/merit-list/"
    ],
    "published": "2026-10-31",
-   "updated": "2026-10-31",
-   "subtitle": "Mostly 2025-season official closing merits (KU already 2026), updated as each 2026 list arrives",
-   "answer": "Apna Merit's 2026 report covers 591 official closing-merit records from UHS Punjab, Punjab University, Karachi University and UET Taxila. Karachi University's test-based closing percentages rose 1.69 points on average from 2025 to 2026, while Punjab's public MBBS colleges closed 0.85 points lower in 2025 than in 2024, with KEMU highest at 94.87%.",
+   "updated": "2026-11-01",
+   "updated_from_data": true,
+   "subtitle": "Mostly 2025-season official closing merits (KU and COMSATS Lahore already 2026), updated as each 2026 list arrives",
+   "answer": "Apna Merit's 2026 report sums up every official closing merit we hold up to the 2026 season; the table gives the current count by university. Karachi University's test-based closing percentages rose 1.69 points on average from 2025 to 2026, while Punjab's public MBBS colleges closed 0.85 points lower in 2025 than in 2024, with KEMU highest at 94.87%.",
    "answer_source": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf",
    "content_file": "merit-data-report-2026.html",
    "faq": [

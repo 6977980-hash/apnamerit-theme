@@ -1,5 +1,5 @@
 {
- "_note": "Official websites and the documents behind every number. Rendered on /data-sources/ by [am_sources_table]. Add a document (label, url, fetched YYYY-MM-DD) whenever data from it goes live. URLs only; PDFs never enter the repo.",
+ "_note": "Official websites and the documents behind every number. Rendered on /data-sources/ by [am_sources_table]. Add a document (label, url, fetched YYYY-MM-DD) whenever data from it goes live. URLs only; PDFs never enter the repo. One entry per body; entries with a slug match data/universities/<slug>.json (scripts/check.py checks each slug appears exactly once), and the merit-list documents behind that file's rows are added on the page automatically.",
  "universities": [
   {
    "name": "Pakistan Medical and Dental Council (PMDC)",
@@ -24,6 +24,7 @@
    ]
   },
   {
+   "slug": "uhs",
    "name": "University of Health Sciences (UHS), Lahore",
    "website": "https://uhs.edu.pk/",
    "field": "medical",
@@ -76,6 +77,7 @@
    ]
   },
   {
+   "slug": "nums",
    "name": "National University of Medical Sciences (NUMS)",
    "website": "https://numspak.edu.pk/",
    "field": "medical",
@@ -129,6 +131,7 @@
    "documents": []
   },
   {
+   "slug": "uet",
    "name": "University of Engineering and Technology (UET), Lahore",
    "website": "https://uet.edu.pk/",
    "field": "engineering",
@@ -161,188 +164,7 @@
    ]
   },
   {
-   "name": "National University of Sciences and Technology (NUST)",
-   "website": "https://nust.edu.pk/",
-   "field": "engineering",
-   "documents": []
-  },
-  {
-   "name": "COMSATS University Islamabad",
-   "website": "https://comsats.edu.pk/",
-   "field": "engineering",
-   "documents": []
-  },
-  {
-   "name": "FAST National University (NUCES)",
-   "website": "https://nu.edu.pk/",
-   "field": "computing",
-   "documents": []
-  },
-  {
-   "name": "Ghulam Ishaq Khan Institute (GIKI)",
-   "website": "https://giki.edu.pk/",
-   "field": "engineering",
-   "documents": []
-  },
-  {
-   "name": "UET Taxila",
-   "website": "https://uettaxila.edu.pk/",
-   "field": "engineering",
-   "documents": []
-  },
-  {
-   "name": "UET Peshawar",
-   "website": "https://www.uetpeshawar.edu.pk/",
-   "field": "engineering",
-   "documents": []
-  },
-  {
-   "name": "NED University of Engineering and Technology",
-   "website": "https://neduet.edu.pk/",
-   "field": "engineering",
-   "documents": []
-  },
-  {
-   "name": "University of the Punjab (PU)",
-   "website": "https://pu.edu.pk/",
-   "field": "general",
-   "documents": [
-    {
-     "label": "Admission Regulations Book (p. 23: additional marks, Hafiz-e-Quran = 20)",
-     "url": "https://pu.edu.pk/downloads/Admission-Regulations-Book.pdf",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "University of Karachi",
-   "website": "https://www.uok.edu.pk/",
-   "field": "general",
-   "documents": [
-    {
-     "label": "Prospectus 2027: Appendix G (open merit BS closing, Admissions 2026) and Appendix I (test based closing, Admissions 2026)",
-     "url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "Air University",
-   "website": "https://au.edu.pk/",
-   "field": "general",
-   "documents": []
-  },
-  {
-   "name": "Bahria University",
-   "website": "https://bahria.edu.pk/",
-   "field": "general",
-   "documents": []
-  },
-  {
-   "name": "International Islamic University Islamabad (IIUI)",
-   "website": "https://iiu.edu.pk/",
-   "field": "general",
-   "documents": []
-  },
-  {
-   "name": "University of Agriculture Faisalabad (UAF)",
-   "website": "https://uaf.edu.pk/",
-   "field": "general",
-   "documents": []
-  },
-  {
-   "name": "Information Technology University (ITU), Lahore",
-   "website": "https://itu.edu.pk/",
-   "field": "computing",
-   "documents": []
-  },
-  {
-   "name": "Institute of Space Technology (IST)",
-   "website": "https://www.ist.edu.pk/",
-   "field": "engineering",
-   "documents": []
-  },
-  {
-   "name": "University of Engineering and Technology (UET), Taxila",
-   "website": "https://www.uettaxila.edu.pk/",
-   "field": "engineering",
-   "documents": [
-    {
-     "label": "Admission eligibility and merit formula (33% test, 50% HSSC Part-I, 17% SSC)",
-     "url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
-     "fetched": "2026-10-31"
-    },
-    {
-     "label": "UG Prospectus 2025: section 24.11 (weighted percentage) and p. 136 Merit Position Entry 2024",
-     "url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
-     "fetched": "2026-10-31"
-    },
-    {
-     "label": "Merit / aggregate calculator (default totals)",
-     "url": "https://admissions.uettaxila.edu.pk/Calculator.php",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "University of Engineering and Technology (UET), Peshawar",
-   "website": "https://www.uetpeshawar.edu.pk/",
-   "field": "engineering",
-   "documents": [
-    {
-     "label": "UG Prospectus 2026-27 (merit determination, entrance test)",
-     "url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "NED University of Engineering and Technology, Karachi",
-   "website": "https://www.neduet.edu.pk/",
-   "field": "engineering",
-   "documents": [
-    {
-     "label": "Admissions Schedule 2026 (Merit Score formula)",
-     "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/ADMISSIONS_SCHEDULE_2026.pdf",
-     "fetched": "2026-10-31"
-    },
-    {
-     "label": "Undergraduate Admissions FAQ 2026 (entry test)",
-     "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/FAQ.pdf",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "FAST National University of Computer and Emerging Sciences (FAST-NUCES)",
-   "website": "https://nu.edu.pk/",
-   "field": "computing",
-   "documents": [
-    {
-     "label": "Eligibility Criteria (undergraduate selection criteria)",
-     "url": "https://nu.edu.pk/Admissions/EligibilityCriteria",
-     "fetched": "2026-10-31"
-    },
-    {
-     "label": "Prospectus 2026: Admission Information",
-     "url": "https://www.nu.edu.pk/Admissions/ProspectusUpload/Admission%20Information.pdf",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "GIK Institute of Engineering Sciences and Technology (GIKI), Topi",
-   "website": "https://giki.edu.pk/",
-   "field": "engineering",
-   "documents": [
-    {
-     "label": "Eligibility and Comparative Assessment Criteria (undergraduate)",
-     "url": "https://giki.edu.pk/admissions/admissions-undergraduates/eligibility-criteria/",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
+   "slug": "nust",
    "name": "National University of Sciences and Technology (NUST), Islamabad",
    "website": "https://nust.edu.pk/",
    "field": "engineering",
@@ -355,6 +177,7 @@
    ]
   },
   {
+   "slug": "comsats",
    "name": "COMSATS University Islamabad (CUI)",
    "website": "https://www.comsats.edu.pk/",
    "field": "computing",
@@ -382,10 +205,101 @@
    ]
   },
   {
+   "slug": "fast",
+   "name": "FAST National University of Computer and Emerging Sciences (FAST-NUCES)",
+   "website": "https://nu.edu.pk/",
+   "field": "computing",
+   "documents": [
+    {
+     "label": "Eligibility Criteria (undergraduate selection criteria)",
+     "url": "https://nu.edu.pk/Admissions/EligibilityCriteria",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Prospectus 2026: Admission Information",
+     "url": "https://www.nu.edu.pk/Admissions/ProspectusUpload/Admission%20Information.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "slug": "giki",
+   "name": "GIK Institute of Engineering Sciences and Technology (GIKI), Topi",
+   "website": "https://giki.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "Eligibility and Comparative Assessment Criteria (undergraduate)",
+     "url": "https://giki.edu.pk/admissions/admissions-undergraduates/eligibility-criteria/",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "slug": "uet-taxila",
+   "name": "University of Engineering and Technology (UET), Taxila",
+   "website": "https://www.uettaxila.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "Admission eligibility and merit formula (33% test, 50% HSSC Part-I, 17% SSC)",
+     "url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UG Prospectus 2025: section 24.11 (weighted percentage) and p. 136 Merit Position Entry 2024",
+     "url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Merit / aggregate calculator (default totals)",
+     "url": "https://admissions.uettaxila.edu.pk/Calculator.php",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "slug": "uet-peshawar",
+   "name": "University of Engineering and Technology (UET), Peshawar",
+   "website": "https://www.uetpeshawar.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "UG Prospectus 2026-27 (merit determination, entrance test)",
+     "url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "slug": "ned",
+   "name": "NED University of Engineering and Technology, Karachi",
+   "website": "https://www.neduet.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "Admissions Schedule 2026 (Merit Score formula)",
+     "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/ADMISSIONS_SCHEDULE_2026.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Undergraduate Admissions FAQ 2026 (entry test)",
+     "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/FAQ.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "slug": "pu",
    "name": "University of the Punjab (PU), Lahore",
    "website": "https://pu.edu.pk/",
    "field": "general",
    "documents": [
+    {
+     "label": "Admission Regulations Book (p. 23: additional marks, Hafiz-e-Quran = 20)",
+     "url": "https://pu.edu.pk/downloads/Admission-Regulations-Book.pdf",
+     "fetched": "2026-10-31"
+    },
     {
      "label": "Undergraduate Programs Merit of Last Year 2025 (basic criteria and closing merit)",
      "url": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
@@ -399,10 +313,16 @@
    ]
   },
   {
+   "slug": "ku",
    "name": "University of Karachi (KU)",
    "website": "https://www.uok.edu.pk/",
    "field": "general",
    "documents": [
+    {
+     "label": "Prospectus 2027: Appendix G (open merit BS closing, Admissions 2026) and Appendix I (test based closing, Admissions 2026)",
+     "url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+     "fetched": "2026-10-31"
+    },
     {
      "label": "Closing percentages, entrance test based programmes and Pharm-D, Admissions 2027 (19-10-2026)",
      "url": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf",
@@ -416,54 +336,7 @@
    ]
   },
   {
-   "name": "International Islamic University, Islamabad (IIUI)",
-   "website": "https://www.iiu.edu.pk/",
-   "field": "general",
-   "documents": [
-    {
-     "label": "Admission Policy (03-06-2025): undergraduate merit formula",
-     "url": "https://www.iiu.edu.pk/wp-content/uploads/2025/06/Admission-Policy-03062025.pdf",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "University of Agriculture, Faisalabad (UAF)",
-   "website": "https://uaf.edu.pk/",
-   "field": "general",
-   "documents": [
-    {
-     "label": "Details/Advertisement of Undergraduate Admissions 2026-27 (30% Matric + 30% Part-I + 40% test)",
-     "url": "https://web.uaf.edu.pk/UploadFiles/Announcements/0b3c6ddc-4e43-46ca-9809-75cd6fd09553.pdf",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "Bahria University",
-   "website": "https://www.bahria.edu.pk/",
-   "field": "general",
-   "documents": [
-    {
-     "label": "Admissions Policy, Edition 2, section 2.11.3 (UG: test 60%, HSSC 30%, SSC 10%)",
-     "url": "https://www.bahria.edu.pk/content/Downloads/fba5713a-0270-411c-a5c7-2ff96678e727.pdf",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
-   "name": "Information Technology University (ITU), Lahore",
-   "website": "https://itu.edu.pk/",
-   "field": "computing",
-   "documents": [
-    {
-     "label": "Norms & Criteria: selection criteria (updated 2026-08-12)",
-     "url": "https://itu.edu.pk/admissions/application-process/",
-     "fetched": "2026-10-31"
-    }
-   ]
-  },
-  {
+   "slug": "air",
    "name": "Air University, Islamabad",
    "website": "https://www.au.edu.pk/",
    "field": "general",
@@ -479,6 +352,64 @@
      "fetched": "2026-10-31"
     }
    ]
+  },
+  {
+   "slug": "bahria",
+   "name": "Bahria University",
+   "website": "https://www.bahria.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Admissions Policy, Edition 2, section 2.11.3 (UG: test 60%, HSSC 30%, SSC 10%)",
+     "url": "https://www.bahria.edu.pk/content/Downloads/fba5713a-0270-411c-a5c7-2ff96678e727.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "slug": "iiui",
+   "name": "International Islamic University, Islamabad (IIUI)",
+   "website": "https://www.iiu.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Admission Policy (03-06-2025): undergraduate merit formula",
+     "url": "https://www.iiu.edu.pk/wp-content/uploads/2025/06/Admission-Policy-03062025.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "slug": "uaf",
+   "name": "University of Agriculture, Faisalabad (UAF)",
+   "website": "https://uaf.edu.pk/",
+   "field": "general",
+   "documents": [
+    {
+     "label": "Details/Advertisement of Undergraduate Admissions 2026-27 (30% Matric + 30% Part-I + 40% test)",
+     "url": "https://web.uaf.edu.pk/UploadFiles/Announcements/0b3c6ddc-4e43-46ca-9809-75cd6fd09553.pdf",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "slug": "itu",
+   "name": "Information Technology University (ITU), Lahore",
+   "website": "https://itu.edu.pk/",
+   "field": "computing",
+   "documents": [
+    {
+     "label": "Norms & Criteria: selection criteria (updated 2026-08-12)",
+     "url": "https://itu.edu.pk/admissions/application-process/",
+     "fetched": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "name": "Institute of Space Technology (IST)",
+   "website": "https://www.ist.edu.pk/",
+   "field": "engineering",
+   "documents": []
   }
  ]
 }

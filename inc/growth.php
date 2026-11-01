@@ -164,6 +164,61 @@ function am_sc_ibcc(): string {
 
 // ------------------------------------------------------------------ [am_report]
 /**
+ * Universities, record count and newest data date behind the report frozen at $upto (audit F-05:
+ * the intro and the table must give the same count). Same filter as am_sc_report().
+ *
+ * @return array{records: int, unis: string[], updated: string}
+ */
+function am_report_stats( int $upto ): array {
+	static $memo = array();
+	if ( isset( $memo[ $upto ] ) ) {
+		return $memo[ $upto ];
+	}
+	$out  = array(
+		'records' => 0,
+		'unis'    => array(),
+		'updated' => '',
+	);
+	$unis = am_unis();
+	uasort( $unis, fn( $a, $b ) => strcasecmp( (string) ( $a['short'] ?? '' ), (string) ( $b['short'] ?? '' ) ) );
+	foreach ( $unis as $uni ) {
+		$uni['merit'] = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => (int) ( $r['year'] ?? 0 ) <= $upto ) );
+		if ( ! am_default_rows( $uni ) || empty( $uni['meritlist_path'] ) ) {
+			continue;
+		}
+		$out['records'] += count( array_filter( $uni['merit'], fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) ) );
+		$out['unis'][]   = (string) ( $uni['short'] ?? '' );
+		$out['updated']  = max( $out['updated'], (string) ( $uni['updated'] ?? '' ) );
+	}
+	return $memo[ $upto ] = $out;
+}
+
+/**
+ * [am_report_stat year="2026" what="records|unis|updated"]: one figure from am_report_stats().
+ */
+function am_sc_report_stat( $atts ): string {
+	$atts = shortcode_atts(
+		array(
+			'year' => (string) am_site( 'data_year' ),
+			'what' => 'records',
+		),
+		(array) $atts,
+		'am_report_stat'
+	);
+	$s    = am_report_stats( (int) $atts['year'] );
+	if ( 'unis' === $atts['what'] ) {
+		$u    = $s['unis'];
+		$last = array_pop( $u );
+		return esc_html( $u ? implode( ', ', $u ) . ' and ' . $last : (string) $last );
+	}
+	if ( 'updated' === $atts['what'] ) {
+		$ts = strtotime( $s['updated'] );
+		return $ts ? '<time datetime="' . esc_attr( $s['updated'] ) . '">' . esc_html( gmdate( 'j F Y', $ts ) ) . '</time>' : '';
+	}
+	return esc_html( number_format( $s['records'] ) );
+}
+
+/**
  * Yearly data report (Phase 7, November): one summary row + key figures per university with
  * closing data, frozen at year="YYYY" (rows after that year are ignored, so the report keeps
  * its numbers when new seasons are added).
@@ -175,7 +230,7 @@ function am_sc_report( $atts ): string {
 	uasort( $unis, fn( $a, $b ) => strcasecmp( (string) ( $a['short'] ?? '' ), (string) ( $b['short'] ?? '' ) ) );
 	$rows  = '';
 	$parts = '';
-	$total = 0;
+	$total = am_report_stats( $upto )['records'];
 	foreach ( $unis as $uni ) {
 		$uni['merit'] = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => (int) ( $r['year'] ?? 0 ) <= $upto ) );
 		unset( $uni['defaults']['year'] );
@@ -183,7 +238,6 @@ function am_sc_report( $atts ): string {
 		if ( ! $def || empty( $uni['meritlist_path'] ) ) {
 			continue;
 		}
-		$total += count( array_filter( $uni['merit'], fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) ) );
 		$year   = am_uni_year( $uni );
 		$cur    = array_filter( $def, fn( $r ) => (int) $r['year'] === $year );
 		$vals   = array_map( fn( $r ) => (float) $r['closing'], $cur );
@@ -200,7 +254,7 @@ function am_sc_report( $atts ): string {
 		}
 		$avg   = $moves ? array_sum( $moves ) / count( $moves ) : null;
 		$short = (string) ( $uni['short'] ?? '' );
-		$view  = ( $uni['defaults']['list'] ?? 'Final' ) . ' list, ' . strtolower( (string) ( $uni['defaults']['category'] ?? 'Open merit' ) );
+		$view  = am_list_label( (string) ( $uni['defaults']['list'] ?? 'Final' ) ) . ', ' . am_cat_label( (string) ( $uni['defaults']['category'] ?? 'Open merit' ) );
 		$rows .= '<tr><th scope="row"><a href="' . esc_url( home_url( (string) $uni['meritlist_path'] ) ) . '">' . esc_html( $short ) . '</a><small>' . esc_html( $view ) . '</small></th>'
 			. '<td>' . esc_html( (string) $year ) . '</td>'
 			. '<td data-v="' . count( $cur ) . '">' . count( $cur ) . '</td>'
@@ -208,8 +262,8 @@ function am_sc_report( $atts ): string {
 			. '<td data-v="' . esc_attr( (string) min( $vals ) ) . '">' . esc_html( am_pct( min( $vals ) ) ) . '</td>'
 			. ( null === $avg ? '<td>— <small>one year only</small></td>' : '<td data-v="' . esc_attr( (string) round( $avg, 3 ) ) . '">' . esc_html( ( $avg > 0 ? '+' : '' ) . number_format( $avg, 2 ) ) . '<small>' . count( $moves ) . ' programs, vs ' . ( $year - 1 ) . '</small></td>' )
 			. '</tr>';
-		$srcs   = array_values( array_unique( array_map( fn( $r ) => (string) $r['source_url'], $cur ) ) );
-		$links  = implode( ', ', array_map( fn( $u ) => '<a href="' . esc_url( $u ) . '" rel="nofollow noopener" target="_blank">' . esc_html( am_source_label( $u ) ) . '</a>', $srcs ) );
+		$srcs   = array_values( array_unique( array_map( fn( $r ) => (string) $r['source_url'] . '|' . (string) ( $r['archive_url'] ?? '' ), $cur ) ) );
+		$links  = implode( ', ', array_map( fn( $k ) => am_source_link( ...explode( '|', $k, 2 ) ), $srcs ) );
 		$parts .= '<h3>' . esc_html( (string) ( $uni['name'] ?? $short ) ) . '</h3><ul>';
 		foreach ( am_quotables( $uni ) as $q ) {
 			$parts .= '<li>' . esc_html( $q ) . '</li>';
@@ -219,7 +273,7 @@ function am_sc_report( $atts ): string {
 	if ( ! $rows ) {
 		return am_stub( 'am_report', $atts );
 	}
-	return '<div class="am-table-wrap"><table class="am-table"><caption>Newest official closing merits by university, up to ' . esc_html( (string) $upto ) . ' (' . esc_html( (string) $total ) . ' records)</caption><thead><tr><th scope="col">University and view</th><th scope="col">Newest year</th><th scope="col">Programs</th><th scope="col">Highest closing</th><th scope="col">Lowest closing</th><th scope="col">Average change</th></tr></thead><tbody>' . $rows . '</tbody></table></div>'
+	return '<div class="am-table-wrap"><table class="am-table"><caption>Newest official closing merits by university, up to ' . esc_html( (string) $upto ) . ' (' . esc_html( number_format( $total ) ) . ' records)</caption><thead><tr><th scope="col">University and view</th><th scope="col">Newest year</th><th scope="col">Programs</th><th scope="col">Highest closing</th><th scope="col">Lowest closing</th><th scope="col">Average change</th></tr></thead><tbody>' . $rows . '</tbody></table></div>'
 		. '<h2>University by university</h2>' . $parts;
 }
 
@@ -368,7 +422,7 @@ function am_trend_svg( array $uni, string $list, string $cat ): string {
 	$svg .= '<text class="am-tr-ax" x="' . $x1 . '" y="' . $ay . '" text-anchor="end">' . esc_html( $hi . '%' ) . '</text>';
 	$svg .= '</svg>';
 
-	return '<figure class="am-figure">' . $svg . '<figcaption>' . esc_html( $short . ' closing merit trend: the ' . count( $series ) . ' highest programs with at least two years of data (' . $list . ' list, ' . $cat . '). Grey = earlier year, green = ' . $last . '; the number in brackets is the change from the year before. Exact figures are in the table above.' ) . '</figcaption></figure>';
+	return '<figure class="am-figure">' . $svg . '<figcaption>' . esc_html( $short . ' closing merit trend: the ' . count( $series ) . ' highest programs with at least two years of data (' . am_list_label( $list ) . ', ' . am_cat_label( $cat ) . '). Grey = earlier year, green = ' . $last . '; the number in brackets is the change from the year before. Exact figures are in the table above.' ) . '</figcaption></figure>';
 }
 
 /**
@@ -644,6 +698,7 @@ add_action(
 		add_shortcode( 'am_embed_builder', 'am_sc_embed_builder' );
 		add_shortcode( 'am_submit', 'am_sc_submit' );
 		add_shortcode( 'am_report', 'am_sc_report' );
+		add_shortcode( 'am_report_stat', 'am_sc_report_stat' );
 		add_shortcode( 'am_percent', 'am_sc_percent' );
 		add_shortcode( 'am_ibcc', 'am_sc_ibcc' );
 	}

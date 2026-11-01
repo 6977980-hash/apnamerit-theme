@@ -75,11 +75,20 @@ add_action(
 );
 
 /**
- * "Updated" date for an entry: its "updated" field, else pages.json mtime.
+ * "Updated" date for an entry: its "updated" field, else pages.json mtime. With
+ * "updated_from_data": true (data reports), the newest "updated" across data/universities wins
+ * when it is later, so the page date never trails the data it shows (audit F-05).
  */
 function am_page_updated( array $page ): string {
 	if ( ! empty( $page['updated'] ) && preg_match( '/^\d{4}-\d{2}-\d{2}$/', $page['updated'] ) ) {
-		return $page['updated'];
+		$date = (string) $page['updated'];
+		if ( ! empty( $page['updated_from_data'] ) && function_exists( 'am_unis' ) ) {
+			foreach ( am_unis() as $uni ) {
+				$u = (string) ( $uni['updated'] ?? '' );
+				preg_match( '/^\d{4}-\d{2}-\d{2}$/', $u ) && $u > $date && ( $date = $u );
+			}
+		}
+		return $date;
 	}
 	return gmdate( 'Y-m-d', (int) @filemtime( AM_DIR . '/data/pages.json' ) );
 }

@@ -9,6 +9,7 @@
  "meritlist_path": "/mdcat-merit-list/",
  "updated": "2026-10-31",
  "_note": "Punjab public and private MBBS/BDS admissions run by UHS. Closing = lowest Open-merit aggregate per college in that selection list (scripts/uhs_closing.py). Program carries the sector so public and private colleges stay apart.",
+ "table_note": "2024 MDCAT was marked out of 200, 2025 out of 180; aggregates are comparable, raw test marks are not.",
  "defaults": {
   "list": "Final",
   "category": "Open merit"
