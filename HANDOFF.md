@@ -113,6 +113,8 @@ Owner's consulting chat delivered `apnamerit-data/{uet-lahore,comsats,nums}.json
 - `am_siblings_html()` (`inc/template-tags.php`): calculator and merit-list pages end with "Other <group> aggregate calculators / merit lists" (groups: medical, engineering+computing, university) + link to the hub.
 - `/percentage-calculator/` (`[am_percent]`, live JS in am.js, keyword "fsc percentage calculator"), linked from home and `/aggregate-calculator/`.
 - Ranking plan doc: https://claude.ai/artifact/HEXx55uWiKBDfbTenpqypP (keyword gaps, next pages: UET Lahore calculator needs owner screenshot, ECAT guide, IBCC equivalence calculator, COMSATS merit list).
+- `/ibcc-equivalence-calculator/` (v0.15.0, `[am_ibcc]`, grade table in `site.json → ibcc` from ibcc.edu.pk/conversion-for-equivalence; A* default 90, editable). Live check: 8 O-level grades → 650/800 = 81.25%.
+- GSC: second batch of 10 URLs given 2026-11-01.
 - GSC: owner requested indexing for the first 10 URLs on 2026-10-31; give 10 more per day.
 
 ## Homepage redesign (v0.12.x, owner asked 2026-10-31: "home page boring")

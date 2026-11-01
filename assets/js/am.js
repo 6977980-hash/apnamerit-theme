@@ -389,6 +389,31 @@
     form.addEventListener('submit', function (e) { e.preventDefault(); run(); });
   });
 
+  // ---------------------------------------------------------------- IBCC equivalence
+  $$('form[data-am-ibcc]').forEach(function (form) {
+    var cfg = data(form, 'am-ibcc-data'), out = $('.am-result', form);
+    if (!cfg) return;
+    var level = function () { return form.level.value; };
+    form.level.addEventListener('change', function () {
+      $$('.am-ib-row', form).forEach(function (r) { r.hidden = level() === 'o' ? !r.hasAttribute('data-o') : !r.hasAttribute('data-a'); });
+      out.hidden = true;
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var astar = Math.min(100, Math.max(90, parseFloat(form.astar.value) || 90)), sum = 0, n = 0, missing = 0;
+      $$('.am-ib-row', form).forEach(function (r) {
+        if (r.hidden) return;
+        var g = $('select', r).value;
+        if (!g) { missing++; return; }
+        sum += (g === 'A*' || g === '9') ? astar : cfg.grades[g]; n++;
+      });
+      out.hidden = false;
+      if (!n || missing) { out.innerHTML = '<p class="am-error" role="alert">Choose a grade for every subject.</p>'; return; }
+      var p = sum / n;
+      out.innerHTML = '<p class="am-result-main">Equivalent percentage: <strong>' + p.toFixed(2) + '%</strong></p><p>' + sum.toFixed(0) + ' out of ' + (n * 100) + ' marks over ' + n + ' subjects. Use this percentage in place of Matric or FSc in our <a href="/aggregate-calculator/">aggregate calculators</a>. Your IBCC certificate is the final word.</p>';
+    });
+  });
+
   // ---------------------------------------------------------------- share
   document.addEventListener('click', function (e) {
     var copy = e.target.closest('[data-am-copy]');
