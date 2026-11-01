@@ -400,6 +400,37 @@ def check_calendar(loaded: dict[str, object]) -> None:
                     err("calendar", f"seasons.{slug} '{st.get('step')}' {col}: date must be YYYY-MM-DD or start/end")
 
 
+# ---------------------------------------------------------------- updates log (idea 5, 2026-11-01)
+def check_updates(loaded: dict[str, object]) -> None:
+    ups = loaded.get("data/updates.json")
+    if ups is None:
+        return
+    paths = page_paths(loaded)
+    items = ups.get("updates") if isinstance(ups, dict) else None
+    if not isinstance(items, list) or not items:
+        err("updates", "data/updates.json needs a non-empty 'updates' list")
+        return
+    for i, u in enumerate(items):
+        where = f"updates[{i}]"
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(u.get("date", ""))):
+            err("updates", f"{where}: date must be YYYY-MM-DD")
+        if not u.get("title") or len(str(u["title"])) > 110:
+            err("updates", f"{where}: title required, <= 110 chars")
+        url = str(u.get("url", ""))
+        if url and not (url.startswith("https://") or url in paths):
+            err("updates", f"{where}: url must be an existing site path or https: {url}")
+    if "/updates/" not in paths:
+        warn("updates", "data/updates.json exists but there is no /updates/ page")
+    # Season step guides ([am_season] 'what to do now' links) must be site pages.
+    cal = loaded.get("data/calendar.json") or {}
+    for slug, s_ in (cal.get("seasons") or {}).items():
+        if s_.get("page") and s_["page"] not in paths:
+            err("updates", f"seasons.{slug}.page {s_['page']} is not a page")
+        for st in s_.get("steps") or []:
+            if st.get("guide") and st["guide"] not in paths:
+                err("updates", f"seasons.{slug} step '{st.get('step')}': guide {st['guide']} is not a page")
+
+
 # ---------------------------------------------------------------- privacy
 CNIC = re.compile(r"\b\d{5}-\d{7}-\d\b")
 SECRET = re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----|(?i:password\s*=\s*['\"][^'\"]+)")
@@ -610,6 +641,7 @@ def main() -> int:
     check_nav(loaded)
     check_unis(loaded)
     check_calendar(loaded)
+    check_updates(loaded)
     check_links(loaded)
     check_privacy()
     check_size()

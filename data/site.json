@@ -39,6 +39,10 @@
   "contact": {
     "email": "contact@apnamerit.com"
   },
+  "social": {
+    "whatsapp_channel": "",
+    "note": "Public WhatsApp Channel invite link (https://whatsapp.com/channel/...). Empty = no Follow button. The owner posts each data/updates.json entry there."
+  },
   "verification": {
     "google": "H3XakXuUmrIAOqChbi2ulp75JNDovKXkYWmF4mSjipM",
     "bing": "",

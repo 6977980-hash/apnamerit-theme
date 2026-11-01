@@ -1,0 +1,77 @@
+{
+  "_note": "Student-facing change log (idea 5, 2026-11-01). One entry per new official list parsed, new page or date change: date YYYY-MM-DD, title (<= 110 chars), text (one sentence), url (site path or https). Rendered by [am_updates] on /updates/ and as RSS at /updates/feed/. The owner posts each entry on the WhatsApp Channel (site.json social.whatsapp_channel). Add the newest entry anywhere; the page sorts by date.",
+  "updates": [
+    {
+      "date": "2026-11-01",
+      "title": "Shareable results: send your aggregate and chances on WhatsApp",
+      "text": "Every calculator and predictor result now has its own link; the WhatsApp text carries the aggregate and how many programs are Strong or Borderline.",
+      "url": "/predictor/"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "UHS MBBS/BDS 2026-27 schedule page with countdown",
+      "text": "Provisional merit 13 Nov, final merit 16 Nov, first selection list 17 Nov 2026; BDS applications 15 to 30 Dec, from the UHS advertisement.",
+      "url": "/uhs-mbbs-admission/"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "17 Punjab medical college pages: 2025 closing merit list by list, seats and fee",
+      "text": "KEMU to Narowal: open-merit closing aggregate in every 2025 UHS selection list (1st to 13th), 2026-27 seats per category and the annual fee.",
+      "url": "/mdcat-merit-list/"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "UET Lahore campus merit lists: KSK, Faisalabad, Narowal, RCET Gujranwala",
+      "text": "Fall 2025 fourth-list closing aggregates per campus with the Fall 2024 portal table for the trend.",
+      "url": "/uet-merit-list/"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "MDCAT passing marks and eligibility check",
+      "text": "55% in MDCAT for MBBS, 50% for BDS, 60% in FSc, from the Punjab admission policy 2026-27, with a live check of your marks.",
+      "url": "/mdcat-passing-marks/"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "NUMS 2024-25 closing merits added",
+      "text": "Two years of NUMS closing aggregates (2024-25 and 2025-26) from the official lists and Wayback copies.",
+      "url": "/nums-merit-list/"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "ITU 2025, PU 2023-2024, UET Lahore Fall 2024 and COMSATS Fall 2023 closing merits added",
+      "text": "Older official years added for the trend charts; the newest year stays the default view.",
+      "url": "/merit-list/"
+    },
+    {
+      "date": "2026-10-31",
+      "title": "UET Lahore Fall 2025 merit list (593 rows) and ECAT aggregate calculator",
+      "text": "Fourth merit list closing aggregates for every campus and category, with the 33/50/17 prospectus formula.",
+      "url": "/uet-merit-list/"
+    },
+    {
+      "date": "2026-10-31",
+      "title": "COMSATS Fall 2025 and NUMS 2025-26 merit lists",
+      "text": "Official closing merits for COMSATS Islamabad campuses and the NUMS MBBS/BDS colleges.",
+      "url": "/comsats-merit-list/"
+    },
+    {
+      "date": "2026-10-31",
+      "title": "Merit predictor launched",
+      "text": "Enter your aggregate and see every program where the newest official closing merit is below, near or above it.",
+      "url": "/predictor/"
+    },
+    {
+      "date": "2026-10-31",
+      "title": "PU and KU merit lists",
+      "text": "Punjab University 'Merit of Last Year 2025' (257 programs) and University of Karachi closing percentages for Admissions 2027.",
+      "url": "/pu-merit-list/"
+    },
+    {
+      "date": "2026-10-31",
+      "title": "MDCAT merit list 2024-2025 and MDCAT aggregate calculator",
+      "text": "UHS public and private MBBS/BDS closing merits for 2024 and 2025 (1st and final lists) with the 10/40/50 formula.",
+      "url": "/mdcat-merit-list/"
+    }
+  ]
+}

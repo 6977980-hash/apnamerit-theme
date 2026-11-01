@@ -127,14 +127,16 @@ function am_sc_season( $atts ): string {
 		foreach ( $cols as $c ) {
 			$d     = (string) ( $st[ $c ] ?? '' );
 			$end   = substr( $d, -10 );
-			$rows .= '' === $d ? '<td>—</td>' : '<td data-am-date="' . esc_attr( $end ) . '" data-am-step="' . esc_attr( $c . ': ' . lcfirst( (string) $st['step'] ) ) . '">' . esc_html( am_season_date( $d ) ) . '</td>';
+			$guide = ! empty( $st['guide'] ) && am_find_page( (string) $st['guide'] ) ? ' data-am-guide="' . esc_attr( home_url( (string) $st['guide'] ) ) . '" data-am-guide-label="' . esc_attr( am_page_label( am_find_page( (string) $st['guide'] ) ) ) . '"' : '';
+			$rows .= '' === $d ? '<td>—</td>' : '<td data-am-date="' . esc_attr( $end ) . '" data-am-start="' . esc_attr( substr( $d, 0, 10 ) ) . '" data-am-step="' . esc_attr( $c . ': ' . lcfirst( (string) $st['step'] ) ) . '"' . $guide . '>' . esc_html( am_season_date( $d ) ) . '</td>';
 		}
 		$rows .= '</tr>';
 	}
 	$when = ! empty( $s['checked'] ) ? ' Checked ' . gmdate( 'j M Y', (int) strtotime( (string) $s['checked'] ) ) . '.' : '';
 	return '<div class="am-table-wrap" data-am-season><table class="am-table"><caption>' . esc_html( (string) $s['label'] . ', session ' . (string) $s['session'] . ': official schedule' ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $rows . '</tbody></table></div>'
 		. '<p class="am-muted" data-am-next hidden></p>'
-		. '<p class="am-muted">Source: <a href="' . esc_url( (string) $s['source_url'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) ( $s['source_label'] ?? am_source_label( (string) $s['source_url'] ) ) ) . '</a>.' . esc_html( $when ) . ' ' . esc_html( (string) ( $s['note'] ?? '' ) ) . '</p>';
+		. '<p class="am-muted">Source: <a href="' . esc_url( (string) $s['source_url'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) ( $s['source_label'] ?? am_source_label( (string) $s['source_url'] ) ) ) . '</a>.' . esc_html( $when ) . ' ' . esc_html( (string) ( $s['note'] ?? '' ) ) . '</p>'
+		. ( function_exists( 'am_alerts_html' ) ? am_alerts_html( $slug ) : '' );
 }
 
 add_action(

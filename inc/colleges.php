@@ -241,11 +241,56 @@ function am_sc_college_index( $atts ): string {
 	return $items ? '<ul>' . implode( '', $items ) . '</ul>' : '';
 }
 
+// ------------------------------------------------------------------ [am_list_drop]
+/**
+ * How far each college's open-merit closing aggregate fell from the 1st to the last selection list
+ * of the newest `list_trail` year (guide "not selected in the first merit list"). Computed from
+ * uhs.json list_trail, so it follows the data; no hand-typed figures.
+ */
+function am_sc_list_drop( $atts ): string {
+	$atts  = shortcode_atts( array( 'uni' => 'uhs' ), (array) $atts, 'am_list_drop' );
+	$uni   = am_uni( am_uni_attr( $atts ) );
+	$trail = array_filter( (array) ( $uni['list_trail'] ?? array() ), fn( $t ) => is_array( $t ) && is_numeric( $t['closing'] ?? null ) && ! empty( $t['source_url'] ) );
+	if ( ! $trail ) {
+		return am_stub( 'am_list_drop', $atts );
+	}
+	$year = max( array_map( fn( $t ) => (int) $t['year'], $trail ) );
+	$by   = array();
+	foreach ( $trail as $t ) {
+		if ( (int) $t['year'] === $year ) {
+			$by[ (string) $t['campus'] ][ (int) $t['list_no'] ] = $t;
+		}
+	}
+	$rows  = array();
+	$lists = 0;
+	foreach ( $by as $campus => $ls ) {
+		ksort( $ls );
+		$first = reset( $ls );
+		$last  = end( $ls );
+		$lists = max( $lists, (int) key( $ls ) );
+		$meta  = (array) ( $uni['colleges'][ $campus ] ?? array() );
+		$name  = esc_html( (string) ( $meta['short'] ?? $campus ) );
+		if ( ! empty( $meta['path'] ) && am_find_page( (string) $meta['path'] ) ) {
+			$name = '<a href="' . esc_url( home_url( (string) $meta['path'] ) ) . '">' . $name . '</a>';
+		}
+		$a      = round( (float) $first['closing'], 2 );
+		$b      = round( (float) $last['closing'], 2 );
+		$rows[] = array( $b, '<tr><th scope="row">' . $name . '</th><td>' . esc_html( am_pct( $first['closing'] ) ) . '</td><td>' . esc_html( am_pct( $last['closing'] ) ) . '</td><td>' . esc_html( number_format( $a - $b, 2 ) ) . '</td><td>' . am_source_link( (string) $last['source_url'] ) . '</td></tr>' );
+	}
+	usort( $rows, fn( $x, $y ) => $y[0] <=> $x[0] );
+	$drops = array_map( fn( $c ) => round( (float) reset( $c )['closing'], 2 ) - round( (float) end( $c )['closing'], 2 ), array_map( function ( $ls ) { ksort( $ls ); return $ls; }, $by ) );
+	$prog  = (string) ( reset( $trail )['program'] ?? 'MBBS (public)' );
+	return '<p>In ' . esc_html( (string) $year ) . ' the open-merit closing aggregate of Punjab\'s public medical colleges fell by <strong>' . esc_html( number_format( min( $drops ), 2 ) . ' to ' . number_format( max( $drops ), 2 ) ) . ' points</strong> between the 1st and the ' . esc_html( am_ordinal( $lists ) ) . ' (last) UHS selection list. If your aggregate is below a college\'s 1st-list closing merit by more than that, later lists of the same year are unlikely to reach you there; within it, wait for the upgradation lists.</p>'
+		. '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( $prog . ' ' . $year . ': open-merit closing aggregate in the 1st and the ' . am_ordinal( $lists ) . ' UHS selection list' ) . '</caption>'
+		. '<thead><tr><th scope="col">College</th><th scope="col">1st list</th><th scope="col">' . esc_html( am_ordinal( $lists ) ) . ' list</th><th scope="col">Drop</th><th scope="col">Source</th></tr></thead><tbody>' . implode( '', array_column( $rows, 1 ) ) . '</tbody></table></div>';
+}
+
 add_action(
 	'init',
 	function () {
 		add_shortcode( 'am_college', 'am_sc_college' );
 		add_shortcode( 'am_college_index', 'am_sc_college_index' );
 		add_shortcode( 'am_seats', 'am_sc_seats' );
+		add_shortcode( 'am_list_drop', 'am_sc_list_drop' );
 	}
 );

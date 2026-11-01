@@ -56,6 +56,30 @@
     return out;
   }
 
+  /**
+   * Reverse calculator (idea 2): marks needed in one part to reach a target aggregate, with the
+   * other parts as entered. The aggregate is linear in each part, so two evaluations fix the line.
+   * Returns {need, total, pct, max} (need may be < 0 or > total: the caller words that) or {error}.
+   */
+  function marksNeeded(formula, values, partKey, target) {
+    var part = null;
+    for (var i = 0; i < formula.parts.length; i++) if (formula.parts[i].key === partKey) part = formula.parts[i];
+    if (!part) return { error: 'Unknown part.' };
+    var total = num(values['t_' + partKey] != null && values['t_' + partKey] !== '' ? values['t_' + partKey] : part.total);
+    if (isNaN(total) || total <= 0) return { error: 'Enter the total marks for ' + part.label + '.', key: partKey };
+    var v0 = {}, v1 = {};
+    for (var k in values) { v0[k] = values[k]; v1[k] = values[k]; }
+    v0['o_' + partKey] = 0; v1['o_' + partKey] = total;
+    v0['t_' + partKey] = total; v1['t_' + partKey] = total;
+    var a0 = aggregate(formula, v0), a1 = aggregate(formula, v1);
+    if (a0.error) return a0;
+    if (a1.error) return a1;
+    var slope = (a1.aggregate - a0.aggregate) / total;
+    if (slope <= 0) return { error: part.label + ' has no weight in this formula.' };
+    var need = (target - a0.aggregate) / slope;
+    return { need: need, total: total, pct: need / total * 100, max: a1.aggregate, min: a0.aggregate };
+  }
+
   /** Chance label against a reference closing merit with a ± band. */
   function chance(agg, ref, band) {
     if (agg > ref + band) return 'strong';
@@ -112,7 +136,7 @@
     });
   }
 
-  var AM = { aggregate: aggregate, chance: chance, predict: predict, eligibility: eligibility, eligibleRows: eligibleRows };
+  var AM = { aggregate: aggregate, chance: chance, predict: predict, eligibility: eligibility, eligibleRows: eligibleRows, marksNeeded: marksNeeded };
   root.AM = AM;
   if (typeof module !== 'undefined' && module.exports) module.exports = AM;
   if (typeof document === 'undefined') return;
@@ -173,6 +197,37 @@
       html += '</ul>';
     });
     return html;
+  }
+
+  // Suggested preference order (idea 3): one university's programs, highest closing merit first,
+  // grouped Reach (Unlikely within 2 bands), Match (Borderline) and Safe (Strong); copy as a numbered list.
+  var PREF = { unlikely: 'Reach', borderline: 'Match', strong: 'Safe' };
+  function prefList(list, band, guideUrl) {
+    var unis = {};
+    list.forEach(function (r) { unis[r.uni || ''] = true; });
+    if (Object.keys(unis).length !== 1 || list.length < 2) return '';
+    var rows = list.filter(function (r) { return r.chance !== 'unlikely' || r.gap >= -band * 2; })
+      .sort(function (a, b) { return b.ref - a.ref; });
+    if (rows.length < 2) return '';
+    // College-wise lists (every row has a campus, few programs): one preference list per program,
+    // because MBBS public, MBBS private and BDS are separate forms. Otherwise one list of programs.
+    var progs = {};
+    rows.forEach(function (r) { progs[r.program] = true; });
+    var byProg = rows.every(function (r) { return r.campus; }) && Object.keys(progs).length <= 4;
+    var groups = byProg ? Object.keys(progs).map(function (pg) { return { label: pg, rows: rows.filter(function (r) { return r.program === pg; }) }; }) : [{ label: '', rows: rows }];
+    var name = function (r) { return byProg ? r.campus + (r.shift ? ' (' + r.shift + ')' : '') : r.program + (r.campus ? ' (' + r.campus + (r.shift ? ', ' + r.shift : '') + ')' : ''); };
+    var html = '';
+    groups.forEach(function (g) {
+      if (g.rows.length < 2) return;
+      var li = g.rows.map(function (r) {
+        return '<li>' + esc(name(r)) + ' <span class="am-chip am-chip--' + r.chance + '">' + PREF[r.chance] + '</span> <span class="am-muted">' + pct(r.ref) + '</span></li>';
+      }).join('');
+      var text = (g.label ? g.label + '\n' : '') + g.rows.map(function (r, i) { return (i + 1) + '. ' + name(r) + ' (' + PREF[r.chance] + ', closed at ' + pct(r.ref) + ')'; }).join('\n');
+      html += (g.label ? '<h3>' + esc(g.label) + '</h3>' : '') + '<ol class="am-pref">' + li + '</ol><p><button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy ' + (g.label ? esc(g.label) + ' ' : '') + 'preference list</button></p>';
+    });
+    if (!html) return '';
+    return '<h2>Suggested preference order</h2><p class="am-muted">Highest closing merit first: Reach (within ' + band * 2 + ' points above you), then Match, then Safe. Allotment is merit-cum-preference, so a high first choice never costs you a lower one; rearrange within each group by the college you would rather attend, and never leave out a college you would still accept.' +
+      (guideUrl ? ' <a href="' + esc(guideUrl) + '">How to fill the preference list</a>.' : '') + '</p>' + html;
   }
 
   // tail: 'none' (no merit rows to list), 'all' (list removed) or 'some' (matching programs removed).
@@ -288,8 +343,47 @@
       if (cfg.predUrl && !blocked) {
         html += '<p><a href="' + esc(cfg.predUrl + '?agg=' + agg.toFixed(2) + (cfg.rows && cfg.rows.length ? '&uni=' + encodeURIComponent(cfg.uni) : '')) + '">Open this aggregate in the merit predictor</a></p>';
       }
+      // Reverse calculator (idea 2): marks needed in one part (default: the test) for a target program.
+      if (cfg.rows && cfg.rows.length) {
+        var solve = f.parts.filter(function (p) { return /test|mdcat|ecat|net|nat|sat/i.test(p.key + ' ' + p.label); })[0] || f.parts[0];
+        var targets = cfg.rows.slice().sort(function (a, b) { return b.ref - a.ref; }).map(function (r, i) {
+          var nm = r.program + (r.campus ? ' (' + r.campus + (r.shift ? ', ' + r.shift : '') + ')' : '');
+          return '<option value="' + i + '">' + esc(nm) + ' — ' + pct(r.ref) + ' (' + r.year + ')</option>';
+        }).join('');
+        var parts = f.parts.filter(function (p) { return num(p.weight) > 0; }).map(function (p) {
+          return '<option value="' + esc(p.key) + '"' + (p.key === solve.key ? ' selected' : '') + '>' + esc(p.label) + '</option>';
+        }).join('');
+        html += '<h2>Marks needed for a target</h2><p class="am-muted">Pick a program: with your other marks as entered, this is the least you need in one part to reach its newest closing merit.</p>' +
+          '<div class="am-target"><div class="am-field"><label for="am-tg-' + esc(form.getAttribute('data-am-calc')) + '">Target program</label><select id="am-tg-' + esc(form.getAttribute('data-am-calc')) + '" data-am-target>' + targets + '</select></div>' +
+          '<div class="am-field"><label for="am-tp-' + esc(form.getAttribute('data-am-calc')) + '">Solve for</label><select id="am-tp-' + esc(form.getAttribute('data-am-calc')) + '" data-am-part>' + parts + '</select></div>' +
+          '<p class="am-result-main" data-am-need></p></div>';
+      }
       out.hidden = false;
       out.innerHTML = html;
+      var tgt = $('[data-am-target]', out);
+      if (tgt) {
+        var needOut = $('[data-am-need]', out), partSel = $('[data-am-part]', out);
+        var sorted = cfg.rows.slice().sort(function (a, b) { return b.ref - a.ref; });
+        var showNeed = function () {
+          var r = sorted[+tgt.value], key = partSel.value, m = marksNeeded(f, values, key, r.ref), lbl = '';
+          f.parts.forEach(function (p) { if (p.key === key) lbl = p.label; });
+          if (m.error) { needOut.textContent = m.error; return; }
+          var whole = m.total >= 50 && m.total === Math.floor(m.total);
+          var fmt = function (n) { return whole ? String(Math.max(0, Math.ceil(n - 1e-9))) : Math.max(0, n).toFixed(2); };
+          var floor = null;
+          (f.elig || []).forEach(function (fl) { if (fl.part === key && (!fl.programs || new RegExp(fl.programs).test(r.program))) floor = floor == null ? num(fl.min_pct) : Math.max(floor, num(fl.min_pct)); });
+          var txt;
+          if (m.need > m.total) txt = 'Not reachable this way: even full marks in ' + lbl + ' give ' + pct(m.max) + ', below ' + pct(r.ref) + '.';
+          else if (m.need <= 0) txt = 'Your other marks alone already reach ' + pct(r.ref) + '.';
+          else txt = 'You need at least <strong>' + fmt(m.need) + ' / ' + m.total + '</strong> in ' + esc(lbl) + ' (' + m.pct.toFixed(1) + '%) to reach ' + pct(r.ref) + ', the newest closing merit (' + r.year + ').' +
+            (m.need + cfg.band / ((m.max - m.min) / m.total) <= m.total ? ' For a Strong chance (+' + cfg.band + ') about ' + fmt(m.need + cfg.band / ((m.max - m.min) / m.total)) + '.' : ' A Strong margin (+' + cfg.band + ') would need more than full marks.');
+          if (floor != null && m.need / m.total * 100 < floor && m.need <= m.total) txt += ' The minimum to apply is ' + floor + '% (' + fmt(floor * m.total / 100) + ' / ' + m.total + ').';
+          needOut.innerHTML = txt;
+        };
+        tgt.addEventListener('change', showNeed);
+        partSel.addEventListener('change', showNeed);
+        showNeed();
+      }
       if (!quiet) out.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
@@ -369,7 +463,7 @@
       var text = (cfg.share || 'Mera aggregate {aggregate}% hai{chances}. Apna check karo: {url}').replace('{uni}', filter.uni || '').replace('{aggregate}', agg.toFixed(2))
         .replace('{chances}', summary ? ': ' + summary + (filter.uni ? ' (' + filter.uni + ')' : '') : '').replace('{url}', resultUrl);
       var share = list.length ? '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button></div>' : '';
-      out.innerHTML = head + note + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.') + share;
+      out.innerHTML = head + note + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.') + prefList(list, cfg.band, cfg.prefUrl) + share;
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
     if (saved) run(true);
@@ -538,7 +632,13 @@
     });
     var p = box.nextElementSibling;
     if (next && p && p.hasAttribute('data-am-next')) {
-      p.innerHTML = '<strong>Next official step:</strong> ' + esc(next.getAttribute('data-am-step')) + ', ' + esc(next.textContent) + '. Past dates are greyed out.';
+      // Countdown to the step's start (a running window counts as "now"); the step's guide = what to do now.
+      var start = next.getAttribute('data-am-start') || next.getAttribute('data-am-date');
+      var days = Math.round((Date.parse(start) - Date.parse(today)) / 86400000);
+      var when = days <= 0 ? 'now, until ' + esc(next.textContent) : days === 1 ? 'tomorrow' : 'in ' + days + ' days';
+      var guide = next.getAttribute('data-am-guide');
+      p.innerHTML = '<strong>Next official step:</strong> ' + esc(next.getAttribute('data-am-step')) + ', ' + esc(next.textContent) + ' (' + when + ').' +
+        (guide ? ' What to do now: <a href="' + esc(guide) + '">' + esc(next.getAttribute('data-am-guide-label')) + '</a>.' : '') + ' Past dates are greyed out.';
       p.hidden = false;
     }
   });

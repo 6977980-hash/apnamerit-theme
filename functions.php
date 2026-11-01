@@ -23,6 +23,7 @@ require_once AM_DIR . '/inc/schema.php';
 require_once AM_DIR . '/inc/shortcodes.php';
 require_once AM_DIR . '/inc/growth.php';
 require_once AM_DIR . '/inc/season.php';
+require_once AM_DIR . '/inc/updates.php';
 require_once AM_DIR . '/inc/colleges.php';
 require_once AM_DIR . '/inc/aeo.php';
 require_once AM_DIR . '/inc/indexnow.php';

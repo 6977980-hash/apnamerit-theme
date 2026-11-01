@@ -733,7 +733,8 @@ function am_sc_predictor( $atts ): string {
 				'rows'  => $rows,
 				'band'  => AM_BAND,
 				'saved' => $saved,
-				'share' => (string) am_site( 'share.predictor' ),
+				'share'   => (string) am_site( 'share.predictor' ),
+				'prefUrl' => am_find_page( '/guides/uhs-college-preference-order/' ) ? home_url( '/guides/uhs-college-preference-order/' ) : '',
 			)
 		)
 		. '</form>';

@@ -1,110 +1,115 @@
 {
- "_note": "Site navigation (no wp-admin menus). Every path must exist in data/pages.json (scripts/check.py enforces it). \"hide_small\": true hides a header item under 480 px (it stays in the footer). \\\"cta\\\": true makes a header item the highlighted button. Footer items are grouped into columns by \\\"col\\\".",
- "header": [
-  {
-   "label": "Calculators",
-   "path": "/aggregate-calculator/"
-  },
-  {
-   "label": "Merit lists",
-   "path": "/merit-list/"
-  },
-  {
-   "label": "Guides",
-   "path": "/guides/",
-   "hide_small": true
-  },
-  {
-   "label": "Predictor",
-   "path": "/predictor/",
-   "cta": true
-  }
- ],
- "footer": [
-  {
-   "label": "Calculators",
-   "path": "/aggregate-calculator/",
-   "col": "Tools"
-  },
-  {
-   "label": "MDCAT calculator",
-   "path": "/mdcat-aggregate-calculator/",
-   "col": "Tools"
-  },
-  {
-   "label": "UET calculator",
-   "path": "/uet-aggregate-calculator/",
-   "col": "Tools"
-  },
-  {
-   "label": "Merit lists",
-   "path": "/merit-list/",
-   "col": "Tools"
-  },
-  {
-   "label": "Guides",
-   "path": "/guides/",
-   "col": "Tools"
-  },
-  {
-   "label": "Merit predictor",
-   "path": "/predictor/",
-   "col": "Tools"
-  },
-  {
-   "label": "Methodology",
-   "path": "/methodology/",
-   "col": "Data"
-  },
-  {
-   "label": "Data sources",
-   "path": "/data-sources/",
-   "col": "Data"
-  },
-  {
-   "label": "Open data",
-   "path": "/data/",
-   "col": "Data"
-  },
-  {
-   "label": "Embed a calculator",
-   "path": "/embed/",
-   "col": "Data"
-  },
-  {
-   "label": "Submit a merit list",
-   "path": "/submit-merit-list/",
-   "col": "Data"
-  },
-  {
-   "label": "About",
-   "path": "/about/",
-   "col": "Site"
-  },
-  {
-   "label": "Editorial policy",
-   "path": "/editorial-policy/",
-   "col": "Site"
-  },
-  {
-   "label": "Contact",
-   "path": "/contact/",
-   "col": "Site"
-  },
-  {
-   "label": "Privacy policy",
-   "path": "/privacy-policy/",
-   "col": "Site"
-  },
-  {
-   "label": "Terms",
-   "path": "/terms/",
-   "col": "Site"
-  },
-  {
-   "label": "Disclaimer",
-   "path": "/disclaimer/",
-   "col": "Site"
-  }
- ]
+  "_note": "Site navigation (no wp-admin menus). Every path must exist in data/pages.json (scripts/check.py enforces it). \"hide_small\": true hides a header item under 480 px (it stays in the footer). \\\"cta\\\": true makes a header item the highlighted button. Footer items are grouped into columns by \\\"col\\\".",
+  "header": [
+    {
+      "label": "Calculators",
+      "path": "/aggregate-calculator/"
+    },
+    {
+      "label": "Merit lists",
+      "path": "/merit-list/"
+    },
+    {
+      "label": "Guides",
+      "path": "/guides/",
+      "hide_small": true
+    },
+    {
+      "label": "Predictor",
+      "path": "/predictor/",
+      "cta": true
+    }
+  ],
+  "footer": [
+    {
+      "label": "Calculators",
+      "path": "/aggregate-calculator/",
+      "col": "Tools"
+    },
+    {
+      "label": "MDCAT calculator",
+      "path": "/mdcat-aggregate-calculator/",
+      "col": "Tools"
+    },
+    {
+      "label": "UET calculator",
+      "path": "/uet-aggregate-calculator/",
+      "col": "Tools"
+    },
+    {
+      "label": "Merit lists",
+      "path": "/merit-list/",
+      "col": "Tools"
+    },
+    {
+      "label": "Guides",
+      "path": "/guides/",
+      "col": "Tools"
+    },
+    {
+      "label": "Merit predictor",
+      "path": "/predictor/",
+      "col": "Tools"
+    },
+    {
+      "label": "Methodology",
+      "path": "/methodology/",
+      "col": "Data"
+    },
+    {
+      "label": "Data sources",
+      "path": "/data-sources/",
+      "col": "Data"
+    },
+    {
+      "label": "Open data",
+      "path": "/data/",
+      "col": "Data"
+    },
+    {
+      "label": "Embed a calculator",
+      "path": "/embed/",
+      "col": "Data"
+    },
+    {
+      "label": "Submit a merit list",
+      "path": "/submit-merit-list/",
+      "col": "Data"
+    },
+    {
+      "label": "Updates",
+      "path": "/updates/",
+      "col": "Data"
+    },
+    {
+      "label": "About",
+      "path": "/about/",
+      "col": "Site"
+    },
+    {
+      "label": "Editorial policy",
+      "path": "/editorial-policy/",
+      "col": "Site"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact/",
+      "col": "Site"
+    },
+    {
+      "label": "Privacy policy",
+      "path": "/privacy-policy/",
+      "col": "Site"
+    },
+    {
+      "label": "Terms",
+      "path": "/terms/",
+      "col": "Site"
+    },
+    {
+      "label": "Disclaimer",
+      "path": "/disclaimer/",
+      "col": "Site"
+    }
+  ]
 }

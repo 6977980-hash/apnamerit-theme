@@ -1,67 +1,189 @@
 {
- "_note": "Season calendar (MASTER-PLAN 4.2 item 3 and Phase 7). universities.<slug>.status = one-line season status printed above that university's merit table; every fact in it has source_url. events = dated official facts from the last cycle (kind 'official', with source_url) and Claude's planning windows (kind 'estimate', never shown to visitors as a date). ops = recurring Apna Merit tasks. Update 'checked' whenever a status is re-verified. seasons.<slug> = the current session's official schedule (one row per step, one column per program, dates YYYY-MM-DD or start/end), printed by [am_season uni=\"<slug>\"].",
- "season_year": 2027,
- "checked": "2026-11-01",
- "universities": {
-  "uhs": {
-   "status": "MDCAT 2026 was held on 20 September 2026. UHS took 2026-27 public-sector MBBS applications from 16 to 30 October 2026; the provisional order of merit is due on 13 November and the first college-wise selection list on 17 November 2026 (BDS applications open 15 December). Until the lists are out the table shows the 2025 lists; 2026 lists are added within 48 hours of each official list.",
-   "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
-   "checked": "2026-11-01"
+  "_note": "Season calendar (MASTER-PLAN 4.2 item 3 and Phase 7). universities.<slug>.status = one-line season status printed above that university's merit table; every fact in it has source_url. events = dated official facts from the last cycle (kind 'official', with source_url) and Claude's planning windows (kind 'estimate', never shown to visitors as a date). ops = recurring Apna Merit tasks. Update 'checked' whenever a status is re-verified. seasons.<slug> = the current session's official schedule (one row per step, one column per program, dates YYYY-MM-DD or start/end), printed by [am_season uni=\"<slug>\"]. seasons.<slug>.page = the site page for that season (used by the .ics file); a step's optional 'guide' = site path shown as 'what to do now' next to that step.",
+  "season_year": 2027,
+  "checked": "2026-11-01",
+  "universities": {
+    "uhs": {
+      "status": "MDCAT 2026 was held on 20 September 2026. UHS took 2026-27 public-sector MBBS applications from 16 to 30 October 2026; the provisional order of merit is due on 13 November and the first college-wise selection list on 17 November 2026 (BDS applications open 15 December). Until the lists are out the table shows the 2025 lists; 2026 lists are added within 48 hours of each official list.",
+      "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
+      "checked": "2026-11-01"
+    },
+    "pu": {
+      "status": "Punjab University's Fall 2026 admissions closed with the 2nd phase for vacant seats (8 to 28 September 2026). PU has not published its 'Merit of Last Year 2026' summary yet, so the table shows the official 2025 summary.",
+      "source_url": "https://pu.edu.pk/home/admission_notice/719",
+      "checked": "2026-10-31"
+    },
+    "ku": {
+      "status": "Karachi University published the Admissions 2027 closing percentages for test-based programmes and Pharm-D on 19 October 2026 and Visual Studies final points on 26 October 2026 (both shown). Open-merit closing for Admissions 2027 is not out yet.",
+      "source_url": "https://uokadmission.edu.pk/links",
+      "checked": "2026-10-31"
+    },
+    "uet-taxila": {
+      "status": "UET Taxila prints each year's closing merit positions in the next undergraduate prospectus. The 2026 prospectus (with 2025 entry) is not on its Downloads page yet, so the table shows 2024 entry.",
+      "source_url": "https://admissions.uettaxila.edu.pk/Downloads.php",
+      "checked": "2026-10-31"
+    }
   },
-  "pu": {
-   "status": "Punjab University's Fall 2026 admissions closed with the 2nd phase for vacant seats (8 to 28 September 2026). PU has not published its 'Merit of Last Year 2026' summary yet, so the table shows the official 2025 summary.",
-   "source_url": "https://pu.edu.pk/home/admission_notice/719",
-   "checked": "2026-10-31"
-  },
-  "ku": {
-   "status": "Karachi University published the Admissions 2027 closing percentages for test-based programmes and Pharm-D on 19 October 2026 and Visual Studies final points on 26 October 2026 (both shown). Open-merit closing for Admissions 2027 is not out yet.",
-   "source_url": "https://uokadmission.edu.pk/links",
-   "checked": "2026-10-31"
-  },
-  "uet-taxila": {
-   "status": "UET Taxila prints each year's closing merit positions in the next undergraduate prospectus. The 2026 prospectus (with 2025 entry) is not on its Downloads page yet, so the table shows 2024 entry.",
-   "source_url": "https://admissions.uettaxila.edu.pk/Downloads.php",
-   "checked": "2026-10-31"
+  "events": [
+    {
+      "uni": "uhs",
+      "event": "MDCAT 2026 held (Punjab)",
+      "date": "2026-09-20",
+      "kind": "official",
+      "source_url": "https://www.uhs.edu.pk/"
+    },
+    {
+      "uni": "uhs",
+      "event": "2026-27 public MBBS provisional order of merit",
+      "date": "2026-11-13",
+      "kind": "official",
+      "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg"
+    },
+    {
+      "uni": "uhs",
+      "event": "2026-27 public MBBS first college-wise selection list",
+      "date": "2026-11-17",
+      "kind": "official",
+      "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg"
+    },
+    {
+      "uni": "uhs",
+      "event": "2026-27 MBBS/BDS selection lists (open merit, public and private)",
+      "window": "2026-11/2027-03",
+      "kind": "estimate",
+      "basis": "2025-26 lists ran to a 13th public and 5th private list; watch uhs.edu.pk weekly from November"
+    },
+    {
+      "uni": "pu",
+      "event": "Fall 2026 2nd phase (vacant seats) applications",
+      "date": "2026-09-08/2026-09-28",
+      "kind": "official",
+      "source_url": "https://pu.edu.pk/home/admission_notice/719"
+    },
+    {
+      "uni": "pu",
+      "event": "'Merit of Last Year 2026' PDF on pu.edu.pk",
+      "window": "2026-11/2027-07",
+      "kind": "estimate",
+      "basis": "the 2025 edition is linked from the PU admission notices page; check https://pu.edu.pk/downloads/Merit-of-Last-Year-2026.pdf monthly (404 on 2026-10-31)"
+    },
+    {
+      "uni": "ku",
+      "event": "Admissions 2027 schedule published",
+      "date": "2026-09-17",
+      "kind": "official",
+      "source_url": "https://uokadmission.edu.pk/uploads/links/admission-schedule-2027-20260917192218.jpeg"
+    },
+    {
+      "uni": "ku",
+      "event": "Admissions 2027 closing percentages, test-based and Pharm-D",
+      "date": "2026-10-19",
+      "kind": "official",
+      "source_url": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf"
+    },
+    {
+      "uni": "ku",
+      "event": "Admissions 2027 Visual Studies closing final points",
+      "date": "2026-10-26",
+      "kind": "official",
+      "source_url": "https://uokadmission.edu.pk/uploads/links/vst-closing-final-points-2027-20261026191124.pdf"
+    },
+    {
+      "uni": "ku",
+      "event": "Admissions 2027 open-merit lists and Prospectus 2028 appendices",
+      "window": "2026-11/2027-09",
+      "kind": "estimate",
+      "basis": "open-merit dates were extended in October 2026; Admissions 2026 open-merit closing reached us through Prospectus 2027"
+    },
+    {
+      "uni": "uet-taxila",
+      "event": "UG Prospectus 2026 with Merit Position Entry 2025",
+      "window": "2027-05/2027-08",
+      "kind": "estimate",
+      "basis": "Prospectus 2025 (with entry 2024) is the newest on the Downloads page on 2026-10-31"
+    }
+  ],
+  "ops": [
+    {
+      "when": "November",
+      "task": "data_year to the year just finished, keep old years; yearly merit data report post (/reports/merit-data-<year>/); archive PDFs in the owner's folder; refresh this file for the next season"
+    },
+    {
+      "when": "May-June",
+      "task": "season_year to the new admission year; 'expected merit' guides from trends (only programs with two or more official years); update statuses here"
+    },
+    {
+      "when": "July-October",
+      "task": "each new official list: parse to data/universities/<slug>.json within 48 hours, push, live check, short merit-drop guide, share text for the owner"
+    }
+  ],
+  "seasons": {
+    "uhs": {
+      "session": "2026-27",
+      "label": "Public-sector MBBS and BDS admissions, Punjab (UHS)",
+      "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
+      "source_label": "UHS advertisement: MBBS & BDS Admissions, Public Sector Medical & Dental Colleges of Punjab, Session 2026-2027",
+      "checked": "2026-11-01",
+      "columns": [
+        "MBBS",
+        "BDS"
+      ],
+      "steps": [
+        {
+          "step": "Online application opens",
+          "MBBS": "2026-10-16",
+          "BDS": "2026-12-15",
+          "guide": "/guides/uhs-college-preference-order/"
+        },
+        {
+          "step": "Online application closes (5:00 PM)",
+          "MBBS": "2026-10-30",
+          "BDS": "2026-12-30",
+          "guide": "/guides/uhs-college-preference-order/"
+        },
+        {
+          "step": "Medical board for students with disabilities (UHS City Campus)",
+          "MBBS": "2026-11-03/2026-11-05",
+          "BDS": "2027-01-03/2027-01-05"
+        },
+        {
+          "step": "Provisional order of merit",
+          "MBBS": "2026-11-13",
+          "BDS": "2027-01-06",
+          "guide": "/guides/uhs-provisional-merit-list/"
+        },
+        {
+          "step": "Final order of merit",
+          "MBBS": "2026-11-16",
+          "BDS": "2027-01-09",
+          "guide": "/guides/uhs-provisional-merit-list/"
+        },
+        {
+          "step": "First college-wise selection list",
+          "MBBS": "2026-11-17",
+          "BDS": "2027-01-11",
+          "guide": "/guides/not-selected-in-first-merit-list/"
+        },
+        {
+          "step": "Second selection / upgradation list",
+          "MBBS": "2026-11-23",
+          "BDS": "2027-01-15",
+          "guide": "/guides/not-selected-in-first-merit-list/"
+        },
+        {
+          "step": "Third selection / upgradation list",
+          "MBBS": "2026-12-01",
+          "BDS": "2027-01-21",
+          "guide": "/guides/not-selected-in-first-merit-list/"
+        },
+        {
+          "step": "Classes start",
+          "MBBS": "2027-02-01",
+          "BDS": "2027-03-01"
+        }
+      ],
+      "note": "UHS says the schedule may change on PM&DC or Government of Punjab directives, including the number of selection lists. More upgradation lists usually follow the third one (the 2025-26 public MBBS cycle ran to a 13th list).",
+      "page": "/uhs-mbbs-admission/"
+    }
   }
- },
- "events": [
-  {"uni": "uhs", "event": "MDCAT 2026 held (Punjab)", "date": "2026-09-20", "kind": "official", "source_url": "https://www.uhs.edu.pk/"},
-  {"uni": "uhs", "event": "2026-27 public MBBS provisional order of merit", "date": "2026-11-13", "kind": "official", "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg"},
-  {"uni": "uhs", "event": "2026-27 public MBBS first college-wise selection list", "date": "2026-11-17", "kind": "official", "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg"},
-  {"uni": "uhs", "event": "2026-27 MBBS/BDS selection lists (open merit, public and private)", "window": "2026-11/2027-03", "kind": "estimate", "basis": "2025-26 lists ran to a 13th public and 5th private list; watch uhs.edu.pk weekly from November"},
-  {"uni": "pu", "event": "Fall 2026 2nd phase (vacant seats) applications", "date": "2026-09-08/2026-09-28", "kind": "official", "source_url": "https://pu.edu.pk/home/admission_notice/719"},
-  {"uni": "pu", "event": "'Merit of Last Year 2026' PDF on pu.edu.pk", "window": "2026-11/2027-07", "kind": "estimate", "basis": "the 2025 edition is linked from the PU admission notices page; check https://pu.edu.pk/downloads/Merit-of-Last-Year-2026.pdf monthly (404 on 2026-10-31)"},
-  {"uni": "ku", "event": "Admissions 2027 schedule published", "date": "2026-09-17", "kind": "official", "source_url": "https://uokadmission.edu.pk/uploads/links/admission-schedule-2027-20260917192218.jpeg"},
-  {"uni": "ku", "event": "Admissions 2027 closing percentages, test-based and Pharm-D", "date": "2026-10-19", "kind": "official", "source_url": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf"},
-  {"uni": "ku", "event": "Admissions 2027 Visual Studies closing final points", "date": "2026-10-26", "kind": "official", "source_url": "https://uokadmission.edu.pk/uploads/links/vst-closing-final-points-2027-20261026191124.pdf"},
-  {"uni": "ku", "event": "Admissions 2027 open-merit lists and Prospectus 2028 appendices", "window": "2026-11/2027-09", "kind": "estimate", "basis": "open-merit dates were extended in October 2026; Admissions 2026 open-merit closing reached us through Prospectus 2027"},
-  {"uni": "uet-taxila", "event": "UG Prospectus 2026 with Merit Position Entry 2025", "window": "2027-05/2027-08", "kind": "estimate", "basis": "Prospectus 2025 (with entry 2024) is the newest on the Downloads page on 2026-10-31"}
- ],
- "ops": [
-  {"when": "November", "task": "data_year to the year just finished, keep old years; yearly merit data report post (/reports/merit-data-<year>/); archive PDFs in the owner's folder; refresh this file for the next season"},
-  {"when": "May-June", "task": "season_year to the new admission year; 'expected merit' guides from trends (only programs with two or more official years); update statuses here"},
-  {"when": "July-October", "task": "each new official list: parse to data/universities/<slug>.json within 48 hours, push, live check, short merit-drop guide, share text for the owner"}
- ],
- "seasons": {
-  "uhs": {
-   "session": "2026-27",
-   "label": "Public-sector MBBS and BDS admissions, Punjab (UHS)",
-   "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
-   "source_label": "UHS advertisement: MBBS & BDS Admissions, Public Sector Medical & Dental Colleges of Punjab, Session 2026-2027",
-   "checked": "2026-11-01",
-   "columns": ["MBBS", "BDS"],
-   "steps": [
-    {"step": "Online application opens", "MBBS": "2026-10-16", "BDS": "2026-12-15"},
-    {"step": "Online application closes (5:00 PM)", "MBBS": "2026-10-30", "BDS": "2026-12-30"},
-    {"step": "Medical board for students with disabilities (UHS City Campus)", "MBBS": "2026-11-03/2026-11-05", "BDS": "2027-01-03/2027-01-05"},
-    {"step": "Provisional order of merit", "MBBS": "2026-11-13", "BDS": "2027-01-06"},
-    {"step": "Final order of merit", "MBBS": "2026-11-16", "BDS": "2027-01-09"},
-    {"step": "First college-wise selection list", "MBBS": "2026-11-17", "BDS": "2027-01-11"},
-    {"step": "Second selection / upgradation list", "MBBS": "2026-11-23", "BDS": "2027-01-15"},
-    {"step": "Third selection / upgradation list", "MBBS": "2026-12-01", "BDS": "2027-01-21"},
-    {"step": "Classes start", "MBBS": "2027-02-01", "BDS": "2027-03-01"}
-   ],
-   "note": "UHS says the schedule may change on PM&DC or Government of Punjab directives, including the number of selection lists. More upgradation lists usually follow the third one (the 2025-26 public MBBS cycle ran to a 13th list)."
-  }
- }
 }
