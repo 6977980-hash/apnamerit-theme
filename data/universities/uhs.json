@@ -158,6 +158,256 @@
    "path": "/mdcat-merit-list/szmc/"
   }
  },
+ "seats": {
+  "session": "2026-27",
+  "source_url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+  "source_note": "UHS MBBS/BDS Prospectus, Session 2026-2027, 'Seat Allocation for Session 2026-2027' (p. 38, BDS table p. 39). 'other' = seats filled by candidates of other provinces/regions (Ex-FATA, AJK, Gilgit-Baltistan, reciprocal KPK/Balochistan, Goodwill Balochistan, ICT) and HEC scholarship seats. Seats marked * are subject to PM&DC approval.",
+  "mbbs": {
+   "King Edward Medical University (KEMC), Lahore": {
+    "open": 338,
+    "disabilities": 2,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 4,
+    "other": 6,
+    "total": 350
+   },
+   "Allama Iqbal Medical College (AIMC), Lahore": {
+    "open": 314,
+    "disabilities": 2,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 4,
+    "other": 5,
+    "total": 325
+   },
+   "Nishtar Medical College (NMC), Multan": {
+    "open": 318,
+    "disabilities": 2,
+    "cholistan": 0,
+    "udd": 18,
+    "overseas": 4,
+    "other": 8,
+    "total": 350
+   },
+   "Fatima Jinnah Medical College (FJMC), Lahore": {
+    "open": 284,
+    "disabilities": 2,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 4,
+    "other": 10,
+    "total": 300
+   },
+   "Services Institute of Medical Sciences (SIMS), Lahore": {
+    "open": 261,
+    "disabilities": 2,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 2,
+    "other": 5,
+    "total": 270
+   },
+   "Punjab Medical College (PMC), Faisalabad": {
+    "open": 320,
+    "disabilities": 2,
+    "cholistan": 0,
+    "udd": 10,
+    "overseas": 4,
+    "other": 14,
+    "total": 350
+   },
+   "Rawalpindi Medical College (RMC), Rawalpindi": {
+    "open": 325,
+    "disabilities": 2,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 4,
+    "other": 19,
+    "total": 350
+   },
+   "Quaid-e-Azam Medical College (QAMC), Bahawalpur": {
+    "open": 322,
+    "disabilities": 2,
+    "cholistan": 0,
+    "udd": 6,
+    "overseas": 4,
+    "other": 16,
+    "total": 350
+   },
+   "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan": {
+    "open": 180,
+    "disabilities": 2,
+    "cholistan": 1,
+    "udd": 15,
+    "overseas": 3,
+    "other": 9,
+    "total": 210
+   },
+   "Sargodha Medical College (SMC), Sargodha": {
+    "open": 120,
+    "disabilities": 1,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 5,
+    "other": 19,
+    "total": 145
+   },
+   "Nawaz Sharif Medical College, University of Gujrat (NSMC)": {
+    "open": 49,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 2,
+    "other": 10,
+    "total": 61
+   },
+   "Sahiwal Medical College (SLMC), Sahiwal": {
+    "open": 141,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 5,
+    "other": 24,
+    "total": 170
+   },
+   "Gujranwala Medical College (GMC), Gujranwala": {
+    "open": 141,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 5,
+    "other": 24,
+    "total": 170
+   },
+   "D.G. Khan Medical College (DGMC), D.G Khan": {
+    "open": 115,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 5,
+    "overseas": 5,
+    "other": 25,
+    "total": 150
+   },
+   "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)": {
+    "open": 115,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 5,
+    "other": 20,
+    "total": 140
+   },
+   "Ameer-ud-Din Medical College (AMC), Lahore": {
+    "open": 154,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 2,
+    "other": 4,
+    "total": 160
+   },
+   "Narowal Medical College, Narowal": {
+    "open": 99,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 0,
+    "other": 1,
+    "total": 100
+   },
+   "Maryam Nawaz Sharif Medical College, Mianwali": {
+    "open": 100,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 0,
+    "other": 0,
+    "total": 100,
+    "pending_pmdc": true
+   },
+   "Medical College, University of Rasul, Mandi Bahauddin": {
+    "open": 100,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 0,
+    "other": 0,
+    "total": 100,
+    "pending_pmdc": true
+   }
+  },
+  "bds": {
+   "de' Montmorency College of Dentistry (DCD), Lahore": {
+    "open": 96,
+    "disabilities": 1,
+    "cholistan": 0,
+    "udd": 6,
+    "overseas": 2,
+    "other": 5,
+    "total": 110
+   },
+   "Nishtar Institute of Dentistry (NID), Multan": {
+    "open": 40,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 6,
+    "overseas": 1,
+    "other": 18,
+    "total": 65
+   },
+   "Dental Institute, Punjab Medical College (Di-PMC), Faisalabad": {
+    "open": 49,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 1,
+    "other": 15,
+    "total": 65
+   },
+   "Fatima Jinnah Institute of Dental Sciences, Lahore": {
+    "open": 50,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 0,
+    "other": 0,
+    "total": 50,
+    "pending_pmdc": true
+   },
+   "Quaid-e-Azam Medical & Dental College, Bahawalpur": {
+    "open": 50,
+    "disabilities": 0,
+    "cholistan": 0,
+    "udd": 0,
+    "overseas": 0,
+    "other": 0,
+    "total": 50,
+    "pending_pmdc": true
+   }
+  }
+ },
+ "fee": {
+  "session": "2026-27",
+  "source_url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+  "source_note": "UHS MBBS/BDS Prospectus, Session 2026-2027, 'Fee and Subscriptions' (p. 61): public-sector medical and dental colleges of Punjab, all categories of seats except Overseas Pakistanis/Dual Nationality (US$ 10,000 per annum). Subject to change by the Government of Punjab.",
+  "currency": "PKR",
+  "tuition": 50000,
+  "mbbs": [
+   53030,
+   50630,
+   50830,
+   50630,
+   50730
+  ],
+  "bds": [
+   53050,
+   50650,
+   50650,
+   50650
+  ],
+  "overseas_usd": 10000
+ },
  "merit": [
   {
    "year": 2025,

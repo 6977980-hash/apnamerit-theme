@@ -342,6 +342,14 @@
      "a": "In Punjab, not for a public college (lowest 93.51% in the final 2025 UHS list). 90% was at or above the final 2025 closing merit of 32 of the 33 private MBBS colleges; only Al-Aleem Medical College, Lahore closed higher, at 90.84%."
     },
     {
+     "q": "How many MBBS seats are there in Punjab government medical colleges?",
+     "a": "4,151 MBBS seats in 19 public colleges for session 2026-27, of which 3,796 are open merit, according to the UHS prospectus 2026-27. This includes 100 seats each at two new colleges (Mianwali and Mandi Bahauddin) subject to PM&DC approval. BDS has 340 seats in 5 colleges."
+    },
+    {
+     "q": "What is the fee of government medical colleges in Punjab?",
+     "a": "Rs 53,030 in the first year of MBBS (Rs 50,000 tuition plus admission fee and charges) and Rs 50,630 to Rs 50,830 a year after that, for session 2026-27. Overseas Pakistani quota seats pay US$ 10,000 a year."
+    },
+    {
      "q": "Pichle saal MBBS ka merit kitna tha?",
      "a": "2025 mein Punjab ke government MBBS colleges ka final open merit 93.51% se 94.87% tha. KEMU sab se upar 94.87% par aur Narowal Medical College sab se neeche 93.51% par close hua.",
      "lang": "ur-Latn"
@@ -354,6 +362,11 @@
     {
      "q": "BDS ka merit kitna jata hai?",
      "a": "2025 mein Punjab ke government BDS colleges 13th list mein 93.42% se 93.46% par, aur private BDS colleges 3rd list mein 55.87% se 73.13% par close hue.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Government medical college ki fee kitni hai?",
+     "a": "Session 2026-27 mein MBBS ke pehle saal Rs 53,030 aur baad mein har saal taqreeban Rs 50,630 se Rs 50,830. Yeh fee Punjab ke tamam government medical colleges mein aik jaisi hai.",
      "lang": "ur-Latn"
     }
    ],
@@ -383,6 +396,11 @@
      "label": "PM&DC Admissions, Curriculum and Conduct Policy and Regulations 2026, regulation 6(3)",
      "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-2027: seat allocation (pp. 38-39), categories of seats (pp. 40-44), fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -437,6 +455,14 @@
      "a": "1st of 17 by 2025 final closing merit, with AIMC (94.45%) below."
     },
     {
+     "q": "How many MBBS seats does KEMU have?",
+     "a": "350 MBBS seats for session 2026-27, of which 338 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at KEMU?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "KEMU ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein KEMU ka open merit 94.87% par close hua; 2024 mein 96.06% tha."
@@ -464,6 +490,11 @@
      "label": "UHS last selection list 2024, KEMU (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17kemu24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -514,6 +545,14 @@
      "a": "2nd of 17 by 2025 final closing merit, with KEMU (94.87%) above and SIMS (94.23%) below."
     },
     {
+     "q": "How many MBBS seats does AIMC have?",
+     "a": "325 MBBS seats for session 2026-27, of which 314 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at AIMC?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "AIMC ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein AIMC ka open merit 94.45% par close hua; 2024 mein 95.60% tha."
@@ -541,6 +580,11 @@
      "label": "UHS last selection list 2024, AIMC (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17aimc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -592,6 +636,14 @@
      "a": "3rd of 17 by 2025 final closing merit, with AIMC (94.45%) above and Nishtar Medical College (94.15%) below."
     },
     {
+     "q": "How many MBBS seats does SIMS have?",
+     "a": "270 MBBS seats for session 2026-27, of which 261 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at SIMS?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "SIMS ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein SIMS ka open merit 94.23% par close hua; 2024 mein 95.27% tha."
@@ -619,6 +671,11 @@
      "label": "UHS last selection list 2024, SIMS (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17sims24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -670,6 +727,14 @@
      "a": "4th of 17 by 2025 final closing merit, with SIMS (94.23%) above and Ameer-ud-Din Medical College (94.01%) below."
     },
     {
+     "q": "How many MBBS seats does Nishtar Medical College have?",
+     "a": "350 MBBS seats for session 2026-27, of which 318 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at Nishtar Medical College?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "Nishtar Medical College ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein Nishtar Medical College ka open merit 94.15% par close hua; 2024 mein 95.14% tha."
@@ -697,6 +762,11 @@
      "label": "UHS last selection list 2024, Nishtar Medical College (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17nmc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -748,6 +818,14 @@
      "a": "5th of 17 by 2025 final closing merit, with Nishtar Medical College (94.15%) above and RMC Rawalpindi (93.93%) below."
     },
     {
+     "q": "How many MBBS seats does Ameer-ud-Din Medical College have?",
+     "a": "160 MBBS seats for session 2026-27, of which 154 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at Ameer-ud-Din Medical College?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "Ameer-ud-Din Medical College ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein Ameer-ud-Din Medical College ka open merit 94.01% par close hua; 2024 mein 94.73% tha."
@@ -775,6 +853,11 @@
      "label": "UHS last selection list 2024, Ameer-ud-Din Medical College (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17amc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -826,6 +909,14 @@
      "a": "6th of 17 by 2025 final closing merit, with Ameer-ud-Din Medical College (94.01%) above and FJMC (93.81%) below."
     },
     {
+     "q": "How many MBBS seats does RMC Rawalpindi have?",
+     "a": "350 MBBS seats for session 2026-27, of which 325 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at RMC Rawalpindi?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "RMC Rawalpindi ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein RMC Rawalpindi ka open merit 93.93% par close hua; 2024 mein 94.74% tha."
@@ -853,6 +944,11 @@
      "label": "UHS last selection list 2024, RMC Rawalpindi (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17rmc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -904,6 +1000,14 @@
      "a": "7th of 17 by 2025 final closing merit, with RMC Rawalpindi (93.93%) above and PMC Faisalabad (93.79%) below."
     },
     {
+     "q": "How many MBBS seats does FJMC have?",
+     "a": "300 MBBS seats for session 2026-27, of which 284 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at FJMC?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "FJMC ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein FJMC ka open merit 93.81% par close hua; 2024 mein 94.66% tha."
@@ -931,6 +1035,11 @@
      "label": "UHS last selection list 2024, FJMC (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17fjmu24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -982,6 +1091,14 @@
      "a": "8th of 17 by 2025 final closing merit, with FJMC (93.81%) above and QAMC Bahawalpur (93.72%) below."
     },
     {
+     "q": "How many MBBS seats does PMC Faisalabad have?",
+     "a": "350 MBBS seats for session 2026-27, of which 320 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at PMC Faisalabad?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "PMC Faisalabad ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein PMC Faisalabad ka open merit 93.79% par close hua; 2024 mein 94.57% tha."
@@ -1009,6 +1126,11 @@
      "label": "UHS last selection list 2024, PMC Faisalabad (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17pmc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1060,6 +1182,14 @@
      "a": "9th of 17 by 2025 final closing merit, with PMC Faisalabad (93.79%) above and Gujranwala Medical College (93.67%) below."
     },
     {
+     "q": "How many MBBS seats does QAMC Bahawalpur have?",
+     "a": "350 MBBS seats for session 2026-27, of which 322 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at QAMC Bahawalpur?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "QAMC Bahawalpur ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein QAMC Bahawalpur ka open merit 93.72% par close hua; 2024 mein 94.53% tha."
@@ -1087,6 +1217,11 @@
      "label": "UHS last selection list 2024, QAMC Bahawalpur (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17qmc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1138,6 +1273,14 @@
      "a": "10th of 17 by 2025 final closing merit, with QAMC Bahawalpur (93.72%) above and Sahiwal Medical College (93.66%) below."
     },
     {
+     "q": "How many MBBS seats does Gujranwala Medical College have?",
+     "a": "170 MBBS seats for session 2026-27, of which 141 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at Gujranwala Medical College?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "Gujranwala Medical College ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein Gujranwala Medical College ka open merit 93.67% par close hua; 2024 mein 94.47% tha."
@@ -1165,6 +1308,11 @@
      "label": "UHS last selection list 2024, Gujranwala Medical College (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17gmc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1216,6 +1364,14 @@
      "a": "11th of 17 by 2025 final closing merit, with Gujranwala Medical College (93.67%) above and KMSMC Sialkot (93.63%) below."
     },
     {
+     "q": "How many MBBS seats does Sahiwal Medical College have?",
+     "a": "170 MBBS seats for session 2026-27, of which 141 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at Sahiwal Medical College?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "Sahiwal Medical College ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein Sahiwal Medical College ka open merit 93.66% par close hua; 2024 mein 94.43% tha."
@@ -1243,6 +1399,11 @@
      "label": "UHS last selection list 2024, Sahiwal Medical College (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17slmc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1294,6 +1455,14 @@
      "a": "12th of 17 by 2025 final closing merit, with Sahiwal Medical College (93.66%) above and Nawaz Sharif Medical College (93.60%) below."
     },
     {
+     "q": "How many MBBS seats does KMSMC Sialkot have?",
+     "a": "140 MBBS seats for session 2026-27, of which 115 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at KMSMC Sialkot?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "KMSMC Sialkot ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein KMSMC Sialkot ka open merit 93.63% par close hua; 2024 mein 94.40% tha."
@@ -1321,6 +1490,11 @@
      "label": "UHS last selection list 2024, KMSMC Sialkot (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17KMSMC24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1372,6 +1546,14 @@
      "a": "13th of 17 by 2025 final closing merit, with KMSMC Sialkot (93.63%) above and Sargodha Medical College (93.59%) below."
     },
     {
+     "q": "How many MBBS seats does Nawaz Sharif Medical College have?",
+     "a": "61 MBBS seats for session 2026-27, of which 49 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at Nawaz Sharif Medical College?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "Nawaz Sharif Medical College ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein Nawaz Sharif Medical College ka open merit 93.60% par close hua; 2024 mein 94.35% tha."
@@ -1399,6 +1581,11 @@
      "label": "UHS last selection list 2024, Nawaz Sharif Medical College (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17NSMC24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1450,6 +1637,14 @@
      "a": "14th of 17 by 2025 final closing merit, with Nawaz Sharif Medical College (93.60%) above and SZMC Rahim Yar Khan (93.54%) below."
     },
     {
+     "q": "How many MBBS seats does Sargodha Medical College have?",
+     "a": "145 MBBS seats for session 2026-27, of which 120 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at Sargodha Medical College?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "Sargodha Medical College ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein Sargodha Medical College ka open merit 93.59% par close hua; 2024 mein 94.34% tha."
@@ -1477,6 +1672,11 @@
      "label": "UHS last selection list 2024, Sargodha Medical College (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17smc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1528,6 +1728,14 @@
      "a": "15th of 17 by 2025 final closing merit, with Sargodha Medical College (93.59%) above and DG Khan Medical College (93.53%) below."
     },
     {
+     "q": "How many MBBS seats does SZMC Rahim Yar Khan have?",
+     "a": "210 MBBS seats for session 2026-27, of which 180 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at SZMC Rahim Yar Khan?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "SZMC Rahim Yar Khan ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein SZMC Rahim Yar Khan ka open merit 93.54% par close hua; 2024 mein 94.32% tha."
@@ -1555,6 +1763,11 @@
      "label": "UHS last selection list 2024, SZMC Rahim Yar Khan (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17szmc24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1606,6 +1819,14 @@
      "a": "16th of 17 by 2025 final closing merit, with SZMC Rahim Yar Khan (93.54%) above and Narowal Medical College (93.51%) below."
     },
     {
+     "q": "How many MBBS seats does DG Khan Medical College have?",
+     "a": "150 MBBS seats for session 2026-27, of which 115 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at DG Khan Medical College?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "DG Khan Medical College ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein DG Khan Medical College ka open merit 93.53% par close hua; 2024 mein 94.30% tha."
@@ -1633,6 +1854,11 @@
      "label": "UHS last selection list 2024, DG Khan Medical College (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17dgkhan24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1684,6 +1910,14 @@
      "a": "17th of 17 by 2025 final closing merit, with DG Khan Medical College (93.53%) above."
     },
     {
+     "q": "How many MBBS seats does Narowal Medical College have?",
+     "a": "100 MBBS seats for session 2026-27, of which 99 are open merit (UHS prospectus 2026-27, seat allocation)."
+    },
+    {
+     "q": "What is the MBBS fee at Narowal Medical College?",
+     "a": "Rs 53,030 in the first year (Rs 50,000 tuition plus admission fee and charges) and about Rs 50,630 a year after that, for session 2026-27. The fee is the same at every Punjab public medical college."
+    },
+    {
      "q": "Narowal Medical College ka merit kitna jata hai?",
      "lang": "ur-Latn",
      "a": "2025 ki final UHS list mein Narowal Medical College ka open merit 93.51% par close hua; 2024 mein 94.24% tha."
@@ -1711,6 +1945,11 @@
      "label": "UHS last selection list 2024, Narowal Medical College (open merit)",
      "url": "https://uhs.edu.pk/admissions2024data/17narowal24.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS MBBS/BDS Prospectus, Session 2026-27: seat allocation (p. 38) and fee (p. 61)",
+     "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [

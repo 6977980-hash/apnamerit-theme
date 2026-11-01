@@ -96,6 +96,16 @@ def build(uhs: dict) -> list[dict]:
              "a": f"{drop:.2f} points in {new}: from {pct(y)} in the 1st list to {pct(x)} in the {ordinal(lists)} list."},
             {"q": f"Where does {s} rank among Punjab public medical colleges?",
              "a": f"{ordinal(i + 1)} of {n} by {new} final closing merit" + (f", with {' and '.join(nb)}." if nb else ".")},
+        ]
+        st = uhs.get("seats", {}).get("mbbs", {}).get(campus)
+        fee = uhs.get("fee", {})
+        if st:
+            faq.append({"q": f"How many MBBS seats does {s} have?",
+                        "a": f"{st['total']} MBBS seats for session {uhs['seats']['session']}, of which {st['open']} are open merit (UHS prospectus {uhs['seats']['session']}, seat allocation)."})
+        if fee.get("mbbs"):
+            faq.append({"q": f"What is the MBBS fee at {s}?",
+                        "a": f"Rs {fee['mbbs'][0]:,} in the first year (Rs {fee['tuition']:,} tuition plus admission fee and charges) and about Rs {fee['mbbs'][1]:,} a year after that, for session {fee['session']}. The fee is the same at every Punjab public medical college."})
+        faq += [
             {"q": f"{s} ka merit kitna jata hai?", "lang": "ur-Latn",
              "a": f"{new} ki final UHS list mein {s} ka open merit {pct(x)} par close hua" + (f"; {old} mein {pct(z)} tha." if z is not None else ".")},
             {"q": f"{s} ke liye MDCAT mein kitne number chahiye?", "lang": "ur-Latn",
@@ -114,6 +124,8 @@ def build(uhs: dict) -> list[dict]:
         ]
         if f24:
             sources.append({"label": f"UHS last selection list {old}, {s} (open merit)", "url": f24["source_url"], "fetched": "2026-10-31"})
+        if uhs.get("seats", {}).get("mbbs", {}).get(campus):
+            sources.append({"label": f"UHS MBBS/BDS Prospectus, Session {uhs['seats']['session']}: seat allocation (p. 38) and fee (p. 61)", "url": uhs["seats"]["source_url"], "fetched": TODAY})
         related = ["/mdcat-merit-list/", "/mdcat-aggregate-calculator/"]
         related += [uhs["colleges"][c]["path"] for c in (above, below) if c]
         related += ["/uhs-mbbs-admission/", "/mdcat-passing-marks/"]

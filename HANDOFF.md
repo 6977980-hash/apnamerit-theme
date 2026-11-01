@@ -1,5 +1,11 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Audit 2026-11-01 suggestion G-05: seats, reserved seats and fee (v0.24.0, 2026-11-01)
+- Source: UHS MBBS/BDS Prospectus, Session 2026-2027 (`images/Prospectus2026.pdf`, 34.9 MB, read 2026-11-01): seat allocation p. 38 (MBBS) and p. 39 (BDS), categories of seats pp. 40-44, fee p. 61. The seat table was checked against the page image; sums match the printed totals (MBBS 4,151 / open 3,796; BDS 340 / open 285).
+- `uhs.json` `seats` (`mbbs`/`bds` per campus: open, disabilities, cholistan, udd, overseas, other = other provinces/regions + HEC, total, `pending_pmdc` for Mianwali, Mandi Bahauddin, FJIDS, QA Medical & Dental Bahawalpur) and `fee` (MBBS per year 53,030 / 50,630 / 50,830 / 50,630 / 50,730; BDS 53,050 / 50,650 x3; overseas quota US$ 10,000 a year).
+- `[am_seats uni="uhs"]` (inc/colleges.php) on `/mdcat-merit-list/`: seats + 2025 closing merit per college, BDS too, reserved-seat summary, fee line. Each college page gets a seats-by-category table and the fee line; generator FAQs "How many MBBS seats does X have?" and "What is the MBBS fee at X?". MDCAT merit list FAQs on seats and fee (+ Roman Urdu fee FAQ).
+- Not done: NUMS fee tiers and private-college fees (no official source read), reserved-seat closing merits (UHS lists them separately; not stored). Next session: replace `seats`/`fee` from the 2027-28 prospectus.
+
 ## Audit 2026-11-01 suggestion G-09: author page and sameAs (v0.23.0, 2026-11-01)
 - Owner gave his profiles on 2026-11-01: LinkedIn `linkedin.com/in/ali-ahmad-chaudhry-12777486/`, Facebook `facebook.com/aac7980/`. Both are in `site.json` `author.same_as` (Person `sameAs`). `organization.same_as` stays empty: these are personal profiles; add an Apna Merit page/account there when one exists.
 - New `/about/ali-ahmad/` (ProfilePage, `mainEntity` = the Person `about/#author`; `ProfilePage` added to `AM_WEBPAGE_TYPES`). `author.url` points there; the author box links to it with `rel="author"`; profile links carry `rel="me"`. No credentials are claimed beyond what the site does; add education/experience only from the owner.

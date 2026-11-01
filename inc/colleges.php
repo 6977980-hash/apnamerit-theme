@@ -135,6 +135,30 @@ function am_sc_college( $atts ): string {
 		. '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( 'MDCAT score needed for ' . $short . ' at its ' . $new . ' closing merit' ) . '</caption><thead><tr><th scope="col">FSc and Matric</th><th scope="col">MDCAT needed</th></tr></thead><tbody>' . $rows . '</tbody></table></div>'
 		. '<p>Merit changes every year, so treat this as a guide. Work out your own aggregate with the <a href="' . esc_url( home_url( (string) ( $uni['calculator_path'] ?? '/mdcat-aggregate-calculator/' ) ) ) . '">MDCAT aggregate calculator</a>; you also need at least 55% in MDCAT and 60% in FSc to be eligible for MBBS.</p>';
 
+	// 5. Seats and fee (audit G-05) from the UHS prospectus.
+	$st = (array) ( $uni['seats']['mbbs'][ $campus ] ?? array() );
+	if ( $st ) {
+		$labels = array(
+			'open'         => 'Open merit',
+			'disabilities' => 'Students with disabilities',
+			'cholistan'    => 'Cholistan',
+			'udd'          => 'Under-developed districts',
+			'overseas'     => 'Overseas Pakistanis (US$ fee)',
+			'other'        => 'Other provinces, regions and HEC scholarship',
+		);
+		$rows = '';
+		foreach ( $labels as $k => $l ) {
+			if ( ! empty( $st[ $k ] ) ) {
+				$rows .= '<tr><th scope="row">' . esc_html( $l ) . '</th><td>' . esc_html( (string) $st[ $k ] ) . '</td></tr>';
+			}
+		}
+		$rows .= '<tr><th scope="row">Total MBBS seats</th><td><strong>' . esc_html( (string) $st['total'] ) . '</strong></td></tr>';
+		$ss    = (string) ( $uni['seats']['session'] ?? '' );
+		$html .= '<h2>' . esc_html( $short . ' MBBS seats and fee ' . $ss ) . '</h2>'
+			. '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( $campus . ': MBBS seats by category, session ' . $ss ) . '</caption><thead><tr><th scope="col">Category</th><th scope="col">Seats</th></tr></thead><tbody>' . $rows . '</tbody></table></div>'
+			. am_seats_fee_line( $uni ) . '<p class="am-muted">Source: ' . am_source_link( (string) $uni['seats']['source_url'] ) . ', seat allocation (p. 38) and fee (p. 61). The closing merits above are for open-merit seats only.</p>';
+	}
+
 	return $html;
 }
 
@@ -143,6 +167,56 @@ function am_ordinal( int $n ): string {
 	$s = array( 'th', 'st', 'nd', 'rd' );
 	$v = $n % 100;
 	return $n . ( $s[ ( $v - 20 ) % 10 ] ?? $s[ $v ] ?? $s[0] );
+}
+
+/** "Fee: Rs 53,030 in the first year ..." for public MBBS/BDS (uhs.json `fee`). */
+function am_seats_fee_line( array $uni ): string {
+	$fee = (array) ( $uni['fee'] ?? array() );
+	if ( empty( $fee['mbbs'] ) ) {
+		return '';
+	}
+	$rs  = fn( $n ) => 'Rs ' . number_format( (float) $n );
+	$tot = array_sum( (array) $fee['mbbs'] );
+	return '<p><strong>Fee (session ' . esc_html( (string) $fee['session'] ) . '):</strong> ' . esc_html( $rs( $fee['mbbs'][0] ) ) . ' in the first year of MBBS (' . esc_html( $rs( $fee['tuition'] ) ) . ' tuition, plus admission fee and charges) and about ' . esc_html( $rs( $fee['mbbs'][1] ) ) . ' a year after that, ' . esc_html( $rs( $tot ) ) . ' for all five years. The same fee applies at every Punjab public medical college and on every category of seat, except the Overseas Pakistanis quota: US$ ' . esc_html( number_format( (float) $fee['overseas_usd'] ) ) . ' a year.</p>';
+}
+
+// ------------------------------------------------------------------ [am_seats]
+/**
+ * Seat table for every public MBBS and BDS college (audit G-05) with the newest final closing merit.
+ */
+function am_sc_seats( $atts ): string {
+	$atts  = shortcode_atts( array( 'uni' => '' ), (array) $atts, 'am_seats' );
+	$uni   = am_uni( am_uni_attr( $atts ) );
+	$seats = (array) ( $uni['seats'] ?? array() );
+	if ( empty( $seats['mbbs'] ) ) {
+		return '';
+	}
+	$close = array();
+	$year  = 0;
+	foreach ( (array) ( $uni['merit'] ?? array() ) as $r ) {
+		if ( 'Final' === ( $r['list'] ?? '' ) && 'Open merit' === ( $r['category'] ?? '' ) && str_contains( (string) $r['program'], 'public' ) && (int) $r['year'] >= $year ) {
+			$year                                    = (int) $r['year'];
+			$close[ $r['program'] . '|' . $r['campus'] ] = (float) $r['closing'];
+		}
+	}
+	$out = '';
+	foreach ( array( 'mbbs' => 'MBBS (public)', 'bds' => 'BDS (public)' ) as $k => $prog ) {
+		$rows = '';
+		$sum  = array( 0, 0 );
+		foreach ( (array) ( $seats[ $k ] ?? array() ) as $campus => $st ) {
+			$m     = (array) ( $uni['colleges'][ $campus ] ?? array() );
+			$name  = ! empty( $m['path'] ) && am_find_page( (string) $m['path'] ) ? '<a href="' . esc_url( home_url( (string) $m['path'] ) ) . '">' . esc_html( $campus ) . '</a>' : esc_html( $campus );
+			$c     = $close[ $prog . '|' . $campus ] ?? null;
+			$rows .= '<tr><th scope="row">' . $name . ( ! empty( $st['pending_pmdc'] ) ? ' *' : '' ) . '</th><td>' . esc_html( (string) $st['open'] ) . '</td><td>' . esc_html( (string) $st['total'] ) . '</td><td>' . esc_html( null === $c ? 'new' : am_pct( $c ) ) . '</td></tr>';
+			$sum[0] += (int) $st['open'];
+			$sum[1] += (int) $st['total'];
+		}
+		$rows .= '<tr><th scope="row">Total</th><td><strong>' . $sum[0] . '</strong></td><td><strong>' . $sum[1] . '</strong></td><td></td></tr>';
+		$label = 'mbbs' === $k ? 'MBBS' : 'BDS';
+		$out  .= '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( $label . ' seats in Punjab public colleges, session ' . $seats['session'] . ', with the ' . $year . ' final closing merit (open merit)' ) . '</caption>'
+			. '<thead><tr><th scope="col">College</th><th scope="col">Open merit seats</th><th scope="col">Total seats</th><th scope="col">Closing merit ' . esc_html( (string) $year ) . '</th></tr></thead><tbody>' . $rows . '</tbody></table></div>';
+	}
+	return $out . '<p class="am-muted">* Subject to PM&amp;DC approval. "new" = no closing merit yet. Total seats include reserved seats (students with disabilities, under-developed districts, Cholistan, Overseas Pakistanis, other provinces and regions, HEC scholarships). Source: ' . am_source_link( (string) $seats['source_url'] ) . ', seat allocation (pp. 38-39).</p>' . am_seats_fee_line( $uni );
 }
 
 // ------------------------------------------------------------------ [am_college_index]
@@ -172,5 +246,6 @@ add_action(
 	function () {
 		add_shortcode( 'am_college', 'am_sc_college' );
 		add_shortcode( 'am_college_index', 'am_sc_college_index' );
+		add_shortcode( 'am_seats', 'am_sc_seats' );
 	}
 );
