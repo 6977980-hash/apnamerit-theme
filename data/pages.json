@@ -168,7 +168,7 @@
    "type": "content",
    "template": "calculator",
    "published": "2026-10-31",
-   "updated": "2026-10-31",
+   "updated": "2026-11-01",
    "answer": "The MDCAT aggregate for {season_year} = 50% MDCAT + 40% FSc (pre-medical) + 10% Matric, as fixed by PMDC's admission regulations. Divide each score by its total, multiply by its weight and add: 150/180 MDCAT, 1000/1100 FSc and 1000/1100 Matric give 87.12%. Enter your marks below to get yours.",
    "answer_source": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
    "content_file": "mdcat-aggregate-calculator.html",
@@ -188,6 +188,10 @@
     {
      "q": "What aggregate is needed for a public MBBS college in Punjab?",
      "a": "In the final 2025 UHS list, public MBBS colleges closed between 93.51% (Narowal Medical College) and 94.87% (King Edward Medical University) on open merit."
+    },
+    {
+     "q": "Does Khyber Pakhtunkhwa (KMU) use the same MDCAT formula?",
+     "a": "Yes. The KP Admission Policy 2025-26 for public MBBS and BDS colleges (run by KMU) uses MDCAT 50%, FSc 40% and Matric 10%, the same weights as this calculator."
     },
     {
      "q": "How much MDCAT score is needed for MBBS with 1050 in FSc and Matric?",
@@ -229,6 +233,11 @@
      "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
      "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "Government of Khyber Pakhtunkhwa: Admission Policy for public-sector MBBS/BDS colleges 2025-26 (KMU), p. 25",
+     "url": "https://cas.kmu.edu.pk/sitedocuments/Admission-Policy-Public-2025-26.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1085,7 +1094,7 @@
    "template": "meritlist",
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
-   "updated": "2026-10-31",
+   "updated": "2026-11-01",
    "answer": "In UET Lahore's Fall 2025 Fourth Merit List (A1 open merit, main campus), Computer Science closed at 85.83%, Data Science at 82.19%, Computer Engineering at 81.56%, Electrical at 80.35% and Mechanical at 80.25%. Sub-campuses closed lower, e.g. Computer Science 77.19% at KSK and 71.29% at Faisalabad.",
    "answer_source": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
    "content_file": "uet-merit-list.html",
@@ -1097,6 +1106,10 @@
     {
      "q": "What is the UET Lahore merit for Electrical and Mechanical Engineering?",
      "a": "Electrical closed at 80.35% and Mechanical at 80.25% (A1 open merit, main campus, Fall 2025 Fourth Merit List)."
+    },
+    {
+     "q": "What was the UET Lahore merit in 2024?",
+     "a": "UET's Fall 2024 minimum-aggregate table (portal copy of 14 September 2024) shows A1 main-campus Computer Science at 81.13%, Electrical 73.30% and Mechanical 74.05%. UET did not say which list it reflects."
     },
     {
      "q": "What does A1 mean in the UET merit list?",
@@ -1147,6 +1160,11 @@
      "label": "UET Lahore Undergraduate Prospectus Spring 2026, pp. 21-24 (categories)",
      "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore admission portal: Minimum UG Admission Aggregate (Entry-2024), archived 14 Sep 2024 and 11 Feb 2025",
+     "url": "https://web.archive.org/web/20240914084257/https://admission.uet.edu.pk/Downloads/MeritLists/Default.aspx",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1232,15 +1250,15 @@
    "path": "/comsats-merit-list/",
    "keyword": "comsats merit list",
    "title": "COMSATS Merit List {season_year}: Closing Merit by Campus",
-   "description": "COMSATS merit list: official closing merit for Lahore (Fall 2026, CS 85%) and Islamabad (Spring 2025, CS 88.26%) campuses, by program, with sources.",
+   "description": "COMSATS merit list: official closing merit for Lahore (Fall 2026, CS 85%) and Islamabad (Spring 2025 CS 88.26%, Fall 2023 87.10%) by program, with sources.",
    "h1": "COMSATS Merit List {season_year} & Closing Merit by Campus",
    "crumb": "COMSATS merit list",
-   "subtitle": "Official closing aggregates, Lahore Fall 2026 and Islamabad Spring 2025",
+   "subtitle": "Official closing aggregates: Lahore Fall 2026, Islamabad Fall 2026 (3rd list), Spring 2025 and Fall 2023",
    "type": "content",
    "template": "meritlist",
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
-   "updated": "2026-10-31",
+   "updated": "2026-11-01",
    "answer": "COMSATS Lahore's Fall 2026 closing merits were 85% for BS Computer Science, 82% for Software Engineering and 78.01% for Computer Engineering (2nd and last merit list). At Islamabad, Spring 2025 Computer Science closed at 88.26% and Artificial Intelligence at 87.69%.",
    "answer_source": "https://lahore.comsats.edu.pk/news/merit.aspx",
    "content_file": "comsats-merit-list.html",
@@ -1252,6 +1270,10 @@
     {
      "q": "What was the COMSATS Islamabad closing merit for Computer Science?",
      "a": "88.26% in Spring 2025, the final closing merit published by the Islamabad Admission Office."
+    },
+    {
+     "q": "What was COMSATS Islamabad's Fall 2023 closing merit?",
+     "a": "In the Fall 2023 2nd closing merit, BS Computer Science closed at 87.10%, Software Engineering 85.42% and Artificial Intelligence 85.33%."
     },
     {
      "q": "Which COMSATS program has the highest merit?",
@@ -1292,6 +1314,11 @@
      "label": "COMSATS UG Prospectus 2024-25, p. 44 (merit weightage)",
      "url": "https://ww2.comsats.edu.pk/ro/Prospectus/UG_Prospectus/UG-Prospectus-24-25.pdf",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "COMSATS Islamabad Admission Office: Fall 2023 Undergraduate 2nd Closing Merit (archived 19 Aug 2024)",
+     "url": "https://web.archive.org/web/20240819013553/https://ww2.comsats.edu.pk/admissionoffice/assets/images/FA23%20UG%202nd%20Closing%20Merit.jpg",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1475,7 +1502,7 @@
    "template": "meritlist",
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
-   "updated": "2026-10-31",
+   "updated": "2026-11-01",
    "answer": "Punjab University's official closing merit for 2025 ran from 91.34% for Pharm-D and 87.18% for PUCIT Computer Science (New Campus) down to below 40% for some evening and campus programs. BBA at IBA closed at 81.79%, Electrical Engineering at 76.691% and English Literature at 77.73% (morning). Source: PU, Merit of Last Year 2025.",
    "answer_source": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
    "content_file": "pu-merit-list.html",
@@ -1487,6 +1514,10 @@
     {
      "q": "Which Punjab University program has the highest merit?",
      "a": "Pharm-D at 91.34% (morning), followed by PUCIT Computer Science 87.18% and Data Science 86.1%."
+    },
+    {
+     "q": "Is the PU merit going up or down?",
+     "a": "Mostly down for popular programs: PUCIT Computer Science (New Campus) closed at 90.26% in 2024 and 87.18% in 2025; BBA (IBA) went from 86.89% (2023) to 82.91% and 81.79%. Pharm-D stayed above 90%."
     },
     {
      "q": "What was the PU BBA merit?",
@@ -1522,6 +1553,16 @@
      "label": "University of the Punjab admissions portal: Merit Lists",
      "url": "https://admissions.pu.edu.pk/admissions/applicant/meritlist",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "University of the Punjab: Undergraduate Programs Merit of Last Year 2024 (archived 5 Jun 2025)",
+     "url": "https://web.archive.org/web/20250605125109/https://pu.edu.pk/downloads/Merit-of-Last-Year-2024.pdf",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "University of the Punjab: Undergraduate Programs Merit of Last Year 2023 (archived 26 Sep 2024)",
+     "url": "https://web.archive.org/web/20240926162327/https://pu.edu.pk/downloads/Merit-of-Last-Year-2023.pdf",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
@@ -1834,7 +1875,7 @@
    "type": "content",
    "template": "calculator",
    "published": "2026-10-31",
-   "updated": "2026-10-31",
+   "updated": "2026-11-01",
    "answer": "The ITU aggregate for BS Computer Science and BS Artificial Intelligence = 15% Matric + 35% Intermediate (or Part-I) + 50% ITU admission test, SAT-I or USAT, per ITU's Norms & Criteria page. Example: 1000/1100 Matric, 950/1100 FSc and 60% in the test give 73.86%. You need at least 50% in the ITU test.",
    "answer_source": "https://itu.edu.pk/admissions/application-process/",
    "content_file": "itu-aggregate-calculator.html",
@@ -1857,7 +1898,7 @@
     },
     {
      "q": "Does ITU publish closing merit?",
-     "a": "ITU posts program-wise merit lists but no closing-merit summary, so we do not show closing figures."
+     "a": "ITU posts program-wise merit lists with each candidate's merit score but no closing-merit summary. Our ITU merit list page shows the lowest score in each Fall 2025 list, e.g. 81.27% for BS CS."
     },
     {
      "q": "ITU ka aggregate kaise nikalain?",
@@ -1870,7 +1911,7 @@
      "lang": "ur-Latn"
     }
    ],
-   "roman_urdu": "<p>ITU Lahore mein BS CS aur AI ka formula: <strong>Matric 15% + FSc 35% + test 50%</strong>. Test mein kam az kam 50% chahiye, ya SAT/USAT se exemption le sakte hain.</p><p>Misaal: Matric 1000/1100, FSc 950/1100 aur test 60% par aggregate 73.86% banta hai. Lahore mein computing ka official closing merit dekhne ke liye <a href=\"/pu-merit-list/#pucit\">PUCIT merit list</a> dekhein.</p>",
+   "roman_urdu": "<p>ITU Lahore mein BS CS aur AI ka formula: <strong>Matric 15% + FSc 35% + test 50%</strong>. Test mein kam az kam 50% chahiye, ya SAT/USAT se exemption le sakte hain.</p><p>Misaal: Matric 1000/1100, FSc 950/1100 aur test 60% par aggregate 73.86% banta hai. Pichle saal ka merit <a href=\"/itu-merit-list/\">ITU merit list</a> par dekhein (BS CS 81.27%).</p>",
    "sources": [
     {
      "label": "Information Technology University: Norms & Criteria, selection criteria (updated 12 August 2026)",
@@ -1884,12 +1925,88 @@
     }
    ],
    "related": [
+    "/itu-merit-list/",
     "/pu-merit-list/",
     "/fast-aggregate-calculator/",
     "/comsats-aggregate-calculator/",
     "/nust-aggregate-calculator/",
-    "/pu-aggregate-calculator/",
-    "/methodology/"
+    "/pu-aggregate-calculator/"
+   ]
+  },
+  {
+   "path": "/itu-merit-list/",
+   "keyword": "itu merit list",
+   "title": "ITU Merit List {season_year}: Closing Merit by Program",
+   "description": "ITU Lahore merit list: lowest merit in each Fall 2025 BS list, from Software Engineering 83.05% and CS 81.27% to Economics 53.54%, with sources.",
+   "h1": "ITU Lahore Merit List {season_year} & Closing Merit",
+   "crumb": "ITU merit list",
+   "subtitle": "Fall 2025, lowest merit score in ITU's latest list per BS program",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "In ITU Lahore's Fall 2025 merit lists, the lowest merit score offered admission was 83.05% for BS Software Engineering (3rd list), 81.27% for BS Computer Science (2nd list) and 80.81% for BS Artificial Intelligence (3rd list). ITU prints no closing figure; these are read from its own lists.",
+   "answer_source": "https://itu.edu.pk/merit-lists-2025/faculty-of-science/bs-computer-science-2nd-merit-list-2025/",
+   "content_file": "itu-merit-list.html",
+   "faq": [
+    {
+     "q": "What was the ITU closing merit for BS Computer Science?",
+     "a": "81.27%, the lowest merit score in ITU's 2nd BS Computer Science merit list of Fall 2025."
+    },
+    {
+     "q": "Which ITU program has the highest merit?",
+     "a": "BS Software Engineering (83.05% in the 3rd list), then Computer Science (81.27%) and Artificial Intelligence (80.81%)."
+    },
+    {
+     "q": "Does ITU publish a closing merit?",
+     "a": "No. ITU posts the list of candidates offered admission with each one's merit score; we show the lowest score in the latest list for each program."
+    },
+    {
+     "q": "How is the ITU merit calculated?",
+     "a": "For BS CS and AI: 15% Matric + 35% Intermediate + 50% ITU test, SAT-I or USAT, per ITU's Norms & Criteria."
+    },
+    {
+     "q": "ITU ka merit kitna jata hai?",
+     "a": "Fall 2025 mein BS Computer Science 81.27%, Software Engineering 83.05% aur AI 80.81% par close hua.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Kya ITU closing merit khud batata hai?",
+     "a": "Nahi, ITU sirf merit list deta hai; hum har program ki latest list ka sab se kam merit score dikhate hain.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Yeh ITU Lahore ka Fall 2025 <strong>closing merit</strong> hai: har BS program ki latest merit list mein sab se kam merit score.</p><p>BS CS 81.27%, Software Engineering 83.05% aur AI 80.81%. Apna aggregate <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> se nikalein.</p>",
+   "sources": [
+    {
+     "label": "ITU: BS Computer Science 2nd Merit List 2025",
+     "url": "https://itu.edu.pk/merit-lists-2025/faculty-of-science/bs-computer-science-2nd-merit-list-2025/",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "ITU: BS Software Engineering 3rd Merit List 2025",
+     "url": "https://itu.edu.pk/merit-lists-2025/faculty-of-engineering/bs-software-engineering-3rd-merit-list-2025/",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "ITU: BS Artificial Intelligence 3rd Merit List 2025",
+     "url": "https://itu.edu.pk/merit-lists-2025/faculty-of-science/bs-artificial-intelligence-3rd-merit-list-2025/",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "ITU: Norms & Criteria (selection criteria)",
+     "url": "https://itu.edu.pk/admissions/application-process/",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/itu-aggregate-calculator/",
+    "/uet-merit-list/",
+    "/comsats-merit-list/",
+    "/pu-merit-list/",
+    "/predictor/",
+    "/guides/what-is-closing-merit/"
    ]
   },
   {

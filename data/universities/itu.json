@@ -6,10 +6,10 @@
  "province": "Punjab",
  "website": "https://itu.edu.pk/",
  "calculator_path": "/itu-aggregate-calculator/",
- "updated": "2026-10-31",
- "_note": "Weights from ITU 'Norms & Criteria' (updated 2026-08-12), Selection Criteria. Only BS Computer Science / BS Artificial Intelligence give the Matric vs Inter split; other BS programs give one 'Academic Record' weight (EE/SE/CE 50 + test 50; M&T/FinTech 40 + 60; Economics with Data Science 50 + 50) without saying how it is formed, so no formula is stored for them. No closing merit published.",
+ "updated": "2026-11-01",
+ "_note": "Weights from ITU 'Norms & Criteria' (updated 2026-08-12), Selection Criteria. Only BS Computer Science / BS Artificial Intelligence give the Matric vs Inter split; other BS programs give one 'Academic Record' weight (EE/SE/CE 50 + test 50; M&T/FinTech 40 + 60; Economics with Data Science 50 + 50) without saying how it is formed, so no formula is stored for them. No closing merit published. Merit (Fall 2025): ITU publishes each BS merit list as an HTML table of offered candidates with a MERIT score and no closing figure; each row here is the lowest MERIT in the latest list found per program (round 2 where ITU ran one; round 1's last list kept as 'Round 1 last list'). Derived and checked by script against the saved list pages on 1 Nov 2026 (draft had BS Computer Engineering 77.09; the list's lowest is 77). Only BS CS/AI feed the predictor (the only programs with a stored formula). Earlier lists in a round may have closed lower or higher; ITU does not say which list is final.",
  "defaults": {
-  "list": "Final",
+  "list": "Last list",
   "category": "Open merit"
  },
  "formulas": [
@@ -41,5 +41,149 @@
    ]
   }
  ],
- "merit": []
+ "merit": [
+  {
+   "year": 2025,
+   "list": "Last list",
+   "category": "Open merit",
+   "program": "BS Artificial Intelligence",
+   "campus": "Lahore",
+   "closing": 80.81,
+   "field": "computing",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-science/bs-artificial-intelligence-3rd-merit-list-2025/",
+   "note": "Lowest MERIT in the 3rd merit list (derived; ITU prints no closing figure)"
+  },
+  {
+   "year": 2025,
+   "list": "Last list",
+   "category": "Open merit",
+   "program": "BS Computer Engineering",
+   "campus": "Lahore",
+   "closing": 77.0,
+   "field": "engineering",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-engineering/bs-computer-engineering-2nd-merit-list-2025/",
+   "note": "Lowest MERIT in the 2nd merit list (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Last list",
+   "category": "Open merit",
+   "program": "BS Computer Science",
+   "campus": "Lahore",
+   "closing": 81.27,
+   "field": "computing",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-science/bs-computer-science-2nd-merit-list-2025/",
+   "note": "Lowest MERIT in the 2nd merit list (derived; ITU prints no closing figure)"
+  },
+  {
+   "year": 2025,
+   "list": "Round 1 last list",
+   "category": "Open merit",
+   "program": "BS Economics with Data Science",
+   "campus": "Lahore",
+   "closing": 53.54,
+   "field": "general",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-humanities-social-science/bs-economics-with-data-science-2nd-merit-list-2025/",
+   "note": "Lowest MERIT in the 2nd merit list (round 1) (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Last list",
+   "category": "Open merit",
+   "program": "BS Economics with Data Science",
+   "campus": "Lahore",
+   "closing": 55.85,
+   "field": "general",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-humanities-social-science/bs-economics-with-data-science-second-round-1st-merit-list-2025/",
+   "note": "Lowest MERIT in the 1st merit list (round 2) (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Round 1 last list",
+   "category": "Open merit",
+   "program": "BS Electrical Engineering",
+   "campus": "Lahore",
+   "closing": 60.12,
+   "field": "engineering",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-engineering/bs-electrical-engineering-2nd-merit-list-2025/",
+   "note": "Lowest MERIT in the 2nd merit list (round 1) (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Last list",
+   "category": "Open merit",
+   "program": "BS Electrical Engineering",
+   "campus": "Lahore",
+   "closing": 60.0,
+   "field": "engineering",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-engineering/bs-electrical-engineering-second-round-2nd-merit-list-2025/",
+   "note": "Lowest MERIT in the 2nd merit list (round 2) (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Round 1 last list",
+   "category": "Open merit",
+   "program": "BS Financial Technology",
+   "campus": "Lahore",
+   "closing": 62.09,
+   "field": "general",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-business-management-science/bs-financial-technology-2nd-merit-list-2025/",
+   "note": "Lowest MERIT in the 2nd merit list (round 1) (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Last list",
+   "category": "Open merit",
+   "program": "BS Financial Technology",
+   "campus": "Lahore",
+   "closing": 63.69,
+   "field": "general",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-business-management-science/bs-financial-technology-second-round-1st-merit-list-2025/",
+   "note": "Lowest MERIT in the 1st merit list (round 2) (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Round 1 last list",
+   "category": "Open merit",
+   "program": "BS Management & Technology",
+   "campus": "Lahore",
+   "closing": 61.27,
+   "field": "general",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-business-management-science/bs-management-technology-2nd-merit-list-2025/",
+   "note": "Lowest MERIT in the 2nd merit list (round 1) (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Last list",
+   "category": "Open merit",
+   "program": "BS Management & Technology",
+   "campus": "Lahore",
+   "closing": 60.32,
+   "field": "general",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-business-management-science/bs-management-technology-second-round-1st-merit-list-2025/",
+   "note": "Lowest MERIT in the 1st merit list (round 2) (derived; ITU prints no closing figure)",
+   "predict": false
+  },
+  {
+   "year": 2025,
+   "list": "Last list",
+   "category": "Open merit",
+   "program": "BS Software Engineering",
+   "campus": "Lahore",
+   "closing": 83.05,
+   "field": "computing",
+   "source_url": "https://itu.edu.pk/merit-lists-2025/faculty-of-engineering/bs-software-engineering-3rd-merit-list-2025/",
+   "note": "Lowest MERIT in the 3rd merit list (derived; ITU prints no closing figure)",
+   "predict": false
+  }
+ ],
+ "meritlist_path": "/itu-merit-list/"
 }

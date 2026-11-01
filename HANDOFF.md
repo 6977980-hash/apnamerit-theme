@@ -2,6 +2,16 @@
 
 Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `REVIEW-2026-11-01.md`. UET Lahore sources: `sources/uet/` (git-ignored; README has provenance).
 
+## Round 2 data drop (v0.15.0, 2026-11-01; owner's Fable folder `New Ideas/round2`)
+Every figure re-checked by script or by eye against the saved sources (copied to git-ignored `sources/{uet,pu,itu,comsats,kmu}/`; rows in `sources/INDEX.md`).
+- **UET Lahore Fall 2024**: 169 rows from the portal table "Minimum UG Admission Aggregate (Entry-2024)" (Wayback 14 Sep 2024 + 11 Feb 2025). All values match the HTML exactly. Row with unexplained code `T` skipped. List stage not printed, so `list` = "Portal, 14 Sep 2024" / "Portal, 11 Feb 2025"; no change column against the 2025 Fourth Merit List (different stage). UET merit table now 305 KB raw / 18 KB gzip (763 rows).
+- **PU 2024 and 2023**: "Merit of Last Year 2024/2023" (Wayback). BS 1st semester only, 177 + 164 records read by word position (`pdfplumber`) and mapped to the 2025 program names; ambiguous cells skipped (list in `pu.json _note`). Trend chart and change column now work for PU. Note: 15 programs with a 2024 figure but no 2025 one now enter the predictor with their 2024 figure (by design).
+- **COMSATS Islamabad Fall 2023**: 23 rows, 2nd closing merit image, checked by eye; list "2nd closing".
+- **ITU Fall 2025**: new `/itu-merit-list/`. 12 derived rows (lowest MERIT in the latest list per program). Fable draft had BS Computer Engineering 77.09; the list's lowest is 77.00 (fixed). Only CS/AI feed the predictor.
+- **KMU**: formula (MDCAT 50 / FSc 40 / SSC 10, policy p. 25) = MDCAT calculator; FAQ added there. KMU lists still 403 to tools.
+- **IIUI**: formula re-confirmed, no change. **NUST**: nothing published. **LUMHS BMC**: first *provisional* list only, session not printed; not published.
+- Still owner-gated (exact URLs in round2 `NOTES.md` "Blocked" list): KMU final lists, NUMS 2024-25 pages, COMSATS Attock/Wah/Abbottabad, JSMU Drive lists, SZABMU, IST, UET Peshawar (ETEA).
+
 ## Fix 2: UET Lahore — superseded below (now live)
 - Verified: `/uet-aggregate-calculator/` and `/uet-merit-list/` 404; `/data/index.json` has only `uet-taxila`, `uet-peshawar`.
 - uet.edu.pk, apply.uet.edu.pk, admission.uet.edu.pk: Cloudflare 522 (20 s) at 22:4x UTC; web.archive.org closed by the container proxy.
