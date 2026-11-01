@@ -6,8 +6,8 @@
  "province": "Punjab",
  "website": "https://numspak.edu.pk/",
  "meritlist_path": "/nums-merit-list/",
- "updated": "2026-10-31",
- "_note": "Closing = lowest aggregate in the newest NUMS selection list published for each affiliated private college (MBBS: Sixth Selection / Upgradation List, 27 Jan 2026; QIMS Baluchistan-domicile list 'January 19, 2026'; BDS: Fourth Selection List, 13 Feb 2026). Lists are cumulative (sorted, S No 1..n); min checked by script against every PDF on 31 Oct 2026. NUMS does not say these were the last lists, so the list is 'Latest published'. Aggregate = PM&DC formula (50% MDCAT, 40% FSc, 10% Matric), same as the UHS calculator. PDFs (with names) stay in sources/nums/, never in the repo. Index pages: https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26 and https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-dental-colleges-for-bds-open-merit-session-2025-26",
+ "updated": "2026-11-01",
+ "_note": "Closing = lowest aggregate in the newest NUMS selection list published for each affiliated private college (MBBS: Sixth Selection / Upgradation List, 27 Jan 2026; QIMS Baluchistan-domicile list 'January 19, 2026'; BDS: Fourth Selection List, 13 Feb 2026). Lists are cumulative (sorted, S No 1..n); min checked by script against every PDF on 31 Oct 2026. NUMS does not say these were the last lists, so the list is 'Latest published'. Aggregate = PM&DC formula (50% MDCAT, 40% FSc, 10% Matric), same as the UHS calculator. PDFs (with names) stay in sources/nums/, never in the repo. Index pages: https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26 and https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-dental-colleges-for-bds-open-merit-session-2025-26 Session 2024-25 (year 2024): NUMS took the 2024-25 news pages down; their Wayback captures (12th MBBS list page 20 Feb 2025, BDS pages 19 Mar / 1 Apr 2025) link PDFs still live under numspak.edu.pk/upload/media/. MBBS = lowest aggregate in each college's 12th selection/upgradation list (QIMS Baluchistan: 11th), the highest list number found; BDS = 1st list only (the 2nd list prints no aggregates), so BDS 2024 is list '1st list' and an upper bound. All 13 values checked by script against the PDFs on 1 Nov 2026.",
  "defaults": {
   "list": "Latest published",
   "category": "Open merit"
@@ -156,6 +156,153 @@
    "field": "medical",
    "source_url": "https://numspak.edu.pk/upload/media/2026-4th-meritlist-bds-QCD-ROC_1770993342.pdf",
    "note": "Fourth selection list, session 2025-26, 13 Feb 2026; lowest aggregate in the list"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "CMH Institute of Medical Sciences, Bahawalpur Cantt",
+   "closing": 86.0653,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-CMH-BWP-open-merit-list1739875346.pdf",
+   "note": "12th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "CMH Kharian Medical College, Kharian Cantt",
+   "closing": 83.6347,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-CMH-Kharian-open-merit-list1739875354.pdf",
+   "note": "12th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "CMH Lahore Medical College and Institute of Dentistry, Lahore Cantt",
+   "closing": 85.9998,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-CMH-Lahore-open-merit-list1739875360.pdf",
+   "note": "12th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "CMH Multan Institute of Medical Sciences, Multan Cantt",
+   "closing": 86.5182,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-CMH-Multan-open-merit-list1739875365.pdf",
+   "note": "12th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "HITEC Institute of Medical Sciences, Taxila Cantt",
+   "closing": 83.4574,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-HITEC-open-merit-list1739875372.pdf",
+   "note": "12th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Karachi Institute of Medical Sciences, Malir Cantt",
+   "closing": 83.4438,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-KIMS-open-merit-list1739875377.pdf",
+   "note": "12th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Quetta Institute of Medical Sciences, Quetta Cantt",
+   "closing": 88.3574,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-QIMS-ROC-open-merit-list1739875387.pdf",
+   "note": "12th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Baluchistan domicile",
+   "program": "MBBS (private)",
+   "campus": "Quetta Institute of Medical Sciences, Quetta Cantt",
+   "closing": 81.1426,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-QIMS-Baluchistan-Open-Merit1739875382.pdf",
+   "note": "11th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "Latest published",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Wah Medical College, Wah Cantt",
+   "closing": 83.5199,
+   "source_url": "http://numspak.edu.pk/upload/media/2024-WAH-open-merit-list1739875392.pdf",
+   "note": "12th selection / upgradation list, session 2024-25 (fee due 20 Feb 2025)"
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "1st list",
+   "category": "Open merit",
+   "program": "BDS (private)",
+   "campus": "CMH Lahore Medical College and Institute of Dentistry, Lahore Cantt",
+   "closing": 84.45,
+   "source_url": "http://numspak.edu.pk/upload/media/2025-CMH-Lahore-Open-Merit1741954899.pdf",
+   "note": "BDS 1st selection list, session 2024-25 (fee due 17 Mar 2025); the 2nd list prints no aggregates",
+   "predict": false
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "1st list",
+   "category": "Open merit",
+   "program": "BDS (private)",
+   "campus": "CIMS Dental Section, Multan",
+   "closing": 84.9817,
+   "source_url": "http://numspak.edu.pk/upload/media/2025-CMH-Multan-Open-Merit1741954906.pdf",
+   "note": "BDS 1st selection list, session 2024-25 (fee due 17 Mar 2025); the 2nd list prints no aggregates",
+   "predict": false
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "1st list",
+   "category": "Open merit",
+   "program": "BDS (private)",
+   "campus": "HITEC Dental College, Taxila Cantt",
+   "closing": 85.3015,
+   "source_url": "http://numspak.edu.pk/upload/media/2025-HITEC-Open-Merit1741954914.pdf",
+   "note": "BDS 1st selection list, session 2024-25 (fee due 17 Mar 2025); the 2nd list prints no aggregates",
+   "predict": false
+  },
+  {
+   "field": "medical",
+   "year": 2024,
+   "list": "1st list",
+   "category": "Open merit",
+   "program": "BDS (private)",
+   "campus": "Quetta College of Dentistry (QCD), Quetta",
+   "closing": 87.3045,
+   "source_url": "http://numspak.edu.pk/upload/media/2025-QIMS-ROC-Open-Merit1741954919.pdf",
+   "note": "BDS 1st selection list, session 2024-25 (fee due 17 Mar 2025); the 2nd list prints no aggregates",
+   "predict": false
   }
  ]
 }

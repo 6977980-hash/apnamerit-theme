@@ -350,7 +350,7 @@
    "template": "meritlist",
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
-   "updated": "2026-10-31",
+   "updated": "2026-11-01",
    "answer": "In NUMS's newest 2025-26 selection lists, open-merit MBBS closed between 86.73% (Quetta Institute of Medical Sciences) and 83.85% (Karachi Institute of Medical Sciences), with CMH Lahore at 85.32%. BDS closed between 85.23% (Quetta College of Dentistry) and 84.75% (CMH Lahore).",
    "answer_source": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26",
    "content_file": "nums-merit-list.html",
@@ -362,6 +362,10 @@
     {
      "q": "What was the CMH Lahore MBBS closing merit?",
      "a": "85.32% in the NUMS sixth selection list for session 2025-26 (open merit)."
+    },
+    {
+     "q": "What was the NUMS MBBS closing merit in 2024-25?",
+     "a": "In NUMS's 12th selection list of February 2025, open-merit MBBS closed between 88.36% (Quetta Institute of Medical Sciences) and 83.44% (Karachi Institute of Medical Sciences); CMH Lahore closed at 86.00%."
     },
     {
      "q": "Is this the final NUMS merit list?",
@@ -393,6 +397,11 @@
      "label": "NUMS: merit lists for private-sector affiliated dental colleges, BDS open merit, session 2025-26",
      "url": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-dental-colleges-for-bds-open-merit-session-2025-26",
      "fetched": "2026-10-31"
+    },
+    {
+     "label": "NUMS: 12th merit list, private-sector affiliated medical colleges, MBBS open merit, session 2024-25 (archived 20 Feb 2025)",
+     "url": "https://web.archive.org/web/20250220141714/https://numspak.edu.pk/news-detail/12th-merit-list-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2024-25",
+     "fetched": "2026-11-01"
     }
    ],
    "related": [
