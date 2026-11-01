@@ -1,5 +1,13 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Student-intent ideas, Tier 2 (v0.32.0, 2026-11-01)
+Owner: "next phase shuru kro" (after audit v2). Built ideas 6-9 and 11 of `/mnt/project-files/apnamerit.com/ideas/2026-11-01-student-intent-ideas.md`; idea 10 (expected-merit range) waits for May 2027.
+- **Compare** `/compare/` (`inc/compare.php`, `[am_compare a="<slug>:<am_slug(program campus shift)>" b="…"]`): default pair KEMU vs AIMC rendered server-side; 552 programs/colleges in a JS-built datalist; JSON uses lookup tables (u, l, s, m, r). One figure per year: default list, else the lowest figure of another list (named under it). No static "X vs Y" pages yet (thin-page risk; add only for pairs with real search demand).
+- **List-day box**: set `calendar.json` `seasons.uhs.live` = {step, date, checked "YYYY-MM-DDTHH:MM+05:00", out, url, note, guide} on each list date and push; shows on the home hero (replaces the Next line), above the UHS season table and the MDCAT merit table. `out: true` needs the official https `url`. Remove `live` after the list is in the data. am.js hides it 2 days after `date`.
+- **Merit tables**: "Copy top 10 for WhatsApp" / share link from the rows on screen (`[data-am-wa]`).
+- **Calculator result**: "Save as image" (`[data-am-img]`, canvas 1080x1350, share sheet or PNG download).
+- **Predictor**: College type filter (Public/Private from "(private)" in the program name), official UHS public fee line (`am_predictor_fees()` from a university's `fee`).
+
 ## Audit v2 fixes and suggestions (v0.31.0, 2026-11-01)
 Expert-team audit `/mnt/project-files/apnamerit.com/audit/2026-11-01-v2/site-audit-2026-11-01-v2.md`; owner: "suggestions ko shamil kr k sb fix kro".
 - **Numbers/trust:** Hafiz bonus no longer capped (`aggregate()` in am.js; test in `scripts/tests/engines.js`). College pages are `generated` (any entry with `college`): trust line "Figures from official UHS lists · Figures checked by", author box "Text generated from the official data". `trust_label` overrides the first trust item (ITU, NUMS). `am_page_updated()`: updated → published → mtime; `updated_from_data` with `college` reads only that university. `province` may be an array (`am_uni_provinces()`).
