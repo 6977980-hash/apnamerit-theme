@@ -3,6 +3,18 @@
   "updates": [
     {
       "date": "2026-11-01",
+      "title": "Hafiz-e-Quran marks fixed in the PU, UET Taxila and KU calculators",
+      "text": "The 20 additional marks are now added in full, as the official formulas do. Before, a top score with Hafiz marks was capped at the total (PU 1000 + 1090 + Hafiz now shows 98.91%).",
+      "url": "/pu-aggregate-calculator/"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "Merit tables: search box, college name on phones, charts",
+      "text": "Search any program or college in a merit table, see the college under each program on a phone, and new charts on the MDCAT, UET and PU merit lists.",
+      "url": "/mdcat-merit-list/"
+    },
+    {
+      "date": "2026-11-01",
       "title": "Shareable results: send your aggregate and chances on WhatsApp",
       "text": "Every calculator and predictor result now has its own link; the WhatsApp text carries the aggregate and how many programs are Strong or Borderline.",
       "url": "/predictor/"

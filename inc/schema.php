@@ -99,6 +99,38 @@ add_filter(
 		}
 		$graph['webpage'] = $webpage;
 
+		// Guides are articles (audit v2 SP-03/SP-06): Article node with the author entity, so the
+		// byline, dates and publisher are machine-readable. Not on hubs (/guides/ itself).
+		if ( str_starts_with( (string) $page['path'], '/guides/' ) && '/guides/' !== $page['path'] ) {
+			$graph['article'] = array_filter(
+				array(
+					'@type'            => 'Article',
+					'@id'              => $url . '#article',
+					'headline'         => am_tokens( (string) ( $page['h1'] ?? $page['title'] ?? '' ) ),
+					'description'      => am_description(),
+					'datePublished'    => $page['published'] ?? null,
+					'dateModified'     => $updated,
+					'author'           => array( '@id' => $base . 'about/#author' ),
+					'publisher'        => array( '@id' => $base . '#organization' ),
+					'mainEntityOfPage' => array( '@id' => $url . '#webpage' ),
+					'image'            => $image ? $image : null,
+					'inLanguage'       => am_site( 'language', 'en-PK' ),
+				)
+			);
+		}
+
+		// A page that defines a term (pages.json "defined_term": {name, description}) gets a DefinedTerm node.
+		if ( ! empty( $page['defined_term']['name'] ) && ! empty( $page['defined_term']['description'] ) ) {
+			$graph['term'] = array(
+				'@type'       => 'DefinedTerm',
+				'@id'         => $url . '#term',
+				'name'        => (string) $page['defined_term']['name'],
+				'description' => (string) $page['defined_term']['description'],
+				'url'         => $url,
+			);
+			$graph['webpage']['about'] = array( '@id' => $url . '#term' );
+		}
+
 		// FAQPage: one node per page, all FAQ items rendered on it.
 		$faq = am_registry( 'faq' );
 		if ( $faq ) {

@@ -735,3 +735,32 @@ add_action(
 		add_shortcode( 'am_ibcc', 'am_sc_ibcc' );
 	}
 );
+
+// ------------------------------------------------------------------ [am_img]
+/**
+ * A chart image from assets/img/ (drawn by scripts/charts.py from the data on the page; audit v2
+ * SP-02: the site had no images). Lazy, with its real size so it never shifts the layout.
+ * [am_img file="uhs-mbbs-public-closing-2025.webp" alt="…" caption="…"]
+ */
+function am_sc_img( $atts ): string {
+	$atts = shortcode_atts(
+		array(
+			'file'    => '',
+			'alt'     => '',
+			'caption' => '',
+		),
+		(array) $atts,
+		'am_img'
+	);
+	$file = basename( (string) $atts['file'] );
+	$path = AM_DIR . '/assets/img/' . $file;
+	if ( '' === $file || ! is_readable( $path ) || '' === trim( (string) $atts['alt'] ) ) {
+		return '';
+	}
+	$size = @getimagesize( $path ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
+	$wh   = $size ? ' width="' . (int) $size[0] . '" height="' . (int) $size[1] . '"' : '';
+	$src  = AM_URI . '/assets/img/' . rawurlencode( $file ) . '?v=' . (int) @filemtime( $path );
+	return '<figure class="am-fig"><img src="' . esc_url( $src ) . '" alt="' . esc_attr( (string) $atts['alt'] ) . '"' . $wh . ' loading="lazy" decoding="async">'
+		. ( '' !== $atts['caption'] ? '<figcaption>' . esc_html( (string) $atts['caption'] ) . '</figcaption>' : '' ) . '</figure>';
+}
+add_action( 'init', fn() => add_shortcode( 'am_img', 'am_sc_img' ) );

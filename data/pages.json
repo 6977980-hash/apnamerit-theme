@@ -2193,6 +2193,7 @@
     },
     {
       "path": "/guides/what-is-closing-merit/",
+      "defined_term": {"name": "Closing merit", "description": "The aggregate of the last student admitted to a program or college in a merit list; students at or above it got a seat in that list."},
       "keyword": "closing merit",
       "title": "What Is Closing Merit? (Last Year Merit Explained)",
       "description": "What closing merit means, why it drops from the 1st to the final merit list, and how to use last year's closing merit to judge your admission chances.",
