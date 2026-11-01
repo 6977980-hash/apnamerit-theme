@@ -12,7 +12,7 @@
 <a class="am-skip" href="#main">Skip to content</a>
 <header class="am-header">
 	<div class="am-wrap">
-		<a class="am-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html( am_site( 'brand', 'Apna Merit' ) ); ?></a>
+		<?php echo am_brand( true ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in am_brand() ?>
 		<?php echo am_nav( 'header' ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in am_nav() ?>
 	</div>
 </header>

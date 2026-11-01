@@ -39,7 +39,28 @@ function am_page_label( array $page ): string {
 }
 
 /**
- * Navigation from data/nav.json.
+ * Logo mark (inline SVG, no request): letter A on a green tile with a gold "top merit" dot.
+ * Same drawing as assets/icons/icon.svg. Decorative: the brand text next to it is the name.
+ */
+function am_logo_mark( int $size = 36 ): string {
+	return '<svg class="am-mark" width="' . $size . '" height="' . $size . '" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect width="48" height="48" rx="12" fill="#0b6e4f"/><path d="M12 37 24 16l12 21M17.5 30h13" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="9.5" r="4" fill="#f5b700"/></svg>';
+}
+
+/**
+ * Brand lockup: mark + "Apna Merit" wordmark (+ optional tagline), linked to home.
+ */
+function am_brand( bool $tagline = false ): string {
+	$brand = (string) am_site( 'brand', 'Apna Merit' );
+	$parts = explode( ' ', $brand, 2 );
+	$words = '<span class="am-brand-a">' . esc_html( $parts[0] ) . '</span>' . ( isset( $parts[1] ) ? ' <span class="am-brand-b">' . esc_html( $parts[1] ) . '</span>' : '' );
+	$tag   = $tagline ? '<span class="am-brand-s">Merit lists &amp; calculators</span>' : '';
+	$cur   = '/' === am_request_path() ? ' aria-current="page"' : '';
+	return '<a class="am-brand" href="' . esc_url( home_url( '/' ) ) . '"' . $cur . '>' . am_logo_mark() . '<span class="am-brand-t"><span class="am-brand-w">' . $words . '</span>' . $tag . '</span></a>';
+}
+
+/**
+ * Navigation from data/nav.json. Footer items with a "col" field are grouped into titled columns.
+ * "cta": true styles a header item as the highlighted button.
  */
 function am_nav( string $which ): string {
 	$items = (array) ( am_data( 'nav' )[ $which ] ?? array() );
@@ -47,15 +68,22 @@ function am_nav( string $which ): string {
 		return '';
 	}
 	$current = am_request_path();
-	$out     = '';
+	$cols    = array();
 	foreach ( $items as $item ) {
-		$path = (string) ( $item['path'] ?? '' );
-		$aria = $path === $current ? ' aria-current="page"' : '';
-		$wide = empty( $item['hide_small'] ) ? '' : ' class="am-nav-wide"';
-		$out .= '<li' . $wide . '><a href="' . esc_url( home_url( $path ) ) . '"' . $aria . '>' . esc_html( (string) ( $item['label'] ?? '' ) ) . '</a></li>';
+		$path  = (string) ( $item['path'] ?? '' );
+		$aria  = $path === $current ? ' aria-current="page"' : '';
+		$class = trim( ( empty( $item['hide_small'] ) ? '' : 'am-nav-wide' ) . ( empty( $item['cta'] ) ? '' : ' am-nav-cta' ) );
+		$class = '' === $class ? '' : ' class="' . esc_attr( $class ) . '"';
+		$col   = (string) ( $item['col'] ?? '' );
+		$cols[ $col ] = ( $cols[ $col ] ?? '' ) . '<li' . $class . '><a href="' . esc_url( home_url( $path ) ) . '"' . $aria . '>' . esc_html( (string) ( $item['label'] ?? '' ) ) . '</a></li>';
 	}
 	$label = 'header' === $which ? 'Main' : 'Footer';
-	return '<nav class="am-nav am-nav--' . esc_attr( $which ) . '" aria-label="' . esc_attr( $label ) . '"><ul>' . $out . '</ul></nav>';
+	$out   = '';
+	foreach ( $cols as $title => $lis ) {
+		$list = '<ul>' . $lis . '</ul>';
+		$out .= '' === $title ? $list : '<div class="am-fcol"><h2 class="am-fh">' . esc_html( (string) $title ) . '</h2>' . $list . '</div>';
+	}
+	return '<nav class="am-nav am-nav--' . esc_attr( $which ) . '" aria-label="' . esc_attr( $label ) . '">' . $out . '</nav>';
 }
 
 /**

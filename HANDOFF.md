@@ -1,5 +1,13 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+
+## Header, footer and logo redesign (v0.27.0, 2026-11-01)
+- Logo: `am_logo_mark()` in `inc/template-tags.php` prints the inline SVG (A on #0b6e4f tile, gold #f5b700 dot). Same drawing in `assets/icons/icon.svg`; PNG/ICO were rendered from it with Playwright + Pillow (`icon-180.png` is full-bleed for iOS). `data/site.json` organization.logo now `assets/icons/logo-512.png`.
+- `am_brand( $tagline )` = mark + "Apna Merit" wordmark (second word in accent, gold in the footer).
+- `data/nav.json`: header item `"cta": true` = filled button; footer items carry `"col"` (Tools / Data / Site) and `am_nav( 'footer' )` groups them under `h2.am-fh` headings.
+- Header fits one line from 360 px (wraps only at 320 px, no horizontal scroll).
+- **CSS budget: `am.css` is 14,333 of 14,336 bytes.** All comments were removed and `.am-trend` inherits the body font. The next CSS addition will push it over and it will load as a file (one extra request): trim something first.
+
 ## Ranking plan: ECAT guide (v0.26.0, 2026-11-01)
 
 - New `/guides/ecat-aggregate-formula/` (keyword "ecat aggregate formula"): 33/50/17 for UET Lahore + UET Taxila, worked example, "ECAT marks needed" table (FSc Part-I 480, Matric 1000 against Fall 2025 UET Lahore 4th list A1 and UET Taxila 2024 entry), formula comparison with UET Peshawar/NUST/NED/GIKI. Linked from the five UET calculator/merit-list pages and the homepage guides grid.

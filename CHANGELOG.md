@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.27.0 (2026-11-01)
+New logo and a redesigned header and footer. Logo mark = letter A on the green tile with a gold "top merit" dot, inline SVG (no request) via `am_logo_mark()` / `am_brand()`; same drawing in `assets/icons/icon.svg`, `icon-48.png`, `icon-180.png`, `favicon.ico` and new `logo-512.png` (Organization logo in JSON-LD). Header: accent top bar, wordmark with tagline on desktop and stacked wordmark on mobile, pill nav with the Predictor as a button (`"cta": true` in `data/nav.json`); one line from 360 px. Footer: dark green, brand column + Tools / Data / Site columns (`"col"` in `data/nav.json` footer items), disclaimer bar. `am.css` comments removed to stay under the 14 KB inline budget.
+
 ## 0.19.0 (2026-11-01)
 Audit suggestions G-01 and G-02: `/mdcat-passing-marks/` (minimum marks table + live eligibility check, `[am_elig_check]`) and `/uhs-mbbs-admission/` (UHS 2026-27 official schedule from `data/calendar.json` `seasons.uhs`, `[am_season]`, next-step line in JS). New token `{session:<slug>}`. Details in `HANDOFF.md`.
 
