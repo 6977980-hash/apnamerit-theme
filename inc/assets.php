@@ -44,16 +44,21 @@ add_action(
 );
 
 // Site icon from the theme (no wp-admin Site Icon): SVG + PNG for Google results and home screens.
-add_action(
-	'wp_head',
-	function () {
-		$v = AM_VERSION;
-		echo '<link rel="icon" href="' . esc_url( AM_URI . '/assets/icons/icon.svg?ver=' . $v ) . '" type="image/svg+xml">' . "\n";
-		echo '<link rel="icon" href="' . esc_url( AM_URI . '/assets/icons/icon-48.png?ver=' . $v ) . '" sizes="48x48" type="image/png">' . "\n";
-		echo '<link rel="apple-touch-icon" href="' . esc_url( AM_URI . '/assets/icons/icon-180.png?ver=' . $v ) . '">' . "\n";
-	},
-	2
-);
+// Also printed in wp-admin and on wp-login.php: without a <link> there, browsers fall back to
+// /favicon.ico, which they cache for days, so the dashboard kept showing the pre-redesign icon.
+function am_icon_links(): void {
+	$v = AM_VERSION;
+	echo '<link rel="icon" href="' . esc_url( AM_URI . '/assets/icons/icon.svg?ver=' . $v ) . '" type="image/svg+xml">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( AM_URI . '/assets/icons/icon-48.png?ver=' . $v ) . '" sizes="48x48" type="image/png">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( AM_URI . '/assets/icons/icon-180.png?ver=' . $v ) . '">' . "\n";
+}
+add_action( 'wp_head', 'am_icon_links', 2 );
+add_action( 'admin_head', 'am_icon_links', 2 );
+add_action( 'login_head', 'am_icon_links', 2 );
+// A wp-admin "Site Icon", if one is ever set, must not override the theme icon anywhere.
+remove_action( 'wp_head', 'wp_site_icon', 99 );
+remove_action( 'admin_head', 'wp_site_icon' );
+remove_action( 'login_head', 'wp_site_icon' );
 
 // /favicon.ico (requested by browsers and crawlers whatever the <link> says) → the PNG icon.
 add_action(

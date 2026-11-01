@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.33.2 (2026-11-01)
+
+- wp-admin and wp-login.php now print the theme icon links (same as the front end), so the dashboard tab shows the new logo instead of a browser-cached old /favicon.ico. A wp-admin Site Icon can no longer override the theme icon.
+
 ## 0.33.1 (2026-11-01)
 Schema: every Dataset's `includedInDataCatalog` now carries the DataCatalog `@type`, `name` and `url` inline (Search Console: Either "name" or "url" should be specified).
 
