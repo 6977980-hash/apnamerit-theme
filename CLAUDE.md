@@ -32,7 +32,7 @@ This repo **is** the WordPress theme `apnamerit`. Hostinger Git deploys branch `
 | `functions.php` | Bootstrap; requires `inc/*` |
 | `inc/data.php` | `am_data('name')` JSON loader, `am_site('dot.key')` config reader |
 | `inc/cleanup.php` | Emojis, embeds, XML-RPC, comments, REST users, author/date/tag/attachment archives, block CSS, jQuery off |
-| `inc/assets.php` | Inlines `assets/css/am.css` (≤ 14 KB), enqueues deferred `assets/js/am.js` |
+| `inc/assets.php` | Inlines `assets/css/am.css` (≤ 20 KB raw, ~4.5 KB gzipped), enqueues deferred `assets/js/am.js` |
 | `inc/seo.php` | SEO without Rank Math: title, description, canonical, robots, OG, JSON-LD (`am_jsonld_graph`), core sitemap, robots.txt |
 | `data/pages.json` | Per-URL title, description, keyword (tokens `{season_year}`, `{data_year}`, `{year:<slug>}` = that university's newest official year, `{predict_count}`). Add every new page here. |
 | `data/calendar.json` | Season status line per university (above its merit table), last cycle's official dates, estimate windows, recurring ops. |

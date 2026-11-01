@@ -215,6 +215,23 @@ function am_updated_html( string $date ): string {
 /**
  * Author box → author.url (/about/ali-ahmad/; Person schema lives on every page, see inc/schema.php).
  */
+/**
+ * Trust line under the H1: official sources, updated date, checked by the author (initials avatar).
+ */
+function am_trust_html( string $date ): string {
+	$ts = strtotime( $date );
+	if ( ! $ts ) {
+		return '';
+	}
+	$name = (string) am_site( 'author.name' );
+	$out  = '<p class="am-updated"><span><b class="am-tick" aria-hidden="true">✓</b> Official sources</span><span>Updated <time datetime="' . esc_attr( gmdate( 'Y-m-d', $ts ) ) . '">' . esc_html( gmdate( 'j F Y', $ts ) ) . '</time></span>';
+	if ( '' !== $name ) {
+		$ini  = implode( '', array_map( fn( $w ) => mb_substr( $w, 0, 1 ), array_slice( preg_split( '/\s+/', trim( $name ) ), 0, 2 ) ) );
+		$out .= '<span><b class="am-av" aria-hidden="true">' . esc_html( strtoupper( $ini ) ) . '</b> Checked by <a href="' . esc_url( (string) am_site( 'author.url', home_url( '/about/#author' ) ) ) . '">' . esc_html( $name ) . '</a></span>';
+	}
+	return $out . '</p>';
+}
+
 function am_author_box_html(): string {
 	$name = (string) am_site( 'author.name' );
 	if ( '' === $name ) {
@@ -274,7 +291,29 @@ function am_page_body( array $page ): string {
 			$html .= (string) file_get_contents( $file );
 		}
 	}
+	if ( in_array( $page['template'] ?? '', array( 'meritlist', 'calculator' ), true ) ) {
+		$html = am_tool_first( $html );
+	}
 	return do_shortcode( am_tokens( $html ) );
+}
+
+/**
+ * Tool pages: keep the first intro block above the tool and move the rest of the long
+ * pre-tool text (paragraphs, headings, lists) to just below it, so the table or form shows sooner.
+ * Leaves the HTML untouched unless the pre-tool part is only simple top-level blocks.
+ */
+function am_tool_first( string $html ): string {
+	if ( ! preg_match( '/\[am_(merit_table|predictor|calculator)\b[^\]]*\]/', $html, $m, PREG_OFFSET_CAPTURE ) ) {
+		return $html;
+	}
+	$pos = (int) $m[0][1];
+	$pre = substr( $html, 0, $pos );
+	if ( strlen( wp_strip_all_tags( $pre ) ) < 300 || ! preg_match_all( '#\s*<(p|h2|h3|ul|ol)\b[^>]*>.*?</\1>\s*#s', $pre, $blocks ) || trim( implode( '', $blocks[0] ) ) !== trim( $pre ) || count( $blocks[0] ) < 2 ) {
+		return $html;
+	}
+	$keep = array_shift( $blocks[0] );
+	$tag  = $m[0][0];
+	return $keep . "\n" . $tag . "\n" . implode( '', $blocks[0] ) . substr( $html, $pos + strlen( $tag ) );
 }
 
 /**
@@ -332,14 +371,15 @@ function am_render_page( array $page ): string {
 			. am_roman_urdu_html( (string) ( $page['roman_urdu'] ?? '' ), (string) ( $page['ru_heading'] ?? '' ) )
 			. am_disclaimer_html();
 	}
-	$out     = am_breadcrumb_html( $page );
+	$out     = '<div class="am-phead">' . am_breadcrumb_html( $page );
 	$out    .= '<h1>' . esc_html( $h1 ) . '</h1>';
 	if ( ! empty( $page['subtitle'] ) ) {
 		$out .= '<p class="am-lead">' . esc_html( am_tokens( (string) $page['subtitle'] ) ) . '</p>';
 	}
 	if ( 'trust' !== $type && ! $is_home ) {
-		$out .= am_updated_html( am_page_updated( $page ) );
+		$out .= am_trust_html( am_page_updated( $page ) );
 	}
+	$out .= '</div>';
 	$out .= am_answer_html( (string) ( $page['answer'] ?? '' ), (string) ( $page['answer_source'] ?? '' ) );
 	$out .= '<div class="am-body">' . am_page_body( $page ) . '</div>';
 	$out .= am_siblings_html( $page );

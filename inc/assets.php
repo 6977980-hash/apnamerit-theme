@@ -5,8 +5,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-/** Max bytes of CSS inlined in <head> (plan: critical CSS <= 14 KB). */
-const AM_CRITICAL_CSS_MAX = 14336;
+/** Max bytes of CSS inlined in <head>: 20 KB raw (about 4.5 KB gzipped, well inside the 14 KB first round trip). */
+const AM_CRITICAL_CSS_MAX = 20480;
 
 add_action(
 	'wp_head',

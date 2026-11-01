@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.29.0 (2026-11-01)
+Light design pass (owner approved all 13 review points). Inner pages: green page-header band (breadcrumb, H1, subtitle) with a trust line (`am_trust_html()`: Official sources · Updated · Checked by Ali Ahmad with initials avatar). Tool pages (`meritlist`/`calculator` templates): `am_tool_first()` keeps the first intro block above the tool and moves the rest of a long pre-tool intro below it. Merit tables: wider on desktop (64rem), one-line cells, closing aggregate in bold green, rounded frame, sticky Program column and scroll hint on mobile. Calculator card shadow, grey prefilled "out of" boxes, result number in a green box. Predictor help text below the input. Home cards: outline Calculator buttons, 2-line descriptions. FAQ +/− marker, softer link underlines, tighter headings, Related links as pills, slim page disclaimer. `am.css` inline budget raised to 20 KB raw (~4.5 KB gzipped).
+
 ## 0.28.0 (2026-11-01)
 New `/guides/` hub (CollectionPage, `[am_hub type="guides"]` lists every `/guides/` page plus `/mdcat-passing-marks/` and `/uhs-mbbs-admission/`). Header: "Guides" replaces "Methodology" (desktop only, hidden under 480 px; Methodology stays in the footer). Footer Tools column links Guides. Guide pages now have `/guides/` as breadcrumb parent.
 

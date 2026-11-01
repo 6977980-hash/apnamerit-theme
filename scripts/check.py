@@ -15,7 +15,7 @@ Checks:
   unis     - data/universities/*.json: formulas (weights add up to 100), merit records complete
   links    - internal links in PHP/JSON/content HTML resolve to paths in data/pages.json
   privacy  - no PDFs, CNIC-like numbers or private keys committed
-  size     - am.css within the 14 KB inline budget
+  size     - am.css within the 20 KB inline budget (~4.5 KB gzipped)
   predict  - scripts/tests/predict_rows.php: predictor value + year = merit table default row
   sources  - data/sources.json: one entry per body, every data/universities slug exactly once
   elig     - eligibility floors: source_url, min_pct 0-100, part in the formula, programs regex,
@@ -426,8 +426,8 @@ def check_privacy() -> None:
 # ---------------------------------------------------------------- size
 def check_size() -> None:
     css = ROOT / "assets/css/am.css"
-    if css.exists() and css.stat().st_size > 14336:
-        warn("size", f"am.css is {css.stat().st_size} bytes (> 14 KB): it will load as a file, not inline")
+    if css.exists() and css.stat().st_size > 20480:
+        warn("size", f"am.css is {css.stat().st_size} bytes (> 20 KB): it will load as a file, not inline")
 
 
 def check_predict() -> None:

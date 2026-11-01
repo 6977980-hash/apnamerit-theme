@@ -2,6 +2,9 @@
 
 
 
+## Light design pass (v0.29.0, 2026-11-01)
+Owner approved all 13 points of the design review (doc https://claude.ai/artifact/VavQ3ez5qRbmsmuoVQmbqj; before/after images in project files `apnamerit.com/design/2026-11-01-review/`). PHP: `am_render_page()` wraps breadcrumb/H1/subtitle/trust line in `.am-phead`; `am_trust_html()` replaces the top "Updated" line (trust pages keep `am_updated_html()` at the bottom); `am_tool_first()` (meritlist/calculator templates) moves long pre-tool intro blocks below the first `[am_merit_table|am_predictor|am_calculator]` (now affects /uet-merit-list/, /ku-merit-list/, /mdcat-merit-list/). Wide merit tables only inside `.am-merit`; `.am-merit` table cells are `nowrap`. CSS budget now 20 KB raw (`AM_CRITICAL_CSS_MAX`, check.py size); am.css ~17 KB.
+
 ## Guides hub and menu link (v0.28.0, 2026-11-01)
 Owner chose (decision card): `/guides/` page + desktop header + footer. New guide pages appear on `/guides/` automatically if their path starts with `/guides/`; give them `"parents": ["/guides/"]`. Mobile header unchanged (Guides is `hide_small`).
 
