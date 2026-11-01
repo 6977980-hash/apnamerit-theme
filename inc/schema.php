@@ -199,7 +199,12 @@ add_filter(
 					'license'             => am_site( 'data_license.url' ),
 					'creditText'          => am_site( 'data_license.attribution' ),
 					'creator'             => array( '@id' => $base . '#organization' ),
-					'includedInDataCatalog' => am_find_page( '/data/' ) ? array( '@id' => home_url( '/data/#catalog' ) ) : null,
+					'includedInDataCatalog' => am_find_page( '/data/' ) ? array(
+						'@type' => 'DataCatalog',
+						'@id'   => home_url( '/data/#catalog' ),
+						'name'  => am_catalog_name(),
+						'url'   => home_url( '/data/' ),
+					) : null,
 					'isBasedOn'           => $ds['based_on'] ?? null,
 					'variableMeasured'    => $ds['variables'] ?? null,
 					'distribution'        => array(

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.33.1 (2026-11-01)
+Schema: every Dataset's `includedInDataCatalog` now carries the DataCatalog `@type`, `name` and `url` inline (Search Console: Either "name" or "url" should be specified).
+
 ## 0.33.0 (2026-11-01)
 Ranking: `/mdcat-merit-list/private/` (33 private MBBS colleges) and `/mdcat-merit-list/bds/` (public and private BDS) pages; `[am_merit_table program="…"]` keeps rows whose program contains the text.
 

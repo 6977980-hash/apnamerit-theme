@@ -544,7 +544,7 @@ function am_sc_data_catalog(): string {
 	am_registry(
 		'catalog',
 		array(
-			'name'     => (string) am_site( 'brand' ) . ' open data: Pakistani university aggregate formulas and closing merits',
+			'name'     => am_catalog_name(),
 			'datasets' => $ds,
 			'index'    => home_url( '/data/index.json' ),
 		)
@@ -697,6 +697,13 @@ add_action(
 	},
 	-1
 );
+
+/**
+ * Name of the open-data DataCatalog (shared by /data/ and every Dataset's includedInDataCatalog).
+ */
+function am_catalog_name(): string {
+	return (string) am_site( 'brand' ) . ' open data: Pakistani university aggregate formulas and closing merits';
+}
 
 // DataCatalog node for /data/.
 add_filter(
