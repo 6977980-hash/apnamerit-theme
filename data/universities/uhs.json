@@ -71,6 +71,93 @@
    ]
   }
  ],
+ "colleges": {
+  "Allama Iqbal Medical College (AIMC), Lahore": {
+   "slug": "aimc",
+   "short": "AIMC",
+   "path": "/mdcat-merit-list/aimc/"
+  },
+  "Ameer-ud-Din Medical College (AMC), Lahore": {
+   "slug": "amc",
+   "short": "Ameer-ud-Din Medical College",
+   "path": "/mdcat-merit-list/amc/"
+  },
+  "D.G. Khan Medical College (DGMC), D.G Khan": {
+   "slug": "dgmc",
+   "short": "DG Khan Medical College",
+   "path": "/mdcat-merit-list/dgmc/"
+  },
+  "Fatima Jinnah Medical College (FJMC), Lahore": {
+   "slug": "fjmc",
+   "short": "FJMC",
+   "path": "/mdcat-merit-list/fjmc/"
+  },
+  "Gujranwala Medical College (GMC), Gujranwala": {
+   "slug": "gmc",
+   "short": "Gujranwala Medical College",
+   "path": "/mdcat-merit-list/gmc/"
+  },
+  "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)": {
+   "slug": "kmsmc",
+   "short": "KMSMC Sialkot",
+   "path": "/mdcat-merit-list/kmsmc/"
+  },
+  "King Edward Medical University (KEMC), Lahore": {
+   "slug": "kemu",
+   "short": "KEMU",
+   "path": "/mdcat-merit-list/kemu/"
+  },
+  "Narowal Medical College, Narowal": {
+   "slug": "narowal",
+   "short": "Narowal Medical College",
+   "path": "/mdcat-merit-list/narowal/"
+  },
+  "Nawaz Sharif Medical College, University of Gujrat (NSMC)": {
+   "slug": "nsmc",
+   "short": "Nawaz Sharif Medical College",
+   "path": "/mdcat-merit-list/nsmc/"
+  },
+  "Nishtar Medical College (NMC), Multan": {
+   "slug": "nishtar",
+   "short": "Nishtar Medical College",
+   "path": "/mdcat-merit-list/nishtar/"
+  },
+  "Punjab Medical College (PMC), Faisalabad": {
+   "slug": "pmc",
+   "short": "PMC Faisalabad",
+   "path": "/mdcat-merit-list/pmc/"
+  },
+  "Quaid-e-Azam Medical College (QAMC), Bahawalpur": {
+   "slug": "qamc",
+   "short": "QAMC Bahawalpur",
+   "path": "/mdcat-merit-list/qamc/"
+  },
+  "Rawalpindi Medical College (RMC), Rawalpindi": {
+   "slug": "rmc",
+   "short": "RMC Rawalpindi",
+   "path": "/mdcat-merit-list/rmc/"
+  },
+  "Sahiwal Medical College (SLMC), Sahiwal": {
+   "slug": "slmc",
+   "short": "Sahiwal Medical College",
+   "path": "/mdcat-merit-list/slmc/"
+  },
+  "Sargodha Medical College (SMC), Sargodha": {
+   "slug": "smc",
+   "short": "Sargodha Medical College",
+   "path": "/mdcat-merit-list/smc/"
+  },
+  "Services Institute of Medical Sciences (SIMS), Lahore": {
+   "slug": "sims",
+   "short": "SIMS",
+   "path": "/mdcat-merit-list/sims/"
+  },
+  "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan": {
+   "slug": "szmc",
+   "short": "SZMC Rahim Yar Khan",
+   "path": "/mdcat-merit-list/szmc/"
+  }
+ },
  "merit": [
   {
    "year": 2025,
@@ -1770,6 +1857,1777 @@
    "closing": 75.002,
    "field": "medical",
    "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  }
+ ],
+ "list_trail_note": "Public MBBS 2025-26: lowest Open-merit aggregate per college in every UHS selection list 1-13 (scripts/uhs_closing.py, fetched 2026-11-01). List 13 = the Final rows in merit; list 1 = the 1st rows. Used by the college pages ([am_college]), not by merit tables or the predictor.",
+ "list_trail": [
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 1,
+   "closing": 94.4955,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 1,
+   "closing": 94.0788,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 1,
+   "closing": 93.6596,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 1,
+   "closing": 93.8697,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 1,
+   "closing": 93.7879,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 1,
+   "closing": 93.7364,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 1,
+   "closing": 94.9167,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 1,
+   "closing": 93.6273,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 1,
+   "closing": 93.7091,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 1,
+   "closing": 94.1955,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 1,
+   "closing": 93.8652,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 1,
+   "closing": 93.8111,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 1,
+   "closing": 93.997,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 1,
+   "closing": 93.7636,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 1,
+   "closing": 93.6899,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 1,
+   "closing": 94.2727,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 1,
+   "closing": 93.6394,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 2,
+   "closing": 94.4636,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 2,
+   "closing": 94.0394,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 2,
+   "closing": 93.6045,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 2,
+   "closing": 93.8364,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 2,
+   "closing": 93.7364,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 2,
+   "closing": 93.6818,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 2,
+   "closing": 94.8864,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 2,
+   "closing": 93.5864,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 2,
+   "closing": 93.6394,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 2,
+   "closing": 94.1687,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 2,
+   "closing": 93.8273,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 2,
+   "closing": 93.7636,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 2,
+   "closing": 93.9566,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 2,
+   "closing": 93.7162,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 2,
+   "closing": 93.6364,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 2,
+   "closing": 94.2379,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 2,
+   "closing": 93.6091,
+   "source_url": "https://uhs.edu.pk/2selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 3,
+   "closing": 94.4636,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 3,
+   "closing": 94.0394,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 3,
+   "closing": 93.602,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 3,
+   "closing": 93.8364,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 3,
+   "closing": 93.7364,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 3,
+   "closing": 93.6818,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 3,
+   "closing": 94.8864,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 3,
+   "closing": 93.5838,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 3,
+   "closing": 93.6394,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 3,
+   "closing": 94.1687,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 3,
+   "closing": 93.8273,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 3,
+   "closing": 93.7636,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 3,
+   "closing": 93.9566,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 3,
+   "closing": 93.7162,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 3,
+   "closing": 93.6364,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 3,
+   "closing": 94.2379,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 3,
+   "closing": 93.6091,
+   "source_url": "https://uhs.edu.pk/3selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 4,
+   "closing": 94.4636,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 4,
+   "closing": 94.0364,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 4,
+   "closing": 93.601,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 4,
+   "closing": 93.8318,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 4,
+   "closing": 93.7343,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 4,
+   "closing": 93.6727,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 4,
+   "closing": 94.8864,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 4,
+   "closing": 93.5798,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 4,
+   "closing": 93.6364,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 4,
+   "closing": 94.1682,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 4,
+   "closing": 93.8273,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 4,
+   "closing": 93.7591,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 4,
+   "closing": 93.9545,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 4,
+   "closing": 93.7061,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 4,
+   "closing": 93.6364,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 4,
+   "closing": 94.2379,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 4,
+   "closing": 93.6045,
+   "source_url": "https://uhs.edu.pk/4selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 5,
+   "closing": 94.4636,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 5,
+   "closing": 94.0364,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 5,
+   "closing": 93.599,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 5,
+   "closing": 93.8303,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 5,
+   "closing": 93.7333,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 5,
+   "closing": 93.6717,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 5,
+   "closing": 94.8864,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 5,
+   "closing": 93.5758,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 5,
+   "closing": 93.6364,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 5,
+   "closing": 94.1682,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 5,
+   "closing": 93.8253,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 5,
+   "closing": 93.7525,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 5,
+   "closing": 93.9545,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 5,
+   "closing": 93.7045,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 5,
+   "closing": 93.6318,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 5,
+   "closing": 94.2379,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 5,
+   "closing": 93.601,
+   "source_url": "https://uhs.edu.pk/5selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 6,
+   "closing": 94.4636,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 6,
+   "closing": 94.0253,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 6,
+   "closing": 93.5919,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 6,
+   "closing": 93.8273,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 6,
+   "closing": 93.7263,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 6,
+   "closing": 93.6657,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 6,
+   "closing": 94.8838,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 6,
+   "closing": 93.5652,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 6,
+   "closing": 93.6273,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 6,
+   "closing": 94.1667,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 6,
+   "closing": 93.8212,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 6,
+   "closing": 93.7439,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 6,
+   "closing": 93.9525,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 6,
+   "closing": 93.7,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 6,
+   "closing": 93.6273,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 6,
+   "closing": 94.2379,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 6,
+   "closing": 93.5955,
+   "source_url": "https://uhs.edu.pk/6selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 7,
+   "closing": 94.4576,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 7,
+   "closing": 94.0136,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 7,
+   "closing": 93.5864,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 7,
+   "closing": 93.8227,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 7,
+   "closing": 93.7136,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 7,
+   "closing": 93.6576,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 7,
+   "closing": 94.8697,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 7,
+   "closing": 93.5566,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 7,
+   "closing": 93.6227,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 7,
+   "closing": 94.1657,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 7,
+   "closing": 93.8136,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 7,
+   "closing": 93.7364,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 7,
+   "closing": 93.9455,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 7,
+   "closing": 93.6924,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 7,
+   "closing": 93.6197,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 7,
+   "closing": 94.2318,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 7,
+   "closing": 93.5864,
+   "source_url": "https://uhs.edu.pk/7selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 8,
+   "closing": 94.4535,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 8,
+   "closing": 94.0131,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 8,
+   "closing": 93.5818,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 8,
+   "closing": 93.8182,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 8,
+   "closing": 93.703,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 8,
+   "closing": 93.6505,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 8,
+   "closing": 94.8682,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 8,
+   "closing": 93.5455,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 8,
+   "closing": 93.6182,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 8,
+   "closing": 94.1455,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 8,
+   "closing": 93.8131,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 8,
+   "closing": 93.7318,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 8,
+   "closing": 93.9303,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 8,
+   "closing": 93.6864,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 8,
+   "closing": 93.6141,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 8,
+   "closing": 94.2273,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 8,
+   "closing": 93.5818,
+   "source_url": "https://uhs.edu.pk/8selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 9,
+   "closing": 94.453,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 9,
+   "closing": 94.0131,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 9,
+   "closing": 93.5682,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 9,
+   "closing": 93.8182,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 9,
+   "closing": 93.698,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 9,
+   "closing": 93.65,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 9,
+   "closing": 94.8677,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 9,
+   "closing": 93.5409,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 9,
+   "closing": 93.6167,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 9,
+   "closing": 94.1455,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 9,
+   "closing": 93.8091,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 9,
+   "closing": 93.7253,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 9,
+   "closing": 93.9303,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 9,
+   "closing": 93.6727,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 9,
+   "closing": 93.6106,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 9,
+   "closing": 94.2273,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 9,
+   "closing": 93.5707,
+   "source_url": "https://uhs.edu.pk/9selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 10,
+   "closing": 94.453,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 10,
+   "closing": 94.0081,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 10,
+   "closing": 93.5636,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 10,
+   "closing": 93.8182,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 10,
+   "closing": 93.6955,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 10,
+   "closing": 93.6485,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 10,
+   "closing": 94.8677,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 10,
+   "closing": 93.5394,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 10,
+   "closing": 93.6167,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 10,
+   "closing": 94.1455,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 10,
+   "closing": 93.8051,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 10,
+   "closing": 93.7227,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 10,
+   "closing": 93.9293,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 10,
+   "closing": 93.6682,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 10,
+   "closing": 93.6091,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 10,
+   "closing": 94.2273,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 10,
+   "closing": 93.5636,
+   "source_url": "https://uhs.edu.pk/10selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 11,
+   "closing": 94.453,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 11,
+   "closing": 94.0081,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 11,
+   "closing": 93.5636,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 11,
+   "closing": 93.8182,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 11,
+   "closing": 93.6909,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 11,
+   "closing": 93.6485,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 11,
+   "closing": 94.8677,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 11,
+   "closing": 93.5374,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 11,
+   "closing": 93.6141,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 11,
+   "closing": 94.1455,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 11,
+   "closing": 93.8051,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 11,
+   "closing": 93.7227,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 11,
+   "closing": 93.9293,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 11,
+   "closing": 93.6682,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 11,
+   "closing": 93.6091,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 11,
+   "closing": 94.2273,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 11,
+   "closing": 93.5636,
+   "source_url": "https://uhs.edu.pk/11selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 12,
+   "closing": 94.453,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 12,
+   "closing": 94.0061,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 12,
+   "closing": 93.5545,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 12,
+   "closing": 93.8136,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 12,
+   "closing": 93.6848,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 12,
+   "closing": 93.6424,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 12,
+   "closing": 94.8677,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 12,
+   "closing": 93.5273,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 12,
+   "closing": 93.6131,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 12,
+   "closing": 94.1455,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 12,
+   "closing": 93.8045,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 12,
+   "closing": 93.7227,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 12,
+   "closing": 93.9288,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 12,
+   "closing": 93.6682,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 12,
+   "closing": 93.6015,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 12,
+   "closing": 94.2273,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 12,
+   "closing": 93.5591,
+   "source_url": "https://uhs.edu.pk/12selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 13,
+   "closing": 94.453,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 13,
+   "closing": 94.0061,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 13,
+   "closing": 93.5303,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 13,
+   "closing": 93.8136,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 13,
+   "closing": 93.6742,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 13,
+   "closing": 93.6273,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 13,
+   "closing": 94.8677,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 13,
+   "closing": 93.5091,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 13,
+   "closing": 93.6015,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 13,
+   "closing": 94.1455,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 13,
+   "closing": 93.7924,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 13,
+   "closing": 93.7182,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 13,
+   "closing": 93.9263,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 13,
+   "closing": 93.6606,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 13,
+   "closing": 93.5909,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 13,
+   "closing": 94.2273,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 13,
+   "closing": 93.5439,
+   "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
   }
  ]
 }

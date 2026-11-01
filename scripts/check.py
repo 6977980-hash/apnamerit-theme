@@ -22,6 +22,7 @@ Checks:
              every calculator page prints [am_eligibility], MDCAT FAQ = UHS floors, JS engine test (node)
   copy     - one predictor rule everywhere (no "last two years" / "do saal"); data sentences use
              {year:<slug>}, not {data_year}/{season_year}; predictor "no closing merit" FAQ = data
+  college  - data/pages.json college pages = scripts/college_pages.py output from uhs.json (G-07)
   faq      - no repeated question on a page; ru_heading is a Roman Urdu question (<= 70 chars, unique);
              merit-list pages carry ru_heading + a Roman Urdu "merit" FAQ; every x.xx% in a merit-list
              page FAQ is a closing figure in data/universities (audit G-08/G-10)
@@ -583,7 +584,7 @@ def check_faq(loaded: dict[str, object]) -> None:
             seen[str(h).lower()] = path
         elif p.get("roman_urdu") and p.get("type", "content") == "content":
             warn("faq", f"{path}: roman_urdu block without ru_heading (Roman Urdu query heading)")
-        if p.get("template") != "meritlist" or p.get("noindex"):
+        if (p.get("template") != "meritlist" and not p.get("college")) or p.get("noindex"):
             continue
         if not any(q.get("lang") == "ur-Latn" and "merit" in str(q.get("q", "")).lower() for q in p.get("faq", []) or []):
             err("faq", f"{path}: merit-list page needs a Roman Urdu FAQ about the merit (\"... merit kitna ...\")")
@@ -592,6 +593,13 @@ def check_faq(loaded: dict[str, object]) -> None:
                 v = m.group(1)
                 if v not in closings and f"{float(v):g}" not in closings:
                     err("faq", f"{path}: FAQ figure {v}% is not a closing merit in data/universities ({q.get('q')!r})")
+
+
+def check_colleges() -> None:
+    # College pages (audit G-07) are written from uhs.json by scripts/college_pages.py; they must match the data.
+    r = subprocess.run([sys.executable, str(ROOT / "scripts/college_pages.py"), "--check"], capture_output=True, text=True)
+    if r.returncode != 0:
+        err("college", (r.stdout + r.stderr).strip()[:300])
 
 
 def main() -> int:
@@ -610,6 +618,7 @@ def main() -> int:
     check_elig(loaded)
     check_copy(loaded)
     check_faq(loaded)
+    check_colleges()
     for w in warnings:
         print("WARN ", w)
     for e in errors:

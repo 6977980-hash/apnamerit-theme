@@ -381,6 +381,1330 @@
    "ru_heading": "MBBS ka merit kitna jata hai?"
   },
   {
+   "path": "/mdcat-merit-list/kemu/",
+   "keyword": "kemu merit",
+   "title": "KEMU Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "KEMU MBBS closing merit 2025: 94.87% in the final UHS list, 94.92% in the 1st list, 96.06% in 2024. Every list, rank and MDCAT needed. Official UHS data.",
+   "h1": "King Edward Medical University (KEMC), Lahore MBBS Merit {year:uhs}",
+   "crumb": "KEMU merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "kemu",
+   "answer": "King Edward Medical University (KEMC), Lahore closed at 94.87% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 94.92% in the 1st list, down from 96.06% in the final 2024 list. It had the highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"kemu\"]",
+   "faq": [
+    {
+     "q": "What was the KEMU merit in 2025?",
+     "a": "94.87% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 94.92%."
+    },
+    {
+     "q": "What was the KEMU merit in 2024?",
+     "a": "96.06% in the last 2024 UHS selection list (open merit), so 2025 closed 1.19 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for KEMU?",
+     "a": "With 1000/1100 in both FSc and Matric, about 178/180 in MDCAT reaches 94.87%, the 2025 final closing merit. With 1050/1100 in both, about 170/180."
+    },
+    {
+     "q": "How much did KEMU merit drop from the 1st to the final list?",
+     "a": "0.05 points in 2025: from 94.92% in the 1st list to 94.87% in the 13th list."
+    },
+    {
+     "q": "Where does KEMU rank among Punjab public medical colleges?",
+     "a": "1st of 17 by 2025 final closing merit, with AIMC (94.45%) below."
+    },
+    {
+     "q": "KEMU ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein KEMU ka open merit 94.87% par close hua; 2024 mein 96.06% tha."
+    },
+    {
+     "q": "KEMU ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 178/180, aur dono 1050/1100 hon to taqreeban 170/180 (2025 ke merit 94.87% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>King Edward Medical University (KEMC), Lahore ka MBBS open merit 2025 ki final UHS list mein <strong>94.87%</strong> par close hua. Pehli list mein yeh 94.92% tha, yani aakhri list tak 0.05 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 178/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "KEMU ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, KEMU (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17kemu24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/aimc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/aimc/",
+   "keyword": "aimc merit",
+   "title": "AIMC Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "AIMC MBBS closing merit 2025: 94.45% in the final UHS list, 94.50% in the 1st list, 95.60% in 2024. Every list, rank and MDCAT needed. Official UHS data.",
+   "h1": "Allama Iqbal Medical College (AIMC), Lahore MBBS Merit {year:uhs}",
+   "crumb": "AIMC merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "aimc",
+   "answer": "Allama Iqbal Medical College (AIMC), Lahore closed at 94.45% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 94.50% in the 1st list, down from 95.60% in the final 2024 list. It had the 2nd highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"aimc\"]",
+   "faq": [
+    {
+     "q": "What was the AIMC merit in 2025?",
+     "a": "94.45% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 94.50%."
+    },
+    {
+     "q": "What was the AIMC merit in 2024?",
+     "a": "95.60% in the last 2024 UHS selection list (open merit), so 2025 closed 1.15 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for AIMC?",
+     "a": "With 1000/1100 in both FSc and Matric, about 177/180 in MDCAT reaches 94.45%, the 2025 final closing merit. With 1050/1100 in both, about 169/180."
+    },
+    {
+     "q": "How much did AIMC merit drop from the 1st to the final list?",
+     "a": "0.05 points in 2025: from 94.50% in the 1st list to 94.45% in the 13th list."
+    },
+    {
+     "q": "Where does AIMC rank among Punjab public medical colleges?",
+     "a": "2nd of 17 by 2025 final closing merit, with KEMU (94.87%) above and SIMS (94.23%) below."
+    },
+    {
+     "q": "AIMC ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein AIMC ka open merit 94.45% par close hua; 2024 mein 95.60% tha."
+    },
+    {
+     "q": "AIMC ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 177/180, aur dono 1050/1100 hon to taqreeban 169/180 (2025 ke merit 94.45% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Allama Iqbal Medical College (AIMC), Lahore ka MBBS open merit 2025 ki final UHS list mein <strong>94.45%</strong> par close hua. Pehli list mein yeh 94.50% tha, yani aakhri list tak 0.05 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 177/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "AIMC ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, AIMC (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17aimc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/kemu/",
+    "/mdcat-merit-list/sims/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/sims/",
+   "keyword": "sims merit",
+   "title": "SIMS Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "SIMS MBBS closing merit 2025: 94.23% in the final UHS list, 94.27% in the 1st list, 95.27% in 2024. Every list, rank and MDCAT needed. Official UHS data.",
+   "h1": "Services Institute of Medical Sciences (SIMS), Lahore MBBS Merit {year:uhs}",
+   "crumb": "SIMS merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "sims",
+   "answer": "Services Institute of Medical Sciences (SIMS), Lahore closed at 94.23% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 94.27% in the 1st list, down from 95.27% in the final 2024 list. It had the 3rd highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"sims\"]",
+   "faq": [
+    {
+     "q": "What was the SIMS merit in 2025?",
+     "a": "94.23% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 94.27%."
+    },
+    {
+     "q": "What was the SIMS merit in 2024?",
+     "a": "95.27% in the last 2024 UHS selection list (open merit), so 2025 closed 1.04 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for SIMS?",
+     "a": "With 1000/1100 in both FSc and Matric, about 176/180 in MDCAT reaches 94.23%, the 2025 final closing merit. With 1050/1100 in both, about 168/180."
+    },
+    {
+     "q": "How much did SIMS merit drop from the 1st to the final list?",
+     "a": "0.04 points in 2025: from 94.27% in the 1st list to 94.23% in the 13th list."
+    },
+    {
+     "q": "Where does SIMS rank among Punjab public medical colleges?",
+     "a": "3rd of 17 by 2025 final closing merit, with AIMC (94.45%) above and Nishtar Medical College (94.15%) below."
+    },
+    {
+     "q": "SIMS ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein SIMS ka open merit 94.23% par close hua; 2024 mein 95.27% tha."
+    },
+    {
+     "q": "SIMS ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 176/180, aur dono 1050/1100 hon to taqreeban 168/180 (2025 ke merit 94.23% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Services Institute of Medical Sciences (SIMS), Lahore ka MBBS open merit 2025 ki final UHS list mein <strong>94.23%</strong> par close hua. Pehli list mein yeh 94.27% tha, yani aakhri list tak 0.04 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 176/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "SIMS ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, SIMS (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17sims24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/aimc/",
+    "/mdcat-merit-list/nishtar/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/nishtar/",
+   "keyword": "nishtar medical college merit",
+   "title": "Nishtar Medical College Merit {year:uhs}: MBBS Closing Merit",
+   "description": "Nishtar Medical College MBBS closing merit 2025: 94.15% in the final UHS list, 94.20% in the 1st list, 95.14% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Nishtar Medical College (NMC), Multan MBBS Merit {year:uhs}",
+   "crumb": "Nishtar Medical College merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "nishtar",
+   "answer": "Nishtar Medical College (NMC), Multan closed at 94.15% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 94.20% in the 1st list, down from 95.14% in the final 2024 list. It had the 4th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"nishtar\"]",
+   "faq": [
+    {
+     "q": "What was the Nishtar Medical College merit in 2025?",
+     "a": "94.15% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 94.20%."
+    },
+    {
+     "q": "What was the Nishtar Medical College merit in 2024?",
+     "a": "95.14% in the last 2024 UHS selection list (open merit), so 2025 closed 0.99 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for Nishtar Medical College?",
+     "a": "With 1000/1100 in both FSc and Matric, about 176/180 in MDCAT reaches 94.15%, the 2025 final closing merit. With 1050/1100 in both, about 168/180."
+    },
+    {
+     "q": "How much did Nishtar Medical College merit drop from the 1st to the final list?",
+     "a": "0.05 points in 2025: from 94.20% in the 1st list to 94.15% in the 13th list."
+    },
+    {
+     "q": "Where does Nishtar Medical College rank among Punjab public medical colleges?",
+     "a": "4th of 17 by 2025 final closing merit, with SIMS (94.23%) above and Ameer-ud-Din Medical College (94.01%) below."
+    },
+    {
+     "q": "Nishtar Medical College ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein Nishtar Medical College ka open merit 94.15% par close hua; 2024 mein 95.14% tha."
+    },
+    {
+     "q": "Nishtar Medical College ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 176/180, aur dono 1050/1100 hon to taqreeban 168/180 (2025 ke merit 94.15% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Nishtar Medical College (NMC), Multan ka MBBS open merit 2025 ki final UHS list mein <strong>94.15%</strong> par close hua. Pehli list mein yeh 94.20% tha, yani aakhri list tak 0.05 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 176/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "Nishtar Medical College ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, Nishtar Medical College (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17nmc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/sims/",
+    "/mdcat-merit-list/amc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/amc/",
+   "keyword": "ameer-ud-din medical college merit",
+   "title": "Ameer-ud-Din Medical College Merit {year:uhs}: MBBS Closing Merit",
+   "description": "Ameer-ud-Din Medical College MBBS closing merit 2025: 94.01% in the final UHS list, 94.08% in the 1st list, 94.73% in 2024 Official UHS data.",
+   "h1": "Ameer-ud-Din Medical College (AMC), Lahore MBBS Merit {year:uhs}",
+   "crumb": "Ameer-ud-Din Medical College merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "amc",
+   "answer": "Ameer-ud-Din Medical College (AMC), Lahore closed at 94.01% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 94.08% in the 1st list, down from 94.73% in the final 2024 list. It had the 5th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"amc\"]",
+   "faq": [
+    {
+     "q": "What was the Ameer-ud-Din Medical College merit in 2025?",
+     "a": "94.01% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 94.08%."
+    },
+    {
+     "q": "What was the Ameer-ud-Din Medical College merit in 2024?",
+     "a": "94.73% in the last 2024 UHS selection list (open merit), so 2025 closed 0.72 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for Ameer-ud-Din Medical College?",
+     "a": "With 1000/1100 in both FSc and Matric, about 175/180 in MDCAT reaches 94.01%, the 2025 final closing merit. With 1050/1100 in both, about 167/180."
+    },
+    {
+     "q": "How much did Ameer-ud-Din Medical College merit drop from the 1st to the final list?",
+     "a": "0.07 points in 2025: from 94.08% in the 1st list to 94.01% in the 13th list."
+    },
+    {
+     "q": "Where does Ameer-ud-Din Medical College rank among Punjab public medical colleges?",
+     "a": "5th of 17 by 2025 final closing merit, with Nishtar Medical College (94.15%) above and RMC Rawalpindi (93.93%) below."
+    },
+    {
+     "q": "Ameer-ud-Din Medical College ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein Ameer-ud-Din Medical College ka open merit 94.01% par close hua; 2024 mein 94.73% tha."
+    },
+    {
+     "q": "Ameer-ud-Din Medical College ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 175/180, aur dono 1050/1100 hon to taqreeban 167/180 (2025 ke merit 94.01% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Ameer-ud-Din Medical College (AMC), Lahore ka MBBS open merit 2025 ki final UHS list mein <strong>94.01%</strong> par close hua. Pehli list mein yeh 94.08% tha, yani aakhri list tak 0.07 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 175/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "Ameer-ud-Din Medical College ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, Ameer-ud-Din Medical College (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17amc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/nishtar/",
+    "/mdcat-merit-list/rmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/rmc/",
+   "keyword": "rmc rawalpindi merit",
+   "title": "RMC Rawalpindi Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "RMC Rawalpindi MBBS closing merit 2025: 93.93% in the final UHS list, 94.00% in the 1st list, 94.74% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Rawalpindi Medical College (RMC), Rawalpindi MBBS Merit {year:uhs}",
+   "crumb": "RMC Rawalpindi merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "rmc",
+   "answer": "Rawalpindi Medical College (RMC), Rawalpindi closed at 93.93% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 94.00% in the 1st list, down from 94.74% in the final 2024 list. It had the 6th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"rmc\"]",
+   "faq": [
+    {
+     "q": "What was the RMC Rawalpindi merit in 2025?",
+     "a": "93.93% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 94.00%."
+    },
+    {
+     "q": "What was the RMC Rawalpindi merit in 2024?",
+     "a": "94.74% in the last 2024 UHS selection list (open merit), so 2025 closed 0.81 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for RMC Rawalpindi?",
+     "a": "With 1000/1100 in both FSc and Matric, about 175/180 in MDCAT reaches 93.93%, the 2025 final closing merit. With 1050/1100 in both, about 167/180."
+    },
+    {
+     "q": "How much did RMC Rawalpindi merit drop from the 1st to the final list?",
+     "a": "0.07 points in 2025: from 94.00% in the 1st list to 93.93% in the 13th list."
+    },
+    {
+     "q": "Where does RMC Rawalpindi rank among Punjab public medical colleges?",
+     "a": "6th of 17 by 2025 final closing merit, with Ameer-ud-Din Medical College (94.01%) above and FJMC (93.81%) below."
+    },
+    {
+     "q": "RMC Rawalpindi ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein RMC Rawalpindi ka open merit 93.93% par close hua; 2024 mein 94.74% tha."
+    },
+    {
+     "q": "RMC Rawalpindi ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 175/180, aur dono 1050/1100 hon to taqreeban 167/180 (2025 ke merit 93.93% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Rawalpindi Medical College (RMC), Rawalpindi ka MBBS open merit 2025 ki final UHS list mein <strong>93.93%</strong> par close hua. Pehli list mein yeh 94.00% tha, yani aakhri list tak 0.07 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 175/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "RMC Rawalpindi ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, RMC Rawalpindi (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17rmc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/amc/",
+    "/mdcat-merit-list/fjmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/fjmc/",
+   "keyword": "fjmc merit",
+   "title": "FJMC Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "FJMC MBBS closing merit 2025: 93.81% in the final UHS list, 93.87% in the 1st list, 94.66% in 2024. Every list, rank and MDCAT needed. Official UHS data.",
+   "h1": "Fatima Jinnah Medical College (FJMC), Lahore MBBS Merit {year:uhs}",
+   "crumb": "FJMC merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "fjmc",
+   "answer": "Fatima Jinnah Medical College (FJMC), Lahore closed at 93.81% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.87% in the 1st list, down from 94.66% in the final 2024 list. It had the 7th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"fjmc\"]",
+   "faq": [
+    {
+     "q": "What was the FJMC merit in 2025?",
+     "a": "93.81% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.87%."
+    },
+    {
+     "q": "What was the FJMC merit in 2024?",
+     "a": "94.66% in the last 2024 UHS selection list (open merit), so 2025 closed 0.85 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for FJMC?",
+     "a": "With 1000/1100 in both FSc and Matric, about 175/180 in MDCAT reaches 93.81%, the 2025 final closing merit. With 1050/1100 in both, about 166/180."
+    },
+    {
+     "q": "How much did FJMC merit drop from the 1st to the final list?",
+     "a": "0.06 points in 2025: from 93.87% in the 1st list to 93.81% in the 13th list."
+    },
+    {
+     "q": "Where does FJMC rank among Punjab public medical colleges?",
+     "a": "7th of 17 by 2025 final closing merit, with RMC Rawalpindi (93.93%) above and PMC Faisalabad (93.79%) below."
+    },
+    {
+     "q": "FJMC ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein FJMC ka open merit 93.81% par close hua; 2024 mein 94.66% tha."
+    },
+    {
+     "q": "FJMC ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 175/180, aur dono 1050/1100 hon to taqreeban 166/180 (2025 ke merit 93.81% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Fatima Jinnah Medical College (FJMC), Lahore ka MBBS open merit 2025 ki final UHS list mein <strong>93.81%</strong> par close hua. Pehli list mein yeh 93.87% tha, yani aakhri list tak 0.06 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 175/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "FJMC ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, FJMC (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17fjmu24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/rmc/",
+    "/mdcat-merit-list/pmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/pmc/",
+   "keyword": "pmc faisalabad merit",
+   "title": "PMC Faisalabad Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "PMC Faisalabad MBBS closing merit 2025: 93.79% in the final UHS list, 93.87% in the 1st list, 94.57% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Punjab Medical College (PMC), Faisalabad MBBS Merit {year:uhs}",
+   "crumb": "PMC Faisalabad merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "pmc",
+   "answer": "Punjab Medical College (PMC), Faisalabad closed at 93.79% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.87% in the 1st list, down from 94.57% in the final 2024 list. It had the 8th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"pmc\"]",
+   "faq": [
+    {
+     "q": "What was the PMC Faisalabad merit in 2025?",
+     "a": "93.79% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.87%."
+    },
+    {
+     "q": "What was the PMC Faisalabad merit in 2024?",
+     "a": "94.57% in the last 2024 UHS selection list (open merit), so 2025 closed 0.78 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for PMC Faisalabad?",
+     "a": "With 1000/1100 in both FSc and Matric, about 175/180 in MDCAT reaches 93.79%, the 2025 final closing merit. With 1050/1100 in both, about 166/180."
+    },
+    {
+     "q": "How much did PMC Faisalabad merit drop from the 1st to the final list?",
+     "a": "0.08 points in 2025: from 93.87% in the 1st list to 93.79% in the 13th list."
+    },
+    {
+     "q": "Where does PMC Faisalabad rank among Punjab public medical colleges?",
+     "a": "8th of 17 by 2025 final closing merit, with FJMC (93.81%) above and QAMC Bahawalpur (93.72%) below."
+    },
+    {
+     "q": "PMC Faisalabad ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein PMC Faisalabad ka open merit 93.79% par close hua; 2024 mein 94.57% tha."
+    },
+    {
+     "q": "PMC Faisalabad ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 175/180, aur dono 1050/1100 hon to taqreeban 166/180 (2025 ke merit 93.79% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Punjab Medical College (PMC), Faisalabad ka MBBS open merit 2025 ki final UHS list mein <strong>93.79%</strong> par close hua. Pehli list mein yeh 93.87% tha, yani aakhri list tak 0.08 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 175/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "PMC Faisalabad ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, PMC Faisalabad (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17pmc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/fjmc/",
+    "/mdcat-merit-list/qamc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/qamc/",
+   "keyword": "qamc bahawalpur merit",
+   "title": "QAMC Bahawalpur Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "QAMC Bahawalpur MBBS closing merit 2025: 93.72% in the final UHS list, 93.81% in the 1st list, 94.53% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Quaid-e-Azam Medical College (QAMC), Bahawalpur MBBS Merit {year:uhs}",
+   "crumb": "QAMC Bahawalpur merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "qamc",
+   "answer": "Quaid-e-Azam Medical College (QAMC), Bahawalpur closed at 93.72% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.81% in the 1st list, down from 94.53% in the final 2024 list. It had the 9th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"qamc\"]",
+   "faq": [
+    {
+     "q": "What was the QAMC Bahawalpur merit in 2025?",
+     "a": "93.72% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.81%."
+    },
+    {
+     "q": "What was the QAMC Bahawalpur merit in 2024?",
+     "a": "94.53% in the last 2024 UHS selection list (open merit), so 2025 closed 0.81 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for QAMC Bahawalpur?",
+     "a": "With 1000/1100 in both FSc and Matric, about 174/180 in MDCAT reaches 93.72%, the 2025 final closing merit. With 1050/1100 in both, about 166/180."
+    },
+    {
+     "q": "How much did QAMC Bahawalpur merit drop from the 1st to the final list?",
+     "a": "0.09 points in 2025: from 93.81% in the 1st list to 93.72% in the 13th list."
+    },
+    {
+     "q": "Where does QAMC Bahawalpur rank among Punjab public medical colleges?",
+     "a": "9th of 17 by 2025 final closing merit, with PMC Faisalabad (93.79%) above and Gujranwala Medical College (93.67%) below."
+    },
+    {
+     "q": "QAMC Bahawalpur ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein QAMC Bahawalpur ka open merit 93.72% par close hua; 2024 mein 94.53% tha."
+    },
+    {
+     "q": "QAMC Bahawalpur ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 174/180, aur dono 1050/1100 hon to taqreeban 166/180 (2025 ke merit 93.72% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Quaid-e-Azam Medical College (QAMC), Bahawalpur ka MBBS open merit 2025 ki final UHS list mein <strong>93.72%</strong> par close hua. Pehli list mein yeh 93.81% tha, yani aakhri list tak 0.09 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 174/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "QAMC Bahawalpur ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, QAMC Bahawalpur (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17qmc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/pmc/",
+    "/mdcat-merit-list/gmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/gmc/",
+   "keyword": "gujranwala medical college merit",
+   "title": "Gujranwala Medical College Merit {year:uhs}: MBBS Closing Merit",
+   "description": "Gujranwala Medical College MBBS closing merit 2025: 93.67% in the final UHS list, 93.79% in the 1st list, 94.47% in 2024 Official UHS data. Updated.",
+   "h1": "Gujranwala Medical College (GMC), Gujranwala MBBS Merit {year:uhs}",
+   "crumb": "Gujranwala Medical College merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "gmc",
+   "answer": "Gujranwala Medical College (GMC), Gujranwala closed at 93.67% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.79% in the 1st list, down from 94.47% in the final 2024 list. It had the 10th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"gmc\"]",
+   "faq": [
+    {
+     "q": "What was the Gujranwala Medical College merit in 2025?",
+     "a": "93.67% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.79%."
+    },
+    {
+     "q": "What was the Gujranwala Medical College merit in 2024?",
+     "a": "94.47% in the last 2024 UHS selection list (open merit), so 2025 closed 0.80 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for Gujranwala Medical College?",
+     "a": "With 1000/1100 in both FSc and Matric, about 174/180 in MDCAT reaches 93.67%, the 2025 final closing merit. With 1050/1100 in both, about 166/180."
+    },
+    {
+     "q": "How much did Gujranwala Medical College merit drop from the 1st to the final list?",
+     "a": "0.12 points in 2025: from 93.79% in the 1st list to 93.67% in the 13th list."
+    },
+    {
+     "q": "Where does Gujranwala Medical College rank among Punjab public medical colleges?",
+     "a": "10th of 17 by 2025 final closing merit, with QAMC Bahawalpur (93.72%) above and Sahiwal Medical College (93.66%) below."
+    },
+    {
+     "q": "Gujranwala Medical College ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein Gujranwala Medical College ka open merit 93.67% par close hua; 2024 mein 94.47% tha."
+    },
+    {
+     "q": "Gujranwala Medical College ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 174/180, aur dono 1050/1100 hon to taqreeban 166/180 (2025 ke merit 93.67% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Gujranwala Medical College (GMC), Gujranwala ka MBBS open merit 2025 ki final UHS list mein <strong>93.67%</strong> par close hua. Pehli list mein yeh 93.79% tha, yani aakhri list tak 0.12 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 174/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "Gujranwala Medical College ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, Gujranwala Medical College (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17gmc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/qamc/",
+    "/mdcat-merit-list/slmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/slmc/",
+   "keyword": "sahiwal medical college merit",
+   "title": "Sahiwal Medical College Merit {year:uhs}: MBBS Closing Merit",
+   "description": "Sahiwal Medical College MBBS closing merit 2025: 93.66% in the final UHS list, 93.76% in the 1st list, 94.43% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Sahiwal Medical College (SLMC), Sahiwal MBBS Merit {year:uhs}",
+   "crumb": "Sahiwal Medical College merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "slmc",
+   "answer": "Sahiwal Medical College (SLMC), Sahiwal closed at 93.66% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.76% in the 1st list, down from 94.43% in the final 2024 list. It had the 11th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"slmc\"]",
+   "faq": [
+    {
+     "q": "What was the Sahiwal Medical College merit in 2025?",
+     "a": "93.66% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.76%."
+    },
+    {
+     "q": "What was the Sahiwal Medical College merit in 2024?",
+     "a": "94.43% in the last 2024 UHS selection list (open merit), so 2025 closed 0.77 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for Sahiwal Medical College?",
+     "a": "With 1000/1100 in both FSc and Matric, about 174/180 in MDCAT reaches 93.66%, the 2025 final closing merit. With 1050/1100 in both, about 166/180."
+    },
+    {
+     "q": "How much did Sahiwal Medical College merit drop from the 1st to the final list?",
+     "a": "0.10 points in 2025: from 93.76% in the 1st list to 93.66% in the 13th list."
+    },
+    {
+     "q": "Where does Sahiwal Medical College rank among Punjab public medical colleges?",
+     "a": "11th of 17 by 2025 final closing merit, with Gujranwala Medical College (93.67%) above and KMSMC Sialkot (93.63%) below."
+    },
+    {
+     "q": "Sahiwal Medical College ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein Sahiwal Medical College ka open merit 93.66% par close hua; 2024 mein 94.43% tha."
+    },
+    {
+     "q": "Sahiwal Medical College ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 174/180, aur dono 1050/1100 hon to taqreeban 166/180 (2025 ke merit 93.66% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Sahiwal Medical College (SLMC), Sahiwal ka MBBS open merit 2025 ki final UHS list mein <strong>93.66%</strong> par close hua. Pehli list mein yeh 93.76% tha, yani aakhri list tak 0.10 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 174/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "Sahiwal Medical College ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, Sahiwal Medical College (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17slmc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/gmc/",
+    "/mdcat-merit-list/kmsmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/kmsmc/",
+   "keyword": "kmsmc sialkot merit",
+   "title": "KMSMC Sialkot Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "KMSMC Sialkot MBBS closing merit 2025: 93.63% in the final UHS list, 93.74% in the 1st list, 94.40% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC) MBBS Merit {year:uhs}",
+   "crumb": "KMSMC Sialkot merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "kmsmc",
+   "answer": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC) closed at 93.63% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.74% in the 1st list, down from 94.40% in the final 2024 list. It had the 12th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"kmsmc\"]",
+   "faq": [
+    {
+     "q": "What was the KMSMC Sialkot merit in 2025?",
+     "a": "93.63% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.74%."
+    },
+    {
+     "q": "What was the KMSMC Sialkot merit in 2024?",
+     "a": "94.40% in the last 2024 UHS selection list (open merit), so 2025 closed 0.77 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for KMSMC Sialkot?",
+     "a": "With 1000/1100 in both FSc and Matric, about 174/180 in MDCAT reaches 93.63%, the 2025 final closing merit. With 1050/1100 in both, about 166/180."
+    },
+    {
+     "q": "How much did KMSMC Sialkot merit drop from the 1st to the final list?",
+     "a": "0.11 points in 2025: from 93.74% in the 1st list to 93.63% in the 13th list."
+    },
+    {
+     "q": "Where does KMSMC Sialkot rank among Punjab public medical colleges?",
+     "a": "12th of 17 by 2025 final closing merit, with Sahiwal Medical College (93.66%) above and Nawaz Sharif Medical College (93.60%) below."
+    },
+    {
+     "q": "KMSMC Sialkot ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein KMSMC Sialkot ka open merit 93.63% par close hua; 2024 mein 94.40% tha."
+    },
+    {
+     "q": "KMSMC Sialkot ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 174/180, aur dono 1050/1100 hon to taqreeban 166/180 (2025 ke merit 93.63% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC) ka MBBS open merit 2025 ki final UHS list mein <strong>93.63%</strong> par close hua. Pehli list mein yeh 93.74% tha, yani aakhri list tak 0.11 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 174/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "KMSMC Sialkot ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, KMSMC Sialkot (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17KMSMC24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/slmc/",
+    "/mdcat-merit-list/nsmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/nsmc/",
+   "keyword": "nawaz sharif medical college merit",
+   "title": "Nawaz Sharif Medical College Merit {year:uhs}: MBBS Closing Merit",
+   "description": "Nawaz Sharif Medical College MBBS closing merit 2025: 93.60% in the final UHS list, 93.71% in the 1st list, 94.35% in 2024 Official UHS data.",
+   "h1": "Nawaz Sharif Medical College, University of Gujrat (NSMC) MBBS Merit {year:uhs}",
+   "crumb": "Nawaz Sharif Medical College merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "nsmc",
+   "answer": "Nawaz Sharif Medical College, University of Gujrat (NSMC) closed at 93.60% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.71% in the 1st list, down from 94.35% in the final 2024 list. It had the 13th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"nsmc\"]",
+   "faq": [
+    {
+     "q": "What was the Nawaz Sharif Medical College merit in 2025?",
+     "a": "93.60% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.71%."
+    },
+    {
+     "q": "What was the Nawaz Sharif Medical College merit in 2024?",
+     "a": "94.35% in the last 2024 UHS selection list (open merit), so 2025 closed 0.75 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for Nawaz Sharif Medical College?",
+     "a": "With 1000/1100 in both FSc and Matric, about 174/180 in MDCAT reaches 93.60%, the 2025 final closing merit. With 1050/1100 in both, about 166/180."
+    },
+    {
+     "q": "How much did Nawaz Sharif Medical College merit drop from the 1st to the final list?",
+     "a": "0.11 points in 2025: from 93.71% in the 1st list to 93.60% in the 13th list."
+    },
+    {
+     "q": "Where does Nawaz Sharif Medical College rank among Punjab public medical colleges?",
+     "a": "13th of 17 by 2025 final closing merit, with KMSMC Sialkot (93.63%) above and Sargodha Medical College (93.59%) below."
+    },
+    {
+     "q": "Nawaz Sharif Medical College ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein Nawaz Sharif Medical College ka open merit 93.60% par close hua; 2024 mein 94.35% tha."
+    },
+    {
+     "q": "Nawaz Sharif Medical College ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 174/180, aur dono 1050/1100 hon to taqreeban 166/180 (2025 ke merit 93.60% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Nawaz Sharif Medical College, University of Gujrat (NSMC) ka MBBS open merit 2025 ki final UHS list mein <strong>93.60%</strong> par close hua. Pehli list mein yeh 93.71% tha, yani aakhri list tak 0.11 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 174/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "Nawaz Sharif Medical College ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, Nawaz Sharif Medical College (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17NSMC24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/kmsmc/",
+    "/mdcat-merit-list/smc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/smc/",
+   "keyword": "sargodha medical college merit",
+   "title": "Sargodha Medical College Merit {year:uhs}: MBBS Closing Merit",
+   "description": "Sargodha Medical College MBBS closing merit 2025: 93.59% in the final UHS list, 93.69% in the 1st list, 94.34% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Sargodha Medical College (SMC), Sargodha MBBS Merit {year:uhs}",
+   "crumb": "Sargodha Medical College merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "smc",
+   "answer": "Sargodha Medical College (SMC), Sargodha closed at 93.59% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.69% in the 1st list, down from 94.34% in the final 2024 list. It had the 14th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"smc\"]",
+   "faq": [
+    {
+     "q": "What was the Sargodha Medical College merit in 2025?",
+     "a": "93.59% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.69%."
+    },
+    {
+     "q": "What was the Sargodha Medical College merit in 2024?",
+     "a": "94.34% in the last 2024 UHS selection list (open merit), so 2025 closed 0.75 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for Sargodha Medical College?",
+     "a": "With 1000/1100 in both FSc and Matric, about 174/180 in MDCAT reaches 93.59%, the 2025 final closing merit. With 1050/1100 in both, about 166/180."
+    },
+    {
+     "q": "How much did Sargodha Medical College merit drop from the 1st to the final list?",
+     "a": "0.10 points in 2025: from 93.69% in the 1st list to 93.59% in the 13th list."
+    },
+    {
+     "q": "Where does Sargodha Medical College rank among Punjab public medical colleges?",
+     "a": "14th of 17 by 2025 final closing merit, with Nawaz Sharif Medical College (93.60%) above and SZMC Rahim Yar Khan (93.54%) below."
+    },
+    {
+     "q": "Sargodha Medical College ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein Sargodha Medical College ka open merit 93.59% par close hua; 2024 mein 94.34% tha."
+    },
+    {
+     "q": "Sargodha Medical College ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 174/180, aur dono 1050/1100 hon to taqreeban 166/180 (2025 ke merit 93.59% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Sargodha Medical College (SMC), Sargodha ka MBBS open merit 2025 ki final UHS list mein <strong>93.59%</strong> par close hua. Pehli list mein yeh 93.69% tha, yani aakhri list tak 0.10 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 174/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "Sargodha Medical College ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, Sargodha Medical College (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17smc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/nsmc/",
+    "/mdcat-merit-list/szmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/szmc/",
+   "keyword": "szmc rahim yar khan merit",
+   "title": "SZMC Rahim Yar Khan Merit {year:uhs}: MBBS Closing Merit by List",
+   "description": "SZMC Rahim Yar Khan MBBS closing merit 2025: 93.54% in the final UHS list, 93.64% in the 1st list, 94.32% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan MBBS Merit {year:uhs}",
+   "crumb": "SZMC Rahim Yar Khan merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "szmc",
+   "answer": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan closed at 93.54% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.64% in the 1st list, down from 94.32% in the final 2024 list. It had the 15th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"szmc\"]",
+   "faq": [
+    {
+     "q": "What was the SZMC Rahim Yar Khan merit in 2025?",
+     "a": "93.54% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.64%."
+    },
+    {
+     "q": "What was the SZMC Rahim Yar Khan merit in 2024?",
+     "a": "94.32% in the last 2024 UHS selection list (open merit), so 2025 closed 0.78 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for SZMC Rahim Yar Khan?",
+     "a": "With 1000/1100 in both FSc and Matric, about 174/180 in MDCAT reaches 93.54%, the 2025 final closing merit. With 1050/1100 in both, about 165/180."
+    },
+    {
+     "q": "How much did SZMC Rahim Yar Khan merit drop from the 1st to the final list?",
+     "a": "0.10 points in 2025: from 93.64% in the 1st list to 93.54% in the 13th list."
+    },
+    {
+     "q": "Where does SZMC Rahim Yar Khan rank among Punjab public medical colleges?",
+     "a": "15th of 17 by 2025 final closing merit, with Sargodha Medical College (93.59%) above and DG Khan Medical College (93.53%) below."
+    },
+    {
+     "q": "SZMC Rahim Yar Khan ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein SZMC Rahim Yar Khan ka open merit 93.54% par close hua; 2024 mein 94.32% tha."
+    },
+    {
+     "q": "SZMC Rahim Yar Khan ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 174/180, aur dono 1050/1100 hon to taqreeban 165/180 (2025 ke merit 93.54% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Sheikh Zayed Medical College (SZMC), Rahim Yar Khan ka MBBS open merit 2025 ki final UHS list mein <strong>93.54%</strong> par close hua. Pehli list mein yeh 93.64% tha, yani aakhri list tak 0.10 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 174/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "SZMC Rahim Yar Khan ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, SZMC Rahim Yar Khan (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17szmc24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/smc/",
+    "/mdcat-merit-list/dgmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/dgmc/",
+   "keyword": "dg khan medical college merit",
+   "title": "DG Khan Medical College Merit {year:uhs}: MBBS Closing Merit",
+   "description": "DG Khan Medical College MBBS closing merit 2025: 93.53% in the final UHS list, 93.66% in the 1st list, 94.30% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "D.G. Khan Medical College (DGMC), D.G Khan MBBS Merit {year:uhs}",
+   "crumb": "DG Khan Medical College merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "dgmc",
+   "answer": "D.G. Khan Medical College (DGMC), D.G Khan closed at 93.53% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.66% in the 1st list, down from 94.30% in the final 2024 list. It had the 16th highest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"dgmc\"]",
+   "faq": [
+    {
+     "q": "What was the DG Khan Medical College merit in 2025?",
+     "a": "93.53% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.66%."
+    },
+    {
+     "q": "What was the DG Khan Medical College merit in 2024?",
+     "a": "94.30% in the last 2024 UHS selection list (open merit), so 2025 closed 0.77 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for DG Khan Medical College?",
+     "a": "With 1000/1100 in both FSc and Matric, about 174/180 in MDCAT reaches 93.53%, the 2025 final closing merit. With 1050/1100 in both, about 165/180."
+    },
+    {
+     "q": "How much did DG Khan Medical College merit drop from the 1st to the final list?",
+     "a": "0.13 points in 2025: from 93.66% in the 1st list to 93.53% in the 13th list."
+    },
+    {
+     "q": "Where does DG Khan Medical College rank among Punjab public medical colleges?",
+     "a": "16th of 17 by 2025 final closing merit, with SZMC Rahim Yar Khan (93.54%) above and Narowal Medical College (93.51%) below."
+    },
+    {
+     "q": "DG Khan Medical College ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein DG Khan Medical College ka open merit 93.53% par close hua; 2024 mein 94.30% tha."
+    },
+    {
+     "q": "DG Khan Medical College ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 174/180, aur dono 1050/1100 hon to taqreeban 165/180 (2025 ke merit 93.53% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>D.G. Khan Medical College (DGMC), D.G Khan ka MBBS open merit 2025 ki final UHS list mein <strong>93.53%</strong> par close hua. Pehli list mein yeh 93.66% tha, yani aakhri list tak 0.13 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 174/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "DG Khan Medical College ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, DG Khan Medical College (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17dgkhan24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/szmc/",
+    "/mdcat-merit-list/narowal/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
+   "path": "/mdcat-merit-list/narowal/",
+   "keyword": "narowal medical college merit",
+   "title": "Narowal Medical College Merit {year:uhs}: MBBS Closing Merit",
+   "description": "Narowal Medical College MBBS closing merit 2025: 93.51% in the final UHS list, 93.63% in the 1st list, 94.24% in 2024. Every list, rank and MDCAT needed.",
+   "h1": "Narowal Medical College, Narowal MBBS Merit {year:uhs}",
+   "crumb": "Narowal Medical College merit",
+   "parents": [
+    "/mdcat-merit-list/"
+   ],
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated_from_data": true,
+   "college": "narowal",
+   "answer": "Narowal Medical College, Narowal closed at 93.51% on open merit in the 13th and final 2025 UHS selection list for public MBBS, after 93.63% in the 1st list, down from 94.24% in the final 2024 list. It had the lowest closing merit of the 17 Punjab public medical colleges.",
+   "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+   "content": "[am_college uni=\"uhs\" college=\"narowal\"]",
+   "faq": [
+    {
+     "q": "What was the Narowal Medical College merit in 2025?",
+     "a": "93.51% on open merit in the 13th and final UHS selection list for public MBBS (2025-26 session). The 1st list closed at 93.63%."
+    },
+    {
+     "q": "What was the Narowal Medical College merit in 2024?",
+     "a": "94.24% in the last 2024 UHS selection list (open merit), so 2025 closed 0.73 points lower."
+    },
+    {
+     "q": "How many MDCAT marks are needed for Narowal Medical College?",
+     "a": "With 1000/1100 in both FSc and Matric, about 173/180 in MDCAT reaches 93.51%, the 2025 final closing merit. With 1050/1100 in both, about 165/180."
+    },
+    {
+     "q": "How much did Narowal Medical College merit drop from the 1st to the final list?",
+     "a": "0.12 points in 2025: from 93.63% in the 1st list to 93.51% in the 13th list."
+    },
+    {
+     "q": "Where does Narowal Medical College rank among Punjab public medical colleges?",
+     "a": "17th of 17 by 2025 final closing merit, with DG Khan Medical College (93.53%) above."
+    },
+    {
+     "q": "Narowal Medical College ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "2025 ki final UHS list mein Narowal Medical College ka open merit 93.51% par close hua; 2024 mein 94.24% tha."
+    },
+    {
+     "q": "Narowal Medical College ke liye MDCAT mein kitne number chahiye?",
+     "lang": "ur-Latn",
+     "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 173/180, aur dono 1050/1100 hon to taqreeban 165/180 (2025 ke merit 93.51% ke hisaab se)."
+    }
+   ],
+   "roman_urdu": "<p>Narowal Medical College, Narowal ka MBBS open merit 2025 ki final UHS list mein <strong>93.51%</strong> par close hua. Pehli list mein yeh 93.63% tha, yani aakhri list tak 0.12 points neeche aaya.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 173/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "Narowal Medical College ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 1st to 13th selection lists, public MBBS 2025",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS last selection list 2024, Narowal Medical College (open merit)",
+     "url": "https://uhs.edu.pk/admissions2024data/17narowal24.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-aggregate-calculator/",
+    "/mdcat-merit-list/dgmc/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/"
+   ]
+  },
+  {
    "path": "/nums-merit-list/",
    "keyword": "nums merit list",
    "title": "NUMS Merit List {season_year}: MBBS & BDS Closing Merit",

@@ -36,6 +36,9 @@ def from_html(url: str) -> dict[str, float]:
     text = urllib.request.urlopen(req, timeout=120).read().decode("utf-8", "ignore")
     rows = table_rows(text)
     hdr = rows[0]
+    # 5th 2025 public MBBS list repeats "Sr#" in its header (one cell more than the rows).
+    while len(hdr) > 1 and hdr[0] == hdr[1] and len(rows) > 1 and len(rows[1]) == len(hdr) - 1:
+        hdr = hdr[1:]
     h = {k: i for i, k in enumerate(hdr)}
     col = next(h[k] for k in COLLEGE_COLS if k in h)
     qc = next((h[k] for k in QUOTA_COLS if k in h), None)
