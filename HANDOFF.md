@@ -1,5 +1,11 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Ranking plan: ECAT guide (v0.26.0, 2026-11-01)
+
+- New `/guides/ecat-aggregate-formula/` (keyword "ecat aggregate formula"): 33/50/17 for UET Lahore + UET Taxila, worked example, "ECAT marks needed" table (FSc Part-I 480, Matric 1000 against Fall 2025 UET Lahore 4th list A1 and UET Taxila 2024 entry), formula comparison with UET Peshawar/NUST/NED/GIKI. Linked from the five UET calculator/merit-list pages and the homepage guides grid.
+- Figures in the content file are typed from data/universities/uet.json and uet-taxila.json: update the table when UET Lahore Fall 2026 or UET Taxila 2025 entry lands.
+- GSC batch given to the owner: ecat guide, uet calculator, uet merit list, comsats/nums merit lists, mdcat-passing-marks, uhs-mbbs-admission, ku-merit-calculator, ibcc calculator, nust-fast guide.
+
 ## Audit 2026-11-01 suggestion G-11: UET Lahore campus pages (v0.25.0, 2026-11-01)
 
 - `[am_merit_table uni="uet" campus="<Campus>"]` (inc/shortcodes.php) keeps one campus; key figures, trend, caption and table id are then campus-specific.
