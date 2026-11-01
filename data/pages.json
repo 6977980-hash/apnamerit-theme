@@ -2610,6 +2610,7 @@
    ],
    "related": [
     "/uet-merit-list/",
+    "/guides/ecat-aggregate-formula/",
     "/uet-taxila-aggregate-calculator/",
     "/uet-peshawar-aggregate-calculator/",
     "/guides/1st-2nd-final-merit-list/",
@@ -2692,6 +2693,7 @@
    ],
    "related": [
     "/uet-aggregate-calculator/",
+    "/guides/ecat-aggregate-formula/",
     "/uet-merit-list/",
     "/uet-taxila-merit-list/",
     "/guides/1st-2nd-final-merit-list/",
@@ -2764,6 +2766,7 @@
    ],
    "related": [
     "/uet-aggregate-calculator/",
+    "/guides/ecat-aggregate-formula/",
     "/uet-merit-list/",
     "/uet-taxila-merit-list/",
     "/guides/1st-2nd-final-merit-list/",
@@ -3096,6 +3099,7 @@
    ],
    "related": [
     "/uet-aggregate-calculator/",
+    "/guides/ecat-aggregate-formula/",
     "/uet-merit-list/ksk/",
     "/uet-merit-list/faisalabad/",
     "/uet-merit-list/narowal/",
@@ -3533,6 +3537,7 @@
    ],
    "related": [
     "/uet-aggregate-calculator/",
+    "/guides/ecat-aggregate-formula/",
     "/uet-merit-list/",
     "/uet-taxila-aggregate-calculator/",
     "/guides/1st-2nd-final-merit-list/",
@@ -3798,6 +3803,95 @@
     "/predictor/",
     "/merit-list/",
     "/methodology/"
+   ]
+  },
+  {
+   "path": "/guides/ecat-aggregate-formula/",
+   "keyword": "ecat aggregate formula",
+   "title": "ECAT Aggregate Formula {season_year}: UET 33/50/17 Explained",
+   "description": "ECAT aggregate formula for UET Lahore and UET Taxila: 33% ECAT, 50% FSc Part-I, 17% Matric. Worked example and ECAT marks needed for each program.",
+   "h1": "ECAT Aggregate Formula {season_year} (UET Lahore and Taxila)",
+   "crumb": "ECAT aggregate formula",
+   "subtitle": "33% ECAT + 50% FSc Part-I + 17% Matric, with ECAT marks needed per program",
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "The ECAT aggregate = 33% ECAT (out of 400) + 50% FSc Part-I + 17% Matric, used by both UET Lahore (Undergraduate Prospectus Spring 2026, p. 19) and UET Taxila. Example: ECAT 280/400, FSc Part-I 480/550 and Matric 1000/1100 give 82.19%.",
+   "answer_source": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
+   "content_file": "guide-ecat-aggregate-formula.html",
+   "faq": [
+    {
+     "q": "What is the ECAT aggregate formula?",
+     "a": "33% ECAT + 50% FSc Part-I (first year) + 17% Matric. UET Lahore sets it in its Undergraduate Prospectus Spring 2026 (p. 19) and UET Taxila uses the same weights."
+    },
+    {
+     "q": "How do I calculate my ECAT aggregate?",
+     "a": "Divide your ECAT marks by 400 and multiply by 33, divide FSc Part-I marks by the Part-I total and multiply by 50, divide Matric marks by 1100 and multiply by 17, then add the three."
+    },
+    {
+     "q": "How many ECAT marks are needed for UET Lahore Computer Science?",
+     "a": "With 480/550 in FSc Part-I and 1000/1100 in Matric, about 325/400 to reach 85.83%, the main-campus Computer Science closing aggregate in the Fall 2025 Fourth Merit List (A1 open merit)."
+    },
+    {
+     "q": "Does ECAT use FSc Part-I or full FSc marks?",
+     "a": "FSc Part-I (first year). Both UET Lahore and UET Taxila use first-year marks even if you have already finished Intermediate."
+    },
+    {
+     "q": "Is the UET Peshawar formula the same as ECAT?",
+     "a": "No. UET Peshawar uses 50% entrance test, 40% FSc Part-I and 10% Matric, from its UG Prospectus 2026-27."
+    },
+    {
+     "q": "How much is one ECAT mark worth in the aggregate?",
+     "a": "0.0825 aggregate points (33 ÷ 400). Ten more ECAT marks add 0.825 points."
+    },
+    {
+     "q": "ECAT ka aggregate kaise nikalte hain?",
+     "a": "ECAT marks ko 400 se divide kar ke 33 se, FSc Part-I ko total se divide kar ke 50 se aur Matric ko 1100 se divide kar ke 17 se multiply karein, phir teeno jama kar lein.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UET mein Computer Science ke liye ECAT mein kitne marks chahiye?",
+     "a": "FSc Part-I 480/550 aur Matric 1000/1100 ke saath taqreeban 325/400. Fall 2025 mein UET Lahore main campus par Computer Science 85.83% par close hui thi.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>ECAT ka formula UET Lahore aur UET Taxila dono mein ek hi hai: <strong>ECAT 33%, FSc Part-I 50% aur Matric 17%</strong>.</p><p>Misaal: ECAT 280/400, FSc Part-I 480/550 aur Matric 1000/1100 ho to aggregate 82.19% banta hai. Apna aggregate <a href=\"/uet-aggregate-calculator/\">UET Lahore calculator</a> ya <a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila calculator</a> se nikalein.</p>",
+   "ru_heading": "ECAT ka aggregate kaise nikalain?",
+   "sources": [
+    {
+     "label": "UET Lahore Undergraduate Prospectus Spring 2026, p. 19 (Determination of Merit)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore Fourth Merit List, Fall 2025 (minimum aggregate)",
+     "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Taxila: Admission Eligibility",
+     "url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Taxila UG Prospectus 2025 (24.11 and Merit Position Entry 2024)",
+     "url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Peshawar UG Prospectus 2026-27",
+     "url": "https://www.uetpeshawar.edu.pk/wp-content/uploads/2026/08/UG-Prospectus-2026-27-17-08-2026.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/",
+    "/uet-taxila-aggregate-calculator/",
+    "/uet-taxila-merit-list/",
+    "/uet-peshawar-aggregate-calculator/",
+    "/predictor/"
    ]
   },
   {

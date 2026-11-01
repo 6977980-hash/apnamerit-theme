@@ -148,7 +148,7 @@ function am_home_steps(): string {
 		$li .= '<li><span class="am-step-n" aria-hidden="true">' . ( $i + 1 ) . '</span><div><h3>' . esc_html( $s[0] ) . '</h3><p>' . $s[1] . '</p></div></li>';
 	}
 	$guides = '';
-	foreach ( array( '/uhs-mbbs-admission/', '/mdcat-passing-marks/', '/guides/mdcat-aggregate-formula/', '/guides/what-is-closing-merit/', '/guides/1st-2nd-final-merit-list/', '/merit-data-report-2026/' ) as $p ) {
+	foreach ( array( '/uhs-mbbs-admission/', '/mdcat-passing-marks/', '/guides/mdcat-aggregate-formula/', '/guides/ecat-aggregate-formula/', '/guides/what-is-closing-merit/', '/guides/1st-2nd-final-merit-list/', '/merit-data-report-2026/' ) as $p ) {
 		$g = am_find_page( $p );
 		if ( $g ) {
 			$guides .= '<a class="am-guide" href="' . esc_url( home_url( $p ) ) . '"><strong>' . esc_html( am_tokens( (string) ( $g['h1'] ?? $g['title'] ) ) ) . '</strong><span>' . esc_html( am_tokens( (string) ( $g['subtitle'] ?? $g['description'] ?? '' ) ) ) . '</span></a>';
