@@ -770,11 +770,21 @@
 
   // ---------------------------------------------------------------- compare tool (Tier 2 idea 6)
   $$('form[data-am-compare]').forEach(function (form) {
-    var dataC = data(form, 'am-cmp-data'), out = $('.am-result', form);
-    if (!dataC) return;
+    var raw = data(form, 'am-cmp-data'), out = $('.am-result', form);
+    if (!raw || !raw.r) return;
+    // Expand the lookup tables: [uni, program, campus, shift, merit page, {year: [closing, list, source]}].
+    var dataC = {};
+    Object.keys(raw.r).forEach(function (id) {
+      var o = raw.r[id], ys = {};
+      Object.keys(o[5]).forEach(function (y) { var v = o[5][y]; ys[y] = [v[0], raw.l[v[1]], raw.s[v[2]]]; });
+      dataC[id] = [raw.u[o[0]], o[1], o[2], o[3], raw.m[o[4]], ys];
+    });
     var label = function (o) { return o[0] + ' · ' + o[1] + (o[2] ? ' · ' + o[2] : '') + (o[3] ? ', ' + o[3] : ''); };
-    var byLabel = {};
-    Object.keys(dataC).forEach(function (id) { byLabel[label(dataC[id]).toLowerCase()] = id; });
+    var byLabel = {}, dl = $('datalist', form);
+    Object.keys(dataC).forEach(function (id) {
+      byLabel[label(dataC[id]).toLowerCase()] = id;
+      if (dl) { var op = document.createElement('option'); op.value = label(dataC[id]); dl.appendChild(op); }
+    });
     var find = function (v) { return byLabel[String(v || '').trim().toLowerCase()] || (dataC[v] ? v : ''); };
     function cell(v) {
       return v ? '<strong>' + pct(v[0]) + '</strong><small>' + esc(/list$/i.test(v[1]) ? v[1] : v[1] + ' list') + ' · <a href="' + esc(v[2]) + '" rel="noopener" target="_blank">official source</a></small>' : '—';

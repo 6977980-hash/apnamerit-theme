@@ -92,22 +92,32 @@ function am_sc_compare( $atts ): string {
 			'description' => 'Compares the official closing merit of two programs or medical colleges year by year.',
 		)
 	);
-	$opts = '';
+	// Compact JSON (lookup tables for repeated strings); am.js builds the datalist from it.
+	$tables = array( 'u' => array(), 'l' => array(), 's' => array(), 'm' => array() );
+	$ix     = function ( string $t, string $v ) use ( &$tables ): int {
+		$k = array_search( $v, $tables[ $t ], true );
+		if ( false === $k ) {
+			$tables[ $t ][] = $v;
+			$k              = count( $tables[ $t ] ) - 1;
+		}
+		return (int) $k;
+	};
+	$rows = array();
 	foreach ( $data as $id => $o ) {
-		$opts .= '<option value="' . esc_attr( am_compare_label( $o ) ) . '"></option>';
+		$ys = array();
+		foreach ( $o['years'] as $y => $v ) {
+			$ys[ $y ] = array( $v[0], $ix( 'l', $v[1] ), $ix( 's', $v[2] ) );
+		}
+		$rows[ $id ] = array( $ix( 'u', $o['uni'] ), $o['program'], $o['campus'], $o['shift'], $ix( 'm', $o['url'] ), $ys );
 	}
 	$field = fn( $k, $label, $id ) => '<div class="am-field"><label for="am-cmp-' . $k . '">' . esc_html( $label ) . '</label><input id="am-cmp-' . $k . '" name="' . $k . '" type="search" list="am-cmp-list" autocomplete="off" value="' . esc_attr( am_compare_label( $data[ $id ] ) ) . '" placeholder="Type a college or program"></div>';
-	$slim = array();
-	foreach ( $data as $id => $o ) {
-		$slim[ $id ] = array( $o['uni'], $o['program'], $o['campus'], $o['shift'], $o['url'], $o['years'] );
-	}
 	return '<form class="am-calc am-compare" data-am-compare novalidate>'
 		. $field( 'a', 'First program or college', $atts['a'] )
 		. $field( 'b', 'Second program or college', $atts['b'] )
-		. '<datalist id="am-cmp-list">' . $opts . '</datalist>'
+		. '<datalist id="am-cmp-list"></datalist>'
 		. '<div class="am-actions"><button type="submit" class="am-btn am-btn--primary">Compare</button></div>'
 		. '<div class="am-result" aria-live="polite">' . am_compare_table( $data[ $atts['a'] ], $data[ $atts['b'] ] ) . '</div>'
-		. am_json_script( 'am-cmp-data', $slim )
+		. am_json_script( 'am-cmp-data', $tables + array( 'r' => $rows ) )
 		. '</form>';
 }
 
