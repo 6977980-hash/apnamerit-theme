@@ -407,3 +407,46 @@ function am_render_page( array $page ): string {
 	$out .= am_related_html( (array) ( $page['related'] ?? array() ) );
 	return $out;
 }
+
+/**
+ * Site search over data/pages.json (audit FE: no search; WordPress search finds no posts here).
+ * Scores each word in the title, H1, keyword, crumb and description; noindex comes from seo.php.
+ */
+function am_search_pages( string $q, int $max = 15 ): array {
+	$words = array_filter( preg_split( '/[^a-z0-9]+/', strtolower( $q ) ), fn( $w ) => strlen( $w ) > 1 );
+	if ( ! $words ) {
+		return array();
+	}
+	$hits = array();
+	foreach ( (array) ( am_data( 'pages' )['pages'] ?? array() ) as $page ) {
+		if ( ! is_array( $page ) || ! empty( $page['noindex'] ) || 'trust' === ( $page['type'] ?? '' ) ) {
+			continue;
+		}
+		$head  = strtolower( am_tokens( (string) ( $page['title'] ?? '' ) . ' ' . ( $page['h1'] ?? '' ) . ' ' . ( $page['keyword'] ?? '' ) . ' ' . ( $page['crumb'] ?? '' ) . ' ' . ( $page['path'] ?? '' ) ) );
+		$body  = strtolower( am_tokens( (string) ( $page['description'] ?? '' ) ) );
+		$score = 0;
+		foreach ( $words as $w ) {
+			$score += 3 * substr_count( $head, $w ) + substr_count( $body, $w );
+		}
+		if ( $score > 0 ) {
+			$hits[] = array( $score, $page );
+		}
+	}
+	usort( $hits, fn( $a, $b ) => $b[0] <=> $a[0] );
+	return array_map( fn( $h ) => $h[1], array_slice( $hits, 0, $max ) );
+}
+
+/** Search form (GET /?s=) used on the search and 404 pages. */
+function am_search_form( string $q = '' ): string {
+	return '<form class="am-search" role="search" action="' . esc_url( home_url( '/' ) ) . '" method="get"><label for="am-s">Search Apna Merit</label><div class="am-row"><input id="am-s" type="search" name="s" value="' . esc_attr( $q ) . '" placeholder="e.g. KEMU merit, UET calculator"><button class="am-btn" type="submit">Search</button></div></form>';
+}
+
+/** Most-used pages, for the search and 404 pages. */
+function am_popular_html(): string {
+	$out = '';
+	foreach ( array( '/mdcat-aggregate-calculator/', '/mdcat-merit-list/', '/uhs-mbbs-admission/', '/predictor/', '/aggregate-calculator/', '/merit-list/', '/guides/', '/updates/' ) as $p ) {
+		$page = am_find_page( $p );
+		$page && ( $out .= '<li><a href="' . esc_url( home_url( $p ) ) . '">' . esc_html( am_page_label( $page ) ) . '</a></li>' );
+	}
+	return $out ? '<h2>Popular pages</h2><ul class="am-plist">' . $out . '</ul>' : '';
+}

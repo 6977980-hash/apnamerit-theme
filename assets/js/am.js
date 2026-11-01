@@ -32,7 +32,8 @@
       var p = formula.parts[i];
       var obtained = num(values['o_' + p.key]);
       var total = num(values['t_' + p.key] != null && values['t_' + p.key] !== '' ? values['t_' + p.key] : p.total);
-      if (isNaN(obtained) || obtained < 0) return { error: 'Enter your ' + marksOf(p.label) + '.', key: p.key };
+      if (isNaN(obtained)) return { error: 'Enter your ' + marksOf(p.label) + '.', key: p.key };
+      if (obtained < 0) return { error: marksOf(p.label) + ' cannot be negative.', key: p.key };
       if (isNaN(total) || total <= 0) return { error: 'Enter the total marks for ' + p.label + '.', key: p.key };
       if (obtained > total) return { error: marksOf(p.label) + ' cannot be more than ' + total + '.', key: p.key };
       // Bonus marks (Hafiz-e-Quran) are added to marks earned and may take a part above its total:
@@ -189,11 +190,23 @@
     if (!list.length) return '<p>' + esc(empty) + '</p>';
     var groups = { strong: [], borderline: [], unlikely: [] };
     list.forEach(function (r) { groups[r.chance].push(r); });
+    // Programs in order of their best closing merit (MBBS public before MBBS private before BDS), so a
+    // Strong list of private colleges does not hide the public ones further down (audit FE).
+    var rank = {};
+    list.slice().sort(function (a, b) { return b.ref - a.ref; }).forEach(function (r) {
+      var k = (r.uni || '') + '|' + r.program;
+      if (!(k in rank)) rank[k] = Object.keys(rank).length;
+    });
+    var college = list.every(function (r) { return r.campus; }) && Object.keys(rank).length <= 4;
     var html = '';
     ['strong', 'borderline', 'unlikely'].forEach(function (g) {
-      if (!groups[g].length) return;
-      html += '<h3><span class="am-chip am-chip--' + g + '">' + LABEL[g] + '</span> ' + groups[g].length + ' program' + (groups[g].length > 1 ? 's' : '') + '</h3><ul class="am-plist">';
-      groups[g].slice(0, g === 'unlikely' ? 10 : 50).forEach(function (r) {
+      var rows = groups[g];
+      if (!rows.length) return;
+      if (college) rows = rows.slice().sort(function (a, b) { return rank[(a.uni || '') + '|' + a.program] - rank[(b.uni || '') + '|' + b.program] || b.ref - a.ref; });
+      var max = g === 'unlikely' ? 10 : 50;
+      html += '<h3><span class="am-chip am-chip--' + g + '">' + LABEL[g] + '</span> ' + rows.length + ' program' + (rows.length > 1 ? 's' : '') + '</h3>' +
+        (rows.length > max ? '<p class="am-muted">Showing the first ' + max + ' of ' + rows.length + ', highest closing merit first. Pick a university, field or province to narrow the list.</p>' : '') + '<ul class="am-plist">';
+      rows.slice(0, max).forEach(function (r) {
         var name = (r.uni ? r.uni + ': ' : '') + r.program + (r.campus ? ' (' + r.campus + (r.shift ? ', ' + r.shift : '') + ')' : '');
         var link = r.url ? '<a href="' + esc(r.url) + '">' + esc(name) + '</a>' : esc(name);
         html += '<li>' + link + ' <span class="am-muted">closed at ' + pct(r.ref) + ' (' + r.year + '), you are ' + (r.gap >= 0 ? '+' : '') + r.gap.toFixed(2) + '</span></li>';
@@ -333,8 +346,8 @@
         rows += '<tr><td>' + esc(p.label) + '</td><td>' + (p.bonus ? p.raw + ' + ' + p.bonus : p.obtained) + ' / ' + p.total + '</td><td>' + p.weight + '%</td><td>' + p.share.toFixed(4) + '</td></tr>';
       });
       var html = '<p class="am-result-main">Your ' + esc(cfg.uni) + ' aggregate is <strong>' + pct(agg) + '</strong></p>' +
-        '<div class="am-table-wrap"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
-        '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button></div>';
+        '<div class="am-table-wrap am-fit"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+        '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy message</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button></div>';
       if (fails.length) html += eligNotice(fails, !(cfg.rows && cfg.rows.length) ? 'none' : blocked ? 'all' : 'some');
       if (blocked) {
         // Not eligible anywhere: aggregate and breakdown stay, the "Where can you get in?" list goes.
@@ -466,8 +479,12 @@
       var summary = chanceSummary(list);
       var text = (cfg.share || 'Mera aggregate {aggregate}% hai{chances}. Apna check karo: {url}').replace('{uni}', filter.uni || '').replace('{aggregate}', agg.toFixed(2))
         .replace('{chances}', summary ? ': ' + summary + (filter.uni ? ' (' + filter.uni + ')' : '') : '').replace('{url}', resultUrl);
-      var share = list.length ? '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button></div>' : '';
-      out.innerHTML = head + note + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.') + prefList(list, cfg.band, cfg.prefUrl) + share;
+      var share = list.length ? '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy message</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button></div>' : '';
+      // "All universities": aggregates from different formulas are not comparable (audit FE).
+      var unis = {};
+      list.forEach(function (r) { unis[r.uni] = true; });
+      var mix = !filter.uni && Object.keys(unis).length > 1 ? '<p class="am-muted"><strong>Programs from ' + Object.keys(unis).length + ' universities.</strong> Each university has its own formula, so your aggregate only compares fairly with the university whose calculator gave it. Pick that university above.</p>' : '';
+      out.innerHTML = head + note + '<h2>Your chances' + (filter.uni ? ' at ' + esc(filter.uni) : '') + '</h2>' + mix + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.') + prefList(list, cfg.band, cfg.prefUrl) + share;
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
     if (saved) run(true);
@@ -606,6 +623,7 @@
         if (bad) return;
         if (notNumber(i)) bad = [i, 'Enter numbers only, without commas.'];
         else if (isNaN(o) || i.value === '') bad = [i, 'Enter your ' + label + '.'];
+        else if (o < 0) bad = [i, label + ' cannot be negative.']; // audit TL-03
         else if (!(t > 0) || o > t) bad = [i, label + ' cannot be more than the total.'];
         else parts.push({ key: k, label: label.replace(/ marks$/, ''), obtained: o, total: t });
       });

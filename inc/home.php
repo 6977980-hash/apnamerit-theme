@@ -87,7 +87,8 @@ function am_home_next(): string {
 	$steps  = array();
 	foreach ( (array) ( $season['steps'] ?? array() ) as $st ) {
 		$d = (string) ( $st['MBBS'] ?? '' );
-		if ( ! preg_match( '/^\d{4}-\d{2}-\d{2}(\/\d{4}-\d{2}-\d{2})?$/', $d ) ) {
+		// Steps for every applicant only: the disability medical board is for a few students.
+		if ( ! preg_match( '/^\d{4}-\d{2}-\d{2}(\/\d{4}-\d{2}-\d{2})?$/', $d ) || ( empty( $st['guide'] ) && ! preg_match( '/classes/i', (string) $st['step'] ) ) ) {
 			continue;
 		}
 		$p       = explode( '/', $d );

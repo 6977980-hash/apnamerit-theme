@@ -5,6 +5,7 @@
  "field": "engineering",
  "province": "Islamabad",
  "website": "https://nust.edu.pk/",
+ "merit_guide": "/guides/nust-fast-closing-merit/",
  "calculator_path": "/nust-aggregate-calculator/",
  "updated": "2026-10-31",
  "_note": "General Merit Generation Criteria for UG admission on NET basis (official page; read via owner's screenshot 2026-10-31 because nust.edu.pk returns 403 to the container). NUST publishes closing merit as merit positions (ranks), not aggregates; none stored yet.",
@@ -22,6 +23,7 @@
     {
      "key": "test",
      "label": "NET score in %",
+     "hint": "NET is out of 200: enter marks ÷ 2, or set the total to 200 and enter your marks. Weight 75%.",
      "total": 100,
      "weight": 75
     },
@@ -48,6 +50,7 @@
     {
      "key": "test",
      "label": "NET score in %",
+     "hint": "NET is out of 200: enter marks ÷ 2, or set the total to 200 and enter your marks. Weight 75%.",
      "total": 100,
      "weight": 75
     },

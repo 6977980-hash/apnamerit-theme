@@ -28,7 +28,9 @@ const AM_FIELDS = array(
 function am_formula_summary( array $f ): string {
 	$bits = array();
 	foreach ( (array) ( $f['parts'] ?? array() ) as $p ) {
-		$bits[] = ! empty( $p['hint'] ) ? (string) $p['label'] . ' (' . $p['hint'] . ')' : rtrim( rtrim( number_format( (float) $p['weight'], 2 ), '0' ), '.' ) . '% ' . $p['label'];
+		// The hint explains a part only where the weight alone misleads (PU's pooled Matric ÷ 4, KU's
+		// test that is not added); elsewhere it is input help and made the home cards a wall of text (audit FE).
+		$bits[] = ! empty( $p['hint'] ) && ( ! empty( $p['pool'] ) || 0.0 === (float) ( $p['weight'] ?? 0 ) ) ? (string) $p['label'] . ' (' . $p['hint'] . ')' : rtrim( rtrim( number_format( (float) $p['weight'], 2 ), '0' ), '.' ) . '% ' . $p['label'];
 	}
 	return implode( ' + ', $bits );
 }

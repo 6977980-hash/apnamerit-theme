@@ -111,6 +111,14 @@ function am_pct( $value ): string {
 /**
  * "4th list", "Last list", "Final list": appends " list" only when the name does not already end with it.
  */
+/** Sort key of a list name: "1st" 1, "2nd merit list" 2, …, "Final" last; others (dated portal lists) in between. */
+function am_list_rank( string $list ): int {
+	if ( preg_match( '/^\s*(\d+)(st|nd|rd|th)\b/i', $list, $m ) ) {
+		return (int) $m[1];
+	}
+	return preg_match( '/final/i', $list ) ? 1000 : 500;
+}
+
 function am_list_label( string $list ): string {
 	return preg_match( '/\blist$/i', $list ) ? $list : $list . ' list';
 }
@@ -218,8 +226,12 @@ function am_no_merit_html( array $uni ): string {
 			$near = $u;
 		}
 	}
-	$html = 'We do not have an official closing merit (aggregate) for ' . esc_html( $short ) . ' yet, so there is no "Where can you get in?" list here. ';
-	if ( $near ) {
+	$html  = 'We do not have an official closing merit (aggregate) for ' . esc_html( $short ) . ' yet, so there is no "Where can you get in?" list here. ';
+	$guide = am_find_page( (string) ( $uni['merit_guide'] ?? '' ) );
+	if ( $guide ) {
+		// NUST/FAST: their own guide beats another university's list (audit FE: NUST linked UET Taxila).
+		$html .= 'Read <a href="' . esc_url( home_url( (string) $guide['path'] ) ) . '">' . esc_html( am_tokens( (string) ( $guide['h1'] ?? $guide['title'] ?? '' ) ) ) . '</a> or see <a href="' . esc_url( home_url( '/merit-list/' ) ) . '">all merit lists</a>.';
+	} elseif ( $near ) {
 		$html .= 'Compare with the <a href="' . esc_url( home_url( (string) $near['meritlist_path'] ) ) . '">' . esc_html( (string) $near['short'] ) . ' merit list</a> or see <a href="' . esc_url( home_url( '/merit-list/' ) ) . '">all merit lists</a>.';
 	} else {
 		$html .= 'See <a href="' . esc_url( home_url( '/merit-list/' ) ) . '">all merit lists</a>.';
@@ -513,6 +525,13 @@ function am_sc_merit_table( $atts ): string {
 	$values = array();
 	foreach ( $facets as $key => $label ) {
 		$values[ $key ] = array_values( array_unique( array_filter( array_map( fn( $r ) => (string) ( $r[ $key ] ?? '' ), $rows ) ) ) );
+		// Filter options in reading order (audit FE: "1st, Final, 3rd"; KU categories unsorted):
+		// lists by number with Final last, years newest first, the rest A-Z with the default first.
+		if ( 'list' === $key ) {
+			usort( $values[ $key ], fn( $a, $b ) => am_list_rank( $a ) <=> am_list_rank( $b ) ?: strnatcasecmp( $a, $b ) );
+		} elseif ( 'year' !== $key ) {
+			usort( $values[ $key ], fn( $a, $b ) => (int) ( ( $def[ $key ] ?? null ) !== $a ) <=> (int) ( ( $def[ $key ] ?? null ) !== $b ) ?: strnatcasecmp( $a, $b ) );
+		}
 	}
 
 	$filters = '';
@@ -591,10 +610,12 @@ function am_sc_merit_table( $atts ): string {
 			$idattr             = ' id="' . esc_attr( $anchor ) . '"';
 		}
 		$body .= '<tr' . $idattr . $attrs . ( $is_def ? '' : ' class="am-off"' ) . '>'
-			. '<th scope="row">' . esc_html( (string) $r['program'] ) . ( ! empty( $r['note'] ) ? '<small>' . esc_html( (string) $r['note'] ) . '</small>' : '' ) . '</th>'
+			// On phones the campus moves under the program (am-mcamp) and its column hides (audit FE:
+			// the sticky Program column showed "MBBS (private)" ×30 with the college cut off).
+			. '<th scope="row">' . esc_html( (string) $r['program'] ) . ( $show_campus && ! empty( $r['campus'] ) ? '<small class="am-mcamp">' . esc_html( (string) $r['campus'] . ( ! empty( $r['shift'] ) ? ', ' . $r['shift'] : '' ) ) . '</small>' : '' ) . ( ! empty( $r['note'] ) ? '<small>' . esc_html( (string) $r['note'] ) . '</small>' : '' ) . '</th>'
 			// Closing % second, so it stays on screen at 375 px (Fix 5, 2026-11-01).
 			. '<td data-v="' . esc_attr( (string) (float) $r['closing'] ) . '"><strong>' . esc_html( am_pct( $r['closing'] ) ) . '</strong></td>'
-			. ( $show_campus ? '<td>' . esc_html( (string) ( $r['campus'] ?? '' ) ) . ( ! empty( $r['shift'] ) ? '<small>' . esc_html( (string) $r['shift'] ) . '</small>' : '' ) . '</td>' : '' )
+			. ( $show_campus ? '<td class="am-camp">' . esc_html( (string) ( $r['campus'] ?? '' ) ) . ( ! empty( $r['shift'] ) ? '<small>' . esc_html( (string) $r['shift'] ) . '</small>' : '' ) . '</td>' : '' )
 			. ( $multi['category'] ? '<td>' . esc_html( (string) ( $r['category'] ?? '' ) ) . '</td>' : '' )
 			. ( $multi['list'] ? '<td>' . esc_html( (string) ( $r['list'] ?? '' ) ) . '</td>' : '' )
 			. ( $multi['year'] ? '<td>' . esc_html( (string) $r['year'] ) . '</td>' : '' )
@@ -611,7 +632,7 @@ function am_sc_merit_table( $atts ): string {
 	$show_delta && ( $cols[] = array( 'Change vs previous year', true ) );
 	$head = '';
 	foreach ( $cols as $i => $c ) {
-		$head .= '<th scope="col"><button type="button" data-am-sort="' . $i . '"' . ( $c[1] ? ' data-num' : '' ) . '>' . esc_html( $c[0] ) . '</button></th>';
+		$head .= '<th scope="col"' . ( 'Campus' === $c[0] ? ' class="am-camp"' : '' ) . '><button type="button" data-am-sort="' . $i . '"' . ( $c[1] ? ' data-num' : '' ) . '>' . esc_html( $c[0] ) . '</button></th>';
 	}
 	$multi_src && ( $head .= '<th scope="col">Source</th>' );
 
@@ -723,7 +744,7 @@ function am_sc_predictor( $atts ): string {
 		}
 		$o = '<option value="">All</option>';
 		foreach ( array_keys( $opts ) as $v ) {
-			$o .= '<option>' . esc_html( (string) $v ) . '</option>';
+			$o .= '<option value="' . esc_attr( (string) $v ) . '">' . esc_html( ucfirst( (string) $v ) ) . '</option>';
 		}
 		return '<div class="am-field"><label for="am-pr-' . esc_attr( $key ) . '">' . esc_html( $label ) . '</label><select id="am-pr-' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '">' . $o . '</select></div>';
 	};
