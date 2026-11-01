@@ -121,6 +121,47 @@ function am_sc_percent(): string {
 		. '<noscript><p>The calculator needs JavaScript; use the formula above by hand.</p></noscript></form>';
 }
 
+// ------------------------------------------------------------------ [am_ibcc]
+/**
+ * O / A level grade → Pakistani marks (IBCC "Conversion for Equivalence"), averaged to a percentage.
+ * Grade table and subject rules: data/site.json → ibcc (with source URLs).
+ */
+function am_sc_ibcc(): string {
+	$cfg = (array) am_site( 'ibcc' );
+	if ( empty( $cfg['grades'] ) ) {
+		return am_stub( 'am_ibcc', array() );
+	}
+	$opts = '<option value="">Grade</option>';
+	foreach ( (array) $cfg['grades'] as $g => $m ) {
+		$opts .= '<option value="' . esc_attr( (string) $g ) . '">' . esc_html( (string) $g ) . '</option>';
+	}
+	$rows = '';
+	foreach ( (array) $cfg['o_subjects'] as $i => $sub ) {
+		$id    = 'am-ib-' . $i;
+		$rows .= '<div class="am-field am-ib-row" data-o="1"><label for="' . $id . '">' . esc_html( (string) $sub ) . '</label><select id="' . $id . '" name="g' . $i . '">' . $opts . '</select></div>';
+	}
+	foreach ( (array) $cfg['a_subjects'] as $i => $sub ) {
+		$id    = 'am-iba-' . $i;
+		$rows .= '<div class="am-field am-ib-row" data-a="1" hidden><label for="' . $id . '">' . esc_html( (string) $sub ) . '</label><select id="' . $id . '" name="a' . $i . '">' . $opts . '</select></div>';
+	}
+	am_registry(
+		'webapp',
+		array(
+			'id'          => 'ibcc',
+			'name'        => 'IBCC Equivalence Calculator (O and A Level)',
+			'description' => 'Converts O level and A level grades into Pakistani marks with the IBCC grade table and gives the average percentage.',
+		)
+	);
+	return '<form class="am-calc" data-am-ibcc novalidate>'
+		. '<div class="am-field"><label for="am-ib-level">Qualification</label><select id="am-ib-level" name="level"><option value="o">O level / IGCSE (Matric equivalence)</option><option value="a">A level (3 main subjects)</option></select></div>'
+		. $rows
+		. '<div class="am-field"><label for="am-ib-astar">Marks for A* / grade 9</label><input id="am-ib-astar" name="astar" type="number" min="90" max="100" step="any" value="90"><small>IBCC gives "above 90" and publishes exact subject-wise A* marks for each exam session; enter yours if you know it.</small></div>'
+		. '<div class="am-actions"><button type="submit" class="am-btn am-btn--primary">Convert grades</button></div>'
+		. '<div class="am-result" aria-live="polite" hidden></div>'
+		. am_json_script( 'am-ibcc-data', array( 'grades' => $cfg['grades'] ) )
+		. '<noscript><p>The calculator needs JavaScript; use the grade table below by hand.</p></noscript></form>';
+}
+
 // ------------------------------------------------------------------ [am_report]
 /**
  * Yearly data report (Phase 7, November): one summary row + key figures per university with
@@ -604,5 +645,6 @@ add_action(
 		add_shortcode( 'am_submit', 'am_sc_submit' );
 		add_shortcode( 'am_report', 'am_sc_report' );
 		add_shortcode( 'am_percent', 'am_sc_percent' );
+		add_shortcode( 'am_ibcc', 'am_sc_ibcc' );
 	}
 );

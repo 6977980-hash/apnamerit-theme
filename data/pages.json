@@ -2104,6 +2104,7 @@
     }
    ],
    "related": [
+    "/ibcc-equivalence-calculator/",
     "/percentage-calculator/",
     "/mdcat-aggregate-calculator/",
     "/nust-aggregate-calculator/",
@@ -2180,11 +2181,86 @@
     }
    ],
    "related": [
+    "/ibcc-equivalence-calculator/",
     "/aggregate-calculator/",
     "/mdcat-aggregate-calculator/",
     "/pu-aggregate-calculator/",
     "/nust-aggregate-calculator/",
     "/uet-taxila-aggregate-calculator/",
+    "/predictor/"
+   ]
+  },
+  {
+   "path": "/ibcc-equivalence-calculator/",
+   "keyword": "ibcc equivalence calculator",
+   "title": "IBCC Equivalence Calculator: O & A Level to Marks",
+   "description": "IBCC equivalence calculator: turn your O level or A level grades into Pakistani marks and a percentage with IBCC's grade table (A* 90, A 85, B 75).",
+   "h1": "IBCC Equivalence Calculator for O and A Levels",
+   "crumb": "IBCC equivalence calculator",
+   "type": "content",
+   "template": "default",
+   "schema_type": "WebPage",
+   "parents": [
+    "/aggregate-calculator/"
+   ],
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "subtitle": "O level and A level grades to Pakistani marks, with IBCC's official conversion table",
+   "answer": "IBCC converts each O or A level grade into Pakistani marks: A* above 90, A 85, B 75, C 65, D 55 and E 45 (number grades 9 to 2 run from above 90 down to 40). Your equivalence percentage is the average of your subjects, usually eight at O level and three at A level.",
+   "answer_source": "https://ibcc.edu.pk/conversion-for-equivalence/",
+   "content_file": "ibcc-equivalence-calculator.html",
+   "faq": [
+    {
+     "q": "How does IBCC calculate O level equivalence?",
+     "a": "Each grade is converted into marks out of 100 (A* above 90, A 85, B 75, C 65, D 55, E 45) and the marks of the required subjects are added. Eight subjects are needed for exams taken in Pakistan, five for exams taken abroad."
+    },
+    {
+     "q": "How many marks is an A* in IBCC equivalence?",
+     "a": "Above 90. From the 2021 session IBCC publishes exact subject-wise A* marks for each exam session, so the value can be slightly higher than 90."
+    },
+    {
+     "q": "Which subjects are compulsory for Matric equivalence?",
+     "a": "English, Mathematics, Urdu, Islamiyat and Pakistan Studies, plus three electives. Students abroad and foreign nationals can be exempt from Urdu, Islamiyat and Pakistan Studies."
+    },
+    {
+     "q": "Is grade F or G accepted?",
+     "a": "No. IBCC does not accept F or G (or number grade 1) for equivalence; the minimum is E."
+    },
+    {
+     "q": "O level ka IBCC equivalence kaise nikalta hai?",
+     "a": "Har grade ke marks lagte hain: A* 90 se upar, A 85, B 75, C 65. Saare subjects ke marks jama kar ke percentage nikalti hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "A level walon ka aggregate kaise banta hai?",
+     "a": "Pehle IBCC equivalence percentage nikalein, phir use FSc ki jagah university ke aggregate calculator mein likhein.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>O level ya A level ke grades chunein, calculator IBCC ke official table se marks aur percentage nikal dega. A* = 90 se upar, A = 85, B = 75.</p><p>Yeh percentage Matric ya FSc ki jagah <a href=\"/aggregate-calculator/\">aggregate calculator</a> mein istemal karein. Final number IBCC certificate wala hi hota hai.</p>",
+   "sources": [
+    {
+     "label": "IBCC, Conversion for Equivalence (grade to marks table)",
+     "url": "https://ibcc.edu.pk/conversion-for-equivalence/",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "IBCC, British System (O and A levels) subject requirements",
+     "url": "https://ibcc.edu.pk/equivalence-intro/british-system/",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "IBCC, Rules for Equivalence (exemptions)",
+     "url": "https://ibcc.edu.pk/equivalence-intro/rules-for-equivalence/",
+     "fetched": "2026-11-01"
+    }
+   ],
+   "related": [
+    "/percentage-calculator/",
+    "/aggregate-calculator/",
+    "/mdcat-aggregate-calculator/",
+    "/nust-aggregate-calculator/",
+    "/pu-aggregate-calculator/",
     "/predictor/"
    ]
   },

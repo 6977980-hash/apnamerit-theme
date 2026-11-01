@@ -53,5 +53,41 @@
     "enabled": true,
     "key": "0d83509021466dd87ca164d3eabef1ad",
     "note": "IndexNow (Bing, Yandex, Seznam, Naver). Key is public by design, served at /<key>.txt by inc/indexnow.php. After each deploy, pages whose content changed are submitted once (owner approved indexing 2026-10-31)."
+  },
+  "ibcc": {
+    "source_url": "https://ibcc.edu.pk/conversion-for-equivalence/",
+    "rules_url": "https://ibcc.edu.pk/equivalence-intro/british-system/",
+    "note": "IBCC grade conversion of GCSE/IGCSE/O and A levels into Pakistani marks (checked 2026-11-01). A* and 9 = 'above 90' (exact subject-wise A* marks per exam session in IBCC PDFs). F, G and grade 1 are not applicable for equivalence.",
+    "grades": {
+      "A*": 90,
+      "A": 85,
+      "B": 75,
+      "C": 65,
+      "D": 55,
+      "E": 45,
+      "9": 90,
+      "8": 87,
+      "7": 82,
+      "6": 77,
+      "5": 70,
+      "4": 60,
+      "3": 50,
+      "2": 40
+    },
+    "o_subjects": [
+      "English",
+      "Mathematics",
+      "Urdu",
+      "Islamiyat",
+      "Pakistan Studies",
+      "Elective 1 (e.g. Physics)",
+      "Elective 2 (e.g. Chemistry)",
+      "Elective 3 (e.g. Biology or Computer Science)"
+    ],
+    "a_subjects": [
+      "Physics",
+      "Chemistry",
+      "Biology or Mathematics"
+    ]
   }
 }
