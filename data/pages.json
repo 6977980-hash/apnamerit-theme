@@ -46,9 +46,15 @@
      "q": "Aggregate kaise nikalte hain?",
      "a": "Upar apni university chunein, Matric, FSc aur test ke marks likhein. Calculator university ke official formula se aggregate nikal deta hai.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "Merit kitna jata hai?",
+     "a": "Har university aur program ka alag. Misaal: 2025 mein Punjab ke government MBBS colleges 93.51% se 94.87%, UET Lahore main campus Computer Science 85.83% aur PUCIT Computer Science (New Campus) 87.18% par close hue. Apni university ka page merit lists mein dekhein.",
+     "lang": "ur-Latn"
     }
    ],
-   "roman_urdu": "<p>Apna Merit par har university ka official formula aur pichhle saal ka closing merit ek jagah hai. Marks likhein, aggregate dekhein aur pata karein ke kis college ya program mein chance hai.</p><p>Har number ke saath university ka official link diya gaya hai.</p>"
+   "roman_urdu": "<p>Apna Merit par har university ka official formula aur pichhle saal ka closing merit ek jagah hai. Marks likhein, aggregate dekhein aur pata karein ke kis college ya program mein chance hai.</p><p>Har number ke saath university ka official link diya gaya hai.</p>",
+   "ru_heading": "Apna aggregate aur merit kaise check karein?"
   },
   {
    "path": "/about/",
@@ -206,6 +212,14 @@
      "a": "Enter your marks and change the FSc total to 1200. The calculator converts marks to a percentage of whatever total you enter."
     },
     {
+     "q": "Is 85% aggregate enough for MBBS in Punjab?",
+     "a": "Not for a public college: the lowest public MBBS closing merit in the final 2025 UHS list was 93.51%. 85% was at or above the final 2025 closing merit of 29 of the 33 private MBBS colleges, as long as you also meet the 55% MDCAT pass mark."
+    },
+    {
+     "q": "Is 150 a good score in MDCAT?",
+     "a": "With 150/180 in MDCAT and 1000/1100 in both FSc and Matric, the aggregate is 87.12%. That is below every Punjab public MBBS closing merit of 2025 (lowest 93.51%) but at or above the final 2025 closing merit of 31 of the 33 private MBBS colleges."
+    },
+    {
      "q": "MDCAT aggregate kaise nikalain?",
      "a": "MDCAT marks ko total se divide kar ke 50 se multiply karein, FSc marks ko total se divide kar ke 40 se, aur Matric marks ko total se divide kar ke 10 se. Teeno ko jama karein, yehi aap ka aggregate hai.",
      "lang": "ur-Latn"
@@ -213,6 +227,11 @@
     {
      "q": "Kitna aggregate ho to government medical college mil jata hai?",
      "a": "2025 mein Punjab ke government MBBS colleges ka open merit 93.51% se 94.87% ke darmiyan close hua. Har saal yeh thora upar neeche hota hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "MDCAT mein kitne number chahiye government college ke liye?",
+     "a": "FSc aur Matric dono 1000/1100 hon to 2025 ke sab se kam government MBBS merit (93.51%) tak pohanchne ke liye MDCAT mein taqreeban 173/180 chahiye; dono 1050/1100 hon to taqreeban 165/180.",
      "lang": "ur-Latn"
     }
    ],
@@ -253,7 +272,8 @@
     "/guides/what-is-closing-merit/",
     "/methodology/",
     "/data-sources/"
-   ]
+   ],
+   "ru_heading": "MDCAT aggregate kaise nikalain?"
   },
   {
    "path": "/mdcat-merit-list/",
@@ -297,6 +317,14 @@
      "a": "UHS publishes college-wise selection lists on uhs.edu.pk. Every row in our table links to the exact official list the figure came from."
     },
     {
+     "q": "Which government medical college in Punjab has the lowest merit?",
+     "a": "Narowal Medical College, at 93.51% in the 13th and final 2025 UHS list, followed by D.G. Khan Medical College (93.53%) and Sheikh Zayed Medical College, Rahim Yar Khan (93.54%). All 17 public MBBS colleges closed within 1.36 points of each other."
+    },
+    {
+     "q": "Is 90% aggregate enough for MBBS?",
+     "a": "In Punjab, not for a public college (lowest 93.51% in the final 2025 UHS list). 90% was at or above the final 2025 closing merit of 32 of the 33 private MBBS colleges; only Al-Aleem Medical College, Lahore closed higher, at 90.84%."
+    },
+    {
      "q": "Pichle saal MBBS ka merit kitna tha?",
      "a": "2025 mein Punjab ke government MBBS colleges ka final open merit 93.51% se 94.87% tha. KEMU sab se upar 94.87% par aur Narowal Medical College sab se neeche 93.51% par close hua.",
      "lang": "ur-Latn"
@@ -304,6 +332,11 @@
     {
      "q": "Private medical college ka merit kitna jata hai?",
      "a": "2025 ki final list mein private MBBS colleges 90.84% se 61.00% tak close hue. Har college ka alag merit hai, table mein apna college dekhein.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "BDS ka merit kitna jata hai?",
+     "a": "2025 mein Punjab ke government BDS colleges 13th list mein 93.42% se 93.46% par, aur private BDS colleges 3rd list mein 55.87% se 73.13% par close hue.",
      "lang": "ur-Latn"
     }
    ],
@@ -344,7 +377,8 @@
     "/guides/mdcat-aggregate-formula/",
     "/methodology/",
     "/data-sources/"
-   ]
+   ],
+   "ru_heading": "MBBS ka merit kitna jata hai?"
   },
   {
    "path": "/nums-merit-list/",
@@ -384,6 +418,14 @@
      "a": "The PM&DC formula: 50% MDCAT, 40% FSc and 10% Matric, the same as the MDCAT aggregate calculator on this site."
     },
     {
+     "q": "Is NUMS merit lower than UHS?",
+     "a": "Yes, for 2025-26. NUMS MBBS colleges closed between 83.85% and 86.73% on open merit in its newest published lists, while Punjab public MBBS colleges closed between 93.51% and 94.87% in the final 2025 UHS list. Both use the same PM&DC formula (50% MDCAT, 40% FSc, 10% Matric)."
+    },
+    {
+     "q": "Which NUMS college has the lowest merit?",
+     "a": "Karachi Institute of Medical Sciences, Malir Cantt, at 83.85% on open merit in the sixth 2025-26 selection list, then HITEC Institute of Medical Sciences, Taxila (83.97%) and Wah Medical College (84.10%)."
+    },
+    {
      "q": "NUMS ka merit kitna jata hai?",
      "a": "2025-26 mein private MBBS colleges 83.85% se 86.73% ke darmiyan close hue, aur BDS 84.75% se 85.23% ke darmiyan.",
      "lang": "ur-Latn"
@@ -391,6 +433,11 @@
     {
      "q": "CMH Lahore MBBS ka merit kya tha?",
      "a": "Session 2025-26 ki chhati selection list mein 85.32% par close hua.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "NUMS BDS ka merit kitna hai?",
+     "a": "Session 2025-26 ki chauthi selection list mein BDS 84.75% (CMH Lahore) se 85.23% (Quetta College of Dentistry) ke darmiyan close hua.",
      "lang": "ur-Latn"
     }
    ],
@@ -418,7 +465,8 @@
     "/predictor/",
     "/guides/what-is-closing-merit/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "NUMS ka merit kitna jata hai?"
   },
   {
    "path": "/guides/mdcat-aggregate-formula/",
@@ -485,7 +533,8 @@
     "/mdcat-merit-list/",
     "/guides/what-is-closing-merit/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "MDCAT aggregate ka formula kya hai?"
   },
   {
    "path": "/guides/what-is-closing-merit/",
@@ -515,6 +564,10 @@
      "a": "No. It changes with test difficulty, seats and applicants. Use the newest official final list as a guide (older years show the trend), not a guarantee."
     },
     {
+     "q": "Is closing merit the minimum marks for admission?",
+     "a": "No. Minimum marks decide whether you can apply (in Punjab for 2026-27: 55% in MDCAT for MBBS and 60% in FSc). Closing merit is the aggregate of the last student admitted, which is usually far higher: 93.51% for the lowest public MBBS college in the final 2025 UHS list."
+    },
+    {
      "q": "Closing merit ka kya matlab hai?",
      "a": "Kisi list mein jis aakhri student ka admission hua, us ka aggregate closing merit kehlata hai.",
      "lang": "ur-Latn"
@@ -522,6 +575,11 @@
     {
      "q": "Last year merit se kaise pata chale ga ke admission hoga?",
      "a": "Apna aggregate har program ke sab se naye saal ki official final list, open merit closing merit se milayein (purane saal sirf trend dikhate hain). 1.5 points se zyada upar hon to chance strong hai, qareeb hon to borderline.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Merit kitna jata hai ka matlab kya hai?",
+     "a": "Iska matlab hai ke pichhle saal kisi program mein aakhri admission kis aggregate par hua, yani closing merit. Misaal: Fall 2025 mein UET Lahore main campus Computer Science 85.83% par close hui.",
      "lang": "ur-Latn"
     }
    ],
@@ -543,7 +601,8 @@
     "/mdcat-aggregate-calculator/",
     "/guides/mdcat-aggregate-formula/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "Closing merit kya hota hai?"
   },
   {
    "path": "/mdcat-passing-marks/",
@@ -584,6 +643,10 @@
     {
      "q": "If I pass MDCAT, will I get admission?",
      "a": "No. Passing makes you eligible to apply; seats go by aggregate. In the final 2025 UHS lists, Punjab public MBBS colleges closed between 93.51% and 94.87% and private MBBS colleges between 90.84% and 61.00%."
+    },
+    {
+     "q": "Can I get MBBS with passing marks in MDCAT?",
+     "a": "In a private college, possibly. With 99/180 (the 55% pass mark) and 1000/1100 in both FSc and Matric, the aggregate is 72.95%, at or above the final 2025 closing merit of 17 of the 33 private MBBS colleges in Punjab. Public colleges closed at 93.51% or higher."
     },
     {
      "q": "MDCAT mein kitne number par pass hota hai?",
@@ -636,7 +699,8 @@
     "/guides/mdcat-aggregate-formula/",
     "/ibcc-equivalence-calculator/",
     "/percentage-calculator/"
-   ]
+   ],
+   "ru_heading": "MDCAT mein kitne number par pass hota hai?"
   },
   {
    "path": "/uhs-mbbs-admission/",
@@ -677,6 +741,10 @@
     {
      "q": "Can I change my college preferences after applying?",
      "a": "No. The UHS notice says the number and order of college preferences become final and cannot be changed after the application deadline."
+    },
+    {
+     "q": "How many merit lists does UHS display?",
+     "a": "In 2025 the public MBBS cycle ran to 13 selection lists and the private MBBS cycle to 5. For 2026-27 UHS has announced dates for the first three public MBBS lists and says the number of lists can change."
     },
     {
      "q": "UHS ki merit list kab aaye gi?",
@@ -734,7 +802,8 @@
     "/guides/1st-2nd-final-merit-list/",
     "/guides/what-is-closing-merit/",
     "/predictor/"
-   ]
+   ],
+   "ru_heading": "UHS ki merit list kab aaye gi?"
   },
   {
    "path": "/nust-aggregate-calculator/",
@@ -781,6 +850,11 @@
      "q": "NUST mein FSc ke marks ka kitna asar hai?",
      "a": "Sirf 15%. Asal farq NET se padta hai jis ka weight 75% hai.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "NUST ka merit kitna jata hai?",
+     "a": "NUST merit percent mein publish nahi karta. Woh har program ki closing merit position (rank) deta hai aur kehta hai ke yeh sirf reference hai aur har saal badalti hai, is liye hum NUST ka percent merit nahi dikhate.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>NUST ka formula: <strong>NET 75%, FSc Part-1 15% aur Matric 10%</strong>. A level students ke liye NET 75% aur O level equivalence 25%.</p><p>Misaal: NET 70%, FSc Part-1 480/550 aur Matric 1000/1100 ho to aggregate 74.68% banta hai. Is liye NUST mein sab se zyada mehnat NET par karein.</p>",
@@ -802,7 +876,8 @@
     "/giki-aggregate-calculator/",
     "/guides/1st-2nd-final-merit-list/",
     "/comsats-aggregate-calculator/"
-   ]
+   ],
+   "ru_heading": "NUST ka aggregate kaise nikalta hai?"
   },
   {
    "path": "/comsats-aggregate-calculator/",
@@ -849,6 +924,11 @@
      "q": "COMSATS engineering ke liye NTS mein kitne marks chahiye?",
      "a": "Kam az kam 33%, yeh PEC ki policy hai.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "COMSATS mein CS ka merit kitna jata hai?",
+     "a": "Fall 2026 mein COMSATS Lahore par BS Computer Science 85% par close hui, aur Islamabad mein Spring 2025 mein 88.26% par.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>COMSATS ka formula: <strong>NTS NAT test 50%, FSc 40% aur Matric 10%</strong>. Engineering aur doosre BS programs dono ke liye yehi hai.</p><p>Misaal: NAT 60%, FSc 950/1100 aur Matric 1000/1100 ho to aggregate 73.64% banta hai. Engineering ke liye NTS mein kam az kam 33% zaroori hai.</p>",
@@ -871,7 +951,8 @@
     "/uet-taxila-aggregate-calculator/",
     "/guides/1st-2nd-final-merit-list/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "COMSATS ka aggregate kaise nikalain?"
   },
   {
    "path": "/uet-aggregate-calculator/",
@@ -910,6 +991,14 @@
      "a": "The weights are the same (33% test, 50% FSc Part-I, 17% Matric), but the two universities hold separate admissions and publish separate merit lists."
     },
     {
+     "q": "How many ECAT marks are needed for UET Lahore Computer Science?",
+     "a": "With 480/550 in FSc Part-I and 1000/1100 in Matric, you would need about 325/400 in ECAT to reach 85.83%, the main-campus Computer Science closing merit in the Fall 2025 Fourth Merit List (A1 open merit)."
+    },
+    {
+     "q": "Is 80% aggregate good for UET Lahore?",
+     "a": "For most programs, yes: in the Fall 2025 Fourth Merit List (A1 open merit), 67 of 75 program-campus rows closed at or below 80%. The 8 above it were all at the main campus: Computer Science, BBIT, Data Science, Cybersecurity, Computer Engineering, Interior Design, Electrical (80.35%) and Mechanical (80.25%)."
+    },
+    {
      "q": "UET Lahore ka aggregate kaise nikalain?",
      "a": "ECAT marks ko 400 se divide kar ke 33 se, FSc Part-I ko total se divide kar ke 50 se aur Matric ko 1100 se divide kar ke 17 se multiply karein. Teeno ko jama kar lein.",
      "lang": "ur-Latn"
@@ -917,6 +1006,11 @@
     {
      "q": "UET Lahore mein Computer Science ka merit kitna gaya?",
      "a": "Fall 2025 ki Fourth Merit List mein main campus par A1 open merit 85.83% par close hua.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UET Lahore mein kitna aggregate chahiye?",
+     "a": "Fall 2025 ki Fourth Merit List (A1 open merit) mein main campus par Electrical 80.35%, Mechanical 80.25%, Civil 78.91% aur Chemical 78.47% par close hui. KSK, Faisalabad, Narowal aur RCET campuses ka merit kam tha, kuch programs 50% se 52% ke darmiyan.",
      "lang": "ur-Latn"
     }
    ],
@@ -939,7 +1033,8 @@
     "/uet-peshawar-aggregate-calculator/",
     "/guides/1st-2nd-final-merit-list/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "UET Lahore ka aggregate kaise nikalain?"
   },
   {
    "path": "/uet-taxila-aggregate-calculator/",
@@ -982,6 +1077,10 @@
      "a": "For 2024 entry, Environmental Engineering closed lowest at 53.071% on open merit, followed by Industrial & Manufacturing at 53.781%."
     },
     {
+     "q": "How many ECAT marks are needed for UET Taxila Software Engineering?",
+     "a": "With 480/550 in FSc Part-I and 1000/1100 in Matric (no Hafiz marks), about 247/400 in the entry test reaches 79.435%, the Software Engineering closing merit for 2024 entry."
+    },
+    {
      "q": "UET Taxila ka aggregate kaise nikalain?",
      "a": "Entry test marks ko total se divide kar ke 33 se multiply karein, FSc Part-I ko total se divide kar ke 50 se aur Matric ko total se divide kar ke 17 se. Teeno ko jama kar lein.",
      "lang": "ur-Latn"
@@ -1019,7 +1118,8 @@
     "/ned-aggregate-calculator/",
     "/fast-aggregate-calculator/",
     "/nust-aggregate-calculator/"
-   ]
+   ],
+   "ru_heading": "UET Taxila ka aggregate kaise nikalain?"
   },
   {
    "path": "/uet-peshawar-aggregate-calculator/",
@@ -1066,6 +1166,11 @@
      "q": "Kya UET Peshawar ke test mein negative marking hai?",
      "a": "Nahi. 2026-27 ke prospectus ke mutabiq har sahi jawab ka aik mark hai aur negative marking nahi hai.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "UET Peshawar ka merit kitna jata hai?",
+     "a": "UET Peshawar revised merit lists main campus ke notice board par lagata hai. Online official program-wise closing merit humein nahi mila, is liye yahan koi figure nahi.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>UET Peshawar BSc Engineering ka formula: <strong>entrance test 50%, FSc Part-I 40% aur Matric 10%</strong>. Test 100 MCQs ka hai, negative marking nahi.</p><p>Misaal: test 70/100, Part-I 480/550 aur Matric 1000/1100 ho to aggregate 79.00% banta hai. BS Computer Science mein test nahi: Matric 40% aur Part-I 60%.</p>",
@@ -1085,7 +1190,8 @@
     "/ned-aggregate-calculator/",
     "/fast-aggregate-calculator/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "UET Peshawar ka aggregate kaise nikalta hai?"
   },
   {
    "path": "/ned-aggregate-calculator/",
@@ -1132,6 +1238,11 @@
      "q": "NED test mein pass hone ke liye kitne marks chahiye?",
      "a": "Test mein kam az kam 50% marks chahiye, yani 100 mein se 50.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "NED ka merit kitna jata hai?",
+     "a": "NED closing percentage publish nahi karta, sirf merit ke hisaab se provisional call lists deta hai. Is liye yahan NED ka closing merit nahi hai.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>NED ka merit score: <strong>entry test 60% aur HSC Part-I 40%</strong>. Matric ke marks is mein nahi aate. Test 100 marks ka hai aur pass hone ke liye 50% chahiye.</p><p>Misaal: test 70/100 aur HSC Part-I 480/550 ho to merit score 76.91% banta hai.</p>",
@@ -1154,7 +1265,8 @@
     "/uet-peshawar-aggregate-calculator/",
     "/fast-aggregate-calculator/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "NED ka merit kaise banta hai?"
   },
   {
    "path": "/fast-aggregate-calculator/",
@@ -1201,6 +1313,11 @@
      "q": "FAST mein admission ke liye kitne FSc marks chahiye?",
      "a": "Engineering ke liye Matric aur FSc dono mein 60%, computing ke liye Matric mein 60% aur FSc mein 50%.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "FAST ka merit kitna jata hai?",
+     "a": "FAST program-wise closing merit publish nahi karta; cut-off har saal university khud tay karti hai. Is liye hum FAST ka koi merit figure nahi dikhate.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>FAST ke do formule hain: <strong>computing (CS, AI, SE waghera) mein test 50%, FSc 40%, Matric 10%</strong>, aur <strong>engineering mein test 33%, FSc 50%, Matric 17%</strong>.</p><p>Misaal: test 60%, FSc 950/1100 aur Matric 1000/1100 ho to computing aggregate 73.64% aur engineering aggregate 78.44% banta hai.</p>",
@@ -1224,7 +1341,8 @@
     "/ned-aggregate-calculator/",
     "/nust-aggregate-calculator/",
     "/comsats-aggregate-calculator/"
-   ]
+   ],
+   "ru_heading": "FAST ka aggregate kaise nikalain?"
   },
   {
    "path": "/giki-aggregate-calculator/",
@@ -1271,6 +1389,11 @@
      "q": "GIKI ke liye FSc mein kitne marks chahiye?",
      "a": "Engineering aur computing ke liye Math, Physics aur overall teeno mein 60% ya zyada.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "GIKI ka merit kitna jata hai?",
+     "a": "Humein GIKI ka official program-wise closing aggregate nahi mila, is liye hum koi merit figure nahi dikhate.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>GIKI ka formula seedha hai: <strong>admission test 85% aur Matric 15%</strong>. FSc ke marks merit mein nahi aate, sirf eligibility (60%) ke liye dekhe jate hain.</p><p>Misaal: test 70% aur Matric 1000/1100 ho to aggregate 73.14% banta hai. Is liye GIKI mein sab se zyada farq test se padta hai.</p>",
@@ -1288,7 +1411,8 @@
     "/uet-peshawar-aggregate-calculator/",
     "/ned-aggregate-calculator/",
     "/nust-aggregate-calculator/"
-   ]
+   ],
+   "ru_heading": "GIKI ka merit kaise banta hai?"
   },
   {
    "path": "/uet-merit-list/",
@@ -1332,6 +1456,14 @@
      "a": "UET's websites were down (error 522) on 31 October 2026, so we read each official PDF from its web.archive.org copy. Every row keeps the original UET address."
     },
     {
+     "q": "Is 70% aggregate enough for UET Lahore?",
+     "a": "For some programs. In the Fall 2025 Fourth Merit List (A1 open merit), 43 of 75 program-campus rows closed at or below 70%, for example KSK Electrical (69.74%) and Mechanical (69.82%) and main-campus Metallurgical & Materials (69.31%). Main-campus Electrical, Mechanical and Civil all closed above 78%."
+    },
+    {
+     "q": "Which UET Lahore program has the lowest merit?",
+     "a": "Chemical Engineering at the Faisalabad campus, 50.19% (A1 open merit, Fall 2025 Fourth Merit List). At the main campus the lowest was Mathematics at 50.48%."
+    },
+    {
      "q": "UET Lahore ka merit kitna jata hai?",
      "a": "Fall 2025 mein main campus par Computer Science 85.83%, Data Science 82.19%, Electrical 80.35% aur Mechanical 80.25% par close hui (A1 open merit).",
      "lang": "ur-Latn"
@@ -1339,6 +1471,11 @@
     {
      "q": "UET KSK campus ka merit kya tha?",
      "a": "Fall 2025 mein KSK par Software Engineering 79.99% aur Computer Science 77.19% par close hui (A1).",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UET mein Electrical Engineering ka merit kitna jata hai?",
+     "a": "Fall 2025 ki Fourth Merit List (A1) mein Electrical main campus par 80.35%, KSK par 69.74%, Faisalabad 60.59%, RCET Gujranwala 51.24% aur Narowal 50.69% par close hui.",
      "lang": "ur-Latn"
     }
    ],
@@ -1381,7 +1518,8 @@
     "/uet-peshawar-aggregate-calculator/",
     "/guides/what-is-closing-merit/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "UET Lahore ka merit kitna jata hai?"
   },
   {
    "path": "/uet-taxila-merit-list/",
@@ -1421,6 +1559,14 @@
      "a": "Merit lists are posted on admissions.uettaxila.edu.pk during admissions, and the closing table is in the UG prospectus. Every row here links to the prospectus."
     },
     {
+     "q": "Is 65% aggregate enough for UET Taxila?",
+     "a": "For 2024 entry, 65% was above the open-merit closing of 7 of 12 programs: Mechatronics (63.563%), Electronics, Telecommunication, Mechanical, Electrical, Industrial & Manufacturing and Environmental. Civil closed at 65.519% and Computer Engineering at 70.824%."
+    },
+    {
+     "q": "What is the UET Taxila Mechanical Engineering merit?",
+     "a": "59.009% on open merit for 2024 entry. Mechatronics closed at 63.563% and Electrical at 58.063%."
+    },
+    {
      "q": "UET Taxila ka merit kitna jata hai?",
      "a": "2024 mein Software Engineering 79.435%, Computer Science 77.979% aur Civil 65.519% par close hui. Environmental sab se kam 53.071% par.",
      "lang": "ur-Latn"
@@ -1428,6 +1574,11 @@
     {
      "q": "UET Taxila mein Electrical Engineering ka merit kya tha?",
      "a": "2024 mein Electrical Engineering open merit par 58.063% par close hui.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "UET Taxila mein Computer Engineering ka merit kitna tha?",
+     "a": "2024 entry mein Computer Engineering open merit par 70.824% par close hui.",
      "lang": "ur-Latn"
     }
    ],
@@ -1452,7 +1603,8 @@
     "/guides/what-is-closing-merit/",
     "/uet-peshawar-aggregate-calculator/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "UET Taxila ka merit kitna jata hai?"
   },
   {
    "path": "/comsats-merit-list/",
@@ -1496,6 +1648,14 @@
      "a": "We add a campus only when COMSATS publishes its closing merits on an official site. As of 31 October 2026 we found official figures for Lahore (Fall 2026) and Islamabad (Spring 2025)."
     },
     {
+     "q": "What is the COMSATS Pharm-D merit?",
+     "a": "67.60% at the Lahore campus in Fall 2026, in the 2nd merit list on open merit. COMSATS Lahore said no further lists would be announced."
+    },
+    {
+     "q": "What was the COMSATS Islamabad merit in Fall 2026?",
+     "a": "In the 3rd closing merits of Fall 2026 from the Islamabad Admission Office, Cyber Security closed at 84.34%, Software Engineering 84.03%, Data Science 84.00% and Computer Engineering 78.87%. BS Computer Science is not in that 3rd list."
+    },
+    {
      "q": "COMSATS Lahore mein Computer Science ka merit kitna gaya?",
      "a": "Fall 2026 ki 2nd (aakhri) merit list mein BS Computer Science 85% par aur Software Engineering 82% par close hui.",
      "lang": "ur-Latn"
@@ -1503,6 +1663,11 @@
     {
      "q": "COMSATS Islamabad ka merit kitna jata hai?",
      "a": "Spring 2025 mein Computer Science 88.26%, AI 87.69% aur zyada tar social science programs 50% se 57% ke darmiyan close hue.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "COMSATS mein Software Engineering ka merit kitna jata hai?",
+     "a": "Fall 2026 mein Lahore campus par 82% (aakhri list) aur Islamabad mein 3rd list mein 84.03% par close hui. Spring 2025 mein Islamabad mein yeh 87.20% tha.",
      "lang": "ur-Latn"
     }
    ],
@@ -1535,7 +1700,8 @@
     "/nust-aggregate-calculator/",
     "/guides/what-is-closing-merit/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "COMSATS ka merit kitna jata hai?"
   },
   {
    "path": "/guides/1st-2nd-final-merit-list/",
@@ -1571,6 +1737,10 @@
     {
      "q": "What is an upgrade in a merit list?",
      "a": "An admitted student is moved to a higher-choice program or college when a seat opens there. UHS lists show this in an 'Upgraded To' column."
+    },
+    {
+     "q": "Can merit drop a lot between lists?",
+     "a": "Sometimes. In 2025, private BDS at Sharif Medical & Dental College fell from 88.12% in the UHS 1st list to 73.13% in the 3rd list, while public MBBS at King Edward Medical University moved only from 94.92% to 94.87% across 13 lists."
     },
     {
      "q": "2nd merit list mein merit kitna girta hai?",
@@ -1617,7 +1787,8 @@
     "/uet-taxila-merit-list/",
     "/mdcat-aggregate-calculator/",
     "/uet-taxila-aggregate-calculator/"
-   ]
+   ],
+   "ru_heading": "2nd merit list mein merit kitna girta hai?"
   },
   {
    "path": "/pu-aggregate-calculator/",
@@ -1668,6 +1839,11 @@
      "q": "Punjab University mein Matric ke kitne marks count hote hain?",
      "a": "Sirf ek chothai (÷ 4). Yani 1100 mein se Matric ka hissa taqreeban 20% aur FSc ka 80% hai.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "PU mein kitne aggregate par admission hota hai?",
+     "a": "2025 mein Pharm-D 91.34%, PUCIT Computer Science (New Campus) 87.18% aur LLB (5 years) 81.56% par close hue, jab ke zyada tar programs 70% ya us se kam par. Apna program PU merit list mein dekhein.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>Punjab University ka basic formula: <strong>(Matric ÷ 4 + FSc + additional marks) ÷ (Matric total ÷ 4 + FSc total) × 100</strong>. Matric sirf ek chothai count hota hai.</p><p>Misaal: Matric 1000/1100 aur FSc 950/1100 → 1200 ÷ 1375 = 87.27%. Jin programs mein entry test hai un mein yeh 75% aur test 25% count hota hai. Pichhle saal ka merit <a href=\"/pu-merit-list/\">PU merit list</a> par dekhein.</p>",
@@ -1696,7 +1872,8 @@
     "/comsats-aggregate-calculator/",
     "/fast-aggregate-calculator/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "PU ka aggregate kaise nikalain?"
   },
   {
    "path": "/pu-merit-list/",
@@ -1740,6 +1917,14 @@
      "a": "Candidate-wise lists are on admissions.pu.edu.pk under Merit Lists, and the summary 'Merit of Last Year' PDF is on pu.edu.pk. Every row here links to that PDF."
     },
     {
+     "q": "What is the LLB merit at Punjab University?",
+     "a": "LLB (5 years) at Lahore closed at 81.56% (morning) in 2025. LLB (Hons.) at the Gujranwala Campus closed at 71.32% and LLB at the Jhelum Campus at 56.00%."
+    },
+    {
+     "q": "What is the Pharm-D merit at Punjab University?",
+     "a": "91.34% for the morning programme and 81.00% for evening/self-support seats in 2025. The morning figure was the highest closing merit at PU."
+    },
+    {
      "q": "PU mein BS CS ka merit kitna jata hai?",
      "a": "2025 mein PUCIT New Campus CS 87.18%, Old Campus 86.02% aur evening 83.33% par close hua.",
      "lang": "ur-Latn"
@@ -1747,6 +1932,11 @@
     {
      "q": "Punjab University ka merit kab aata hai?",
      "a": "Merit lists admission ke dauran admissions.pu.edu.pk par aati hain. Pichhle saal ka closing merit is page par hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "PU mein kitne percent par admission ho jata hai?",
+     "a": "Program par munhasir hai. 2025 mein Pharm-D 91.34%, PUCIT CS 87.18% aur LLB (5 years) 81.56% par close hue, lekin 257 program aur shift rows mein se 200 ka closing merit 70% ya us se kam tha.",
      "lang": "ur-Latn"
     }
    ],
@@ -1780,7 +1970,8 @@
     "/uet-taxila-merit-list/",
     "/mdcat-merit-list/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "Punjab University ka merit kitna jata hai?"
   },
   {
    "path": "/ku-merit-list/",
@@ -1828,6 +2019,14 @@
      "a": "On uokadmission.edu.pk, linked from the Admissions page of uok.edu.pk. Every row here links to the official PDF."
     },
     {
+     "q": "What is the KU BBA merit?",
+     "a": "BBA at Karachi University Business School closed at 73.82% (morning), for candidates with at least 50 in the entrance test, in the Admissions 2027 list of 19 October 2026."
+    },
+    {
+     "q": "What is the KU Chemical Engineering merit?",
+     "a": "BE Chemical Engineering closed at 63.64% (morning, test score at least 50) in the Admissions 2027 list; the DAE seats closed at 70.84%."
+    },
+    {
      "q": "KU mein BSCS ka merit kitna gaya?",
      "a": "Admissions 2027 mein BSCS 80.00%, BSAI 79.73% aur BSSE 78.82% par close hua, test mein kam az kam 50 marks ke saath.",
      "lang": "ur-Latn"
@@ -1835,6 +2034,11 @@
     {
      "q": "Karachi University mein test ke kitne marks chahiye?",
      "a": "Zyada tar test-based programs mein 100 mein se 50. Kuch programs mein 40 ya 35 wale candidates ka alag closing percentage tha.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "KU mein Pharm-D ka merit kitna jata hai?",
+     "a": "Admissions 2027 mein Pharm-D morning 84.27% aur evening 80.00% par close hua, test mein kam az kam 50 marks ke saath.",
      "lang": "ur-Latn"
     }
    ],
@@ -1868,7 +2072,8 @@
     "/guides/1st-2nd-final-merit-list/",
     "/ned-aggregate-calculator/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "Karachi University ka merit kitna jata hai?"
   },
   {
    "path": "/iiui-aggregate-calculator/",
@@ -1915,6 +2120,11 @@
      "q": "IIUI mein test dena zaroori hai?",
      "a": "Zyada tar BS programs mein nahin. Jahan test zaroori hai wahan test 60%, FSc 25% aur Matric 15% count hota hai.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "IIUI ka merit kitna jata hai?",
+     "a": "IIUI har program ki merit lists website par deta hai lekin closing merit ka koi aik document nahi, is liye hum closing figures nahi dikhate.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>IIUI zyada tar BS programs mein <strong>Matric 40% + FSc 60%</strong> par merit banati hai, koi test nahin. Jin programs mein test zaroori hai wahan <strong>Matric 15% + FSc 25% + test 60%</strong>.</p><p>Misaal: Matric 1000/1100 aur FSc 950/1100 par aggregate 88.18% banta hai. Agar FSc ka result nahin aaya to Part-I ke marks (550 mein se) dalein.</p>",
@@ -1932,7 +2142,8 @@
     "/nust-aggregate-calculator/",
     "/guides/what-is-closing-merit/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "IIUI ka aggregate kaise nikalain?"
   },
   {
    "path": "/uaf-aggregate-calculator/",
@@ -1979,6 +2190,11 @@
      "q": "UAF test mein kitne number chahiye?",
      "a": "Agricultural Engineering wale programs ke liye 33%, DVM aur Pharm-D ke liye 50%. Baqi programs ke liye koi minimum nahin, lekin test dena zaroori hai.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "UAF ka merit kitna jata hai?",
+     "a": "UAF har list aur campus ki merit list PDF deta hai lekin closing merit ka khulasa nahi, is liye yahan closing figures nahi hain.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>Zarai University Faisalabad (UAF) ka formula: <strong>Matric 30% + FSc Part-I 30% + entry test 40%</strong>. Admission Part-II ke result se pehle isi par milta hai.</p><p>Misaal: Matric 1000/1100, Part-I 480/550 aur test 60/100 par aggregate 77.45% banta hai. Test sab ke liye zaroori hai; DVM aur Pharm-D mein kam az kam 50% chahiye.</p>",
@@ -2001,7 +2217,8 @@
     "/mdcat-aggregate-calculator/",
     "/guides/what-is-closing-merit/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "UAF ka aggregate kaise nikalain?"
   },
   {
    "path": "/bahria-aggregate-calculator/",
@@ -2048,6 +2265,11 @@
      "q": "Bahria test mein kitne number chahiye?",
      "a": "Undergraduate ke liye kam az kam 33%. Lekin test ka wazan 60% hai, is liye achha score merit bohat barhata hai.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "Bahria University ka merit kitna jata hai?",
+     "a": "Bahria har campus ki merit lists announce karti hai lekin closing merit ka khulasa nahi, is liye hum closing figures nahi dikhate.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>Bahria University mein undergraduate admission ka formula: <strong>test 60% + FSc 30% + Matric 10%</strong>. Test ka wazan sab se zyada hai.</p><p>Misaal: test 60/100, FSc 950/1100 aur Matric 1000/1100 par aggregate 71.00% banta hai. Test pass karne ke liye 33% chahiye. MBBS/BDS ke liye <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> istemal karein.</p>",
@@ -2070,7 +2292,8 @@
     "/mdcat-aggregate-calculator/",
     "/fast-aggregate-calculator/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "Bahria University ka aggregate kaise nikalain?"
   },
   {
    "path": "/itu-aggregate-calculator/",
@@ -2117,6 +2340,11 @@
      "q": "ITU test mein kitne marks chahiye?",
      "a": "CS, AI, M&T aur FinTech ke liye kam az kam 50%, Economics with Data Science ke liye 40%.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "ITU mein CS ka merit kitna jata hai?",
+     "a": "Fall 2025 ki 2nd merit list mein BS Computer Science ka sab se kam merit score 81.27% tha.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>ITU Lahore mein BS CS aur AI ka formula: <strong>Matric 15% + FSc 35% + test 50%</strong>. Test mein kam az kam 50% chahiye, ya SAT/USAT se exemption le sakte hain.</p><p>Misaal: Matric 1000/1100, FSc 950/1100 aur test 60% par aggregate 73.86% banta hai. Pichle saal ka merit <a href=\"/itu-merit-list/\">ITU merit list</a> par dekhein (BS CS 81.27%).</p>",
@@ -2139,7 +2367,8 @@
     "/comsats-aggregate-calculator/",
     "/nust-aggregate-calculator/",
     "/pu-aggregate-calculator/"
-   ]
+   ],
+   "ru_heading": "ITU ka aggregate kaise nikalain?"
   },
   {
    "path": "/itu-merit-list/",
@@ -2175,6 +2404,14 @@
      "a": "For BS CS and AI: 15% Matric + 35% Intermediate + 50% ITU test, SAT-I or USAT, per ITU's Norms & Criteria."
     },
     {
+     "q": "Is 80% enough for ITU?",
+     "a": "Not for BS Computer Science (81.27%), Software Engineering (83.05%) or Artificial Intelligence (80.81%) in Fall 2025. It was above the lowest Fall 2025 merit scores for Computer Engineering (77.00%), Financial Technology (63.69%), Management & Technology (60.32%), Electrical Engineering (60.00%) and Economics with Data Science (55.85%)."
+    },
+    {
+     "q": "What is the ITU Electrical Engineering merit?",
+     "a": "60.00% in the 2nd list of round 2 and 60.12% in the 2nd list of round 1 (Fall 2025, lowest merit score in each list)."
+    },
+    {
      "q": "ITU ka merit kitna jata hai?",
      "a": "Fall 2025 mein BS Computer Science 81.27%, Software Engineering 83.05% aur AI 80.81% par close hua.",
      "lang": "ur-Latn"
@@ -2182,6 +2419,11 @@
     {
      "q": "Kya ITU closing merit khud batata hai?",
      "a": "Nahi, ITU sirf merit list deta hai; hum har program ki latest list ka sab se kam merit score dikhate hain.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "ITU mein AI ka merit kitna gaya?",
+     "a": "Fall 2025 ki 3rd merit list mein BS Artificial Intelligence ka sab se kam merit score 80.81% tha.",
      "lang": "ur-Latn"
     }
    ],
@@ -2215,7 +2457,8 @@
     "/pu-merit-list/",
     "/predictor/",
     "/guides/what-is-closing-merit/"
-   ]
+   ],
+   "ru_heading": "ITU ka merit kitna jata hai?"
   },
   {
    "path": "/air-aggregate-calculator/",
@@ -2262,6 +2505,11 @@
      "q": "Air University mein engineering ke liye FSc mein kitne marks chahiye?",
      "a": "Kam az kam 60%, aur entry test mein PEC ke mutabiq kam az kam 33%.",
      "lang": "ur-Latn"
+    },
+    {
+     "q": "Air University ka merit kitna jata hai?",
+     "a": "Air University program-wise closing merit publish nahi karti, is liye yahan sirf formula hai.",
+     "lang": "ur-Latn"
     }
    ],
    "roman_urdu": "<p>Air University ke do formule hain: <strong>engineering mein Matric 10% + FSc 50% + test 40%</strong>, aur <strong>baqi programs (CS, BBA waghera) mein Matric 15% + FSc 35% + test 50%</strong>.</p><p>Misaal: Matric 1000/1100, FSc 950/1100 aur test 60% par non-engineering aggregate 73.86% aur engineering 76.27% banta hai.</p>",
@@ -2284,7 +2532,8 @@
     "/iiui-aggregate-calculator/",
     "/fast-aggregate-calculator/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "Air University ka aggregate kaise nikalain?"
   },
   {
    "path": "/predictor/",
@@ -2323,6 +2572,14 @@
      "a": "We only use official program-wise closing merits. NUST, FAST, NED, GIKI, UET Peshawar, IIUI, UAF, Bahria and Air University do not publish them online, so they have calculators but no predictor rows yet."
     },
     {
+     "q": "Is 80% aggregate good?",
+     "a": "It depends on the university, because each has its own formula. In the newest official lists, 80% was at or above the closing merit of 67 of 75 UET Lahore A1 rows (Fall 2025), but below every public MBBS college in Punjab (lowest 93.51% in 2025) and below PUCIT Computer Science (87.18%)."
+    },
+    {
+     "q": "What if my aggregate equals last year's closing merit?",
+     "a": "The predictor marks it Borderline, which means within 1.5 points either way. Merit moves by about a point a year (Punjab public MBBS fell 0.7 to 1.2 points from 2024 to 2025), so matching last year's figure is not enough to be sure."
+    },
+    {
      "q": "Mera aggregate 85% hai, kahan admission mil sakta hai?",
      "a": "Predictor mein 85 likhein aur university chunein. Woh har program dikhata hai jis ka pichhle saal ka closing merit aap ke aggregate se kam, qareeb ya zyada tha.",
      "lang": "ur-Latn"
@@ -2330,6 +2587,11 @@
     {
      "q": "Merit predictor kaise kaam karta hai?",
      "a": "Yeh har program ke sab se naye saal ka official final-list, open-merit closing merit leta hai. Aap 1.5 se zyada upar hon to Strong, 1.5 ke andar Borderline, warna Unlikely.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Mera aggregate 80% hai, MBBS ho jaye ga?",
+     "a": "Punjab ke government college mein nahi: 2025 mein sab se kam 93.51% tha. Private MBBS ke 33 mein se 27 colleges 2025 ki final list mein 80% ya us se kam par close hue, bashart ke MDCAT mein 55% hon.",
      "lang": "ur-Latn"
     }
    ],
@@ -2364,7 +2626,8 @@
     "/aggregate-calculator/",
     "/merit-list/",
     "/methodology/"
-   ]
+   ],
+   "ru_heading": "Mere aggregate par kahan admission ho sakta hai?"
   },
   {
    "path": "/aggregate-calculator/",
@@ -2439,7 +2702,8 @@
     "/predictor/",
     "/merit-list/",
     "/guides/mdcat-aggregate-formula/"
-   ]
+   ],
+   "ru_heading": "Kis university ka calculator use karun?"
   },
   {
    "path": "/percentage-calculator/",
@@ -2477,6 +2741,10 @@
      "a": "Engineering universities such as UET Taxila and NUST usually use Part-I marks, because admissions close before the Part-II result. MDCAT and Punjab University use the full FSc."
     },
     {
+     "q": "What is 900 out of 1100 in percentage?",
+     "a": "81.82%: 900 ÷ 1100 × 100 = 81.818, rounded to two decimals."
+    },
+    {
      "q": "FSc ki percentage kaise nikalte hain?",
      "a": "Hasil kiye gaye marks ko total marks se divide karein aur 100 se zarb dein. Masalan 1000/1100 = 90.91%.",
      "lang": "ur-Latn"
@@ -2484,6 +2752,11 @@
     {
      "q": "Matric 1200 mein se ho to kya karein?",
      "a": "Calculator mein total 1100 ki jagah 1200 likh dein. Percentage khud theek aa jaye gi.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "1100 mein se 950 kitne percent hain?",
+     "a": "86.36%: 950 ÷ 1100 × 100 = 86.36.",
      "lang": "ur-Latn"
     }
    ],
@@ -2513,7 +2786,8 @@
     "/nust-aggregate-calculator/",
     "/uet-taxila-aggregate-calculator/",
     "/predictor/"
-   ]
+   ],
+   "ru_heading": "FSc ki percentage kaise nikalte hain?"
   },
   {
    "path": "/ibcc-equivalence-calculator/",
@@ -2587,7 +2861,8 @@
     "/nust-aggregate-calculator/",
     "/pu-aggregate-calculator/",
     "/predictor/"
-   ]
+   ],
+   "ru_heading": "O level ka IBCC equivalence kaise nikalta hai?"
   },
   {
    "path": "/merit-list/",
@@ -2665,7 +2940,8 @@
     "/predictor/",
     "/guides/what-is-closing-merit/",
     "/guides/1st-2nd-final-merit-list/"
-   ]
+   ],
+   "ru_heading": "Pichhle saal ka merit kahan dekhein?"
   },
   {
    "path": "/merit-data-report-2026/",
@@ -2715,7 +2991,7 @@
      "lang": "ur-Latn"
     }
    ],
-   "roman_urdu": "<p>Yeh report 2026 ke season ke aakhir tak hamare paas mojood tamam official closing merits ka khulasa hai: UHS (Punjab medical), Punjab University, Karachi University aur UET Taxila ke 591 records.</p><p>KU ke test-based programs ka merit 2026 mein average 1.69 points barha, jab ke Punjab ke government MBBS colleges ka merit 2025 mein 2024 se 0.85 points kam raha. Apna aggregate <a href=\"/predictor/\">merit predictor</a> mein check karein.</p>",
+   "roman_urdu": "<p>Yeh report 2026 ke season tak hamare paas mojood official closing merits ka khulasa hai. Har university ke records ki ginti upar table mein hai.</p><p>KU ke test-based programs ka merit 2026 mein average 1.69 points barha, jab ke Punjab ke government MBBS colleges ka merit 2025 mein 2024 se 0.85 points kam raha. Apna aggregate <a href=\"/predictor/\">merit predictor</a> mein check karein.</p>",
    "sources": [
     {
      "label": "KU closing percentages, test-based and Pharm-D, Admissions 2027 (19 October 2026)",
@@ -2756,7 +3032,8 @@
     "/uet-taxila-merit-list/",
     "/predictor/",
     "/data/"
-   ]
+   ],
+   "ru_heading": "2026 mein merit barha ya kam hua?"
   },
   {
    "path": "/embed/",
@@ -2811,7 +3088,8 @@
     "/mdcat-aggregate-calculator/",
     "/pu-aggregate-calculator/",
     "/contact/"
-   ]
+   ],
+   "ru_heading": "Apni website par calculator kaise lagayein?"
   },
   {
    "path": "/submit-merit-list/",

@@ -22,6 +22,9 @@ Checks:
              every calculator page prints [am_eligibility], MDCAT FAQ = UHS floors, JS engine test (node)
   copy     - one predictor rule everywhere (no "last two years" / "do saal"); data sentences use
              {year:<slug>}, not {data_year}/{season_year}; predictor "no closing merit" FAQ = data
+  faq      - no repeated question on a page; ru_heading is a Roman Urdu question (<= 70 chars, unique);
+             merit-list pages carry ru_heading + a Roman Urdu "merit" FAQ; every x.xx% in a merit-list
+             page FAQ is a closing figure in data/universities (audit G-08/G-10)
 """
 from __future__ import annotations
 
@@ -547,6 +550,44 @@ def check_copy(loaded: dict[str, object]) -> None:
             err("copy", f"/predictor/ FAQ: add {u.get('short')} to the universities without closing merits")
 
 
+def check_faq(loaded: dict[str, object]) -> None:
+    # Audit G-08 (People Also Ask questions) and G-10 (Roman Urdu search phrasing).
+    pages = (loaded.get("data/pages.json") or {}).get("pages", [])
+    closings: set[str] = set()
+    for name, u in loaded.items():
+        if name.startswith("data/universities/") and isinstance(u, dict):
+            for r in u.get("merit", []) or []:
+                c = r.get("closing")
+                if isinstance(c, (int, float)):
+                    closings.update({f"{c:.2f}", f"{c:.3f}", f"{c:g}"})
+    seen: dict[str, str] = {}
+    for p in pages:
+        path = p.get("path", "?")
+        qs = [str(q.get("q", "")).strip().lower() for q in p.get("faq", []) or []]
+        for q in {q for q in qs if qs.count(q) > 1}:
+            err("faq", f"{path}: FAQ question repeated: {q!r}")
+        h = p.get("ru_heading")
+        if h is not None:
+            if not p.get("roman_urdu"):
+                err("faq", f"{path}: ru_heading without a roman_urdu block")
+            if not str(h).endswith("?") or len(str(h)) > 70 or "<" in str(h):
+                err("faq", f"{path}: ru_heading must be a plain question of <= 70 chars: {h!r}")
+            if str(h).lower() in seen:
+                err("faq", f"{path}: ru_heading {h!r} also on {seen[str(h).lower()]} (one URL per query)")
+            seen[str(h).lower()] = path
+        elif p.get("roman_urdu") and p.get("type", "content") == "content":
+            warn("faq", f"{path}: roman_urdu block without ru_heading (Roman Urdu query heading)")
+        if p.get("template") != "meritlist" or p.get("noindex"):
+            continue
+        if not any(q.get("lang") == "ur-Latn" and "merit" in str(q.get("q", "")).lower() for q in p.get("faq", []) or []):
+            err("faq", f"{path}: merit-list page needs a Roman Urdu FAQ about the merit (\"... merit kitna ...\")")
+        for q in p.get("faq", []) or []:
+            for m in re.finditer(r"(\d{2,3}\.\d{1,3})%", str(q.get("a", ""))):
+                v = m.group(1)
+                if v not in closings and f"{float(v):g}" not in closings:
+                    err("faq", f"{path}: FAQ figure {v}% is not a closing merit in data/universities ({q.get('q')!r})")
+
+
 def main() -> int:
     check_php()
     loaded = check_json()
@@ -562,6 +603,7 @@ def main() -> int:
     check_sources(loaded)
     check_elig(loaded)
     check_copy(loaded)
+    check_faq(loaded)
     for w in warnings:
         print("WARN ", w)
     for e in errors:

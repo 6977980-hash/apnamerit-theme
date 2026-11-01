@@ -147,11 +147,13 @@ function am_faq_html( array $items, string $heading = 'Frequently asked question
 /**
  * Roman Urdu helper block (rule 7).
  */
-function am_roman_urdu_html( string $html ): string {
+function am_roman_urdu_html( string $html, string $heading = '' ): string {
 	if ( '' === trim( $html ) ) {
 		return '';
 	}
-	return '<section class="am-ru" lang="' . esc_attr( (string) am_site( 'helper_language', 'ur-Latn' ) ) . '"><h2>Asaan alfaaz mein (Roman Urdu)</h2>' . wpautop( wp_kses_post( am_tokens( $html ) ) ) . '</section>';
+	// ru_heading: the Roman Urdu query the block answers ("... ka merit kitna jata hai?"), audit G-10.
+	$heading = '' !== trim( $heading ) ? am_tokens( $heading ) : 'Asaan alfaaz mein (Roman Urdu)';
+	return '<section class="am-ru" lang="' . esc_attr( (string) am_site( 'helper_language', 'ur-Latn' ) ) . '"><h2>' . esc_html( $heading ) . '</h2>' . wpautop( wp_kses_post( am_tokens( $html ) ) ) . '</section>';
 }
 
 /**
@@ -299,7 +301,7 @@ function am_render_page( array $page ): string {
 	if ( $is_home && 'home' === ( $page['template'] ?? '' ) && function_exists( 'am_home_html' ) ) {
 		return am_home_html( $page )
 			. am_faq_html( (array) ( $page['faq'] ?? array() ) )
-			. am_roman_urdu_html( (string) ( $page['roman_urdu'] ?? '' ) )
+			. am_roman_urdu_html( (string) ( $page['roman_urdu'] ?? '' ), (string) ( $page['ru_heading'] ?? '' ) )
 			. am_disclaimer_html();
 	}
 	$out     = am_breadcrumb_html( $page );
@@ -314,7 +316,7 @@ function am_render_page( array $page ): string {
 	$out .= '<div class="am-body">' . am_page_body( $page ) . '</div>';
 	$out .= am_siblings_html( $page );
 	$out .= am_faq_html( (array) ( $page['faq'] ?? array() ) );
-	$out .= am_roman_urdu_html( (string) ( $page['roman_urdu'] ?? '' ) );
+	$out .= am_roman_urdu_html( (string) ( $page['roman_urdu'] ?? '' ), (string) ( $page['ru_heading'] ?? '' ) );
 	$out .= am_sources_html( (array) ( $page['sources'] ?? array() ) );
 	if ( 'trust' === $type ) {
 		$out .= am_updated_html( am_page_updated( $page ) );
