@@ -6,12 +6,63 @@
  "province": "Sindh",
  "website": "https://www.uok.edu.pk/",
  "meritlist_path": "/ku-merit-list/",
+ "calculator_path": "/ku-merit-calculator/",
  "updated": "2026-10-31",
- "_note": "Closing figures from KU Directorate of Admissions. Year = calendar year the lists were made: 'Admissions 2027' lists (Oct 2026, uokadmission.edu.pk PDFs) = 2026; 'Admissions 2026' (Prospectus 2027 Appendix G open merit BS, Appendix I test-based) = 2025. Test-based: academic closing % among candidates with at least the stated test score. Open merit: category K (Karachi institutions) only; S and P columns and BS 3rd year (Appendix H) not stored. Visual Studies 2027 = final points (20% academic + 60% test + 20% interview); 2026 Visual Studies table not stored (column header and note disagree). No calculator: the prospectus gives no academic % formula.",
+ "_note": "Closing figures from KU Directorate of Admissions. Year = calendar year the lists were made: 'Admissions 2027' lists (Oct 2026, uokadmission.edu.pk PDFs) = 2026; 'Admissions 2026' (Prospectus 2027 Appendix G open merit BS, Appendix I test-based) = 2025. Test-based: academic closing % among candidates with at least the stated test score. Open merit: category K (Karachi institutions) only; S and P columns and BS 3rd year (Appendix H) not stored. Visual Studies 2027 = final points (20% academic + 60% test + 20% interview); 2026 Visual Studies table not stored (column header and note disagree). Calculator (audit G-06, 2026-11-01): the academic % is the Intermediate (pre-requisite) percentage; the entrance test is only a pass gate (Prospectus 2027 Appendix B p. 142, B(i) p. 145), so the test part has weight 0 and a 50% floor.",
  "defaults": {
   "list": "Test-based",
   "category": "Test score ≥ 50"
  },
+ "eligibility": [
+  {
+   "part": "test",
+   "min_pct": 50,
+   "applies_to": "test-based BS programmes and Pharm-D",
+   "label": "KU entrance test minimum",
+   "source_url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+   "source_note": "Prospectus 2027, Appendix B (p. 142) and B(i) (p. 145): admission on the Intermediate (or equivalent) examination after qualifying the Entrance Test with minimum 50% marks. Some programmes later also admitted candidates with 40, 35 or 25 against a separate closing % (closing PDF of 19 Oct 2026)."
+  },
+  {
+   "part": "inter",
+   "min_pct": 45,
+   "applies_to": "any KU programme",
+   "label": "Intermediate minimum for KU",
+   "source_url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+   "source_note": "Prospectus 2027, Conditions for Eligibility (p. 21) item 2: 3rd division or less than 45% marks in the pre-requisite examination is not eligible."
+  }
+ ],
+ "formulas": [
+  {
+   "id": "academic",
+   "label": "Test-based programmes and Pharm-D (academic % after the entrance test)",
+   "source_url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+   "source_note": "Prospectus 2027, Appendix B (p. 142) and B(i) (p. 145): admissions are granted on the pre-requisite (Intermediate or equivalent) examination after qualifying the Entrance Test with minimum 50% marks; the test score is not added. Conditions for Eligibility (p. 21) item 3: Hafiz-e-Quran +20 marks for BS programmes only.",
+   "parts": [
+    {
+     "key": "inter",
+     "label": "Intermediate / HSC (Part I + II)",
+     "total": 1100,
+     "weight": 100,
+     "hint": "Your academic percentage: the figure KU's closing % is compared with"
+    },
+    {
+     "key": "test",
+     "label": "KU entrance test",
+     "total": 100,
+     "weight": 0,
+     "hint": "Not added to merit; you need at least 50% to be considered"
+    }
+   ],
+   "bonus": [
+    {
+     "key": "hafiz",
+     "label": "Hafiz-e-Quran (+20 marks, BS programmes only)",
+     "part": "inter",
+     "marks": 20
+    }
+   ]
+  }
+ ],
  "merit": [
   {
    "year": 2026,

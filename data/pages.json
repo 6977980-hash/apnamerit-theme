@@ -875,7 +875,8 @@
     "/fast-aggregate-calculator/",
     "/giki-aggregate-calculator/",
     "/guides/1st-2nd-final-merit-list/",
-    "/comsats-aggregate-calculator/"
+    "/comsats-aggregate-calculator/",
+    "/guides/nust-fast-closing-merit/"
    ],
    "ru_heading": "NUST ka aggregate kaise nikalta hai?"
   },
@@ -1340,7 +1341,8 @@
     "/uet-peshawar-aggregate-calculator/",
     "/ned-aggregate-calculator/",
     "/nust-aggregate-calculator/",
-    "/comsats-aggregate-calculator/"
+    "/comsats-aggregate-calculator/",
+    "/guides/nust-fast-closing-merit/"
    ],
    "ru_heading": "FAST ka aggregate kaise nikalain?"
   },
@@ -1791,6 +1793,80 @@
    "ru_heading": "2nd merit list mein merit kitna girta hai?"
   },
   {
+   "path": "/guides/nust-fast-closing-merit/",
+   "keyword": "nust closing merit",
+   "title": "NUST & FAST Closing Merit: What They Actually Publish",
+   "description": "NUST publishes closing merit positions, not percentages, and FAST publishes no closing merit. How to read NUST positions and judge your chances honestly.",
+   "h1": "NUST and FAST Closing Merit: Positions, Not Percentages",
+   "crumb": "NUST and FAST closing merit",
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "NUST does not publish a closing merit percentage. It publishes closing merit positions: the rank of the last candidate admitted to each programme, which it calls a reference only. FAST-NUCES publishes no program-wise closing merit; its cut-offs are set by the university each year. Percentages for either on other websites are estimates.",
+   "answer_source": "https://ugadmissions.nust.edu.pk/result/closingmerit.aspx?sprog=mgt",
+   "content_file": "guide-nust-fast-closing-merit.html",
+   "faq": [
+    {
+     "q": "What is NUST closing merit?",
+     "a": "The merit position (rank) of the last candidate admitted to a programme, published on NUST's Closing Merit Positions page. NUST says it is a reference for choosing preferences, does not guarantee admission and changes every year."
+    },
+    {
+     "q": "Does NUST publish closing merit in percentage?",
+     "a": "No. NUST ranks applicants by 75% NET + 15% HSSC Part-1 + 10% SSC and publishes closing positions, not aggregates."
+    },
+    {
+     "q": "What is the FAST closing merit?",
+     "a": "FAST-NUCES does not publish program-wise closing merits. Its eligibility page says merit cut-off marks are determined by the university each year."
+    },
+    {
+     "q": "How can I check my chances at NUST without a closing percentage?",
+     "a": "Calculate your aggregate with the NUST formula, then compare your merit position with the closing positions NUST publishes for each programme when results are out."
+    },
+    {
+     "q": "Which universities publish closing merit in percent?",
+     "a": "On this site: UHS (Punjab MBBS/BDS), NUMS, UET Lahore, UET Taxila, COMSATS (Lahore, Islamabad), PU, KU and ITU (derived from its lists). They feed the merit predictor."
+    },
+    {
+     "q": "NUST ki closing merit position kya hoti hai?",
+     "a": "Kisi program mein aakhri admit hone wale student ka NUST merit mein number (rank). Agar aap ki position us se chhoti (pehle) hai to aap us student se aage the. NUST kehta hai yeh sirf reference hai.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "FAST ka closing merit kahan milta hai?",
+     "a": "Kahin nahi: FAST program-wise closing merit publish nahi karta. Doosri websites par jo figures hain woh andaze hain.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>NUST closing merit percent mein nahi deta, balke <strong>merit position</strong> (rank) deta hai: kisi program mein aakhri admit hone wale student ka number. FAST koi closing merit publish nahi karta.</p><p>Is liye apna aggregate <a href=\"/nust-aggregate-calculator/\">NUST calculator</a> ya <a href=\"/fast-aggregate-calculator/\">FAST calculator</a> se nikalein, aur NUST mein apni position ko NUST ki closing positions se milayein.</p>",
+   "ru_heading": "NUST aur FAST ka closing merit kahan milta hai?",
+   "sources": [
+    {
+     "label": "NUST UG admissions: Closing Merit Positions",
+     "url": "https://ugadmissions.nust.edu.pk/result/closingmerit.aspx?sprog=mgt",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "NUST: General Merit Generation Criteria for UG admission on NET basis",
+     "url": "https://nust.edu.pk/admissions/undergraduates/merit-criteria-for-admission-on-net-basis/",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "FAST-NUCES: Eligibility Criteria, undergraduate selection criteria",
+     "url": "https://nu.edu.pk/Admissions/EligibilityCriteria",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/nust-aggregate-calculator/",
+    "/fast-aggregate-calculator/",
+    "/guides/what-is-closing-merit/",
+    "/predictor/",
+    "/merit-list/",
+    "/methodology/"
+   ]
+  },
+  {
    "path": "/pu-aggregate-calculator/",
    "keyword": "pu aggregate calculator",
    "title": "PU Aggregate Calculator {season_year} (Punjab University)",
@@ -2066,6 +2142,7 @@
     }
    ],
    "related": [
+    "/ku-merit-calculator/",
     "/pu-merit-list/",
     "/mdcat-merit-list/",
     "/guides/what-is-closing-merit/",
@@ -2074,6 +2151,75 @@
     "/methodology/"
    ],
    "ru_heading": "Karachi University ka merit kitna jata hai?"
+  },
+  {
+   "path": "/ku-merit-calculator/",
+   "keyword": "ku merit calculator",
+   "title": "KU Merit Calculator {season_year}: Karachi University Admission",
+   "description": "Karachi University merit calculator: check the 50% entrance test pass mark, get your Intermediate academic % and compare it with KU's closing percentages.",
+   "h1": "Karachi University (KU) Merit Calculator {season_year}",
+   "crumb": "KU merit calculator",
+   "subtitle": "Entrance test = pass gate (50%); merit = your Intermediate percentage",
+   "type": "content",
+   "template": "calculator",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "Karachi University does not add the entrance test to merit. For test-based programmes and Pharm-D you need at least 50% in the KU entrance test; KU then ranks you by your Intermediate percentage (+20 marks for Hafiz-e-Quran in BS). Compare that percentage with KU's closing %, e.g. BS Computer Science 80.00% in the Admissions 2027 list.",
+   "answer_source": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+   "content_file": "ku-merit-calculator.html",
+   "faq": [
+    {
+     "q": "How is merit calculated at Karachi University?",
+     "a": "For test-based programmes and Pharm-D, KU admits on your Intermediate (or equivalent) percentage after you pass the entrance test with at least 50% (Prospectus 2027, Appendix B). The test score itself is not added to merit."
+    },
+    {
+     "q": "Does the KU entrance test score count in merit?",
+     "a": "No. It is a pass gate: at least 50 out of 100 for the main list. Some programmes later admitted candidates with 40, 35 or 25, each against its own academic closing percentage."
+    },
+    {
+     "q": "Is 80% enough for BS Computer Science at KU?",
+     "a": "80% equals the Admissions 2027 BSCS closing percentage (80.00%, test score at least 50, list of 19 October 2026), so it is exactly on the line. It was above Artificial Intelligence (79.73%) and Software Engineering (78.82%)."
+    },
+    {
+     "q": "Do Hafiz-e-Quran candidates get extra marks at KU?",
+     "a": "Yes. KU adds 20 marks for Hafiz-e-Quran candidates in BS programmes, if they do not have a third division (less than 45%) in Intermediate (Prospectus 2027, p. 21)."
+    },
+    {
+     "q": "What is the minimum percentage for admission in Karachi University?",
+     "a": "45% in Intermediate; a 3rd division or less than 45% is not eligible. Some programmes ask for more, such as 60% Intermediate Science (Biology group) for Pharm-D and 55% for BS Computer Science and Software Engineering."
+    },
+    {
+     "q": "KU ka merit kaise banta hai?",
+     "a": "Test-based programs mein pehle KU ke entry test mein kam az kam 50% chahiye. Uske baad merit sirf aap ki Intermediate percentage par banta hai; test ke marks merit mein jama nahi hote.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "KU mein kitne percent par admission hota hai?",
+     "a": "Admissions 2027 mein BSCS 80.00%, BSAI 79.73%, BSSE 78.82% aur Pharm-D morning 84.27% par close hua (test 50+). Kai open merit departments 45% ya 50% par bhi close hue.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Karachi University test ke marks merit mein nahi jorti. Test-based programs aur Pharm-D ke liye entry test mein <strong>kam az kam 50%</strong> chahiye, phir admission aap ki <strong>Intermediate percentage</strong> par hota hai (Hafiz-e-Quran ko BS mein 20 marks extra).</p><p>Misaal: Intermediate 900/1100 = 81.82%. Admissions 2027 mein BSCS 80.00% par close hua, is liye yeh upar hai. Poori list <a href=\"/ku-merit-list/\">KU merit list</a> par dekhein.</p>",
+   "ru_heading": "Karachi University ka merit kaise nikalain?",
+   "sources": [
+    {
+     "label": "University of Karachi Prospectus 2027: Conditions for Eligibility (p. 21), Appendix B (p. 142) and B(i) (p. 145)",
+     "url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "KU closing percentages, test-based programmes and Pharm-D, Admissions 2027 (19 October 2026)",
+     "url": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/ku-merit-list/",
+    "/predictor/",
+    "/percentage-calculator/",
+    "/ned-aggregate-calculator/",
+    "/methodology/"
+   ]
   },
   {
    "path": "/iiui-aggregate-calculator/",
@@ -2939,7 +3085,8 @@
     "/uet-taxila-merit-list/",
     "/predictor/",
     "/guides/what-is-closing-merit/",
-    "/guides/1st-2nd-final-merit-list/"
+    "/guides/1st-2nd-final-merit-list/",
+    "/guides/nust-fast-closing-merit/"
    ],
    "ru_heading": "Pichhle saal ka merit kahan dekhein?"
   },
