@@ -117,10 +117,63 @@ add_action(
 		}
 		wp_dequeue_style( 'wp-block-library' );
 		wp_dequeue_style( 'wp-block-library-theme' );
-		wp_dequeue_style( 'global-styles' );
-		wp_dequeue_style( 'classic-theme-styles' );
 	},
 	100
+);
+
+// WordPress global styles (theme.json presets, ~9 KB inline) and the WP 6.9 classic-theme block-style
+// hoisting (placeholders + output buffer). am.css styles everything, so none of it is used (audit F-07).
+if ( ! is_admin() ) {
+	add_filter( 'wp_should_output_buffer_template_for_enhancement', '__return_false' );
+	add_filter( 'should_load_separate_core_block_assets', '__return_false' );
+	add_filter( 'should_load_block_assets_on_demand', '__return_false' );
+	add_filter( 'wp_img_tag_add_auto_sizes', '__return_false' );
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+	remove_action( 'wp_footer', 'wp_enqueue_global_styles', 1 );
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_stored_styles' );
+	remove_action( 'wp_footer', 'wp_enqueue_stored_styles', 1 );
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles' );
+	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+}
+
+// Feeds: no posts are published, so every feed URL is a 404 and no feed links are printed (audit F-16).
+remove_action( 'wp_head', 'feed_links', 2 );
+add_filter( 'feed_links_show_posts_feed', '__return_false' );
+add_filter( 'feed_links_show_comments_feed', '__return_false' );
+add_action(
+	'template_redirect',
+	function () {
+		if ( ! is_feed() ) {
+			return;
+		}
+		global $wp_query;
+		$wp_query->set_404();
+		status_header( 404 );
+		nocache_headers();
+		header( 'X-Robots-Tag: noindex' );
+		$template = get_404_template();
+		if ( $template ) {
+			include $template;
+		}
+		exit;
+	},
+	0
+);
+
+// REST API discovery link (<head> and the Link: header). The API itself keeps working.
+remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+
+// Category archives: guides are repo pages, not categorised posts, so /category/* goes home (audit F-06).
+add_action(
+	'template_redirect',
+	function () {
+		if ( is_category() ) {
+			wp_safe_redirect( home_url( '/' ), 301 );
+			exit;
+		}
+	},
+	1
 );
 
 // No jQuery on the front end.
@@ -133,3 +186,28 @@ add_action(
 	},
 	100
 );
+
+/**
+ * /readme.html and /license.txt (WordPress root) leak the core version (audit F-16). They sit outside
+ * the theme folder, so the theme's .htaccess cannot reach them; after each deploy the theme writes a
+ * small marked block into the root .htaccess instead (WordPress' own insert_with_markers, same as the
+ * permalink rules). Core updates restore the files; the rule keeps answering 403.
+ */
+function am_root_htaccess(): void {
+	$file = ABSPATH . '.htaccess';
+	if ( ! is_writable( $file ) ) {
+		return;
+	}
+	require_once ABSPATH . 'wp-admin/includes/misc.php';
+	insert_with_markers(
+		$file,
+		'Apna Merit',
+		array(
+			'<IfModule mod_rewrite.c>',
+			'RewriteEngine On',
+			'RewriteRule ^(readme\.html|license\.txt|wp-config-sample\.php)$ - [F,L]',
+			'</IfModule>',
+		)
+	);
+}
+add_action( 'am_deployed', 'am_root_htaccess' );

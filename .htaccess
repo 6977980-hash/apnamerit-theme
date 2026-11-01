@@ -13,6 +13,13 @@ Options -Indexes
 	RedirectMatch 404 /(scripts|sources|content|\.git)(/|$)
 </IfModule>
 
+# Security headers for theme files (HTML pages get theirs from inc/seo.php).
+<IfModule mod_headers.c>
+	Header always set X-Content-Type-Options "nosniff"
+	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
 # Versioned assets (?ver=filemtime / AM_VERSION) can be cached for a year.
 <IfModule mod_headers.c>
 	<FilesMatch "\.(js|css|svg)$">

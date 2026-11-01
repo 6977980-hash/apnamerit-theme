@@ -2,6 +2,18 @@
 
 Work order: `FIX-BRIEF.md` (rule: verify on live first, then fix). Background: `REVIEW-2026-11-01.md`. UET Lahore sources: `sources/uet/` (git-ignored; README has provenance).
 
+
+## Audit 2026-11-01 Phase 2+5: technical SEO, speed, security (2026-11-01)
+Handoff: `/mnt/project-files/apnamerit.com/audit/2026-11-01/handoff/phase-2-5-technical.md`.
+- **F-06** `/category/*` 301 to `/` (`inc/cleanup.php`); every archive noindex; categories dropped from the core sitemap; category canonical removed (`inc/seo.php`).
+- **F-07** global styles, stored block-support styles, classic-theme styles, img auto-sizes CSS and the WP 6.9 block-style hoisting buffer (the `*-placeholder-inline-css` tags) are off on the front end (`inc/cleanup.php`). Block library stays only on `is_singular('post')`.
+- **F-08** HSTS, nosniff, Referrer-Policy, Permissions-Policy on every theme response; `frame-ancestors 'self'` + `X-Frame-Options: SAMEORIGIN` on everything except `/embed/<slug>/` (PHP `send_headers` in `inc/seo.php`; theme `.htaccess` only covers theme files, so it sets nosniff/HSTS/Referrer for assets).
+- **F-16** feeds 404 (+ no feed links), REST `Link` header and `<link>` removed. `/readme.html`, `/license.txt` live in the WP root, outside the theme `.htaccess`: `am_root_htaccess()` writes a `# BEGIN Apna Merit` rewrite block (403) into the root `.htaccess` on `am_deployed` via `insert_with_markers`.
+- **F-19** `<html lang>` from `site.json` `language` (en-PK).
+- **F-17/F-27** `organization.logo` = `assets/icons/icon-180.png` (resolved to a theme URL by `am_logo_url()`). `same_as` arrays still empty: waiting for the owner's profile URLs.
+- **F-25** waiting for the owner's PageSpeed (mobile) + TTFB from Pakistan on `/mdcat-aggregate-calculator/` and `/uet-merit-list/`.
+- **F-23** ads.txt deferred until `ads.enabled`.
+
 ## Round 2 data drop (v0.15.0, 2026-11-01; owner's Fable folder `New Ideas/round2`)
 Every figure re-checked by script or by eye against the saved sources (copied to git-ignored `sources/{uet,pu,itu,comsats,kmu}/`; rows in `sources/INDEX.md`).
 - **UET Lahore Fall 2024**: 169 rows from the portal table "Minimum UG Admission Aggregate (Entry-2024)" (Wayback 14 Sep 2024 + 11 Feb 2025). All values match the HTML exactly. Row with unexplained code `T` skipped. List stage not printed, so `list` = "Portal, 14 Sep 2024" / "Portal, 11 Feb 2025"; no change column against the 2025 Fourth Merit List (different stage). UET merit table now 305 KB raw / 18 KB gzip (763 rows).

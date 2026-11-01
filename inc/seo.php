@@ -72,9 +72,6 @@ function am_canonical(): string {
 	if ( is_singular() ) {
 		return (string) get_permalink();
 	}
-	if ( is_category() ) {
-		return (string) get_category_link( get_queried_object_id() );
-	}
 	return '';
 }
 
@@ -131,11 +128,11 @@ add_filter(
 );
 add_filter( 'document_title_separator', fn() => '|' );
 
-// Robots: noindex search, 404, paginated and non-category archives.
+// Robots: noindex search, 404, paginated pages and every archive.
 add_filter(
 	'wp_robots',
 	function ( $robots ) {
-		if ( is_search() || is_404() || is_paged() || ( is_archive() && ! is_category() ) || ! empty( am_page_seo()['noindex'] ) ) {
+		if ( is_search() || is_404() || is_paged() || is_archive() || ! empty( am_page_seo()['noindex'] ) ) {
 			$robots['noindex'] = true;
 			$robots['follow']  = true;
 			unset( $robots['max-image-preview'] );
@@ -199,7 +196,7 @@ add_filter(
 				'@id'    => $url . '#organization',
 				'name'   => am_site( 'organization.name', am_site( 'brand' ) ),
 				'url'    => $url,
-				'logo'   => am_site( 'organization.logo' ) ?: null,
+				'logo'   => am_logo_url() ?: null,
 				'sameAs' => am_site( 'organization.same_as' ) ?: null,
 				'foundingDate' => am_site( 'founded' ) ? (string) am_site( 'founded' ) : null,
 				'founder'      => am_site( 'author.name' ) ? array( '@id' => $url . 'about/#author' ) : null,
@@ -235,7 +232,7 @@ add_action(
 	20
 );
 
-// Core sitemap (/wp-sitemap.xml): repo pages (inc/router.php), guide posts and categories only.
+// Core sitemap (/wp-sitemap.xml): repo pages (inc/router.php) and guide posts only (categories 301 home).
 // WP 'page' post type is dropped: pages live in data/pages.json, and it would duplicate the homepage.
 add_filter(
 	'wp_sitemaps_post_types',
@@ -248,7 +245,7 @@ add_filter( 'wp_sitemaps_add_provider', fn( $provider, $name ) => 'users' === $n
 add_filter(
 	'wp_sitemaps_taxonomies',
 	function ( $taxonomies ) {
-		unset( $taxonomies['post_tag'], $taxonomies['post_format'] );
+		unset( $taxonomies['post_tag'], $taxonomies['post_format'], $taxonomies['category'] );
 		return $taxonomies;
 	}
 );
@@ -276,4 +273,46 @@ add_filter(
 	},
 	10,
 	2
+);
+
+/** Organization logo URL: site.json organization.logo, a full URL or a path inside the theme. */
+function am_logo_url(): string {
+	$logo = (string) am_site( 'organization.logo', '' );
+	if ( '' === $logo || preg_match( '#^https?://#', $logo ) ) {
+		return $logo;
+	}
+	$file = AM_DIR . '/' . ltrim( $logo, '/' );
+	return is_readable( $file ) ? AM_URI . '/' . ltrim( $logo, '/' ) : '';
+}
+
+// <html lang>: the site is written for Pakistan (site.json language); ur-Latn helper blocks keep their own lang.
+add_filter(
+	'language_attributes',
+	function ( $output ) {
+		$lang = (string) am_site( 'language', 'en-PK' );
+		return (string) preg_replace( '/lang="[^"]*"/', 'lang="' . esc_attr( $lang ) . '"', $output );
+	}
+);
+
+/**
+ * Security headers on every theme response (audit F-08). Sent from PHP because the theme's .htaccess
+ * only covers the theme folder. /embed/<slug>/ widgets must stay embeddable by other sites, so they
+ * get no frame-ancestors policy.
+ */
+add_action(
+	'send_headers',
+	function () {
+		if ( headers_sent() ) {
+			return;
+		}
+		header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains' );
+		header( 'X-Content-Type-Options: nosniff' );
+		header( 'Referrer-Policy: strict-origin-when-cross-origin' );
+		header( 'Permissions-Policy: camera=(), microphone=(), geolocation=()' );
+		$path = (string) wp_parse_url( (string) ( $_SERVER['REQUEST_URI'] ?? '' ), PHP_URL_PATH ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		if ( ! preg_match( '#^/embed/[a-z0-9-]+/?$#', $path ) ) {
+			header( "Content-Security-Policy: frame-ancestors 'self'" );
+			header( 'X-Frame-Options: SAMEORIGIN' );
+		}
+	}
 );
