@@ -460,17 +460,24 @@ function am_calc_help(): string {
 
 // ------------------------------------------------------------------ [am_merit_table]
 function am_sc_merit_table( $atts ): string {
-	// Optional list="…" shows only that merit list (several tables per page); category="…" overrides the default filter.
-	$atts = shortcode_atts( array( 'uni' => '', 'list' => '', 'category' => '' ), (array) $atts, 'am_merit_table' );
+	// Optional list="…" shows only that merit list (several tables per page); category="…" overrides the default filter;
+	// campus="…" keeps one campus (campus pages, audit G-11).
+	$atts = shortcode_atts( array( 'uni' => '', 'list' => '', 'category' => '', 'campus' => '' ), (array) $atts, 'am_merit_table' );
 	$uni  = am_uni( am_uni_attr( $atts ) );
 	$only = (string) $atts['list'];
-	$rows = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) && ( '' === $only || ( $r['list'] ?? '' ) === $only ) ) );
+	$camp = (string) $atts['campus'];
+	if ( '' !== $camp ) {
+		// Key figures, trend and caption then describe this campus only.
+		$uni['merit'] = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => ( $r['campus'] ?? '' ) === $camp ) );
+		$uni['short'] = (string) ( $uni['short'] ?? '' ) . ' ' . $camp;
+	}
+	$rows = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) && ( '' === $only || ( $r['list'] ?? '' ) === $only ) && ( '' === $camp || ( $r['campus'] ?? '' ) === $camp ) ) );
 	if ( ! $rows ) {
 		return am_stub( 'am_merit_table', $atts );
 	}
 	$short = (string) ( $uni['short'] ?? $uni['name'] ?? '' );
 	$base  = am_slug( (string) ( $uni['slug'] ?? $atts['uni'] ) );
-	$id    = '' === $only ? $base : $base . '-' . am_slug( $only );
+	$id    = ( '' === $only ? $base : $base . '-' . am_slug( $only ) ) . ( '' === $camp ? '' : '-' . am_slug( $camp ) );
 	$def   = array(
 		'year'     => (string) am_uni_year( $uni, '' !== $only ? $only : '', (string) $atts['category'] ),
 		'list'     => '' !== $only ? $only : (string) ( $uni['defaults']['list'] ?? 'Final' ),

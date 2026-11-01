@@ -3096,12 +3096,366 @@
    ],
    "related": [
     "/uet-aggregate-calculator/",
+    "/uet-merit-list/ksk/",
+    "/uet-merit-list/faisalabad/",
+    "/uet-merit-list/narowal/",
+    "/uet-merit-list/rcet-gujranwala/",
     "/uet-taxila-merit-list/",
-    "/uet-peshawar-aggregate-calculator/",
-    "/guides/what-is-closing-merit/",
-    "/methodology/"
+    "/guides/what-is-closing-merit/"
    ],
    "ru_heading": "UET Lahore ka merit kitna jata hai?"
+  },
+  {
+   "path": "/uet-merit-list/ksk/",
+   "keyword": "uet ksk merit list",
+   "title": "UET KSK Merit List {year:uet}: Closing Merit by Program",
+   "description": "UET KSK merit list: official Fall 2025 closing merit, Software Engineering 79.99% to BBA 51.77% (A1), every category and later list. With 2024 figures.",
+   "h1": "UET KSK Merit List {year:uet}",
+   "crumb": "KSK merit",
+   "parents": [
+    "/uet-merit-list/"
+   ],
+   "subtitle": "Fall 2025 minimum aggregates: Fourth Merit List, walk-in and change of preference",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "UET KSK closing merit, Fall 2025 Fourth Merit List (A1 open merit): Software Engineering 79.99%, Computer Science 77.19%, Electrical 69.74%, lowest BBA 51.77%. These are the last regular UET Lahore list for the KSK campus; walk-in and preference-change lists came after it.",
+   "answer_source": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+   "content_file": "uet-merit-list-ksk.html",
+   "faq": [
+    {
+     "q": "What was the UET KSK merit in 2025?",
+     "a": "In the Fall 2025 Fourth Merit List (A1 open merit) UET KSK programs closed between 79.99% (Software Engineering) and 51.77% (BBA). All 14: Software Engineering 79.99%, Computer Science 77.19%, Artificial Intelligence 74.60%, Computer Engineering 72.78%, Information Systems Technology 70.87%, Biomedical Engineering 70.09%, Mechanical Engineering 69.82%, Electrical Engineering 69.74%, Biomedical Sciences 66.91%, BBIT 66.66%, Chemical Engineering 64.77%, Food Science & Technology 62.75%, Energy Systems and Management 56.48%, BBA 51.77%."
+    },
+    {
+     "q": "What is the UET KSK merit for Computer Science?",
+     "a": "77.19% on A1 open merit in the Fall 2025 Fourth Merit List, against 76.40% in UET's Fall 2024 portal table."
+    },
+    {
+     "q": "What is the UET KSK merit for Electrical Engineering?",
+     "a": "69.74% on A1 open merit in the Fall 2025 Fourth Merit List, against 67.41% in the Fall 2024 portal table."
+    },
+    {
+     "q": "What merit did FSc Pre-Medical students need at UET KSK?",
+     "a": "Pre-Medical students compete on separate A1-Med seats. In Fall 2025 these closed at Software Engineering 84.38%, Computer Science 84.34%, Biomedical Engineering 83.81% and lower for the other programs."
+    },
+    {
+     "q": "Is 70% aggregate enough for UET KSK?",
+     "a": "6 of the 14 A1 programs at UET KSK closed at or above 70% in Fall 2025, so 70% cleared the other 8, from Mechanical Engineering (69.82%) down."
+    },
+    {
+     "q": "Did UET KSK merit go up or down from 2024?",
+     "a": "UET's Fall 2024 portal table does not say which list it reflects, so the change is a guide only. A1 figures 2024 to 2025: Software Engineering 78.88% to 79.99%; Computer Science 76.40% to 77.19%; Biomedical Engineering 65.45% to 70.09%; Mechanical Engineering 66.41% to 69.82%."
+    },
+    {
+     "q": "UET KSK ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "Fall 2025 ki Fourth Merit List (A1) mein UET KSK par Software Engineering 79.99%, Computer Science 77.19% aur sab se kam BBA 51.77% par close hui."
+    },
+    {
+     "q": "UET KSK mein admission ke liye kitna aggregate chahiye?",
+     "lang": "ur-Latn",
+     "a": "Kam az kam pichhle saal ke closing merit jitna: UET KSK par Fall 2025 mein A1 programs 51.77% se 79.99% tak close hue. Apna aggregate UET aggregate calculator se nikalein."
+    }
+   ],
+   "roman_urdu": "<p>Yeh UET Lahore KSK campus (Kala Shah Kaku) ka official <strong>closing merit</strong> hai (Fall 2025, Fourth Merit List). A1 open merit mein Software Engineering 79.99% par aur BBA 51.77% par close hui.</p><p>Agar aap ka aggregate kisi program ke closing merit se zyada hai to pichhle saal aap ko wahan seat mil jati. Apna aggregate <a href=\"/uet-aggregate-calculator/\">UET aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "UET KSK ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UET Lahore Fourth Merit List, Fall 2025 (minimum aggregate), KSK rows",
+     "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore walk-in admissions, Fall 2025 (minimum aggregate)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/walkin_list.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore change of preference (manual and online), Fall 2025",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/COP2.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore admission portal: Minimum UG Admission Aggregate (Entry-2024), archived 14 Sep 2024",
+     "url": "https://web.archive.org/web/20240914084257/https://admission.uet.edu.pk/Downloads/MeritLists/Default.aspx",
+     "fetched": "2026-11-01"
+    }
+   ],
+   "related": [
+    "/uet-merit-list/",
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/faisalabad/",
+    "/uet-merit-list/narowal/",
+    "/uet-merit-list/rcet-gujranwala/",
+    "/guides/what-is-closing-merit/"
+   ]
+  },
+  {
+   "path": "/uet-merit-list/faisalabad/",
+   "keyword": "uet faisalabad merit list",
+   "title": "UET Faisalabad Merit List {year:uet}: Closing Merit by Program",
+   "description": "UET Faisalabad merit list: official Fall 2025 closing merit, Mathematics 73.36% to Chemical Engineering 50.19% (A1), every category and later list.",
+   "h1": "UET Faisalabad Merit List {year:uet}",
+   "crumb": "Faisalabad merit",
+   "parents": [
+    "/uet-merit-list/"
+   ],
+   "subtitle": "Fall 2025 minimum aggregates: Fourth Merit List, walk-in and change of preference",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "UET Faisalabad closing merit, Fall 2025 Fourth Merit List (A1 open merit): Mathematics 73.36%, Computer Science 71.29%, Electrical 60.59%, lowest Chemical Engineering 50.19%. These are the last regular UET Lahore list for the Faisalabad campus; walk-in and preference-change lists came after it.",
+   "answer_source": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+   "content_file": "uet-merit-list-faisalabad.html",
+   "faq": [
+    {
+     "q": "What was the UET Faisalabad merit in 2025?",
+     "a": "In the Fall 2025 Fourth Merit List (A1 open merit) UET Faisalabad programs closed between 73.36% (Mathematics) and 50.19% (Chemical Engineering). All 8: Mathematics 73.36%, Computer Science 71.29%, Chemistry 67.64%, Computer Engineering 60.74%, Electrical Engineering 60.59%, Mechatronics & Control Engineering 56.59%, Textile Engineering 51.45%, Chemical Engineering 50.19%."
+    },
+    {
+     "q": "What is the UET Faisalabad merit for Computer Science?",
+     "a": "71.29% on A1 open merit in the Fall 2025 Fourth Merit List, against 72.28% in UET's Fall 2024 portal table."
+    },
+    {
+     "q": "What is the UET Faisalabad merit for Electrical Engineering?",
+     "a": "60.59% on A1 open merit in the Fall 2025 Fourth Merit List, against 59.25% in the Fall 2024 portal table."
+    },
+    {
+     "q": "What merit did FSc Pre-Medical students need at UET Faisalabad?",
+     "a": "Pre-Medical students compete on separate A1-Med seats. In Fall 2025 these closed at Computer Engineering 61.37%, Computer Science 53.23%."
+    },
+    {
+     "q": "Is 70% aggregate enough for UET Faisalabad?",
+     "a": "2 of the 8 A1 programs at UET Faisalabad closed at or above 70% in Fall 2025, so 70% cleared the other 6, from Chemistry (67.64%) down."
+    },
+    {
+     "q": "Did UET Faisalabad merit go up or down from 2024?",
+     "a": "UET's Fall 2024 portal table does not say which list it reflects, so the change is a guide only. A1 figures 2024 to 2025: Computer Science 72.28% to 71.29%; Electrical Engineering 59.25% to 60.59%; Mechatronics & Control Engineering 50.06% to 56.59%; Textile Engineering 50.06% to 51.45%."
+    },
+    {
+     "q": "UET Faisalabad ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "Fall 2025 ki Fourth Merit List (A1) mein UET Faisalabad par Mathematics 73.36%, Computer Science 71.29% aur sab se kam Chemical Engineering 50.19% par close hui."
+    },
+    {
+     "q": "UET Faisalabad mein admission ke liye kitna aggregate chahiye?",
+     "lang": "ur-Latn",
+     "a": "Kam az kam pichhle saal ke closing merit jitna: UET Faisalabad par Fall 2025 mein A1 programs 50.19% se 73.36% tak close hue. Apna aggregate UET aggregate calculator se nikalein."
+    }
+   ],
+   "roman_urdu": "<p>Yeh UET Lahore Faisalabad campus ka official <strong>closing merit</strong> hai (Fall 2025, Fourth Merit List). A1 open merit mein Mathematics 73.36% par aur Chemical Engineering 50.19% par close hui.</p><p>Agar aap ka aggregate kisi program ke closing merit se zyada hai to pichhle saal aap ko wahan seat mil jati. Apna aggregate <a href=\"/uet-aggregate-calculator/\">UET aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "UET Faisalabad ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UET Lahore Fourth Merit List, Fall 2025 (minimum aggregate), Faisalabad rows",
+     "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore walk-in admissions, Fall 2025 (minimum aggregate)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/walkin_list.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore change of preference (manual and online), Fall 2025",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/COP2.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore admission portal: Minimum UG Admission Aggregate (Entry-2024), archived 14 Sep 2024",
+     "url": "https://web.archive.org/web/20240914084257/https://admission.uet.edu.pk/Downloads/MeritLists/Default.aspx",
+     "fetched": "2026-11-01"
+    }
+   ],
+   "related": [
+    "/uet-merit-list/",
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/ksk/",
+    "/uet-merit-list/narowal/",
+    "/uet-merit-list/rcet-gujranwala/",
+    "/guides/what-is-closing-merit/"
+   ]
+  },
+  {
+   "path": "/uet-merit-list/narowal/",
+   "keyword": "uet narowal merit list",
+   "title": "UET Narowal Merit List {year:uet}: Closing Merit by Program",
+   "description": "UET Narowal merit list: official Fall 2025 closing merit, Biomedical Sciences 68.15% to Mechanical Engineering 50.38% (A1), every category and later list.",
+   "h1": "UET Narowal Merit List {year:uet}",
+   "crumb": "Narowal merit",
+   "parents": [
+    "/uet-merit-list/"
+   ],
+   "subtitle": "Fall 2025 minimum aggregates: Fourth Merit List, walk-in and change of preference",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "UET Narowal closing merit, Fall 2025 Fourth Merit List (A1 open merit): Biomedical Sciences 68.15%, Computer Science 66.84%, Electrical 50.69%, lowest Mechanical Engineering 50.38%. These are the last regular UET Lahore list for the Narowal campus; walk-in and preference-change lists came after it.",
+   "answer_source": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+   "content_file": "uet-merit-list-narowal.html",
+   "faq": [
+    {
+     "q": "What was the UET Narowal merit in 2025?",
+     "a": "In the Fall 2025 Fourth Merit List (A1 open merit) UET Narowal programs closed between 68.15% (Biomedical Sciences) and 50.38% (Mechanical Engineering). All 8: Biomedical Sciences 68.15%, Computer Science 66.84%, Civil Engineering 59.48%, Computer Engineering 58.44%, Biomedical Engineering 53.88%, Architecture 51.77%, Electrical Engineering 50.69%, Mechanical Engineering 50.38%."
+    },
+    {
+     "q": "What is the UET Narowal merit for Computer Science?",
+     "a": "66.84% on A1 open merit in the Fall 2025 Fourth Merit List, against 67.84% in UET's Fall 2024 portal table."
+    },
+    {
+     "q": "What is the UET Narowal merit for Electrical Engineering?",
+     "a": "50.69% on A1 open merit in the Fall 2025 Fourth Merit List, against 50.06% in the Fall 2024 portal table."
+    },
+    {
+     "q": "What merit did FSc Pre-Medical students need at UET Narowal?",
+     "a": "Pre-Medical students compete on separate A1-Med seats. In Fall 2025 these closed at Computer Science 66.05%, Biomedical Sciences 65.71%, Computer Engineering 62.19% and lower for the other programs."
+    },
+    {
+     "q": "Is 70% aggregate enough for UET Narowal?",
+     "a": "Yes for every A1 program in Fall 2025: the highest, Biomedical Sciences, closed at 68.15%."
+    },
+    {
+     "q": "Did UET Narowal merit go up or down from 2024?",
+     "a": "UET's Fall 2024 portal table does not say which list it reflects, so the change is a guide only. A1 figures 2024 to 2025: Computer Science 67.84% to 66.84%; Civil Engineering 54.58% to 59.48%; Biomedical Engineering 50.06% to 53.88%; Architecture 50.10% to 51.77%."
+    },
+    {
+     "q": "UET Narowal ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "Fall 2025 ki Fourth Merit List (A1) mein UET Narowal par Biomedical Sciences 68.15%, Computer Science 66.84% aur sab se kam Mechanical Engineering 50.38% par close hui."
+    },
+    {
+     "q": "UET Narowal mein admission ke liye kitna aggregate chahiye?",
+     "lang": "ur-Latn",
+     "a": "Kam az kam pichhle saal ke closing merit jitna: UET Narowal par Fall 2025 mein A1 programs 50.38% se 68.15% tak close hue. Apna aggregate UET aggregate calculator se nikalein."
+    }
+   ],
+   "roman_urdu": "<p>Yeh UET Lahore Narowal campus ka official <strong>closing merit</strong> hai (Fall 2025, Fourth Merit List). A1 open merit mein Biomedical Sciences 68.15% par aur Mechanical Engineering 50.38% par close hui.</p><p>Agar aap ka aggregate kisi program ke closing merit se zyada hai to pichhle saal aap ko wahan seat mil jati. Apna aggregate <a href=\"/uet-aggregate-calculator/\">UET aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "UET Narowal ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UET Lahore Fourth Merit List, Fall 2025 (minimum aggregate), Narowal rows",
+     "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore walk-in admissions, Fall 2025 (minimum aggregate)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/walkin_list.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore change of preference (manual and online), Fall 2025",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/COP2.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore admission portal: Minimum UG Admission Aggregate (Entry-2024), archived 14 Sep 2024",
+     "url": "https://web.archive.org/web/20240914084257/https://admission.uet.edu.pk/Downloads/MeritLists/Default.aspx",
+     "fetched": "2026-11-01"
+    }
+   ],
+   "related": [
+    "/uet-merit-list/",
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/ksk/",
+    "/uet-merit-list/faisalabad/",
+    "/uet-merit-list/rcet-gujranwala/",
+    "/guides/what-is-closing-merit/"
+   ]
+  },
+  {
+   "path": "/uet-merit-list/rcet-gujranwala/",
+   "keyword": "uet rcet gujranwala merit list",
+   "title": "UET RCET Gujranwala Merit List {year:uet}: Closing Merit",
+   "description": "UET RCET Gujranwala merit list: official Fall 2025 closing merit, Computer Science 66.72% to Computer Engineering 50.71% (A1) With 2024 figures.",
+   "h1": "UET RCET Gujranwala Merit List {year:uet}",
+   "crumb": "RCET merit",
+   "parents": [
+    "/uet-merit-list/"
+   ],
+   "subtitle": "Fall 2025 minimum aggregates: Fourth Merit List, walk-in and change of preference",
+   "type": "content",
+   "template": "meritlist",
+   "schema_type": "CollectionPage",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "UET RCET Gujranwala closing merit, Fall 2025 Fourth Merit List (A1 open merit): Computer Science 66.72%, Electrical 51.24%, lowest Computer Engineering 50.71%. These are the last regular UET Lahore list for the RCET Gujranwala campus; walk-in and preference-change lists came after it.",
+   "answer_source": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+   "content_file": "uet-merit-list-rcet-gujranwala.html",
+   "faq": [
+    {
+     "q": "What was the UET RCET Gujranwala merit in 2025?",
+     "a": "In the Fall 2025 Fourth Merit List (A1 open merit) UET RCET Gujranwala programs closed between 66.72% (Computer Science) and 50.71% (Computer Engineering). All 5: Computer Science 66.72%, Industrial & Manufacturing Engineering 52.79%, Mechanical Engineering 51.33%, Electrical Engineering 51.24%, Computer Engineering 50.71%."
+    },
+    {
+     "q": "What is the UET RCET Gujranwala merit for Computer Science?",
+     "a": "66.72% on A1 open merit in the Fall 2025 Fourth Merit List, against 66.18% in UET's Fall 2024 portal table."
+    },
+    {
+     "q": "What is the UET RCET Gujranwala merit for Electrical Engineering?",
+     "a": "51.24% on A1 open merit in the Fall 2025 Fourth Merit List, against 54.52% in the Fall 2024 portal table."
+    },
+    {
+     "q": "What merit did FSc Pre-Medical students need at UET RCET Gujranwala?",
+     "a": "Pre-Medical students compete on separate A1-Med seats. In Fall 2025 these closed at Computer Science 53.69%, Computer Engineering 52.31%."
+    },
+    {
+     "q": "Is 70% aggregate enough for UET RCET Gujranwala?",
+     "a": "Yes for every A1 program in Fall 2025: the highest, Computer Science, closed at 66.72%."
+    },
+    {
+     "q": "Did UET RCET Gujranwala merit go up or down from 2024?",
+     "a": "UET's Fall 2024 portal table does not say which list it reflects, so the change is a guide only. A1 figures 2024 to 2025: Computer Science 66.18% to 66.72%; Industrial & Manufacturing Engineering 51.28% to 52.79%; Mechanical Engineering 50.51% to 51.33%; Electrical Engineering 54.52% to 51.24%."
+    },
+    {
+     "q": "UET RCET Gujranwala ka merit kitna jata hai?",
+     "lang": "ur-Latn",
+     "a": "Fall 2025 ki Fourth Merit List (A1) mein UET RCET Gujranwala par Computer Science 66.72% aur sab se kam Computer Engineering 50.71% par close hui."
+    },
+    {
+     "q": "UET RCET Gujranwala mein admission ke liye kitna aggregate chahiye?",
+     "lang": "ur-Latn",
+     "a": "Kam az kam pichhle saal ke closing merit jitna: UET RCET Gujranwala par Fall 2025 mein A1 programs 50.71% se 66.72% tak close hue. Apna aggregate UET aggregate calculator se nikalein."
+    }
+   ],
+   "roman_urdu": "<p>Yeh Rachna College of Engineering & Technology (RCET), Gujranwala, a UET Lahore campus ka official <strong>closing merit</strong> hai (Fall 2025, Fourth Merit List). A1 open merit mein Computer Science 66.72% par aur Computer Engineering 50.71% par close hui.</p><p>Agar aap ka aggregate kisi program ke closing merit se zyada hai to pichhle saal aap ko wahan seat mil jati. Apna aggregate <a href=\"/uet-aggregate-calculator/\">UET aggregate calculator</a> se nikalein.</p>",
+   "ru_heading": "UET RCET Gujranwala ka merit kitna jata hai?",
+   "sources": [
+    {
+     "label": "UET Lahore Fourth Merit List, Fall 2025 (minimum aggregate), RCET Gujranwala rows",
+     "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore walk-in admissions, Fall 2025 (minimum aggregate)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/walkin_list.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore change of preference (manual and online), Fall 2025",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/COP2.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore admission portal: Minimum UG Admission Aggregate (Entry-2024), archived 14 Sep 2024",
+     "url": "https://web.archive.org/web/20240914084257/https://admission.uet.edu.pk/Downloads/MeritLists/Default.aspx",
+     "fetched": "2026-11-01"
+    }
+   ],
+   "related": [
+    "/uet-merit-list/",
+    "/uet-aggregate-calculator/",
+    "/uet-merit-list/ksk/",
+    "/uet-merit-list/faisalabad/",
+    "/uet-merit-list/narowal/",
+    "/guides/what-is-closing-merit/"
+   ]
   },
   {
    "path": "/uet-taxila-merit-list/",

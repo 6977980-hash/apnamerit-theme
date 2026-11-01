@@ -1,5 +1,12 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Audit 2026-11-01 suggestion G-11: UET Lahore campus pages (v0.25.0, 2026-11-01)
+
+- `[am_merit_table uni="uet" campus="<Campus>"]` (inc/shortcodes.php) keeps one campus; key figures, trend, caption and table id are then campus-specific.
+- New pages (template meritlist, parent /uet-merit-list/): /uet-merit-list/ksk/ (152 rows), /faisalabad/ (45), /narowal/ (56), /rcet-gujranwala/ (31). Content in content/uet-merit-list-<slug>.html; every figure from data/universities/uet.json (Fall 2025 Fourth Merit List, Fall 2024 portal table shown as a guide only, not a year-on-year change).
+- /uet-merit-list/ stays the hub with the full table and a "UET Lahore campus merit lists" section.
+- Main Lahore campus has no separate page (it would duplicate the hub). When Fall 2026 lists land, update uet.json and re-check the hand-picked figures in the four content files and their page entries.
+
 ## Audit 2026-11-01 suggestion G-05: seats, reserved seats and fee (v0.24.0, 2026-11-01)
 - Source: UHS MBBS/BDS Prospectus, Session 2026-2027 (`images/Prospectus2026.pdf`, 34.9 MB, read 2026-11-01): seat allocation p. 38 (MBBS) and p. 39 (BDS), categories of seats pp. 40-44, fee p. 61. The seat table was checked against the page image; sums match the printed totals (MBBS 4,151 / open 3,796; BDS 340 / open 285).
 - `uhs.json` `seats` (`mbbs`/`bds` per campus: open, disabilities, cholistan, udd, overseas, other = other provinces/regions + HEC, total, `pending_pmdc` for Mianwali, Mandi Bahauddin, FJIDS, QA Medical & Dental Bahawalpur) and `fee` (MBBS per year 53,030 / 50,630 / 50,830 / 50,630 / 50,730; BDS 53,050 / 50,650 x3; overseas quota US$ 10,000 a year).
