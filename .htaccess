@@ -5,12 +5,12 @@
 
 Options -Indexes
 
-<FilesMatch "\.(md|py|sh|env|example|lock|log|gitignore)$">
+<FilesMatch "\.(md|py|sh|env|example|lock|log|gitignore|yml|yaml)$">
 	Require all denied
 </FilesMatch>
 
 <IfModule mod_alias.c>
-	RedirectMatch 404 /(scripts|sources|content|\.git)(/|$)
+	RedirectMatch 404 /(scripts|sources|content|\.git|\.github)(/|$)
 </IfModule>
 
 # Security headers for theme files (HTML pages get theirs from inc/seo.php).

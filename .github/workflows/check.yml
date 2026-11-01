@@ -1,0 +1,31 @@
+# Audit 2026-11-01 G-12 (DP-07): run the pre-merge checks on every push and pull request.
+# Hostinger deploys main within seconds, so a red run on main means the live site needs a fix now.
+name: check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Tool versions
+        run: php -v && node -v && python3 --version
+      - name: scripts/check.py (php -l, data, pages, links, predictor, eligibility, FAQ)
+        run: python3 scripts/check.py

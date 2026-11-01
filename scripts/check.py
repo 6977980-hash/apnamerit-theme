@@ -29,6 +29,7 @@ Checks:
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -41,6 +42,11 @@ TEXT_EXT = {".php", ".json", ".js", ".css", ".md", ".py", ".sh", ".txt", ".html"
 
 errors: list[str] = []
 warnings: list[str] = []
+
+
+def skipped(check: str, msg: str) -> None:
+    # A skipped tool test is a warning locally but a failure in CI (GitHub Actions sets CI=true).
+    (err if os.environ.get("CI") else warn)(check, msg)
 
 
 def err(check: str, msg: str) -> None:
@@ -67,7 +73,7 @@ def rel(p: Path) -> str:
 def check_php() -> None:
     php = shutil.which("php")
     if not php:
-        warn("php", "php not installed; lint skipped")
+        skipped("php", "php not installed; lint skipped")
         return
     for f in files("*.php"):
         r = subprocess.run([php, "-l", str(f)], capture_output=True, text=True)
@@ -426,7 +432,7 @@ def check_size() -> None:
 def check_predict() -> None:
     php = shutil.which("php")
     if not php:
-        warn("predict", "php not installed; predictor test skipped")
+        skipped("predict", "php not installed; predictor test skipped")
         return
     r = subprocess.run([php, str(ROOT / "scripts/tests/predict_rows.php")], capture_output=True, text=True)
     out = (r.stdout + r.stderr).strip()
@@ -505,7 +511,7 @@ def check_elig(loaded: dict[str, object]) -> None:
     # Engine: 80/180 MDCAT is below both floors -> no rows; 150/180 is eligible everywhere.
     node = shutil.which("node")
     if not node:
-        warn("elig", "node not installed; engine test skipped")
+        skipped("elig", "node not installed; engine test skipped")
         return
     test = r"""
 const AM = require(process.argv[1]);
