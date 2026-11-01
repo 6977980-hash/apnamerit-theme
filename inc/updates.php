@@ -87,7 +87,7 @@ add_action(
 			am_serve_ics( $m[1] );
 		}
 	},
-	0
+	-1 // before cleanup.php turns every WordPress feed URL (…/feed/) into a 404.
 );
 
 /** RSS 2.0 of data/updates.json. */
