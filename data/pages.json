@@ -409,6 +409,7 @@
       "related": [
         "/mdcat-aggregate-calculator/",
         "/uhs-mbbs-admission/",
+        "/compare/",
         "/mdcat-passing-marks/",
         "/nums-merit-list/",
         "/guides/what-is-closing-merit/",
@@ -4894,11 +4895,77 @@
         "/uet-taxila-merit-list/",
         "/aggregate-calculator/",
         "/merit-list/",
+        "/compare/",
         "/methodology/",
         "/guides/uhs-college-preference-order/"
       ],
       "ru_heading": "Mere aggregate par kahan admission ho sakta hai?"
     },
+    {
+        "path": "/compare/",
+        "keyword": "compare merit",
+        "title": "Compare Closing Merit: Two Colleges or Programs Side by Side",
+        "description": "Compare the official closing merit of two medical colleges or university programs year by year: KEMU vs AIMC, UET vs UET Taxila, PU programs and more.",
+        "h1": "Compare Closing Merit of Two Colleges or Programs",
+        "crumb": "Compare merit",
+        "subtitle": "Official closing merit by year, side by side, with the difference",
+        "type": "content",
+        "template": "calculator",
+        "published": "2026-11-01",
+        "updated": "2026-11-01",
+        "parents": [
+          "/merit-list/"
+        ],
+        "answer": "Pick two programs or colleges to see their official closing merit for each year side by side. In the final 2025 UHS list, KEMU closed at 94.87% and AIMC at 94.45% on open merit, 0.42 points apart, about 1.5 MDCAT marks. Within one university the difference is exact; across universities the formulas differ.",
+        "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+        "content_file": "compare.html",
+        "faq": [
+          {
+            "q": "What was the difference between KEMU and AIMC merit in 2025?",
+            "a": "0.42 points on open merit in the final 2025 UHS list: KEMU closed at 94.87% and AIMC at 94.45%. In 2024 they closed at 96.06% and 95.60%."
+          },
+          {
+            "q": "Can I compare programs from different universities?",
+            "a": "Yes, but read it as each program's trend. Each university has its own formula, so the same aggregate does not mean the same thing at UET, PU and UHS."
+          },
+          {
+            "q": "Which list does the comparison use?",
+            "a": "Each university's main view: the final or last regular list, open merit. If a year only has another list, its name is shown under the figure."
+          },
+          {
+            "q": "Do merit lists ka farq kaise dekhein?",
+            "a": "Is tool mein do college ya program chunein. Har saal ka closing merit saath saath aur dono ka farq nazar aata hai, har figure ke saath official list ka link hai.",
+            "lang": "ur-Latn"
+          }
+        ],
+        "roman_urdu": "<p>Do college ya program chunein aur un ka official closing merit saal ba saal saath saath dekhein. Aik hi university mein farq bilkul sahi hota hai (UHS mein aik MDCAT mark 0.28 points ke barabar hai). Alag universities ke formula alag hain, is liye un ka muqabla sirf trend ke tor par karein.</p>",
+        "ru_heading": "Do colleges ka merit kaise compare karein?",
+        "sources": [
+          {
+            "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+            "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+            "fetched": "2026-10-31"
+          },
+          {
+            "label": "UHS 17th selection list 2024, KEMU",
+            "url": "https://uhs.edu.pk/admissions2024data/17kemu24.pdf",
+            "fetched": "2026-10-31"
+          },
+          {
+            "label": "UHS 17th selection list 2024, AIMC",
+            "url": "https://uhs.edu.pk/admissions2024data/17aimc24.pdf",
+            "fetched": "2026-10-31"
+          }
+        ],
+        "related": [
+          "/predictor/",
+          "/merit-list/",
+          "/mdcat-merit-list/",
+          "/mdcat-merit-list/kemu/",
+          "/mdcat-merit-list/aimc/",
+          "/uet-merit-list/"
+        ]
+      },
     {
       "path": "/aggregate-calculator/",
       "keyword": "all aggregate calculators",
@@ -5208,6 +5275,7 @@
         "/ku-merit-list/",
         "/uet-taxila-merit-list/",
         "/predictor/",
+        "/compare/",
         "/guides/what-is-closing-merit/",
         "/guides/1st-2nd-final-merit-list/",
         "/guides/nust-fast-closing-merit/",

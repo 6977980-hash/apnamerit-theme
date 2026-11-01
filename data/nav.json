@@ -27,6 +27,11 @@
       "col": "Tools"
     },
     {
+      "label": "Compare merit",
+      "path": "/compare/",
+      "col": "Tools"
+    },
+    {
       "label": "MDCAT calculator",
       "path": "/mdcat-aggregate-calculator/",
       "col": "Tools"

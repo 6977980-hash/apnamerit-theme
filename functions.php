@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'AM_VERSION', '0.31.0' );
+define( 'AM_VERSION', '0.32.0' );
 define( 'AM_DIR', get_template_directory() );
 define( 'AM_URI', get_template_directory_uri() );
 
@@ -28,3 +28,4 @@ require_once AM_DIR . '/inc/colleges.php';
 require_once AM_DIR . '/inc/aeo.php';
 require_once AM_DIR . '/inc/indexnow.php';
 require_once AM_DIR . '/inc/home.php';
+require_once AM_DIR . '/inc/compare.php';

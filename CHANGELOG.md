@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.32.0 (2026-11-01)
+Student-intent ideas, Tier 2: `/compare/` (two programs or colleges side by side, `[am_compare]`, `inc/compare.php`), list-day live box (`calendar.json` `seasons.<slug>.live`, `am_live_html()`), "Copy top 10 for WhatsApp" on merit tables, "Save as image" result card, predictor College type filter and official UHS fee line.
+
 ## 0.31.0 (2026-11-01)
 Expert audit v2 fixes and suggestions (owner approved all). See `HANDOFF.md` section "Audit v2 fixes (v0.31.0)" and `audit/2026-11-01-v2/` in project files.
 

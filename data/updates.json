@@ -3,6 +3,12 @@
   "updates": [
     {
       "date": "2026-11-01",
+      "title": "New: compare two colleges or programs side by side",
+      "text": "Closing merit by year for any two programs or medical colleges, with the difference and the official list behind every figure (for example KEMU 94.87% vs AIMC 94.45% in 2025).",
+      "url": "/compare/"
+    },
+    {
+      "date": "2026-11-01",
       "title": "Hafiz-e-Quran marks fixed in the PU, UET Taxila and KU calculators",
       "text": "The 20 additional marks are now added in full, as the official formulas do. Before, a top score with Hafiz marks was capped at the total (PU 1000 + 1090 + Hafiz now shows 98.91%).",
       "url": "/pu-aggregate-calculator/"

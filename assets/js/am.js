@@ -768,6 +768,43 @@
     });
   });
 
+  // ---------------------------------------------------------------- compare tool (Tier 2 idea 6)
+  $$('form[data-am-compare]').forEach(function (form) {
+    var dataC = data(form, 'am-cmp-data'), out = $('.am-result', form);
+    if (!dataC) return;
+    var label = function (o) { return o[0] + ' · ' + o[1] + (o[2] ? ' · ' + o[2] : '') + (o[3] ? ', ' + o[3] : ''); };
+    var byLabel = {};
+    Object.keys(dataC).forEach(function (id) { byLabel[label(dataC[id]).toLowerCase()] = id; });
+    var find = function (v) { return byLabel[String(v || '').trim().toLowerCase()] || (dataC[v] ? v : ''); };
+    function cell(v) {
+      return v ? '<strong>' + pct(v[0]) + '</strong><small>' + esc(/list$/i.test(v[1]) ? v[1] : v[1] + ' list') + ' · <a href="' + esc(v[2]) + '" rel="noopener" target="_blank">official source</a></small>' : '—';
+    }
+    function draw() {
+      var a = find(form.a.value), b = find(form.b.value);
+      if (!a || !b) {
+        out.innerHTML = '<p class="am-error" role="alert">Pick both from the list: start typing a college, program or university.</p>';
+        (a ? form.b : form.a).focus();
+        return;
+      }
+      var A = dataC[a], B = dataC[b], ys = {};
+      Object.keys(A[5]).concat(Object.keys(B[5])).forEach(function (y) { ys[y] = true; });
+      var rows = Object.keys(ys).sort().reverse().map(function (y) {
+        var va = A[5][y], vb = B[5][y], d = va && vb ? va[0] - vb[0] : null;
+        return '<tr><th scope="row">' + esc(y) + '</th><td>' + cell(va) + '</td><td>' + cell(vb) + '</td><td>' + (d === null ? '—' : (d > 0 ? '+' : '') + d.toFixed(2)) + '</td></tr>';
+      }).join('');
+      var name = function (o) { return o[1] + (o[2] ? ' (' + o[2] + ')' : ''); };
+      out.innerHTML = '<div class="am-table-wrap am-fit"><table class="am-table"><caption>Closing merit by year: ' + esc(label(A)) + ' vs ' + esc(label(B)) + '</caption><thead><tr><th scope="col">Year</th><th scope="col">' + esc(name(A)) + '</th><th scope="col">' + esc(name(B)) + '</th><th scope="col">Difference</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+        '<p class="am-muted">Full lists: <a href="' + esc(A[4]) + '">' + esc(A[0]) + ' merit list</a>' + (B[4] !== A[4] ? ', <a href="' + esc(B[4]) + '">' + esc(B[0]) + ' merit list</a>' : '') + '. Different universities use different formulas, so compare across universities with care.</p>';
+      setQuery({ a: a, b: b });
+    }
+    var qs = getQuery();
+    if (qs.a && dataC[qs.a]) form.a.value = label(dataC[qs.a]);
+    if (qs.b && dataC[qs.b]) form.b.value = label(dataC[qs.b]);
+    if ((qs.a && dataC[qs.a]) || (qs.b && dataC[qs.b])) draw();
+    form.addEventListener('submit', function (e) { e.preventDefault(); draw(); });
+    $$('input', form).forEach(function (i) { i.addEventListener('change', function () { if (find(form.a.value) && find(form.b.value)) draw(); }); });
+  });
+
   // ---------------------------------------------------------------- result card image (Tier 2 idea 7)
   // Drawn on a canvas only when asked (no library, no request); shared as a file where the phone
   // allows it (WhatsApp status), downloaded otherwise.
