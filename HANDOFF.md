@@ -9,6 +9,7 @@ Every figure re-checked by script or by eye against the saved sources (copied to
 - **COMSATS Islamabad Fall 2023**: 23 rows, 2nd closing merit image, checked by eye; list "2nd closing".
 - **ITU Fall 2025**: new `/itu-merit-list/`. 12 derived rows (lowest MERIT in the latest list per program). Fable draft had BS Computer Engineering 77.09; the list's lowest is 77.00 (fixed). Only CS/AI feed the predictor.
 - **KMU**: formula (MDCAT 50 / FSc 40 / SSC 10, policy p. 25) = MDCAT calculator; FAQ added there. KMU lists still 403 to tools.
+- **NUMS 2024-25** (v0.15.1): 13 rows. MBBS = 12th list per college (QIMS Baluchistan 11th), list 'Latest published' so the change column compares with 2025-26; BDS = 1st list only (2nd list has no aggregates), list '1st list', predict false. All 13 values match the PDFs.
 - **IIUI**: formula re-confirmed, no change. **NUST**: nothing published. **LUMHS BMC**: first *provisional* list only, session not printed; not published.
 - Still owner-gated (exact URLs in round2 `NOTES.md` "Blocked" list): KMU final lists, NUMS 2024-25 pages, COMSATS Attock/Wah/Abbottabad, JSMU Drive lists, SZABMU, IST, UET Peshawar (ETEA).
 
