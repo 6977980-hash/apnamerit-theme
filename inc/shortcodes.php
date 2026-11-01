@@ -486,10 +486,16 @@ function am_calc_help(): string {
 function am_sc_merit_table( $atts ): string {
 	// Optional list="…" shows only that merit list (several tables per page); category="…" overrides the default filter;
 	// campus="…" keeps one campus (campus pages, audit G-11).
-	$atts = shortcode_atts( array( 'uni' => '', 'list' => '', 'category' => '', 'campus' => '' ), (array) $atts, 'am_merit_table' );
+	// program="…" keeps rows whose program contains that text (e.g. "MBBS (private)", "BDS").
+	$atts = shortcode_atts( array( 'uni' => '', 'list' => '', 'category' => '', 'campus' => '', 'program' => '' ), (array) $atts, 'am_merit_table' );
 	$uni  = am_uni( am_uni_attr( $atts ) );
 	$only = (string) $atts['list'];
 	$camp = (string) $atts['campus'];
+	$prog = (string) $atts['program'];
+	if ( '' !== $prog ) {
+		$uni['merit'] = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => str_contains( (string) ( $r['program'] ?? '' ), $prog ) ) );
+		$uni['short'] = (string) ( $uni['short'] ?? '' ) . ' ' . $prog;
+	}
 	if ( '' !== $camp ) {
 		// Key figures, trend and caption then describe this campus only.
 		$uni['merit'] = array_values( array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => ( $r['campus'] ?? '' ) === $camp ) );
@@ -501,7 +507,7 @@ function am_sc_merit_table( $atts ): string {
 	}
 	$short = (string) ( $uni['short'] ?? $uni['name'] ?? '' );
 	$base  = am_slug( (string) ( $uni['slug'] ?? $atts['uni'] ) );
-	$id    = ( '' === $only ? $base : $base . '-' . am_slug( $only ) ) . ( '' === $camp ? '' : '-' . am_slug( $camp ) );
+	$id    = ( '' === $only ? $base : $base . '-' . am_slug( $only ) ) . ( '' === $camp ? '' : '-' . am_slug( $camp ) ) . ( '' === $prog ? '' : '-' . am_slug( $prog ) );
 	$def   = array(
 		'year'     => (string) am_uni_year( $uni, '' !== $only ? $only : '', (string) $atts['category'] ),
 		'list'     => '' !== $only ? $only : (string) ( $uni['defaults']['list'] ?? 'Final' ),

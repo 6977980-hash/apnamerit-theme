@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.33.0 (2026-11-01)
+Ranking: `/mdcat-merit-list/private/` (33 private MBBS colleges) and `/mdcat-merit-list/bds/` (public and private BDS) pages; `[am_merit_table program="…"]` keeps rows whose program contains the text.
+
 ## 0.32.0 (2026-11-01)
 Student-intent ideas, Tier 2: `/compare/` (two programs or colleges side by side, `[am_compare]`, `inc/compare.php`), list-day live box (`calendar.json` `seasons.<slug>.live`, `am_live_html()`), "Copy top 10 for WhatsApp" on merit tables, "Save as image" result card, predictor College type filter and official UHS fee line.
 

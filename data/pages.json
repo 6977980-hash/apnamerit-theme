@@ -283,6 +283,8 @@
         }
       ],
       "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-merit-list/bds/",
         "/mdcat-merit-list/",
         "/uhs-mbbs-admission/",
         "/mdcat-passing-marks/",
@@ -407,6 +409,8 @@
         }
       ],
       "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-merit-list/bds/",
         "/mdcat-aggregate-calculator/",
         "/uhs-mbbs-admission/",
         "/compare/",
@@ -1967,6 +1971,161 @@
       ]
     },
     {
+      "path": "/mdcat-merit-list/private/",
+      "keyword": "private medical colleges merit list",
+      "title": "Private Medical Colleges Merit List {year:uhs} (Punjab)",
+      "description": "Closing merit of all 33 private MBBS colleges in Punjab (UHS), 2025-26: Al-Aleem 90.84% to Queens Kasur 61.00% in the final list, with 1st-list figures.",
+      "h1": "Private Medical Colleges Merit List {year:uhs} (Punjab)",
+      "crumb": "Private MBBS merit",
+      "parents": [
+        "/mdcat-merit-list/"
+      ],
+      "subtitle": "UHS private MBBS open-merit closing aggregates, 1st and 5th (final) list",
+      "type": "content",
+      "template": "meritlist",
+      "schema_type": "CollectionPage",
+      "published": "2026-11-01",
+      "updated": "2026-11-01",
+      "answer": "In the 5th and final 2025-26 UHS private MBBS list (open merit), Al-Aleem Medical College, Lahore closed highest at 90.84% and Queens Medical College Kasur lowest at 61.00%. 27 of 33 private colleges closed at or below 80%. Merit fell by 9.07 points on average from the 1st list.",
+      "answer_source": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+      "content_file": "mdcat-merit-list-private.html",
+      "faq": [
+        {
+          "q": "What is the merit of private medical colleges in Punjab?",
+          "a": "In the final 2025-26 UHS private MBBS list, open-merit closing aggregates ran from 90.84% (Al-Aleem Medical College, Lahore) to 61.00% (Queens Medical College Kasur)."
+        },
+        {
+          "q": "Which private medical college has the highest merit in Punjab?",
+          "a": "Al-Aleem Medical College, Lahore: 92.71% in the 1st and 90.84% in the final 2025-26 private MBBS list, followed by Sharif Medical & Dental College (88.70% final)."
+        },
+        {
+          "q": "Can I get a private MBBS seat with 80% aggregate?",
+          "a": "In 2025-26, 27 of the 33 private MBBS colleges in the UHS list closed at or below 80% in the final list, but only 6 were at or below 80% in the 1st list. Seats at 80% usually came in later lists."
+        },
+        {
+          "q": "Why does private merit drop so much between lists?",
+          "a": "Students given a private seat early often move to a public or preferred college later, and UHS refills the seats lower down the merit. In 2025-26 private MBBS merit fell 9.07 points on average from the 1st to the final list."
+        },
+        {
+          "q": "Private medical college ka merit kitna jata hai?",
+          "a": "2025-26 ki final UHS private MBBS list mein Al-Aleem Medical College Lahore 90.84% par aur Queens Medical College Kasur 61.00% par close hua.",
+          "lang": "ur-Latn"
+        },
+        {
+          "q": "80% aggregate par private MBBS mil sakta hai?",
+          "a": "2025-26 mein 33 mein se 27 private colleges final list mein 80% ya us se kam par close hue, lekin pehli list mein sirf 6. Is liye 80% wali seats aam tor par baad ki lists mein milti hain.",
+          "lang": "ur-Latn"
+        }
+      ],
+      "roman_urdu": "<p>Yeh Punjab ke <strong>private medical colleges</strong> ka official closing merit hai (UHS, 2025-26). Final list mein Al-Aleem Medical College Lahore 90.84% par aur Queens Medical College Kasur 61.00% par close hua.</p><p>Private merit pehli list se final list tak ausatan 9 points se zyada girta hai. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT calculator</a> se nikalein.</p>",
+      "ru_heading": "Private medical colleges ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "UHS 5th selection list, private MBBS, open merit, 2025-26",
+          "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS 1st selection list, private MBBS, open merit, 2025-26",
+          "url": "https://uhs.edu.pk/1selecionlistprivateom25.php",
+          "fetched": "2026-10-31"
+        }
+      ],
+      "related": [
+        "/mdcat-merit-list/",
+        "/mdcat-merit-list/bds/",
+        "/mdcat-aggregate-calculator/",
+        "/guides/1st-2nd-final-merit-list/",
+        "/uhs-mbbs-admission/",
+        "/predictor/"
+      ]
+    },
+    {
+      "path": "/mdcat-merit-list/bds/",
+      "keyword": "bds merit list",
+      "title": "BDS Merit List {year:uhs}: Punjab Dental Colleges (UHS)",
+      "description": "BDS closing merit in Punjab, 2025-26 UHS: public dental colleges 93.42% to 93.46% (final), private 73.13% to 55.87% (3rd list), plus 1st-list figures.",
+      "h1": "BDS Merit List {year:uhs} (Punjab Dental Colleges)",
+      "crumb": "BDS merit",
+      "parents": [
+        "/mdcat-merit-list/"
+      ],
+      "subtitle": "UHS public and private BDS open-merit closing aggregates",
+      "type": "content",
+      "template": "meritlist",
+      "schema_type": "CollectionPage",
+      "published": "2026-11-01",
+      "updated": "2026-11-01",
+      "answer": "In the 2025-26 UHS lists (open merit), the 4 public dental colleges closed between 93.42% and 93.46% in the 13th (final) list, led by de' Montmorency College of Dentistry, Lahore. Private BDS colleges closed from 73.13% (Sharif, Lahore) to 55.87% (Shahida Islam, Lodhran) in the 3rd list.",
+      "answer_source": "https://uhs.edu.pk/13selecionlistpublicbdsom25.php",
+      "content_file": "mdcat-merit-list-bds.html",
+      "faq": [
+        {
+          "q": "What was the BDS merit in Punjab in 2025?",
+          "a": "Public dental colleges closed between 93.42% and 93.46% in the final (13th) 2025-26 UHS list. Private dental colleges closed between 55.87% and 73.13% in the 3rd list."
+        },
+        {
+          "q": "Which dental college has the highest merit in Punjab?",
+          "a": "de' Montmorency College of Dentistry, Lahore: 94.58% in the 1st and 93.46% in the final 2025-26 public BDS list, level with Nishtar Institute of Dentistry, Multan in the final list."
+        },
+        {
+          "q": "Is BDS merit lower than MBBS?",
+          "a": "Yes, slightly for public colleges: public BDS closed between 93.42% and 93.46% in the final 2025-26 list, below every public MBBS college. Private BDS closed far lower, between 55.87% and 73.13% in the 3rd list."
+        },
+        {
+          "q": "What are the MDCAT passing marks for BDS?",
+          "a": "50% for BDS (55% for MBBS), under the Punjab admission policy for 2026-27."
+        },
+        {
+          "q": "BDS ka merit kitna jata hai?",
+          "a": "2025-26 mein Punjab ke sarkari dental colleges final list mein 93.42% se 93.46% par close hue. Private dental colleges teesri list mein 55.87% se 73.13% par.",
+          "lang": "ur-Latn"
+        },
+        {
+          "q": "BDS ke liye kitna aggregate chahiye?",
+          "a": "Sarkari BDS ke liye 2025 ki final list mein 93.42% se 93.46%. Private BDS teesri list mein 74% se kam par close hua.",
+          "lang": "ur-Latn"
+        }
+      ],
+      "roman_urdu": "<p>Yeh Punjab ke <strong>BDS (dental) colleges</strong> ka official closing merit hai (UHS, 2025-26). Sarkari dental colleges final list mein 93.42% se 93.46% par close hue, aur private dental colleges teesri list mein 55.87% se 73.13% par.</p><p>Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT calculator</a> se nikalein aur upar ke table se milayein.</p>",
+      "ru_heading": "BDS ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "UHS 13th selection list, public BDS, open merit, 2025-26",
+          "url": "https://uhs.edu.pk/13selecionlistpublicbdsom25.php",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS 1st selection list, public BDS, open merit, 2025-26",
+          "url": "https://uhs.edu.pk/1selecionlistpublicbdsom25.php",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS 3rd selection list, private BDS, open merit, 2025-26",
+          "url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS 1st selection list, private BDS, open merit, 2025-26",
+          "url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS advertisement: MBBS & BDS admissions 2026-27 (schedule)",
+          "url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
+          "fetched": "2026-11-01"
+        }
+      ],
+      "related": [
+        "/mdcat-merit-list/",
+        "/mdcat-merit-list/private/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-passing-marks/",
+        "/uhs-mbbs-admission/",
+        "/guides/1st-2nd-final-merit-list/"
+      ]
+    },
+    {
       "path": "/nums-merit-list/",
       "trust_label": "Lowest aggregate in official NUMS lists",
       "keyword": "nums merit list",
@@ -2456,6 +2615,8 @@
         }
       ],
       "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-merit-list/bds/",
         "/mdcat-merit-list/",
         "/mdcat-passing-marks/",
         "/mdcat-aggregate-calculator/",
