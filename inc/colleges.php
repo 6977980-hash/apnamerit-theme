@@ -125,6 +125,27 @@ function am_sc_college( $atts ): string {
 	}
 	$html .= '<h2>Where ' . esc_html( $short ) . ' ranks</h2><p>In the final ' . esc_html( (string) $new ) . ' list, ' . esc_html( $short ) . ' had the ' . esc_html( 0 === (int) $pos ? '' : am_ordinal( (int) $pos + 1 ) . ' ' ) . 'highest closing merit of the ' . count( $names ) . ' Punjab public medical colleges (' . implode( '; ', $near ) . '). All ' . count( $names ) . ' are in the <a href="' . esc_url( home_url( (string) ( $uni['meritlist_path'] ?? '/mdcat-merit-list/' ) ) ) . '">MDCAT merit list</a>.</p>';
 
+	// 3b. What the gaps mean in MDCAT marks (audit CQ-05: a college-specific paragraph from the data).
+	// One MDCAT mark = 50 / 180 = 0.28 aggregate points with the PM&DC formula.
+	$mark  = 50 / 180;
+	$cur   = (float) $row['closing'];
+	$close = array_filter( $names, fn( $c ) => $c !== $campus && abs( (float) $all[ $c ]['closing'] - $cur ) <= 0.25 );
+	$gap   = function ( string $c ) use ( $all, $cur, $mark ): string {
+		$m = abs( (float) $all[ $c ]['closing'] - $cur ) / $mark;
+		return $m < 1 ? 'less than one MDCAT mark' : 'about ' . number_format( $m, 1 ) . ' MDCAT marks';
+	};
+	$bits = array();
+	if ( $pos > 0 ) {
+		$bits[] = esc_html( $gap( $names[ $pos - 1 ] ) ) . ' below ' . $link( $names[ $pos - 1 ] );
+	}
+	if ( $pos < count( $names ) - 1 ) {
+		$bits[] = esc_html( $gap( $names[ $pos + 1 ] ) ) . ' above ' . $link( $names[ $pos + 1 ] );
+	}
+	$pref  = am_find_page( '/guides/uhs-college-preference-order/' );
+	$html .= '<p><strong>What the gaps mean:</strong> one MDCAT mark is worth 0.28 aggregate points, so in ' . esc_html( (string) $new ) . ' ' . esc_html( $short ) . ' closed ' . implode( ' and ', $bits ) . '. '
+		. ( $close ? count( $close ) . ' other ' . ( 1 === count( $close ) ? 'college' : 'colleges' ) . ' closed within 0.25 points of it, so small changes in the number of applicants can reorder them next year. ' : 'No other college closed within 0.25 points of it. ' )
+		. ( $pref ? 'Rank the colleges you want by preference, not by last year\'s merit: <a href="' . esc_url( home_url( '/guides/uhs-college-preference-order/' ) ) . '">how to order UHS college preferences</a>.' : '' ) . '</p>';
+
 	// 4. MDCAT needed.
 	$rows = '';
 	foreach ( array( 1000, 1050, 1080 ) as $m ) {

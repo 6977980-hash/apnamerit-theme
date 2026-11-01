@@ -587,6 +587,9 @@ console.log(JSON.stringify([run(80,1050), run(95,1050), run(150,1000), run(150,6
         err("elig", f"engine test: got {got}, want {want} (aggregate, eligible rows)")
 
 
+RU_SPELLING = {"nikalain": "nikalein", "pichle": "pichhle", "ek": "aik", "masalan": "maslan", "kam se kam": "kam az kam"}
+
+
 def check_copy(loaded: dict[str, object]) -> None:
     # One predictor rule (newest official year per program, audit F-04): no "two years" wording.
     texts = [(rel(f), f.read_text(encoding="utf-8")) for f in files("*.html") if "content" in f.parts]
@@ -594,6 +597,10 @@ def check_copy(loaded: dict[str, object]) -> None:
     for where, t in texts:
         for m in TWO_YEARS.finditer(t):
             err("copy", f"{where}: '{m.group(0)}' contradicts the predictor rule (newest official year per program)")
+        # One Roman Urdu spelling per word (audit CQ-11).
+        for bad, good in RU_SPELLING.items():
+            if re.search(r"\b" + bad + r"\b", t, re.I):
+                err("copy", f"{where}: Roman Urdu '{bad}', use '{good}'")
     # The predictor FAQ naming universities without closing merits must match the data (audit F-09).
     pages = (loaded.get("data/pages.json") or {}).get("pages", [])
     pred = next((p for p in pages if p.get("path") == "/predictor/"), {})

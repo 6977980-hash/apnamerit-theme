@@ -506,21 +506,37 @@
     var tbody = table.tBodies[0];
     var count = $('.am-count', box);
     var selects = $$('[data-am-filter]', box);
+    // Big lists keep the full table in <template class="am-more"> until it is needed (audit CI-04).
+    var more = $('template.am-more', box);
+    function expand() {
+      if (!more) return;
+      tbody.innerHTML = '';
+      tbody.appendChild(document.importNode(more.content, true));
+      more.parentNode.removeChild(more);
+      more = null;
+    }
 
+    var qbox = $('[data-am-q]', box), q = '';
     function apply() {
       var shown = 0;
+      q = qbox ? qbox.value.trim().toLowerCase() : '';
       $$('tr', tbody).forEach(function (tr) {
-        var on = selects.every(function (s) { return !s.value || tr.getAttribute('data-' + s.getAttribute('data-am-filter')) === s.value; });
+        var on = selects.every(function (s) { return !s.value || tr.getAttribute('data-' + s.getAttribute('data-am-filter')) === s.value; }) &&
+          (!q || tr.textContent.toLowerCase().indexOf(q) >= 0);
         tr.classList.toggle('am-off', !on);
         if (on) shown++;
       });
-      if (count) count.textContent = 'Showing ' + shown + ' of ' + tbody.rows.length + ' rows.';
+      if (count) count.textContent = 'Showing ' + shown + ' of ' + (more ? +more.getAttribute('data-rows') : tbody.rows.length) + ' rows.';
     }
-    selects.forEach(function (s) { s.addEventListener('change', apply); });
+    selects.forEach(function (s) { s.addEventListener('change', function () { expand(); apply(); }); });
+    // Text search (audit TL-05): searches the rows the other filters leave, so set List or Year to All for every row.
+    if (qbox) qbox.addEventListener('input', function () { expand(); apply(); });
     apply();
 
     $$('[data-am-sort]', table).forEach(function (btn) {
       btn.addEventListener('click', function () {
+        expand();
+        apply();
         var col = +btn.getAttribute('data-am-sort');
         var isNum = btn.hasAttribute('data-num');
         var th = btn.parentNode;
