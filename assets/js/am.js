@@ -18,8 +18,8 @@
    * values = {o_<key>: obtained, t_<key>: total, b_<key>: true}
    * Returns {aggregate, parts:[{key,label,obtained,total,weight,share}]} or {error}.
    */
-  // "ECAT marks" + " marks" would read "ECAT marks marks" (audit F-24).
-  function marksOf(label) { return /marks\s*$/i.test(label) ? label : label + ' marks'; }
+  // "ECAT marks" + " marks" would read "ECAT marks marks", "score in %" + " marks" is no better (audit F-24).
+  function marksOf(label) { return /marks\s*$|score|%/i.test(label) ? label : label + ' marks'; }
 
   function aggregate(formula, values) {
     var out = { aggregate: 0, parts: [] };
@@ -161,6 +161,16 @@
     }).join('') + '</div>';
   }
 
+  // Number fields hold '' for "1,050": badInput says so in most browsers; for the rest remember
+  // that something was typed (am-typed) so the message can still name the comma (audit F-24).
+  document.addEventListener('input', function (e) {
+    var i = e.target;
+    if (!i || i.type !== 'number') return;
+    if (i.value !== '' || /^delete/.test(e.inputType || '')) i.removeAttribute('data-am-typed');
+    else if (e.inputType && /^insert/.test(e.inputType)) i.setAttribute('data-am-typed', '');
+  });
+  function notNumber(i) { return (i.validity && i.validity.badInput) || (i.value === '' && i.hasAttribute('data-am-typed')); }
+
   function formValues(scope) {
     var v = {};
     $$('input', scope).forEach(function (i) { v[i.name] = i.type === 'checkbox' ? i.checked : i.value; });
@@ -206,7 +216,7 @@
       var f = current();
       var values = formValues(fieldset(f));
       // A number field typed as "1,050" reads as empty: say why instead of "Enter your marks" (F-24).
-      var typo = $$('input[type="number"]', fieldset(f)).filter(function (i) { return i.validity && i.validity.badInput; })[0];
+      var typo = $$('input[type="number"]', fieldset(f)).filter(notNumber)[0];
       var r = typo ? { error: 'Enter numbers only, without commas.', el: typo } : aggregate(f, values);
       if (r.error) {
         if (quiet) return;
@@ -295,7 +305,7 @@
 
     function run(quiet) {
       var agg = num(form.agg.value);
-      var bad = form.agg.validity && form.agg.validity.badInput;
+      var bad = notNumber(form.agg);
       if (bad || isNaN(agg) || agg <= 0 || agg > 100) {
         if (quiet) return;
         out.hidden = false;

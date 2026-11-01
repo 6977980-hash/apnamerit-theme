@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.18.1 (2026-11-01)
+F-24 follow-up: comma message also where a browser gives no `badInput` (field typed into but empty), and no " marks" after labels with "score" or "%".
+
 ## 0.18.0 (2026-11-01)
 Audit 2026-11-01, Phase 4 (UX): F-21 predictor saved-aggregate chips below the input with a "Using your saved…" line, F-22 header nav one line at 375 px, F-24 comma message and no "marks marks", F-18 in-content links to IBCC, percentage, report, open data and embed pages. F-20 verified (Lighthouse target-size passes), no change. Details in `HANDOFF.md`.
 

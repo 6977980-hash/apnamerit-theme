@@ -438,10 +438,10 @@ function am_formula_table( array $uni ): string {
 }
 
 /**
- * Field label for a marks input: "Matric" → "Matric marks", "ECAT marks" stays (audit F-24).
+ * Field label for a marks input: "Matric" → "Matric marks"; "ECAT marks" and "NET score in %" stay (audit F-24).
  */
 function am_marks_label( string $label ): string {
-	return preg_match( '/marks\s*$/i', $label ) ? $label : $label . ' marks';
+	return preg_match( '/marks\s*$|score|%/i', $label ) ? $label : $label . ' marks';
 }
 
 /**
