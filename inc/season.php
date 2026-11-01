@@ -133,7 +133,7 @@ function am_sc_season( $atts ): string {
 		$rows .= '</tr>';
 	}
 	$when = ! empty( $s['checked'] ) ? ' Checked ' . gmdate( 'j M Y', (int) strtotime( (string) $s['checked'] ) ) . '.' : '';
-	return '<div class="am-table-wrap" data-am-season><table class="am-table"><caption>' . esc_html( (string) $s['label'] . ', session ' . (string) $s['session'] . ': official schedule' ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $rows . '</tbody></table></div>'
+	return am_live_html( $slug ) . '<div class="am-table-wrap" data-am-season><table class="am-table"><caption>' . esc_html( (string) $s['label'] . ', session ' . (string) $s['session'] . ': official schedule' ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $rows . '</tbody></table></div>'
 		. '<p class="am-muted" data-am-next hidden></p>'
 		. '<p class="am-muted">Source: <a href="' . esc_url( (string) $s['source_url'] ) . '" rel="noopener" target="_blank">' . esc_html( (string) ( $s['source_label'] ?? am_source_label( (string) $s['source_url'] ) ) ) . '</a>.' . esc_html( $when ) . ' ' . esc_html( (string) ( $s['note'] ?? '' ) ) . '</p>'
 		. ( function_exists( 'am_alerts_html' ) ? am_alerts_html( $slug ) : '' );
@@ -146,3 +146,33 @@ add_action(
 		add_shortcode( 'am_season', 'am_sc_season' );
 	}
 );
+
+/**
+ * List-day live box (Tier 2 idea 11). calendar.json seasons.<slug>.live, edited by Claude on an
+ * official list date (no cron, each edit is a deploy):
+ *   {"step": "Provisional order of merit (MBBS)", "date": "2026-11-13", "checked": "2026-11-13T10:30:00+05:00",
+ *    "out": false, "url": "", "note": "", "guide": "/guides/uhs-provisional-merit-list/"}
+ * "out": true needs "url" (the official list). Empty or missing "live" = no box. am.js hides the box
+ * two days after "date", in case the page cache outlives the next edit.
+ */
+function am_live_html( string $slug ): string {
+	static $done = array();
+	$live = (array) ( am_data( 'calendar' )['seasons'][ $slug ]['live'] ?? array() );
+	if ( isset( $done[ $slug ] ) || empty( $live['step'] ) || empty( $live['date'] ) || empty( $live['checked'] ) ) {
+		return '';
+	}
+	$done[ $slug ] = true;
+	$out   = ! empty( $live['out'] ) && ! empty( $live['url'] );
+	$ts    = (int) strtotime( (string) $live['checked'] );
+	$at    = wp_date( 'j M, g:i A', $ts, new DateTimeZone( 'Asia/Karachi' ) ) . ' PKT';
+	$guide = ! empty( $live['guide'] ) ? am_find_page( (string) $live['guide'] ) : array();
+	$html  = '<div class="am-live' . ( $out ? ' am-live--out' : '' ) . '" role="status" data-am-live="' . esc_attr( (string) $live['date'] ) . '">'
+		. '<p><strong>' . ( $out ? 'Out now: ' : 'List day: ' ) . esc_html( (string) $live['step'] ) . ', ' . esc_html( am_season_date( (string) $live['date'] ) ) . '.</strong> '
+		. ( $out
+			? 'Official list: <a href="' . esc_url( (string) $live['url'] ) . '" rel="noopener" target="_blank">' . esc_html( am_source_label( (string) $live['url'] ) ) . '</a>. Our tables are updated within 48 hours.'
+			: 'Checked ' . esc_html( $at ) . ': not published yet. This box changes as soon as it is out.' )
+		. ( ! empty( $live['note'] ) ? ' ' . esc_html( (string) $live['note'] ) : '' )
+		. ( $guide ? ' <a href="' . esc_url( home_url( (string) $guide['path'] ) ) . '">What to do now</a>' : '' )
+		. ( $out ? ' <span class="am-muted">(checked ' . esc_html( $at ) . ')</span>' : '' ) . '</p></div>';
+	return $html;
+}

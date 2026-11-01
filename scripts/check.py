@@ -398,6 +398,12 @@ def check_calendar(loaded: dict[str, object]) -> None:
                 d = str(st.get(col, ""))
                 if d and not re.fullmatch(f"{day}(/{day})?", d):
                     err("calendar", f"seasons.{slug} '{st.get('step')}' {col}: date must be YYYY-MM-DD or start/end")
+        live = s_.get("live") or {}
+        if live:
+            if not re.fullmatch(day, str(live.get("date", ""))) or not re.fullmatch(day + r"T\d{2}:\d{2}(:\d{2})?\+05:00", str(live.get("checked", ""))) or not live.get("step"):
+                err("calendar", f"seasons.{slug}.live: step, date YYYY-MM-DD and checked YYYY-MM-DDTHH:MM+05:00 required")
+            if live.get("out") and not str(live.get("url", "")).startswith("https://"):
+                err("calendar", f"seasons.{slug}.live: out=true needs the official https url")
 
 
 # ---------------------------------------------------------------- updates log (idea 5, 2026-11-01)

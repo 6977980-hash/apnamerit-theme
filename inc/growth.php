@@ -83,12 +83,13 @@ function am_season_status( array $uni ): string {
 	static $done = array();
 	$slug = (string) ( $uni['slug'] ?? '' );
 	$row  = (array) ( am_data( 'calendar' )['universities'][ $slug ] ?? array() );
+	$live = function_exists( 'am_live_html' ) ? am_live_html( $slug ) : '';
 	if ( isset( $done[ $slug ] ) || empty( $row['status'] ) || empty( $row['source_url'] ) ) {
-		return '';
+		return $live;
 	}
 	$done[ $slug ] = true;
 	$when          = ! empty( $row['checked'] ) ? ' (checked ' . gmdate( 'j M Y', (int) strtotime( (string) $row['checked'] ) ) . ')' : '';
-	return '<p class="am-muted am-status"><strong>Season status' . esc_html( $when ) . ':</strong> ' . esc_html( (string) $row['status'] )
+	return $live . '<p class="am-muted am-status"><strong>Season status' . esc_html( $when ) . ':</strong> ' . esc_html( (string) $row['status'] )
 		. ' <a href="' . esc_url( (string) $row['source_url'] ) . '" rel="noopener" target="_blank">Official page</a></p>';
 }
 

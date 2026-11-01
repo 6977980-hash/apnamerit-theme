@@ -65,7 +65,7 @@ function am_home_hero( array $page ): string {
 		. '<p class="am-eyebrow">Admission season ' . esc_html( (string) am_site( 'season_year' ) ) . '</p>'
 		. '<h1>' . esc_html( $h1 ) . '</h1>'
 		. '<p class="am-hero-lead">Get your aggregate in seconds and, for universities that publish closing merits, see where you could get in.</p>'
-		. am_home_next()
+		. ( function_exists( 'am_live_html' ) && '' !== ( $am_live = am_live_html( 'uhs' ) ) ? $am_live : am_home_next() )
 		. '</div>'
 		. '<div class="am-hero-tool"><p class="am-tool-title">Calculate your aggregate</p><nav class="am-pills" aria-label="Choose a university calculator">' . $pills . '</nav>' . $calc . '</div>'
 		. '<div class="am-hero-meta"><ul class="am-stats">'

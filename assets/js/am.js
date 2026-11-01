@@ -683,6 +683,12 @@
     }
   });
 
+  // ---------------------------------------------------------------- list-day box: gone two days after its date
+  $$('[data-am-live]').forEach(function (box) {
+    var d = Date.parse(box.getAttribute('data-am-live'));
+    if (d && Date.now() > d + 2 * 86400000) box.hidden = true;
+  });
+
   // ---------------------------------------------------------------- home: next official step (audit FE)
   $$('[data-am-steps]').forEach(function (p) {
     var steps = [], span = $('span', p);
