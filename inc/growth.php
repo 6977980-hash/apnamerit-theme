@@ -310,7 +310,7 @@ function am_sc_hub( $atts ): string {
 		if ( $none ) {
 			$out .= '<p>These universities have a calculator but no official program-wise closing merit online yet, so we show no merit list for them: ' . implode( ', ', $none ) . '.</p>';
 		}
-		return $out;
+		return $out . am_hub_more();
 	}
 
 	$groups = array();
@@ -336,7 +336,21 @@ function am_sc_hub( $atts ): string {
 		}
 		$out .= '<h2 id="' . esc_attr( $field ) . '">' . esc_html( $label ) . ' aggregate calculators</h2><div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( $label . ': official aggregate formulas' ) . '</caption><thead><tr><th scope="col">Calculator</th><th scope="col">Formula</th></tr></thead><tbody>' . $body . '</tbody></table></div>';
 	}
-	return $out;
+	return $out . am_hub_more();
+}
+
+/**
+ * Closing line of both hubs: open data and embed pages (audit F-18).
+ */
+function am_hub_more(): string {
+	$links = array();
+	if ( am_find_page( '/data/' ) ) {
+		$links[] = 'download every table as JSON from our <a href="' . esc_url( home_url( '/data/' ) ) . '">open merit data</a>';
+	}
+	if ( am_find_page( '/embed/' ) ) {
+		$links[] = 'put a calculator on your own site with our <a href="' . esc_url( home_url( '/embed/' ) ) . '">free embed code</a>';
+	}
+	return $links ? '<p>Teachers, academies and bloggers: ' . implode( ', or ', $links ) . '.</p>' : '';
 }
 
 // ------------------------------------------------------------------ trend SVG (master plan 4.2 item 6)

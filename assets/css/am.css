@@ -171,3 +171,4 @@ a.am-stat-card:hover,a.am-guide:hover,.am-card:hover{border-color:var(--am-accen
 .am-guide span{color:var(--am-muted);font-size:.92rem}
 @media(min-width:40rem){.am-grid--2,.am-grid--3,.am-grid--4{grid-template-columns:repeat(2,1fr)}.am-band{grid-template-columns:1fr 1.3fr}.am-steps{grid-template-columns:repeat(3,1fr)}.am-steps li{flex-direction:column}}
 @media(min-width:60rem){.am-hero{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;padding:2.5rem 2rem;align-items:start}.am-hero-tool{grid-column:2;grid-row:1/3}.am-hero-meta{grid-column:1;grid-row:2}.am-hero h1{font-size:2.4rem}.am-grid--3{grid-template-columns:repeat(3,1fr)}.am-grid--4{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:30rem){.am-nav-wide{display:none}}

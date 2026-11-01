@@ -89,6 +89,20 @@ function am_quotables( array $uni, string $list = '', string $cat = '' ): array 
 }
 
 /**
+ * Path of the newest merit data report page in data/pages.json ('' if none).
+ */
+function am_report_path(): string {
+	$best = '';
+	foreach ( (array) ( am_data( 'pages' )['pages'] ?? array() ) as $page ) {
+		$path = is_array( $page ) ? (string) ( $page['path'] ?? '' ) : '';
+		if ( str_starts_with( $path, '/merit-data-report-' ) && strcmp( $path, $best ) > 0 ) {
+			$best = $path;
+		}
+	}
+	return $best;
+}
+
+/**
  * "Key figures" list printed under a merit table.
  */
 function am_facts_html( array $uni, string $list = '', string $cat = '' ): string {
@@ -100,7 +114,12 @@ function am_facts_html( array $uni, string $list = '', string $cat = '' ): strin
 	foreach ( $facts as $f ) {
 		$out .= '<li>' . esc_html( $f ) . '</li>';
 	}
-	return $out . '</ul></div>';
+	$out .= '</ul>';
+	$report = am_report_path();
+	if ( $report ) {
+		$out .= '<p>Compare every university: <a href="' . esc_url( home_url( $report ) ) . '">see how merit moved</a> in our merit data report.</p>';
+	}
+	return $out . '</div>';
 }
 
 // ------------------------------------------------------------------ llms.txt

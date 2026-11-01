@@ -18,6 +18,9 @@
    * values = {o_<key>: obtained, t_<key>: total, b_<key>: true}
    * Returns {aggregate, parts:[{key,label,obtained,total,weight,share}]} or {error}.
    */
+  // "ECAT marks" + " marks" would read "ECAT marks marks" (audit F-24).
+  function marksOf(label) { return /marks\s*$/i.test(label) ? label : label + ' marks'; }
+
   function aggregate(formula, values) {
     var out = { aggregate: 0, parts: [] };
     var extra = {};
@@ -29,9 +32,9 @@
       var p = formula.parts[i];
       var obtained = num(values['o_' + p.key]);
       var total = num(values['t_' + p.key] != null && values['t_' + p.key] !== '' ? values['t_' + p.key] : p.total);
-      if (isNaN(obtained) || obtained < 0) return { error: 'Enter your ' + p.label + ' marks.', key: p.key };
+      if (isNaN(obtained) || obtained < 0) return { error: 'Enter your ' + marksOf(p.label) + '.', key: p.key };
       if (isNaN(total) || total <= 0) return { error: 'Enter the total marks for ' + p.label + '.', key: p.key };
-      if (obtained > total) return { error: p.label + ' marks cannot be more than ' + total + '.', key: p.key };
+      if (obtained > total) return { error: marksOf(p.label) + ' cannot be more than ' + total + '.', key: p.key };
       var got = Math.min(obtained + (extra[p.key] || 0), total);
       var row = { key: p.key, label: p.label, obtained: got, raw: obtained, total: total, weight: num(p.weight), share: (got / total) * num(p.weight) };
       if (p.pool) {
@@ -202,12 +205,14 @@
     function run(quiet) {
       var f = current();
       var values = formValues(fieldset(f));
-      var r = aggregate(f, values);
+      // A number field typed as "1,050" reads as empty: say why instead of "Enter your marks" (F-24).
+      var typo = $$('input[type="number"]', fieldset(f)).filter(function (i) { return i.validity && i.validity.badInput; })[0];
+      var r = typo ? { error: 'Enter numbers only, without commas.', el: typo } : aggregate(f, values);
       if (r.error) {
         if (quiet) return;
         out.hidden = false;
         out.innerHTML = '<p class="am-error" role="alert">' + esc(r.error) + '</p>';
-        var bad = $('[name="o_' + r.key + '"]', fieldset(f));
+        var bad = r.el || $('[name="o_' + r.key + '"]', fieldset(f));
         if (bad) bad.focus();
         return;
       }
@@ -272,8 +277,9 @@
       var v = store.get('am:calc:' + s.id);
       return v && typeof v.agg === 'number' ? { uni: s.uni, agg: v.agg } : null;
     }).filter(Boolean);
+    var used = null; // the saved aggregate a chip put in the box, named at the top of the result (F-21)
     if (box && mine.length) {
-      box.innerHTML = '<p class="am-muted">Your saved aggregates:</p>' + mine.map(function (m) {
+      box.innerHTML = '<p class="am-muted">Or use a saved aggregate:</p>' + mine.map(function (m) {
         return '<button type="button" class="am-btn" data-uni="' + esc(m.uni) + '" data-agg="' + m.agg.toFixed(2) + '">' + esc(m.uni) + ' ' + pct(m.agg) + '</button>';
       }).join(' ');
       box.hidden = false;
@@ -282,16 +288,18 @@
         if (!b) return;
         form.agg.value = b.getAttribute('data-agg');
         if (form.uni) form.uni.value = b.getAttribute('data-uni');
+        used = { uni: b.getAttribute('data-uni'), agg: form.agg.value };
         run(false);
       });
     }
 
     function run(quiet) {
       var agg = num(form.agg.value);
-      if (isNaN(agg) || agg <= 0 || agg > 100) {
+      var bad = form.agg.validity && form.agg.validity.badInput;
+      if (bad || isNaN(agg) || agg <= 0 || agg > 100) {
         if (quiet) return;
         out.hidden = false;
-        out.innerHTML = '<p class="am-error" role="alert">Enter an aggregate between 0 and 100.</p>';
+        out.innerHTML = '<p class="am-error" role="alert">' + (bad ? 'Enter numbers only, without commas.' : 'Enter an aggregate between 0 and 100.') + '</p>';
         form.agg.focus();
         return;
       }
@@ -306,7 +314,8 @@
         var ex = below[0];
         note = '<div class="am-answer am-elig" role="status"><p><strong>' + below.length + ' program' + (below.length > 1 ? 's' : '') + ' left out:</strong> an aggregate under ' + pct(ex.min) + ' cannot meet the ' + esc(ex.uni) + ' eligibility minimums (' + esc(ex.minNote) + ') for ' + esc(ex.program) + (below.length > 1 ? ' (and ' + (below.length - 1) + ' more with their own minimums)' : '') + '. Check your marks in that university\'s calculator.</p></div>';
       }
-      out.innerHTML = note + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.');
+      var head = used && used.agg === form.agg.value ? '<p class="am-result-main">Using your saved ' + esc(used.uni) + ' aggregate ' + esc(used.agg) + '%</p>' : '';
+      out.innerHTML = head + note + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.');
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
     if (saved) run(true);

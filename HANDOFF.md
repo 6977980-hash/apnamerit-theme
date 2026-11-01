@@ -1,5 +1,13 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Audit 2026-11-01, Phase 4: UX, mobile, accessibility (v0.18.0, branch `phase-12-ux`)
+Handoff: `/mnt/project-files/apnamerit.com/audit/2026-11-01/handoff/phase-4-ux.md`.
+- **F-21** Predictor: `.am-saved` chip row now sits below the aggregate input, label "Or use a saved aggregate:". A chip sets `used`; while the box still holds that value the result starts with "Using your saved <uni> aggregate <x>%".
+- **F-22** `data/nav.json` header items may carry `"hide_small": true` → `<li class="am-nav-wide">`, hidden under 480 px (`am.css` last line). Methodology uses it (still in the footer). At 320/375 px the header nav is one line under the brand.
+- **F-20** Verified, no change: Lighthouse 12.8 mobile on `/mdcat-merit-list/` = Perf 99 / A11y 100 / BP 100 / SEO 100, `target-size` passes (Lighthouse 12 has no `tap-targets` audit any more). Footnote anchors are 20x19 px with spacing.
+- **F-24** `am.js`: a number input with `validity.badInput` (Firefox/Safari keep "1,050" as bad input; Chromium drops the comma itself) gives "Enter numbers only, without commas." (calculators and predictor). `marksOf()` in JS and `am_marks_label()` in PHP stop "ECAT marks marks" in labels and errors.
+- **F-18** `am_calc_help()` (shortcodes.php) under every full calculator: links to `/ibcc-equivalence-calculator/` and `/percentage-calculator/`. `am_facts_html()` ends with "see how merit moved" → `am_report_path()` (newest `/merit-data-report-*` page). Both hubs end with `am_hub_more()` → `/data/` and `/embed/`.
+
 ## Audit 2026-11-01, Phase 1: eligibility floors (v0.17.0, branch `phase-10-eligibility`)
 Handoff: `/mnt/project-files/apnamerit.com/audit/2026-11-01/handoff/phase-1-eligibility-floors.md`. Fixes **F-01** (80/180 MDCAT got "Strong" colleges).
 - **Data**: optional `eligibility` array per university: `{part, min_pct, applies_to, label, source_url, source_note, programs?, formulas?}`. `programs` = regex on merit `program` (floor removes only those rows; without it the floor removes every row). `formulas` = formula ids (default: every formula that has `part`). Bonus marks (Hafiz etc.) never count for eligibility.

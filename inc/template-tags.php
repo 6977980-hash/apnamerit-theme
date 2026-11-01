@@ -51,7 +51,8 @@ function am_nav( string $which ): string {
 	foreach ( $items as $item ) {
 		$path = (string) ( $item['path'] ?? '' );
 		$aria = $path === $current ? ' aria-current="page"' : '';
-		$out .= '<li><a href="' . esc_url( home_url( $path ) ) . '"' . $aria . '>' . esc_html( (string) ( $item['label'] ?? '' ) ) . '</a></li>';
+		$wide = empty( $item['hide_small'] ) ? '' : ' class="am-nav-wide"';
+		$out .= '<li' . $wide . '><a href="' . esc_url( home_url( $path ) ) . '"' . $aria . '>' . esc_html( (string) ( $item['label'] ?? '' ) ) . '</a></li>';
 	}
 	$label = 'header' === $which ? 'Main' : 'Footer';
 	return '<nav class="am-nav am-nav--' . esc_attr( $which ) . '" aria-label="' . esc_attr( $label ) . '"><ul>' . $out . '</ul></nav>';

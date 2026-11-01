@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.18.0 (2026-11-01)
+Audit 2026-11-01, Phase 4 (UX): F-21 predictor saved-aggregate chips below the input with a "Using your saved…" line, F-22 header nav one line at 375 px, F-24 comma message and no "marks marks", F-18 in-content links to IBCC, percentage, report, open data and embed pages. F-20 verified (Lighthouse target-size passes), no change. Details in `HANDOFF.md`.
+
 ## 0.17.0 (2026-11-01)
 Audit 2026-11-01, Phase 1: F-01 eligibility floors in calculators and predictor (UHS MDCAT 55/50 + HSSC 60, UET Taxila, Air, Bahria, COMSATS, ITU, UAF, NED). New `[am_eligibility]` shortcode, `check.py [elig]`. Details in `HANDOFF.md`.
 

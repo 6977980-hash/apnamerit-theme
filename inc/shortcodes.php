@@ -378,7 +378,7 @@ function am_sc_calculator( $atts ): string {
 		$html .= '<fieldset class="am-formula" data-am-fid="' . esc_attr( $fid ) . '"' . ( $n > 0 ? ' hidden' : '' ) . '><legend>' . esc_html( (string) $f['label'] ) . '</legend>';
 		foreach ( (array) $f['parts'] as $p ) {
 			$k     = esc_attr( $fid . '-' . $p['key'] );
-			$html .= '<div class="am-field am-part"><label for="am-o-' . $k . '">' . esc_html( (string) $p['label'] ) . ' marks</label><div class="am-pair">'
+			$html .= '<div class="am-field am-part"><label for="am-o-' . $k . '">' . esc_html( am_marks_label( (string) $p['label'] ) ) . '</label><div class="am-pair">'
 				. '<input id="am-o-' . $k . '" name="o_' . esc_attr( (string) $p['key'] ) . '" type="number" inputmode="decimal" min="0" step="any" required>'
 				. '<span>out of</span>'
 				. '<input aria-label="' . esc_attr( (string) $p['label'] ) . ' total marks" name="t_' . esc_attr( (string) $p['key'] ) . '" type="number" inputmode="decimal" min="1" step="any" value="' . esc_attr( (string) $p['total'] ) . '" required>'
@@ -408,6 +408,7 @@ function am_sc_calculator( $atts ): string {
 
 	return '<form class="am-calc" data-am-calc="' . esc_attr( $id ) . '" novalidate>'
 		. $html
+		. ( '' === $atts['compact'] ? am_calc_help() : '' )
 		. '<div class="am-actions"><button type="submit" class="am-btn am-btn--primary">Calculate aggregate</button> <button type="reset" class="am-btn">Clear</button></div>'
 		. '<div class="am-result" aria-live="polite" hidden></div>'
 		. '<noscript><p>The calculator needs JavaScript. You can still use the formula table below by hand.</p></noscript>'
@@ -434,6 +435,27 @@ function am_formula_table( array $uni ): string {
 		}
 	}
 	return $out;
+}
+
+/**
+ * Field label for a marks input: "Matric" → "Matric marks", "ECAT marks" stays (audit F-24).
+ */
+function am_marks_label( string $label ): string {
+	return preg_match( '/marks\s*$/i', $label ) ? $label : $label . ' marks';
+}
+
+/**
+ * Help line under every full calculator: O/A level → IBCC, Matric/FSc → percentage (audit F-18).
+ */
+function am_calc_help(): string {
+	$parts = array();
+	if ( am_find_page( '/ibcc-equivalence-calculator/' ) ) {
+		$parts[] = 'O-level or A-level student? Convert your grades first with the <a href="' . esc_url( home_url( '/ibcc-equivalence-calculator/' ) ) . '">IBCC equivalence calculator</a>.';
+	}
+	if ( am_find_page( '/percentage-calculator/' ) ) {
+		$parts[] = 'Need your Matric or FSc percentage? Use the <a href="' . esc_url( home_url( '/percentage-calculator/' ) ) . '">percentage calculator</a>.';
+	}
+	return $parts ? '<p class="am-muted">' . implode( ' ', $parts ) . '</p>' : '';
 }
 
 // ------------------------------------------------------------------ [am_merit_table]
@@ -690,8 +712,8 @@ function am_sc_predictor( $atts ): string {
 	ksort( $provs );
 	ksort( $unis, SORT_FLAG_CASE | SORT_STRING );
 	return '<form class="am-predictor" data-am-predictor novalidate>'
-		. '<div class="am-saved" hidden></div>'
 		. '<div class="am-field"><label for="am-pr-agg">Your aggregate (%)</label><input id="am-pr-agg" name="agg" type="number" inputmode="decimal" min="0" max="100" step="any" required><small>Each university uses its own formula, so use the aggregate you got from that university\'s calculator and pick the university below.</small></div>'
+		. '<div class="am-saved" hidden></div>'
 		. $select( 'uni', 'University', $unis )
 		. $select( 'field', 'Field', $fields )
 		. $select( 'prov', 'Province', $provs )
