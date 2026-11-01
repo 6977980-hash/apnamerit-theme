@@ -194,7 +194,14 @@ def check_pages(loaded: dict[str, object]) -> None:
     def fill(t: str) -> str:
         for k, v in tokens.items():
             t = t.replace(k, v)
+        t = re.sub(r"\{session:([a-z0-9-]+)\}", lambda m: session(m.group(1)), t)
         return re.sub(r"\{year:([a-z0-9-]+)\}", lambda m: uni_year(m.group(1)), t)
+
+    def session(slug: str) -> str:
+        s_ = ((loaded.get("data/calendar.json") or {}).get("seasons") or {}).get(slug) or {}
+        if not s_.get("session"):
+            err("pages", f"token {{session:{slug}}}: data/calendar.json seasons.{slug}.session missing")
+        return str(s_.get("session", site.get("season_year", "")))
 
     seen: dict[str, set] = {"path": set(), "title": set(), "description": set(), "keyword": set()}
     for i, p in enumerate(pages["pages"]):
@@ -371,6 +378,16 @@ def check_calendar(loaded: dict[str, object]) -> None:
             err("calendar", f"events[{i}]: estimate needs window and basis")
         elif kind not in ("official", "estimate"):
             err("calendar", f"events[{i}]: kind must be official or estimate")
+    # seasons.<slug>: current session's official schedule ([am_season], audit G-02).
+    day = r"\d{4}-\d{2}-\d{2}"
+    for slug, s_ in (cal.get("seasons") or {}).items():
+        if not str(s_.get("source_url", "")).startswith("https://") or not s_.get("session") or not s_.get("steps"):
+            err("calendar", f"seasons.{slug}: session, steps and https source_url required")
+        for st in s_.get("steps") or []:
+            for col in s_.get("columns") or []:
+                d = str(st.get(col, ""))
+                if d and not re.fullmatch(f"{day}(/{day})?", d):
+                    err("calendar", f"seasons.{slug} '{st.get('step')}' {col}: date must be YYYY-MM-DD or start/end")
 
 
 # ---------------------------------------------------------------- privacy

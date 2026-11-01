@@ -7,7 +7,7 @@
    "title": "Aggregate Calculator Pakistan {season_year} – All Universities",
    "description": "Free aggregate calculator for MDCAT, UET, NUST, COMSATS, FAST and PU. Get your aggregate, then see last year's closing merit and where you can get in.",
    "h1": "Aggregate Calculator for Pakistani Universities ({season_year})",
-   "content": "<p class=\"am-lead\">Calculate your aggregate and, for universities that publish closing merits, see where you could get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p>Need your Matric or FSc percentage first? Use the <a href=\"/percentage-calculator/\">percentage calculator</a>. Already know your aggregate? The <a href=\"/predictor/\">merit predictor</a> checks it against {predict_count} programs. Or browse <a href=\"/aggregate-calculator/\">all aggregate calculators</a> and <a href=\"/merit-list/\">all merit lists</a>.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {year:uhs} for every UHS Punjab public and private college.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {year:pu} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/air-aggregate-calculator/\">Air University aggregate calculator</a> (engineering 10/50/40, other programs 15/35/50).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>What changed this year? Read the <a href=\"/merit-data-report-2026/\">merit data report 2026</a>. UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
+   "content": "<p class=\"am-lead\">Calculate your aggregate and, for universities that publish closing merits, see where you could get in, and open the full merit list for MDCAT, UET, NUST, COMSATS, FAST, PU and more.</p>\n<p>Need your Matric or FSc percentage first? Use the <a href=\"/percentage-calculator/\">percentage calculator</a>. Already know your aggregate? The <a href=\"/predictor/\">merit predictor</a> checks it against {predict_count} programs. Or browse <a href=\"/aggregate-calculator/\">all aggregate calculators</a> and <a href=\"/merit-list/\">all merit lists</a>.</p>\n<h2>Start with MDCAT</h2>\n<ul>\n<li><a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a>: the PMDC formula (50% MDCAT, 40% FSc, 10% Matric) with last year's MBBS and BDS closing merits.</li>\n<li><a href=\"/mdcat-merit-list/\">MDCAT merit list {season_year}</a>: MBBS and BDS closing merit {year:uhs} for every UHS Punjab public and private college.</li>\n<li><a href=\"/mdcat-passing-marks/\">MDCAT passing marks</a> (55% MBBS, 50% BDS, FSc 60%) and the <a href=\"/uhs-mbbs-admission/\">UHS MBBS/BDS admission schedule</a> with every official date.</li>\n<li><a href=\"/guides/mdcat-aggregate-formula/\">How to calculate MDCAT aggregate</a> and <a href=\"/guides/what-is-closing-merit/\">what closing merit means</a>.</li>\n</ul>\n<h2>Engineering and computing</h2>\n<ul>\n<li><a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> (33% ECAT, 50% FSc Part-I, 17% Matric) and the <a href=\"/uet-taxila-merit-list/\">UET Taxila merit list</a> with official closing merits.</li>\n<li><a href=\"/nust-aggregate-calculator/\">NUST aggregate calculator</a> (75% NET, 15% FSc Part-1, 10% Matric).</li>\n<li><a href=\"/comsats-aggregate-calculator/\">COMSATS aggregate calculator</a> (50% NTS, 40% FSc, 10% Matric).</li>\n<li><a href=\"/uet-peshawar-aggregate-calculator/\">UET Peshawar aggregate calculator</a> (50% entrance test, 40% FSc Part-I, 10% Matric).</li>\n<li><a href=\"/ned-aggregate-calculator/\">NED aggregate calculator</a> (60% NED test, 40% HSC Part-I).</li>\n<li><a href=\"/fast-aggregate-calculator/\">FAST aggregate calculator</a> for computing and engineering programs.</li>\n<li><a href=\"/giki-aggregate-calculator/\">GIKI aggregate calculator</a> (85% test, 15% Matric).</li>\n<li><a href=\"/guides/1st-2nd-final-merit-list/\">1st vs 2nd vs final merit list</a>: how much merit drops between lists.</li>\n</ul>\n<h2>Punjab University and general universities</h2>\n<ul>\n<li><a href=\"/pu-aggregate-calculator/\">PU aggregate calculator</a>: Punjab University's basic criteria, (Matric ÷ 4 + FSc) ÷ 1375, plus the 75/25 entry-test formula.</li>\n<li><a href=\"/pu-merit-list/\">PU merit list {season_year}</a>: closing merit {year:pu} for 257 BS programs and shifts, including <a href=\"/pu-merit-list/#pucit\">PUCIT</a>.</li>\n<li><a href=\"/iiui-aggregate-calculator/\">IIUI aggregate calculator</a> (40% Matric, 60% FSc; or 15/25/60 with a test).</li>\n<li><a href=\"/uaf-aggregate-calculator/\">UAF aggregate calculator</a> (30% Matric, 30% FSc Part-I, 40% entry test).</li>\n<li><a href=\"/air-aggregate-calculator/\">Air University aggregate calculator</a> (engineering 10/50/40, other programs 15/35/50).</li>\n<li><a href=\"/bahria-aggregate-calculator/\">Bahria aggregate calculator</a> (60% test, 30% FSc, 10% Matric) and <a href=\"/itu-aggregate-calculator/\">ITU aggregate calculator</a> (BS CS: 15% Matric, 35% FSc, 50% test).</li>\n<li><a href=\"/ku-merit-list/\">KU merit list {season_year}</a>: Karachi University closing percentages for test-based programmes, Pharm-D and Visual Studies.</li>\n</ul>\n<p>What changed this year? Read the <a href=\"/merit-data-report-2026/\">merit data report 2026</a>. UET Lahore and more universities are being added next. Every number links to its official source; see how we collect them in our <a href=\"/methodology/\">methodology</a>.</p>",
    "updated": "2026-10-31",
    "related": [
     "/predictor/",
@@ -246,6 +246,8 @@
    ],
    "related": [
     "/mdcat-merit-list/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/",
     "/nums-merit-list/",
     "/guides/mdcat-aggregate-formula/",
     "/guides/what-is-closing-merit/",
@@ -265,7 +267,7 @@
    "template": "meritlist",
    "schema_type": "CollectionPage",
    "published": "2026-10-31",
-   "updated": "2026-10-31",
+   "updated": "2026-11-01",
    "answer": "In the final 2025 UHS selection list, Punjab public MBBS colleges closed between 94.87% (King Edward Medical University) and 93.51% (Narowal Medical College) on open merit, about 0.7 to 1.2 points lower than in 2024. Private MBBS colleges closed between 90.84% and 61.00%, and public BDS colleges at about 93.4%.",
    "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
    "content_file": "mdcat-merit-list.html",
@@ -335,6 +337,8 @@
    ],
    "related": [
     "/mdcat-aggregate-calculator/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-passing-marks/",
     "/nums-merit-list/",
     "/guides/what-is-closing-merit/",
     "/guides/mdcat-aggregate-formula/",
@@ -539,6 +543,197 @@
     "/mdcat-aggregate-calculator/",
     "/guides/mdcat-aggregate-formula/",
     "/methodology/"
+   ]
+  },
+  {
+   "path": "/mdcat-passing-marks/",
+   "keyword": "mdcat passing marks",
+   "title": "MDCAT Passing Marks {season_year}: MBBS & BDS Eligibility",
+   "description": "MDCAT passing marks for MBBS (55%, 99/180) and BDS (50%, 90/180), minimum FSc 60%, with a quick eligibility check and the official Punjab policy.",
+   "h1": "MDCAT Passing Marks and Eligibility for MBBS & BDS",
+   "crumb": "MDCAT passing marks",
+   "subtitle": "Minimum MDCAT and FSc marks, Punjab (UHS), session {session:uhs}",
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "For session 2026-27 in Punjab you need at least 55% in MDCAT (99 of 180 marks) for MBBS and 50% (90 of 180) for BDS, plus at least 60% in FSc pre-medical or equivalent (660 of 1100). These minimums are in the Punjab admission policy notified on 14 October 2026 and the UHS admission notice.",
+   "answer_source": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+   "content_file": "mdcat-passing-marks.html",
+   "faq": [
+    {
+     "q": "What are the MDCAT passing marks for MBBS?",
+     "a": "For session 2026-27 in Punjab, 55% of the MDCAT total, which is 99 out of 180, under the Punjab MBBS/BDS admission policy notified on 14 October 2026."
+    },
+    {
+     "q": "What are the MDCAT passing marks for BDS?",
+     "a": "50% of the MDCAT total, which is 90 out of 180, for session 2026-27 in Punjab."
+    },
+    {
+     "q": "What are the minimum FSc marks for MBBS?",
+     "a": "At least 60% in FSc pre-medical, HSSC or an equivalent qualification (660 out of 1100), with Biology and Chemistry passed and Physics or Mathematics as the third subject. This is regulation 5 of the PM&DC regulations 2026 and the Punjab policy for 2026-27."
+    },
+    {
+     "q": "Is 52% in MDCAT enough for MBBS?",
+     "a": "Not for session 2026-27 in Punjab, where the MBBS pass mark is 55%. PM&DC's 8 April 2026 notification allowed 52% for MBBS and 47% for BDS only to fill vacant 2025-26 seats, with 15 April 2026 as the last date."
+    },
+    {
+     "q": "Can I apply with my 2025 or 2024 MDCAT score?",
+     "a": "Yes. The UHS notice for session 2026-27 accepts MDCAT 2026, 2025 or 2024, as long as the score meets the 55% (MBBS) or 50% (BDS) minimum."
+    },
+    {
+     "q": "If I pass MDCAT, will I get admission?",
+     "a": "No. Passing makes you eligible to apply; seats go by aggregate. In the final 2025 UHS lists, Punjab public MBBS colleges closed between 93.51% and 94.87% and private MBBS colleges between 90.84% and 61.00%."
+    },
+    {
+     "q": "MDCAT mein kitne number par pass hota hai?",
+     "a": "Punjab mein session 2026-27 ke liye MBBS ke liye kam az kam 55% yani 180 mein se 99 number, aur BDS ke liye 50% yani 180 mein se 90 number chahiye.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "MBBS ke liye FSc mein kitne number chahiye?",
+     "a": "FSc pre-medical mein kam az kam 60% yani 1100 mein se 660 number. Biology aur Chemistry lazmi hain, teesra subject Physics ya Maths.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>MDCAT pass karne ke liye Punjab mein session 2026-27 mein <strong>MBBS ke liye 55%</strong> (180 mein se 99) aur <strong>BDS ke liye 50%</strong> (180 mein se 90) number chahiye. FSc mein kam az kam <strong>60%</strong> (1100 mein se 660) zaroori hain.</p><p>Pass hona sirf apply karne ki shart hai. Seat aggregate par milti hai: 2025 mein government MBBS colleges 93.51% se 94.87% par close hue. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+   "sources": [
+    {
+     "label": "Punjab Admission Policy MBBS/BDS session 2026-27 (S&ME Department, 14 October 2026), on uhs.edu.pk",
+     "url": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS admission notice: MBBS & BDS, public-sector colleges of Punjab, session 2026-2027 (eligibility criteria)",
+     "url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "PM&DC Admissions, Curriculum and Conduct Policy and Regulations 2026, regulations 5 and 8",
+     "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "PM&DC notification of 8 April 2026: one-time 3% cut for vacant 2025-26 seats",
+     "url": "https://pmdc.pk/Documents/Others/Notification%20regarding%20timeline%20Extension%20%26%20Reduction%20of%20MDAT%20passing%20Percentage%20for%20Session%202025-26..pdf",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 5th and final selection list, private MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-aggregate-calculator/",
+    "/uhs-mbbs-admission/",
+    "/mdcat-merit-list/",
+    "/guides/mdcat-aggregate-formula/",
+    "/ibcc-equivalence-calculator/",
+    "/percentage-calculator/"
+   ]
+  },
+  {
+   "path": "/uhs-mbbs-admission/",
+   "keyword": "uhs mbbs admission",
+   "title": "UHS MBBS/BDS Admission {session:uhs}: Dates & Merit Lists",
+   "description": "UHS MBBS and BDS admission schedule: provisional merit 13 Nov, first selection list 17 Nov 2026, BDS from 15 Dec, plus last year's closing merit.",
+   "h1": "UHS MBBS & BDS Admission {session:uhs}: Schedule and Merit Lists",
+   "crumb": "UHS MBBS admission",
+   "subtitle": "Public-sector medical and dental colleges of Punjab, official UHS dates",
+   "type": "content",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "UHS took applications for 2026-27 public-sector MBBS from 16 to 30 October 2026. The provisional order of merit is due on Friday 13 November, the final merit on 16 November and the first college-wise selection list on 17 November 2026; MBBS classes start on 1 February 2027. BDS applications run from 15 to 30 December 2026.",
+   "answer_source": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
+   "content_file": "uhs-mbbs-admission.html",
+   "faq": [
+    {
+     "q": "When will the UHS MBBS merit list 2026 come out?",
+     "a": "The provisional order of merit for 2026-27 public MBBS is due on Friday 13 November 2026, the final order of merit on 16 November and the first college-wise selection list on 17 November 2026, according to the UHS admission notice."
+    },
+    {
+     "q": "When are the second and third UHS selection lists?",
+     "a": "For MBBS, the second selection/upgradation list is due on 23 November and the third on 1 December 2026. UHS says the number of lists can change; in 2025-26 the public MBBS cycle ran to a 13th list."
+    },
+    {
+     "q": "When do UHS BDS admissions open?",
+     "a": "BDS applications for public dental colleges run from 15 December to 30 December 2026. The BDS provisional merit is due on 6 January and the first selection list on 11 January 2027."
+    },
+    {
+     "q": "What was the UHS MBBS closing merit last year?",
+     "a": "In the 13th and final 2025 UHS list, Punjab public MBBS colleges closed between 93.51% (Narowal Medical College) and 94.87% (King Edward Medical University) on open merit."
+    },
+    {
+     "q": "How does UHS calculate merit?",
+     "a": "Merit = 10% Matric + 40% FSc (pre-medical) + 50% MDCAT, as printed in the UHS notice for session 2026-27 and in the PM&DC regulations."
+    },
+    {
+     "q": "Can I change my college preferences after applying?",
+     "a": "No. The UHS notice says the number and order of college preferences become final and cannot be changed after the application deadline."
+    },
+    {
+     "q": "UHS ki merit list kab aaye gi?",
+     "a": "Government MBBS ki provisional merit list 13 November 2026 ko, final merit 16 November ko aur pehli selection list 17 November 2026 ko aaye gi.",
+     "lang": "ur-Latn"
+    },
+    {
+     "q": "Kya upgradation lazmi hai?",
+     "a": "Haan. UHS ke mutabiq upgradation lazmi hai. Agar aap ko pasand ke college mein upgrade kiya jaye to waqt par wahan report karein, warna admission cancel ho jata hai.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>UHS ne session 2026-27 ke liye government MBBS ki applications <strong>16 se 30 October 2026</strong> tak li hain. <strong>Provisional merit list 13 November</strong>, final merit 16 November aur <strong>pehli selection list 17 November 2026</strong> ko aaye gi. BDS ki applications 15 se 30 December 2026 tak hain.</p><p>Pichle saal (2025) government MBBS colleges 93.51% se 94.87% par close hue. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">calculator</a> se nikalein aur <a href=\"/mdcat-passing-marks/\">eligibility</a> check karein.</p>",
+   "sources": [
+    {
+     "label": "UHS admission notice: MBBS & BDS, public-sector colleges of Punjab, session 2026-2027 (schedule, eligibility, procedure)",
+     "url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "Punjab Admission Policy MBBS/BDS session 2026-27 (S&ME Department, 14 October 2026)",
+     "url": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS home page (MDCAT 2026 result, admission notices)",
+     "url": "https://www.uhs.edu.pk/",
+     "fetched": "2026-11-01"
+    },
+    {
+     "label": "UHS 1st selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/1selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 13th selection list, public BDS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicbdsom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 5th and final selection list, private MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+     "fetched": "2026-10-31"
+    }
+   ],
+   "related": [
+    "/mdcat-merit-list/",
+    "/mdcat-passing-marks/",
+    "/mdcat-aggregate-calculator/",
+    "/guides/1st-2nd-final-merit-list/",
+    "/guides/what-is-closing-merit/",
+    "/predictor/"
    ]
   },
   {

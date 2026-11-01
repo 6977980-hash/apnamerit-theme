@@ -12,13 +12,20 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Replace {season_year}, {data_year}, {brand} and {founded} tokens, plus {year:<slug>} = the
  * year of that university's default merit view (am_uni_year), e.g. {year:pu}, and
- * {predict_count} = programs the predictor covers.
+ * {predict_count} = programs the predictor covers, {session:<slug>} = data/calendar.json seasons.<slug>.session.
  */
 function am_tokens( string $text ): string {
 	if ( str_contains( $text, '{year:' ) ) {
 		$text = (string) preg_replace_callback(
 			'/\{year:([a-z0-9-]+)\}/',
 			fn( $m ) => (string) ( am_uni_year( am_uni( $m[1] ) ) ?: am_site( 'data_year' ) ),
+			$text
+		);
+	}
+	if ( str_contains( $text, '{session:' ) ) {
+		$text = (string) preg_replace_callback(
+			'/\{session:([a-z0-9-]+)\}/',
+			fn( $m ) => (string) ( am_data( 'calendar' )['seasons'][ $m[1] ]['session'] ?? am_site( 'season_year' ) ),
 			$text
 		);
 	}

@@ -1,5 +1,13 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Audit 2026-11-01 suggestions G-01 + G-02: MDCAT eligibility and UHS season page (v0.19.0, 2026-11-01)
+- **Verified 2026-11-01**: UHS advertisement "MBBS & BDS Admissions, Public Sector Medical & Dental Colleges of Punjab, Session 2026-2027" (`https://www.uhs.edu.pk/images/mbbsbdsadm.jpg`, linked from the UHS home page): eligibility MDCAT 2026/2025/2024 with 55% MBBS / 50% BDS, HSSC 60%, Punjab domicile; merit 10/40/50; full MBBS and BDS schedule (every weekday printed in the ad matches the dates). PM&DC Regulations 2026 reg. 5 (pass MDCAT, HSSC 60%, Bio+Chem, Phy or Maths) and reg. 8 (overseas: SAT-II 550, MCAT/UCAT 50%). PM&DC notification 1108 of 8 Apr 2026: 52/47 only for vacant 2025-26 seats, last date 15 Apr 2026. UHS Prospectus 2026 (`images/Prospectus2026.pdf`, 34.9 MB) exists but was not downloaded.
+- **`/mdcat-passing-marks/`** (keyword "mdcat passing marks"): `[am_elig_check uni="uhs"]` (inc/season.php) prints a program x part table of minimum % and marks (`am_min_marks`, from the uni `eligibility` floors) and a form; `am.js` reuses `AM.eligibility()` and reports eligible / not eligible per program (programs = `applies_to` of floors that have `programs`). Prefills from the MDCAT calculator's saved marks (`am:calc:uhs`). Other provinces/NUMS: page says not verified yet.
+- **`/uhs-mbbs-admission/`** (keyword "uhs mbbs admission"): `[am_season uni="uhs"]` renders `data/calendar.json` `seasons.uhs` (session, steps x columns, dates `YYYY-MM-DD` or `start/end`, source). JS greys past dates (Asia/Karachi day) and prints "Next official step" (client side, so page caching cannot freeze it). Title uses new token `{session:uhs}` (= `seasons.uhs.session`; PHP `am_tokens`, check.py `fill`). `check.py [calendar]` validates seasons.
+- `calendar.json` uhs status now names the 13 Nov provisional merit / 17 Nov first list; two official events added.
+- Links: home "Start with MDCAT", related on MDCAT calculator and merit list.
+- **Season ops**: when UHS posts the provisional merit / selection lists, add 2026 rows to `uhs.json`, update `seasons.uhs` if UHS changes dates, and add private-sector schedule (UHS advertises it separately; not on the home page on 2026-11-01). Next session: replace `seasons.uhs` with the new session's ad.
+
 ## Audit 2026-11-01, Phase 4: UX, mobile, accessibility (v0.18.0, branch `phase-12-ux`)
 Handoff: `/mnt/project-files/apnamerit.com/audit/2026-11-01/handoff/phase-4-ux.md`.
 - **F-21** Predictor: `.am-saved` chip row now sits below the aggregate input, label "Or use a saved aggregate:". A chip sets `used`; while the box still holds that value the result starts with "Using your saved <uni> aggregate <x>%".

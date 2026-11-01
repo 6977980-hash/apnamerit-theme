@@ -40,6 +40,7 @@ This repo **is** the WordPress theme `apnamerit`. Hostinger Git deploys branch `
 | `inc/router.php` | Serves `data/pages.json` paths (200, trailing-slash 301, sitemap provider) |
 | `inc/deploy.php` | Purges LiteSpeed once after each deploy |
 | `inc/growth.php` | Hubs (`am_hub`), trend SVG, `/data/<slug>.json` + `/data/index.json`, `/embed/<slug>/` widgets, `am_embed_builder`, `am_submit`, `am_data_catalog` |
+| `inc/season.php` | `am_elig_check` (minimum marks table + eligibility check), `am_season` (current session schedule from `data/calendar.json` `seasons.<slug>`; token `{session:<slug>}`) |
 | `templates/virtual.php` | Layout for repo pages; `template` field = default / calculator / meritlist |
 | `data/site.json` | Domain, brand, author, `season_year`, `data_year`. Never hard-code years. Each university shows its newest year up to `data_year` (`am_uni_year()`), so `data_year` can move before every university has new data. |
 | `scripts/check.py` | Pre-merge checks. Run `python3 scripts/check.py` before every merge. |

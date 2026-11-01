@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.19.0 (2026-11-01)
+Audit suggestions G-01 and G-02: `/mdcat-passing-marks/` (minimum marks table + live eligibility check, `[am_elig_check]`) and `/uhs-mbbs-admission/` (UHS 2026-27 official schedule from `data/calendar.json` `seasons.uhs`, `[am_season]`, next-step line in JS). New token `{session:<slug>}`. Details in `HANDOFF.md`.
+
 ## 0.18.1 (2026-11-01)
 F-24 follow-up: comma message also where a browser gives no `badInput` (field typed into but empty), and no " marks" after labels with "score" or "%".
 

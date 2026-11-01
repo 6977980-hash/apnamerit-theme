@@ -448,6 +448,57 @@
     });
   });
 
+  // ---------------------------------------------------------------- eligibility check (G-01)
+  $$('form[data-am-elig]').forEach(function (form) {
+    var cfg = data(form, 'am-elig-data'), out = $('.am-result', form);
+    if (!cfg) return;
+    // Start from the marks typed into this university's calculator, if any.
+    var saved = store.get('am:calc:' + cfg.calc);
+    if (saved && saved.values) $$('input', form).forEach(function (i) { if (saved.values[i.name]) i.value = saved.values[i.name]; });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var parts = [], bad = null;
+      $$('input[name^="o_"]', form).forEach(function (i) {
+        var k = i.name.slice(2), t = num(form['t_' + k].value), o = num(i.value);
+        var label = i.closest('.am-field').querySelector('label').textContent;
+        if (bad) return;
+        if (notNumber(i)) bad = [i, 'Enter numbers only, without commas.'];
+        else if (isNaN(o) || i.value === '') bad = [i, 'Enter your ' + label + '.'];
+        else if (!(t > 0) || o > t) bad = [i, label + ' cannot be more than the total.'];
+        else parts.push({ key: k, label: label.replace(/ marks$/, ''), obtained: o, total: t });
+      });
+      out.hidden = false;
+      if (bad) { out.innerHTML = '<p class="am-error" role="alert">' + esc(bad[1]) + '</p>'; bad[0].focus(); return; }
+      var fails = eligibility(cfg.floors, parts), ok = 0;
+      var html = cfg.programs.map(function (prog) {
+        var mine = fails.filter(function (f) { return !f.programs || new RegExp(f.programs).test(prog); });
+        if (!mine.length) { ok++; return '<p><strong>' + esc(prog) + ': eligible.</strong> Your marks meet every ' + esc(cfg.uni) + ' minimum for ' + esc(prog) + '.</p>'; }
+        return '<p><strong>' + esc(prog) + ': not eligible.</strong> ' + mine.map(function (f) {
+          return 'Your ' + esc(f.partLabel) + ' is ' + (Math.floor(f.mine * 100) / 100).toFixed(2) + '%, below the ' + esc(f.label) + ' of ' + num(f.min_pct) + '% (<a href="' + esc(f.source_url) + '" rel="nofollow noopener" target="_blank">source</a>).';
+        }).join(' ') + '</p>';
+      }).join('');
+      out.innerHTML = '<div class="am-answer' + (ok ? '' : ' am-elig') + '" role="status">' + html + '</div>' +
+        (ok && cfg.calcUrl ? '<p>Next: <a href="' + esc(cfg.calcUrl) + '">work out your aggregate</a> and see which colleges it reached last year.</p>' : '');
+    });
+    form.addEventListener('reset', function () { out.hidden = true; });
+  });
+
+  // ---------------------------------------------------------------- season schedule: next step
+  $$('[data-am-season]').forEach(function (box) {
+    var today = new Date(Date.now() + 5 * 3600 * 1000).toISOString().slice(0, 10); // Asia/Karachi
+    var next = null;
+    $$('td[data-am-date]', box).forEach(function (td) {
+      var d = td.getAttribute('data-am-date');
+      if (d < today) td.className = 'am-past';
+      else if (!next || d < next.getAttribute('data-am-date')) next = td;
+    });
+    var p = box.nextElementSibling;
+    if (next && p && p.hasAttribute('data-am-next')) {
+      p.innerHTML = '<strong>Next official step:</strong> ' + esc(next.getAttribute('data-am-step')) + ', ' + esc(next.textContent) + '. Past dates are greyed out.';
+      p.hidden = false;
+    }
+  });
+
   // ---------------------------------------------------------------- percentage calculator
   $$('form[data-am-percent]').forEach(function (form) {
     var run = function () {
