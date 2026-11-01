@@ -1,5 +1,11 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Ranking: private MBBS and BDS merit pages (v0.33.0, 2026-11-01)
+
+- `/mdcat-merit-list/private/` ("private medical colleges merit list", 33 colleges) and `/mdcat-merit-list/bds/` ("bds merit list", 4 public + 18 private) use the new `[am_merit_table program="…"]` filter (substring match on program). Figures in their content files and FAQs are typed from uhs.json 2025-26: refresh when 2026-27 private/BDS lists land (BDS schedule starts 15 Dec 2026).
+- Linked from /mdcat-merit-list/ (private section), MDCAT calculator and UHS admission related links.
+- GSC batch 4 for the owner: private, bds, /compare/, /updates/, /guides/, four UHS post-result guides, /mdcat-merit-list/kemu/.
+
 ## Student-intent ideas, Tier 2 (v0.32.0, 2026-11-01)
 Owner: "next phase shuru kro" (after audit v2). Built ideas 6-9 and 11 of `/mnt/project-files/apnamerit.com/ideas/2026-11-01-student-intent-ideas.md`; idea 10 (expected-merit range) waits for May 2027.
 - **Compare** `/compare/` (`inc/compare.php`, `[am_compare a="<slug>:<am_slug(program campus shift)>" b="…"]`): default pair KEMU vs AIMC rendered server-side; 552 programs/colleges in a JS-built datalist; JSON uses lookup tables (u, l, s, m, r). One figure per year: default list, else the lowest figure of another list (named under it). No static "X vs Y" pages yet (thin-page risk; add only for pairs with real search demand).
