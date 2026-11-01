@@ -185,14 +185,14 @@ function am_updated_html( string $date ): string {
 }
 
 /**
- * Author box → /about/#author (Person schema lives on every page, see inc/schema.php).
+ * Author box → author.url (/about/ali-ahmad/; Person schema lives on every page, see inc/schema.php).
  */
 function am_author_box_html(): string {
 	$name = (string) am_site( 'author.name' );
 	if ( '' === $name ) {
 		return '';
 	}
-	return '<aside class="am-author" aria-label="Author"><p><strong>Written and checked by <a href="' . esc_url( home_url( '/about/#author' ) ) . '">' . esc_html( $name ) . '</a></strong>, ' . esc_html( (string) am_site( 'author.role' ) ) . ' of ' . esc_html( (string) am_site( 'brand' ) ) . '.</p><p>' . esc_html( (string) am_site( 'author.bio' ) ) . ' <a href="' . esc_url( home_url( '/editorial-policy/' ) ) . '">Editorial policy</a>.</p></aside>';
+	return '<aside class="am-author" aria-label="Author"><p><strong>Written and checked by <a href="' . esc_url( (string) am_site( 'author.url', home_url( '/about/#author' ) ) ) . '" rel="author">' . esc_html( $name ) . '</a></strong>, ' . esc_html( (string) am_site( 'author.role' ) ) . ' of ' . esc_html( (string) am_site( 'brand' ) ) . '.</p><p>' . esc_html( (string) am_site( 'author.bio' ) ) . ' <a href="' . esc_url( home_url( '/editorial-policy/' ) ) . '">Editorial policy</a>.</p></aside>';
 }
 
 function am_disclaimer_html(): string {

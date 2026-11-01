@@ -1,5 +1,10 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## Audit 2026-11-01 suggestion G-09: author page and sameAs (v0.23.0, 2026-11-01)
+- Owner gave his profiles on 2026-11-01: LinkedIn `linkedin.com/in/ali-ahmad-chaudhry-12777486/`, Facebook `facebook.com/aac7980/`. Both are in `site.json` `author.same_as` (Person `sameAs`). `organization.same_as` stays empty: these are personal profiles; add an Apna Merit page/account there when one exists.
+- New `/about/ali-ahmad/` (ProfilePage, `mainEntity` = the Person `about/#author`; `ProfilePage` added to `AM_WEBPAGE_TYPES`). `author.url` points there; the author box links to it with `rel="author"`; profile links carry `rel="me"`. No credentials are claimed beyond what the site does; add education/experience only from the owner.
+- Not doable from the repo: outreach links, Wikipedia citation (off-site work).
+
 ## Audit 2026-11-01 suggestion G-07: college merit pages (v0.22.0, 2026-11-01)
 - **Data**: `uhs.json` `list_trail` = lowest open-merit aggregate per public MBBS college in every 2025 UHS selection list 1-13 (`{n}selecionlistpublicom25.php`, fetched 2026-11-01 with `scripts/uhs_closing.py`; lists 1 and 13 equal the stored 1st/Final rows). The 5th list repeats "Sr#" in its header; `uhs_closing.py` now drops the extra cell. `list_trail` is not in `merit`, so merit tables, predictor and report counts are unchanged. `uhs.json` `colleges` maps each campus to slug, short name and page path.
 - **Pages**: 17 URLs `/mdcat-merit-list/<slug>/` (kemu, aimc, sims, nishtar, amc, rmc, fjmc, pmc, qamc, gmc, slmc, kmsmc, nsmc, smc, szmc, dgmc, narowal), keyword "<short> merit". `[am_college uni="uhs" college="<slug>"]` (`inc/colleges.php`) renders closing merit by year (2024 17th list vs 2025 13th list), every 2025 list with changes, rank and neighbours (linked), MDCAT needed for 1000/1050/1080 FSc+Matric. `[am_college_index]` lists them on `/mdcat-merit-list/`.

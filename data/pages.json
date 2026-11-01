@@ -71,6 +71,23 @@
    "updated": "2026-10-31"
   },
   {
+   "path": "/about/ali-ahmad/",
+   "keyword": "ali ahmad apna merit",
+   "title": "Ali Ahmad – Founder and Editor of Apna Merit",
+   "description": "Ali Ahmad founded and edits Apna Merit: he checks every aggregate formula and closing merit against the official source. Profile, method and contact.",
+   "h1": "Ali Ahmad, founder and editor of Apna Merit",
+   "crumb": "Ali Ahmad",
+   "parents": [
+    "/about/"
+   ],
+   "schema_type": "ProfilePage",
+   "content_file": "author-ali-ahmad.html",
+   "type": "trust",
+   "template": "default",
+   "published": "2026-11-01",
+   "updated": "2026-11-01"
+  },
+  {
    "path": "/methodology/",
    "keyword": "merit calculation methodology",
    "title": "Methodology: How We Collect Merits and Predict Chances",

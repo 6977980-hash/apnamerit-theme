@@ -16,11 +16,14 @@
   "data_year": 2026,
   "author": {
     "name": "Ali Ahmad",
-    "url": "https://apnamerit.com/about/#author",
+    "url": "https://apnamerit.com/about/ali-ahmad/",
     "role": "Founder and editor",
     "city": "",
     "bio": "Ali Ahmad started Apna Merit to put official aggregate formulas and closing merits for Pakistani universities in one place, with a link to the official source behind every number.",
-    "same_as": []
+    "same_as": [
+      "https://www.linkedin.com/in/ali-ahmad-chaudhry-12777486/",
+      "https://www.facebook.com/aac7980/"
+    ]
   },
   "organization": {
     "name": "Apna Merit",

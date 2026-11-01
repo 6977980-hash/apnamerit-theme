@@ -34,7 +34,7 @@ function am_person_node(): array {
 }
 
 /** Map of a page's "schema_type" field to schema.org WebPage subtypes. */
-const AM_WEBPAGE_TYPES = array( 'WebPage', 'AboutPage', 'ContactPage', 'CollectionPage', 'FAQPage' );
+const AM_WEBPAGE_TYPES = array( 'WebPage', 'AboutPage', 'ContactPage', 'CollectionPage', 'FAQPage', 'ProfilePage' );
 
 add_filter(
 	'am_jsonld_graph',
@@ -68,6 +68,10 @@ add_filter(
 		}
 		if ( 'AboutPage' === $type && '/about/' === $page['path'] ) {
 			$webpage['mainEntity'] = array( '@id' => $base . '#organization' );
+		}
+		// Author page (audit G-09): the ProfilePage is about the Person node.
+		if ( 'ProfilePage' === $type ) {
+			$webpage['mainEntity'] = array( '@id' => $base . 'about/#author' );
 		}
 		$image = am_og_image();
 		if ( $image ) {
