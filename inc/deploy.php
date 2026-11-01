@@ -42,9 +42,32 @@ add_action(
 		// only queues ours, so announce it ourselves. Without the plugin nothing listens.
 		did_action( 'litespeed_purged_all' ) || do_action( 'litespeed_purged_all' );
 		wp_cache_flush();
-		do_action( 'am_deployed' );
+		am_run_deployed();
 	}
 );
+
+/**
+ * Run each am_deployed listener (root .htaccess, llms.txt, IndexNow) on its own, so one failure
+ * neither breaks the visitor's page nor stops the others (audit TS-02; a fatal here gave a 500 on
+ * 31 Oct). The fingerprint is already saved, so a failing listener is not retried on every
+ * request: its error is kept in the am_deploy_errors option and retried on the next deploy.
+ */
+function am_run_deployed(): void {
+	global $wp_filter;
+	$errors = array();
+	$hook   = $wp_filter['am_deployed'] ?? null;
+	foreach ( $hook ? $hook->callbacks : array() as $callbacks ) {
+		foreach ( $callbacks as $cb ) {
+			try {
+				call_user_func( $cb['function'] );
+			} catch ( \Throwable $e ) {
+				$name     = is_string( $cb['function'] ) ? $cb['function'] : 'closure';
+				$errors[] = $name . ': ' . substr( $e->getMessage(), 0, 200 );
+			}
+		}
+	}
+	update_option( 'am_deploy_errors', $errors ? gmdate( 'c' ) . ' ' . implode( ' | ', $errors ) : '', false );
+}
 
 /**
  * HTML cache lifetime for shared caches (Fix 6, 2026-11-01). Without a Cache-Control header,
@@ -59,6 +82,17 @@ add_action(
 			return;
 		}
 		header( 'Cache-Control: public, max-age=0, s-maxage=300' );
-		header( 'X-AM-Deploy: ' . AM_VERSION . ' purged ' . (string) get_option( 'am_deploy_last', '-' ) );
 	}
+);
+
+// A 404 is not kept by shared caches (audit TS-13): a page added by the next deploy must not show
+// "not found" from the CDN for five minutes. Runs after WordPress has decided the request is a 404.
+add_action(
+	'template_redirect',
+	function () {
+		if ( is_404() && ! headers_sent() ) {
+			header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
+		}
+	},
+	1
 );

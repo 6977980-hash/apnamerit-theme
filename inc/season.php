@@ -135,7 +135,7 @@ function am_sc_season( $atts ): string {
 	$when = ! empty( $s['checked'] ) ? ' Checked ' . gmdate( 'j M Y', (int) strtotime( (string) $s['checked'] ) ) . '.' : '';
 	return '<div class="am-table-wrap" data-am-season><table class="am-table"><caption>' . esc_html( (string) $s['label'] . ', session ' . (string) $s['session'] . ': official schedule' ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . $rows . '</tbody></table></div>'
 		. '<p class="am-muted" data-am-next hidden></p>'
-		. '<p class="am-muted">Source: <a href="' . esc_url( (string) $s['source_url'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) ( $s['source_label'] ?? am_source_label( (string) $s['source_url'] ) ) ) . '</a>.' . esc_html( $when ) . ' ' . esc_html( (string) ( $s['note'] ?? '' ) ) . '</p>'
+		. '<p class="am-muted">Source: <a href="' . esc_url( (string) $s['source_url'] ) . '" rel="noopener" target="_blank">' . esc_html( (string) ( $s['source_label'] ?? am_source_label( (string) $s['source_url'] ) ) ) . '</a>.' . esc_html( $when ) . ' ' . esc_html( (string) ( $s['note'] ?? '' ) ) . '</p>'
 		. ( function_exists( 'am_alerts_html' ) ? am_alerts_html( $slug ) : '' );
 }
 

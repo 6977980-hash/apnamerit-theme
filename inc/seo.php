@@ -139,9 +139,10 @@ add_filter( 'document_title_separator', fn() => '|' );
 add_filter(
 	'wp_robots',
 	function ( $robots ) {
-		// A repo page with a query string is a shared result (?agg=…, ?o_mdcat=…): noindex, canonical stays clean.
-		$shared = am_virtual_page() && '' !== (string) ( $_SERVER['QUERY_STRING'] ?? '' );
-		if ( is_search() || is_404() || is_paged() || is_archive() || $shared || ! empty( am_page_seo()['noindex'] ) ) {
+		// A repo page with a query string is a shared result (?agg=…, ?o_mdcat=…): its canonical points
+		// to the clean URL, which is enough. No noindex on top (audit CI-02: Google advises against
+		// noindex plus a canonical to another URL).
+		if ( is_search() || is_404() || is_paged() || is_archive() || ! empty( am_page_seo()['noindex'] ) ) {
 			$robots['noindex'] = true;
 			$robots['follow']  = true;
 			unset( $robots['max-image-preview'] );
@@ -266,16 +267,15 @@ add_filter(
 		if ( ! $public ) {
 			return $output;
 		}
-		$lines = array();
-		foreach ( array( 'GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'CCBot', 'Bingbot' ) as $bot ) {
-			$lines[] = "User-agent: $bot";
-			$lines[] = 'Allow: /';
-			$lines[] = '';
-		}
+		// One group for every crawler (audit CI-05): a named group would make that bot ignore the
+		// disallows below. AI and search crawlers are all welcome (plan section 5).
+		$lines   = array( '# All crawlers, including GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot and Bingbot, are welcome.' );
 		$lines[] = 'User-agent: *';
 		$lines[] = 'Disallow: /wp-admin/';
 		$lines[] = 'Allow: /wp-admin/admin-ajax.php';
 		$lines[] = 'Disallow: /?s=';
+		$lines[] = 'Disallow: /*?s=';
+		$lines[] = 'Disallow: /search/';
 		$lines[] = '';
 		$lines[] = 'Sitemap: ' . home_url( '/wp-sitemap.xml' );
 		return implode( "\n", $lines ) . "\n";

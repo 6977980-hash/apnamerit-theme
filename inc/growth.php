@@ -87,7 +87,7 @@ function am_season_status( array $uni ): string {
 	$done[ $slug ] = true;
 	$when          = ! empty( $row['checked'] ) ? ' (checked ' . gmdate( 'j M Y', (int) strtotime( (string) $row['checked'] ) ) . ')' : '';
 	return '<p class="am-muted am-status"><strong>Season status' . esc_html( $when ) . ':</strong> ' . esc_html( (string) $row['status'] )
-		. ' <a href="' . esc_url( (string) $row['source_url'] ) . '" rel="nofollow noopener" target="_blank">Official page</a></p>';
+		. ' <a href="' . esc_url( (string) $row['source_url'] ) . '" rel="noopener" target="_blank">Official page</a></p>';
 }
 
 // ------------------------------------------------------------------ [am_percent]
@@ -631,7 +631,6 @@ function am_render_embed( string $slug ): void {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, follow">
 <title><?php echo esc_html( $t['label'] . ' | ' . am_site( 'brand' ) ); ?></title>
-<link rel="canonical" href="<?php echo esc_url( $t['page'] ); ?>">
 <base target="_blank">
 <script>document.documentElement.className+=' am-js'</script>
 <style><?php echo is_readable( $css ) ? file_get_contents( $css ) : ''; // phpcs:ignore WordPress.Security.EscapeOutput ?></style>

@@ -80,7 +80,12 @@ add_action(
 	'template_redirect',
 	function () {
 		$path = am_request_path();
-		if ( '/updates/feed/' === $path || '/updates/feed' === $path ) {
+		// One feed URL (audit CI-12): the unslashed form and the site feed /feed/ redirect to it (CI-09).
+		if ( '/updates/feed' === $path || '/feed/' === $path || '/feed' === $path ) {
+			wp_safe_redirect( home_url( '/updates/feed/' ), 301 );
+			exit;
+		}
+		if ( '/updates/feed/' === $path ) {
 			am_serve_feed();
 		}
 		if ( preg_match( '#^/calendar/([a-z0-9-]+)\.ics$#', $path, $m ) && isset( am_ics_seasons()[ $m[1] ] ) ) {
@@ -159,7 +164,18 @@ function am_serve_ics( string $slug ): void {
 	// RFC 5545: CRLF line ends, lines folded at 75 octets.
 	$out = '';
 	foreach ( $lines as $l ) {
-		$out .= implode( "\r\n ", str_split( $l, 73 ) ) . "\r\n";
+		// mb_str_split never cuts a UTF-8 character in two (audit TS-14); 73 bytes is a safe line for 1-3 byte characters.
+		$parts = array();
+		$cur   = '';
+		foreach ( mb_str_split( $l, 1, 'UTF-8' ) as $ch ) {
+			if ( strlen( $cur ) + strlen( $ch ) > 73 ) {
+				$parts[] = $cur;
+				$cur     = '';
+			}
+			$cur .= $ch;
+		}
+		$parts[] = $cur;
+		$out    .= implode( "\r\n ", $parts ) . "\r\n";
 	}
 	echo $out; // phpcs:ignore WordPress.Security.EscapeOutput -- text/calendar, escaped per RFC 5545 above.
 	exit;

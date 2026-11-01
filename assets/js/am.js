@@ -237,7 +237,7 @@
   // tail: 'none' (no merit rows to list), 'all' (list removed) or 'some' (matching programs removed).
   function eligNotice(fails, tail) {
     return '<div class="am-answer am-elig" role="status">' + fails.map(function (f) {
-      return '<p><strong>Below the ' + esc(f.label) + ' of ' + num(f.min_pct) + '%</strong> (your ' + esc(f.partLabel) + ': ' + (Math.floor(f.mine * 100) / 100).toFixed(2) + '%, <a href="' + esc(f.source_url) + '" rel="nofollow noopener" target="_blank">source</a>). With these marks you are not eligible for ' + esc(f.applies_to) + ' this year' +
+      return '<p><strong>Below the ' + esc(f.label) + ' of ' + num(f.min_pct) + '%</strong> (your ' + esc(f.partLabel) + ': ' + (Math.floor(f.mine * 100) / 100).toFixed(2) + '%, <a href="' + esc(f.source_url) + '" rel="noopener" target="_blank">source</a>). With these marks you are not eligible for ' + esc(f.applies_to) + ' this year' +
         (tail === 'none' ? '.' : tail === 'all' || !f.programs ? ', so no colleges or programs are listed.' : ', so those programs are left out below.') + '</p>';
     }).join('') + '</div>';
   }
@@ -616,7 +616,7 @@
         var mine = fails.filter(function (f) { return !f.programs || new RegExp(f.programs).test(prog); });
         if (!mine.length) { ok++; return '<p><strong>' + esc(prog) + ': eligible.</strong> Your marks meet every ' + esc(cfg.uni) + ' minimum for ' + esc(prog) + '.</p>'; }
         return '<p><strong>' + esc(prog) + ': not eligible.</strong> ' + mine.map(function (f) {
-          return 'Your ' + esc(f.partLabel) + ' is ' + (Math.floor(f.mine * 100) / 100).toFixed(2) + '%, below the ' + esc(f.label) + ' of ' + num(f.min_pct) + '% (<a href="' + esc(f.source_url) + '" rel="nofollow noopener" target="_blank">source</a>).';
+          return 'Your ' + esc(f.partLabel) + ' is ' + (Math.floor(f.mine * 100) / 100).toFixed(2) + '%, below the ' + esc(f.label) + ' of ' + num(f.min_pct) + '% (<a href="' + esc(f.source_url) + '" rel="noopener" target="_blank">source</a>).';
         }).join(' ') + '</p>';
       }).join('');
       out.innerHTML = '<div class="am-answer' + (ok ? '' : ' am-elig') + '" role="status">' + html + '</div>' +
@@ -645,6 +645,20 @@
         (guide ? ' What to do now: <a href="' + esc(guide) + '">' + esc(next.getAttribute('data-am-guide-label')) + '</a>.' : '') + ' Past dates are greyed out.';
       p.hidden = false;
     }
+  });
+
+  // ---------------------------------------------------------------- home: next official step (audit FE)
+  $$('[data-am-steps]').forEach(function (p) {
+    var steps = [], span = $('span', p);
+    try { steps = JSON.parse(p.getAttribute('data-am-steps')) || []; } catch (e) { /* keep the server line */ }
+    if (!steps.length) return;
+    var today = new Date(Date.now() + 5 * 3600 * 1000).toISOString().slice(0, 10); // Asia/Karachi
+    var next = null;
+    for (var i = 0; i < steps.length; i++) if (steps[i].e >= today) { next = steps[i]; break; }
+    if (!next || !span) { p.hidden = true; return; }
+    var days = Math.round((Date.parse(next.s) - Date.parse(today)) / 86400000);
+    var when = days <= 0 ? 'now' : days === 1 ? 'tomorrow' : 'in ' + days + ' days';
+    span.innerHTML = esc(next.t) + ', ' + esc(next.w) + ' (' + when + ').' + (next.g ? ' <a href="' + esc(next.g) + '">What to do now</a>' : '');
   });
 
   // ---------------------------------------------------------------- percentage calculator

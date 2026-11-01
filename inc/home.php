@@ -65,6 +65,7 @@ function am_home_hero( array $page ): string {
 		. '<p class="am-eyebrow">Admission season ' . esc_html( (string) am_site( 'season_year' ) ) . '</p>'
 		. '<h1>' . esc_html( $h1 ) . '</h1>'
 		. '<p class="am-hero-lead">Get your aggregate in seconds and, for universities that publish closing merits, see where you could get in.</p>'
+		. am_home_next()
 		. '</div>'
 		. '<div class="am-hero-tool"><p class="am-tool-title">Calculate your aggregate</p><nav class="am-pills" aria-label="Choose a university calculator">' . $pills . '</nav>' . $calc . '</div>'
 		. '<div class="am-hero-meta"><ul class="am-stats">'
@@ -72,8 +73,47 @@ function am_home_hero( array $page ): string {
 		. '<li><strong>' . (int) $n['prog'] . '</strong><span>programs to compare</span></li>'
 		. '<li><strong>' . (int) $n['rec'] . '</strong><span>official closing merits</span></li>'
 		. '</ul>'
-		. '<p class="am-hero-trust">Free · no sign-up · every formula and closing merit links to the official university notice</p>'
+		. '<p class="am-hero-trust">Free · no sign-up · every formula and closing merit links to the official university notice · updated <time datetime="' . esc_attr( am_page_updated( $page ) ) . '">' . esc_html( gmdate( 'j F Y', (int) strtotime( am_page_updated( $page ) ) ) ) . '</time></p>'
 		. '</div></section>';
+}
+
+/**
+ * "Next official step" line in the hero (audit FE: the home page said nothing about the UHS list
+ * dates). Server renders the next MBBS step from data/calendar.json seasons.uhs; am.js re-picks
+ * it from data-am-steps by the visitor's date (the page cache can outlive a day) and adds the countdown.
+ */
+function am_home_next(): string {
+	$season = (array) ( am_data( 'calendar' )['seasons']['uhs'] ?? array() );
+	$steps  = array();
+	foreach ( (array) ( $season['steps'] ?? array() ) as $st ) {
+		$d = (string) ( $st['MBBS'] ?? '' );
+		if ( ! preg_match( '/^\d{4}-\d{2}-\d{2}(\/\d{4}-\d{2}-\d{2})?$/', $d ) ) {
+			continue;
+		}
+		$p       = explode( '/', $d );
+		$steps[] = array(
+			's' => $p[0],
+			'e' => $p[1] ?? $p[0],
+			't' => 'UHS MBBS: ' . (string) $st['step'],
+			'w' => am_season_date( $d ),
+			'g' => ! empty( $st['guide'] ) ? home_url( (string) $st['guide'] ) : '',
+		);
+	}
+	$today = gmdate( 'Y-m-d', time() + 5 * HOUR_IN_SECONDS );
+	$next  = null;
+	foreach ( $steps as $st ) {
+		if ( $st['e'] >= $today ) {
+			$next = $st;
+			break;
+		}
+	}
+	if ( ! $next ) {
+		return '';
+	}
+	$page = (string) ( $season['page'] ?? '' );
+	return '<p class="am-hero-next" data-am-steps="' . esc_attr( (string) wp_json_encode( $steps ) ) . '"' . ( $page ? ' data-am-all="' . esc_url( home_url( $page ) ) . '"' : '' ) . '><strong>Next:</strong> <span>' . esc_html( $next['t'] . ', ' . $next['w'] ) . '.'
+		. ( $next['g'] ? ' <a href="' . esc_url( $next['g'] ) . '">What to do now</a>' : '' ) . '</span>'
+		. ( $page ? ' <a href="' . esc_url( home_url( $page ) ) . '">All dates</a>' : '' ) . '</p>';
 }
 
 /** "What can I get with my aggregate?" box for all universities. */

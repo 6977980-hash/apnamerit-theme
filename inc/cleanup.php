@@ -40,8 +40,29 @@ remove_action( 'wp_head', 'wp_generator' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 
-// XML-RPC.
+// XML-RPC: off, and no methods at all (audit TS-01: xmlrpc_enabled only blocks the methods that
+// need a login, so pingback.ping and system.multicall still answered). The root .htaccess block
+// below also answers /xmlrpc.php with 403.
 add_filter( 'xmlrpc_enabled', '__return_false' );
+add_filter( 'xmlrpc_methods', fn() => array() );
+add_filter(
+	'wp_headers',
+	function ( $headers ) {
+		unset( $headers['X-Pingback'] );
+		return $headers;
+	}
+);
+
+// Core asset URLs carry ?ver=<WordPress version> (wp-login, admin bar): drop that version (audit TS-06).
+foreach ( array( 'style_loader_src', 'script_loader_src' ) as $am_filter ) {
+	add_filter(
+		$am_filter,
+		function ( $src ) {
+			return is_string( $src ) && str_contains( $src, 'ver=' . get_bloginfo( 'version' ) ) ? remove_query_arg( 'ver', $src ) : $src;
+		},
+		20
+	);
+}
 add_filter(
 	'wp_headers',
 	function ( $headers ) {
@@ -151,6 +172,7 @@ add_action(
 		status_header( 404 );
 		nocache_headers();
 		header( 'X-Robots-Tag: noindex' );
+		header( 'Content-Type: text/html; charset=UTF-8' ); // the body is the HTML 404 page, not RSS (audit CI-09)
 		$template = get_404_template();
 		if ( $template ) {
 			include $template;
@@ -205,7 +227,7 @@ function am_root_htaccess(): void {
 		array(
 			'<IfModule mod_rewrite.c>',
 			'RewriteEngine On',
-			'RewriteRule ^(readme\.html|license\.txt|wp-config-sample\.php)$ - [F,L]',
+			'RewriteRule ^(readme\.html|license\.txt|wp-config-sample\.php|xmlrpc\.php)$ - [F,L]',
 			'</IfModule>',
 		)
 	);

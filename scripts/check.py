@@ -461,6 +461,29 @@ def check_size() -> None:
         warn("size", f"am.css is {css.stat().st_size} bytes (> 20 KB): it will load as a file, not inline")
 
 
+def check_version() -> None:
+    """functions.php AM_VERSION = style.css Version = newest CHANGELOG entry (audit TS-03)."""
+    fv = re.search(r"define\(\s*'AM_VERSION',\s*'([^']+)'", (ROOT / "functions.php").read_text())
+    sv = re.search(r"^Version:\s*(\S+)", (ROOT / "style.css").read_text(), re.M)
+    cv = re.search(r"^## (\S+)", (ROOT / "CHANGELOG.md").read_text(), re.M) if (ROOT / "CHANGELOG.md").exists() else None
+    got = {"functions.php": fv and fv.group(1), "style.css": sv and sv.group(1), "CHANGELOG.md": cv and cv.group(1)}
+    if len(set(got.values())) != 1:
+        err("version", "versions differ: " + ", ".join(f"{k} {v}" for k, v in got.items()))
+
+
+def check_engines() -> None:
+    node = shutil.which("node")
+    if not node:
+        skipped("engines", "node not installed; engine tests skipped")
+        return
+    r = subprocess.run([node, str(ROOT / "scripts/tests/engines.js"), str(ROOT)], capture_output=True, text=True)
+    out = (r.stdout + r.stderr).strip()
+    if r.returncode != 0:
+        err("engines", out)
+    else:
+        print("INFO  [engines]", out.splitlines()[-1] if out else "ok")
+
+
 def check_predict() -> None:
     php = shutil.which("php")
     if not php:
@@ -646,6 +669,8 @@ def main() -> int:
     check_privacy()
     check_size()
     check_predict()
+    check_version()
+    check_engines()
     check_sources(loaded)
     check_elig(loaded)
     check_copy(loaded)

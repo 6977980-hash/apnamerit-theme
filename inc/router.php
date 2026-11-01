@@ -55,9 +55,17 @@ add_action(
 	'template_redirect',
 	function () {
 		$path = am_request_path();
+		$qs   = isset( $_SERVER['QUERY_STRING'] ) && '' !== $_SERVER['QUERY_STRING'] ? '?' . wp_unslash( $_SERVER['QUERY_STRING'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		// Any other host name (www.apnamerit.com) → 301 to the canonical host (audit CI-01: the
+		// router used to answer www with 200 before WordPress' redirect_canonical could run).
+		$want = strtolower( (string) wp_parse_url( home_url( '/' ), PHP_URL_HOST ) );
+		$host = strtolower( (string) preg_replace( '/:\d+$/', '', (string) ( $_SERVER['HTTP_HOST'] ?? '' ) ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		if ( '' !== $want && '' !== $host && $host !== $want && 'www.' . $want === $host ) {
+			wp_redirect( home_url( $path ) . $qs, 301 ); // phpcs:ignore WordPress.Security.SafeRedirect -- same site, canonical host
+			exit;
+		}
 		// Missing trailing slash on a repo page → 301 to the slashed URL.
 		if ( '/' !== $path && ! str_ends_with( $path, '/' ) && am_find_page( $path . '/' ) ) {
-			$qs = isset( $_SERVER['QUERY_STRING'] ) && '' !== $_SERVER['QUERY_STRING'] ? '?' . wp_unslash( $_SERVER['QUERY_STRING'] ) : '';
 			wp_safe_redirect( home_url( $path . '/' ) . $qs, 301 );
 			exit;
 		}
@@ -68,6 +76,8 @@ add_action(
 		global $wp_query;
 		$wp_query->is_404 = false;
 		status_header( 200 );
+		// Date the page's content last changed (audit CI-08); LiteSpeed's ETag still covers template changes.
+		header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s', (int) strtotime( am_page_updated( $page ) . ' 00:00:00 +0500' ) ) . ' GMT' );
 		include AM_DIR . '/templates/virtual.php';
 		exit;
 	},

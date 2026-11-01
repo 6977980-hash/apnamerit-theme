@@ -130,7 +130,7 @@ function am_cat_label( string $cat ): string {
  * origin second (audit F-12).
  */
 function am_source_link( string $url, string $archive = '' ): string {
-	$a = fn( $href, $text ) => '<a href="' . esc_url( $href ) . '" rel="nofollow noopener" target="_blank">' . esc_html( $text ) . '</a>';
+	$a = fn( $href, $text ) => '<a href="' . esc_url( $href ) . '" rel="noopener" target="_blank">' . esc_html( $text ) . '</a>';
 	if ( '' === $archive ) {
 		return $a( $url, am_source_label( $url ) );
 	}
@@ -400,7 +400,7 @@ function am_sc_calculator( $atts ): string {
 			$html .= '<label class="am-check"><input type="checkbox" name="b_' . esc_attr( (string) $b['key'] ) . '"> ' . esc_html( (string) $b['label'] ) . '</label>';
 		}
 		if ( ! empty( $f['source_url'] ) ) {
-			$html .= '<p class="am-muted">Formula source: <a href="' . esc_url( (string) $f['source_url'] ) . '" rel="nofollow noopener" target="_blank">official notice</a></p>';
+			$html .= '<p class="am-muted">Formula source: <a href="' . esc_url( (string) $f['source_url'] ) . '" rel="noopener" target="_blank">official notice</a></p>';
 		}
 		$html .= '</fieldset>';
 	}
@@ -770,7 +770,7 @@ function am_sc_sources_table(): string {
 		$seen = array();
 		foreach ( (array) ( $u['documents'] ?? array() ) as $d ) {
 			$seen[ (string) $d['url'] ] = true;
-			$docs                      .= $li( '<a href="' . esc_url( (string) $d['url'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) $d['label'] ) . '</a>', ! empty( $d['fetched'] ) ? 'checked ' . (string) $d['fetched'] : '' );
+			$docs                      .= $li( '<a href="' . esc_url( (string) $d['url'] ) . '" rel="noopener" target="_blank">' . esc_html( (string) $d['label'] ) . '</a>', ! empty( $d['fetched'] ) ? 'checked ' . (string) $d['fetched'] : '' );
 		}
 		$uni  = ! empty( $u['slug'] ) ? am_uni( sanitize_key( (string) $u['slug'] ) ) : array();
 		$rows = array_filter( (array) ( $uni['merit'] ?? array() ), fn( $r ) => is_numeric( $r['closing'] ?? null ) && ! empty( $r['source_url'] ) );
@@ -803,7 +803,7 @@ function am_sc_sources_table(): string {
 			$cell = $uni ? 'No official program-wise closing merit published (calculator only).' : 'No official closing merit online yet.';
 		}
 		$body .= '<tr><th scope="row">' . esc_html( (string) $u['name'] ) . '</th>'
-			. '<td><a href="' . esc_url( (string) $u['website'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) preg_replace( '/^www\./', '', (string) wp_parse_url( (string) $u['website'], PHP_URL_HOST ) ) ) . '</a></td>'
+			. '<td><a href="' . esc_url( (string) $u['website'] ) . '" rel="noopener" target="_blank">' . esc_html( (string) preg_replace( '/^www\./', '', (string) wp_parse_url( (string) $u['website'], PHP_URL_HOST ) ) ) . '</a></td>'
 			. '<td>' . $cell . '</td></tr>';
 	}
 	return '<div class="am-table-wrap"><table class="am-table"><caption>Official sources by university</caption><thead><tr><th scope="col">University / body</th><th scope="col">Official website</th><th scope="col">Documents we use</th></tr></thead><tbody>' . $body . '</tbody></table></div>';

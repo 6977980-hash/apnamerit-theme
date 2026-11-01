@@ -145,6 +145,7 @@ input[type=url],.am-submit input:not([type]){font:inherit;min-height:44px;paddin
 .am-stats li{background:rgba(255,255,255,.1);border-radius:12px;padding:.6rem .5rem;text-align:center}
 .am-stats strong{display:block;font-size:1.6rem;line-height:1.2}
 .am-stats span{font-size:.8rem;color:#cfe9dd}
+.am-hero-next{background:rgba(255,255,255,.12);border-radius:8px;padding:.5rem .75rem;color:#fff}.am-hero-next a{color:#fff;font-weight:600}
 .am-hero-trust{font-size:.9rem;color:#cfe9dd;margin:0}
 .am-hero-text>*:last-child{margin-bottom:0}
 .am-card p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}

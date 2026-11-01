@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.31.0 (2026-11-01)
+Expert audit v2 fixes and suggestions (owner approved all). See `HANDOFF.md` section "Audit v2 fixes (v0.31.0)" and `audit/2026-11-01-v2/` in project files.
+
+## 0.30.0 (2026-11-01)
+Student-intent ideas, Tier 1: shareable result URLs, marks needed for a target, preference order, post-result guides, updates page with RSS and calendar files.
+
 ## 0.29.1 (2026-11-01)
 Mobile merit tables: row line under the sticky Program column.
 

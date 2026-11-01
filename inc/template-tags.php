@@ -139,7 +139,7 @@ function am_answer_html( string $html, string $source_url = '' ): string {
 	if ( '' === trim( $html ) ) {
 		return '';
 	}
-	$src = $source_url ? ' <a class="am-src" href="' . esc_url( $source_url ) . '" rel="nofollow noopener" target="_blank">Official source</a>' : '';
+	$src = $source_url ? ' <a class="am-src" href="' . esc_url( $source_url ) . '" rel="noopener" target="_blank">Official source</a>' : '';
 	return '<div class="am-answer"><p>' . wp_kses_post( am_tokens( $html ) ) . $src . '</p></div>';
 }
 
@@ -196,7 +196,7 @@ function am_sources_html( array $sources ): string {
 			continue;
 		}
 		$fetched = ! empty( $s['fetched'] ) ? ' <span class="am-muted">(checked ' . esc_html( (string) $s['fetched'] ) . ')</span>' : '';
-		$out    .= '<li><a href="' . esc_url( (string) $s['url'] ) . '" rel="nofollow noopener" target="_blank">' . esc_html( (string) ( $s['label'] ?? $s['url'] ) ) . '</a>' . $fetched . '</li>';
+		$out    .= '<li><a href="' . esc_url( (string) $s['url'] ) . '" rel="noopener" target="_blank">' . esc_html( (string) ( $s['label'] ?? $s['url'] ) ) . '</a>' . $fetched . '</li>';
 	}
 	return $out ? '<section class="am-sources"><h2>Sources</h2><ul>' . $out . '</ul></section>' : '';
 }
