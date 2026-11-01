@@ -280,6 +280,9 @@ function am_sc_report( $atts ): string {
 // ------------------------------------------------------------------ [am_hub]
 function am_sc_hub( $atts ): string {
 	$atts = shortcode_atts( array( 'type' => 'calculator' ), (array) $atts, 'am_hub' );
+	if ( 'guides' === $atts['type'] ) {
+		return am_hub_guides();
+	}
 	$unis = am_unis();
 	uasort( $unis, fn( $a, $b ) => strcasecmp( (string) ( $a['short'] ?? '' ), (string) ( $b['short'] ?? '' ) ) );
 
@@ -342,6 +345,20 @@ function am_sc_hub( $atts ): string {
 /**
  * Closing line of both hubs: open data and embed pages (audit F-18).
  */
+/** [am_hub type="guides"]: every /guides/ page plus the season pages, as cards (newest first). */
+function am_hub_guides(): string {
+	$pages = array_filter(
+		array_filter( (array) ( am_data( 'pages' )['pages'] ?? array() ), 'is_array' ),
+		fn( $g ) => ( str_starts_with( (string) $g['path'], '/guides/' ) && '/guides/' !== $g['path'] ) || in_array( $g['path'], array( '/mdcat-passing-marks/', '/uhs-mbbs-admission/' ), true )
+	);
+	usort( $pages, fn( $a, $b ) => strcmp( (string) ( $b['published'] ?? '' ), (string) ( $a['published'] ?? '' ) ) );
+	$out = '';
+	foreach ( $pages as $g ) {
+		$out .= '<a class="am-guide" href="' . esc_url( home_url( (string) $g['path'] ) ) . '"><strong>' . esc_html( am_tokens( (string) ( $g['h1'] ?? $g['title'] ) ) ) . '</strong><span>' . esc_html( am_tokens( (string) ( $g['subtitle'] ?? $g['description'] ?? '' ) ) ) . '</span></a>';
+	}
+	return $out ? '<div class="am-grid am-grid--2">' . $out . '</div>' : '';
+}
+
 function am_hub_more(): string {
 	$links = array();
 	if ( am_find_page( '/data/' ) ) {

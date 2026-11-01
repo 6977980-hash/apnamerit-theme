@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.28.0 (2026-11-01)
+New `/guides/` hub (CollectionPage, `[am_hub type="guides"]` lists every `/guides/` page plus `/mdcat-passing-marks/` and `/uhs-mbbs-admission/`). Header: "Guides" replaces "Methodology" (desktop only, hidden under 480 px; Methodology stays in the footer). Footer Tools column links Guides. Guide pages now have `/guides/` as breadcrumb parent.
+
 ## 0.27.0 (2026-11-01)
 New logo and a redesigned header and footer. Logo mark = letter A on the green tile with a gold "top merit" dot, inline SVG (no request) via `am_logo_mark()` / `am_brand()`; same drawing in `assets/icons/icon.svg`, `icon-48.png`, `icon-180.png`, `favicon.ico` and new `logo-512.png` (Organization logo in JSON-LD). Header: accent top bar, wordmark with tagline on desktop and stacked wordmark on mobile, pill nav with the Predictor as a button (`"cta": true` in `data/nav.json`); one line from 360 px. Footer: dark green, brand column + Tools / Data / Site columns (`"col"` in `data/nav.json` footer items), disclaimer bar. `am.css` comments removed to stay under the 14 KB inline budget.
 

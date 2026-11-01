@@ -10,14 +10,14 @@
    "path": "/merit-list/"
   },
   {
+   "label": "Guides",
+   "path": "/guides/",
+   "hide_small": true
+  },
+  {
    "label": "Predictor",
    "path": "/predictor/",
    "cta": true
-  },
-  {
-   "label": "Methodology",
-   "path": "/methodology/",
-   "hide_small": true
   }
  ],
  "footer": [
@@ -39,6 +39,11 @@
   {
    "label": "Merit lists",
    "path": "/merit-list/",
+   "col": "Tools"
+  },
+  {
+   "label": "Guides",
+   "path": "/guides/",
    "col": "Tools"
   },
   {

@@ -1,6 +1,10 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
 
+
+## Guides hub and menu link (v0.28.0, 2026-11-01)
+Owner chose (decision card): `/guides/` page + desktop header + footer. New guide pages appear on `/guides/` automatically if their path starts with `/guides/`; give them `"parents": ["/guides/"]`. Mobile header unchanged (Guides is `hide_small`).
+
 ## Header, footer and logo redesign (v0.27.0, 2026-11-01)
 - Logo: `am_logo_mark()` in `inc/template-tags.php` prints the inline SVG (A on #0b6e4f tile, gold #f5b700 dot). Same drawing in `assets/icons/icon.svg`; PNG/ICO were rendered from it with Playwright + Pillow (`icon-180.png` is full-bleed for iOS). `data/site.json` organization.logo now `assets/icons/logo-512.png`.
 - `am_brand( $tagline )` = mark + "Apna Merit" wordmark (second word in accent, gold in the footer).

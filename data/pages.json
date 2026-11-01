@@ -2049,6 +2049,72 @@
    "ru_heading": "NUMS ka merit kitna jata hai?"
   },
   {
+   "path": "/guides/",
+   "keyword": "admission guides pakistan",
+   "title": "Admission Guides {season_year}: Merit, Aggregate & MDCAT",
+   "description": "Admission guides for Pakistani universities: MDCAT and ECAT aggregate formulas, closing merit, 1st vs final merit lists and minimum MDCAT marks, sourced.",
+   "h1": "Admission Guides {season_year}: Aggregate, Merit and MDCAT",
+   "crumb": "Guides",
+   "subtitle": "Aggregate formulas, closing merit, merit lists and MDCAT minimums, each with official sources",
+   "type": "content",
+   "template": "default",
+   "schema_type": "CollectionPage",
+   "published": "2026-11-01",
+   "updated": "2026-11-01",
+   "answer": "The two formulas most students need: the MDCAT aggregate is 50% MDCAT + 40% FSc + 10% Matric (PMDC regulations 2026), and the ECAT aggregate for UET Lahore and Taxila is 33% ECAT + 50% FSc Part-I + 17% Matric. Each guide below explains one rule with a worked example.",
+   "answer_source": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+   "content_file": "guides.html",
+   "faq": [
+    {
+     "q": "Which guide should I read first?",
+     "a": "Start with the aggregate formula for your test (MDCAT or ECAT), then read what closing merit means so you can compare your aggregate with last year's lists."
+    },
+    {
+     "q": "Are these guides based on official sources?",
+     "a": "Yes. Every formula, date and minimum mark is copied from the university's or PMDC's own notice, prospectus or merit list, and the source is linked on each guide."
+    },
+    {
+     "q": "How often are the guides updated?",
+     "a": "When a university or PMDC publishes a new notice. Each guide shows its last updated date at the top."
+    },
+    {
+     "q": "Admission ke guides kahan milenge?",
+     "a": "Isi page par. MDCAT aur ECAT ka formula, closing merit, merit lists aur MDCAT ke kam se kam marks ke guides yahan hain.",
+     "lang": "ur-Latn"
+    }
+   ],
+   "roman_urdu": "<p>Yahan admission ke saare guides ek jagah hain: <strong>MDCAT aggregate</strong> 50% MDCAT + 40% FSc + 10% Matric, <strong>ECAT aggregate</strong> 33% ECAT + 50% FSc Part-I + 17% Matric, closing merit ka matlab aur 1st, 2nd aur final list ka farq.</p><p>Apna aggregate <a href=\"/aggregate-calculator/\">calculator</a> se nikalein aur <a href=\"/predictor/\">merit predictor</a> mein dekhein ke kahan admission mil sakta hai.</p>",
+   "ru_heading": "Admission ke guides kahan parhein?",
+   "sources": [
+    {
+     "label": "PM&DC Admissions, Curriculum and Conduct Policy and Regulations 2026, regulation 6(3)",
+     "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UET Lahore Undergraduate Prospectus Spring 2026, p. 19 (Determination of Merit)",
+     "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
+     "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+     "fetched": "2026-10-31"
+    },
+    {
+     "label": "Punjab Admission Policy MBBS/BDS session 2026-27 (S&ME Department, 14 October 2026), on uhs.edu.pk",
+     "url": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+     "fetched": "2026-11-01"
+    }
+   ],
+   "related": [
+    "/aggregate-calculator/",
+    "/merit-list/",
+    "/predictor/",
+    "/methodology/"
+   ]
+  },
+  {
    "path": "/guides/mdcat-aggregate-formula/",
    "keyword": "mdcat aggregate formula",
    "title": "How to Calculate MDCAT Aggregate ({season_year} Formula)",
@@ -2114,7 +2180,10 @@
     "/guides/what-is-closing-merit/",
     "/methodology/"
    ],
-   "ru_heading": "MDCAT aggregate ka formula kya hai?"
+   "ru_heading": "MDCAT aggregate ka formula kya hai?",
+   "parents": [
+    "/guides/"
+   ]
   },
   {
    "path": "/guides/what-is-closing-merit/",
@@ -2182,7 +2251,10 @@
     "/guides/mdcat-aggregate-formula/",
     "/methodology/"
    ],
-   "ru_heading": "Closing merit kya hota hai?"
+   "ru_heading": "Closing merit kya hota hai?",
+   "parents": [
+    "/guides/"
+   ]
   },
   {
    "path": "/mdcat-passing-marks/",
@@ -3729,7 +3801,10 @@
     "/mdcat-aggregate-calculator/",
     "/uet-taxila-aggregate-calculator/"
    ],
-   "ru_heading": "2nd merit list mein merit kitna girta hai?"
+   "ru_heading": "2nd merit list mein merit kitna girta hai?",
+   "parents": [
+    "/guides/"
+   ]
   },
   {
    "path": "/guides/nust-fast-closing-merit/",
@@ -3803,6 +3878,9 @@
     "/predictor/",
     "/merit-list/",
     "/methodology/"
+   ],
+   "parents": [
+    "/guides/"
    ]
   },
   {
@@ -3892,6 +3970,9 @@
     "/uet-taxila-merit-list/",
     "/uet-peshawar-aggregate-calculator/",
     "/predictor/"
+   ],
+   "parents": [
+    "/guides/"
    ]
   },
   {
