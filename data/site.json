@@ -50,7 +50,9 @@
     "note": "Reserved ad slots render only when true (after AdSense approval). Never above a calculator."
   },
   "share": {
-    "whatsapp": "Mera {uni} aggregate {aggregate}% hai, apna check karo: {url}"
+    "whatsapp": "Mera {uni} aggregate {aggregate}% hai{chances}. Apna check karo: {url}",
+    "predictor": "Mera aggregate {aggregate}% hai{chances}. Apna check karo: {url}",
+    "note": "{chances} = ' (3 programs Strong, 2 Borderline)' or empty; {url} = the result's own link (inputs in the query string)."
   },
   "indexnow": {
     "enabled": true,

@@ -134,6 +134,28 @@
     try { return s ? JSON.parse(s.textContent) : null; } catch (e) { return null; }
   }
   function waLink(text) { return 'https://wa.me/?text=' + encodeURIComponent(text); }
+  // Query string as an object; setQuery() writes a result's inputs into the address bar so the
+  // link can be shared (the page reads them back on load). Canonical stays the clean URL.
+  function getQuery() {
+    var qs = {};
+    location.search.replace(/[?&]([^=&]+)=([^&]*)/g, function (m, k, v) { qs[decodeURIComponent(k)] = decodeURIComponent(v.replace(/\+/g, ' ')); });
+    return qs;
+  }
+  function withQuery(base, obj) {
+    var parts = [];
+    for (var k in obj) if (obj[k] !== '' && obj[k] != null && obj[k] !== false) parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(obj[k] === true ? '1' : obj[k]));
+    return base.replace(/[?#].*$/, '') + (parts.length ? '?' + parts.join('&') : '');
+  }
+  function setQuery(obj) {
+    try { history.replaceState(null, '', withQuery(location.pathname, obj)); } catch (e) { /* file: or sandbox */ }
+  }
+  // "5 programs Strong, 2 Borderline" for share texts (chance list already computed).
+  function chanceSummary(list) {
+    var n = { strong: 0, borderline: 0 };
+    list.forEach(function (r) { if (n[r.chance] != null) n[r.chance]++; });
+    if (!n.strong && !n.borderline) return '';
+    return (n.strong ? n.strong + ' program' + (n.strong > 1 ? 's' : '') + ' Strong' : '') + (n.strong && n.borderline ? ', ' : '') + (n.borderline ? n.borderline + ' Borderline' : '');
+  }
 
   function chanceList(list, empty) {
     if (!list.length) return '<p>' + esc(empty) + '</p>';
@@ -200,6 +222,14 @@
     }
 
     var saved = store.get(key);
+    // A shared link (?f=pmdc&o_mdcat=160&t_mdcat=180...) wins over this device's saved marks.
+    var q = getQuery(), fromLink = null;
+    for (var qk in q) if (/^(o|t|b)_/.test(qk)) { fromLink = { formula: q.f || '', values: {} }; break; }
+    if (fromLink) {
+      for (qk in q) if (/^(o|t|b)_/.test(qk)) fromLink.values[qk] = qk.charAt(0) === 'b' ? q[qk] === '1' : q[qk];
+      if (!fromLink.formula || !cfg.formulas.some(function (f) { return f.id === fromLink.formula; })) fromLink.formula = cfg.formulas[0].id;
+      saved = fromLink;
+    }
     if (saved) {
       if (pick && saved.formula) pick.value = saved.formula;
       $$('input', form).forEach(function (i) {
@@ -228,23 +258,30 @@
       }
       store.set(key, { formula: f.id, values: values, agg: r.aggregate });
       var agg = r.aggregate;
-      var text = cfg.share.replace('{uni}', cfg.uni).replace('{aggregate}', agg.toFixed(2)).replace('{url}', cfg.url);
+      // Shareable result: marks go into the address bar and the WhatsApp text carries the chances (idea 1).
+      var link = { f: f.id };
+      for (var vk in values) if (values[vk] !== '' && values[vk] !== false) link[vk] = values[vk];
+      setQuery(link);
+      var resultUrl = withQuery(cfg.url, link);
+      var fails = eligibility(f.elig, r.parts);
+      var rowsOk = cfg.rows && cfg.rows.length ? eligibleRows(cfg.rows, fails) : [];
+      var blocked = fails.length && cfg.rows && cfg.rows.length && !rowsOk.length;
+      var list = blocked || !rowsOk.length ? [] : predict(agg, rowsOk, cfg.band);
+      var summary = chanceSummary(list);
+      var text = cfg.share.replace('{uni}', cfg.uni).replace('{aggregate}', agg.toFixed(2)).replace('{chances}', summary ? ' (' + summary + ')' : '').replace('{url}', resultUrl);
       var rows = '';
       r.parts.forEach(function (p) {
         rows += '<tr><td>' + esc(p.label) + '</td><td>' + p.obtained + ' / ' + p.total + '</td><td>' + p.weight + '%</td><td>' + p.share.toFixed(4) + '</td></tr>';
       });
       var html = '<p class="am-result-main">Your ' + esc(cfg.uni) + ' aggregate is <strong>' + pct(agg) + '</strong></p>' +
         '<div class="am-table-wrap"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
-        '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button></div>';
-      var fails = eligibility(f.elig, r.parts);
-      var rowsOk = cfg.rows && cfg.rows.length ? eligibleRows(cfg.rows, fails) : [];
-      var blocked = fails.length && cfg.rows && cfg.rows.length && !rowsOk.length;
+        '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button></div>';
       if (fails.length) html += eligNotice(fails, !(cfg.rows && cfg.rows.length) ? 'none' : blocked ? 'all' : 'some');
       if (blocked) {
         // Not eligible anywhere: aggregate and breakdown stay, the "Where can you get in?" list goes.
       } else if (cfg.rows && cfg.rows.length) {
         html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' newest official closing merits (open merit, the main list of the merit table; the year is shown on each row). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
-          chanceList(predict(agg, rowsOk, cfg.band), 'No programs to compare yet.');
+          chanceList(list, 'No programs to compare yet.');
       } else if (cfg.noRows) {
         html += cfg.noRows;
       }
@@ -273,12 +310,11 @@
     var key = 'am:predictor';
     var saved = store.get(key);
     if (saved) $$('input,select', form).forEach(function (i) { if (saved[i.name] != null) i.value = saved[i.name]; });
-    // ?agg=81.5&uni=PU (from calculators and merit-list pages) wins over the saved values.
-    var qs = {};
-    location.search.replace(/[?&]([^=&]+)=([^&]*)/g, function (m, k, v) { qs[k] = decodeURIComponent(v.replace(/\+/g, ' ')); });
+    // ?agg=81.5&uni=PU&field=&prov= (from calculators, merit-list pages and shared links) wins over the saved values.
+    var qs = getQuery();
     if (qs.agg) {
       form.agg.value = qs.agg;
-      if (form.uni) form.uni.value = qs.uni || '';
+      ['uni', 'field', 'prov'].forEach(function (k) { if (form[k]) form[k].value = qs[k] || ''; });
       saved = true;
     }
     // Aggregates saved by the calculators on this device → one-tap buttons.
@@ -325,7 +361,15 @@
         note = '<div class="am-answer am-elig" role="status"><p><strong>' + below.length + ' program' + (below.length > 1 ? 's' : '') + ' left out:</strong> an aggregate under ' + pct(ex.min) + ' cannot meet the ' + esc(ex.uni) + ' eligibility minimums (' + esc(ex.minNote) + ') for ' + esc(ex.program) + (below.length > 1 ? ' (and ' + (below.length - 1) + ' more with their own minimums)' : '') + '. Check your marks in that university\'s calculator.</p></div>';
       }
       var head = used && used.agg === form.agg.value ? '<p class="am-result-main">Using your saved ' + esc(used.uni) + ' aggregate ' + esc(used.agg) + '%</p>' : '';
-      out.innerHTML = head + note + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.');
+      // Shareable result: the inputs go into the address bar and into the WhatsApp text (idea 1).
+      var link = { agg: agg.toFixed(2), uni: filter.uni, field: filter.field, prov: filter.prov };
+      setQuery(link);
+      var resultUrl = withQuery(location.origin + location.pathname, link);
+      var summary = chanceSummary(list);
+      var text = (cfg.share || 'Mera aggregate {aggregate}% hai{chances}. Apna check karo: {url}').replace('{uni}', filter.uni || '').replace('{aggregate}', agg.toFixed(2))
+        .replace('{chances}', summary ? ': ' + summary + (filter.uni ? ' (' + filter.uni + ')' : '') : '').replace('{url}', resultUrl);
+      var share = list.length ? '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button></div>' : '';
+      out.innerHTML = head + note + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.') + share;
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
     if (saved) run(true);

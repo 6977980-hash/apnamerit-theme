@@ -733,6 +733,7 @@ function am_sc_predictor( $atts ): string {
 				'rows'  => $rows,
 				'band'  => AM_BAND,
 				'saved' => $saved,
+				'share' => (string) am_site( 'share.predictor' ),
 			)
 		)
 		. '</form>';

@@ -139,7 +139,9 @@ add_filter( 'document_title_separator', fn() => '|' );
 add_filter(
 	'wp_robots',
 	function ( $robots ) {
-		if ( is_search() || is_404() || is_paged() || is_archive() || ! empty( am_page_seo()['noindex'] ) ) {
+		// A repo page with a query string is a shared result (?agg=…, ?o_mdcat=…): noindex, canonical stays clean.
+		$shared = am_virtual_page() && '' !== (string) ( $_SERVER['QUERY_STRING'] ?? '' );
+		if ( is_search() || is_404() || is_paged() || is_archive() || $shared || ! empty( am_page_seo()['noindex'] ) ) {
 			$robots['noindex'] = true;
 			$robots['follow']  = true;
 			unset( $robots['max-image-preview'] );
