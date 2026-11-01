@@ -30,6 +30,11 @@
    "field": "medical",
    "documents": [
     {
+     "label": "Punjab Admission Policy MBBS/BDS 2026-27 (MDCAT pass 55% MBBS, 50% BDS; HSSC 60%)",
+     "url": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+     "fetched": "2026-11-01"
+    },
+    {
      "label": "Public MBBS 2025-26, 13th and final selection list (open merit)",
      "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
      "fetched": "2026-10-31"

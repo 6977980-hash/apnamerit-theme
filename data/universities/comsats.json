@@ -13,6 +13,17 @@
   "list": "Final",
   "category": "Open merit"
  },
+ "eligibility": [
+  {
+   "part": "test",
+   "min_pct": 33,
+   "applies_to": "engineering programs",
+   "programs": "Computer Engineering|Electrical Engineering|Electrical Electronics Engineering",
+   "label": "NTS score needed for engineering (PEC)",
+   "source_url": "https://ww2.comsats.edu.pk/ro/Prospectus/UG_Prospectus/UG-Prospectus-24-25.pdf",
+   "source_note": "UG Prospectus 2024-25, p. 44: engineering needs a valid NTS score of at least 33% (PEC policy)."
+  }
+ ],
  "formulas": [
   {
    "id": "nts",

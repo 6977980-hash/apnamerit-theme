@@ -12,6 +12,25 @@
   "list": "Final",
   "category": "Open merit"
  },
+ "eligibility": [
+  {
+   "part": "test",
+   "min_pct": 50,
+   "applies_to": "any NED undergraduate program",
+   "label": "NED entry test pass mark",
+   "source_url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/FAQ.pdf",
+   "source_note": "Undergraduate FAQ 2026, Entry Test Q1: 50% marks in entry test are required to qualify for admission."
+  },
+  {
+   "part": "fsc",
+   "min_pct": 57,
+   "applies_to": "BE, B.Arch or BS Computer Science",
+   "programs": "^(BE|B\\.?Arch|BS Computer Science)",
+   "label": "HSC Part-I marks needed to apply for BE, B.Arch and BS Computer Science",
+   "source_url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/FAQ.pdf",
+   "source_note": "Undergraduate FAQ 2026, Q3: 60% in HSC required; candidates with at least 57% in HSC-I may apply but must reach 60% in HSC."
+  }
+ ],
  "formulas": [
   {
    "id": "ned",

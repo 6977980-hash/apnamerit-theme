@@ -12,6 +12,26 @@
   "list": "Final",
   "category": "Open merit"
  },
+ "eligibility": [
+  {
+   "part": "test",
+   "min_pct": 50,
+   "applies_to": "DVM or Pharm-D",
+   "programs": "DVM|Pharm",
+   "label": "entry test pass mark for DVM and Pharm-D",
+   "source_url": "https://web.uaf.edu.pk/UploadFiles/Announcements/0b3c6ddc-4e43-46ca-9809-75cd6fd09553.pdf",
+   "source_note": "Advertisement 2026-27, p. 2: entry test pass marks 50% for DVM and Pharm-D."
+  },
+  {
+   "part": "test",
+   "min_pct": 33,
+   "applies_to": "Agricultural Engineering & Technology programs",
+   "programs": "Agricultural Engineering|Technology",
+   "label": "entry test pass mark for Agricultural Engineering & Technology",
+   "source_url": "https://web.uaf.edu.pk/UploadFiles/Announcements/0b3c6ddc-4e43-46ca-9809-75cd6fd09553.pdf",
+   "source_note": "Advertisement 2026-27, p. 2: entry test pass marks 33% for the Faculty of Agricultural Engineering & Technology."
+  }
+ ],
  "formulas": [
   {
    "id": "main",

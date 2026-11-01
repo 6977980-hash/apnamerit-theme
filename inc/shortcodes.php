@@ -215,6 +215,119 @@ function am_no_merit_html( array $uni ): string {
 	return '<p class="am-muted am-nodata">' . $html . '</p>';
 }
 
+/**
+ * Eligibility floors that apply to one formula (audit F-01): entries of the university's
+ * `eligibility` array whose part is in the formula and whose optional `formulas` list names it.
+ *
+ * @return array<int, array> part, min_pct, label, applies_to, source_url, programs
+ */
+function am_formula_floors( array $uni, array $f ): array {
+	$keys = array_map( fn( $p ) => (string) ( $p['key'] ?? '' ), (array) ( $f['parts'] ?? array() ) );
+	$out  = array();
+	foreach ( (array) ( $uni['eligibility'] ?? array() ) as $e ) {
+		if ( ! in_array( (string) ( $e['part'] ?? '' ), $keys, true ) ) {
+			continue;
+		}
+		if ( ! empty( $e['formulas'] ) && ! in_array( (string) ( $f['id'] ?? '' ), (array) $e['formulas'], true ) ) {
+			continue;
+		}
+		$out[] = array(
+			'part'       => (string) $e['part'],
+			'min_pct'    => (float) $e['min_pct'],
+			'label'      => (string) ( $e['label'] ?? '' ),
+			'applies_to' => (string) ( $e['applies_to'] ?? '' ),
+			'source_url' => (string) ( $e['source_url'] ?? '' ),
+			'programs'   => (string) ( $e['programs'] ?? '' ),
+		);
+	}
+	return $out;
+}
+
+/** Whether a floor covers a program (no `programs` pattern = every program). */
+function am_floor_covers( array $floor, string $program ): bool {
+	return '' === $floor['programs'] || 1 === preg_match( '~' . str_replace( '~', '\~', $floor['programs'] ) . '~', $program );
+}
+
+/**
+ * Lowest aggregate a student can have and still meet every floor for a program (predictor):
+ * sum of weight x floor over the floored parts, other parts at zero; the smallest value over the
+ * formulas that have a floor for that program. Returns [min, readable floors] or [0, ''].
+ */
+function am_floor_min( array $uni, string $program ): array {
+	$best = null;
+	$note = '';
+	foreach ( (array) ( $uni['formulas'] ?? array() ) as $f ) {
+		$floors = array_filter( am_formula_floors( $uni, $f ), fn( $fl ) => am_floor_covers( $fl, $program ) );
+		if ( ! $floors ) {
+			continue;
+		}
+		$need = array();
+		foreach ( $floors as $fl ) {
+			$need[ $fl['part'] ] = max( $need[ $fl['part'] ] ?? 0, $fl['min_pct'] );
+		}
+		$min   = 0.0;
+		$words = array();
+		foreach ( (array) $f['parts'] as $p ) {
+			if ( isset( $need[ $p['key'] ] ) ) {
+				$min    += (float) $p['weight'] * $need[ $p['key'] ] / 100;
+				$words[] = $p['label'] . ' ' . am_num( $need[ $p['key'] ] ) . '%';
+			}
+		}
+		if ( null === $best || $min < $best ) {
+			$best = $min;
+			$note = implode( ', ', $words );
+		}
+	}
+	return array( round( (float) $best, 2 ), $note );
+}
+
+/** 55.0 → "55", 57.5 → "57.5". */
+function am_num( $n ): string {
+	return rtrim( rtrim( number_format( (float) $n, 2, '.', '' ), '0' ), '.' );
+}
+
+/**
+ * "MDCAT pass mark for MBBS: 55%; ..." for a list of floors (their official labels), with source links.
+ */
+function am_floors_text( array $floors ): string {
+	$items = array();
+	$srcs  = array();
+	foreach ( $floors as $fl ) {
+		$items[] = esc_html( ucfirst( (string) $fl['label'] ) . ': ' . am_num( $fl['min_pct'] ) . '%' );
+		if ( $fl['source_url'] ) {
+			$srcs[ $fl['source_url'] ] = true;
+		}
+	}
+	$links = array_map( fn( $u ) => am_source_link( (string) $u ), array_keys( $srcs ) );
+	return implode( '; ', $items ) . ( $links ? ' (source: ' . implode( ', ', $links ) . ')' : '' );
+}
+
+// ------------------------------------------------------------------ [am_eligibility]
+/**
+ * One "Eligibility:" sentence for a calculator page, from the same data the calculator checks.
+ */
+function am_sc_eligibility( $atts ): string {
+	$atts  = shortcode_atts( array( 'uni' => '' ), (array) $atts, 'am_eligibility' );
+	$uni   = am_uni( am_uni_attr( $atts ) );
+	$short = (string) ( $uni['short'] ?? $uni['name'] ?? '' );
+	if ( empty( $uni['formulas'] ) ) {
+		return am_stub( 'am_eligibility', $atts );
+	}
+	$floors = array();
+	foreach ( (array) ( $uni['eligibility'] ?? array() ) as $e ) {
+		$floors[] = array(
+			'min_pct'    => (float) $e['min_pct'],
+			'label'      => (string) ( $e['label'] ?? '' ),
+			'source_url' => (string) ( $e['source_url'] ?? '' ),
+		);
+	}
+	if ( ! $floors ) {
+		$src = (string) ( $uni['formulas'][0]['source_url'] ?? '' );
+		return '<p><strong>Eligibility:</strong> ' . esc_html( $short ) . ' sets its own minimum marks for each program' . ( $src ? ' (see the ' . am_source_link( $src ) . ')' : '' ) . '. This calculator does not check them yet, so confirm you meet them before you apply.</p>';
+	}
+	return '<p><strong>Eligibility:</strong> ' . am_floors_text( $floors ) . '. Below a minimum, the calculator still shows your aggregate but lists no programs that need it.</p>';
+}
+
 // ------------------------------------------------------------------ [am_calculator]
 function am_sc_calculator( $atts ): string {
 	$atts = shortcode_atts( array( 'uni' => '', 'compact' => '' ), (array) $atts, 'am_calculator' );
@@ -260,6 +373,7 @@ function am_sc_calculator( $atts ): string {
 				(array) $f['parts']
 			),
 			'bonus' => (array) ( $f['bonus'] ?? array() ),
+			'elig'  => am_formula_floors( $uni, $f ),
 		);
 		$html .= '<fieldset class="am-formula" data-am-fid="' . esc_attr( $fid ) . '"' . ( $n > 0 ? ' hidden' : '' ) . '><legend>' . esc_html( (string) $f['label'] ) . '</legend>';
 		foreach ( (array) $f['parts'] as $p ) {
@@ -314,6 +428,10 @@ function am_formula_table( array $uni ): string {
 			$rows .= '<tr><td>' . esc_html( (string) $p['label'] ) . '</td><td>' . esc_html( ! empty( $p['hint'] ) ? (string) $p['hint'] : $p['weight'] . '%' ) . '</td><td>' . esc_html( (string) $p['total'] ) . '</td></tr>';
 		}
 		$out .= '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( $short . ' aggregate formula: ' . $f['label'] ) . '</caption><thead><tr><th scope="col">Part</th><th scope="col">Weight</th><th scope="col">Usual total marks</th></tr></thead><tbody>' . $rows . '</tbody></table></div>';
+		$floors = am_formula_floors( $uni, $f );
+		if ( $floors ) {
+			$out .= '<p class="am-muted">Minimum to be eligible. ' . am_floors_text( $floors ) . '.</p>';
+		}
 	}
 	return $out;
 }
@@ -527,6 +645,13 @@ function am_sc_predictor( $atts ): string {
 			}
 		}
 		foreach ( $prows as $r ) {
+			if ( ! empty( $uni['eligibility'] ) ) {
+				list( $min, $note ) = am_floor_min( $uni, (string) $r['program'] );
+				if ( $min > 0 ) {
+					$r['min']     = $min;
+					$r['minNote'] = $note;
+				}
+			}
 			$r['uni']  = $short;
 			$r['prov'] = $prov;
 			$r['url']  = $url ? $url . '#' . $r['anchor'] : '';
@@ -658,6 +783,7 @@ add_action(
 		add_shortcode( 'am_predictor', 'am_sc_predictor' );
 		add_shortcode( 'am_sources_table', 'am_sc_sources_table' );
 		add_shortcode( 'am_contact', 'am_sc_contact' );
+		add_shortcode( 'am_eligibility', 'am_sc_eligibility' );
 		add_shortcode(
 			'am_faq',
 			function ( $atts ) {

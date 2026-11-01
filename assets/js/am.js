@@ -33,7 +33,7 @@
       if (isNaN(total) || total <= 0) return { error: 'Enter the total marks for ' + p.label + '.', key: p.key };
       if (obtained > total) return { error: p.label + ' marks cannot be more than ' + total + '.', key: p.key };
       var got = Math.min(obtained + (extra[p.key] || 0), total);
-      var row = { key: p.key, label: p.label, obtained: got, total: total, weight: num(p.weight), share: (got / total) * num(p.weight) };
+      var row = { key: p.key, label: p.label, obtained: got, raw: obtained, total: total, weight: num(p.weight), share: (got / total) * num(p.weight) };
       if (p.pool) {
         var sc = p.scale == null ? 1 : num(p.scale);
         var pl = pools[p.pool] || (pools[p.pool] = { w: 0, den: 0, rows: [] });
@@ -78,7 +78,38 @@
       .sort(function (a, b) { return b.ref - a.ref; });
   }
 
-  var AM = { aggregate: aggregate, chance: chance, predict: predict };
+  /**
+   * Eligibility floors (audit F-01): floors = [{part,min_pct,label,applies_to,source_url,programs?}],
+   * parts = aggregate().parts. Bonus marks never count for eligibility (raw marks / total).
+   * Returns the floors the marks fall below, each with the student's own percentage.
+   */
+  function eligibility(floors, parts) {
+    var out = [];
+    (floors || []).forEach(function (fl) {
+      for (var i = 0; i < parts.length; i++) {
+        var p = parts[i];
+        if (p.key !== fl.part) continue;
+        var mine = (p.raw == null ? p.obtained : p.raw) / p.total * 100;
+        if (mine < num(fl.min_pct)) {
+          var o = {};
+          for (var k in fl) o[k] = fl[k];
+          o.mine = mine;
+          o.partLabel = p.label;
+          out.push(o);
+        }
+      }
+    });
+    return out;
+  }
+
+  /** Rows left after failed floors: a floor without `programs` removes every row. */
+  function eligibleRows(rows, fails) {
+    return rows.filter(function (r) {
+      return !fails.some(function (f) { return !f.programs || new RegExp(f.programs).test(r.program); });
+    });
+  }
+
+  var AM = { aggregate: aggregate, chance: chance, predict: predict, eligibility: eligibility, eligibleRows: eligibleRows };
   root.AM = AM;
   if (typeof module !== 'undefined' && module.exports) module.exports = AM;
   if (typeof document === 'undefined') return;
@@ -117,6 +148,14 @@
       html += '</ul>';
     });
     return html;
+  }
+
+  // tail: 'none' (no merit rows to list), 'all' (list removed) or 'some' (matching programs removed).
+  function eligNotice(fails, tail) {
+    return '<div class="am-answer am-elig" role="status">' + fails.map(function (f) {
+      return '<p><strong>Below the ' + esc(f.label) + ' of ' + num(f.min_pct) + '%</strong> (your ' + esc(f.partLabel) + ': ' + (Math.floor(f.mine * 100) / 100).toFixed(2) + '%, <a href="' + esc(f.source_url) + '" rel="nofollow noopener" target="_blank">source</a>). With these marks you are not eligible for ' + esc(f.applies_to) + ' this year' +
+        (tail === 'none' ? '.' : tail === 'all' || !f.programs ? ', so no colleges or programs are listed.' : ', so those programs are left out below.') + '</p>';
+    }).join('') + '</div>';
   }
 
   function formValues(scope) {
@@ -182,13 +221,19 @@
       var html = '<p class="am-result-main">Your ' + esc(cfg.uni) + ' aggregate is <strong>' + pct(agg) + '</strong></p>' +
         '<div class="am-table-wrap"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
         '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy result</button></div>';
-      if (cfg.rows && cfg.rows.length) {
+      var fails = eligibility(f.elig, r.parts);
+      var rowsOk = cfg.rows && cfg.rows.length ? eligibleRows(cfg.rows, fails) : [];
+      var blocked = fails.length && cfg.rows && cfg.rows.length && !rowsOk.length;
+      if (fails.length) html += eligNotice(fails, !(cfg.rows && cfg.rows.length) ? 'none' : blocked ? 'all' : 'some');
+      if (blocked) {
+        // Not eligible anywhere: aggregate and breakdown stay, the "Where can you get in?" list goes.
+      } else if (cfg.rows && cfg.rows.length) {
         html += '<h2>Where can you get in?</h2><p class="am-muted">Compared with the ' + esc(cfg.uni) + ' newest official closing merits (open merit, the main list of the merit table; the year is shown on each row). Borderline = within ±' + cfg.band + ' of the closing aggregate. <a href="' + esc(cfg.meritUrl || '#') + '">Full merit list</a>.</p>' +
-          chanceList(predict(agg, cfg.rows, cfg.band), 'No programs to compare yet.');
+          chanceList(predict(agg, rowsOk, cfg.band), 'No programs to compare yet.');
       } else if (cfg.noRows) {
         html += cfg.noRows;
       }
-      if (cfg.predUrl) {
+      if (cfg.predUrl && !blocked) {
         html += '<p><a href="' + esc(cfg.predUrl + '?agg=' + agg.toFixed(2) + (cfg.rows && cfg.rows.length ? '&uni=' + encodeURIComponent(cfg.uni) : '')) + '">Open this aggregate in the merit predictor</a></p>';
       }
       out.hidden = false;
@@ -253,7 +298,15 @@
       var filter = { uni: form.uni ? form.uni.value : '', field: form.field ? form.field.value : '', prov: form.prov ? form.prov.value : '' };
       store.set(key, { agg: form.agg.value, uni: filter.uni, field: filter.field, prov: filter.prov });
       out.hidden = false;
-      out.innerHTML = chanceList(predict(agg, cfg.rows, cfg.band, filter), 'No programs match these filters yet.');
+      var list = predict(agg, cfg.rows, cfg.band, filter);
+      var below = list.filter(function (r) { return r.min && agg < r.min; });
+      var note = '';
+      if (below.length) {
+        list = list.filter(function (r) { return !(r.min && agg < r.min); });
+        var ex = below[0];
+        note = '<div class="am-answer am-elig" role="status"><p><strong>' + below.length + ' program' + (below.length > 1 ? 's' : '') + ' left out:</strong> an aggregate under ' + pct(ex.min) + ' cannot meet the ' + esc(ex.uni) + ' eligibility minimums (' + esc(ex.minNote) + ') for ' + esc(ex.program) + (below.length > 1 ? ' (and ' + (below.length - 1) + ' more with their own minimums)' : '') + '. Check your marks in that university\'s calculator.</p></div>';
+      }
+      out.innerHTML = note + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.');
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
     if (saved) run(true);

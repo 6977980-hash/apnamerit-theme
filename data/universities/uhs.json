@@ -14,6 +14,34 @@
   "list": "Final",
   "category": "Open merit"
  },
+ "eligibility": [
+  {
+   "part": "mdcat",
+   "min_pct": 55,
+   "applies_to": "MBBS",
+   "programs": "^MBBS",
+   "label": "MDCAT pass mark for MBBS",
+   "source_url": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+   "source_note": "Punjab Admission Policy MBBS/BDS 2026-27 (notified 14 Oct 2026, on uhs.edu.pk), para 3: MDCAT pass % MBBS 55, BDS 50. Same in UHS Prospectus 2025-26 p. 46. PM&DC notification of 8 Apr 2026 allowed a one-time 3% cut (52/47) only for vacant 2025-26 seats."
+  },
+  {
+   "part": "mdcat",
+   "min_pct": 50,
+   "applies_to": "BDS",
+   "programs": "^BDS",
+   "label": "MDCAT pass mark for BDS",
+   "source_url": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+   "source_note": "Punjab Admission Policy MBBS/BDS 2026-27, para 3."
+  },
+  {
+   "part": "fsc",
+   "min_pct": 60,
+   "applies_to": "MBBS or BDS",
+   "label": "minimum FSc / HSSC marks for MBBS and BDS",
+   "source_url": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+   "source_note": "Punjab Admission Policy MBBS/BDS 2026-27, para 4(b): HSSC or equivalent with minimum 60%; PM&DC Regulations 2026, regulation 5(b)."
+  }
+ ],
  "formulas": [
   {
    "id": "pmdc",

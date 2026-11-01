@@ -18,6 +18,8 @@ Checks:
   size     - am.css within the 14 KB inline budget
   predict  - scripts/tests/predict_rows.php: predictor value + year = merit table default row
   sources  - data/sources.json: one entry per body, every data/universities slug exactly once
+  elig     - eligibility floors: source_url, min_pct 0-100, part in the formula, programs regex,
+             every calculator page prints [am_eligibility], MDCAT FAQ = UHS floors, JS engine test (node)
   copy     - one predictor rule everywhere (no "last two years" / "do saal"); data sentences use
              {year:<slug>}, not {data_year}/{season_year}; predictor "no closing merit" FAQ = data
 """
@@ -438,6 +440,72 @@ def check_sources(loaded: dict[str, object]) -> None:
 TWO_YEARS = re.compile(r"last two years|past two years|do saal|zyada wala", re.I)
 
 
+def check_elig(loaded: dict[str, object]) -> None:
+    pages = (loaded.get("data/pages.json") or {}).get("pages", [])
+    by_path = {p.get("path"): p for p in pages}
+    for name, u in loaded.items():
+        if not name.startswith("data/universities/") or not isinstance(u, dict):
+            continue
+        formulas = {f.get("id"): {p.get("key") for p in f.get("parts", [])} for f in u.get("formulas", [])}
+        for i, e in enumerate(u.get("eligibility", []) or []):
+            where = f"{name} eligibility[{i}]"
+            for key in ("part", "label", "applies_to", "source_url"):
+                if not e.get(key):
+                    err("elig", f"{where}: '{key}' missing")
+            m = e.get("min_pct")
+            if not isinstance(m, (int, float)) or not 0 < m <= 100:
+                err("elig", f"{where}: min_pct {m!r} must be a number in 0-100")
+            ids = e.get("formulas") or list(formulas)
+            for fid in ids:
+                if fid not in formulas:
+                    err("elig", f"{where}: formula '{fid}' does not exist")
+            if not any(e.get("part") in formulas.get(fid, set()) for fid in ids):
+                err("elig", f"{where}: part '{e.get('part')}' is in none of its formulas")
+            if e.get("programs"):
+                try:
+                    re.compile(e["programs"])
+                except re.error as x:
+                    err("elig", f"{where}: programs regex: {x}")
+        path = u.get("calculator_path")
+        page = by_path.get(path)
+        if path and page and page.get("content_file"):
+            body = (ROOT / "content" / page["content_file"]).read_text(encoding="utf-8")
+            if "[am_eligibility" not in body:
+                err("elig", f"{page['content_file']}: add the [am_eligibility uni=\"{u.get('slug')}\"] sentence")
+    # The MDCAT calculator FAQ on the minimum MDCAT score must state the UHS floors (same data).
+    uhs = loaded.get("data/universities/uhs.json") or {}
+    mdcat = [e for e in uhs.get("eligibility", []) if e.get("part") == "mdcat"]
+    page = by_path.get("/mdcat-aggregate-calculator/", {})
+    faq = next((q.get("a", "") for q in page.get("faq", []) or [] if "minimum MDCAT" in q.get("q", "")), None)
+    if mdcat and faq is None:
+        err("elig", "/mdcat-aggregate-calculator/: FAQ 'What is the minimum MDCAT score for MBBS?' missing")
+    for e in mdcat:
+        if faq is not None and f"{e['min_pct']:g}%" not in faq:
+            err("elig", f"/mdcat-aggregate-calculator/ minimum-MDCAT FAQ does not say {e['min_pct']:g}% ({e['applies_to']})")
+    # Engine: 80/180 MDCAT is below both floors -> no rows; 150/180 is eligible everywhere.
+    node = shutil.which("node")
+    if not node:
+        warn("elig", "node not installed; engine test skipped")
+        return
+    test = r"""
+const AM = require(process.argv[1]);
+const fl = JSON.parse(process.argv[2]);
+const f = {parts: [{key:'mdcat',label:'MDCAT',total:180,weight:50},{key:'fsc',label:'FSc',total:1100,weight:40},{key:'matric',label:'Matric',total:1100,weight:10}]};
+const rows = [{program:'MBBS (public)', ref: 90}, {program:'BDS (private)', ref: 70}];
+const run = (m, s) => { const r = AM.aggregate(f, {o_mdcat:m, o_fsc:s, o_matric:s}); return [r.aggregate, AM.eligibleRows(rows, AM.eligibility(fl, r.parts)).length]; };
+console.log(JSON.stringify([run(80,1050), run(95,1050), run(150,1000), run(150,600)]));
+"""
+    r = subprocess.run([node, "-e", test, str(ROOT / "assets/js/am.js"), json.dumps(uhs.get("eligibility", []))], capture_output=True, text=True)
+    try:
+        got = json.loads(r.stdout)
+    except ValueError:
+        err("elig", f"engine test did not run: {r.stderr.strip()[:200]}")
+        return
+    want = [[69.9495, 0], [74.1162, 1], [87.1212, 2], [68.9394, 0]]
+    if got != want:
+        err("elig", f"engine test: got {got}, want {want} (aggregate, eligible rows)")
+
+
 def check_copy(loaded: dict[str, object]) -> None:
     # One predictor rule (newest official year per program, audit F-04): no "two years" wording.
     texts = [(rel(f), f.read_text(encoding="utf-8")) for f in files("*.html") if "content" in f.parts]
@@ -475,6 +543,7 @@ def main() -> int:
     check_size()
     check_predict()
     check_sources(loaded)
+    check_elig(loaded)
     check_copy(loaded)
     for w in warnings:
         print("WARN ", w)

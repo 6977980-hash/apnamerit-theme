@@ -13,6 +13,32 @@
   "list": "Final",
   "category": "Open merit"
  },
+ "eligibility": [
+  {
+   "part": "fsc",
+   "min_pct": 60,
+   "applies_to": "engineering programs",
+   "programs": "Engineering",
+   "formulas": [
+    "ecat"
+   ],
+   "label": "minimum HSSC marks for engineering",
+   "source_url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+   "source_note": "Admission Eligibility page, Group 01 engineering departments: Min % 60. Checked against FSc Part-I marks here; UET Taxila does not allow rounding up."
+  },
+  {
+   "part": "fsc",
+   "min_pct": 50,
+   "applies_to": "BS Computer Science",
+   "programs": "Computer Science",
+   "formulas": [
+    "ecat"
+   ],
+   "label": "minimum HSSC marks for BS Computer Science",
+   "source_url": "https://admissions.uettaxila.edu.pk/Admission_Eligibility.php",
+   "source_note": "Admission Eligibility page, Computer Science: Min % 50."
+  }
+ ],
  "formulas": [
   {
    "id": "ecat",

@@ -12,6 +12,16 @@
   "list": "Final",
   "category": "Open merit"
  },
+ "eligibility": [
+  {
+   "part": "test",
+   "min_pct": 33,
+   "applies_to": "undergraduate programs",
+   "label": "admission test pass mark",
+   "source_url": "https://www.bahria.edu.pk/content/Downloads/fba5713a-0270-411c-a5c7-2ff96678e727.pdf",
+   "source_note": "Admissions Policy Edition 2, 2.10: UG test passing marks 33%."
+  }
+ ],
  "formulas": [
   {
    "id": "ug",

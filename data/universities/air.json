@@ -12,6 +12,41 @@
   "list": "Final",
   "category": "Open merit"
  },
+ "eligibility": [
+  {
+   "part": "fsc",
+   "min_pct": 60,
+   "applies_to": "engineering programs",
+   "formulas": [
+    "eng"
+   ],
+   "label": "minimum HSSC marks for engineering",
+   "source_url": "https://webdata.au.edu.pk/Pages/Admission/eligibility_criteria.aspx",
+   "source_note": "Eligibility Criteria, Bachelor programs: engineering HSSC >= 60% (text copied by the owner, 2026-10-31)."
+  },
+  {
+   "part": "test",
+   "min_pct": 33,
+   "applies_to": "engineering programs",
+   "formulas": [
+    "eng"
+   ],
+   "label": "PEC entry test pass mark",
+   "source_url": "https://webdata.au.edu.pk/Pages/Admission/eligibility_criteria.aspx",
+   "source_note": "Eligibility Criteria: PEC test pass marks 33%."
+  },
+  {
+   "part": "fsc",
+   "min_pct": 50,
+   "applies_to": "non-engineering programs",
+   "formulas": [
+    "noneng"
+   ],
+   "label": "minimum HSSC marks for non-engineering programs",
+   "source_url": "https://webdata.au.edu.pk/Pages/Admission/eligibility_criteria.aspx",
+   "source_note": "Eligibility Criteria, Bachelor programs: other programs HSSC >= 50%."
+  }
+ ],
  "formulas": [
   {
    "id": "eng",

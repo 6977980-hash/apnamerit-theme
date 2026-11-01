@@ -12,6 +12,16 @@
   "list": "Last list",
   "category": "Open merit"
  },
+ "eligibility": [
+  {
+   "part": "test",
+   "min_pct": 50,
+   "applies_to": "BS Computer Science or BS Artificial Intelligence",
+   "label": "minimum ITU admission test score",
+   "source_url": "https://itu.edu.pk/admissions/application-process/",
+   "source_note": "Norms & Criteria (updated 2026-08-12): 'Minimum 50% in the ITU Admissions Test'."
+  }
+ ],
  "formulas": [
   {
    "id": "cs",

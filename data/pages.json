@@ -186,6 +186,10 @@
      "a": "MDCAT 2025 had 180 multiple-choice questions with no negative marking, according to PMDC. If your result shows a different total, change the MDCAT total in the calculator."
     },
     {
+     "q": "What is the minimum MDCAT score for MBBS?",
+     "a": "In Punjab, the MBBS/BDS admission policy for session 2026-27 (notified on 14 October 2026, published by UHS) sets the MDCAT pass mark at 55% for MBBS (99/180) and 50% for BDS (90/180), and asks for at least 60% in FSc or HSSC. Below these you are not eligible for an open-merit seat, whatever your aggregate, so the calculator then lists no colleges."
+    },
+    {
      "q": "What aggregate is needed for a public MBBS college in Punjab?",
      "a": "In the final 2025 UHS list, public MBBS colleges closed between 93.51% (Narowal Medical College) and 94.87% (King Edward Medical University) on open merit."
     },
