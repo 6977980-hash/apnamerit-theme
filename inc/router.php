@@ -75,22 +75,25 @@ add_action(
 );
 
 /**
- * "Updated" date for an entry: its "updated" field, else pages.json mtime. With
- * "updated_from_data": true (data reports), the newest "updated" across data/universities wins
- * when it is later, so the page date never trails the data it shows (audit F-05).
+ * "Updated" date for an entry: its "updated" field, else its "published" date, else pages.json
+ * mtime. With "updated_from_data": true, the newest "updated" of the data it shows wins when it
+ * is later (audit F-05): a college page reads only its own university file (the uni="..." in its
+ * content), a data report reads every file. Deploys never move the date (audit CQ-04).
  */
 function am_page_updated( array $page ): string {
-	if ( ! empty( $page['updated'] ) && preg_match( '/^\d{4}-\d{2}-\d{2}$/', $page['updated'] ) ) {
-		$date = (string) $page['updated'];
-		if ( ! empty( $page['updated_from_data'] ) && function_exists( 'am_unis' ) ) {
-			foreach ( am_unis() as $uni ) {
-				$u = (string) ( $uni['updated'] ?? '' );
-				preg_match( '/^\d{4}-\d{2}-\d{2}$/', $u ) && $u > $date && ( $date = $u );
+	$ymd  = fn( $d ) => is_string( $d ) && preg_match( '/^\d{4}-\d{2}-\d{2}$/', $d );
+	$date = $ymd( $page['updated'] ?? null ) ? (string) $page['updated'] : ( $ymd( $page['published'] ?? null ) ? (string) $page['published'] : '' );
+	if ( ! empty( $page['updated_from_data'] ) && function_exists( 'am_unis' ) ) {
+		$only = preg_match( '/uni="([a-z0-9-]+)"/', (string) ( $page['content'] ?? '' ), $m ) && ! empty( $page['college'] ) ? $m[1] : '';
+		foreach ( am_unis() as $uni ) {
+			if ( '' !== $only && ( $uni['slug'] ?? '' ) !== $only ) {
+				continue;
 			}
+			$u = (string) ( $uni['updated'] ?? '' );
+			$ymd( $u ) && $u > $date && ( $date = $u );
 		}
-		return $date;
 	}
-	return gmdate( 'Y-m-d', (int) @filemtime( AM_DIR . '/data/pages.json' ) );
+	return '' !== $date ? $date : gmdate( 'Y-m-d', (int) @filemtime( AM_DIR . '/data/pages.json' ) );
 }
 
 // Sitemap: list repo pages (except noindex) in /wp-sitemap.xml.

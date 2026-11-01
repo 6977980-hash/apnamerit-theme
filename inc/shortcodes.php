@@ -51,7 +51,19 @@ function am_uni( string $slug ): array {
  *
  * @return array<string, array> slug => data
  */
+/**
+ * A university's provinces as a list: "province" may be a string or, for universities with
+ * campuses or colleges in several provinces (NUMS, COMSATS), an array (audit FE: NUMS was "Punjab").
+ */
+function am_uni_provinces( array $uni ): array {
+	return array_values( array_filter( array_map( 'strval', (array) ( $uni['province'] ?? array() ) ) ) );
+}
+
 function am_unis(): array {
+	static $out = null; // one glob per request (audit TS-15)
+	if ( null !== $out ) {
+		return $out;
+	}
 	$out = array();
 	foreach ( (array) glob( AM_DIR . '/data/universities/*.json' ) as $file ) {
 		$slug = basename( (string) $file, '.json' );
@@ -200,7 +212,7 @@ function am_no_merit_html( array $uni ): string {
 			continue;
 		}
 		// Same field counts most, then same province; PU breaks ties (largest general list).
-		$score = 4 * (int) ( ( $u['field'] ?? '' ) === ( $uni['field'] ?? '-' ) ) + 2 * (int) ( '' !== ( $uni['province'] ?? '' ) && ( $u['province'] ?? '' ) === $uni['province'] ) + (int) ( 'pu' === $slug );
+		$score = 4 * (int) ( ( $u['field'] ?? '' ) === ( $uni['field'] ?? '-' ) ) + 2 * (int) (bool) array_intersect( am_uni_provinces( $u ), am_uni_provinces( $uni ) ) + (int) ( 'pu' === $slug );
 		if ( $score > $best ) {
 			$best = $score;
 			$near = $u;
@@ -662,7 +674,7 @@ function am_sc_predictor( $atts ): string {
 	foreach ( am_unis() as $slug => $uni ) {
 		$short = (string) ( $uni['short'] ?? $uni['name'] ?? $slug );
 		$url   = ! empty( $uni['meritlist_path'] ) ? home_url( (string) $uni['meritlist_path'] ) : '';
-		$prov  = (string) ( $uni['province'] ?? '' );
+		$prov  = am_uni_provinces( $uni );
 		$prows = am_predict_rows( $uni );
 		if ( $prows ) {
 			$unis[ $short ] = true;
@@ -690,8 +702,8 @@ function am_sc_predictor( $atts ): string {
 				$fields[ $r['field'] ] = true;
 			}
 		}
-		if ( $prov ) {
-			$provs[ $prov ] = true;
+		foreach ( $prov as $pv ) {
+			$provs[ $pv ] = true;
 		}
 	}
 	if ( ! $rows ) {

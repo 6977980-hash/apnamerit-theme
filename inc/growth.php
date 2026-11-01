@@ -304,7 +304,7 @@ function am_sc_hub( $atts ): string {
 			$vals  = array_map( fn( $r ) => (float) $r['closing'], array_filter( $def, fn( $r ) => (int) $r['year'] === $ly ) );
 			$range = $vals ? am_pct( max( $vals ) ) . ' to ' . am_pct( min( $vals ) ) . ' <small>' . esc_html( $ly . ', ' . ( $uni['defaults']['list'] ?? 'Final' ) . ', ' . ( $uni['defaults']['category'] ?? 'Open merit' ) ) . '</small>' : '—';
 			$body .= '<tr><th scope="row"><a href="' . esc_url( home_url( (string) $uni['meritlist_path'] ) ) . '">' . esc_html( am_path_label( (string) $uni['meritlist_path'] ) ) . '</a><small>' . esc_html( (string) $uni['name'] ) . '</small></th>'
-				. '<td>' . esc_html( (string) ( $uni['province'] ?? '' ) ) . '</td>'
+				. '<td>' . esc_html( implode( ', ', am_uni_provinces( $uni ) ) ) . '</td>'
 				. '<td>' . esc_html( implode( ', ', $years ) ) . '</td>'
 				. '<td data-v="' . count( $all ) . '">' . count( $all ) . '</td>'
 				. '<td>' . $range . '</td></tr>';

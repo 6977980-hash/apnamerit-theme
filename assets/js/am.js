@@ -35,8 +35,11 @@
       if (isNaN(obtained) || obtained < 0) return { error: 'Enter your ' + marksOf(p.label) + '.', key: p.key };
       if (isNaN(total) || total <= 0) return { error: 'Enter the total marks for ' + p.label + '.', key: p.key };
       if (obtained > total) return { error: marksOf(p.label) + ' cannot be more than ' + total + '.', key: p.key };
-      var got = Math.min(obtained + (extra[p.key] || 0), total);
-      var row = { key: p.key, label: p.label, obtained: got, raw: obtained, total: total, weight: num(p.weight), share: (got / total) * num(p.weight) };
+      // Bonus marks (Hafiz-e-Quran) are added to marks earned and may take a part above its total:
+      // PU, UET Taxila and KU divide (marks + additional) by the plain total (audit TL-01).
+      var bonus = extra[p.key] || 0;
+      var got = obtained + bonus;
+      var row = { key: p.key, label: p.label, obtained: got, raw: obtained, bonus: bonus, total: total, weight: num(p.weight), share: (got / total) * num(p.weight) };
       if (p.pool) {
         var sc = p.scale == null ? 1 : num(p.scale);
         var pl = pools[p.pool] || (pools[p.pool] = { w: 0, den: 0, rows: [] });
@@ -92,7 +95,8 @@
     filter = filter || {};
     return rows
       .filter(function (r) {
-        for (var k in filter) if (filter[k] && r[k] !== filter[k]) return false;
+        // A row value may be a list (a university in several provinces): any match counts.
+        for (var k in filter) if (filter[k] && (Array.isArray(r[k]) ? r[k].indexOf(filter[k]) < 0 : r[k] !== filter[k])) return false;
         return true;
       })
       .map(function (r) {
@@ -326,7 +330,7 @@
       var text = cfg.share.replace('{uni}', cfg.uni).replace('{aggregate}', agg.toFixed(2)).replace('{chances}', summary ? ' (' + summary + ')' : '').replace('{url}', resultUrl);
       var rows = '';
       r.parts.forEach(function (p) {
-        rows += '<tr><td>' + esc(p.label) + '</td><td>' + p.obtained + ' / ' + p.total + '</td><td>' + p.weight + '%</td><td>' + p.share.toFixed(4) + '</td></tr>';
+        rows += '<tr><td>' + esc(p.label) + '</td><td>' + (p.bonus ? p.raw + ' + ' + p.bonus : p.obtained) + ' / ' + p.total + '</td><td>' + p.weight + '%</td><td>' + p.share.toFixed(4) + '</td></tr>';
       });
       var html = '<p class="am-result-main">Your ' + esc(cfg.uni) + ' aggregate is <strong>' + pct(agg) + '</strong></p>' +
         '<div class="am-table-wrap"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +

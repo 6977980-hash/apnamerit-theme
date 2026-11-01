@@ -123,7 +123,7 @@ function am_sc_college( $atts ): string {
 	if ( $pos < count( $names ) - 1 ) {
 		$near[] = 'just below it: ' . $link( $names[ $pos + 1 ] );
 	}
-	$html .= '<h2>Where ' . esc_html( $short ) . ' ranks</h2><p>In the final ' . esc_html( (string) $new ) . ' list, ' . esc_html( $short ) . ' had the ' . esc_html( am_ordinal( (int) $pos + 1 ) ) . ' highest closing merit of the ' . count( $names ) . ' Punjab public medical colleges (' . implode( '; ', $near ) . '). All ' . count( $names ) . ' are in the <a href="' . esc_url( home_url( (string) ( $uni['meritlist_path'] ?? '/mdcat-merit-list/' ) ) ) . '">MDCAT merit list</a>.</p>';
+	$html .= '<h2>Where ' . esc_html( $short ) . ' ranks</h2><p>In the final ' . esc_html( (string) $new ) . ' list, ' . esc_html( $short ) . ' had the ' . esc_html( 0 === (int) $pos ? '' : am_ordinal( (int) $pos + 1 ) . ' ' ) . 'highest closing merit of the ' . count( $names ) . ' Punjab public medical colleges (' . implode( '; ', $near ) . '). All ' . count( $names ) . ' are in the <a href="' . esc_url( home_url( (string) ( $uni['meritlist_path'] ?? '/mdcat-merit-list/' ) ) ) . '">MDCAT merit list</a>.</p>';
 
 	// 4. MDCAT needed.
 	$rows = '';
@@ -216,7 +216,7 @@ function am_sc_seats( $atts ): string {
 		$out  .= '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( $label . ' seats in Punjab public colleges, session ' . $seats['session'] . ', with the ' . $year . ' final closing merit (open merit)' ) . '</caption>'
 			. '<thead><tr><th scope="col">College</th><th scope="col">Open merit seats</th><th scope="col">Total seats</th><th scope="col">Closing merit ' . esc_html( (string) $year ) . '</th></tr></thead><tbody>' . $rows . '</tbody></table></div>';
 	}
-	return $out . '<p class="am-muted">* Subject to PM&amp;DC approval. "new" = no closing merit yet. Total seats include reserved seats (students with disabilities, under-developed districts, Cholistan, Overseas Pakistanis, other provinces and regions, HEC scholarships). Source: ' . am_source_link( (string) $seats['source_url'] ) . ', seat allocation (pp. 38-39).</p>' . am_seats_fee_line( $uni );
+	return $out . '<p class="am-muted">* Seats for 2026-27 subject to PM&amp;DC approval; any closing merit shown is from an earlier year. "new" = no closing merit yet. Total seats include reserved seats (students with disabilities, under-developed districts, Cholistan, Overseas Pakistanis, other provinces and regions, HEC scholarships). Source: ' . am_source_link( (string) $seats['source_url'] ) . ', seat allocation (pp. 38-39).</p>' . am_seats_fee_line( $uni );
 }
 
 // ------------------------------------------------------------------ [am_college_index]

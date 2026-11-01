@@ -3,7 +3,7 @@
  "name": "National University of Medical Sciences (NUMS)",
  "short": "NUMS",
  "field": "medical",
- "province": "Punjab",
+ "province": ["Punjab", "Sindh", "Balochistan"],
  "website": "https://numspak.edu.pk/",
  "meritlist_path": "/nums-merit-list/",
  "updated": "2026-11-01",

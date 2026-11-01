@@ -1,5 +1,5 @@
 {
-  "_note": "Every URL of the site lives here (owner decision 2026-10-31: no wp-admin pages, no Rank Math). Fields: path (trailing slash), keyword, title (<=60), description (140-155), h1, crumb (short label for breadcrumbs/links), type (content|trust; trust pages skip share and author box), template (default|calculator|meritlist), schema_type (WebPage|AboutPage|ContactPage|CollectionPage), parents (breadcrumb parent paths), subtitle, answer (40-60 words) + answer_source, content (HTML + shortcodes) and/or content_file (file in content/), faq [{q,a,lang}], roman_urdu (HTML), sources [{label,url,fetched}], related [paths], og_image (file in assets/og/), published, updated (YYYY-MM-DD), noindex. Tokens: {season_year}, {data_year}, {brand}, {founded}, {year:<slug>} (newest year of that university's default merit view; use it, not {data_year}, next to one university's data), {predict_count}.",
+  "_note": "Every URL of the site lives here (owner decision 2026-10-31: no wp-admin pages, no Rank Math). Fields: path (trailing slash), keyword, title (<=60), description (140-155), h1, crumb (short label for breadcrumbs/links), type (content|trust; trust pages skip share and author box), template (default|calculator|meritlist), schema_type (WebPage|AboutPage|ContactPage|CollectionPage), parents (breadcrumb parent paths), subtitle, trust_label (first item of the trust line, default 'Official sources'), generated (true: text written by a script from data; college pages are generated automatically), answer (40-60 words) + answer_source, content (HTML + shortcodes) and/or content_file (file in content/), faq [{q,a,lang}], roman_urdu (HTML), sources [{label,url,fetched}], related [paths], og_image (file in assets/og/), published, updated (YYYY-MM-DD), noindex. Tokens: {season_year}, {data_year}, {brand}, {founded}, {year:<slug>} (newest year of that university's default merit view; use it, not {data_year}, next to one university's data), {predict_count}.",
   "pages": [
     {
       "path": "/",
@@ -1965,6 +1965,7 @@
     },
     {
       "path": "/nums-merit-list/",
+      "trust_label": "Lowest aggregate in official NUMS lists",
       "keyword": "nums merit list",
       "title": "NUMS Merit List {season_year}: MBBS & BDS Closing Merit",
       "description": "NUMS merit list: closing merit of every NUMS-affiliated private MBBS and BDS college, session 2025-26, from QIMS 86.73% to KIMS 83.85%, with sources.",
@@ -2732,15 +2733,15 @@
         },
         {
           "q": "What aggregate is needed for Software Engineering at UET Taxila?",
-          "a": "Software Engineering closed at 79.435% on open merit for 2024 entry, the highest of all UET Taxila programs. Computer Science closed at 77.979%."
+          "a": "Software Engineering closed at 79.44% on open merit for 2024 entry, the highest of all UET Taxila programs. Computer Science closed at 77.98%."
         },
         {
           "q": "What is the lowest closing merit at UET Taxila?",
-          "a": "For 2024 entry, Environmental Engineering closed lowest at 53.071% on open merit, followed by Industrial & Manufacturing at 53.781%."
+          "a": "For 2024 entry, Environmental Engineering closed lowest at 53.07% on open merit, followed by Industrial & Manufacturing at 53.78%."
         },
         {
           "q": "How many ECAT marks are needed for UET Taxila Software Engineering?",
-          "a": "With 480/550 in FSc Part-I and 1000/1100 in Matric (no Hafiz marks), about 247/400 in the entry test reaches 79.435%, the Software Engineering closing merit for 2024 entry."
+          "a": "With 480/550 in FSc Part-I and 1000/1100 in Matric (no Hafiz marks), about 247/400 in the entry test reaches 79.44%, the Software Engineering closing merit for 2024 entry."
         },
         {
           "q": "UET Taxila ka aggregate kaise nikalain?",
@@ -2749,7 +2750,7 @@
         },
         {
           "q": "UET Taxila mein kitna aggregate chahiye?",
-          "a": "2024 mein Software Engineering 79.435% par aur Computer Science 77.979% par close hui. Zyada tar engineering programs 58% se 66% ke darmiyan close hue.",
+          "a": "2024 mein Software Engineering 79.44% par aur Computer Science 77.98% par close hui. Zyada tar engineering programs 58% se 66% ke darmiyan close hue.",
           "lang": "ur-Latn"
         }
       ],
@@ -3545,7 +3546,7 @@
       "path": "/uet-taxila-merit-list/",
       "keyword": "uet taxila merit list",
       "title": "UET Taxila Merit List {season_year}: Closing Merit by Program",
-      "description": "UET Taxila merit list: last official open-merit closing aggregate for every program, from Software Engineering 79.435% to Environmental 53.071%.",
+      "description": "UET Taxila merit list: last official open-merit closing aggregate for every program, from Software Engineering 79.44% to Environmental 53.07%.",
       "h1": "UET Taxila Merit List {season_year} & Closing Merit by Program",
       "crumb": "UET Taxila merit list",
       "subtitle": "Open merit, last admitted aggregate per department (2024 entry, official prospectus)",
@@ -3554,21 +3555,21 @@
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
       "updated": "2026-10-31",
-      "answer": "UET Taxila's latest official closing merits (open merit, 2024 entry) run from 79.435% for Software Engineering and 77.979% for Computer Science down to 53.071% for Environmental Engineering. Most engineering programs closed between 58% and 66%. Source: UET Taxila UG Prospectus 2025, Merit Position Entry 2024.",
+      "answer": "UET Taxila's latest official closing merits (open merit, 2024 entry) run from 79.44% for Software Engineering and 77.98% for Computer Science down to 53.07% for Environmental Engineering. Most engineering programs closed between 58% and 66%. Source: UET Taxila UG Prospectus 2025, Merit Position Entry 2024.",
       "answer_source": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
       "content_file": "uet-taxila-merit-list.html",
       "faq": [
         {
           "q": "What was the UET Taxila closing merit for Software Engineering?",
-          "a": "79.435% on open merit for 2024 entry, the highest at UET Taxila."
+          "a": "79.44% on open merit for 2024 entry, the highest at UET Taxila."
         },
         {
           "q": "What was the UET Taxila Computer Science closing merit?",
-          "a": "BS Computer Science closed at 77.979% and the pre-medical Computer Science seats at 78.184% for 2024 entry."
+          "a": "BS Computer Science closed at 77.98% and the pre-medical Computer Science seats at 78.18% for 2024 entry."
         },
         {
           "q": "Which UET Taxila program has the lowest merit?",
-          "a": "Environmental Engineering at 53.071%, then Industrial & Manufacturing Engineering at 53.781% (open merit, 2024 entry)."
+          "a": "Environmental Engineering at 53.07%, then Industrial & Manufacturing Engineering at 53.78% (open merit, 2024 entry)."
         },
         {
           "q": "Why is there no newer closing merit for UET Taxila?",
@@ -3580,29 +3581,29 @@
         },
         {
           "q": "Is 65% aggregate enough for UET Taxila?",
-          "a": "For 2024 entry, 65% was above the open-merit closing of 7 of 12 programs: Mechatronics (63.563%), Electronics, Telecommunication, Mechanical, Electrical, Industrial & Manufacturing and Environmental. Civil closed at 65.519% and Computer Engineering at 70.824%."
+          "a": "For 2024 entry, 65% was above the open-merit closing of 7 of 12 programs: Mechatronics (63.56%), Electronics, Telecommunication, Mechanical, Electrical, Industrial & Manufacturing and Environmental. Civil closed at 65.52% and Computer Engineering at 70.82%."
         },
         {
           "q": "What is the UET Taxila Mechanical Engineering merit?",
-          "a": "59.009% on open merit for 2024 entry. Mechatronics closed at 63.563% and Electrical at 58.063%."
+          "a": "59.01% on open merit for 2024 entry. Mechatronics closed at 63.56% and Electrical at 58.06%."
         },
         {
           "q": "UET Taxila ka merit kitna jata hai?",
-          "a": "2024 mein Software Engineering 79.435%, Computer Science 77.979% aur Civil 65.519% par close hui. Environmental sab se kam 53.071% par.",
+          "a": "2024 mein Software Engineering 79.44%, Computer Science 77.98% aur Civil 65.52% par close hui. Environmental sab se kam 53.07% par.",
           "lang": "ur-Latn"
         },
         {
           "q": "UET Taxila mein Electrical Engineering ka merit kya tha?",
-          "a": "2024 mein Electrical Engineering open merit par 58.063% par close hui.",
+          "a": "2024 mein Electrical Engineering open merit par 58.06% par close hui.",
           "lang": "ur-Latn"
         },
         {
           "q": "UET Taxila mein Computer Engineering ka merit kitna tha?",
-          "a": "2024 entry mein Computer Engineering open merit par 70.824% par close hui.",
+          "a": "2024 entry mein Computer Engineering open merit par 70.82% par close hui.",
           "lang": "ur-Latn"
         }
       ],
-      "roman_urdu": "<p>Yeh UET Taxila ka official <strong>closing merit</strong> hai, yani har department mein open merit par aakhri admission kis aggregate par hua (2024 entry, prospectus 2025 ka table).</p><p>Software Engineering 79.435% par sab se upar, Computer Science 77.979% aur zyada tar engineering programs 58% se 66% ke darmiyan. Apna aggregate <a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> se nikalein.</p>",
+      "roman_urdu": "<p>Yeh UET Taxila ka official <strong>closing merit</strong> hai, yani har department mein open merit par aakhri admission kis aggregate par hua (2024 entry, prospectus 2025 ka table).</p><p>Software Engineering 79.44% par sab se upar, Computer Science 77.98% aur zyada tar engineering programs 58% se 66% ke darmiyan. Apna aggregate <a href=\"/uet-taxila-aggregate-calculator/\">UET Taxila aggregate calculator</a> se nikalein.</p>",
       "sources": [
         {
           "label": "UET Taxila UG Prospectus 2025, p. 136: Merit Position Entry 2024",
@@ -4082,7 +4083,7 @@
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
       "updated": "2026-11-01",
-      "answer": "Punjab University's official closing merit for 2025 ran from 91.34% for Pharm-D and 87.18% for PUCIT Computer Science (New Campus) down to below 40% for some evening and campus programs. BBA at IBA closed at 81.79%, Electrical Engineering at 76.691% and English Literature at 77.73% (morning). Source: PU, Merit of Last Year 2025.",
+      "answer": "Punjab University's official closing merit for 2025 ran from 91.34% for Pharm-D and 87.18% for PUCIT Computer Science (New Campus) down to below 40% for some evening and campus programs. BBA at IBA closed at 81.79%, Electrical Engineering at 76.69% and English Literature at 77.73% (morning). Source: PU, Merit of Last Year 2025.",
       "answer_source": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
       "content_file": "pu-merit-list.html",
       "faq": [
@@ -4100,7 +4101,7 @@
         },
         {
           "q": "What was the PU BBA merit?",
-          "a": "BBA at the Institute of Business Administration closed at 81.79% (morning) and 72.84% (evening/self-support); BBIT at 81.829%."
+          "a": "BBA at the Institute of Business Administration closed at 81.79% (morning) and 72.84% (evening/self-support); BBIT at 81.83%."
         },
         {
           "q": "Are evening programs easier to get into at PU?",
@@ -4636,6 +4637,7 @@
     },
     {
       "path": "/itu-merit-list/",
+      "trust_label": "Lowest aggregate in official ITU lists",
       "keyword": "itu merit list",
       "title": "ITU Merit List {season_year}: Closing Merit by Program",
       "description": "ITU Lahore merit list: lowest merit in each Fall 2025 BS list, from Software Engineering 83.05% and CS 81.27% to Economics 53.54%, with sources.",
@@ -5590,7 +5592,7 @@
         },
         {
           "q": "How much does the closing merit drop after the first list?",
-          "a": "For Punjab public MBBS in 2025 the drop from the 1st to the 13th list was between 0.04 and 0.17 points per college; King Edward went from 94.92% to 94.87% and Narowal from 93.63% to 93.51%. Private colleges dropped far more."
+          "a": "For Punjab public MBBS in 2025 the drop from the 1st to the 13th list was between 0.04 and 0.13 points per college; King Edward went from 94.92% to 94.87% and Narowal from 93.63% to 93.51%. Private colleges dropped far more."
         },
         {
           "q": "Is upgradation compulsory in UHS admissions?",
@@ -5606,7 +5608,7 @@
         },
         {
           "q": "Pehli merit list mein naam nahi aaya to kya karein?",
-          "a": "Agli upgradation lists (23 November, 1 December aur mazeed) dekhein. 2025 mein government MBBS ka merit pehli se aakhri list tak sirf 0.04 se 0.17 points gira, is liye agar aap kisi college ke qareeb hain to intezar karein, warna private, NUMS ya BDS ka option dekhein.",
+          "a": "Agli upgradation lists (23 November, 1 December aur mazeed) dekhein. 2025 mein government MBBS ka merit pehli se aakhri list tak sirf 0.04 se 0.13 points gira, is liye agar aap kisi college ke qareeb hain to intezar karein, warna private, NUMS ya BDS ka option dekhein.",
           "lang": "ur-Latn"
         },
         {
@@ -5615,7 +5617,7 @@
           "lang": "ur-Latn"
         }
       ],
-      "roman_urdu": "<p>Pehli selection list aakhri nahi hoti. Jo students upar ke college mein upgrade hote hain ya fee jama nahi karte, un ki seats agli lists mein agle students ko milti hain. MBBS ki doosri list 23 November aur teesri 1 December 2026 ko hai; 2025 mein 13 lists aayi thin.</p><p>Lekin government colleges ka merit har list mein bohat thora girta hai (2025 mein 0.04 se 0.17 points). Apna aggregate <a href=\"/predictor/\">predictor</a> mein daal kar dekhein ke aap kis college ke kitne qareeb hain, aur saath private MBBS, <a href=\"/nums-merit-list/\">NUMS</a> aur BDS ke option bhi dekhein.</p>",
+      "roman_urdu": "<p>Pehli selection list aakhri nahi hoti. Jo students upar ke college mein upgrade hote hain ya fee jama nahi karte, un ki seats agli lists mein agle students ko milti hain. MBBS ki doosri list 23 November aur teesri 1 December 2026 ko hai; 2025 mein 13 lists aayi thin.</p><p>Lekin government colleges ka merit har list mein bohat thora girta hai (2025 mein 0.04 se 0.13 points). Apna aggregate <a href=\"/predictor/\">predictor</a> mein daal kar dekhein ke aap kis college ke kitne qareeb hain, aur saath private MBBS, <a href=\"/nums-merit-list/\">NUMS</a> aur BDS ke option bhi dekhein.</p>",
       "ru_heading": "Pehli merit list mein naam nahi aaya to kya karein?",
       "sources": [
         {
@@ -5747,14 +5749,14 @@
       "path": "/updates/",
       "keyword": "merit list updates",
       "title": "Merit List Updates {season_year}: New Lists and Dates",
-      "description": "Dated log of every new official merit list, closing merit and admission date added to Apna Merit, with WhatsApp Channel, RSS feed and calendar alerts.",
+      "description": "Dated log of every new official merit list, closing merit and admission date added to Apna Merit, with free RSS feed and phone calendar alerts. No sign-up.",
       "h1": "Merit List Updates: New Lists, Closing Merits and Dates",
       "crumb": "Updates",
       "type": "content",
       "template": "default",
       "schema_type": "CollectionPage",
-      "subtitle": "What changed, when, with alerts by WhatsApp Channel, RSS and calendar",
-      "answer": "This page lists, by date, every official merit list we parse, every new page and every schedule change. To be told when a list is out, follow the WhatsApp Channel or the RSS feed, and add the official UHS 2026-27 dates to your phone from the calendar file on the UHS admission page. Lists are added within 48 hours of the official release.",
+      "subtitle": "What changed, when, with alerts by RSS feed and phone calendar",
+      "answer": "This page lists, by date, every official merit list we parse, every new page and every schedule change. To be told when a list is out, subscribe to the RSS feed, and add the official UHS 2026-27 dates to your phone from the calendar file on the UHS admission page. Lists are added within 48 hours of the official release.",
       "answer_source": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
       "content_file": "updates.html",
       "faq": [
@@ -5764,15 +5766,15 @@
         },
         {
           "q": "How do I get an alert when a merit list is out?",
-          "a": "Follow the WhatsApp Channel (when shown), subscribe to the RSS feed at /updates/feed/, or add the season dates to your calendar from the UHS admission page. No sign-up or number is needed."
+          "a": "Subscribe to the RSS feed at /updates/feed/, or add the season dates to your calendar from the UHS admission page. No sign-up or number is needed."
         },
         {
           "q": "Nayi merit list ki update kahan milegi?",
-          "a": "Is page par har nayi list tareekh ke saath aati hai. WhatsApp Channel follow karein ya RSS feed lagayein; UHS ki tareekhein calendar file se phone mein bhi save ho sakti hain.",
+          "a": "Is page par har nayi list tareekh ke saath aati hai. RSS feed lagayein; UHS ki tareekhein calendar file se phone mein bhi save ho sakti hain.",
           "lang": "ur-Latn"
         }
       ],
-      "roman_urdu": "<p>Yahan har nayi official merit list, naya page aur tareekh ki tabdeeli date ke saath darj hoti hai. Alert ke liye WhatsApp Channel follow karein ya RSS feed lagayein; <a href=\"/uhs-mbbs-admission/\">UHS admission page</a> se 2026-27 ki tareekhein apne phone ke calendar mein add karein.</p>",
+      "roman_urdu": "<p>Yahan har nayi official merit list, naya page aur tareekh ki tabdeeli date ke saath darj hoti hai. Alert ke liye RSS feed lagayein; <a href=\"/uhs-mbbs-admission/\">UHS admission page</a> se 2026-27 ki tareekhein apne phone ke calendar mein add karein.</p>",
       "ru_heading": "Nayi merit list ki update kahan milegi?",
       "sources": [
         {

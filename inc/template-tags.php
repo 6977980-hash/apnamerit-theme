@@ -218,26 +218,37 @@ function am_updated_html( string $date ): string {
 /**
  * Trust line under the H1: official sources, updated date, checked by the author (initials avatar).
  */
-function am_trust_html( string $date ): string {
+function am_trust_html( string $date, array $page = array() ): string {
 	$ts = strtotime( $date );
 	if ( ! $ts ) {
 		return '';
 	}
-	$name = (string) am_site( 'author.name' );
-	$out  = '<p class="am-updated"><span><b class="am-tick" aria-hidden="true">✓</b> Official sources</span><span>Updated <time datetime="' . esc_attr( gmdate( 'Y-m-d', $ts ) ) . '">' . esc_html( gmdate( 'j F Y', $ts ) ) . '</time></span>';
+	$name  = (string) am_site( 'author.name' );
+	$gen   = am_page_generated( $page );
+	$label = (string) ( $page['trust_label'] ?? ( $gen ? 'Figures from official UHS lists' : 'Official sources' ) );
+	$out   = '<p class="am-updated"><span><b class="am-tick" aria-hidden="true">✓</b> ' . esc_html( $label ) . '</span><span>Updated <time datetime="' . esc_attr( gmdate( 'Y-m-d', $ts ) ) . '">' . esc_html( gmdate( 'j F Y', $ts ) ) . '</time></span>';
 	if ( '' !== $name ) {
 		$ini  = implode( '', array_map( fn( $w ) => mb_substr( $w, 0, 1 ), array_slice( preg_split( '/\s+/', trim( $name ) ), 0, 2 ) ) );
-		$out .= '<span><b class="am-av" aria-hidden="true">' . esc_html( strtoupper( $ini ) ) . '</b> Checked by <a href="' . esc_url( (string) am_site( 'author.url', home_url( '/about/#author' ) ) ) . '">' . esc_html( $name ) . '</a></span>';
+		$out .= '<span><b class="am-av" aria-hidden="true">' . esc_html( strtoupper( $ini ) ) . '</b> ' . ( $gen ? 'Figures checked by ' : 'Checked by ' ) . '<a href="' . esc_url( (string) am_site( 'author.url', home_url( '/about/#author' ) ) ) . '">' . esc_html( $name ) . '</a></span>';
 	}
 	return $out . '</p>';
 }
 
-function am_author_box_html(): string {
+/**
+ * Pages whose text a script writes from the data (college pages, audit CQ-03): "generated": true,
+ * or any entry with a "college" key. Their labels say so instead of "Written and checked by".
+ */
+function am_page_generated( array $page ): bool {
+	return ! empty( $page['generated'] ) || ! empty( $page['college'] );
+}
+
+function am_author_box_html( array $page = array() ): string {
 	$name = (string) am_site( 'author.name' );
 	if ( '' === $name ) {
 		return '';
 	}
-	return '<aside class="am-author" aria-label="Author"><p><strong>Written and checked by <a href="' . esc_url( (string) am_site( 'author.url', home_url( '/about/#author' ) ) ) . '" rel="author">' . esc_html( $name ) . '</a></strong>, ' . esc_html( (string) am_site( 'author.role' ) ) . ' of ' . esc_html( (string) am_site( 'brand' ) ) . '.</p><p>' . esc_html( (string) am_site( 'author.bio' ) ) . ' <a href="' . esc_url( home_url( '/editorial-policy/' ) ) . '">Editorial policy</a>.</p></aside>';
+	$lead = am_page_generated( $page ) ? 'Text generated from the official data; figures checked by' : 'Written and checked by';
+	return '<aside class="am-author" aria-label="Author"><p><strong>' . esc_html( $lead ) . ' <a href="' . esc_url( (string) am_site( 'author.url', home_url( '/about/#author' ) ) ) . '" rel="author">' . esc_html( $name ) . '</a></strong>, ' . esc_html( (string) am_site( 'author.role' ) ) . ' of ' . esc_html( (string) am_site( 'brand' ) ) . '.</p><p>' . esc_html( (string) am_site( 'author.bio' ) ) . ' <a href="' . esc_url( home_url( '/editorial-policy/' ) ) . '">Editorial policy</a>.</p></aside>';
 }
 
 function am_disclaimer_html(): string {
@@ -377,7 +388,7 @@ function am_render_page( array $page ): string {
 		$out .= '<p class="am-lead">' . esc_html( am_tokens( (string) $page['subtitle'] ) ) . '</p>';
 	}
 	if ( 'trust' !== $type && ! $is_home ) {
-		$out .= am_trust_html( am_page_updated( $page ) );
+		$out .= am_trust_html( am_page_updated( $page ), $page );
 	}
 	$out .= '</div>';
 	$out .= am_answer_html( (string) ( $page['answer'] ?? '' ), (string) ( $page['answer_source'] ?? '' ) );
@@ -390,7 +401,7 @@ function am_render_page( array $page ): string {
 		$out .= am_updated_html( am_page_updated( $page ) );
 	} else {
 		$out .= am_share_html( $url, $h1 );
-		$out .= am_author_box_html();
+		$out .= am_author_box_html( $page );
 		$out .= am_disclaimer_html();
 	}
 	$out .= am_related_html( (array) ( $page['related'] ?? array() ) );
