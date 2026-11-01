@@ -688,6 +688,7 @@ function am_sc_merit_table( $atts ): string {
 		. '<div class="am-merit" data-am-table="' . esc_attr( $id ) . '">'
 		. ( $filters ? '<div class="am-filters">' . $filters . ( count( $all_tr ) > 20 ? '<div class="am-field am-js-only"><label for="am-mq-' . esc_attr( $id ) . '">Search program or campus</label><input id="am-mq-' . esc_attr( $id ) . '" type="search" data-am-q placeholder="e.g. Computer, Nishtar"></div>' : '' ) . '</div>' : '' )
 		. '<p class="am-muted am-count" aria-live="polite"></p>'
+		. '<p class="am-share am-wa-copy" data-am-wa hidden><button type="button" class="am-btn" data-am-copy="">Copy top 10 for WhatsApp</button> <a class="am-btn am-btn--wa" href="#" target="_blank" rel="noopener">Share top 10 on WhatsApp</a></p>'
 		. '<div class="am-table-wrap"><table class="am-table am-sortable"><caption>' . esc_html( $caption ) . '</caption><thead><tr>' . $head . '</tr></thead><tbody>' . ( $big ? $def_tr : implode( '', $all_tr ) ) . '</tbody></table></div>'
 		// Big lists (UET 700+, PU 600+ rows): rows outside the default view wait in a <template>, out of
 		// the page's DOM, until a filter or sort needs them; data-i restores the table order (audit CI-04/TS-05).
@@ -700,12 +701,34 @@ function am_sc_merit_table( $atts ): string {
 		. am_check_box( $uni );
 }
 
+/**
+ * Official public-college fee lines for the predictor (Tier 2 idea 9), keyed by university short
+ * name: shown when the result lists that university's public MBBS/BDS seats. UHS only for now
+ * (uhs.json "fee", prospectus source); other universities have no stored fee.
+ */
+function am_predictor_fees(): array {
+	$out = array();
+	foreach ( am_unis() as $uni ) {
+		$fee = (array) ( $uni['fee'] ?? array() );
+		if ( empty( $fee['mbbs'] ) || empty( $fee['source_url'] ) ) {
+			continue;
+		}
+		$rs = fn( $n ) => 'Rs ' . number_format( (float) $n );
+		$out[ (string) $uni['short'] ] = array(
+			'text' => 'Public MBBS fee, session ' . (string) $fee['session'] . ': ' . $rs( $fee['mbbs'][0] ) . ' in the first year, ' . $rs( array_sum( (array) $fee['mbbs'] ) ) . ' for five years, the same at every Punjab public medical college (Overseas Pakistanis quota excepted). Private colleges set their own fees.',
+			'url'  => (string) $fee['source_url'],
+		);
+	}
+	return $out;
+}
+
 // ------------------------------------------------------------------ [am_predictor]
 function am_sc_predictor( $atts ): string {
 	$rows   = array();
 	$fields = array();
-	$provs  = array();
-	$unis   = array();
+	$provs   = array();
+	$sectors = array();
+	$unis    = array();
 	$saved  = array();
 	foreach ( am_unis() as $slug => $uni ) {
 		$short = (string) ( $uni['short'] ?? $uni['name'] ?? $slug );
@@ -729,8 +752,11 @@ function am_sc_predictor( $atts ): string {
 					$r['minNote'] = $note;
 				}
 			}
-			$r['uni']  = $short;
-			$r['prov'] = $prov;
+			$r['uni']    = $short;
+			$r['prov']   = $prov;
+			// Public or private college (Tier 2 idea 9): UHS and NUMS name private seats "(private)".
+			$r['sector']             = preg_match( '/\(private\)/i', (string) $r['program'] ) ? 'Private' : 'Public';
+			$sectors[ $r['sector'] ] = true;
 			$r['url']  = $url ? $url . '#' . $r['anchor'] : '';
 			unset( $r['anchor'] );
 			$rows[] = $r;
@@ -772,6 +798,7 @@ function am_sc_predictor( $atts ): string {
 		. $select( 'uni', 'University', $unis )
 		. $select( 'field', 'Field', $fields )
 		. $select( 'prov', 'Province', $provs )
+		. $select( 'sector', 'College type', $sectors )
 		. '<div class="am-actions"><button type="submit" class="am-btn am-btn--primary">Show my chances</button></div>'
 		. '<div class="am-result" aria-live="polite" hidden></div>'
 		. '<noscript><p>The predictor needs JavaScript. Each university\'s merit-list page shows the same closing aggregates as a table.</p></noscript>'
@@ -783,6 +810,7 @@ function am_sc_predictor( $atts ): string {
 				'saved' => $saved,
 				'share'   => (string) am_site( 'share.predictor' ),
 				'prefUrl' => am_find_page( '/guides/uhs-college-preference-order/' ) ? home_url( '/guides/uhs-college-preference-order/' ) : '',
+				'fees'    => am_predictor_fees(),
 			)
 		)
 		. '</form>';

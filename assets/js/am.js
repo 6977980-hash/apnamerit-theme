@@ -347,7 +347,8 @@
       });
       var html = '<p class="am-result-main">Your ' + esc(cfg.uni) + ' aggregate is <strong>' + pct(agg) + '</strong></p>' +
         '<div class="am-table-wrap am-fit"><table class="am-table"><caption>How your aggregate adds up</caption><thead><tr><th scope="col">Part</th><th scope="col">Marks</th><th scope="col">Weight</th><th scope="col">Points</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
-        '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy message</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button></div>';
+        '<div class="am-share"><a class="am-btn am-btn--wa" target="_blank" rel="noopener" href="' + esc(waLink(text)) + '">Share on WhatsApp</a> <button type="button" class="am-btn" data-am-copy="' + esc(text) + '">Copy message</button> <button type="button" class="am-btn" data-am-copy="' + esc(resultUrl) + '">Copy link</button>' +
+        ' <button type="button" class="am-btn" data-am-img data-uni="' + esc(cfg.uni) + '" data-agg="' + agg.toFixed(2) + '" data-sum="' + esc(summary) + '">Save as image</button></div>';
       if (fails.length) html += eligNotice(fails, !(cfg.rows && cfg.rows.length) ? 'none' : blocked ? 'all' : 'some');
       if (blocked) {
         // Not eligible anywhere: aggregate and breakdown stay, the "Where can you get in?" list goes.
@@ -425,7 +426,7 @@
     var qs = getQuery();
     if (qs.agg) {
       form.agg.value = qs.agg;
-      ['uni', 'field', 'prov'].forEach(function (k) { if (form[k]) form[k].value = qs[k] || ''; });
+      ['uni', 'field', 'prov', 'sector'].forEach(function (k) { if (form[k]) form[k].value = qs[k] || ''; });
       saved = true;
     }
     // Aggregates saved by the calculators on this device → one-tap buttons.
@@ -460,8 +461,8 @@
         form.agg.focus();
         return;
       }
-      var filter = { uni: form.uni ? form.uni.value : '', field: form.field ? form.field.value : '', prov: form.prov ? form.prov.value : '' };
-      store.set(key, { agg: form.agg.value, uni: filter.uni, field: filter.field, prov: filter.prov });
+      var filter = { uni: form.uni ? form.uni.value : '', field: form.field ? form.field.value : '', prov: form.prov ? form.prov.value : '', sector: form.sector ? form.sector.value : '' };
+      store.set(key, { agg: form.agg.value, uni: filter.uni, field: filter.field, prov: filter.prov, sector: filter.sector });
       out.hidden = false;
       var list = predict(agg, cfg.rows, cfg.band, filter);
       var below = list.filter(function (r) { return r.min && agg < r.min; });
@@ -473,7 +474,7 @@
       }
       var head = used && used.agg === form.agg.value ? '<p class="am-result-main">Using your saved ' + esc(used.uni) + ' aggregate ' + esc(used.agg) + '%</p>' : '';
       // Shareable result: the inputs go into the address bar and into the WhatsApp text (idea 1).
-      var link = { agg: agg.toFixed(2), uni: filter.uni, field: filter.field, prov: filter.prov };
+      var link = { agg: agg.toFixed(2), uni: filter.uni, field: filter.field, prov: filter.prov, sector: filter.sector };
       setQuery(link);
       var resultUrl = withQuery(location.origin + location.pathname, link);
       var summary = chanceSummary(list);
@@ -484,7 +485,14 @@
       var unis = {};
       list.forEach(function (r) { unis[r.uni] = true; });
       var mix = !filter.uni && Object.keys(unis).length > 1 ? '<p class="am-muted"><strong>Programs from ' + Object.keys(unis).length + ' universities.</strong> Each university has its own formula, so your aggregate only compares fairly with the university whose calculator gave it. Pick that university above.</p>' : '';
-      out.innerHTML = head + note + '<h2>Your chances' + (filter.uni ? ' at ' + esc(filter.uni) : '') + '</h2>' + mix + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.') + prefList(list, cfg.band, cfg.prefUrl) + share;
+      // Official public fee line for universities that store one (UHS), when their public seats are listed.
+      var feeNote = '';
+      Object.keys(cfg.fees || {}).forEach(function (u) {
+        if (list.some(function (r) { return r.uni === u && r.sector === 'Public'; })) {
+          feeNote += '<p class="am-muted"><strong>Fee:</strong> ' + esc(cfg.fees[u].text) + ' <a href="' + esc(cfg.fees[u].url) + '" rel="noopener" target="_blank">Official prospectus</a></p>';
+        }
+      });
+      out.innerHTML = head + note + '<h2>Your chances' + (filter.uni ? ' at ' + esc(filter.uni) : '') + '</h2>' + mix + chanceList(list, below.length ? 'No other programs match these filters.' : 'No programs match these filters yet.') + feeNote + prefList(list, cfg.band, cfg.prefUrl) + share;
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
     if (saved) run(true);
@@ -529,6 +537,25 @@
         if (on) shown++;
       });
       if (count) count.textContent = 'Showing ' + shown + ' of ' + (more ? +more.getAttribute('data-rows') : tbody.rows.length) + ' rows.';
+      waSummary();
+    }
+    // "Copy for WhatsApp" (Tier 2 idea 8): the first 10 rows on screen as a forwardable text block,
+    // rebuilt on every filter change, with the page link (the official source is on every row there).
+    var wa = $('[data-am-wa]', box);
+    function waSummary() {
+      if (!wa) return;
+      var cap = $('caption', table), lines = [], n = 0;
+      $$('tr', tbody).forEach(function (tr) {
+        if (n >= 10 || tr.classList.contains('am-off')) return;
+        var th = tr.cells[0], camp = $('.am-camp', tr) || $('.am-mcamp', tr);
+        var c = camp ? (camp.firstChild ? camp.firstChild.textContent : camp.textContent).trim() : '';
+        lines.push((++n) + '. ' + th.firstChild.textContent.trim() + (c ? ' (' + c + ')' : '') + ': ' + tr.cells[1].textContent.trim());
+      });
+      var text = '*' + (cap ? cap.textContent.trim() : document.title) + '*\n' + lines.join('\n') +
+        '\nOfficial source har row ke saath: ' + location.origin + location.pathname + '\n(Apna Merit)';
+      $('[data-am-copy]', wa).setAttribute('data-am-copy', text);
+      $('a', wa).href = waLink(text);
+      wa.hidden = !n;
     }
     selects.forEach(function (s) { s.addEventListener('change', function () { expand(); apply(); }); });
     // Text search (audit TL-05): searches the rows the other filters leave, so set List or Year to All for every row.
@@ -741,8 +768,48 @@
     });
   });
 
+  // ---------------------------------------------------------------- result card image (Tier 2 idea 7)
+  // Drawn on a canvas only when asked (no library, no request); shared as a file where the phone
+  // allows it (WhatsApp status), downloaded otherwise.
+  function resultCard(btn) {
+    var c = document.createElement('canvas'), W = 1080, H = 1350;
+    c.width = W; c.height = H;
+    var g = c.getContext('2d'), green = '#0b6e4f', font = function (w, px) { return w + ' ' + px + 'px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif'; };
+    g.fillStyle = green; g.fillRect(0, 0, W, H);
+    g.fillStyle = '#fff'; g.fillRect(60, 60, W - 120, H - 120);
+    g.fillStyle = green; g.fillRect(60, 60, W - 120, 16);
+    g.textAlign = 'center';
+    g.fillStyle = '#555'; g.font = font(600, 46); g.fillText('My ' + btn.getAttribute('data-uni') + ' aggregate', W / 2, 330);
+    g.fillStyle = green; g.font = font(800, 200); g.fillText(btn.getAttribute('data-agg') + '%', W / 2, 590);
+    var sum = btn.getAttribute('data-sum');
+    g.fillStyle = '#1a1a1a'; g.font = font(600, 44);
+    if (sum) {
+      g.fillText('Compared with last year\'s closing merit:', W / 2, 760);
+      g.font = font(700, 50); g.fillText(sum, W / 2, 840);
+    }
+    g.fillStyle = '#555'; g.font = font(400, 36);
+    g.fillText('Official formula, official closing merits', W / 2, 990);
+    g.fillStyle = green; g.font = font(800, 64); g.fillText('apnamerit.com', W / 2, 1150);
+    g.fillStyle = '#555'; g.font = font(400, 34); g.fillText('Apna aggregate check karo', W / 2, 1210);
+    c.toBlob(function (blob) {
+      if (!blob) return;
+      var name = 'apnamerit-' + btn.getAttribute('data-uni').toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-aggregate.png';
+      var file = typeof File === 'function' ? new File([blob], name, { type: 'image/png' }) : null;
+      if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file] }).catch(function () {});
+        return;
+      }
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+    }, 'image/png');
+  }
+
   // ---------------------------------------------------------------- share
   document.addEventListener('click', function (e) {
+    var img = e.target.closest('[data-am-img]');
+    if (img) { resultCard(img); return; }
     var copy = e.target.closest('[data-am-copy]');
     if (copy) {
       var text = copy.getAttribute('data-am-copy');
