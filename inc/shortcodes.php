@@ -382,23 +382,7 @@ function am_sc_calculator( $atts ): string {
 	}
 	foreach ( $uni['formulas'] as $n => $f ) {
 		$fid        = (string) $f['id'];
-		$formulas[] = array(
-			'id'    => $fid,
-			'label' => (string) ( $f['label'] ?? '' ),
-			'parts' => array_map(
-				fn( $p ) => array(
-					'key'    => (string) $p['key'],
-					'label'  => (string) $p['label'],
-					'total'  => (float) $p['total'],
-					'weight' => (float) $p['weight'],
-					'pool'   => (string) ( $p['pool'] ?? '' ),
-					'scale'  => (float) ( $p['scale'] ?? 1 ),
-				),
-				(array) $f['parts']
-			),
-			'bonus' => (array) ( $f['bonus'] ?? array() ),
-			'elig'  => am_formula_floors( $uni, $f ),
-		);
+		$formulas[] = am_formula_cfg( $uni, $f );
 		$html .= '<fieldset class="am-formula" data-am-fid="' . esc_attr( $fid ) . '"' . ( $n > 0 ? ' hidden' : '' ) . '><legend>' . esc_html( (string) $f['label'] ) . '</legend>';
 		foreach ( (array) $f['parts'] as $p ) {
 			$k     = esc_attr( $fid . '-' . $p['key'] );
@@ -439,6 +423,29 @@ function am_sc_calculator( $atts ): string {
 		. am_json_script( 'am-calc-data', $config )
 		. '</form>'
 		. ( '' === $atts['compact'] ? am_formula_table( $uni ) : '' );
+}
+
+/**
+ * One formula as am.js reads it (AM.aggregate): calculators and the all-universities form.
+ */
+function am_formula_cfg( array $uni, array $f ): array {
+	return array(
+		'id'    => (string) $f['id'],
+		'label' => (string) ( $f['label'] ?? '' ),
+		'parts' => array_map(
+			fn( $p ) => array(
+				'key'    => (string) $p['key'],
+				'label'  => (string) $p['label'],
+				'total'  => (float) $p['total'],
+				'weight' => (float) $p['weight'],
+				'pool'   => (string) ( $p['pool'] ?? '' ),
+				'scale'  => (float) ( $p['scale'] ?? 1 ),
+			),
+			(array) $f['parts']
+		),
+		'bonus' => (array) ( $f['bonus'] ?? array() ),
+		'elig'  => am_formula_floors( $uni, $f ),
+	);
 }
 
 /**

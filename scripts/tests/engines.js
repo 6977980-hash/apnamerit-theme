@@ -36,5 +36,22 @@ eq('negative rejected', !!AM.aggregate(uhs, vals(uhs, (function () { var o = {};
 var rows = [{ ref: 90, prov: ['Punjab', 'Sindh'] }, { ref: 80, prov: 'Sindh' }, { ref: 70, prov: 'Punjab' }];
 eq('predict prov list', AM.predict(85, rows, 1.5, { prov: 'Punjab' }).length, 2);
 eq('predict prov string', AM.predict(85, rows, 1.5, { prov: 'Sindh' }).length, 2);
+// listWhen (idea 2026-11-02 #1): first list at or below the aggregate; never reached sorts last.
+var lw = AM.listWhen(93.7, [['A', '', [94.0, 93.8, 93.69]], ['B', '', [93.5, 93.4]], ['C', '', [95, 94.9, null]]]);
+eq('listWhen order', lw.map(function (r) { return r.name + r.list; }).join(','), 'B1,A3,C0');
+eq('listWhen closing', lw[1].closing, 93.69);
+eq('listWhen short', lw[2].short, 1.2);
+// whatIf (idea #4): UHS 150/180, 1000/1100, 1000/1100 = 87.1212; +10 MDCAT = 89.8990.
+var uhsF = uni('uhs').formulas[0];
+var wv = vals(uhsF, { mdcat: 150, fsc: 1000, matric: 1000 });
+var wi = AM.whatIf(uhsF, wv, 'mdcat', 10, [{ ref: 89.5 }, { ref: 90.5 }, { ref: 87 }]);
+eq('whatIf gain', wi.gain, 2.7778, 0.0002);
+eq('whatIf more', wi.more.length, 1);
+eq('whatIf cap', AM.whatIf(uhsF, vals(uhsF, { mdcat: 175, fsc: 1000, matric: 1000 }), 'mdcat', 10, []).to, 180);
+// profileValues (idea #3): "fast|nat" falls back to NAT; a missing field is named.
+var pv = AM.profileValues({ test: 'fast|nat', fsc: 'fsc', inter: 'zero' }, { o_fast: '', o_nat: '70', t_nat: '100', o_fsc: '900', t_fsc: '1100' });
+eq('profile fallback', pv.values.o_test, '70');
+eq('profile zero', pv.values.o_inter, 0);
+eq('profile missing', AM.profileValues({ fsc: 'fsc1' }, { o_fsc1: '' }).missing, 'fsc1');
 process.stdout.write('engines: ' + n + ' cases, ' + fails + ' failed\n');
 process.exit(fails ? 1 : 0);

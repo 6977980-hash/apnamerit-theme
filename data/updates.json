@@ -3,6 +3,12 @@
   "updates": [
     {
       "date": "2026-11-02",
+      "title": "New: see in which UHS list your aggregate would have got a seat, and all aggregates at once",
+      "text": "Enter your MDCAT aggregate to see, college by college, the first of last year's 13 UHS lists that reached it; or type your marks once and get your aggregate for every university.",
+      "url": "/guides/not-selected-in-first-merit-list/"
+    },
+    {
+      "date": "2026-11-02",
       "title": "UET Lahore Fall 2026 closing merit added (1st and 4th merit lists)",
       "text": "Official Fall 2026 closing merit for every UET Lahore program, campus and category from the live admission portal: main-campus Computer Science 85.37%, Cybersecurity 85.60%, Electrical 83.33% (A1, 4th list).",
       "url": "/uet-merit-list/"

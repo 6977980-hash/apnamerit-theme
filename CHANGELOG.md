@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.35.0 (2026-11-02)
+
+- **"In which list would you have got in?"** `[am_list_when]` (inc/colleges.php, `AM.listWhen`): enter an MDCAT aggregate, see per Punjab public MBBS college the first of the 13 UHS 2025 selection lists whose open-merit closing reached it, from `uhs.json` `list_trail`. On `/guides/not-selected-in-first-merit-list/#which-list` and `/predictor/`; prefilled from `?agg=` (UHS only) or the saved MDCAT result.
+- **All universities at once** `[am_all_aggregates]` (inc/profile.php, `AM.profileValues`): Matric, FSc, FSc Part-I and the test scores the student has, typed once; every university formula runs (23 formulas), each row links to the predictor or calculator. On `/aggregate-calculator/#all`.
+- **"Is a retake or improvement worth it?"** in every calculator result (`AM.whatIf`): +10 MDCAT / +20 ECAT / +5% test / +20 FSc marks → new aggregate and the programs that newly reach their closing merit.
+- `am_formula_cfg()` shared by calculators and the all-universities form. Engine tests +9.
+
 ## 0.34.0 (2026-11-02)
 
 - UET Lahore Fall 2026 closing merit (610 rows: Merit Lists 1 and 4 and left-over seats; lists 2 and 3 parsed but left out to keep the table HTML light) from the live admission.uet.edu.pk portal; default view is now the Fall 2026 4th list with a change column against Fall 2025. Formula source: Undergraduate Prospectus Fall 2026, p. 20 (still 33/50/17). Fall 2025 and 2024 sources now point to their web.archive.org copies (old portal URLs are 404). Season line for UET, new chart `uet-lahore-closing-2026.webp`, rewritten figures on the UET merit list, campus pages, calculator and ECAT guide. check.py accepts half-up rounded figures (as PHP prints them).

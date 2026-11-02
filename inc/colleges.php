@@ -306,6 +306,103 @@ function am_sc_list_drop( $atts ): string {
 		. '<thead><tr><th scope="col">College</th><th scope="col">1st list</th><th scope="col">' . esc_html( am_ordinal( $lists ) ) . ' list</th><th scope="col">Drop</th><th scope="col">Source</th></tr></thead><tbody>' . implode( '', array_column( $rows, 1 ) ) . '</tbody></table></div>';
 }
 
+// ------------------------------------------------------------------ [am_list_when]
+/**
+ * "In which list would my aggregate have got a seat?" (idea 2026-11-02 #1). For every college of
+ * the newest `list_trail` year: the first selection list whose open-merit closing aggregate was at
+ * or below the student's aggregate. Server renders an example; am.js redraws it (AM.listWhen).
+ * Returns array( year, n lists, colleges [ [name, path, [closing per list]] ], sources per list ).
+ */
+function am_list_when_data( array $uni ): array {
+	$trail = array_filter( (array) ( $uni['list_trail'] ?? array() ), fn( $t ) => is_array( $t ) && is_numeric( $t['closing'] ?? null ) && ! empty( $t['source_url'] ) && (int) ( $t['list_no'] ?? 0 ) > 0 );
+	if ( ! $trail ) {
+		return array();
+	}
+	$year = max( array_map( fn( $t ) => (int) $t['year'], $trail ) );
+	$by   = array();
+	$src  = array();
+	$n    = 0;
+	foreach ( $trail as $t ) {
+		if ( (int) $t['year'] !== $year ) {
+			continue;
+		}
+		$k                                = (int) $t['list_no'];
+		$by[ (string) $t['campus'] ][ $k ] = round( (float) $t['closing'], 4 );
+		$src[ $k ]                        = (string) $t['source_url'];
+		$n                                = max( $n, $k );
+	}
+	$cols = array();
+	foreach ( $by as $campus => $ls ) {
+		$meta = (array) ( $uni['colleges'][ $campus ] ?? array() );
+		$path = ! empty( $meta['path'] ) && am_find_page( (string) $meta['path'] ) ? (string) $meta['path'] : '';
+		$c    = array();
+		for ( $i = 1; $i <= $n; $i++ ) {
+			$c[] = $ls[ $i ] ?? null;
+		}
+		$cols[] = array( (string) ( $meta['short'] ?? $campus ), $path, $c );
+	}
+	$s = array();
+	for ( $i = 1; $i <= $n; $i++ ) {
+		$s[] = $src[ $i ] ?? '';
+	}
+	return array( 'y' => $year, 'n' => $n, 'c' => $cols, 's' => $s, 'p' => (string) ( reset( $trail )['program'] ?? 'MBBS (public)' ) );
+}
+
+/** Rows for one aggregate: same rule as AM.listWhen in am.js (keep both in step). */
+function am_list_when_rows( array $d, float $agg ): array {
+	$rows = array();
+	foreach ( $d['c'] as $col ) {
+		$hit = 0;
+		foreach ( $col[2] as $i => $v ) {
+			if ( null !== $v && $agg >= $v ) {
+				$hit = $i + 1;
+				break;
+			}
+		}
+		$last   = null;
+		foreach ( array_reverse( $col[2] ) as $v ) {
+			if ( null !== $v ) {
+				$last = $v;
+				break;
+			}
+		}
+		$rows[] = array( 'name' => $col[0], 'path' => $col[1], 'list' => $hit, 'closing' => $hit ? $col[2][ $hit - 1 ] : $last, 'short' => $hit ? 0 : round( (float) $last - $agg, 4 ) );
+	}
+	usort( $rows, fn( $a, $b ) => ( $a['list'] ? 0 : 1 ) <=> ( $b['list'] ? 0 : 1 ) ?: ( $a['list'] ? $a['list'] <=> $b['list'] : $a['short'] <=> $b['short'] ) ?: $b['closing'] <=> $a['closing'] );
+	return $rows;
+}
+
+function am_list_when_table( array $d, float $agg ): string {
+	$rows = am_list_when_rows( $d, $agg );
+	$got  = count( array_filter( $rows, fn( $r ) => $r['list'] ) );
+	$tr   = '';
+	foreach ( $rows as $r ) {
+		$name = esc_html( $r['name'] );
+		if ( '' !== $r['path'] ) {
+			$name = '<a href="' . esc_url( home_url( $r['path'] ) ) . '">' . $name . '</a>';
+		}
+		$tr .= '<tr><th scope="row">' . $name . '</th>' . ( $r['list'] ? '<td><strong>' . esc_html( am_ordinal( $r['list'] ) ) . ' list</strong></td><td>' . esc_html( am_pct( $r['closing'] ) ) . ' · ' . am_source_link( (string) $d['s'][ $r['list'] - 1 ] ) . '</td>' : '<td>Not reached</td><td>' . esc_html( number_format( $r['short'], 2 ) ) . ' short of the last list (' . esc_html( am_pct( $r['closing'] ) ) . ')</td>' ) . '</tr>';
+	}
+	return '<p class="am-result-main">With <strong>' . esc_html( am_pct( $agg ) ) . '</strong> you would have reached <strong>' . esc_html( $got . ' of ' . count( $rows ) ) . '</strong> public colleges in the ' . esc_html( $d['y'] . '-' . substr( (string) ( $d['y'] + 1 ), 2 ) ) . ' lists.</p>'
+		. '<div class="am-table-wrap am-fit"><table class="am-table"><caption>' . esc_html( $d['p'] . ' ' . $d['y'] . ', open merit: first of ' . $d['n'] . ' UHS selection lists that reached ' . am_pct( $agg ) ) . '</caption><thead><tr><th scope="col">College</th><th scope="col">First list that reached you</th><th scope="col">Closing in that list</th></tr></thead><tbody>' . $tr . '</tbody></table></div>';
+}
+
+function am_sc_list_when( $atts ): string {
+	$atts = shortcode_atts( array( 'uni' => 'uhs', 'example' => '93.7' ), (array) $atts, 'am_list_when' );
+	$d    = am_list_when_data( am_uni( am_uni_attr( $atts ) ) );
+	if ( ! $d ) {
+		return am_stub( 'am_list_when', $atts );
+	}
+	$ex = (float) $atts['example'];
+	return '<form class="am-calc am-listwhen" data-am-listwhen novalidate>'
+		. '<div class="am-field"><label for="am-lw-agg">Your MDCAT aggregate (%)</label><input id="am-lw-agg" name="agg" type="number" inputmode="decimal" min="0" max="100" step="any" placeholder="' . esc_attr( (string) $ex ) . '" required><small>From the <a href="/mdcat-aggregate-calculator/">MDCAT aggregate calculator</a>. Punjab open merit, public MBBS.</small></div>'
+		. '<div class="am-actions"><button type="submit" class="am-btn am-btn--primary">Show my list</button></div>'
+		. '<div class="am-result" aria-live="polite"><p class="am-muted">Example for ' . esc_html( am_pct( $ex ) ) . ':</p>' . am_list_when_table( $d, $ex ) . '</div>'
+		. am_json_script( 'am-lw-data', $d )
+		. '</form>'
+		. '<p class="am-muted">Each college is read as if it were your first preference. In the real lists you get the highest college on your preference list that your merit reaches, and the ' . esc_html( (string) ( $d['y'] + 1 ) ) . ' figures will differ with seats, applicants and the test.</p>';
+}
+
 add_action(
 	'init',
 	function () {
@@ -313,5 +410,6 @@ add_action(
 		add_shortcode( 'am_college_index', 'am_sc_college_index' );
 		add_shortcode( 'am_seats', 'am_sc_seats' );
 		add_shortcode( 'am_list_drop', 'am_sc_list_drop' );
+		add_shortcode( 'am_list_when', 'am_sc_list_when' );
 	}
 );

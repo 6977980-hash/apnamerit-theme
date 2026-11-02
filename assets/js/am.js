@@ -141,7 +141,61 @@
     });
   }
 
-  var AM = { aggregate: aggregate, chance: chance, predict: predict, eligibility: eligibility, eligibleRows: eligibleRows, marksNeeded: marksNeeded };
+  /**
+   * "In which list would I have got a seat?" (idea 2026-11-02 #1). cols = [[name, path, [closing per
+   * list 1..n or null]]]. Per college: the first list whose closing was <= agg (list 0 = never), the
+   * closing in that list (or the last list's), and how far short of the last list. Same rule and order
+   * as am_list_when_rows() in inc/colleges.php.
+   */
+  function listWhen(agg, cols) {
+    return cols.map(function (c) {
+      var hit = 0, last = null;
+      for (var i = 0; i < c[2].length; i++) if (c[2][i] != null && agg >= c[2][i]) { hit = i + 1; break; }
+      for (var j = c[2].length - 1; j >= 0; j--) if (c[2][j] != null) { last = c[2][j]; break; }
+      return { name: c[0], path: c[1], list: hit, closing: hit ? c[2][hit - 1] : last, short: hit ? 0 : Math.round((last - agg) * 10000) / 10000 };
+    }).sort(function (a, b) {
+      return ((a.list ? 0 : 1) - (b.list ? 0 : 1)) || (a.list ? a.list - b.list : a.short - b.short) || (b.closing - a.closing);
+    });
+  }
+
+  /**
+   * "Is it worth it?" (idea 2026-11-02 #4): the aggregate with `step` more marks in one part (capped
+   * at its total) and the programs (rows with .ref) that the extra marks newly reach.
+   * Returns {from, to, total, agg, next, gain, more:[rows]} or {error}.
+   */
+  function whatIf(formula, values, key, step, rows) {
+    var a = aggregate(formula, values);
+    if (a.error) return a;
+    var v = {}, part = null;
+    for (var k in values) v[k] = values[k];
+    a.parts.forEach(function (p) { if (p.key === key) part = p; });
+    if (!part) return { error: 'Unknown part.' };
+    var to = Math.min(part.raw + step, part.total);
+    v['o_' + key] = to;
+    var b = aggregate(formula, v);
+    if (b.error) return b;
+    var more = (rows || []).filter(function (r) { return b.aggregate >= r.ref && a.aggregate < r.ref; }).sort(function (x, y) { return y.ref - x.ref; });
+    return { from: part.raw, to: to, total: part.total, agg: a.aggregate, next: b.aggregate, gain: Math.round((b.aggregate - a.aggregate) * 10000) / 10000, more: more };
+  }
+
+  /**
+   * One profile → one formula's values (idea 2026-11-02 #3). map = {part key: profile field, "a|b"
+   * = first filled, "zero" = 0}; profile = {o_<field>, t_<field>}. Returns {values} or {missing: field}.
+   */
+  function profileValues(map, profile) {
+    var values = {};
+    for (var key in map) {
+      if (map[key] === 'zero') { values['o_' + key] = 0; continue; }
+      var opts = map[key].split('|'), got = '';
+      for (var i = 0; i < opts.length && !got; i++) if (profile['o_' + opts[i]] !== '' && profile['o_' + opts[i]] != null) got = opts[i];
+      if (!got) return { missing: opts[0] };
+      values['o_' + key] = profile['o_' + got];
+      if (profile['t_' + got] !== '' && profile['t_' + got] != null) values['t_' + key] = profile['t_' + got];
+    }
+    return { values: values };
+  }
+
+  var AM = { aggregate: aggregate, chance: chance, predict: predict, eligibility: eligibility, eligibleRows: eligibleRows, marksNeeded: marksNeeded, listWhen: listWhen, whatIf: whatIf, profileValues: profileValues };
   root.AM = AM;
   if (typeof module !== 'undefined' && module.exports) module.exports = AM;
   if (typeof document === 'undefined') return;
@@ -376,6 +430,17 @@
           '<div class="am-field"><label for="am-tp-' + esc(form.getAttribute('data-am-calc')) + '">Solve for</label><select id="am-tp-' + esc(form.getAttribute('data-am-calc')) + '" data-am-part>' + parts + '</select></div>' +
           '<p class="am-result-main" data-am-need></p></div>';
       }
+      // "Is it worth it?" (idea 2026-11-02 #4): what a few more marks in the test or FSc would add.
+      var steps = { 1100: 20, 550: 10, 400: 20, 180: 10 }, ifs = '';
+      r.parts.forEach(function (p) {
+        if (!p.weight || p.raw >= p.total || p.key === 'matric' || /^(matric|ssc|o level)/i.test(p.label)) return;
+        var w = whatIf(f, values, p.key, steps[p.total] || Math.max(1, Math.round(p.total * 0.05)), rowsOk);
+        if (w.error || w.gain <= 0) return;
+        var names = w.more.slice(0, 3).map(function (x) { return esc(x.program + (x.campus ? ' (' + x.campus + ')' : '')); }).join(', ');
+        ifs += '<li><strong>+' + (w.to - w.from) + ' marks in ' + esc(p.label) + '</strong> (' + w.from + ' → ' + w.to + ' / ' + w.total + '): ' + pct(w.agg) + ' → <strong>' + pct(w.next) + '</strong> (+' + w.gain.toFixed(2) + ').' +
+          (rowsOk.length && !blocked ? (w.more.length ? ' Newly reaches ' + w.more.length + ' program' + (w.more.length > 1 ? 's' : '') + ': ' + names + (w.more.length > 3 ? ' and more' : '') + '.' : ' No new program reaches its closing merit.') : '') + '</li>';
+      });
+      if (ifs) html += '<h2>Is a retake or improvement worth it?</h2><p class="am-muted">With your other marks as entered, this is what a few more marks in one part would add' + (rowsOk.length && !blocked ? ', against the newest closing merits above' : '') + '. Check that your board or test allows an improvement or a new attempt.</p><ul class="am-whatif">' + ifs + '</ul>';
       out.hidden = false;
       out.innerHTML = html;
       var tgt = $('[data-am-target]', out);
@@ -813,6 +878,84 @@
     if ((qs.a && dataC[qs.a]) || (qs.b && dataC[qs.b])) draw();
     form.addEventListener('submit', function (e) { e.preventDefault(); draw(); });
     $$('input', form).forEach(function (i) { i.addEventListener('change', function () { if (find(form.a.value) && find(form.b.value)) draw(); }); });
+  });
+
+  // ---------------------------------------------------------------- list timeline (idea 2026-11-02 #1)
+  $$('form[data-am-listwhen]').forEach(function (form) {
+    var d = data(form, 'am-lw-data'), out = $('.am-result', form);
+    if (!d || !d.c) return;
+    function draw(quiet) {
+      var agg = num(form.agg.value);
+      if (notNumber(form.agg) || isNaN(agg) || agg <= 0 || agg > 100) {
+        if (quiet) return;
+        out.innerHTML = '<p class="am-error" role="alert">Enter an aggregate between 0 and 100, numbers only.</p>';
+        form.agg.focus();
+        return;
+      }
+      var rows = listWhen(agg, d.c), got = rows.filter(function (r) { return r.list; }).length;
+      var ord = function (n) { var v = n % 100; return n + (['th', 'st', 'nd', 'rd'][(v - 20) % 10] || ['th', 'st', 'nd', 'rd'][v] || 'th'); };
+      var tr = rows.map(function (r) {
+        var nm = r.path ? '<a href="' + esc(r.path) + '">' + esc(r.name) + '</a>' : esc(r.name);
+        return '<tr><th scope="row">' + nm + '</th>' + (r.list ? '<td><strong>' + ord(r.list) + ' list</strong></td><td>' + pct(r.closing) + ' · <a href="' + esc(d.s[r.list - 1]) + '" rel="noopener" target="_blank">uhs.edu.pk</a></td>' : '<td>Not reached</td><td>' + r.short.toFixed(2) + ' short of the last list (' + pct(r.closing) + ')</td>') + '</tr>';
+      }).join('');
+      out.innerHTML = '<p class="am-result-main">With <strong>' + pct(agg) + '</strong> you would have reached <strong>' + got + ' of ' + rows.length + '</strong> public colleges in the ' + d.y + '-' + String(d.y + 1).slice(2) + ' lists.</p>' +
+        '<div class="am-table-wrap am-fit"><table class="am-table"><caption>' + esc(d.p + ' ' + d.y + ', open merit: first of ' + d.n + ' UHS selection lists that reached ' + pct(agg)) + '</caption><thead><tr><th scope="col">College</th><th scope="col">First list that reached you</th><th scope="col">Closing in that list</th></tr></thead><tbody>' + tr + '</tbody></table></div>';
+      store.set('am:listwhen', form.agg.value);
+      if (!quiet) setQuery({ agg: form.agg.value });
+    }
+    var qs = getQuery(), mdcat = store.get('am:calc:uhs');
+    // A predictor link for another university (?uni=PU) is not an MDCAT aggregate.
+    var start = qs.agg && (!qs.uni || /uhs/i.test(qs.uni)) ? qs.agg : store.get('am:listwhen') || (mdcat && typeof mdcat.agg === 'number' ? mdcat.agg.toFixed(4) : '');
+    if (start) { form.agg.value = start; draw(true); }
+    form.addEventListener('submit', function (e) { e.preventDefault(); draw(false); });
+  });
+
+  // ---------------------------------------------------------------- all universities (idea 2026-11-02 #3)
+  $$('form[data-am-profile]').forEach(function (form) {
+    var d = data(form, 'am-pf-data'), out = $('.am-result', form);
+    if (!d || !d.list) return;
+    var saved = store.get('am:profile');
+    if (saved) $$('input', form).forEach(function (i) { if (saved[i.name] != null) i.value = saved[i.name]; });
+    var fieldLabel = function (k) { var el = $('label[for="am-pf-' + k + '"]', form); return el ? el.textContent : k; };
+    function run(quiet) {
+      var prof = formValues(form);
+      var typo = $$('input[type="number"]', form).filter(notNumber)[0];
+      if (typo || prof.o_matric === '' || prof.o_matric == null) {
+        if (quiet) return;
+        out.hidden = false;
+        out.innerHTML = '<p class="am-error" role="alert">' + (typo ? 'Enter numbers only, without commas.' : 'Enter your Matric marks.') + '</p>';
+        (typo || form.o_matric).focus();
+        return;
+      }
+      store.set('am:profile', prof);
+      var done = 0, tr = d.list.map(function (it) {
+        var name = '<a href="' + esc(it.url) + '">' + esc(it.u) + '</a>', cell, next;
+        var pv = it.own ? null : profileValues(it.map, prof);
+        if (it.own) {
+          cell = '—'; next = 'Needs your ' + esc(it.own) + ': <a href="' + esc(it.url) + '">' + esc(it.u) + ' calculator</a>';
+        } else if (pv.missing) {
+          cell = '—'; next = 'Add your ' + esc(fieldLabel(pv.missing).replace(/ marks$| \(%\)$/, ''));
+        } else {
+          var r = aggregate(it.f, pv.values);
+          if (r.error) { cell = '—'; next = esc(r.error); } else {
+            done++;
+            var fails = eligibility(it.f.elig, r.parts).filter(function (fl) { return it.map[fl.part] !== 'zero'; });
+            cell = '<strong>' + pct(r.aggregate) + '</strong>';
+            next = fails.length ? 'Below the minimum to apply (' + esc(fails[0].partLabel) + ' ' + esc(fails[0].min_pct) + '%)' :
+              it.pr ? '<a href="' + esc(d.pred + '?agg=' + r.aggregate.toFixed(2) + '&uni=' + encodeURIComponent(it.u)) + '">See your chances</a>' : '<a href="' + esc(it.url) + '">Open calculator</a>';
+          }
+        }
+        return '<tr><th scope="row">' + name + '</th><td>' + esc(it.f.label) + '</td><td>' + cell + '</td><td>' + next + '</td></tr>';
+      }).join('');
+      out.hidden = false;
+      out.innerHTML = '<p class="am-result-main">Aggregates worked out for <strong>' + done + ' of ' + d.list.length + '</strong> university formulas.</p>' +
+        '<div class="am-table-wrap"><table class="am-table"><caption>Your aggregate by university, each with its own official formula</caption><thead><tr><th scope="col">University</th><th scope="col">Programs / formula</th><th scope="col">Your aggregate</th><th scope="col">Next step</th></tr></thead><tbody>' + tr + '</tbody></table></div>' +
+        '<p class="am-muted">Compare each aggregate only with the closing merit of the same university. Hafiz-e-Quran marks and O/A level routes: use that university\'s calculator.</p>';
+      if (!quiet) out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
+    form.addEventListener('reset', function () { out.hidden = true; store.set('am:profile', null); });
+    if (saved) run(true);
   });
 
   // ---------------------------------------------------------------- result card image (Tier 2 idea 7)

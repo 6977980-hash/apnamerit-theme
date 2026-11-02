@@ -193,7 +193,7 @@
       "type": "content",
       "template": "calculator",
       "published": "2026-10-31",
-      "updated": "2026-11-01",
+      "updated": "2026-11-02",
       "answer": "The MDCAT aggregate for {season_year} = 50% MDCAT + 40% FSc (pre-medical) + 10% Matric, as fixed by PMDC's admission regulations. Divide each score by its total, multiply by its weight and add: 150/180 MDCAT, 1000/1100 FSc and 1000/1100 Matric give 87.12%. Enter your marks below to get yours.",
       "answer_source": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
       "content_file": "mdcat-aggregate-calculator.html",
@@ -5022,7 +5022,7 @@
       "type": "content",
       "template": "calculator",
       "published": "2026-10-31",
-      "updated": "2026-10-31",
+      "updated": "2026-11-02",
       "answer": "The merit predictor compares your aggregate with the newest official closing merit of each program (final list, open merit). More than 1.5 points above is Strong, within 1.5 points is Borderline, and lower is Unlikely. In 2025, public MBBS in Punjab closed at 93.51% to 94.87% and PUCIT Computer Science at 87.18%.",
       "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
       "content_file": "predictor.html",
@@ -5176,7 +5176,7 @@
       "path": "/aggregate-calculator/",
       "keyword": "all aggregate calculators",
       "title": "Aggregate Calculators for Every University ({season_year})",
-      "description": "All aggregate calculators in one place: MDCAT, NUST, UET, COMSATS, FAST, PU, IIUI, UAF, Bahria and more, each with its official formula and source.",
+      "description": "Enter your marks once and see your aggregate for every university: MDCAT, NUST, UET, COMSATS, FAST, GIKI, NED, PU and more, each with its official formula.",
       "h1": "All Aggregate Calculators ({season_year})",
       "crumb": "Aggregate calculators",
       "subtitle": "Official formulas for medical, engineering, computing and general universities",
@@ -5184,11 +5184,15 @@
       "template": "default",
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
-      "updated": "2026-10-31",
+      "updated": "2026-11-02",
       "answer": "Apna Merit has aggregate calculators for MDCAT (50% MDCAT, 40% FSc, 10% Matric), NUST (75% NET, 15% FSc, 10% Matric), UET Taxila, UET Peshawar, NED, FAST, GIKI, COMSATS, PU, IIUI, UAF, Air, Bahria and ITU. Each one uses the university's published formula, links its official source and compares your result with closing merits.",
       "answer_source": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
       "content_file": "aggregate-calculator.html",
       "faq": [
+        {
+          "q": "Can I calculate my aggregate for all universities at once?",
+          "a": "Yes. Enter your Matric, FSc (or FSc Part-I) and the test scores you have once; the tool applies each university's own published formula and shows every aggregate in one table. Universities with their own entry test need that test score in their own calculator."
+        },
         {
           "q": "Which aggregate calculator should I use?",
           "a": "Use the calculator of the university you are applying to. MBBS and BDS use the MDCAT (PMDC) formula; each engineering and general university has its own."
@@ -5863,6 +5867,10 @@
       "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
       "content_file": "guide-not-selected-in-first-merit-list.html",
       "faq": [
+        {
+          "q": "In which UHS list will my aggregate get a seat?",
+          "a": "No one can know the 2026 lists in advance, but our tool shows, for every Punjab public MBBS college, the first of the 13 UHS selection lists of 2025 whose closing merit was at or below your aggregate. Use it as a guide: seats, applicants and the test change every year."
+        },
         {
           "q": "When is the second UHS merit list 2026?",
           "a": "The second selection/upgradation list for public MBBS is due on 23 November 2026 and the third on 1 December 2026; UHS says more lists follow until seats are filled (13 in 2025)."
