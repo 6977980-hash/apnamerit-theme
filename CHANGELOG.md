@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.34.0 (2026-11-02)
+
+- UET Lahore Fall 2026 closing merit (610 rows: Merit Lists 1 and 4 and left-over seats; lists 2 and 3 parsed but left out to keep the table HTML light) from the live admission.uet.edu.pk portal; default view is now the Fall 2026 4th list with a change column against Fall 2025. Formula source: Undergraduate Prospectus Fall 2026, p. 20 (still 33/50/17). Fall 2025 and 2024 sources now point to their web.archive.org copies (old portal URLs are 404). Season line for UET, new chart `uet-lahore-closing-2026.webp`, rewritten figures on the UET merit list, campus pages, calculator and ECAT guide. check.py accepts half-up rounded figures (as PHP prints them).
+
 ## 0.33.2 (2026-11-01)
 
 - wp-admin and wp-login.php now print the theme icon links (same as the front end), so the dashboard tab shows the new logo instead of a browser-cached old /favicon.ico. A wp-admin Site Icon can no longer override the theme icon.

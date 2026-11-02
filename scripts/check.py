@@ -30,6 +30,7 @@ Checks:
 from __future__ import annotations
 
 import json
+from decimal import ROUND_HALF_UP, Decimal
 import os
 import re
 import shutil
@@ -633,7 +634,8 @@ def check_faq(loaded: dict[str, object]) -> None:
             for r in u.get("merit", []) or []:
                 c = r.get("closing")
                 if isinstance(c, (int, float)):
-                    closings.update({f"{c:.2f}", f"{c:.3f}", f"{c:g}"})
+                    # + half-up rounding, as PHP number_format() prints it (69.625 -> 69.63).
+                    closings.update({f"{c:.2f}", f"{c:.3f}", f"{c:g}", str(Decimal(repr(c)).quantize(Decimal("0.01"), ROUND_HALF_UP))})
     seen: dict[str, str] = {}
     for p in pages:
         path = p.get("path", "?")

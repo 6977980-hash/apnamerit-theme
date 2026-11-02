@@ -2,6 +2,12 @@
   "_note": "Student-facing change log (idea 5, 2026-11-01). One entry per new official list parsed, new page or date change: date YYYY-MM-DD, title (<= 110 chars), text (one sentence), url (site path or https). Rendered by [am_updates] on /updates/ and as RSS at /updates/feed/. The owner posts each entry on the WhatsApp Channel (site.json social.whatsapp_channel). Add the newest entry anywhere; the page sorts by date.",
   "updates": [
     {
+      "date": "2026-11-02",
+      "title": "UET Lahore Fall 2026 closing merit added (1st and 4th merit lists)",
+      "text": "Official Fall 2026 closing merit for every UET Lahore program, campus and category from the live admission portal: main-campus Computer Science 85.37%, Cybersecurity 85.60%, Electrical 83.33% (A1, 4th list).",
+      "url": "/uet-merit-list/"
+    },
+    {
       "date": "2026-11-01",
       "title": "New: compare two colleges or programs side by side",
       "text": "Closing merit by year for any two programs or medical colleges, with the difference and the official list behind every figure (for example KEMU 94.87% vs AIMC 94.45% in 2025).",

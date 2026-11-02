@@ -78,14 +78,18 @@ def main() -> None:
     bars("uhs-mbbs-public-closing-2025.webp", "Punjab public MBBS closing merit, 2025 vs 2024",
          "Open merit, final UHS selection list of each year. Source: uhs.edu.pk", rows, 92, 97,
          ("2025 final list", "2024 final list"))
-    # 2. UET Lahore main campus, A1 open merit, Fall 2025 Fourth Merit List, top 12.
+    # 2. UET Lahore main campus, A1 open merit, Fall 2026 4th Merit List vs Fall 2025, top 12.
     t = uni("uet")
-    rows = sorted(((r["program"], r["closing"], None) for r in t["merit"]
-                   if r["year"] == 2025 and r["list"] == "4th list" and r["category"] == "A1 open merit"
-                   and r.get("campus") == "Lahore (main)" and r.get("shift", "Morning") == "Morning"
-                   and r.get("predict", True) and not r.get("note")), key=lambda r: -r[1])[:12]
-    bars("uet-lahore-closing-2025.webp", "UET Lahore main campus closing merit, Fall 2025",
-         "A1 open merit, Fourth Merit List, ECAT programs (top 12). Source: UET minimum-aggregate list", rows, 60, 90)
+    def uet_a1(year: int) -> dict:
+        return {r["program"]: r["closing"] for r in t["merit"]
+                if r["year"] == year and r["list"] == "4th list" and r["category"] == "A1 open merit"
+                and r.get("campus") == "Lahore (main)" and r.get("shift", "Morning") == "Morning"
+                and r.get("predict", True) and not r.get("note")}
+    a26, a25 = uet_a1(2026), uet_a1(2025)
+    rows = sorted(((p, v, a25.get(p)) for p, v in a26.items()), key=lambda r: -r[1])[:12]
+    bars("uet-lahore-closing-2026.webp", "UET Lahore main campus merit, Fall 2026 vs 2025",
+         "A1 open merit, 4th Merit List, ECAT programs (top 12). Source: admission.uet.edu.pk", rows, 60, 90,
+         ("Fall 2026 4th list", "Fall 2025 4th list"))
     # 3. PU, open merit, 2025 last merit, BS 1st semester morning, top 12.
     p = uni("pu")
     sel = [r for r in p["merit"] if r["year"] == 2025 and r.get("category") == "Open merit"

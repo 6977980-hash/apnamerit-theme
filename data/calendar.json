@@ -1,7 +1,7 @@
 {
   "_note": "Season calendar (MASTER-PLAN 4.2 item 3 and Phase 7). universities.<slug>.status = one-line season status printed above that university's merit table; every fact in it has source_url. events = dated official facts from the last cycle (kind 'official', with source_url) and Claude's planning windows (kind 'estimate', never shown to visitors as a date). ops = recurring Apna Merit tasks. Update 'checked' whenever a status is re-verified. seasons.<slug> = the current session's official schedule (one row per step, one column per program, dates YYYY-MM-DD or start/end), printed by [am_season uni=\"<slug>\"]. seasons.<slug>.page = the site page for that season (used by the .ics file); a step's optional 'guide' = site path shown as 'what to do now' next to that step.",
   "season_year": 2027,
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "universities": {
     "uhs": {
       "status": "MDCAT 2026 was held on 20 September 2026. UHS took 2026-27 public-sector MBBS applications from 16 to 30 October 2026; the provisional order of merit is due on 13 November and the first college-wise selection list on 17 November 2026 (BDS applications open 15 December). Until the lists are out the table shows the 2025 lists; 2026 lists are added within 48 hours of each official list.",
@@ -22,6 +22,11 @@
       "status": "UET Taxila prints each year's closing merit positions in the next undergraduate prospectus. The 2026 prospectus (with 2025 entry) is not on its Downloads page yet, so the table shows 2024 entry.",
       "source_url": "https://admissions.uettaxila.edu.pk/Downloads.php",
       "checked": "2026-10-31"
+    },
+    "uet": {
+      "status": "UET Lahore's Undergraduate Fall 2026 admissions are closed: Merit Lists 1 to 4 (PDFs dated 24 July to 20 August 2026), the left-over seats list (8 September) and waiting-queue lists up to No. 12 (PDF dated 12 October) are out. The table opens on the Fall 2026 4th Merit List, the last list with automatic transfers to higher preferences.",
+      "source_url": "https://admission.uet.edu.pk/downloads",
+      "checked": "2026-11-02"
     }
   },
   "events": [

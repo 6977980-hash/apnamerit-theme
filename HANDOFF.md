@@ -1,5 +1,14 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+## UET Lahore recheck and Fall 2026 data (v0.34.0, 2026-11-02)
+
+Owner: "admission.uet.edu.pk site ab khul rahi he". The portal is a new site (downloads at `https://admission.uet.edu.pk/downloads`, files under `/uploads/downloads/<uuid>.pdf`, news at `/news`).
+- **Old URLs:** every `admission.uet.edu.pk/Downloads/...` URL (Fall 2025 walk-in/COP PDFs, Spring 2026 prospectus, Entry-2024 Default.aspx) is 404; `apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf` now serves a different file (Feb 2026 "Merit List After Change of Preferences", 1 page, no session label). So the Fall 2025/2024 rows could not be re-read from live files: they keep `archive_url` (Wayback) and page `sources` now link the Wayback copies.
+- **Added:** Fall 2026 Merit List No. 1 (253 rows), No. 4 (276, default `4th list`) and left-over seats closing (81, list `Leftover seats`) = 610 rows, live URLs. Parsed with pdftotext and checked against pdfplumber words (category, session, value per row: 0 mismatches). Type column Non-ECAT → `predict:false` + note. Lists 2 and 3 and waiting-queue lists 7-12 parsed but **left out**: with them the UET table HTML went to ~900 KB (now ~660 KB raw, 39 KB gzip). Add them only if the page weight is solved.
+- Formula unchanged (33/50/17), source now Undergraduate Prospectus Fall 2026 p. 20. Category codes pp. 22-25 (new AP1/AP2/AP1-M/AP2-M).
+- Rewritten typed figures: /uet-merit-list/ (+ FAQ), 4 campus pages (content + FAQ regenerated from data), /uet-aggregate-calculator/, /guides/ecat-aggregate-formula/ (ECAT needed table), report bullet. Chart `uet-lahore-closing-2026.webp` (2026 vs 2025). `calendar.json universities.uet` season line. check.py FAQ figures accept half-up rounding (PHP number_format: 69.625 → 69.63).
+- **Next:** UET Fall 2027 (advert was 7 Jun 2026 for Fall 2026): add lists as they land; ADP Fall 2026 applications close 24 Nov 2026 (not covered by the site).
+
 ## Ranking: private MBBS and BDS merit pages (v0.33.0, 2026-11-01)
 
 - `/mdcat-merit-list/private/` ("private medical colleges merit list", 33 colleges) and `/mdcat-merit-list/bds/` ("bds merit list", 4 public + 18 private) use the new `[am_merit_table program="…"]` filter (substring match on program). Figures in their content files and FAQs are typed from uhs.json 2025-26: refresh when 2026-27 private/BDS lists land (BDS schedule starts 15 Dec 2026).

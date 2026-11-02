@@ -138,31 +138,61 @@
   {
    "slug": "uet",
    "name": "University of Engineering and Technology (UET), Lahore",
-   "website": "https://uet.edu.pk/",
+   "website": "https://admission.uet.edu.pk/",
    "field": "engineering",
    "documents": [
     {
-     "label": "Undergraduate Prospectus Spring 2026: merit formula p. 19, categories pp. 21-24 (read from web.archive.org copy, UET site down)",
+     "label": "Undergraduate Prospectus Fall 2026: merit formula p. 20, categories pp. 22-25",
+     "url": "https://admission.uet.edu.pk/uploads/downloads/262b6351-9035-409a-ba3d-f8bd8f9d549a.pdf",
+     "fetched": "2026-11-02"
+    },
+    {
+     "label": "Merit List No. 1, Undergraduate Fall 2026: minimum aggregate report",
+     "url": "https://admission.uet.edu.pk/uploads/downloads/91a868d2-dfcb-4974-af21-453f6b6853d0.pdf",
+     "fetched": "2026-11-02"
+    },
+    {
+     "label": "Merit List No. 2, Undergraduate Fall 2026: closing merit report",
+     "url": "https://admission.uet.edu.pk/uploads/downloads/a8090b4d-2448-42e7-999a-a948573c7f3b.pdf",
+     "fetched": "2026-11-02"
+    },
+    {
+     "label": "Merit List No. 3, Undergraduate Fall 2026: closing merit report",
+     "url": "https://admission.uet.edu.pk/uploads/downloads/f6d38fa4-a086-42a7-8c53-b2e9a52c99df.pdf",
+     "fetched": "2026-11-02"
+    },
+    {
+     "label": "Merit List No. 4, Undergraduate Fall 2026: closing merit report",
+     "url": "https://admission.uet.edu.pk/uploads/downloads/bce6493e-8fe7-4e9e-a013-92003937d908.pdf",
+     "fetched": "2026-11-02"
+    },
+    {
+     "label": "Left over seats closing merit, Undergraduate Fall 2026 (8 Sep 2026)",
+     "url": "https://admission.uet.edu.pk/uploads/downloads/7b256eee-bf0b-4849-8f62-289dade2157b.pdf",
+     "fetched": "2026-11-02"
+    },
+    {
+     "label": "Undergraduate Prospectus Spring 2026: merit formula p. 19, categories pp. 21-24 (old address, now 404; read from web.archive.org copy)",
      "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/UG_WHOLE_Spring_03_12_2025.pdf",
      "fetched": "2026-10-31"
     },
     {
-     "label": "Fourth Merit List, Fall 2025: minimum aggregate by program, campus and category",
+     "label": "Fourth Merit List, Fall 2025: minimum aggregate by program, campus and category (read from web.archive.org; this address now serves a different file)",
      "url": "https://apply.uet.edu.pk/pdf/MinimumAggregate2-1.pdf",
      "fetched": "2026-10-31"
     },
     {
-     "label": "Walk-in admissions, Fall 2025: minimum aggregate",
+     "label": "Walk-in admissions, Fall 2025: minimum aggregate (old address, now 404; read from web.archive.org)",
      "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/walkin_list.pdf",
      "fetched": "2026-10-31"
     },
     {
-     "label": "Change of preference (manual form), Fall 2025: minimum aggregate",
+     "label": "Change of preference (manual form), Fall 2025: minimum aggregate (old address, now 404; read from web.archive.org)",
      "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/cop_list.pdf",
      "fetched": "2026-10-31"
     },
     {
-     "label": "Change of preference (online), Fall 2025: minimum aggregate",
+     "label": "Change of preference (online), Fall 2025: minimum aggregate (old address, now 404; read from web.archive.org)",
      "url": "https://admission.uet.edu.pk/Downloads/NoticesNews/COP2.pdf",
      "fetched": "2026-10-31"
     }
