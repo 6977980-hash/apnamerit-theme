@@ -5,6 +5,7 @@
  * picker; am.js redraws the table for any pair and writes ?a=&b= into the address bar
  * (canonical stays /compare/). Data = each university's default category, one figure per year:
  * the default list where that year has it, else the last list we hold for that year (named).
+ * Links use a row's archive_url when it has one (the old UET portal addresses are 404).
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -41,8 +42,20 @@ function am_compare_data(): array {
 			$has = $out[ $id ]['years'][ $y ] ?? null;
 			// The default list wins; otherwise keep the lowest figure of that year (the latest list closes lowest).
 			if ( ! $has || ( ( $r['list'] ?? '' ) === $list && $has[1] !== $list ) || ( $has[1] !== $list && ( $r['list'] ?? '' ) !== $list && (float) $r['closing'] < $has[0] ) ) {
-				$out[ $id ]['years'][ $y ] = array( round( (float) $r['closing'], 2 ), (string) ( $r['list'] ?? '' ), (string) $r['source_url'] );
+				$out[ $id ]['years'][ $y ] = array( round( (float) $r['closing'], 2 ), (string) ( $r['list'] ?? '' ), (string) ( $r['archive_url'] ?? '' ? $r['archive_url'] : $r['source_url'] ) );
 			}
+		}
+	}
+	// A year published without a shift (UET 2024 portal) joins the program's only shift entry, so
+	// its history stays in one row; with two shifts it stays separate (we cannot tell which).
+	foreach ( $out as $id => $o ) {
+		if ( '' !== $o['shift'] ) {
+			continue;
+		}
+		$sib = array_keys( array_filter( $out, fn( $x, $k ) => $k !== $id && '' !== $x['shift'] && $x['uni'] === $o['uni'] && $x['program'] === $o['program'] && $x['campus'] === $o['campus'], ARRAY_FILTER_USE_BOTH ) );
+		if ( 1 === count( $sib ) && ! array_intersect_key( $o['years'], $out[ $sib[0] ]['years'] ) ) {
+			$out[ $sib[0] ]['years'] += $o['years'];
+			unset( $out[ $id ] );
 		}
 	}
 	foreach ( $out as &$o ) {

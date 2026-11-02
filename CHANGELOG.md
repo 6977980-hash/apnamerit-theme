@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.35.1 (2026-11-02)
+
+- Compare: a year published without a shift (UET Lahore Fall 2024 portal) now joins the program's only shift entry, so e.g. UET CS Lahore shows 2026, 2025 and 2024 in one row (556 → 508 entries); links use a row's `archive_url` when it has one (old UET portal addresses are 404).
+
 ## 0.35.0 (2026-11-02)
 
 - **"In which list would you have got in?"** `[am_list_when]` (inc/colleges.php, `AM.listWhen`): enter an MDCAT aggregate, see per Punjab public MBBS college the first of the 13 UHS 2025 selection lists whose open-merit closing reached it, from `uhs.json` `list_trail`. On `/guides/not-selected-in-first-merit-list/#which-list` and `/predictor/`; prefilled from `?agg=` (UHS only) or the saved MDCAT result.
