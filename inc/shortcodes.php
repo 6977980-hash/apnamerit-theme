@@ -120,7 +120,8 @@ function am_list_rank( string $list ): int {
 }
 
 function am_list_label( string $list ): string {
-	return preg_match( '/\blist$/i', $list ) ? $list : $list . ' list';
+	// "Portal, 14 Sep 2024", "Walk-in", "Pref. change (online)" and "Leftover seats" are names: no " list" after them.
+	return preg_match( '/\blist$|^(portal|walk-in|pref\.|leftover)/i', $list ) ? $list : $list . ' list';
 }
 
 /**

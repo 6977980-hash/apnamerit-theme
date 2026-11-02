@@ -852,7 +852,7 @@
     });
     var find = function (v) { return byLabel[String(v || '').trim().toLowerCase()] || (dataC[v] ? v : ''); };
     function cell(v) {
-      return v ? '<strong>' + pct(v[0]) + '</strong><small>' + esc(/list$/i.test(v[1]) ? v[1] : v[1] + ' list') + ' · <a href="' + esc(v[2]) + '" rel="noopener" target="_blank">official source</a></small>' : '—';
+      return v ? '<strong>' + pct(v[0]) + '</strong><small>' + esc(/\blist$|^(portal|walk-in|pref\.|leftover)/i.test(v[1]) ? v[1] : v[1] + ' list') + ' · <a href="' + esc(v[2]) + '" rel="noopener" target="_blank">official source</a></small>' : '—';
     }
     function draw() {
       var a = find(form.a.value), b = find(form.b.value);

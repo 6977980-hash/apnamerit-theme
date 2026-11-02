@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.35.2 (2026-11-02)
+
+- List names such as "Portal, 14 Sep 2024", "Walk-in", "Pref. change (online)" and "Leftover seats" no longer get " list" appended ("Portal, 14 Sep 2024 list") in PHP (`am_list_label`) and the compare tool.
+
 ## 0.35.1 (2026-11-02)
 
 - Compare: a year published without a shift (UET Lahore Fall 2024 portal) now joins the program's only shift entry, so e.g. UET CS Lahore shows 2026, 2025 and 2024 in one row (556 → 508 entries); links use a row's `archive_url` when it has one (old UET portal addresses are 404).
