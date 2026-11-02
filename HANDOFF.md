@@ -15,6 +15,12 @@ Owner: "admission.uet.edu.pk site ab khul rahi he". The portal is a new site (do
 - Linked from /mdcat-merit-list/ (private section), MDCAT calculator and UHS admission related links.
 - GSC batch 4 for the owner: private, bds, /compare/, /updates/, /guides/, four UHS post-result guides, /mdcat-merit-list/kemu/.
 
+## SERP-gap ideas 1, 3, 4 (v0.35.0, 2026-11-02)
+Doc: `/mnt/project-files/apnamerit.com/ideas/2026-11-02-novel-ideas.md`. Owner picked 1, 3, 4; #2 (MDCAT position estimator) waits for the UHS 2026-27 provisional merit list (store counts per aggregate band only, never names); #5-7 not picked yet.
+- `[am_list_when uni="uhs"]` (inc/colleges.php + `AM.listWhen`): first 2025 list (1-13) reaching an aggregate per public college, from `list_trail`. When 2026-27 lists come, add them to `list_trail` with `year` 2026 and the tool switches to the newest year by itself.
+- `[am_all_aggregates]` (inc/profile.php + `AM.profileValues`): part→field map in `am_profile_source()`; universities whose own test is not a profile field show "Needs your … test". New university formula = check its mapping there.
+- Calculator "Is a retake or improvement worth it?" (`AM.whatIf`), steps 1100→20, 550→10, 400→20, 180→10, else 5% of total; Matric skipped.
+
 ## Student-intent ideas, Tier 2 (v0.32.0, 2026-11-01)
 Owner: "next phase shuru kro" (after audit v2). Built ideas 6-9 and 11 of `/mnt/project-files/apnamerit.com/ideas/2026-11-01-student-intent-ideas.md`; idea 10 (expected-merit range) waits for May 2027.
 - **Compare** `/compare/` (`inc/compare.php`, `[am_compare a="<slug>:<am_slug(program campus shift)>" b="…"]`): default pair KEMU vs AIMC rendered server-side; 552 programs/colleges in a JS-built datalist; JSON uses lookup tables (u, l, s, m, r). One figure per year: default list, else the lowest figure of another list (named under it). No static "X vs Y" pages yet (thin-page risk; add only for pairs with real search demand).
