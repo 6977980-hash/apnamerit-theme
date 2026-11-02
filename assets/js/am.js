@@ -898,7 +898,7 @@
         var nm = r.path ? '<a href="' + esc(r.path) + '">' + esc(r.name) + '</a>' : esc(r.name);
         return '<tr><th scope="row">' + nm + '</th>' + (r.list ? '<td><strong>' + ord(r.list) + ' list</strong></td><td>' + pct(r.closing) + ' · <a href="' + esc(d.s[r.list - 1]) + '" rel="noopener" target="_blank">uhs.edu.pk</a></td>' : '<td>Not reached</td><td>' + r.short.toFixed(2) + ' short of the last list (' + pct(r.closing) + ')</td>') + '</tr>';
       }).join('');
-      out.innerHTML = '<p class="am-result-main">With <strong>' + pct(agg) + '</strong> you would have reached <strong>' + got + ' of ' + rows.length + '</strong> public colleges in the ' + d.y + '-' + String(d.y + 1).slice(2) + ' lists.</p>' +
+      out.innerHTML = '<p class="am-result-main">With <strong>' + pct(agg) + '</strong> you would have reached <strong>' + got + ' of ' + rows.length + '</strong> public colleges in the ' + d.y + '-' + String(d.y + 1).slice(2) + ' lists.' + (got ? '' : ' Private MBBS, BDS and NUMS close lower: <a href="/predictor/?agg=' + agg + '&amp;uni=UHS%20Punjab">check them in the predictor</a>.') + '</p>' +
         '<div class="am-table-wrap am-fit"><table class="am-table"><caption>' + esc(d.p + ' ' + d.y + ', open merit: first of ' + d.n + ' UHS selection lists that reached ' + pct(agg)) + '</caption><thead><tr><th scope="col">College</th><th scope="col">First list that reached you</th><th scope="col">Closing in that list</th></tr></thead><tbody>' + tr + '</tbody></table></div>';
       store.set('am:listwhen', form.agg.value);
       if (!quiet) setQuery({ agg: form.agg.value });
