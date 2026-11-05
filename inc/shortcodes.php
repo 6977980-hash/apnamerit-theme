@@ -574,6 +574,8 @@ function am_sc_merit_table( $atts ): string {
 	if ( ! $show_campus && $values['campus'] ) {
 		$fixed[] = $values['campus'][0] . ( $values['shift'] ? ' (' . $values['shift'][0] . ')' : '' );
 	}
+	// Closing merit position (UHS: merit number of the closing candidate in the Final Order of Merit).
+	$show_pos  = (bool) array_filter( $rows, fn( $r ) => is_numeric( $r['position'] ?? null ) );
 	$src_key   = fn( $r ) => (string) $r['source_url'] . '|' . (string) ( $r['archive_url'] ?? '' );
 	$srcs      = array_values( array_unique( array_map( $src_key, $rows ) ) );
 	$src_no    = array_flip( $srcs );
@@ -633,6 +635,7 @@ function am_sc_merit_table( $atts ): string {
 			. '<th scope="row">' . esc_html( (string) $r['program'] ) . ( $show_campus && ! empty( $r['campus'] ) ? '<small class="am-mcamp">' . esc_html( (string) $r['campus'] . ( ! empty( $r['shift'] ) ? ', ' . $r['shift'] : '' ) ) . '</small>' : '' ) . ( ! empty( $r['note'] ) ? '<small>' . esc_html( (string) $r['note'] ) . '</small>' : '' ) . '</th>'
 			// Closing % second, so it stays on screen at 375 px (Fix 5, 2026-11-01).
 			. '<td data-v="' . esc_attr( (string) (float) $r['closing'] ) . '"><strong>' . esc_html( am_pct( $r['closing'] ) ) . '</strong></td>'
+			. ( $show_pos ? ( is_numeric( $r['position'] ?? null ) ? '<td data-v="' . esc_attr( (string) (int) $r['position'] ) . '">' . esc_html( number_format( (int) $r['position'] ) ) . '</td>' : '<td>—</td>' ) : '' )
 			. ( $show_campus ? '<td class="am-camp">' . esc_html( (string) ( $r['campus'] ?? '' ) ) . ( ! empty( $r['shift'] ) ? '<small>' . esc_html( (string) $r['shift'] ) . '</small>' : '' ) . '</td>' : '' )
 			. ( $multi['category'] ? '<td>' . esc_html( (string) ( $r['category'] ?? '' ) ) . '</td>' : '' )
 			. ( $multi['list'] ? '<td>' . esc_html( (string) ( $r['list'] ?? '' ) ) . '</td>' : '' )
@@ -650,6 +653,7 @@ function am_sc_merit_table( $atts ): string {
 	}
 
 	$cols = array( array( 'Program', false ), array( 'Closing aggregate', true ) );
+	$show_pos && ( $cols[] = array( 'Closing position', true ) );
 	$show_campus && ( $cols[] = array( 'Campus', false ) );
 	$multi['category'] && ( $cols[] = array( 'Category', false ) );
 	$multi['list'] && ( $cols[] = array( 'List', false ) );
@@ -672,6 +676,10 @@ function am_sc_merit_table( $atts ): string {
 	} else {
 		list( $u, $arch ) = explode( '|', $srcs[0], 2 );
 		$src_html         = '<p class="am-muted am-srcs">Source of every row: ' . am_source_link( $u, $arch ) . '</p>';
+	}
+	if ( $show_pos ) {
+		$pos_src = array_values( array_unique( array_filter( array_map( fn( $r ) => (string) ( $r['position_source_url'] ?? '' ), $rows ) ) ) );
+		$src_html .= '<p class="am-muted am-srcs">Closing position = merit number of the last open-merit candidate admitted (the one with the closing aggregate) in the official order of merit; "—" where the two lists do not match. Sources: ' . implode( ', ', array_map( fn( $u ) => am_source_link( $u ), $pos_src ) ) . '</p>';
 	}
 	if ( ! empty( $uni['table_note'] ) ) {
 		$src_html .= '<p class="am-muted am-tnote">' . esc_html( (string) $uni['table_note'] ) . '</p>';

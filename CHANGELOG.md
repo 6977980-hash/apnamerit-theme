@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.36.0 (2026-11-05)
+
+- **MDCAT closing merit positions** (UHS 2025-26): `position` + `position_source_url` on 142 uhs.json merit rows (public MBBS Final + 1st, public BDS Final + 1st, private MBBS Final + 1st, private BDS 3rd + 1st) = merit number, in UHS's Final Order of Merit of that sector, of the open-merit student holding each college's closing aggregate. Built by `scripts/uhs_positions.py scripts/uhs_positions_2025.json --write` (IDs matched in memory only; no names/IDs stored). Two rows left blank where the two UHS pages disagree (UCMD private final, Pak Red Crescent private 1st).
+- Merit tables show a sortable "Closing position" column when rows have one, plus a source line; college pages print the closing position line; /mdcat-merit-list/ section `#closing-position` + English and Roman Urdu FAQs.
+
 ## 0.35.2 (2026-11-02)
 
 - List names such as "Portal, 14 Sep 2024", "Walk-in", "Pref. change (online)" and "Leftover seats" no longer get " list" appended ("Portal, 14 Sep 2024 list") in PHP (`am_list_label`) and the compare tool.

@@ -1,5 +1,13 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
+
+## MDCAT closing merit positions (v0.36.0, 2026-11-05)
+
+Owner: "mdcat ki closing postions find kro". UHS selection lists carry no merit number, but each sector's **Final Order of Merit** page numbers every candidate (Sr #). `scripts/uhs_positions.py scripts/uhs_positions_2025.json --write` joins the two by UHS user ID in memory and writes `position` (merit number of the open-merit student holding each college's closing aggregate) + `position_source_url` on uhs.json merit rows; nothing personal is stored. 142 of 144 2025 rows; blank where the pages disagree (UCMD private Final: order shows 75.9111 vs list 75.9444; Pak Red Crescent private 1st: candidate missing from the order). FJMC public Final: another FJMC student's aggregate differs between pages (94.0455 list vs 93.7955 order); we use the closing-aggregate holder (2,643).
+- Order pages: public MBBS `finalommbbsml25.php` (top 4000), public BDS `1ombdsmlpublic25.php` (top 2000, linked from finalpublicmeritlistbds2025.php), private MBBS `finalommbbsmlprivate25.php`, private BDS `finalombdsmlprivate25.php` (all www.uhs.edu.pk).
+- Shown: merit table "Closing position" column (any uni whose rows carry `position`), source line under the table, college pages line, /mdcat-merit-list/ `#closing-position` section + 2 FAQs (typed figures: KEMU 440/399, AIMC 946, SIMS 1,447, Narowal 3,516, BDS 1,513-1,619, private 777-7,859: re-read when data changes).
+- **2026-27:** when UHS publishes the Final Order of Merit and selection lists, add a spec entry per list (order + list_url) and re-run. Idea #2 (MDCAT position estimator) can now use these positions. KMU/NUMS/Sindh: not done (NUMS/KMU lists already parsed only for aggregates; NUST positions still open).
+
 ## UET Lahore recheck and Fall 2026 data (v0.34.0, 2026-11-02)
 
 Owner: "admission.uet.edu.pk site ab khul rahi he". The portal is a new site (downloads at `https://admission.uet.edu.pk/downloads`, files under `/uploads/downloads/<uuid>.pdf`, news at `/news`).

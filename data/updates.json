@@ -1,6 +1,12 @@
 {
   "_note": "Student-facing change log (idea 5, 2026-11-01). One entry per new official list parsed, new page or date change: date YYYY-MM-DD, title (<= 110 chars), text (one sentence), url (site path or https). Rendered by [am_updates] on /updates/ and as RSS at /updates/feed/. The owner posts each entry on the WhatsApp Channel (site.json social.whatsapp_channel). Add the newest entry anywhere; the page sorts by date.",
   "updates": [
+  {
+   "date": "2026-11-05",
+   "title": "New: closing merit positions (merit numbers) for every UHS medical and dental college",
+   "text": "The MDCAT merit list now shows the UHS merit number of the last open-merit student admitted to each college in 2025: KEMU 440, Narowal Medical College 3,516 in the final public MBBS list.",
+   "url": "/mdcat-merit-list/"
+  },
     {
       "date": "2026-11-02",
       "title": "New: see in which UHS list your aggregate would have got a seat, and all aggregates at once",

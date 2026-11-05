@@ -86,6 +86,19 @@ function am_sc_college( $atts ): string {
 		. '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( $campus . ': MBBS open-merit closing aggregate in the last UHS selection list of each year' ) . '</caption>'
 		. '<thead><tr><th scope="col">Year</th><th scope="col">Closing merit</th><th scope="col">Change</th><th scope="col">List</th><th scope="col">Source</th></tr></thead><tbody>' . $body . '</tbody></table></div>';
 
+	// Closing merit position: merit number of the closing candidate in the UHS Final Order of Merit.
+	if ( is_numeric( $row['position'] ?? null ) ) {
+		$first = null;
+		foreach ( (array) ( $uni['merit'] ?? array() ) as $r ) {
+			if ( (int) $r['year'] === $new && '1st' === ( $r['list'] ?? '' ) && ( $r['program'] ?? '' ) === $row['program'] && ( $r['campus'] ?? '' ) === $campus && is_numeric( $r['position'] ?? null ) ) {
+				$first = (int) $r['position'];
+			}
+		}
+		$html .= '<p>Closing merit position ' . esc_html( (string) $new ) . ': the last open-merit seat at ' . esc_html( $short ) . ' went to merit number <strong>' . esc_html( number_format( (int) $row['position'] ) ) . '</strong> in the UHS Final Order of Merit'
+			. ( null !== $first ? ' (' . esc_html( number_format( $first ) ) . ' in the 1st list)' : '' )
+			. '. If your number in the next UHS merit list is smaller, you were ahead of that student. Seats and applicants change each year, so use it as a guide only. Source: ' . am_source_link( (string) ( $row['position_source_url'] ?? '' ) ) . '.</p>';
+	}
+
 	// 2. Every selection list of the newest year.
 	$trail = array_values( array_filter( (array) ( $uni['list_trail'] ?? array() ), fn( $t ) => (int) ( $t['year'] ?? 0 ) === $new && ( $t['campus'] ?? '' ) === $campus ) );
 	usort( $trail, fn( $a, $b ) => (int) $a['list_no'] <=> (int) $b['list_no'] );

@@ -35,6 +35,26 @@
      "fetched": "2026-11-01"
     },
     {
+     "label": "Public MBBS 2025-26, Final Order of Merit (open merit, top 4000): closing positions",
+     "url": "https://www.uhs.edu.pk/finalommbbsml25.php",
+     "fetched": "2026-11-05"
+    },
+    {
+     "label": "Public BDS 2025-26, Final Order of Merit (open merit, top 2000): closing positions",
+     "url": "https://www.uhs.edu.pk/1ombdsmlpublic25.php",
+     "fetched": "2026-11-05"
+    },
+    {
+     "label": "Private MBBS 2025-26, Final Order of Merit (open merit): closing positions",
+     "url": "https://www.uhs.edu.pk/finalommbbsmlprivate25.php",
+     "fetched": "2026-11-05"
+    },
+    {
+     "label": "Private BDS 2025-26, Final Order of Merit (open merit): closing positions",
+     "url": "https://www.uhs.edu.pk/finalombdsmlprivate25.php",
+     "fetched": "2026-11-05"
+    },
+    {
      "label": "Public MBBS 2025-26, 13th and final selection list (open merit)",
      "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
      "fetched": "2026-10-31"

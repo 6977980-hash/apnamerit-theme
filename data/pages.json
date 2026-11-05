@@ -309,7 +309,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
-      "updated": "2026-11-01",
+      "updated": "2026-11-05",
       "answer": "In the final 2025 UHS selection list, Punjab public MBBS colleges closed between 94.87% (King Edward Medical University) and 93.51% (Narowal Medical College) on open merit, about 0.7 to 1.2 points lower than in 2024. Private MBBS colleges closed between 90.84% and 61.00%, and public BDS colleges at about 93.4%.",
       "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
       "content_file": "mdcat-merit-list.html",
@@ -333,6 +333,10 @@
         {
           "q": "Why is the 1st merit list higher than the final list?",
           "a": "Students who get a seat in the 1st list move to colleges they prefer or leave, and their seats go to the next students in merit. So the last admitted aggregate usually falls with each list."
+        },
+        {
+          "q": "What merit number (position) closed public MBBS in Punjab in 2025?",
+          "a": "In the final 2025 UHS list, the last open-merit seat at King Edward Medical University went to merit number 440 in the UHS Final Order of Merit, and at Narowal Medical College, the last public college, to 3,516. The Closing position column shows every college."
         },
         {
           "q": "Where is the official UHS merit list?",
@@ -360,6 +364,11 @@
           "lang": "ur-Latn"
         },
         {
+          "q": "Merit number kitna ho to government MBBS mil jata hai?",
+          "a": "2025 mein UHS ki Final Order of Merit mein KEMU ki aakhri open merit seat merit number 440 par gayi aur sab se aakhri government college (Narowal) ki 3,516 par. Har saal seats aur students badalte hain, is liye yeh sirf andaza hai.",
+          "lang": "ur-Latn"
+        },
+        {
           "q": "Private medical college ka merit kitna jata hai?",
           "a": "2025 ki final list mein private MBBS colleges 90.84% se 61.00% tak close hue. Har college ka alag merit hai, table mein apna college dekhein.",
           "lang": "ur-Latn"
@@ -381,6 +390,21 @@
           "label": "UHS 13th and final selection list, public MBBS 2025-26 (open merit)",
           "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
           "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS Final Order of Merit, public MBBS 2025-26 (open merit, top 4000): closing positions",
+          "url": "https://www.uhs.edu.pk/finalommbbsml25.php",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "UHS Final Order of Merit, private MBBS 2025-26 (open merit): closing positions",
+          "url": "https://www.uhs.edu.pk/finalommbbsmlprivate25.php",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "UHS Final Order of Merit, public BDS 2025-26 (open merit): closing positions",
+          "url": "https://www.uhs.edu.pk/1ombdsmlpublic25.php",
+          "fetched": "2026-11-05"
         },
         {
           "label": "UHS 17th selection list, public MBBS 2024-25 (college-wise PDFs)",
