@@ -998,6 +998,54 @@
     }, 'image/png');
   }
 
+  // ---------------------------------------------------------------- documents checklist
+  // [am_doc_checklist]: one university at a time, items for the ticked cases only, ticks kept here.
+  $$('[data-am-docs]').forEach(function (form) {
+    var sel = $('select', form), K = 'am_docs', st = store.get(K) || {};
+    var secs = $$('[data-am-docs-uni]'), qs = getQuery();
+    var has = function (u) { return secs.some(function (s) { return s.getAttribute('data-am-docs-uni') === u; }); };
+    st.t = st.t || {};
+    if (qs.uni && has(qs.uni)) sel.value = qs.uni;
+    else if (st.u && has(st.u)) sel.value = st.u;
+    (st.g || []).forEach(function (g) { var c = $('[data-g="' + g + '"] input', form); if (c) c.checked = true; });
+    $$('[data-k]').forEach(function (c) { c.checked = !!st.t[c.getAttribute('data-k')]; });
+    function show() {
+      var u = sel.value, gs = $$('[data-g] input:checked', form).map(function (c) { return c.value; });
+      secs.forEach(function (s) {
+        var on = s.getAttribute('data-am-docs-uni') === u, used = (s.getAttribute('data-used') || '').split(' ');
+        s.hidden = !on;
+        if (!on) return;
+        $$('[data-g]', form).forEach(function (l) { l.hidden = used.indexOf(l.getAttribute('data-g')) < 0; });
+        var n = 0, done = 0;
+        $$('li', s).forEach(function (li) {
+          var f = li.getAttribute('data-for');
+          li.hidden = !!f && !f.split(' ').some(function (g) { return gs.indexOf(g) >= 0 && used.indexOf(g) >= 0; });
+          if (!li.hidden) { n++; if ($('input', li).checked) done++; }
+        });
+        $$('ul', s).forEach(function (ul) { ul.previousElementSibling.hidden = !$$('li:not([hidden])', ul).length; });
+        $('[data-am-docs-count]', s).textContent = done + ' of ' + n + ' ready.';
+      });
+      st.u = u; st.g = gs; store.set(K, st);
+    }
+    form.addEventListener('change', show);
+    $('.am-docs').addEventListener('change', function (e) {
+      var k = e.target.getAttribute('data-k');
+      if (!k) return;
+      if (e.target.checked) st.t[k] = 1; else delete st.t[k];
+      show();
+    });
+    $('[data-am-docs-print]', form).addEventListener('click', function () {
+      var h = document.documentElement;
+      h.classList.add('am-pdocs');
+      window.addEventListener('afterprint', function () { h.classList.remove('am-pdocs'); }, { once: true });
+      window.print();
+    });
+    $('[data-am-docs-clear]', form).addEventListener('click', function () {
+      st.t = {}; $$('[data-k]').forEach(function (c) { c.checked = false; }); show();
+    });
+    show();
+  });
+
   // ---------------------------------------------------------------- share
   document.addEventListener('click', function (e) {
     var img = e.target.closest('[data-am-img]');

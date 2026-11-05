@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.38.0 (2026-11-05)
+
+- **Admission documents checklist** `/guides/admission-documents-checklist/` (novel idea #7): `[am_doc_checklist]` (`inc/documents.php`) from `data/documents.json`. UHS Punjab MBBS/BDS 2026-27, KMU 2025-26, UET Lahore Fall 2026, UET Taxila 2025, COMSATS 2024-25, KU Admissions 2027: every item paraphrased from the official prospectus/policy with its printed page. Student picks a university and ticks their cases (A-Level, Hafiz, quota seats, outside province, father not alive...), the list keeps only their documents, split into "with the application" and "when selected"; ticks stay in localStorage; "Print or save as PDF" prints only the list. Works without JavaScript (all lists shown with case labels).
+
 ## 0.37.0 (2026-11-05)
 
 - **IST Islamabad calculator** `/ist-aggregate-calculator/` (`data/universities/ist.json`): official Merit Determination Criteria read in the owner's Chrome (ugadmission.ist.edu.pk is 502 to the container; www.ist.edu.pk pages render client-side). Engineering FSc/DAE 20% Matric + 40% FSc Part-I/DAE + 40% entry test; engineering A-Level 40% O-Level equivalence + 60% test; computing/science 40% Matric + 60% FSc Part-I (no test). Eligibility floors (engineering Matric 60%, FSc 60%; CS/AI/DS/SE 50%), Fall 2026 seats and accepted tests (NAT, USAT, NET, ECAT, ETEA, MUET, NED, ACT) in the content. IST publishes no closing merit (status only after login on eportal.ist.edu.pk), so no merit page.

@@ -6135,6 +6135,99 @@
       "updated": "2026-11-01"
     },
     {
+      "path": "/guides/admission-documents-checklist/",
+      "keyword": "documents required for admission",
+      "title": "Admission Documents Checklist {season_year}: MBBS, UET, KU",
+      "description": "Documents required for admission at UHS, KMU, UET Lahore, UET Taxila, COMSATS and KU: only the ones your case needs, with official page numbers.",
+      "h1": "Admission Documents Checklist: Only the Papers You Need",
+      "crumb": "Documents checklist",
+      "type": "content",
+      "template": "default",
+      "parents": [
+        "/guides/"
+      ],
+      "subtitle": "Tick what applies to you, keep track on your phone, print it for the admission office",
+      "answer": "Most Pakistani universities ask for your Matric and Inter result cards or certificates, your CNIC or B-Form, a parent's CNIC, your domicile and recent photographs, and selected students bring originals with attested copies. Quota seats, Hafiz-e-Quran marks, A-Level and students from other provinces need extra papers, listed below with the official prospectus page for each university.",
+      "answer_source": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+      "content_file": "guide-admission-documents-checklist.html",
+      "faq": [
+        {
+          "q": "What documents are required for MBBS admission in Punjab?",
+          "a": "For UHS 2026-27 you upload your Punjab domicile, board-verified SSC and HSSC result cards, your CNIC or B-Form, a parent's or guardian's ID, a colour photo on white background, your signature with left thumbprint and the paid Rs 2,000 challan (prospectus pp. 49-53). Quota seats need extra certificates."
+        },
+        {
+          "q": "What is the file size for UHS document upload?",
+          "a": "Each document must be a JPG or PNG of at most 500 KB, scanned from the original, clear and readable. Both sides of a CNIC go as separate files (UHS prospectus 2026-27, p. 53)."
+        },
+        {
+          "q": "Do I need IBCC attestation before applying to UHS?",
+          "a": "Not if you passed HSSC in Pakistan: board verification is enough at application, and IBCC attestation is done after you join a college. A-Level and other foreign qualifications need an IBCC equivalence certificate or provisional letter with the application (pp. 50-51)."
+        },
+        {
+          "q": "What documents does UET Lahore need after selection?",
+          "a": "The paid challan, original certificates, two sets of photocopies of each educational document including the domicile, four photographs, two CNIC or B-Form copies, bio-data Form-I, medical Form-II, an attested income certificate of your parent and an undertaking on Rs 100 judicial paper (Fall 2026 prospectus, p. 30)."
+        },
+        {
+          "q": "Which documents does a Hafiz-e-Quran need for extra marks?",
+          "a": "At UET Lahore and UET Taxila there is no certificate to upload: tick Hafiz-e-Quran on the online form and pass the oral test of the university's Verification Committee on the notified date. UHS MBBS/BDS merit has no Hafiz marks."
+        },
+        {
+          "q": "Admission ke liye kaun se documents chahiye?",
+          "a": "Aam tor par Matric aur Inter ke result card ya certificate, apna CNIC ya B-Form, walid ya walida ka CNIC, domicile aur taaza tasveerein. Select hone par originals aur attested copies jama hoti hain. Quota seat, Hafiz-e-Quran ya A-Level wale students ke extra kaghzat upar wali list mein hain.",
+          "lang": "ur-Latn"
+        },
+        {
+          "q": "UHS MBBS form mein kaun se documents upload hote hain?",
+          "a": "Punjab domicile, board se verified Matric aur FSc result card, CNIC ya B-Form, walid, walida ya guardian ka ID, white background wali rangeen tasveer, neeli siyahi wala signature aur angoothay ka nishan, aur Rs 2,000 ka paid challan. Har file JPG ya PNG, 500 KB tak.",
+          "lang": "ur-Latn"
+        }
+      ],
+      "roman_urdu": "<p>Upar apni university chunein aur jo aap par laagu ho (Hafiz-e-Quran, A-Level, quota seat, walid hayat nahin) us par tick lagayein: list mein sirf aap ke kaghzat reh jayenge. Har document tayyar hone par us par tick lagayein, ye aap ke phone par mehfooz rehte hain, aur \"Print\" se list nikal kar admission office le jayein.</p><p>Sab se aam ghaltiyan: board se verified result card na hona, expire CNIC, dhundli ya 500 KB se bari scan, aur select hone ke baad fee aur joining report waqt par na dena.</p>",
+      "ru_heading": "Admission ke liye kaun se documents chahiye?",
+      "sources": [
+        {
+          "label": "UHS MBBS/BDS Prospectus, Session 2026-2027, pp. 46-57",
+          "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "KMU Admission Policy 2025-26, public medical and dental colleges of Khyber Pakhtunkhwa, pp. 26-27",
+          "url": "https://cas.kmu.edu.pk/sitedocuments/Admission-Policy-Public-2025-26.pdf",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "UET Lahore Undergraduate Prospectus Fall 2026, pp. 20-31",
+          "url": "https://admission.uet.edu.pk/uploads/downloads/262b6351-9035-409a-ba3d-f8bd8f9d549a.pdf",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "UET Taxila UG Prospectus 2025, pp. 135-139",
+          "url": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "COMSATS University Islamabad UG Prospectus 2024-25, p. 46",
+          "url": "https://ww2.comsats.edu.pk/ro/Prospectus/UG_Prospectus/UG-Prospectus-24-25.pdf",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "University of Karachi Prospectus 2027, pp. 20-25",
+          "url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+          "fetched": "2026-11-05"
+        }
+      ],
+      "related": [
+        "/uhs-mbbs-admission/",
+        "/mdcat-aggregate-calculator/",
+        "/uet-aggregate-calculator/",
+        "/guides/mdcat-result-next-steps/",
+        "/guides/1st-2nd-final-merit-list/",
+        "/ku-merit-list/"
+      ],
+      "published": "2026-11-05",
+      "updated": "2026-11-05"
+    },
+    {
       "path": "/updates/",
       "keyword": "merit list updates",
       "title": "Merit List Updates {season_year}: New Lists and Dates",

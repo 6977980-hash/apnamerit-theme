@@ -3,6 +3,12 @@
   "updates": [
   {
    "date": "2026-11-05",
+   "title": "New: admission documents checklist for UHS, KMU, UET, COMSATS and KU",
+   "text": "Pick your university and your case (Hafiz, A-Level, quota seat, outside Punjab) and get only the documents you need, with the prospectus page for each, ticks saved on your phone and a print button.",
+   "url": "/guides/admission-documents-checklist/"
+  },
+  {
+   "date": "2026-11-05",
    "title": "New: IST Islamabad aggregate calculator (engineering and computing)",
    "text": "IST's official merit formula: engineering 20% Matric + 40% FSc Part-I + 40% entry test (NAT, USAT, NET, ECAT, ETEA), computing and science 40% Matric + 60% FSc Part-I with no test.",
    "url": "/ist-aggregate-calculator/"
