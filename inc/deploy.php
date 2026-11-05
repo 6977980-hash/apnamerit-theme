@@ -74,14 +74,21 @@ function am_run_deployed(): void {
  * Hostinger's CDN (hCDN) kept serving pages from before a deploy for 10+ minutes after
  * LiteSpeed had been purged. s-maxage=300 caps that at five minutes; LiteSpeed's own page cache
  * still answers the CDN's revalidation, so speed does not change. Browsers always revalidate.
+ *
+ * Speed for Pakistan (2026-11-05): measured from the owner's browser in Pakistan, a CDN HIT answers in
+ * about 0.2 s and a MISS (edge to the UK origin) in about 1.2 s. The deploy purge does not reach hCDN
+ * (tested: edge copies kept the old page until their 300 s ran out), so s-maxage stays 300 and
+ * stale-while-revalidate lets an edge answer from its expired copy while it fetches the new one.
  */
+const AM_HTML_CACHE = 'Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=600';
+
 add_action(
 	'send_headers',
 	function () {
 		if ( is_admin() || is_user_logged_in() || ( isset( $_SERVER['REQUEST_METHOD'] ) && 'GET' !== $_SERVER['REQUEST_METHOD'] ) ) {
 			return;
 		}
-		header( 'Cache-Control: public, max-age=0, s-maxage=300' );
+		header( AM_HTML_CACHE );
 	}
 );
 

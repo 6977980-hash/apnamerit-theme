@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.38.1 (2026-11-05)
+
+- Speed (Pakistan TTFB): HTML now sends `stale-while-revalidate=600` with `s-maxage=300`, so a Hostinger CDN edge can answer from its expired copy while it refreshes, instead of every visitor after five quiet minutes waiting on the UK origin (owner's browser in Pakistan: CDN HIT ~0.2 s, MISS ~1.2 s). Tested on the v0.38.0 deploy that the LiteSpeed purge does not clear hCDN (edge copies kept the old /guides/ until 300 s), so s-maxage was not raised.
+
 ## 0.38.0 (2026-11-05)
 
 - **Admission documents checklist** `/guides/admission-documents-checklist/` (novel idea #7): `[am_doc_checklist]` (`inc/documents.php`) from `data/documents.json`. UHS Punjab MBBS/BDS 2026-27, KMU 2025-26, UET Lahore Fall 2026, UET Taxila 2025, COMSATS 2024-25, KU Admissions 2027: every item paraphrased from the official prospectus/policy with its printed page. Student picks a university and ticks their cases (A-Level, Hafiz, quota seats, outside province, father not alive...), the list keeps only their documents, split into "with the application" and "when selected"; ticks stay in localStorage; "Print or save as PDF" prints only the list. Works without JavaScript (all lists shown with case labels).
