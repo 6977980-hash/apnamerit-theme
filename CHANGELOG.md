@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.37.0 (2026-11-05)
+
+- **IST Islamabad calculator** `/ist-aggregate-calculator/` (`data/universities/ist.json`): official Merit Determination Criteria read in the owner's Chrome (ugadmission.ist.edu.pk is 502 to the container; www.ist.edu.pk pages render client-side). Engineering FSc/DAE 20% Matric + 40% FSc Part-I/DAE + 40% entry test; engineering A-Level 40% O-Level equivalence + 60% test; computing/science 40% Matric + 60% FSc Part-I (no test). Eligibility floors (engineering Matric 60%, FSc 60%; CS/AI/DS/SE 50%), Fall 2026 seats and accepted tests (NAT, USAT, NET, ECAT, ETEA, MUET, NED, ACT) in the content. IST publishes no closing merit (status only after login on eportal.ist.edu.pk), so no merit page.
+
 ## 0.36.1 (2026-11-05)
 
 - Audit H-3 (owner choice 2026-11-05: keep mailto, no Tally): after "Open email with these details", the submit form shows "Copy message" and "Copy email address" buttons, so phones without a mail app can send the merit list from Gmail or any app.

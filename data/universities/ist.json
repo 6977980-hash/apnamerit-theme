@@ -1,0 +1,116 @@
+{
+ "slug": "ist",
+ "name": "Institute of Space Technology (IST), Islamabad",
+ "short": "IST",
+ "field": "engineering",
+ "province": "Islamabad",
+ "website": "https://www.ist.edu.pk/",
+ "calculator_path": "/ist-aggregate-calculator/",
+ "updated": "2026-11-05",
+ "_note": "Weights from the official IST Undergraduate admission page, tab 'Merit Determination Criteria', read in the owner's Chrome on 2026-11-05 (ugadmission.ist.edu.pk returns 502 to the container). Eligibility and seats from the 'General Eligibility' tab, accepted tests from the 'Entry Test' tab (Fall 2026 intake). A-Level computing/science applicants: Matric/equivalent 100% (no calculator needed, not stored). IST shows each applicant's status after login on eportal.ist.edu.pk and publishes no program-wise closing merit, so merit is empty.",
+ "defaults": {
+  "list": "Final",
+  "category": "Open merit"
+ },
+ "eligibility": [
+  {
+   "part": "matric",
+   "min_pct": 60,
+   "formulas": ["engineering"],
+   "applies_to": "BS engineering programs (Aerospace, Electrical, Metallurgy and Materials, Mechanical, Avionics)",
+   "label": "Matric (Science) marks needed for IST engineering",
+   "source_url": "https://www.ist.edu.pk/admission?page=37&section=general-eligibility",
+   "source_note": "General Eligibility (Fall 2026), each engineering program: Matric/Equivalent Certificate (Science) with minimum 60% marks."
+  },
+  {
+   "part": "fsc",
+   "min_pct": 60,
+   "formulas": ["engineering"],
+   "applies_to": "BS engineering programs (Aerospace, Electrical, Metallurgy and Materials, Mechanical, Avionics)",
+   "label": "FSc / ICS / DAE overall marks needed for IST engineering",
+   "source_url": "https://www.ist.edu.pk/admission?page=37&section=general-eligibility",
+   "source_note": "General Eligibility (Fall 2026): FSc Pre-Engineering/ICS/DAE/Equivalent Certificate with minimum 60% overall marks, plus an accepted entry test."
+  },
+  {
+   "part": "fsc",
+   "min_pct": 50,
+   "formulas": ["computing"],
+   "applies_to": "BS Computer Science, Artificial Intelligence, Data Science and Software Engineering",
+   "label": "HSSC / DAE overall marks needed for IST computing programs",
+   "source_url": "https://www.ist.edu.pk/admission?page=37&section=general-eligibility",
+   "source_note": "General Eligibility (Fall 2026), CS/AI/DS/SE: HSSC/DAE/Equivalent with Mathematics with minimum 50% overall marks, or HSSC Pre-Medical with minimum 50% (two extra Mathematics courses). No entry test."
+  }
+ ],
+ "formulas": [
+  {
+   "id": "engineering",
+   "label": "BS Engineering (FSc / DAE students)",
+   "source_url": "https://www.ist.edu.pk/admission?page=37&section=merit-determination-criteria",
+   "source_note": "Merit Determination Criteria, Engineering Programs, for FSc/DAE students: Matric/Equivalent 20%, FSc Part-1 or DAE (03 years aggregate marks) 40%, Entry Test 40%. Accepted tests (Fall 2026): NTS NAT-1E/NAT-1CS, HEC USAT-E/USAT-CS, NUST NET, UET ECAT, UET Peshawar ETEA, MUET and NED entry tests, ACT.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "Entry test score (NAT, USAT, NET, ECAT, ETEA, MUET, NED or ACT)",
+     "total": 100,
+     "weight": 40,
+     "hint": "Weight 40%. Type your score and set the total to your test's total (ECAT 400, NET 200), or type your percentage out of 100."
+    },
+    {
+     "key": "fsc",
+     "label": "FSc Part-I (or DAE 3-year marks)",
+     "total": 550,
+     "weight": 40,
+     "hint": "Weight 40%. DAE students: type your 3-year aggregate marks and change the total."
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 20
+    }
+   ]
+  },
+  {
+   "id": "engineering-alevel",
+   "label": "BS Engineering (A-Level / equivalent students)",
+   "source_url": "https://www.ist.edu.pk/admission?page=37&section=merit-determination-criteria",
+   "source_note": "Merit Determination Criteria, Engineering Programs, for A-Level/Equivalent students: Matric/Equivalent 40%, Entry Test 60%.",
+   "parts": [
+    {
+     "key": "test",
+     "label": "Entry test score (NAT, USAT, NET, ECAT, ETEA, MUET, NED or ACT)",
+     "total": 100,
+     "weight": 60,
+     "hint": "Weight 60%. Type your score and set the total to your test's total, or type your percentage out of 100."
+    },
+    {
+     "key": "olevel",
+     "label": "O-Level equivalence (IBCC) in %",
+     "total": 100,
+     "weight": 40
+    }
+   ]
+  },
+  {
+   "id": "computing",
+   "label": "BS Computing / Science (FSc students, no entry test)",
+   "source_url": "https://www.ist.edu.pk/admission?page=37&section=merit-determination-criteria",
+   "source_note": "Merit Determination Criteria, Computing/Science Programs, for FSc students: Matric/Equivalent 40%, FSc Part-1 60%. General Eligibility: no entry test for Computer Engineering, CS, AI, Data Science, Software Engineering, Space Science, Physics, Mathematics, Biotechnology, Chemistry and Remote Sensing & GIS.",
+   "parts": [
+    {
+     "key": "fsc",
+     "label": "FSc Part-I",
+     "total": 550,
+     "weight": 60
+    },
+    {
+     "key": "matric",
+     "label": "Matric / SSC",
+     "total": 1100,
+     "weight": 40
+    }
+   ]
+  }
+ ],
+ "merit": []
+}

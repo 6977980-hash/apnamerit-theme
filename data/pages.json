@@ -3200,6 +3200,86 @@
       "ru_heading": "FAST ka aggregate kaise nikalein?"
     },
     {
+      "path": "/ist-aggregate-calculator/",
+      "keyword": "ist aggregate calculator",
+      "title": "IST Aggregate Calculator {season_year} (Official Formula)",
+      "description": "IST Islamabad aggregate calculator {season_year}: engineering 20% Matric + 40% FSc Part-I + 40% test, computing 40/60 with no test. Official IST criteria.",
+      "h1": "IST Aggregate Calculator {season_year}",
+      "crumb": "IST aggregate calculator",
+      "subtitle": "Official formula: engineering 20/40/40, computing 40/60",
+      "type": "content",
+      "template": "calculator",
+      "published": "2026-11-05",
+      "updated": "2026-11-05",
+      "answer": "The IST Islamabad aggregate for engineering = 20% Matric + 40% FSc Part-I (or DAE) + 40% entry test (NAT, USAT, NET, ECAT, ETEA and others). Computing and science programs use 40% Matric + 60% FSc Part-I with no test. Example: 70% test, 480/550 and 1000/1100 give 81.09% for engineering.",
+      "answer_source": "https://www.ist.edu.pk/admission?page=37&section=merit-determination-criteria",
+      "content_file": "ist-aggregate-calculator.html",
+      "faq": [
+        {
+          "q": "What is the IST aggregate formula for engineering?",
+          "a": "Matric 20%, FSc Part-I or DAE 40% and entry test 40%. A-Level students: Matric equivalence 40% and entry test 60%."
+        },
+        {
+          "q": "Is there an entry test for IST computer science?",
+          "a": "No. CS, AI, Data Science, Software Engineering, Computer Engineering and the science programs need no test; merit is 40% Matric and 60% FSc Part-I."
+        },
+        {
+          "q": "Which test is accepted for IST engineering admission?",
+          "a": "IST holds no test of its own. It accepts NTS NAT, HEC USAT, NUST NET, UET ECAT, UET Peshawar ETEA, the MUET and NED tests and ACT, and you can use your best score."
+        },
+        {
+          "q": "What are the minimum marks for IST engineering?",
+          "a": "60% in Matric (Science) and 60% overall in FSc Pre-Engineering, ICS or DAE, plus an accepted entry test score."
+        },
+        {
+          "q": "Does IST publish a closing merit?",
+          "a": "No. IST shows each applicant's status after login on its admission portal and publishes no program-wise closing aggregate, so we do not show one."
+        },
+        {
+          "q": "IST ka merit kaise banta hai?",
+          "a": "Engineering mein Matric 20%, FSc Part-I 40% aur entry test 40%. Computing aur science programs mein test nahi, sirf Matric 40% aur FSc Part-I 60%.",
+          "lang": "ur-Latn"
+        },
+        {
+          "q": "IST ke liye kaun sa test dena hai?",
+          "a": "IST apna test nahi leta. NAT, USAT, NET, ECAT, ETEA, MUET, NED ya ACT mein se jo bhi diya ho, sab se acha score lagayein.",
+          "lang": "ur-Latn"
+        },
+        {
+          "q": "IST ka merit kitna jata hai?",
+          "a": "IST program-wise closing merit public nahi karta, status sirf portal par login karke dikhta hai. Is liye hum koi merit figure nahi dikhate.",
+          "lang": "ur-Latn"
+        }
+      ],
+      "roman_urdu": "<p>IST Islamabad mein engineering ka formula: <strong>Matric 20%, FSc Part-I 40% aur entry test 40%</strong>. Computing (CS, AI, Data Science, Software Engineering) aur science programs mein test nahi hota: <strong>Matric 40% aur FSc Part-I 60%</strong>.</p><p>Maslan test 70%, FSc Part-I 480/550 aur Matric 1000/1100 ho to engineering aggregate 81.09% banta hai. IST NAT, USAT, NET, ECAT aur ETEA sab qabool karta hai.</p>",
+      "ru_heading": "IST ka merit kaise banta hai?",
+      "sources": [
+        {
+          "label": "IST: Merit Determination Criteria (undergraduate)",
+          "url": "https://www.ist.edu.pk/admission?page=37&section=merit-determination-criteria",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "IST: General Eligibility and seats (Fall 2026)",
+          "url": "https://www.ist.edu.pk/admission?page=37&section=general-eligibility",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "IST: accepted entry tests (Fall 2026 intake)",
+          "url": "https://www.ist.edu.pk/admission?page=37&section=entry-test",
+          "fetched": "2026-11-05"
+        }
+      ],
+      "related": [
+        "/nust-aggregate-calculator/",
+        "/uet-aggregate-calculator/",
+        "/comsats-aggregate-calculator/",
+        "/air-aggregate-calculator/",
+        "/guides/ecat-aggregate-formula/",
+        "/predictor/"
+      ]
+    },
+    {
       "path": "/giki-aggregate-calculator/",
       "keyword": "giki aggregate calculator",
       "title": "GIKI Aggregate Calculator {season_year} (85% Test Formula)",
@@ -5069,7 +5149,7 @@
         },
         {
           "q": "Why are some universities missing from the predictor?",
-          "a": "We only use official program-wise closing merits. NUST, FAST, NED, GIKI, UET Peshawar, IIUI, UAF, Bahria and Air University do not publish them online, so they have calculators but no predictor rows yet."
+          "a": "We only use official program-wise closing merits. NUST, FAST, NED, GIKI, UET Peshawar, IIUI, UAF, Bahria, Air University and IST do not publish them online, so they have calculators but no predictor rows yet."
         },
         {
           "q": "Is 80% aggregate good?",

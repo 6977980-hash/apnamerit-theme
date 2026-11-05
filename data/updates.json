@@ -3,6 +3,12 @@
   "updates": [
   {
    "date": "2026-11-05",
+   "title": "New: IST Islamabad aggregate calculator (engineering and computing)",
+   "text": "IST's official merit formula: engineering 20% Matric + 40% FSc Part-I + 40% entry test (NAT, USAT, NET, ECAT, ETEA), computing and science 40% Matric + 60% FSc Part-I with no test.",
+   "url": "/ist-aggregate-calculator/"
+  },
+  {
+   "date": "2026-11-05",
    "title": "New: closing merit positions (merit numbers) for every UHS medical and dental college",
    "text": "The MDCAT merit list now shows the UHS merit number of the last open-merit student admitted to each college in 2025: KEMU 440, Narowal Medical College 3,516 in the final public MBBS list.",
    "url": "/mdcat-merit-list/"

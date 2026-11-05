@@ -1,6 +1,11 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
 
+## IST Islamabad calculator (v0.37.0, 2026-11-05)
+- `/ist-aggregate-calculator/` from `data/universities/ist.json`: three formulas (engineering FSc/DAE 20/40/40, engineering A-Level 40/60 with O-Level equivalence, computing/science 40/60 no test), eligibility floors, Fall 2026 seats and accepted tests. Source: www.ist.edu.pk admission page tabs (`?page=37&section=merit-determination-criteria|general-eligibility|entry-test`), read in the owner's Chrome via the Claude extension; the site is a slow Next.js app (data from apiweb.ist.edu.pk, not used). `ugadmission.ist.edu.pk` is still 502 to the container.
+- **No IST merit page**: IST shows merit status only after login (eportal.ist.edu.pk) and publishes no closing aggregate. Third-party "IST closing merit" figures are estimates; do not add them. Re-check each season (first list: 2nd week of July).
+- Prospectus 2025 and Student Handbook 2025 PDFs are linked from the "Undergraduate Prospectus" tab; not downloaded.
+
 ## Audit H decisions closed (v0.36.1, 2026-11-05)
 
 Owner picked "keep all + copy button": H-1 keep official closing merits only (NUST/FAST/GIKI guide already live; NUST official positions only as a separately labelled dataset, not now). H-2 needs nothing (titles carry both years, e.g. "MDCAT Merit List 2026: ... Closing Merit 2025"). H-3 keep mailto (no Tally); /submit-merit-list/ now shows "Copy message" and "Copy email address" after submit for phones without a mail app.
@@ -379,7 +384,7 @@ Owner's consulting chat delivered `apnamerit-data/{uet-lahore,comsats,nums}.json
 - **UAF closing merit**: ~1,400 candidate-wise PDFs at `web.uaf.edu.pk/Downloads/MeritListsView` (names; derive closing like UHS only for final lists, never store names). No summary published.
 - **KU**: Admissions 2027 open-merit closing not published yet (re-check uokadmission.edu.pk). Prospectus Appendices J/K/L = Admissions 2025 (year 2024), H/K = BS 3rd year, S/P columns of G: not stored yet (images; read visually at 220 dpi). No KU calculator: the prospectus gives no academic % formula.
 - **Air University**: au.edu.pk blocks the container (Cloudflare; do not try to get past it). Calculator `/air-aggregate-calculator/` built from page text the owner copied on 2026-10-31; re-check via the owner each season.
-- **IST**: `ugadmission.ist.edu.pk` (has "Merit Determination Criteria" + UG prospectus) returns 502 through the proxy; www.ist.edu.pk pages have no weights. Needs the owner to download that PDF and upload it.
+- **IST**: done v0.37.0 (calculator from the www.ist.edu.pk admission tabs; no closing merit published).
 - `data_year` → 2026 in November (Phase 7): KU 2026 rows then enter the predictor; remove `ku.json defaults.year` then (it only exists because KU's latest year is ahead of data_year).
 - TLS: `uaf.edu.pk` and `pucit.edu.pk` send incomplete chains. Fetch with a CA file = `/root/.ccr/ca-bundle.crt` + intermediates from the certs' AIA URLs (RapidSSL TLS RSA CA G1, Sectigo Public Server Authentication CA DV R36); never `-k`.
 

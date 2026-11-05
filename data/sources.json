@@ -465,6 +465,29 @@
    "website": "https://www.ist.edu.pk/",
    "field": "engineering",
    "documents": []
+  },
+  {
+   "slug": "ist",
+   "name": "Institute of Space Technology (IST), Islamabad",
+   "website": "https://www.ist.edu.pk/",
+   "field": "engineering",
+   "documents": [
+    {
+     "label": "Undergraduate admission: Merit Determination Criteria (engineering 20/40/40, computing 40/60)",
+     "url": "https://www.ist.edu.pk/admission?page=37&section=merit-determination-criteria",
+     "fetched": "2026-11-05"
+    },
+    {
+     "label": "Undergraduate admission: General Eligibility and seats (Fall 2026)",
+     "url": "https://www.ist.edu.pk/admission?page=37&section=general-eligibility",
+     "fetched": "2026-11-05"
+    },
+    {
+     "label": "Undergraduate admission: accepted entry tests (Fall 2026 intake)",
+     "url": "https://www.ist.edu.pk/admission?page=37&section=entry-test",
+     "fetched": "2026-11-05"
+    }
+   ]
   }
  ]
 }
