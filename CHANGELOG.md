@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.36.1 (2026-11-05)
+
+- Audit H-3 (owner choice 2026-11-05: keep mailto, no Tally): after "Open email with these details", the submit form shows "Copy message" and "Copy email address" buttons, so phones without a mail app can send the merit list from Gmail or any app.
+
 ## 0.36.0 (2026-11-05)
 
 - **MDCAT closing merit positions** (UHS 2025-26): `position` + `position_source_url` on 142 uhs.json merit rows (public MBBS Final + 1st, public BDS Final + 1st, private MBBS Final + 1st, private BDS 3rd + 1st) = merit number, in UHS's Final Order of Merit of that sector, of the open-merit student holding each college's closing aggregate. Built by `scripts/uhs_positions.py scripts/uhs_positions_2025.json --write` (IDs matched in memory only; no names/IDs stored). Two rows left blank where the two UHS pages disagree (UCMD private final, Pak Red Crescent private 1st).

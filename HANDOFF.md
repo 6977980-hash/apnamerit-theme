@@ -1,6 +1,10 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
 
+## Audit H decisions closed (v0.36.1, 2026-11-05)
+
+Owner picked "keep all + copy button": H-1 keep official closing merits only (NUST/FAST/GIKI guide already live; NUST official positions only as a separately labelled dataset, not now). H-2 needs nothing (titles carry both years, e.g. "MDCAT Merit List 2026: ... Closing Merit 2025"). H-3 keep mailto (no Tally); /submit-merit-list/ now shows "Copy message" and "Copy email address" after submit for phones without a mail app.
+
 ## MDCAT closing merit positions (v0.36.0, 2026-11-05)
 
 Owner: "mdcat ki closing postions find kro". UHS selection lists carry no merit number, but each sector's **Final Order of Merit** page numbers every candidate (Sr #). `scripts/uhs_positions.py scripts/uhs_positions_2025.json --write` joins the two by UHS user ID in memory and writes `position` (merit number of the open-merit student holding each college's closing aggregate) + `position_source_url` on uhs.json merit rows; nothing personal is stored. 142 of 144 2025 rows; blank where the pages disagree (UCMD private Final: order shows 75.9111 vs list 75.9444; Pak Red Crescent private 1st: candidate missing from the order). FJMC public Final: another FJMC student's aggregate differs between pages (94.0455 list vs 93.7955 order); we use the closing-aggregate holder (2,643).

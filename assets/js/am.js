@@ -713,7 +713,9 @@
       var body = 'University: ' + uni + '\nList: ' + form.list.value + '\nYear: ' + form.year.value + '\nOfficial link: ' + url + '\n\n' + form.note.value;
       location.href = 'mailto:' + form.getAttribute('data-am-submit') + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       out.hidden = false;
-      out.innerHTML = '<p>Your email app should open now. If nothing happens, send the link to <a href="mailto:' + esc(form.getAttribute('data-am-submit')) + '">' + esc(form.getAttribute('data-am-submit')) + '</a>. Shukriya!</p>';
+      var to = form.getAttribute('data-am-submit');
+      out.innerHTML = '<p>Your email app should open now. If nothing happens (no mail app on this phone), copy the message and send it from Gmail or any app to <a href="mailto:' + esc(to) + '">' + esc(to) + '</a>. Shukriya!</p>' +
+        '<p><button type="button" class="am-btn" data-am-copy="' + esc('To: ' + to + '\nSubject: ' + subject + '\n\n' + body) + '">Copy message</button> <button type="button" class="am-btn" data-am-copy="' + esc(to) + '">Copy email address</button></p>';
     });
   });
 
