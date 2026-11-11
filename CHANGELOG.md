@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.39.0 (2026-11-12)
+
+- GSC audit 2026-11-12, phase 1 (owner approved items 1-4). **CTR titles/descriptions** for 11 pages that rank 6-11 with ~1% CTR (COMSATS, KU, UET, PU, private MBBS, BDS, UET Taxila, merit-list hub, MDCAT hub, two guides): year, "closing merit", program/department/college-wise hooks and real figures.
+- **/mdcat-merit-list/ hub** (crawled, not indexed): new intro and a college-wise table near the top (`[am_college_index uni="uhs" table="1"]`: final and 1st list of the newest year, previous final, closing position, each college linked), links to private/BDS/NUMS/compare; the old link list is replaced by the table.
+- **Internal links** to discovered-not-indexed pages: every college page ends with links to all other public college pages + private/BDS (`am_college_links_html()`); `[am_college_links uni="uhs"]` on private, BDS and UHS admission pages; COMSATS → FAST/Air/Bahria/ITU calculators + ITU list + compare; PU → ITU list, UAF/ITU calculators, compare, report; KU → NED calculator; UET Taxila → UET campus pages; guides → KEMU/AIMC/Narowal, compare, report, provisional-list guide; related lists widened.
+- `/embed/` hub `noindex` (out of the sitemap, llms.txt and IndexNow). Dataset name/temporal show one year when a view has one year ("2025", not "2025–2025"); `includedInDataCatalog` name + url already live.
+
 ## 0.38.1 (2026-11-05)
 
 - Speed (Pakistan TTFB): HTML now sends `stale-while-revalidate=600` with `s-maxage=300`, so a Hostinger CDN edge can answer from its expired copy while it refreshes, instead of every visitor after five quiet minutes waiting on the UK origin (owner's browser in Pakistan: CDN HIT ~0.2 s, MISS ~1.2 s). Tested on the v0.38.0 deploy that the LiteSpeed purge does not clear hCDN (edge copies kept the old /guides/ until 300 s), so s-maxage was not raised.

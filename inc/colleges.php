@@ -2,7 +2,8 @@
 /**
  * College pages (audit 2026-11-01 G-07): one URL per Punjab public MBBS college.
  * [am_college uni="uhs" college="kemu"]  closing merit by year, every 2025 selection list, rank, MDCAT needed.
- * [am_college_index uni="uhs"]           links to every college page (on the MDCAT merit list).
+ * [am_college_index uni="uhs"]           links to every college page (on the MDCAT merit list); table="1" = college-wise table.
+ * [am_college_links uni="uhs"]           one line of links to every public college page.
  * Data: uhs.json `colleges` (campus => slug, short, path), `merit` (Final / 1st rows) and `list_trail`
  * (lowest open-merit aggregate per college in every list). Page text in data/pages.json is written by
  * scripts/college_pages.py from the same data; check.py fails when they drift apart.
@@ -193,6 +194,8 @@ function am_sc_college( $atts ): string {
 			. am_seats_fee_line( $uni ) . '<p class="am-muted">Source: ' . am_source_link( (string) $uni['seats']['source_url'] ) . ', seat allocation (p. 38) and fee (p. 61). The closing merits above are for open-merit seats only.</p>';
 	}
 
+	$html .= am_college_links_html( $uni, $campus );
+
 	return $html;
 }
 
@@ -255,16 +258,19 @@ function am_sc_seats( $atts ): string {
 
 // ------------------------------------------------------------------ [am_college_index]
 function am_sc_college_index( $atts ): string {
-	$atts   = shortcode_atts( array( 'uni' => '' ), (array) $atts, 'am_college_index' );
+	$atts   = shortcode_atts( array( 'uni' => '', 'table' => '' ), (array) $atts, 'am_college_index' );
 	$uni    = am_uni( am_uni_attr( $atts ) );
 	$finals = am_college_finals( $uni );
 	if ( ! $finals || empty( $uni['colleges'] ) ) {
 		return '';
 	}
-	$new   = array_key_first( $finals );
-	$items = array();
-	$all   = $finals[ $new ];
+	$new = array_key_first( $finals );
+	$all = $finals[ $new ];
 	uasort( $all, fn( $a, $b ) => (float) $b['closing'] <=> (float) $a['closing'] );
+	if ( '' !== (string) $atts['table'] ) {
+		return am_college_index_table( $uni, $all, $finals, (int) $new );
+	}
+	$items = array();
 	foreach ( $all as $campus => $r ) {
 		$m = (array) ( $uni['colleges'][ $campus ] ?? array() );
 		if ( empty( $m['path'] ) || ! am_find_page( (string) $m['path'] ) ) {
@@ -273,6 +279,69 @@ function am_sc_college_index( $atts ): string {
 		$items[] = '<li><a href="' . esc_url( home_url( (string) $m['path'] ) ) . '">' . esc_html( $campus ) . '</a>: ' . esc_html( am_pct( $r['closing'] ) ) . '</li>';
 	}
 	return $items ? '<ul>' . implode( '', $items ) . '</ul>' : '';
+}
+
+/**
+ * GSC audit 2026-11-12: compact college-wise table for the MDCAT hub (final and 1st list of the
+ * newest year, final of the year before, closing position), each college linked to its page.
+ */
+function am_college_index_table( array $uni, array $all, array $finals, int $new ): string {
+	$first = array();
+	foreach ( (array) ( $uni['merit'] ?? array() ) as $r ) {
+		if ( 'MBBS (public)' === ( $r['program'] ?? '' ) && '1st' === ( $r['list'] ?? '' ) && 'Open merit' === ( $r['category'] ?? '' ) && $new === (int) $r['year'] ) {
+			$first[ (string) $r['campus'] ] = $r;
+		}
+	}
+	$prev = $finals[ $new - 1 ] ?? array();
+	$rows = '';
+	foreach ( $all as $campus => $r ) {
+		$m    = (array) ( $uni['colleges'][ $campus ] ?? array() );
+		$name = esc_html( $campus );
+		if ( ! empty( $m['path'] ) && am_find_page( (string) $m['path'] ) ) {
+			$name = '<a href="' . esc_url( home_url( (string) $m['path'] ) ) . '">' . $name . '</a>';
+		}
+		$rows .= '<tr><th scope="row">' . $name . '</th><td><strong>' . esc_html( am_pct( $r['closing'] ) ) . '</strong></td><td>'
+			. esc_html( isset( $first[ $campus ] ) ? am_pct( $first[ $campus ]['closing'] ) : '–' ) . '</td><td>'
+			. esc_html( isset( $prev[ $campus ] ) ? am_pct( $prev[ $campus ]['closing'] ) : '–' ) . '</td><td>'
+			. esc_html( ! empty( $r['position'] ) ? number_format( (int) $r['position'] ) : '–' ) . '</td></tr>';
+	}
+	return '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( 'Punjab public MBBS colleges: open-merit closing merit ' . $new . ' (UHS)' ) . '</caption><thead><tr><th scope="col">College</th><th scope="col">' . esc_html( 'Final ' . $new ) . '</th><th scope="col">' . esc_html( '1st list ' . $new ) . '</th><th scope="col">' . esc_html( 'Final ' . ( $new - 1 ) ) . '</th><th scope="col">Closing position</th></tr></thead><tbody>' . $rows . '</tbody></table></div>';
+}
+
+/**
+ * GSC audit 2026-11-12: every college page links all the other public college pages, so each
+ * one is reachable from the college pages Google already indexes.
+ */
+function am_college_links_html( array $uni, string $current, bool $heading = true ): string {
+	$finals = am_college_finals( $uni );
+	if ( ! $finals ) {
+		return '';
+	}
+	$all = $finals[ array_key_first( $finals ) ];
+	uasort( $all, fn( $a, $b ) => (float) $b['closing'] <=> (float) $a['closing'] );
+	$links = array();
+	foreach ( array_keys( $all ) as $campus ) {
+		$m = (array) ( $uni['colleges'][ $campus ] ?? array() );
+		if ( $campus === $current || empty( $m['path'] ) || ! am_find_page( (string) $m['path'] ) ) {
+			continue;
+		}
+		$links[] = '<a href="' . esc_url( home_url( (string) $m['path'] ) ) . '">' . esc_html( (string) ( $m['short'] ?? $campus ) ) . '</a>';
+	}
+	foreach ( ( $heading ? array( '/mdcat-merit-list/private/' => 'Private MBBS colleges', '/mdcat-merit-list/bds/' => 'BDS colleges' ) : array() ) as $path => $label ) {
+		if ( am_find_page( $path ) ) {
+			$links[] = '<a href="' . esc_url( home_url( $path ) ) . '">' . esc_html( $label ) . '</a>';
+		}
+	}
+	if ( ! $links ) {
+		return '';
+	}
+	return ( $heading ? '<h2>Other medical college merit pages</h2>' : '' ) . '<p class="am-links">' . implode( ' · ', $links ) . '</p>';
+}
+
+// [am_college_links uni="uhs"]: one line of links to every public college page (private/BDS pages, UHS admission).
+function am_sc_college_links( $atts ): string {
+	$atts = shortcode_atts( array( 'uni' => '' ), (array) $atts, 'am_college_links' );
+	return am_college_links_html( am_uni( am_uni_attr( $atts ) ), '', false );
 }
 
 // ------------------------------------------------------------------ [am_list_drop]
@@ -421,6 +490,7 @@ add_action(
 	function () {
 		add_shortcode( 'am_college', 'am_sc_college' );
 		add_shortcode( 'am_college_index', 'am_sc_college_index' );
+		add_shortcode( 'am_college_links', 'am_sc_college_links' );
 		add_shortcode( 'am_seats', 'am_sc_seats' );
 		add_shortcode( 'am_list_drop', 'am_sc_list_drop' );
 		add_shortcode( 'am_list_when', 'am_sc_list_when' );

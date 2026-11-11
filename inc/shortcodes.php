@@ -694,10 +694,10 @@ function am_sc_merit_table( $atts ): string {
 		'dataset',
 		array(
 			'id'          => $base,
-			'name'        => $short . ' closing merits ' . min( $years ) . '–' . max( $years ),
+			'name'        => $short . ' closing merits ' . ( min( $years ) === max( $years ) ? (string) max( $years ) : min( $years ) . '–' . max( $years ) ),
 			'description' => 'Program-wise closing aggregates (last admitted candidate) for ' . ( $uni['name'] ?? $short ) . ', by year, merit list, category and campus, copied from official merit lists.',
 			'keywords'    => array( $short . ' merit list', $short . ' closing merit', 'aggregate' ),
-			'temporal'    => min( $years ) . '/' . max( $years ),
+			'temporal'    => min( $years ) === max( $years ) ? (string) max( $years ) : min( $years ) . '/' . max( $years ),
 			'based_on'    => $sources,
 			'variables'   => array( 'Closing aggregate (%)' ),
 			'json_url'    => am_data_url( (string) ( $uni['slug'] ?? $atts['uni'] ) ),

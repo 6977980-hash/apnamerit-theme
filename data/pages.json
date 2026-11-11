@@ -300,8 +300,8 @@
     {
       "path": "/mdcat-merit-list/",
       "keyword": "mdcat merit list",
-      "title": "MDCAT Merit List {season_year}: MBBS/BDS Closing Merit {year:uhs}",
-      "description": "MDCAT merit list: MBBS and BDS closing merit {year:uhs} for every UHS Punjab public and private college, 1st and final lists, with 2024 comparison and sources.",
+      "title": "MDCAT Merit List {season_year}: College-wise Closing Merit {year:uhs}",
+      "description": "MDCAT merit list: college-wise MBBS and BDS closing merit 2025 for all UHS Punjab public and private colleges, KEMU 94.87% to Narowal 93.51%, with 2024.",
       "h1": "MDCAT Merit List {season_year} & MBBS/BDS Closing Merit {year:uhs}",
       "crumb": "MDCAT merit list",
       "subtitle": "Punjab public and private medical and dental colleges (UHS), open merit",
@@ -309,7 +309,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
-      "updated": "2026-11-05",
+      "updated": "2026-11-12",
       "answer": "In the final 2025 UHS selection list, Punjab public MBBS colleges closed between 94.87% (King Edward Medical University) and 93.51% (Narowal Medical College) on open merit, about 0.7 to 1.2 points lower than in 2024. Private MBBS colleges closed between 90.84% and 61.00%, and public BDS colleges at about 93.4%.",
       "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
       "content_file": "mdcat-merit-list.html",
@@ -1997,8 +1997,8 @@
     {
       "path": "/mdcat-merit-list/private/",
       "keyword": "private medical colleges merit list",
-      "title": "Private Medical Colleges Merit List {year:uhs} (Punjab)",
-      "description": "Closing merit of all 33 private MBBS colleges in Punjab (UHS), 2025-26: Al-Aleem 90.84% to Queens Kasur 61.00% in the final list, with 1st-list figures.",
+      "title": "Private Medical Colleges Merit List {year:uhs}: College-wise",
+      "description": "Closing merit 2025-26 of all 33 private MBBS colleges in Punjab (UHS): Al-Aleem 90.84% to Queens Kasur 61.00% in the final list, with 1st-list merit.",
       "h1": "Private Medical Colleges Merit List {year:uhs} (Punjab)",
       "crumb": "Private MBBS merit",
       "parents": [
@@ -2009,7 +2009,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-11-01",
-      "updated": "2026-11-01",
+      "updated": "2026-11-12",
       "answer": "In the 5th and final 2025-26 UHS private MBBS list (open merit), Al-Aleem Medical College, Lahore closed highest at 90.84% and Queens Medical College Kasur lowest at 61.00%. 27 of 33 private colleges closed at or below 80%. Merit fell by 9.07 points on average from the 1st list.",
       "answer_source": "https://uhs.edu.pk/5selecionlistprivateom25.php",
       "content_file": "mdcat-merit-list-private.html",
@@ -2061,14 +2061,17 @@
         "/mdcat-aggregate-calculator/",
         "/guides/1st-2nd-final-merit-list/",
         "/uhs-mbbs-admission/",
-        "/predictor/"
+        "/predictor/",
+        "/mdcat-merit-list/kemu/",
+        "/guides/uhs-provisional-merit-list/",
+        "/compare/"
       ]
     },
     {
       "path": "/mdcat-merit-list/bds/",
       "keyword": "bds merit list",
-      "title": "BDS Merit List {year:uhs}: Punjab Dental Colleges (UHS)",
-      "description": "BDS closing merit in Punjab, 2025-26 UHS: public dental colleges 93.42% to 93.46% (final), private 73.13% to 55.87% (3rd list), plus 1st-list figures.",
+      "title": "BDS Merit List {year:uhs}: Closing Merit of Punjab Dental Colleges",
+      "description": "BDS closing merit 2025 in Punjab (UHS): public dental colleges 93.42% to 93.46%, private 73.13% to 55.87%, college-wise with 1st-list and final figures.",
       "h1": "BDS Merit List {year:uhs} (Punjab Dental Colleges)",
       "crumb": "BDS merit",
       "parents": [
@@ -2079,7 +2082,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-11-01",
-      "updated": "2026-11-01",
+      "updated": "2026-11-12",
       "answer": "In the 2025-26 UHS lists (open merit), the 4 public dental colleges closed between 93.42% and 93.46% in the 13th (final) list, led by de' Montmorency College of Dentistry, Lahore. Private BDS colleges closed from 73.13% (Sharif, Lahore) to 55.87% (Shahida Islam, Lodhran) in the 3rd list.",
       "answer_source": "https://uhs.edu.pk/13selecionlistpublicbdsom25.php",
       "content_file": "mdcat-merit-list-bds.html",
@@ -2146,7 +2149,8 @@
         "/mdcat-aggregate-calculator/",
         "/mdcat-passing-marks/",
         "/uhs-mbbs-admission/",
-        "/guides/1st-2nd-final-merit-list/"
+        "/guides/1st-2nd-final-merit-list/",
+        "/guides/uhs-provisional-merit-list/"
       ]
     },
     {
@@ -2234,7 +2238,9 @@
         "/mdcat-aggregate-calculator/",
         "/predictor/",
         "/guides/what-is-closing-merit/",
-        "/methodology/"
+        "/methodology/",
+        "/mdcat-merit-list/private/",
+        "/guides/uhs-provisional-merit-list/"
       ],
       "ru_heading": "NUMS ka merit kitna jata hai?"
     },
@@ -2377,16 +2383,19 @@
     },
     {
       "path": "/guides/what-is-closing-merit/",
-      "defined_term": {"name": "Closing merit", "description": "The aggregate of the last student admitted to a program or college in a merit list; students at or above it got a seat in that list."},
+      "defined_term": {
+        "name": "Closing merit",
+        "description": "The aggregate of the last student admitted to a program or college in a merit list; students at or above it got a seat in that list."
+      },
       "keyword": "closing merit",
-      "title": "What Is Closing Merit? (Last Year Merit Explained)",
-      "description": "What closing merit means, why it drops from the 1st to the final merit list, and how to use last year's closing merit to judge your admission chances.",
+      "title": "What Is Closing Merit? Meaning and Real Examples ({season_year})",
+      "description": "Closing merit is the aggregate of the last student admitted on merit. See what it means, real 2025 examples such as KEMU 94.87%, and how to judge chances.",
       "h1": "What Is Closing Merit and How to Use It",
       "crumb": "What is closing merit",
       "type": "content",
       "template": "default",
       "published": "2026-10-31",
-      "updated": "2026-10-31",
+      "updated": "2026-11-12",
       "answer": "Closing merit is the aggregate of the last student admitted to a program or college in a merit list. For example, Narowal Medical College's open-merit MBBS seats closed at 93.51% in the final 2025 UHS list. Compare your aggregate with the newest official final list (older years show the trend) to judge your chances.",
       "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
       "content_file": "guide-what-is-closing-merit.html",
@@ -2440,7 +2449,10 @@
         "/mdcat-merit-list/",
         "/mdcat-aggregate-calculator/",
         "/guides/mdcat-aggregate-formula/",
-        "/methodology/"
+        "/methodology/",
+        "/compare/",
+        "/merit-data-report-2026/",
+        "/guides/uhs-provisional-merit-list/"
       ],
       "ru_heading": "Closing merit kya hota hai?",
       "parents": [
@@ -2556,7 +2568,7 @@
       "type": "content",
       "template": "default",
       "published": "2026-11-01",
-      "updated": "2026-11-01",
+      "updated": "2026-11-12",
       "answer": "UHS took applications for 2026-27 public-sector MBBS from 16 to 30 October 2026. The provisional order of merit is due on Friday 13 November, the final merit on 16 November and the first college-wise selection list on 17 November 2026; MBBS classes start on 1 February 2027. BDS applications run from 15 to 30 December 2026.",
       "answer_source": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
       "content_file": "uhs-mbbs-admission.html",
@@ -3352,8 +3364,8 @@
     {
       "path": "/uet-merit-list/",
       "keyword": "uet merit list",
-      "title": "UET Merit List {season_year}: Closing Merit {year:uet} (All Campuses)",
-      "description": "UET Lahore merit list: official Fall 2026 closing merit for every program, campus and category, Cybersecurity 85.60% and CS 85.37%, with Fall 2025.",
+      "title": "UET Merit List {season_year}: Closing Merit Program-wise (4th List)",
+      "description": "UET Lahore closing merit Fall 2026, 1st and 4th list: CS 85.37%, Electrical 83.33%, Mechanical 82.28%, Civil 80.96%, for every campus and category.",
       "h1": "UET Lahore Merit List {season_year} & Closing Merit {year:uet}",
       "crumb": "UET merit list",
       "subtitle": "Fall 2026 closing merit: 1st and 4th merit lists and left-over seats, with Fall 2025 and 2024",
@@ -3361,7 +3373,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
-      "updated": "2026-11-02",
+      "updated": "2026-11-12",
       "answer": "UET Lahore's closing merit is its 4th Merit List, the last list with automatic moves to a higher preference. Fall 2026, A1 open merit, main campus: Cybersecurity 85.60%, Computer Science 85.37%, Data Science 84.02%, Electrical 83.33%, Mechanical 82.28%; KSK Computer Science 79.75%.",
       "answer_source": "https://admission.uet.edu.pk/uploads/downloads/bce6493e-8fe7-4e9e-a013-92003937d908.pdf",
       "content_file": "uet-merit-list.html",
@@ -3480,7 +3492,9 @@
         "/uet-merit-list/narowal/",
         "/uet-merit-list/rcet-gujranwala/",
         "/uet-taxila-merit-list/",
-        "/guides/what-is-closing-merit/"
+        "/guides/what-is-closing-merit/",
+        "/compare/",
+        "/merit-data-report-2026/"
       ],
       "ru_heading": "UET Lahore ka merit kitna jata hai?"
     },
@@ -3859,8 +3873,8 @@
     {
       "path": "/uet-taxila-merit-list/",
       "keyword": "uet taxila merit list",
-      "title": "UET Taxila Merit List {season_year}: Closing Merit {year:uet-taxila}",
-      "description": "UET Taxila merit list: last official open-merit closing aggregate for every program, from Software Engineering 79.44% to Environmental 53.07%.",
+      "title": "UET Taxila Merit List {season_year}: Closing Merit {year:uet-taxila}, Program-wise",
+      "description": "UET Taxila closing merit 2024 for all 12 programs: Software Engineering 79.44%, CS 77.98%, Civil 65.52%, Mechanical 59.01%, down to Environmental 53.07%.",
       "h1": "UET Taxila Merit List {season_year} & Closing Merit {year:uet-taxila} by Program",
       "crumb": "UET Taxila merit list",
       "subtitle": "Open merit, last admitted aggregate per department (2024 entry, official prospectus)",
@@ -3868,7 +3882,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
-      "updated": "2026-10-31",
+      "updated": "2026-11-12",
       "answer": "UET Taxila's latest official closing merits (open merit, 2024 entry) run from 79.44% for Software Engineering and 77.98% for Computer Science down to 53.07% for Environmental Engineering. Most engineering programs closed between 58% and 66%. Source: UET Taxila UG Prospectus 2025, Merit Position Entry 2024.",
       "answer_source": "https://admissions.uettaxila.edu.pk/Downloads/UET-Prospectus-2025.pdf",
       "content_file": "uet-taxila-merit-list.html",
@@ -3945,8 +3959,8 @@
     {
       "path": "/comsats-merit-list/",
       "keyword": "comsats merit list",
-      "title": "COMSATS Merit List {season_year}: Closing Merit by Campus",
-      "description": "COMSATS merit list: official closing merit for Lahore (Fall 2026, CS 85%) and Islamabad (Spring 2025 CS 88.26%, Fall 2023 87.10%) by program, with sources.",
+      "title": "COMSATS Merit List {season_year}: Fall {year:comsats} Closing Merit by Program",
+      "description": "COMSATS closing merit Fall 2026: Lahore BS CS 85%, Islamabad Cyber Security 84.34% (3rd list), plus Spring 2025 and Fall 2023 for every program.",
       "h1": "COMSATS Merit List {season_year} & Closing Merit by Campus",
       "crumb": "COMSATS merit list",
       "subtitle": "Official closing aggregates: Lahore Fall 2026, Islamabad Fall 2026 (3rd list), Spring 2025 and Fall 2023",
@@ -3954,7 +3968,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
-      "updated": "2026-11-01",
+      "updated": "2026-11-12",
       "answer": "COMSATS Lahore's Fall 2026 closing merits were 85% for BS Computer Science, 82% for Software Engineering and 78.01% for Computer Engineering (2nd and last merit list). At Islamabad, Spring 2025 Computer Science closed at 88.26% and Artificial Intelligence at 87.69%.",
       "answer_source": "https://lahore.comsats.edu.pk/news/merit.aspx",
       "content_file": "comsats-merit-list.html",
@@ -4035,21 +4049,25 @@
         "/fast-aggregate-calculator/",
         "/nust-aggregate-calculator/",
         "/guides/what-is-closing-merit/",
-        "/methodology/"
+        "/methodology/",
+        "/air-aggregate-calculator/",
+        "/bahria-aggregate-calculator/",
+        "/itu-merit-list/",
+        "/compare/"
       ],
       "ru_heading": "COMSATS ka merit kitna jata hai?"
     },
     {
       "path": "/guides/1st-2nd-final-merit-list/",
       "keyword": "2nd merit list",
-      "title": "1st, 2nd and Final Merit List: How Much Does Merit Drop?",
-      "description": "1st vs 2nd vs final merit list explained with real UHS 2025 figures: public MBBS dropped 0.08 points on average, private MBBS 9 points. Know which to use.",
+      "title": "1st, 2nd or Final Merit List? How Much Merit Drops ({season_year})",
+      "description": "1st vs 2nd vs final merit list with real UHS 2025 figures: public MBBS dropped 0.08 points on average, private MBBS 9 points. See which list to watch.",
       "h1": "1st vs 2nd vs Final Merit List",
       "crumb": "1st, 2nd and final merit list",
       "type": "content",
       "template": "default",
       "published": "2026-10-31",
-      "updated": "2026-10-31",
+      "updated": "2026-11-12",
       "answer": "The 1st merit list offers seats to the top applicants; the 2nd and later lists fill seats that students leave, so the closing aggregate falls with each list. How much depends on demand: in UHS Punjab's 2025 lists, public MBBS fell only 0.08 points on average from the 1st to the final list, private MBBS about 9 points.",
       "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
       "content_file": "guide-1st-2nd-final-merit-list.html",
@@ -4387,8 +4405,8 @@
     {
       "path": "/pu-merit-list/",
       "keyword": "pu merit list",
-      "title": "PU Merit List {season_year}: Punjab University Closing Merit {year:pu}",
-      "description": "PU merit list: Punjab University's official closing merit 2025 for 257 BS programs and shifts, from Pharm-D 91.34% and PUCIT CS 87.18% downwards.",
+      "title": "PU Merit List {season_year}: Closing Merit {year:pu} Department-wise",
+      "description": "Punjab University closing merit 2025 for 257 BS programs and shifts: Pharm-D 91.34%, PUCIT CS 87.18%, plus Gujranwala and Jhelum campuses and 2024.",
       "h1": "Punjab University (PU) Merit List {season_year} & Closing Merit {year:pu}",
       "crumb": "PU merit list",
       "subtitle": "Official 'Merit of Last Year' figures: BS 1st and 5th semester, morning and evening, all campuses",
@@ -4396,7 +4414,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
-      "updated": "2026-11-01",
+      "updated": "2026-11-12",
       "answer": "Punjab University's official closing merit for 2025 ran from 91.34% for Pharm-D and 87.18% for PUCIT Computer Science (New Campus) down to below 40% for some evening and campus programs. BBA at IBA closed at 81.79%, Electrical Engineering at 76.69% and English Literature at 77.73% (morning). Source: PU, Merit of Last Year 2025.",
       "answer_source": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
       "content_file": "pu-merit-list.html",
@@ -4478,15 +4496,19 @@
         "/guides/1st-2nd-final-merit-list/",
         "/uet-taxila-merit-list/",
         "/mdcat-merit-list/",
-        "/methodology/"
+        "/methodology/",
+        "/itu-merit-list/",
+        "/uaf-aggregate-calculator/",
+        "/compare/",
+        "/merit-data-report-2026/"
       ],
       "ru_heading": "Punjab University ka merit kitna jata hai?"
     },
     {
       "path": "/ku-merit-list/",
       "keyword": "ku merit list",
-      "title": "KU Merit List {season_year}: Karachi University Closing Percentage",
-      "description": "KU merit list {season_year}: University of Karachi's official closing percentages for test-based and open-merit BS programmes, Pharm-D and Visual Studies.",
+      "title": "KU Merit List {season_year}: Closing Percentage Department-wise",
+      "description": "Karachi University closing percentage 2026 for every department: Pharm-D 84.27%, BSCS 80%, BS AI 79.73%, with 2025 open-merit figures and test minimums.",
       "h1": "Karachi University (KU) Merit List {season_year}: Closing Percentages",
       "crumb": "KU merit list",
       "subtitle": "Admissions 2027 closing lists (October {season_year}) and Admissions 2026 closing percentages (KU Prospectus 2027)",
@@ -4494,7 +4516,7 @@
       "template": "meritlist",
       "schema_type": "CollectionPage",
       "published": "2026-10-31",
-      "updated": "2026-10-31",
+      "updated": "2026-11-12",
       "answer": "In KU's official closing list for Admissions 2027 (19 October 2026), Pharm-D closed at 84.27% (morning), BS Computer Science at 80.00%, Artificial Intelligence at 79.73% and Software Engineering at 78.82%, for candidates with at least 50 in the entrance test. BBA closed at 73.82% and BE Chemical Engineering at 63.64%.",
       "answer_source": "https://uokadmission.edu.pk/uploads/links/closing-percentages-test-based-and-pharm-d-admissions-2027-20261019144818.pdf",
       "content_file": "ku-merit-list.html",
@@ -4581,7 +4603,8 @@
         "/guides/what-is-closing-merit/",
         "/guides/1st-2nd-final-merit-list/",
         "/ned-aggregate-calculator/",
-        "/methodology/"
+        "/methodology/",
+        "/merit-data-report-2026/"
       ],
       "ru_heading": "Karachi University ka merit kitna jata hai?"
     },
@@ -5212,70 +5235,70 @@
       "ru_heading": "Mere aggregate par kahan admission ho sakta hai?"
     },
     {
-        "path": "/compare/",
-        "keyword": "compare merit",
-        "title": "Compare Closing Merit: Two Colleges or Programs Side by Side",
-        "description": "Compare the official closing merit of two medical colleges or university programs year by year: KEMU vs AIMC, UET vs UET Taxila, PU programs and more.",
-        "h1": "Compare Closing Merit of Two Colleges or Programs",
-        "crumb": "Compare merit",
-        "subtitle": "Official closing merit by year, side by side, with the difference",
-        "type": "content",
-        "template": "calculator",
-        "published": "2026-11-01",
-        "updated": "2026-11-01",
-        "parents": [
-          "/merit-list/"
-        ],
-        "answer": "Pick two programs or colleges to see their official closing merit for each year side by side. In the final 2025 UHS list, KEMU closed at 94.87% and AIMC at 94.45% on open merit, 0.42 points apart, about 1.5 MDCAT marks. Within one university the difference is exact; across universities the formulas differ.",
-        "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
-        "content_file": "compare.html",
-        "faq": [
-          {
-            "q": "What was the difference between KEMU and AIMC merit in 2025?",
-            "a": "0.42 points on open merit in the final 2025 UHS list: KEMU closed at 94.87% and AIMC at 94.45%. In 2024 they closed at 96.06% and 95.60%."
-          },
-          {
-            "q": "Can I compare programs from different universities?",
-            "a": "Yes, but read it as each program's trend. Each university has its own formula, so the same aggregate does not mean the same thing at UET, PU and UHS."
-          },
-          {
-            "q": "Which list does the comparison use?",
-            "a": "Each university's main view: the final or last regular list, open merit. If a year only has another list, its name is shown under the figure."
-          },
-          {
-            "q": "Do merit lists ka farq kaise dekhein?",
-            "a": "Is tool mein do college ya program chunein. Har saal ka closing merit saath saath aur dono ka farq nazar aata hai, har figure ke saath official list ka link hai.",
-            "lang": "ur-Latn"
-          }
-        ],
-        "roman_urdu": "<p>Do college ya program chunein aur un ka official closing merit saal ba saal saath saath dekhein. Aik hi university mein farq bilkul sahi hota hai (UHS mein aik MDCAT mark 0.28 points ke barabar hai). Alag universities ke formula alag hain, is liye un ka muqabla sirf trend ke tor par karein.</p>",
-        "ru_heading": "Do colleges ka merit kaise compare karein?",
-        "sources": [
-          {
-            "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
-            "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
-            "fetched": "2026-10-31"
-          },
-          {
-            "label": "UHS 17th selection list 2024, KEMU",
-            "url": "https://uhs.edu.pk/admissions2024data/17kemu24.pdf",
-            "fetched": "2026-10-31"
-          },
-          {
-            "label": "UHS 17th selection list 2024, AIMC",
-            "url": "https://uhs.edu.pk/admissions2024data/17aimc24.pdf",
-            "fetched": "2026-10-31"
-          }
-        ],
-        "related": [
-          "/predictor/",
-          "/merit-list/",
-          "/mdcat-merit-list/",
-          "/mdcat-merit-list/kemu/",
-          "/mdcat-merit-list/aimc/",
-          "/uet-merit-list/"
-        ]
-      },
+      "path": "/compare/",
+      "keyword": "compare merit",
+      "title": "Compare Closing Merit: Two Colleges or Programs Side by Side",
+      "description": "Compare the official closing merit of two medical colleges or university programs year by year: KEMU vs AIMC, UET vs UET Taxila, PU programs and more.",
+      "h1": "Compare Closing Merit of Two Colleges or Programs",
+      "crumb": "Compare merit",
+      "subtitle": "Official closing merit by year, side by side, with the difference",
+      "type": "content",
+      "template": "calculator",
+      "published": "2026-11-01",
+      "updated": "2026-11-01",
+      "parents": [
+        "/merit-list/"
+      ],
+      "answer": "Pick two programs or colleges to see their official closing merit for each year side by side. In the final 2025 UHS list, KEMU closed at 94.87% and AIMC at 94.45% on open merit, 0.42 points apart, about 1.5 MDCAT marks. Within one university the difference is exact; across universities the formulas differ.",
+      "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+      "content_file": "compare.html",
+      "faq": [
+        {
+          "q": "What was the difference between KEMU and AIMC merit in 2025?",
+          "a": "0.42 points on open merit in the final 2025 UHS list: KEMU closed at 94.87% and AIMC at 94.45%. In 2024 they closed at 96.06% and 95.60%."
+        },
+        {
+          "q": "Can I compare programs from different universities?",
+          "a": "Yes, but read it as each program's trend. Each university has its own formula, so the same aggregate does not mean the same thing at UET, PU and UHS."
+        },
+        {
+          "q": "Which list does the comparison use?",
+          "a": "Each university's main view: the final or last regular list, open merit. If a year only has another list, its name is shown under the figure."
+        },
+        {
+          "q": "Do merit lists ka farq kaise dekhein?",
+          "a": "Is tool mein do college ya program chunein. Har saal ka closing merit saath saath aur dono ka farq nazar aata hai, har figure ke saath official list ka link hai.",
+          "lang": "ur-Latn"
+        }
+      ],
+      "roman_urdu": "<p>Do college ya program chunein aur un ka official closing merit saal ba saal saath saath dekhein. Aik hi university mein farq bilkul sahi hota hai (UHS mein aik MDCAT mark 0.28 points ke barabar hai). Alag universities ke formula alag hain, is liye un ka muqabla sirf trend ke tor par karein.</p>",
+      "ru_heading": "Do colleges ka merit kaise compare karein?",
+      "sources": [
+        {
+          "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS 17th selection list 2024, KEMU",
+          "url": "https://uhs.edu.pk/admissions2024data/17kemu24.pdf",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS 17th selection list 2024, AIMC",
+          "url": "https://uhs.edu.pk/admissions2024data/17aimc24.pdf",
+          "fetched": "2026-10-31"
+        }
+      ],
+      "related": [
+        "/predictor/",
+        "/merit-list/",
+        "/mdcat-merit-list/",
+        "/mdcat-merit-list/kemu/",
+        "/mdcat-merit-list/aimc/",
+        "/uet-merit-list/"
+      ]
+    },
     {
       "path": "/aggregate-calculator/",
       "keyword": "all aggregate calculators",
@@ -5352,7 +5375,13 @@
         "/comsats-aggregate-calculator/",
         "/predictor/",
         "/merit-list/",
-        "/guides/mdcat-aggregate-formula/"
+        "/guides/mdcat-aggregate-formula/",
+        "/fast-aggregate-calculator/",
+        "/ned-aggregate-calculator/",
+        "/air-aggregate-calculator/",
+        "/bahria-aggregate-calculator/",
+        "/itu-aggregate-calculator/",
+        "/uaf-aggregate-calculator/"
       ],
       "ru_heading": "Kis university ka calculator use karun?"
     },
@@ -5436,7 +5465,10 @@
         "/pu-aggregate-calculator/",
         "/nust-aggregate-calculator/",
         "/uet-taxila-aggregate-calculator/",
-        "/predictor/"
+        "/predictor/",
+        "/fast-aggregate-calculator/",
+        "/ned-aggregate-calculator/",
+        "/air-aggregate-calculator/"
       ],
       "ru_heading": "FSc ki percentage kaise nikalte hain?"
     },
@@ -5518,8 +5550,8 @@
     {
       "path": "/merit-list/",
       "keyword": "university merit lists",
-      "title": "Merit Lists {season_year}: Closing Merit of All Universities",
-      "description": "Merit lists {season_year}: latest official closing merits of MBBS/BDS colleges, PU, KU, UET Lahore, UET Taxila, COMSATS, NUMS and ITU, with a source on every row.",
+      "title": "Merit List {season_year}: Closing Merit of All Universities",
+      "description": "Closing merit of every university in one place: MBBS/BDS colleges, UET, PU, KU, COMSATS, NUMS, UET Taxila and ITU, department-wise, with official sources.",
       "h1": "Merit Lists {season_year} & Closing Merits of Pakistani Universities",
       "crumb": "Merit lists",
       "subtitle": "Official closing merits by university, program, campus and year",
@@ -5593,7 +5625,10 @@
         "/guides/what-is-closing-merit/",
         "/guides/1st-2nd-final-merit-list/",
         "/guides/nust-fast-closing-merit/",
-        "/updates/"
+        "/updates/",
+        "/itu-merit-list/",
+        "/comsats-merit-list/",
+        "/uet-merit-list/"
       ],
       "ru_heading": "Pichhle saal ka merit kahan dekhein?"
     },
@@ -5743,7 +5778,8 @@
         "/pu-aggregate-calculator/",
         "/contact/"
       ],
-      "ru_heading": "Apni website par calculator kaise lagayein?"
+      "ru_heading": "Apni website par calculator kaise lagayein?",
+      "noindex": true
     },
     {
       "path": "/submit-merit-list/",
