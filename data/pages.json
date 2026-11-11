@@ -1995,6 +1995,611 @@
       ]
     },
     {
+      "path": "/mdcat-merit-list/al-aleem/",
+      "keyword": "al-aleem medical college merit list",
+      "title": "Al-Aleem Medical College Merit List {year:uhs}: MBBS Closing Merit",
+      "description": "Al-Aleem Medical College merit list 2025: MBBS closed at 90.84% in the final UHS private list, 92.71% in the 1st list. Every list, rank and MDCAT needed.",
+      "h1": "Al-Aleem Medical College, Lahore Merit List {year:uhs}",
+      "crumb": "Al-Aleem Medical College merit",
+      "parents": [
+        "/mdcat-merit-list/private/"
+      ],
+      "type": "content",
+      "template": "default",
+      "published": "2026-11-12",
+      "updated_from_data": true,
+      "college": "al-aleem",
+      "answer": "Al-Aleem Medical College, Lahore closed at 90.84% on open merit in the 5th and final 2025 UHS private MBBS selection list, after 92.71% in the 1st list. It had the highest closing merit of the 33 private medical colleges in Punjab.",
+      "answer_source": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+      "content": "[am_pcollege uni=\"uhs\" college=\"al-aleem\"]",
+      "faq": [
+        {
+          "q": "What was the Al-Aleem Medical College merit in 2025?",
+          "a": "90.84% on open merit in the 5th and final UHS private MBBS selection list (2025-26 session). The 1st list closed at 92.71%."
+        },
+        {
+          "q": "How much did Al-Aleem Medical College merit drop from the 1st to the final list?",
+          "a": "1.87 points in 2025: from 92.71% in the 1st list to 90.84% in the 5th list."
+        },
+        {
+          "q": "How many MDCAT marks are needed for Al-Aleem Medical College?",
+          "a": "With 1000/1100 in both FSc and Matric, about 164/180 in MDCAT reaches 90.84%, the 2025 closing merit. With 900/1100 in both, about 180/180."
+        },
+        {
+          "q": "Where does Al-Aleem Medical College rank among private medical colleges?",
+          "a": "1st of 33 UHS Punjab private MBBS colleges by 2025 closing merit, next to Sharif Medical & Dental College, Lahore (88.70%)."
+        },
+        {
+          "q": "Al-Aleem Medical College ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "2025 ki final UHS private list mein Al-Aleem Medical College ka MBBS open merit 90.84% par close hua. Pehli list mein yeh 92.71% tha."
+        },
+        {
+          "q": "Al-Aleem Medical College ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 164/180, aur dono 900/1100 hon to taqreeban 180/180 (2025 ke merit 90.84% ke hisaab se)."
+        }
+      ],
+      "roman_urdu": "<p>2025 ki final UHS private list mein Al-Aleem Medical College ka MBBS open merit <strong>90.84%</strong> par close hua. Pehli list mein yeh 92.71% tha.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 164/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+      "ru_heading": "Al-Aleem Medical College ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "UHS 5th and final selection list, private MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS 1st to 5th selection lists, private MBBS 2025",
+          "url": "https://uhs.edu.pk/1selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS Final Order of Merit, private MBBS 2025",
+          "url": "https://www.uhs.edu.pk/finalommbbsmlprivate25.php",
+          "fetched": "2026-11-05"
+        }
+      ],
+      "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/compare/",
+        "/uhs-mbbs-admission/",
+        "/mdcat-passing-marks/"
+      ]
+    },
+    {
+      "path": "/mdcat-merit-list/shalamar/",
+      "keyword": "shalamar medical college merit list",
+      "title": "Shalamar Medical College Merit List {year:uhs}: MBBS Closing Merit",
+      "description": "Shalamar Medical College merit list 2025: MBBS closed at 86.34% in the final UHS private list, 90.64% in the 1st list. Every list, rank and MDCAT needed.",
+      "h1": "Shalamar Medical & Dental College, Lahore Merit List {year:uhs}",
+      "crumb": "Shalamar Medical College merit",
+      "parents": [
+        "/mdcat-merit-list/private/"
+      ],
+      "type": "content",
+      "template": "default",
+      "published": "2026-11-12",
+      "updated_from_data": true,
+      "college": "shalamar",
+      "answer": "Shalamar Medical & Dental College, Lahore closed at 86.34% on open merit in the 5th and final 2025 UHS private MBBS selection list, after 90.64% in the 1st list. It had the 3rd highest closing merit of the 33 private medical colleges in Punjab.",
+      "answer_source": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+      "content": "[am_pcollege uni=\"uhs\" college=\"shalamar\"]",
+      "faq": [
+        {
+          "q": "What was the Shalamar Medical College merit in 2025?",
+          "a": "86.34% on open merit in the 5th and final UHS private MBBS selection list (2025-26 session). The 1st list closed at 90.64%."
+        },
+        {
+          "q": "How much did Shalamar Medical College merit drop from the 1st to the final list?",
+          "a": "4.30 points in 2025: from 90.64% in the 1st list to 86.34% in the 5th list."
+        },
+        {
+          "q": "How many MDCAT marks are needed for Shalamar Medical College?",
+          "a": "With 1000/1100 in both FSc and Matric, about 148/180 in MDCAT reaches 86.34%, the 2025 closing merit. With 900/1100 in both, about 164/180."
+        },
+        {
+          "q": "Where does Shalamar Medical College rank among private medical colleges?",
+          "a": "3rd of 33 UHS Punjab private MBBS colleges by 2025 closing merit, between Sharif Medical & Dental College, Lahore (88.70%) and FMH College of Medicine & Dentistry, Lahore (86.18%)."
+        },
+        {
+          "q": "Shalamar Medical College ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "2025 ki final UHS private list mein Shalamar Medical College ka MBBS open merit 86.34% par close hua. Pehli list mein yeh 90.64% tha."
+        },
+        {
+          "q": "Shalamar Medical College ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 148/180, aur dono 900/1100 hon to taqreeban 164/180 (2025 ke merit 86.34% ke hisaab se)."
+        }
+      ],
+      "roman_urdu": "<p>2025 ki final UHS private list mein Shalamar Medical College ka MBBS open merit <strong>86.34%</strong> par close hua. Pehli list mein yeh 90.64% tha.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 148/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+      "ru_heading": "Shalamar Medical College ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "UHS 5th and final selection list, private MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS 1st to 5th selection lists, private MBBS 2025",
+          "url": "https://uhs.edu.pk/1selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS Final Order of Merit, private MBBS 2025",
+          "url": "https://www.uhs.edu.pk/finalommbbsmlprivate25.php",
+          "fetched": "2026-11-05"
+        }
+      ],
+      "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/compare/",
+        "/uhs-mbbs-admission/",
+        "/mdcat-passing-marks/"
+      ]
+    },
+    {
+      "path": "/mdcat-merit-list/rahbar/",
+      "keyword": "rahbar medical college merit list",
+      "title": "Rahbar Medical College Merit List {year:uhs}: MBBS Closing Merit",
+      "description": "Rahbar Medical College merit list 2025: MBBS closed at 79.54% in the final UHS private list, 85.95% in the 1st list. Every list, rank and MDCAT needed.",
+      "h1": "Rahbar Medical & Dental College, Lahore Merit List {year:uhs}",
+      "crumb": "Rahbar Medical College merit",
+      "parents": [
+        "/mdcat-merit-list/private/"
+      ],
+      "type": "content",
+      "template": "default",
+      "published": "2026-11-12",
+      "updated_from_data": true,
+      "college": "rahbar",
+      "answer": "Rahbar Medical & Dental College, Lahore closed at 79.54% on open merit in the 5th and final 2025 UHS private MBBS selection list, after 85.95% in the 1st list. It had the 7th highest closing merit of the 33 private medical colleges in Punjab.",
+      "answer_source": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+      "content": "[am_pcollege uni=\"uhs\" college=\"rahbar\"]",
+      "faq": [
+        {
+          "q": "What was the Rahbar Medical College merit in 2025?",
+          "a": "79.54% on open merit in the 5th and final UHS private MBBS selection list (2025-26 session). The 1st list closed at 85.95%."
+        },
+        {
+          "q": "How much did Rahbar Medical College merit drop from the 1st to the final list?",
+          "a": "6.41 points in 2025: from 85.95% in the 1st list to 79.54% in the 5th list."
+        },
+        {
+          "q": "How many MDCAT marks are needed for Rahbar Medical College?",
+          "a": "With 1000/1100 in both FSc and Matric, about 123/180 in MDCAT reaches 79.54%, the 2025 closing merit. With 900/1100 in both, about 140/180."
+        },
+        {
+          "q": "Where does Rahbar Medical College rank among private medical colleges?",
+          "a": "7th of 33 UHS Punjab private MBBS colleges by 2025 closing merit, between Akhtar Saeed Medical & Dental College, Lahore (82.44%) and Rashid Latif Medical College, Lahore (79.27%)."
+        },
+        {
+          "q": "What was the BDS merit at Rahbar Medical College?",
+          "a": "64.55% in the 3rd UHS private BDS list of 2025 (Rahbar College of Dentistry, Lahore), after 81.80% in the 1st list."
+        },
+        {
+          "q": "Rahbar Medical College ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "2025 ki final UHS private list mein Rahbar Medical College ka MBBS open merit 79.54% par close hua. Pehli list mein yeh 85.95% tha."
+        },
+        {
+          "q": "Rahbar Medical College ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 123/180, aur dono 900/1100 hon to taqreeban 140/180 (2025 ke merit 79.54% ke hisaab se)."
+        }
+      ],
+      "roman_urdu": "<p>2025 ki final UHS private list mein Rahbar Medical College ka MBBS open merit <strong>79.54%</strong> par close hua. Pehli list mein yeh 85.95% tha.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 123/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+      "ru_heading": "Rahbar Medical College ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "UHS 5th and final selection list, private MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS 1st to 5th selection lists, private MBBS 2025",
+          "url": "https://uhs.edu.pk/1selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS Final Order of Merit, private MBBS 2025",
+          "url": "https://www.uhs.edu.pk/finalommbbsmlprivate25.php",
+          "fetched": "2026-11-05"
+        },
+        {
+          "label": "UHS 1st to 3rd selection lists, private BDS 2025",
+          "url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php",
+          "fetched": "2026-11-12"
+        }
+      ],
+      "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/compare/",
+        "/uhs-mbbs-admission/",
+        "/mdcat-passing-marks/"
+      ]
+    },
+    {
+      "path": "/mdcat-merit-list/continental/",
+      "keyword": "continental medical college merit list",
+      "title": "Continental Medical College Merit List {year:uhs}: Closing Merit",
+      "description": "Continental Medical College merit list 2025: MBBS closed at 76.88% in the final UHS private list, 85.33% in the 1st list Official data. Updated.",
+      "h1": "Continental Medical College, Lahore Merit List {year:uhs}",
+      "crumb": "Continental Medical College merit",
+      "parents": [
+        "/mdcat-merit-list/private/"
+      ],
+      "type": "content",
+      "template": "default",
+      "published": "2026-11-12",
+      "updated_from_data": true,
+      "college": "continental",
+      "answer": "Continental Medical College, Lahore closed at 76.88% on open merit in the 5th and final 2025 UHS private MBBS selection list, after 85.33% in the 1st list. It had the 11th highest closing merit of the 33 private medical colleges in Punjab.",
+      "answer_source": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+      "content": "[am_pcollege uni=\"uhs\" college=\"continental\"]",
+      "faq": [
+        {
+          "q": "What was the Continental Medical College merit in 2025?",
+          "a": "76.88% on open merit in the 5th and final UHS private MBBS selection list (2025-26 session). The 1st list closed at 85.33%."
+        },
+        {
+          "q": "How much did Continental Medical College merit drop from the 1st to the final list?",
+          "a": "8.45 points in 2025: from 85.33% in the 1st list to 76.88% in the 5th list."
+        },
+        {
+          "q": "How many MDCAT marks are needed for Continental Medical College?",
+          "a": "With 1000/1100 in both FSc and Matric, about 114/180 in MDCAT reaches 76.88%, the 2025 closing merit. With 900/1100 in both, about 130/180."
+        },
+        {
+          "q": "Where does Continental Medical College rank among private medical colleges?",
+          "a": "11th of 33 UHS Punjab private MBBS colleges by 2025 closing merit, between Akhtar Saeed Medical College, Rawalpindi (76.99%) and Aziz Fatima Medical & Dental College, Faisalabad (76.42%)."
+        },
+        {
+          "q": "Continental Medical College ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "2025 ki final UHS private list mein Continental Medical College ka MBBS open merit 76.88% par close hua. Pehli list mein yeh 85.33% tha."
+        },
+        {
+          "q": "Continental Medical College ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 114/180, aur dono 900/1100 hon to taqreeban 130/180 (2025 ke merit 76.88% ke hisaab se)."
+        }
+      ],
+      "roman_urdu": "<p>2025 ki final UHS private list mein Continental Medical College ka MBBS open merit <strong>76.88%</strong> par close hua. Pehli list mein yeh 85.33% tha.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 114/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+      "ru_heading": "Continental Medical College ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "UHS 5th and final selection list, private MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS 1st to 5th selection lists, private MBBS 2025",
+          "url": "https://uhs.edu.pk/1selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS Final Order of Merit, private MBBS 2025",
+          "url": "https://www.uhs.edu.pk/finalommbbsmlprivate25.php",
+          "fetched": "2026-11-05"
+        }
+      ],
+      "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/compare/",
+        "/uhs-mbbs-admission/",
+        "/mdcat-passing-marks/"
+      ]
+    },
+    {
+      "path": "/mdcat-merit-list/independent/",
+      "keyword": "independent medical college merit list",
+      "title": "Independent Medical College Merit List {year:uhs}: Closing Merit",
+      "description": "Independent Medical College merit list 2025: MBBS closed at 68.31% in the final UHS private list, 79.82% in the 1st list Official data. Updated.",
+      "h1": "Independent Medical College, Faisalabad Merit List {year:uhs}",
+      "crumb": "Independent Medical College merit",
+      "parents": [
+        "/mdcat-merit-list/private/"
+      ],
+      "type": "content",
+      "template": "default",
+      "published": "2026-11-12",
+      "updated_from_data": true,
+      "college": "independent",
+      "answer": "Independent Medical College, Faisalabad closed at 68.31% on open merit in the 5th and final 2025 UHS private MBBS selection list, after 79.82% in the 1st list. It had the 26th highest closing merit of the 33 private medical colleges in Punjab.",
+      "answer_source": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+      "content": "[am_pcollege uni=\"uhs\" college=\"independent\"]",
+      "faq": [
+        {
+          "q": "What was the Independent Medical College merit in 2025?",
+          "a": "68.31% on open merit in the 5th and final UHS private MBBS selection list (2025-26 session). The 1st list closed at 79.82%."
+        },
+        {
+          "q": "How much did Independent Medical College merit drop from the 1st to the final list?",
+          "a": "11.51 points in 2025: from 79.82% in the 1st list to 68.31% in the 5th list."
+        },
+        {
+          "q": "How many MDCAT marks are needed for Independent Medical College?",
+          "a": "The MDCAT pass mark is the real limit: at least 99/180 (55%) for MBBS. The 2025 closing merit of 68.31% needed only about 83/180 with 1000/1100 in FSc and Matric, or 99/180 with 900/1100."
+        },
+        {
+          "q": "Where does Independent Medical College rank among private medical colleges?",
+          "a": "26th of 33 UHS Punjab private MBBS colleges by 2025 closing merit, between University Medical & Dental College, Faisalabad (For Women Only) (University of Faisalabad) (68.36%) and Shahida Islam Medical College, Lodhran (67.57%)."
+        },
+        {
+          "q": "Independent Medical College ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "2025 ki final UHS private list mein Independent Medical College ka MBBS open merit 68.31% par close hua. Pehli list mein yeh 79.82% tha."
+        },
+        {
+          "q": "Independent Medical College ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "MBBS ke liye MDCAT mein kam az kam 99/180 (55%) zaroori hain. 2025 ka merit 68.31% is se kam number par bhi pura ho jata tha."
+        }
+      ],
+      "roman_urdu": "<p>2025 ki final UHS private list mein Independent Medical College ka MBBS open merit <strong>68.31%</strong> par close hua. Pehli list mein yeh 79.82% tha.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 99/180 (MBBS ke liye kam az kam 55%) chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+      "ru_heading": "Independent Medical College ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "UHS 5th and final selection list, private MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS 1st to 5th selection lists, private MBBS 2025",
+          "url": "https://uhs.edu.pk/1selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS Final Order of Merit, private MBBS 2025",
+          "url": "https://www.uhs.edu.pk/finalommbbsmlprivate25.php",
+          "fetched": "2026-11-05"
+        }
+      ],
+      "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/compare/",
+        "/uhs-mbbs-admission/",
+        "/mdcat-passing-marks/"
+      ]
+    },
+    {
+      "path": "/mdcat-merit-list/sahara/",
+      "keyword": "sahara medical college merit list",
+      "title": "Sahara Medical College Merit List {year:uhs}: MBBS Closing Merit",
+      "description": "Sahara Medical College merit list 2025: MBBS closed at 63.15% in the final UHS private list, 77.80% in the 1st list. Every list, rank and MDCAT needed.",
+      "h1": "Sahara Medical College, Narowal Merit List {year:uhs}",
+      "crumb": "Sahara Medical College merit",
+      "parents": [
+        "/mdcat-merit-list/private/"
+      ],
+      "type": "content",
+      "template": "default",
+      "published": "2026-11-12",
+      "updated_from_data": true,
+      "college": "sahara",
+      "answer": "Sahara Medical College, Narowal closed at 63.15% on open merit in the 5th and final 2025 UHS private MBBS selection list, after 77.80% in the 1st list. It had the 32nd highest closing merit of the 33 private medical colleges in Punjab.",
+      "answer_source": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+      "content": "[am_pcollege uni=\"uhs\" college=\"sahara\"]",
+      "faq": [
+        {
+          "q": "What was the Sahara Medical College merit in 2025?",
+          "a": "63.15% on open merit in the 5th and final UHS private MBBS selection list (2025-26 session). The 1st list closed at 77.80%."
+        },
+        {
+          "q": "How much did Sahara Medical College merit drop from the 1st to the final list?",
+          "a": "14.65 points in 2025: from 77.80% in the 1st list to 63.15% in the 5th list."
+        },
+        {
+          "q": "How many MDCAT marks are needed for Sahara Medical College?",
+          "a": "The MDCAT pass mark is the real limit: at least 99/180 (55%) for MBBS. The 2025 closing merit of 63.15% needed only about 64/180 with 1000/1100 in FSc and Matric, or 81/180 with 900/1100."
+        },
+        {
+          "q": "Where does Sahara Medical College rank among private medical colleges?",
+          "a": "32nd of 33 UHS Punjab private MBBS colleges by 2025 closing merit, between Niazi Medical & Dental College, Sargodha (64.92%) and Queens Medical College Kasur (for females only) (61.00%)."
+        },
+        {
+          "q": "Sahara Medical College ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "2025 ki final UHS private list mein Sahara Medical College ka MBBS open merit 63.15% par close hua. Pehli list mein yeh 77.80% tha."
+        },
+        {
+          "q": "Sahara Medical College ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "MBBS ke liye MDCAT mein kam az kam 99/180 (55%) zaroori hain. 2025 ka merit 63.15% is se kam number par bhi pura ho jata tha."
+        }
+      ],
+      "roman_urdu": "<p>2025 ki final UHS private list mein Sahara Medical College ka MBBS open merit <strong>63.15%</strong> par close hua. Pehli list mein yeh 77.80% tha.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 99/180 (MBBS ke liye kam az kam 55%) chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+      "ru_heading": "Sahara Medical College ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "UHS 5th and final selection list, private MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS 1st to 5th selection lists, private MBBS 2025",
+          "url": "https://uhs.edu.pk/1selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UHS Final Order of Merit, private MBBS 2025",
+          "url": "https://www.uhs.edu.pk/finalommbbsmlprivate25.php",
+          "fetched": "2026-11-05"
+        }
+      ],
+      "related": [
+        "/mdcat-merit-list/private/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/compare/",
+        "/uhs-mbbs-admission/",
+        "/mdcat-passing-marks/"
+      ]
+    },
+    {
+      "path": "/nums-merit-list/cmh-multan/",
+      "keyword": "cmh multan merit list",
+      "title": "CMH Multan Merit List {year:nums}: MBBS Closing Merit",
+      "description": "CMH Multan merit list 2025-26: MBBS closed at 86.54% in the newest NUMS list, 86.52% in 2024-25. Rank and MDCAT needed. Official data. Updated.",
+      "h1": "CMH Multan Institute of Medical Sciences, Multan Cantt Merit List {year:nums}",
+      "crumb": "CMH Multan merit",
+      "parents": [
+        "/nums-merit-list/"
+      ],
+      "type": "content",
+      "template": "default",
+      "published": "2026-11-12",
+      "updated_from_data": true,
+      "college": "cmh-multan",
+      "answer": "CMH Multan Institute of Medical Sciences, Multan Cantt closed at 86.54% on open merit in NUMS's newest 2025-26 MBBS selection list, up from 86.52% in 2024-25. It had the 2nd highest closing merit of the 8 NUMS-affiliated private MBBS colleges.",
+      "answer_source": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-CMH-Multan_1769507236.pdf",
+      "content": "[am_pcollege uni=\"nums\" college=\"cmh-multan\"]",
+      "faq": [
+        {
+          "q": "What was the CMH Multan merit in 2025-26?",
+          "a": "86.54% on open merit, the lowest aggregate in NUMS's newest 2025-26 MBBS selection list for CMH Multan."
+        },
+        {
+          "q": "What was the CMH Multan merit in 2024-25?",
+          "a": "86.52% in the last NUMS selection list of session 2024-25, so 2025-26 closed 0.02 points higher."
+        },
+        {
+          "q": "How many MDCAT marks are needed for CMH Multan?",
+          "a": "With 1000/1100 in both FSc and Matric, about 148/180 in MDCAT reaches 86.54%, the 2025 closing merit. With 900/1100 in both, about 165/180."
+        },
+        {
+          "q": "Where does CMH Multan rank among private medical colleges?",
+          "a": "2nd of 8 NUMS private MBBS colleges by 2025 closing merit, between Quetta Institute of Medical Sciences, Quetta Cantt (86.73%) and CMH Lahore Medical College and Institute of Dentistry, Lahore Cantt (85.32%)."
+        },
+        {
+          "q": "What was the BDS merit at CMH Multan?",
+          "a": "84.88% in NUMS's newest 2025-26 BDS list (CIMS Dental Section, Multan)."
+        },
+        {
+          "q": "CMH Multan ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "NUMS ki newest 2025-26 list mein CMH Multan ka MBBS open merit 86.54% par close hua; 2024-25 mein 86.52% tha."
+        },
+        {
+          "q": "CMH Multan ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 148/180, aur dono 900/1100 hon to taqreeban 165/180 (2025 ke merit 86.54% ke hisaab se)."
+        }
+      ],
+      "roman_urdu": "<p>NUMS ki newest 2025-26 list mein CMH Multan ka MBBS open merit <strong>86.54%</strong> par close hua; 2024-25 mein 86.52% tha.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 148/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+      "ru_heading": "CMH Multan ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "NUMS newest 2025-26 MBBS selection list, CMH Multan",
+          "url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-CMH-Multan_1769507236.pdf",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "NUMS last 2024-25 MBBS selection list, CMH Multan",
+          "url": "https://numspak.edu.pk/upload/media/2024-CMH-Multan-open-merit-list1739875365.pdf",
+          "fetched": "2026-11-01"
+        },
+        {
+          "label": "NUMS: merit lists for private-sector affiliated medical colleges, MBBS open merit, session 2025-26",
+          "url": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26",
+          "fetched": "2026-10-31"
+        }
+      ],
+      "related": [
+        "/nums-merit-list/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/compare/",
+        "/mdcat-merit-list/private/",
+        "/mdcat-passing-marks/"
+      ]
+    },
+    {
+      "path": "/nums-merit-list/cmh-kharian/",
+      "keyword": "cmh kharian merit list",
+      "title": "CMH Kharian Merit List {year:nums}: MBBS Closing Merit",
+      "description": "CMH Kharian merit list 2025-26: MBBS closed at 84.48% in the newest NUMS list, 83.63% in 2024-25. Rank and MDCAT needed. Official data. Updated.",
+      "h1": "CMH Kharian Medical College, Kharian Cantt Merit List {year:nums}",
+      "crumb": "CMH Kharian merit",
+      "parents": [
+        "/nums-merit-list/"
+      ],
+      "type": "content",
+      "template": "default",
+      "published": "2026-11-12",
+      "updated_from_data": true,
+      "college": "cmh-kharian",
+      "answer": "CMH Kharian Medical College, Kharian Cantt closed at 84.48% on open merit in NUMS's newest 2025-26 MBBS selection list, up from 83.63% in 2024-25. It had the 5th highest closing merit of the 8 NUMS-affiliated private MBBS colleges.",
+      "answer_source": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-CMH-Kharian_1769507227.pdf",
+      "content": "[am_pcollege uni=\"nums\" college=\"cmh-kharian\"]",
+      "faq": [
+        {
+          "q": "What was the CMH Kharian merit in 2025-26?",
+          "a": "84.48% on open merit, the lowest aggregate in NUMS's newest 2025-26 MBBS selection list for CMH Kharian."
+        },
+        {
+          "q": "What was the CMH Kharian merit in 2024-25?",
+          "a": "83.63% in the last NUMS selection list of session 2024-25, so 2025-26 closed 0.85 points higher."
+        },
+        {
+          "q": "How many MDCAT marks are needed for CMH Kharian?",
+          "a": "With 1000/1100 in both FSc and Matric, about 141/180 in MDCAT reaches 84.48%, the 2025 closing merit. With 900/1100 in both, about 157/180."
+        },
+        {
+          "q": "Where does CMH Kharian rank among private medical colleges?",
+          "a": "5th of 8 NUMS private MBBS colleges by 2025 closing merit, between CMH Institute of Medical Sciences, Bahawalpur Cantt (84.80%) and Wah Medical College, Wah Cantt (84.10%)."
+        },
+        {
+          "q": "CMH Kharian ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "NUMS ki newest 2025-26 list mein CMH Kharian ka MBBS open merit 84.48% par close hua; 2024-25 mein 83.63% tha."
+        },
+        {
+          "q": "CMH Kharian ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "FSc aur Matric dono 1000/1100 hon to taqreeban 141/180, aur dono 900/1100 hon to taqreeban 157/180 (2025 ke merit 84.48% ke hisaab se)."
+        }
+      ],
+      "roman_urdu": "<p>NUMS ki newest 2025-26 list mein CMH Kharian ka MBBS open merit <strong>84.48%</strong> par close hua; 2024-25 mein 83.63% tha.</p><p>FSc aur Matric dono 1000/1100 hon to is merit tak pohanchne ke liye MDCAT mein taqreeban 141/180 chahiye. Apna aggregate <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> se nikalein.</p>",
+      "ru_heading": "CMH Kharian ka merit kitna jata hai?",
+      "sources": [
+        {
+          "label": "NUMS newest 2025-26 MBBS selection list, CMH Kharian",
+          "url": "https://numspak.edu.pk/upload/media/2026-6thmeritlist-MBBS-CMH-Kharian_1769507227.pdf",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "NUMS last 2024-25 MBBS selection list, CMH Kharian",
+          "url": "https://numspak.edu.pk/upload/media/2024-CMH-Kharian-open-merit-list1739875354.pdf",
+          "fetched": "2026-11-01"
+        },
+        {
+          "label": "NUMS: merit lists for private-sector affiliated medical colleges, MBBS open merit, session 2025-26",
+          "url": "https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26",
+          "fetched": "2026-10-31"
+        }
+      ],
+      "related": [
+        "/nums-merit-list/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/compare/",
+        "/mdcat-merit-list/private/",
+        "/mdcat-passing-marks/"
+      ]
+    },
+    {
       "path": "/mdcat-merit-list/private/",
       "keyword": "private medical colleges merit list",
       "title": "Private Medical Colleges Merit List {year:uhs}: College-wise",

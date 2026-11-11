@@ -8,6 +8,19 @@
  "meritlist_path": "/nums-merit-list/",
  "updated": "2026-11-01",
  "_note": "Closing = lowest aggregate in the newest NUMS selection list published for each affiliated private college (MBBS: Sixth Selection / Upgradation List, 27 Jan 2026; QIMS Baluchistan-domicile list 'January 19, 2026'; BDS: Fourth Selection List, 13 Feb 2026). Lists are cumulative (sorted, S No 1..n); min checked by script against every PDF on 31 Oct 2026. NUMS does not say these were the last lists, so the list is 'Latest published'. Aggregate = PM&DC formula (50% MDCAT, 40% FSc, 10% Matric), same as the UHS calculator. PDFs (with names) stay in sources/nums/, never in the repo. Index pages: https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-medical-colleges-for-mbbs-open-merit-session-2025-26 and https://numspak.edu.pk/news-detail/merit-lists-of-candidates-for-admission-in-private-sector-affiliated-dental-colleges-for-bds-open-merit-session-2025-26 Session 2024-25 (year 2024): NUMS took the 2024-25 news pages down; their Wayback captures (12th MBBS list page 20 Feb 2025, BDS pages 19 Mar / 1 Apr 2025) link PDFs still live under numspak.edu.pk/upload/media/. MBBS = lowest aggregate in each college's 12th selection/upgradation list (QIMS Baluchistan: 11th), the highest list number found; BDS = 1st list only (the 2nd list prints no aggregates), so BDS 2024 is list '1st list' and an upper bound. All 13 values checked by script against the PDFs on 1 Nov 2026.",
+ "private_colleges": {
+  "CMH Multan Institute of Medical Sciences, Multan Cantt": {
+   "slug": "cmh-multan",
+   "short": "CMH Multan",
+   "path": "/nums-merit-list/cmh-multan/",
+   "bds_campus": "CIMS Dental Section, Multan"
+  },
+  "CMH Kharian Medical College, Kharian Cantt": {
+   "slug": "cmh-kharian",
+   "short": "CMH Kharian",
+   "path": "/nums-merit-list/cmh-kharian/"
+  }
+ },
  "defaults": {
   "list": "Latest published",
   "category": "Open merit"

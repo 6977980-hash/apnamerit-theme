@@ -71,6 +71,39 @@
    ]
   }
  ],
+ "private_colleges": {
+  "Al-Aleem Medical College, Lahore": {
+   "slug": "al-aleem",
+   "short": "Al-Aleem Medical College",
+   "path": "/mdcat-merit-list/al-aleem/"
+  },
+  "Shalamar Medical & Dental College, Lahore": {
+   "slug": "shalamar",
+   "short": "Shalamar Medical College",
+   "path": "/mdcat-merit-list/shalamar/"
+  },
+  "Rahbar Medical & Dental College, Lahore": {
+   "slug": "rahbar",
+   "short": "Rahbar Medical College",
+   "path": "/mdcat-merit-list/rahbar/",
+   "bds_campus": "Rahbar College of Dentistry, Lahore"
+  },
+  "Continental Medical College, Lahore": {
+   "slug": "continental",
+   "short": "Continental Medical College",
+   "path": "/mdcat-merit-list/continental/"
+  },
+  "Independent Medical College, Faisalabad": {
+   "slug": "independent",
+   "short": "Independent Medical College",
+   "path": "/mdcat-merit-list/independent/"
+  },
+  "Sahara Medical College, Narowal": {
+   "slug": "sahara",
+   "short": "Sahara Medical College",
+   "path": "/mdcat-merit-list/sahara/"
+  }
+ },
  "colleges": {
   "Allama Iqbal Medical College (AIMC), Lahore": {
    "slug": "aimc",
@@ -2393,6 +2426,1761 @@
    "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php",
    "position": 1257,
    "position_source_url": "https://www.uhs.edu.pk/finalombdsmlprivate25.php"
+  }
+ ],
+ "private_trail_note": "Private MBBS (lists 1-5) and private BDS (lists 1-3) 2025-26: lowest Open-merit aggregate per college in every UHS private selection list (scripts/uhs_closing.py, fetched 2026-11-12; list 1 and the last list match the 1st/Final and 1st/3rd merit rows). Used by the private college pages ([am_pcollege]), not by merit tables or the predictor.",
+ "private_trail": [
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Sharif Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 88.1197,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 1,
+   "closing": 86.1848,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Watim Dental College, Rawalpindi",
+   "list_no": 1,
+   "closing": 83.7212,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Lahore Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 83.1717,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Rahbar College of Dentistry, Lahore",
+   "list_no": 1,
+   "closing": 81.804,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Margalla Institute of Health Sciences, Rawalpindi",
+   "list_no": 1,
+   "closing": 81.4626,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 80.6444,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Avicenna Dental College, Lahore",
+   "list_no": 1,
+   "closing": 80.0737,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Islam Dental College, Sialkot",
+   "list_no": 1,
+   "closing": 79.7242,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, University College of Medicine & Dentistry, Lahore",
+   "list_no": 1,
+   "closing": 79.5949,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Rashid Latif Dental College, Lahore",
+   "list_no": 1,
+   "closing": 79.0828,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Azra Naheed Dental College, Lahore",
+   "list_no": 1,
+   "closing": 78.2758,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, University Medical & Dental College, Faisalabad (Female Only)",
+   "list_no": 1,
+   "closing": 78.1636,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Multan Medical & Dental College, Multan",
+   "list_no": 1,
+   "closing": 77.8404,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 1,
+   "closing": 77.0798,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Faryal Dental College, Sheikhupura",
+   "list_no": 1,
+   "closing": 76.102,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, Niazi Medical & Dental College, Sargodha",
+   "list_no": 1,
+   "closing": 75.8838,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Shahida Islam Dental College, Lodhran",
+   "list_no": 1,
+   "closing": 75.002,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Sharif Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 78.1444,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 2,
+   "closing": 76.2768,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Watim Dental College, Rawalpindi",
+   "list_no": 2,
+   "closing": 74.9273,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Lahore Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 74.3202,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Islam Dental College, Sialkot",
+   "list_no": 2,
+   "closing": 72.8808,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Margalla Institute of Health Sciences, Rawalpindi",
+   "list_no": 2,
+   "closing": 72.1323,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Avicenna Dental College, Lahore",
+   "list_no": 2,
+   "closing": 71.6636,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 71.6121,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, University College of Medicine & Dentistry, Lahore",
+   "list_no": 2,
+   "closing": 71.0323,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Rahbar College of Dentistry, Lahore",
+   "list_no": 2,
+   "closing": 70.7182,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Rashid Latif Dental College, Lahore",
+   "list_no": 2,
+   "closing": 70.5061,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, University Medical & Dental College, Faisalabad (Female Only)",
+   "list_no": 2,
+   "closing": 70.2576,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Azra Naheed Dental College, Lahore",
+   "list_no": 2,
+   "closing": 70.1152,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Faryal Dental College, Sheikhupura",
+   "list_no": 2,
+   "closing": 68.9182,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 2,
+   "closing": 68.8444,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Multan Medical & Dental College, Multan",
+   "list_no": 2,
+   "closing": 68.7556,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, Niazi Medical & Dental College, Sargodha",
+   "list_no": 2,
+   "closing": 68.7273,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Shahida Islam Dental College, Lodhran",
+   "list_no": 2,
+   "closing": 67.9232,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Sharif Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 73.1273,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 3,
+   "closing": 68.8848,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Islam Dental College, Sialkot",
+   "list_no": 3,
+   "closing": 67.3556,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Watim Dental College, Rawalpindi",
+   "list_no": 3,
+   "closing": 67.2808,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Lahore Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 66.9303,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Margalla Institute of Health Sciences, Rawalpindi",
+   "list_no": 3,
+   "closing": 65.6859,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Avicenna Dental College, Lahore",
+   "list_no": 3,
+   "closing": 65.6475,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 64.8606,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Rahbar College of Dentistry, Lahore",
+   "list_no": 3,
+   "closing": 64.5455,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, University College of Medicine & Dentistry, Lahore",
+   "list_no": 3,
+   "closing": 64.1202,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Rashid Latif Dental College, Lahore",
+   "list_no": 3,
+   "closing": 62.6333,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Azra Naheed Dental College, Lahore",
+   "list_no": 3,
+   "closing": 62.5162,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, University Medical & Dental College, Faisalabad (Female Only)",
+   "list_no": 3,
+   "closing": 61.902,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 3,
+   "closing": 61.3616,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Faryal Dental College, Sheikhupura",
+   "list_no": 3,
+   "closing": 60.8303,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental Section, Multan Medical & Dental College, Multan",
+   "list_no": 3,
+   "closing": 59.7687,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Dental College, Niazi Medical & Dental College, Sargodha",
+   "list_no": 3,
+   "closing": 59.1424,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "BDS (private)",
+   "campus": "Shahida Islam Dental College, Lodhran",
+   "list_no": 3,
+   "closing": 55.8727,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivatebdsom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Al-Aleem Medical College, Lahore",
+   "list_no": 1,
+   "closing": 92.7136,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sharif Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 91.6586,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shalamar Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 90.6364,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 1,
+   "closing": 90.1348,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Lahore Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 88.6924,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical College, Rawalpindi",
+   "list_no": 1,
+   "closing": 88.0869,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 87.9848,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rashid Latif Medical College, Lahore",
+   "list_no": 1,
+   "closing": 86.2929,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rahbar Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 85.9455,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Continental Medical College, Lahore",
+   "list_no": 1,
+   "closing": 85.3313,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Watim Medical College, Rawalpindi",
+   "list_no": 1,
+   "closing": 85.2717,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sialkot Medical College, Sialkot",
+   "list_no": 1,
+   "closing": 83.6111,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University College of Medicine & Dentistry, Lahore (University of Lahore)",
+   "list_no": 1,
+   "closing": 83.596,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Central Park Medical College, Lahore",
+   "list_no": 1,
+   "closing": 83.501,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Aziz Fatima Medical & Dental College, Faisalabad",
+   "list_no": 1,
+   "closing": 83.1465,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Avicenna Medical College, Lahore",
+   "list_no": 1,
+   "closing": 82.6343,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 1,
+   "closing": 82.2424,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "RLKU Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 82.1768,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Multan Medical & Dental College, Multan",
+   "list_no": 1,
+   "closing": 81.802,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Azra Naheed Medical College (Superior University), Lahore",
+   "list_no": 1,
+   "closing": 81.396,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Pak Red Crescent Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 81.1192,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abu Umara Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 80.8455,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Independent Medical College, Faisalabad",
+   "list_no": 1,
+   "closing": 79.8182,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Islam Medical College, Sialkot",
+   "list_no": 1,
+   "closing": 79.7323,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "M. Islam Medical College, Gujranwala",
+   "list_no": 1,
+   "closing": 79.4303,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University Medical & Dental College, Faisalabad (For Women Only) (University of Faisalabad)",
+   "list_no": 1,
+   "closing": 79.3899,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abwa Medical College, Faisalabad",
+   "list_no": 1,
+   "closing": 79.2939,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Amna Inayat Medical College, Sheikhupura",
+   "list_no": 1,
+   "closing": 79.1409,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rai Medical College, Sargodha",
+   "list_no": 1,
+   "closing": 78.8576,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shahida Islam Medical College, Lodhran",
+   "list_no": 1,
+   "closing": 78.6737,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Niazi Medical & Dental College, Sargodha",
+   "list_no": 1,
+   "closing": 78.4621,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sahara Medical College, Narowal",
+   "list_no": 1,
+   "closing": 77.797,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Queens Medical College Kasur (for females only)",
+   "list_no": 1,
+   "closing": 75.9465,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Al-Aleem Medical College, Lahore",
+   "list_no": 2,
+   "closing": 91.0182,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sharif Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 89.1838,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shalamar Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 87.4929,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 2,
+   "closing": 87.202,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Lahore Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 85.1626,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 83.7283,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rashid Latif Medical College, Lahore",
+   "list_no": 2,
+   "closing": 81.4576,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rahbar Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 81.3081,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical College, Rawalpindi",
+   "list_no": 2,
+   "closing": 80.7101,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Continental Medical College, Lahore",
+   "list_no": 2,
+   "closing": 79.5707,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sialkot Medical College, Sialkot",
+   "list_no": 2,
+   "closing": 79.5152,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University College of Medicine & Dentistry, Lahore (University of Lahore)",
+   "list_no": 2,
+   "closing": 77.9616,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Central Park Medical College, Lahore",
+   "list_no": 2,
+   "closing": 77.8586,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Watim Medical College, Rawalpindi",
+   "list_no": 2,
+   "closing": 77.4374,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Aziz Fatima Medical & Dental College, Faisalabad",
+   "list_no": 2,
+   "closing": 77.2535,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "RLKU Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 76.3091,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 2,
+   "closing": 76.2303,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Multan Medical & Dental College, Multan",
+   "list_no": 2,
+   "closing": 76.1384,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Avicenna Medical College, Lahore",
+   "list_no": 2,
+   "closing": 75.904,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Azra Naheed Medical College (Superior University), Lahore",
+   "list_no": 2,
+   "closing": 75.1869,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abu Umara Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 74.8909,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Pak Red Crescent Medical & Dental College, Lahore",
+   "list_no": 2,
+   "closing": 74.7737,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Islam Medical College, Sialkot",
+   "list_no": 2,
+   "closing": 74.6758,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Independent Medical College, Faisalabad",
+   "list_no": 2,
+   "closing": 73.9667,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University Medical & Dental College, Faisalabad (For Women Only) (University of Faisalabad)",
+   "list_no": 2,
+   "closing": 73.8515,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "M. Islam Medical College, Gujranwala",
+   "list_no": 2,
+   "closing": 73.602,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abwa Medical College, Faisalabad",
+   "list_no": 2,
+   "closing": 73.2475,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Amna Inayat Medical College, Sheikhupura",
+   "list_no": 2,
+   "closing": 73.0162,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shahida Islam Medical College, Lodhran",
+   "list_no": 2,
+   "closing": 72.9939,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rai Medical College, Sargodha",
+   "list_no": 2,
+   "closing": 72.7343,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Niazi Medical & Dental College, Sargodha",
+   "list_no": 2,
+   "closing": 72.5909,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sahara Medical College, Narowal",
+   "list_no": 2,
+   "closing": 72.1773,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Queens Medical College Kasur (for females only)",
+   "list_no": 2,
+   "closing": 70.3192,
+   "source_url": "https://uhs.edu.pk/2selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Al-Aleem Medical College, Lahore",
+   "list_no": 3,
+   "closing": 90.9162,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sharif Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 88.9687,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shalamar Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 87.1828,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 3,
+   "closing": 86.8202,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Lahore Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 84.7283,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 83.0121,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rahbar Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 80.5707,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rashid Latif Medical College, Lahore",
+   "list_no": 3,
+   "closing": 80.4859,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sialkot Medical College, Sialkot",
+   "list_no": 3,
+   "closing": 79.3778,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical College, Rawalpindi",
+   "list_no": 3,
+   "closing": 78.6394,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Continental Medical College, Lahore",
+   "list_no": 3,
+   "closing": 77.9354,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Aziz Fatima Medical & Dental College, Faisalabad",
+   "list_no": 3,
+   "closing": 76.8333,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University College of Medicine & Dentistry, Lahore (University of Lahore)",
+   "list_no": 3,
+   "closing": 76.698,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Central Park Medical College, Lahore",
+   "list_no": 3,
+   "closing": 76.0465,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 3,
+   "closing": 74.8414,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "RLKU Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 74.5778,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Multan Medical & Dental College, Multan",
+   "list_no": 3,
+   "closing": 74.5293,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Watim Medical College, Rawalpindi",
+   "list_no": 3,
+   "closing": 73.6364,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Avicenna Medical College, Lahore",
+   "list_no": 3,
+   "closing": 73.5495,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Islam Medical College, Sialkot",
+   "list_no": 3,
+   "closing": 73.0162,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abu Umara Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 72.1939,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Azra Naheed Medical College (Superior University), Lahore",
+   "list_no": 3,
+   "closing": 72.1606,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Independent Medical College, Faisalabad",
+   "list_no": 3,
+   "closing": 71.6788,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Pak Red Crescent Medical & Dental College, Lahore",
+   "list_no": 3,
+   "closing": 71.6657,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "M. Islam Medical College, Gujranwala",
+   "list_no": 3,
+   "closing": 71.4303,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University Medical & Dental College, Faisalabad (For Women Only) (University of Faisalabad)",
+   "list_no": 3,
+   "closing": 71.2758,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shahida Islam Medical College, Lodhran",
+   "list_no": 3,
+   "closing": 70.5111,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abwa Medical College, Faisalabad",
+   "list_no": 3,
+   "closing": 70.2687,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Amna Inayat Medical College, Sheikhupura",
+   "list_no": 3,
+   "closing": 70.1475,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rai Medical College, Sargodha",
+   "list_no": 3,
+   "closing": 69.9687,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Niazi Medical & Dental College, Sargodha",
+   "list_no": 3,
+   "closing": 69.4576,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sahara Medical College, Narowal",
+   "list_no": 3,
+   "closing": 68.9566,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Queens Medical College Kasur (for females only)",
+   "list_no": 3,
+   "closing": 66.796,
+   "source_url": "https://uhs.edu.pk/3selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Al-Aleem Medical College, Lahore",
+   "list_no": 4,
+   "closing": 90.9162,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sharif Medical & Dental College, Lahore",
+   "list_no": 4,
+   "closing": 88.896,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shalamar Medical & Dental College, Lahore",
+   "list_no": 4,
+   "closing": 86.5222,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 4,
+   "closing": 86.4667,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Lahore Medical & Dental College, Lahore",
+   "list_no": 4,
+   "closing": 84.2192,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 4,
+   "closing": 82.8778,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rahbar Medical & Dental College, Lahore",
+   "list_no": 4,
+   "closing": 80.3364,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rashid Latif Medical College, Lahore",
+   "list_no": 4,
+   "closing": 79.9283,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sialkot Medical College, Sialkot",
+   "list_no": 4,
+   "closing": 79.0747,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical College, Rawalpindi",
+   "list_no": 4,
+   "closing": 78.1697,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Continental Medical College, Lahore",
+   "list_no": 4,
+   "closing": 77.6758,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Aziz Fatima Medical & Dental College, Faisalabad",
+   "list_no": 4,
+   "closing": 76.7172,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University College of Medicine & Dentistry, Lahore (University of Lahore)",
+   "list_no": 4,
+   "closing": 76.101,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Central Park Medical College, Lahore",
+   "list_no": 4,
+   "closing": 75.5869,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 4,
+   "closing": 74.6626,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Multan Medical & Dental College, Multan",
+   "list_no": 4,
+   "closing": 74.4939,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "RLKU Medical & Dental College, Lahore",
+   "list_no": 4,
+   "closing": 73.1687,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Avicenna Medical College, Lahore",
+   "list_no": 4,
+   "closing": 72.8677,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Islam Medical College, Sialkot",
+   "list_no": 4,
+   "closing": 72.5606,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Watim Medical College, Rawalpindi",
+   "list_no": 4,
+   "closing": 72.3515,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Azra Naheed Medical College (Superior University), Lahore",
+   "list_no": 4,
+   "closing": 71.2354,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abu Umara Medical & Dental College, Lahore",
+   "list_no": 4,
+   "closing": 70.7576,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "M. Islam Medical College, Gujranwala",
+   "list_no": 4,
+   "closing": 70.4889,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Independent Medical College, Faisalabad",
+   "list_no": 4,
+   "closing": 70.1636,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Pak Red Crescent Medical & Dental College, Lahore",
+   "list_no": 4,
+   "closing": 70.1515,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University Medical & Dental College, Faisalabad (For Women Only) (University of Faisalabad)",
+   "list_no": 4,
+   "closing": 69.4515,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Amna Inayat Medical College, Sheikhupura",
+   "list_no": 4,
+   "closing": 68.7424,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shahida Islam Medical College, Lodhran",
+   "list_no": 4,
+   "closing": 68.6515,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abwa Medical College, Faisalabad",
+   "list_no": 4,
+   "closing": 67.9444,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rai Medical College, Sargodha",
+   "list_no": 4,
+   "closing": 67.9121,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Niazi Medical & Dental College, Sargodha",
+   "list_no": 4,
+   "closing": 67.0384,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sahara Medical College, Narowal",
+   "list_no": 4,
+   "closing": 66.596,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Queens Medical College Kasur (for females only)",
+   "list_no": 4,
+   "closing": 62.2121,
+   "source_url": "https://uhs.edu.pk/4selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Al-Aleem Medical College, Lahore",
+   "list_no": 5,
+   "closing": 90.8434,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sharif Medical & Dental College, Lahore",
+   "list_no": 5,
+   "closing": 88.7,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shalamar Medical & Dental College, Lahore",
+   "list_no": 5,
+   "closing": 86.3354,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 5,
+   "closing": 86.1758,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Lahore Medical & Dental College, Lahore",
+   "list_no": 5,
+   "closing": 83.7586,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 5,
+   "closing": 82.4374,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rahbar Medical & Dental College, Lahore",
+   "list_no": 5,
+   "closing": 79.5444,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rashid Latif Medical College, Lahore",
+   "list_no": 5,
+   "closing": 79.2687,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sialkot Medical College, Sialkot",
+   "list_no": 5,
+   "closing": 78.7742,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical College, Rawalpindi",
+   "list_no": 5,
+   "closing": 76.9869,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Continental Medical College, Lahore",
+   "list_no": 5,
+   "closing": 76.8768,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Aziz Fatima Medical & Dental College, Faisalabad",
+   "list_no": 5,
+   "closing": 76.4192,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University College of Medicine & Dentistry, Lahore (University of Lahore)",
+   "list_no": 5,
+   "closing": 75.9444,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Central Park Medical College, Lahore",
+   "list_no": 5,
+   "closing": 75.0182,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 5,
+   "closing": 74.4505,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Multan Medical & Dental College, Multan",
+   "list_no": 5,
+   "closing": 73.9949,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Avicenna Medical College, Lahore",
+   "list_no": 5,
+   "closing": 72.3955,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "RLKU Medical & Dental College, Lahore",
+   "list_no": 5,
+   "closing": 72.3475,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Islam Medical College, Sialkot",
+   "list_no": 5,
+   "closing": 72.3374,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Watim Medical College, Rawalpindi",
+   "list_no": 5,
+   "closing": 71.5242,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Azra Naheed Medical College (Superior University), Lahore",
+   "list_no": 5,
+   "closing": 70.9404,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abu Umara Medical & Dental College, Lahore",
+   "list_no": 5,
+   "closing": 69.9,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Pak Red Crescent Medical & Dental College, Lahore",
+   "list_no": 5,
+   "closing": 69.3859,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "M. Islam Medical College, Gujranwala",
+   "list_no": 5,
+   "closing": 69.0606,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "University Medical & Dental College, Faisalabad (For Women Only) (University of Faisalabad)",
+   "list_no": 5,
+   "closing": 68.3596,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Independent Medical College, Faisalabad",
+   "list_no": 5,
+   "closing": 68.3091,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Shahida Islam Medical College, Lodhran",
+   "list_no": 5,
+   "closing": 67.5697,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Amna Inayat Medical College, Sheikhupura",
+   "list_no": 5,
+   "closing": 67.1293,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Abwa Medical College, Faisalabad",
+   "list_no": 5,
+   "closing": 66.1909,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Rai Medical College, Sargodha",
+   "list_no": 5,
+   "closing": 65.9394,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Niazi Medical & Dental College, Sargodha",
+   "list_no": 5,
+   "closing": 64.9172,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Sahara Medical College, Narowal",
+   "list_no": 5,
+   "closing": 63.1495,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2025,
+   "program": "MBBS (private)",
+   "campus": "Queens Medical College Kasur (for females only)",
+   "list_no": 5,
+   "closing": 60.998,
+   "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
   }
  ],
  "list_trail_note": "Public MBBS 2025-26: lowest Open-merit aggregate per college in every UHS selection list 1-13 (scripts/uhs_closing.py, fetched 2026-11-01). List 13 = the Final rows in merit; list 1 = the 1st rows. Used by the college pages ([am_college]), not by merit tables or the predictor.",

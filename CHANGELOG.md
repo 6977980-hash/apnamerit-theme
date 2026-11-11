@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.40.0 (2026-11-12)
+
+- GSC audit item 6: **8 private medical college pages** where official closing merits exist and Google already shows the site for the college query: UHS private `/mdcat-merit-list/{al-aleem,shalamar,rahbar,continental,independent,sahara}/` and NUMS `/nums-merit-list/{cmh-multan,cmh-kharian}/`. `[am_pcollege]` (`inc/pcolleges.php`): closing merit in every 2025 UHS private list (new `private_trail` in uhs.json: lowest open-merit aggregate per college in private MBBS lists 1-5 and private BDS lists 1-3, re-read from uhs.edu.pk 2026-11-12, lists 1 and last match the existing rows), or by session for NUMS (both 2025-26 PDFs re-read 2026-11-12: CMH Multan 86.538, CMH Kharian 84.479, CIMS Dental 84.8805), BDS where the college has a dental section (Rahbar, CIMS), closing position, rank with neighbours, gap to the lowest public college, MDCAT needed (55% pass mark shown when it binds). Page text from `scripts/college_pages.py` (`build_private`). Ameer-ud-Din already had a page (public college, `/mdcat-merit-list/amc/`).
+- Links: `[am_pcollege_links]` on the private MBBS and NUMS pages, MDCAT hub "Other sectors".
+
 ## 0.39.0 (2026-11-12)
 
 - GSC audit 2026-11-12, phase 1 (owner approved items 1-4). **CTR titles/descriptions** for 11 pages that rank 6-11 with ~1% CTR (COMSATS, KU, UET, PU, private MBBS, BDS, UET Taxila, merit-list hub, MDCAT hub, two guides): year, "closing merit", program/department/college-wise hooks and real figures.
