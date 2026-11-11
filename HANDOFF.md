@@ -1,6 +1,17 @@
 # HANDOFF — Phase 8 (fixes from FIX-BRIEF.md, review of 2026-11-01)
 
 
+
+## GSC audit fixes (v0.39.0-v0.41.0, 2026-11-12)
+Report: `/mnt/project-files/gsc-audit-2026-11-12.md`. Owner approved items 1-4, then 5-7.
+- **1 CTR titles/descriptions** (11 pages: COMSATS, KU, UET, PU, private, BDS, UET Taxila, /merit-list/, /mdcat-merit-list/, two guides). Re-check CTR in GSC after ~2 weeks before touching them again.
+- **2 MDCAT hub** (crawled, not indexed): intro + `[am_college_index uni="uhs" table="1"]` college-wise table near the top.
+- **3 Links**: every public college page ends with all other college pages (`am_college_links_html()`); `[am_college_links]` on private/BDS/UHS admission; contextual links to calculators, ITU list, compare, report, provisional-list guide, UET campuses.
+- **4** `/embed/` `noindex` (removed from sitemap/llms/IndexNow). Dataset name/temporal single year when only one year.
+- **6 Private college pages** `[am_pcollege]` (`inc/pcolleges.php`), page text by `scripts/college_pages.py` `build_private()` (check.py `--check` covers them): UHS `private_colleges` + `private_trail` (private MBBS lists 1-5, private BDS 1-3, 2025) and NUMS `private_colleges` (CMH Multan with CIMS Dental, CMH Kharian). Add a college = add it to `private_colleges` + run `python3 scripts/college_pages.py` + `scripts/og.py`. For 2026-27 private lists: re-run `scripts/uhs_closing.py` per list, add `private_trail` rows with year 2026. Ameer-ud-Din is public (already `/mdcat-merit-list/amc/`). Queens Kasur and Sharif have data too (not built: owner list only had 8).
+- **5** KU: Admissions 2027 open merit morning (K) + Admissions 2026 evening; Admissions 2027 evening lists not out on 2026-11-12 (expect December, add from uokadmission.edu.pk/links). UET: static list-by-list table in content/uet-merit-list.html (#program-wise) typed from lists 1-4 + leftover. COMSATS: no new official figures reachable; static program-wise table typed from comsats.json (refresh with new data).
+- **7 Guides**: merit-vs-open-merit, matric-fsc-aggregate, mdcat-marks-needed (`[am_mdcat_needed]`, live from uhs.json). Typed figures in their FAQs/answers are 2025: refresh when 2026-27 UHS lists land.
+
 ## Admission documents checklist + Pakistan speed (v0.38.0-v0.38.1, 2026-11-05)
 Owner: "7 kro or sath speed wala fix" (novel idea #7 + the open TTFB item).
 - **Checklist** `/guides/admission-documents-checklist/` (`[am_doc_checklist]`, `inc/documents.php`, data `data/documents.json`, JS block "documents checklist" in am.js). Universities: UHS Punjab MBBS/BDS 2026-27 (Prospectus2026.pdf pp. 46-57), KMU public 2025-26 (policy p. 26-27; 2026-27 policy not online yet), UET Lahore Fall 2026 (pp. 20-31), UET Taxila 2025 (pp. 135-139), COMSATS 2024-25 (p. 46, newest on ww2), KU Admissions 2027 (pp. 20-25). Page numbers are the printed ones (UHS printed = PDF+1, UET Taxila = PDF-15, KU = PDF-1, COMSATS 2 printed pages per PDF page). Items: `t`, `st` apply|join, `for` groups (omitted = everyone), `p`, `n`. `?uni=<slug>` preselects a university. Ticks/choice in localStorage `am_docs`. Print button adds `html.am-pdocs` so only the list prints.

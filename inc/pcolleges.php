@@ -195,3 +195,44 @@ add_action(
 		add_shortcode( 'am_pcollege_links', 'am_sc_pcollege_links' );
 	}
 );
+
+// ------------------------------------------------------------------ [am_mdcat_needed]
+/**
+ * GSC audit 2026-11-12 guide "MDCAT marks needed": MDCAT score that reached the highest and the
+ * lowest closing merit of each UHS sector (newest last list), for FSc and Matric at 900/1000/1050,
+ * with the MDCAT pass mark (55% MBBS, 50% BDS) as the floor.
+ */
+function am_sc_mdcat_needed( $atts ): string {
+	$atts  = shortcode_atts( array( 'uni' => 'uhs' ), (array) $atts, 'am_mdcat_needed' );
+	$uni   = am_uni( am_uni_attr( $atts ) );
+	$marks = array( 900, 1000, 1050 );
+	$rows  = '';
+	$year  = 0;
+	foreach ( array( 'MBBS (public)' => 55, 'BDS (public)' => 50, 'MBBS (private)' => 55, 'BDS (private)' => 50 ) as $prog => $min ) {
+		$all = am_pcollege_newest( $uni, $prog );
+		if ( ! $all ) {
+			continue;
+		}
+		$floor = (int) ceil( $min / 100 * 180 - 1e-9 );
+		$ends  = array( 'Highest' => array_key_first( $all ), 'Lowest' => array_key_last( $all ) );
+		foreach ( $ends as $which => $campus ) {
+			$r     = $all[ $campus ];
+			$year  = max( $year, (int) $r['year'] );
+			$cells = '';
+			foreach ( $marks as $m ) {
+				$need   = am_college_mdcat_needed( $uni, (float) $r['closing'], (float) $m );
+				$cells .= '<td>' . esc_html( ! $need ? 'not reachable' : ( $need < $floor ? $floor . ' (pass mark)' : (string) $need ) ) . '</td>';
+			}
+			$rows .= '<tr><th scope="row">' . esc_html( $prog . ', ' . strtolower( $which ) ) . '<small>' . esc_html( $campus . ', ' . am_pct( $r['closing'] ) ) . '</small></th>' . $cells . '</tr>';
+		}
+	}
+	if ( '' === $rows ) {
+		return am_stub( 'am_mdcat_needed', $atts );
+	}
+	$head = '';
+	foreach ( $marks as $m ) {
+		$head .= '<th scope="col">' . esc_html( 'FSc and Matric ' . $m . '/1100' ) . '</th>';
+	}
+	return '<div class="am-table-wrap"><table class="am-table"><caption>' . esc_html( 'MDCAT score out of 180 that reached the ' . $year . ' closing merit (UHS Punjab, open merit, last list of each sector)' ) . '</caption><thead><tr><th scope="col">Sector and college</th>' . $head . '</tr></thead><tbody>' . $rows . '</tbody></table></div>';
+}
+add_action( 'init', fn() => add_shortcode( 'am_mdcat_needed', 'am_sc_mdcat_needed' ) );

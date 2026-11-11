@@ -293,7 +293,8 @@
         "/guides/what-is-closing-merit/",
         "/methodology/",
         "/data-sources/",
-        "/guides/mdcat-result-next-steps/"
+        "/guides/mdcat-result-next-steps/",
+        "/guides/mdcat-marks-needed/"
       ],
       "ru_heading": "MDCAT aggregate kaise nikalein?"
     },
@@ -2669,7 +2670,8 @@
         "/predictor/",
         "/mdcat-merit-list/kemu/",
         "/guides/uhs-provisional-merit-list/",
-        "/compare/"
+        "/compare/",
+        "/guides/mdcat-marks-needed/"
       ]
     },
     {
@@ -3057,7 +3059,8 @@
         "/methodology/",
         "/compare/",
         "/merit-data-report-2026/",
-        "/guides/uhs-provisional-merit-list/"
+        "/guides/uhs-provisional-merit-list/",
+        "/guides/merit-vs-open-merit/"
       ],
       "ru_heading": "Closing merit kya hota hai?",
       "parents": [
@@ -3158,7 +3161,8 @@
         "/mdcat-merit-list/",
         "/guides/mdcat-aggregate-formula/",
         "/ibcc-equivalence-calculator/",
-        "/percentage-calculator/"
+        "/percentage-calculator/",
+        "/guides/mdcat-marks-needed/"
       ],
       "ru_heading": "MDCAT mein kitne number par pass hota hai?"
     },
@@ -3988,6 +3992,10 @@
           "a": "85.37% on A1 open merit at the main campus in the Fall 2026 4th Merit List (1st list: 87.47%; Fall 2025: 85.83%)."
         },
         {
+          "q": "What was the UET Mechanical, Civil and Electrical merit in 2026?",
+          "a": "At the Lahore main campus (A1 open merit, Fall 2026), Mechanical Engineering closed at 82.28%, Civil Engineering at 80.96% and Electrical Engineering at 83.33% in the 4th merit list, down from 83.29%, 82.64% and 85.14% in the 1st list."
+        },
+        {
           "q": "What is the UET Lahore merit for Electrical and Mechanical Engineering?",
           "a": "Electrical closed at 83.33% and Mechanical at 82.28% (A1 open merit, main campus, Fall 2026 4th Merit List), up from 80.35% and 80.25% in Fall 2025."
         },
@@ -4099,7 +4107,8 @@
         "/uet-taxila-merit-list/",
         "/guides/what-is-closing-merit/",
         "/compare/",
-        "/merit-data-report-2026/"
+        "/merit-data-report-2026/",
+        "/guides/merit-vs-open-merit/"
       ],
       "ru_heading": "UET Lahore ka merit kitna jata hai?"
     },
@@ -4583,6 +4592,10 @@
           "a": "85% in the 2nd merit list of Fall 2026. COMSATS Lahore said no further merit lists would be announced, so this was the last list."
         },
         {
+          "q": "What is the COMSATS cyber security merit?",
+          "a": "At the Islamabad campus BS Cyber Security closed at 84.34% in the Fall 2026 3rd list, 86.74% in the Spring 2025 final list and 84.59% in the Fall 2023 2nd closing list."
+        },
+        {
           "q": "What was the COMSATS Islamabad closing merit for Computer Science?",
           "a": "88.26% in Spring 2025, the final closing merit published by the Islamabad Admission Office."
         },
@@ -5003,7 +5016,8 @@
         "/uet-taxila-aggregate-calculator/",
         "/comsats-aggregate-calculator/",
         "/fast-aggregate-calculator/",
-        "/methodology/"
+        "/methodology/",
+        "/guides/matric-fsc-aggregate/"
       ],
       "ru_heading": "PU ka aggregate kaise nikalein?"
     },
@@ -5113,10 +5127,10 @@
       "path": "/ku-merit-list/",
       "keyword": "ku merit list",
       "title": "KU Merit List {season_year}: Closing Percentage Department-wise",
-      "description": "Karachi University closing percentage 2026 for every department: Pharm-D 84.27%, BSCS 80%, BS AI 79.73%, with 2025 open-merit figures and test minimums.",
+      "description": "Karachi University closing percentage 2026 by department: Pharm-D 84.27%, BSCS 80%, open merit Psychology 82.91%, LLB 76.27%, plus evening programme merit.",
       "h1": "Karachi University (KU) Merit List {season_year}: Closing Percentages",
       "crumb": "KU merit list",
-      "subtitle": "Admissions 2027 closing lists (October {season_year}) and Admissions 2026 closing percentages (KU Prospectus 2027)",
+      "subtitle": "Admissions 2027 closing lists (October and November {season_year}), Admissions 2026 closing percentages and evening programmes",
       "type": "content",
       "template": "meritlist",
       "schema_type": "CollectionPage",
@@ -5132,7 +5146,7 @@
         },
         {
           "q": "What is KU's open merit closing percentage?",
-          "a": "For Admissions 2026 (category K, Karachi), Psychology for 1st-division candidates closed at 79.82%, Digital Media Marketing 75.29%, Microbiology 70.91% and English 68.09%. Many departments closed at the 45% or 50% minimum."
+          "a": "For Admissions 2027 (list of 1 November 2026), category K open merit closed highest for Psychology with a 1st division Intermediate (82.91%), Digital Media Marketing (78.09%), BA LLB (76.27%) and Microbiology (73.18%). Many departments closed at the 45% minimum, which means every eligible applicant got a seat."
         },
         {
           "q": "What are K, S and P categories at Karachi University?",
@@ -5145,6 +5159,10 @@
         {
           "q": "What was the KU Pharm-D merit?",
           "a": "84.27% for the morning programme and 80.00% for the evening programme, with a minimum test score of 50."
+        },
+        {
+          "q": "What is the KU evening closing percentage?",
+          "a": "Evening seats close well below morning seats. In the Admissions 2026 evening lists, BS Computer Science closed at 68.82% (morning 77.91%), Software Engineering at 62.18% and BBA at 66.82%. Pharm-D evening closed at 80.00% in 2026."
         },
         {
           "q": "How is the Visual Studies merit calculated at KU?",
@@ -5176,6 +5194,11 @@
           "q": "KU mein Pharm-D ka merit kitna jata hai?",
           "a": "Admissions 2027 mein Pharm-D morning 84.27% aur evening 80.00% par close hua, test mein kam az kam 50 marks ke saath.",
           "lang": "ur-Latn"
+        },
+        {
+          "q": "KU evening program ka merit kitna jata hai?",
+          "lang": "ur-Latn",
+          "a": "Evening ka merit morning se kaafi kam hota hai. Admissions 2026 mein evening BSCS 68.82% aur BBA 66.82% par close hua, jabke morning BSCS 77.91% tha."
         }
       ],
       "roman_urdu": "<p>Karachi University test-based programs mein pehle <strong>test ka minimum score</strong> (aam taur par 50) dekhti hai, phir academic percentage ke hisaab se admission deti hai. Table mein woh academic % hai jis par aakhri admission hua.</p><p>Pharm-D 84.27%, BSCS 80.00%, BSAI 79.73%, BSSE 78.82% aur BBA 73.82% par close hue. Punjab ke liye <a href=\"/pu-merit-list/\">PU merit list</a> dekhein.</p>",
@@ -5189,6 +5212,16 @@
           "label": "University of Karachi: Visual Studies closing final points, Admissions 2027 (26-10-2026)",
           "url": "https://uokadmission.edu.pk/uploads/links/vst-closing-final-points-2027-20261026191124.pdf",
           "fetched": "2026-10-31"
+        },
+        {
+          "label": "University of Karachi: Closing scores, open merit BS 1st year morning programme, Admissions 2027 (01-11-2026)",
+          "url": "https://uokadmission.edu.pk/uploads/links/closing-bs-1st-year-open-merit-admissions-2027-20261101145545.pdf",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "University of Karachi: Last year closing and this year fee structure (guidance for Admissions 2027), p. 5 evening programmes Admissions 2026",
+          "url": "https://uokadmission.edu.pk/uploads/links/last-year-closing-and-this-year-fee-for-guidance-2027-20261002094627.pdf",
+          "fetched": "2026-11-12"
         },
         {
           "label": "University of Karachi Prospectus 2027: Appendix G (open merit BS, Admissions 2026) and Appendix I (test based, Admissions 2026)",
@@ -5209,7 +5242,8 @@
         "/guides/1st-2nd-final-merit-list/",
         "/ned-aggregate-calculator/",
         "/methodology/",
-        "/merit-data-report-2026/"
+        "/merit-data-report-2026/",
+        "/guides/merit-vs-open-merit/"
       ],
       "ru_heading": "Karachi University ka merit kitna jata hai?"
     },
@@ -5986,7 +6020,8 @@
         "/air-aggregate-calculator/",
         "/bahria-aggregate-calculator/",
         "/itu-aggregate-calculator/",
-        "/uaf-aggregate-calculator/"
+        "/uaf-aggregate-calculator/",
+        "/guides/matric-fsc-aggregate/"
       ],
       "ru_heading": "Kis university ka calculator use karun?"
     },
@@ -6073,7 +6108,8 @@
         "/predictor/",
         "/fast-aggregate-calculator/",
         "/ned-aggregate-calculator/",
-        "/air-aggregate-calculator/"
+        "/air-aggregate-calculator/",
+        "/guides/matric-fsc-aggregate/"
       ],
       "ru_heading": "FSc ki percentage kaise nikalte hain?"
     },
@@ -6867,6 +6903,239 @@
       ],
       "published": "2026-11-05",
       "updated": "2026-11-05"
+    },
+    {
+      "path": "/guides/merit-vs-open-merit/",
+      "keyword": "merit vs open merit",
+      "title": "Merit vs Open Merit: What Is the Difference?",
+      "description": "Merit vs open merit explained: what open merit seats are, how reserved and self-finance seats differ, with real UET, UHS and KU examples and figures.",
+      "h1": "Merit vs Open Merit: What Is the Difference?",
+      "crumb": "Merit vs open merit",
+      "type": "content",
+      "template": "default",
+      "parents": [
+        "/guides/"
+      ],
+      "subtitle": "Open merit, reserved seats and self-finance, with figures from official lists",
+      "answer": "Merit is the ranking of all applicants by aggregate. Open merit is the group of seats any eligible applicant can win on that ranking alone, with no quota or family condition. Reserved seats are filled on separate lists among their own group, so they close higher or lower: at UET Lahore in Fall 2026, Mechanical Engineering closed at 82.28% on A1 open merit and 68.77% for children of UET employees.",
+      "answer_source": "https://admission.uet.edu.pk/uploads/downloads/bce6493e-8fe7-4e9e-a013-92003937d908.pdf",
+      "content_file": "guide-merit-vs-open-merit.html",
+      "faq": [
+        {
+          "q": "What is open merit?",
+          "a": "Seats filled only by aggregate from all eligible applicants, without any quota, district or family condition. Most seats in public universities are open merit."
+        },
+        {
+          "q": "What is the difference between merit and open merit?",
+          "a": "Merit is the ranking of all applicants by aggregate. Open merit is one group of seats filled from the top of that ranking; reserved quotas are filled from the same ranking but only among candidates who qualify."
+        },
+        {
+          "q": "Is open merit higher than reserved seats?",
+          "a": "Usually, but not always. At UET Lahore in Fall 2026 Mechanical Engineering closed at 82.28% on A1 open merit and 82.26% on category L (listed districts), but 68.77% for category M."
+        },
+        {
+          "q": "What is A1 and A2 open merit at UET?",
+          "a": "A1 is open merit for Punjab domicile with the subsidized fee; A2 is open merit with a partly subsidized fee. Computer Science at the main campus closed at 85.37% on A1 and 83.10% on A2 in the Fall 2026 4th list."
+        },
+        {
+          "q": "Open merit ka matlab kya hai?",
+          "lang": "ur-Latn",
+          "a": "Open merit woh seats hain jo sirf aggregate par milti hain, koi quota ya khas shart nahi. Jis ka aggregate zyada, seat us ki."
+        },
+        {
+          "q": "Merit aur open merit mein kya farq hai?",
+          "lang": "ur-Latn",
+          "a": "Merit sab students ki aggregate ke hisaab se tarteeb hai. Open merit un seats ka naam hai jo is tarteeb se sab ke liye bhari jati hain; quota seats sirf us group ke students mein bhari jati hain."
+        }
+      ],
+      "roman_urdu": "<p><strong>Open merit</strong> ka matlab hai seat sirf aggregate par: koi quota, district ya family ki shart nahi. Merit list mein sab se zyada seats open merit ki hoti hain.</p><p>Apna aggregate hamesha pichhle saal ke <strong>open merit closing merit</strong> se milayein, jab tak aap ko yaqeen na ho ke aap kisi quota mein aate hain.</p>",
+      "ru_heading": "Open merit aur merit mein kya farq hai?",
+      "sources": [
+        {
+          "label": "UET Lahore Merit List No. 4, Undergraduate Fall 2026 (closing merit report)",
+          "url": "https://admission.uet.edu.pk/uploads/downloads/bce6493e-8fe7-4e9e-a013-92003937d908.pdf",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "UET Lahore Undergraduate Prospectus Fall 2026, pp. 22-25 (admission categories)",
+          "url": "https://admission.uet.edu.pk/uploads/downloads/262b6351-9035-409a-ba3d-f8bd8f9d549a.pdf",
+          "fetched": "2026-11-02"
+        },
+        {
+          "label": "UHS MBBS/BDS Prospectus, Session 2026-27 (reserved seats, pp. 40-44)",
+          "url": "https://www.uhs.edu.pk/images/Prospectus2026.pdf",
+          "fetched": "2026-11-01"
+        },
+        {
+          "label": "University of Karachi Prospectus 2027 (categories K, S, P)",
+          "url": "https://uokadmission.edu.pk/2027/prospectus/MP2027_1.pdf",
+          "fetched": "2026-10-31"
+        }
+      ],
+      "related": [
+        "/guides/what-is-closing-merit/",
+        "/guides/1st-2nd-final-merit-list/",
+        "/uet-merit-list/",
+        "/mdcat-merit-list/",
+        "/ku-merit-list/",
+        "/predictor/"
+      ],
+      "published": "2026-11-12",
+      "updated": "2026-11-12"
+    },
+    {
+      "path": "/guides/matric-fsc-aggregate/",
+      "keyword": "how to calculate aggregate of matric and fsc",
+      "title": "How to Calculate Aggregate of Matric and FSc ({season_year})",
+      "description": "How to calculate your aggregate from Matric and FSc marks: the 3 steps, each university's weights (MDCAT, UET, NUST, PU, IIUI) and a worked example.",
+      "h1": "How to Calculate Your Aggregate from Matric and FSc Marks",
+      "crumb": "Matric + FSc aggregate",
+      "type": "content",
+      "template": "default",
+      "parents": [
+        "/guides/"
+      ],
+      "subtitle": "Three steps, the official weights of each university and a worked example",
+      "answer": "Turn Matric and FSc marks into percentages, multiply each by its weight in your university's formula and add them, plus the entry test if there is one. With Matric 1000/1100 and FSc 950/1100, Punjab University's basic criteria (20% Matric, 80% FSc) give 87.27% and IIUI's (40% Matric, 60% FSc) give 88.18%.",
+      "answer_source": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
+      "content_file": "guide-matric-fsc-aggregate.html",
+      "faq": [
+        {
+          "q": "How do I calculate my aggregate from Matric and FSc?",
+          "a": "Divide each by its total and multiply by 100 to get percentages, multiply each percentage by the weight your university gives it, and add the results. Add the entry test part the same way if the formula has one."
+        },
+        {
+          "q": "What is the PU aggregate formula for Matric and FSc?",
+          "a": "Punjab University's basic criteria are 20% Matric and 80% FSc, written by PU as (Matric ÷ 4 + FSc) ÷ 1375. Matric 1000 and FSc 950 give 87.27%."
+        },
+        {
+          "q": "Does every university count Matric?",
+          "a": "Most do, from 10% (MDCAT, NUST, COMSATS) to 40% (IIUI without a test). NED counts only HSC Part-I and its entry test, not Matric."
+        },
+        {
+          "q": "Do universities use FSc Part-I or full FSc?",
+          "a": "It depends: UET, NUST, UAF and NED use FSc Part-I (out of 550) because admissions open before the final result; MDCAT, COMSATS, PU and IIUI use full FSc marks when available."
+        },
+        {
+          "q": "Matric aur FSc ka aggregate kaise nikalte hain?",
+          "lang": "ur-Latn",
+          "a": "Pehle Matric aur FSc ki percentage nikalein, phir university ke formula ke weight se zarb dein aur jama kar dein. Misaal: PU mein 20% Matric aur 80% FSc, to Matric 1000 aur FSc 950 par 87.27% banta hai."
+        },
+        {
+          "q": "Har university ka aggregate alag kyun hota hai?",
+          "lang": "ur-Latn",
+          "a": "Har university Matric, FSc aur test ko alag weight deti hai. Isi liye same marks par NUST mein aggregate kam aur IIUI mein zyada aa sakta hai."
+        }
+      ],
+      "roman_urdu": "<p>Aggregate nikalne ke teen qadam: Matric aur FSc ki <strong>percentage</strong> nikalein, us ko university ke <strong>weight</strong> se zarb dein, aur sab ko <strong>jama</strong> kar dein. Test ho to us ka hissa bhi isi tarah jama karein.</p><p>Har university ka weight alag hai, is liye apni university ka <a href=\"/aggregate-calculator/\">aggregate calculator</a> istemal karein.</p>",
+      "ru_heading": "Matric aur FSc ka aggregate kaise nikalein?",
+      "sources": [
+        {
+          "label": "PM&DC notification: MDCAT aggregate weights (50% MDCAT, 40% FSc, 10% Matric)",
+          "url": "https://pmdc.pk/Documents/law/Notification%20PM%26DC%20%28ADMISSIONS%2C%20CURRICULUM%20AND%20CONDUCT%29%20POLICY%20AND%20REGULATIONS%202026.pdf",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "Punjab University: Merit of Last Year 2025 (basic criteria formula)",
+          "url": "https://pu.edu.pk/downloads/Merit-of-Last-Year-2025.pdf",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UET Lahore Undergraduate Prospectus Fall 2026, p. 20 (aggregate formula)",
+          "url": "https://admission.uet.edu.pk/uploads/downloads/262b6351-9035-409a-ba3d-f8bd8f9d549a.pdf",
+          "fetched": "2026-11-02"
+        },
+        {
+          "label": "NUST undergraduate merit criteria",
+          "url": "https://nust.edu.pk/admissions/undergraduates/merit-criteria",
+          "fetched": "2026-10-31"
+        }
+      ],
+      "related": [
+        "/aggregate-calculator/",
+        "/percentage-calculator/",
+        "/guides/mdcat-aggregate-formula/",
+        "/guides/ecat-aggregate-formula/",
+        "/pu-aggregate-calculator/",
+        "/iiui-aggregate-calculator/"
+      ],
+      "published": "2026-11-12",
+      "updated": "2026-11-12"
+    },
+    {
+      "path": "/guides/mdcat-marks-needed/",
+      "keyword": "mdcat marks needed for mbbs",
+      "title": "MDCAT Marks Needed for MBBS: Government vs Private ({year:uhs})",
+      "description": "How many MDCAT marks you need for MBBS and BDS in Punjab: government, private and dental colleges, worked out from the 2025 UHS closing merit for your FSc.",
+      "h1": "How Many MDCAT Marks Are Needed for MBBS?",
+      "crumb": "MDCAT marks needed",
+      "type": "content",
+      "template": "default",
+      "parents": [
+        "/guides/"
+      ],
+      "subtitle": "Worked back from the official 2025 UHS closing merits, for your FSc and Matric marks",
+      "answer": "With 1000/1100 in both FSc and Matric, a Punjab government MBBS college needed about 173 to 178 out of 180 in MDCAT in 2025 (closing merit 93.51% to 94.87%). Private MBBS colleges needed from about 164/180 down to the 99/180 pass mark. With 900/1100 in FSc and Matric no government seat was reachable.",
+      "answer_source": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+      "content_file": "guide-mdcat-marks-needed.html",
+      "updated_from_data": true,
+      "faq": [
+        {
+          "q": "How many MDCAT marks are needed for government MBBS?",
+          "a": "About 173 to 178 out of 180 in 2025 with 1000/1100 in FSc and Matric; the government colleges closed between 93.51% and 94.87%. With higher FSc marks you need slightly fewer."
+        },
+        {
+          "q": "How many MDCAT marks are needed for private MBBS?",
+          "a": "From about 164/180 for Al-Aleem Medical College (90.84% in 2025) down to the 99/180 pass mark at the lowest private colleges, with 1000/1100 in FSc and Matric."
+        },
+        {
+          "q": "Is 150 in MDCAT enough for MBBS?",
+          "a": "Not for a Punjab government college on open merit in 2025: with 1000/1100 in FSc and Matric, 150/180 gives an aggregate of about 87.1%, below the 93.51% lowest public closing merit. It reached many private colleges."
+        },
+        {
+          "q": "Can I get MBBS with low FSc marks?",
+          "a": "FSc counts 40% of the aggregate, so with 900/1100 in FSc and Matric even 180/180 in MDCAT did not reach a government college in 2025. You still need at least 60% in FSc to apply."
+        },
+        {
+          "q": "MDCAT ke liye kitne marks chahiye?",
+          "lang": "ur-Latn",
+          "a": "Government MBBS ke liye 2025 mein FSc aur Matric 1000/1100 hon to MDCAT mein taqreeban 173 se 178 (180 mein se) chahiye thay. Private colleges ke liye 164 se le kar 99 tak."
+        },
+        {
+          "q": "Private medical college ke liye MDCAT mein kitne number chahiye?",
+          "lang": "ur-Latn",
+          "a": "2025 ke merit ke hisaab se top private college (Al-Aleem) ke liye taqreeban 164/180, aur sab se neeche wale colleges ke liye pass mark 99/180 kaafi tha."
+        }
+      ],
+      "roman_urdu": "<p>MDCAT ke marks akele faisla nahi karte: aggregate mein FSc 40% aur Matric 10% hai. 2025 mein FSc aur Matric 1000/1100 par government MBBS ke liye MDCAT mein taqreeban <strong>173 se 178</strong> chahiye thay, aur private ke liye 164 se le kar pass mark 99 tak.</p><p>Apne asli marks <a href=\"/mdcat-aggregate-calculator/\">MDCAT aggregate calculator</a> mein daal kar dekhein.</p>",
+      "ru_heading": "MDCAT mein kitne marks par MBBS milta hai?",
+      "sources": [
+        {
+          "label": "UHS 13th and final selection list, public MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/13selecionlistpublicom25.php",
+          "fetched": "2026-10-31"
+        },
+        {
+          "label": "UHS 5th and final selection list, private MBBS 2025 (open merit)",
+          "url": "https://uhs.edu.pk/5selecionlistprivateom25.php",
+          "fetched": "2026-11-12"
+        },
+        {
+          "label": "Punjab Admission Policy MBBS/BDS 2026-27 (MDCAT pass marks, para 3)",
+          "url": "https://www.uhs.edu.pk/downloads/admissionpolicymbbsbdssession2026-27.pdf",
+          "fetched": "2026-11-01"
+        }
+      ],
+      "related": [
+        "/mdcat-passing-marks/",
+        "/mdcat-aggregate-calculator/",
+        "/mdcat-merit-list/",
+        "/mdcat-merit-list/private/",
+        "/guides/mdcat-aggregate-formula/",
+        "/predictor/"
+      ],
+      "published": "2026-11-12",
+      "updated": "2026-11-12"
     },
     {
       "path": "/updates/",
