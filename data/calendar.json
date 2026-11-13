@@ -124,6 +124,15 @@
   ],
   "seasons": {
     "uhs": {
+      "live": {
+        "step": "Provisional order of merit (public MBBS)",
+        "date": "2026-11-13",
+        "checked": "2026-11-13T09:30+05:00",
+        "out": false,
+        "url": "",
+        "note": "UHS has not posted the 2026-27 provisional order of merit on uhs.edu.pk yet; we check again during the day.",
+        "guide": "/guides/uhs-provisional-merit-list/"
+      },
       "session": "2026-27",
       "label": "Public-sector MBBS and BDS admissions, Punjab (UHS)",
       "source_url": "https://www.uhs.edu.pk/images/mbbsbdsadm.jpg",
