@@ -125,12 +125,12 @@
   "seasons": {
     "uhs": {
       "live": {
-        "step": "Provisional order of merit (public MBBS)",
-        "date": "2026-11-13",
-        "checked": "2026-11-13T22:20+05:00",
-        "out": true,
-        "url": "https://uhs.edu.pk/publicmeritlist2026.php",
-        "note": "Open merit, Overseas, UDD, Cholistan and Disability lists are on the UHS page. Check your name, aggregate and position; the final order of merit is due on 16 November.",
+        "step": "Final order of merit (public MBBS)",
+        "date": "2026-11-16",
+        "checked": "2026-11-16T19:00+05:00",
+        "out": false,
+        "url": "",
+        "note": "The provisional order of merit (13 November) is on the UHS page: https://uhs.edu.pk/publicmeritlist2026.php. The first college-wise selection list is due on 17 November.",
         "guide": "/guides/uhs-provisional-merit-list/"
       },
       "session": "2026-27",
