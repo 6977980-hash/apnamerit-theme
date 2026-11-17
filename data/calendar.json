@@ -125,12 +125,12 @@
   "seasons": {
     "uhs": {
       "live": {
-        "step": "Final order of merit (public MBBS)",
-        "date": "2026-11-16",
-        "checked": "2026-11-16T23:40+05:00",
-        "out": true,
-        "url": "https://uhs.edu.pk/1publicmeritlist2026.php",
-        "note": "The open merit list has the top 5,500 candidates (aggregate 97.5747% at no. 1 to 92.6838% at no. 5,500). Overseas, UDD, Cholistan and Disability lists are on the same UHS page. The first college-wise selection list is due on 17 November.",
+        "step": "First selection list (public MBBS)",
+        "date": "2026-11-17",
+        "checked": "2026-11-17T14:05+05:00",
+        "out": false,
+        "url": "",
+        "note": "The final order of merit (16 November) is on the UHS page: https://uhs.edu.pk/1publicmeritlist2026.php. Private MBBS first selection list is due on 18 November.",
         "guide": "/guides/not-selected-in-first-merit-list/"
       },
       "session": "2026-27",
