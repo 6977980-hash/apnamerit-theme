@@ -46,8 +46,12 @@ function am_pcollege_table( array $uni, string $campus, string $program, string 
 	$rows  = '';
 	$last  = null;
 	if ( $trail ) {
+		// One season only: the year of the newest final row (a new season starts with its 1st list
+		// before its last list exists), else the newest trail year.
+		$newest = am_pcollege_newest( $uni, $program );
+		$y      = (int) ( $newest[ $campus ]['year'] ?? max( array_map( fn( $t ) => (int) $t['year'], $trail ) ) );
+		$trail  = array_values( array_filter( $trail, fn( $t ) => (int) $t['year'] === $y ) );
 		usort( $trail, fn( $a, $b ) => (int) $a['list_no'] <=> (int) $b['list_no'] );
-		$y = (int) $trail[0]['year'];
 		foreach ( $trail as $t ) {
 			$cur   = round( (float) $t['closing'], 2 );
 			$chg   = null === $last ? '' : number_format( $cur - $last, 2 );
@@ -103,6 +107,8 @@ function am_sc_pcollege( $atts ): string {
 	} else {
 		$html .= '<p>Each figure is the lowest aggregate in the newest ' . esc_html( $us ) . ' selection list for ' . esc_html( $short ) . '. ' . esc_html( $us ) . ' does not say a list is the last one, so a later list could have closed a little lower.</p>';
 	}
+
+	$html .= am_college_new_first( $uni, $campus, $prog, $year, $short, 'private-sector ' );
 
 	// 2. Closing position (UHS Final Order of Merit, private sector).
 	if ( is_numeric( $row['position'] ?? null ) ) {

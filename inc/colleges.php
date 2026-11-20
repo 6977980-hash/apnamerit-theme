@@ -100,6 +100,8 @@ function am_sc_college( $atts ): string {
 			. '. If your number in the next UHS merit list is smaller, you were ahead of that student. Seats and applicants change each year, so use it as a guide only. Source: ' . am_source_link( (string) ( $row['position_source_url'] ?? '' ) ) . '.</p>';
 	}
 
+	$html .= am_college_new_first( $uni, $campus, (string) $row['program'], (int) $new, $short, '' );
+
 	// 2. Every selection list of the newest year.
 	$trail = array_values( array_filter( (array) ( $uni['list_trail'] ?? array() ), fn( $t ) => (int) ( $t['year'] ?? 0 ) === $new && ( $t['campus'] ?? '' ) === $campus ) );
 	usort( $trail, fn( $a, $b ) => (int) $a['list_no'] <=> (int) $b['list_no'] );
@@ -357,7 +359,7 @@ function am_sc_list_drop( $atts ): string {
 	if ( ! $trail ) {
 		return am_stub( 'am_list_drop', $atts );
 	}
-	$year = max( array_map( fn( $t ) => (int) $t['year'], $trail ) );
+	$year = am_trail_year( $trail );
 	$by   = array();
 	foreach ( $trail as $t ) {
 		if ( (int) $t['year'] === $year ) {
@@ -400,7 +402,7 @@ function am_list_when_data( array $uni ): array {
 	if ( ! $trail ) {
 		return array();
 	}
-	$year = max( array_map( fn( $t ) => (int) $t['year'], $trail ) );
+	$year = am_trail_year( $trail );
 	$by   = array();
 	$src  = array();
 	$n    = 0;
@@ -496,3 +498,49 @@ add_action(
 		add_shortcode( 'am_list_when', 'am_sc_list_when' );
 	}
 );
+
+/**
+ * New season, 1st list out before its final list: one paragraph with the 1st-list closing merit and
+ * merit number of a year newer than the page's final year, next to the 1st list of that final year.
+ */
+function am_college_new_first( array $uni, string $campus, string $program, int $final_year, string $short, string $sector ): string {
+	$new = null;
+	$old = null;
+	foreach ( (array) ( $uni['merit'] ?? array() ) as $r ) {
+		if ( '1st' !== ( $r['list'] ?? '' ) || ( $r['campus'] ?? '' ) !== $campus || ( $r['program'] ?? '' ) !== $program || 'Open merit' !== ( $r['category'] ?? '' ) ) {
+			continue;
+		}
+		$y = (int) $r['year'];
+		if ( $y > $final_year && ( null === $new || $y > (int) $new['year'] ) ) {
+			$new = $r;
+		} elseif ( $y === $final_year ) {
+			$old = $r;
+		}
+	}
+	if ( ! $new ) {
+		return '';
+	}
+	$y = (int) $new['year'];
+	return '<p class="am-new"><strong>New: ' . esc_html( $y . '-' . substr( (string) ( $y + 1 ), 2 ) ) . ' 1st selection list.</strong> In the first UHS ' . esc_html( $sector ) . 'selection list of ' . esc_html( (string) $y ) . ', the last open-merit seat at ' . esc_html( $short ) . ' went at <strong>' . esc_html( am_pct( $new['closing'] ) ) . '</strong>'
+		. ( is_numeric( $new['position'] ?? null ) ? ' (merit number ' . esc_html( number_format( (int) $new['position'] ) ) . ' in the ' . esc_html( (string) $y ) . ' Final Order of Merit, ' . am_source_link( (string) ( $new['position_source_url'] ?? '' ) ) . ')' : '' )
+		. ( $old ? '; in the ' . esc_html( (string) $final_year ) . ' 1st list it was ' . esc_html( am_pct( $old['closing'] ) ) : '' )
+		. '. Later lists usually close lower. Source: ' . am_source_link( (string) $new['source_url'] ) . '.</p>';
+}
+
+/**
+ * Season of a list trail to show: the year with the most selection lists, newest on a tie, so a new
+ * season with only its 1st list does not replace last year's full trail until it has as many lists.
+ */
+function am_trail_year( array $trail ): int {
+	$n = array();
+	foreach ( $trail as $t ) {
+		$n[ (int) $t['year'] ][ (int) ( $t['list_no'] ?? 0 ) ] = true;
+	}
+	$best = 0;
+	foreach ( $n as $y => $ls ) {
+		if ( ! $best || count( $ls ) > count( $n[ $best ] ) || ( count( $ls ) === count( $n[ $best ] ) && $y > $best ) ) {
+			$best = (int) $y;
+		}
+	}
+	return $best;
+}

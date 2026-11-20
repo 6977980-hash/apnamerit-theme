@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.42.0 (2026-11-20)
+
+- UHS 2026-27 1st selection lists: open-merit closing aggregate for 19 public and 34 private MBBS colleges (`uhs.json` merit rows year 2026 list 1st, `list_trail` / `private_trail` list 1), with closing merit numbers from the 2026 Final Orders of Merit (public 1ommbbsml26.php, private finalommbbsmlprivatep26.php). Verified independently against the public open-merit page.
+- New section "UHS 1st selection list 2026-27" on /mdcat-merit-list/ (`[am_merit_table uni="uhs" list="1st"]`); college and private college pages show a "New: 2026-27 1st selection list" line (`am_college_new_first()`).
+- `am_trail_year()`: list-drop and list-when tools show the season with the most lists, so the 2025 trail stays until 2026 has as many lists; private college tables show one season only.
+- `scripts/uhs_positions.py` reads the 2026 order-of-merit headers (Tracking ID, Sr#).
+- Live box: first selection list out; updates entry.
+
 ## 0.41.0 (2026-11-12)
 
 - GSC audit item 5: **KU** open merit BS 1st year morning 2026 (Admissions 2027 closing list of 1 Nov 2026, 66 rows, category K) and **evening** programmes 2025 (Admissions 2026, 23 open merit + BSCS/BSSE test-based, from KU's last-year-closing guidance PDF p. 5); new KU sections "open merit 2026 department-wise" and "morning vs evening", FAQs. **UET** list-by-list table for the Lahore main campus (A1 open merit, lists 1-4 + left-over; lists 2 and 3 parsed from UET's closing merit reports, list 4 parse = data, 0 mismatches). **COMSATS** program-wise table by campus and intake and a cyber security section (existing official figures; no new campus or Islamabad final Fall 2026 figures are published or reachable: Wah/Attock 403, Abbottabad 502, Sahiwal/Vehari sites have none).

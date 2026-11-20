@@ -477,3 +477,10 @@ Owner's consulting chat delivered `apnamerit-data/{uet-lahore,comsats,nums}.json
 - Do not commit a test/demo university file with invented numbers or third-party (maqsad, eduvision, ilmkidunya…) closing estimates.
 - Do not edit theme files on the server; do not commit PDFs, secrets or personal data.
 - Do not request GSC/Bing indexing until the owner says the site is complete.
+
+## UHS 2026-27 lists (v0.42.0, 2026-11-20)
+
+- Provisional (13 Nov), final order of merit (16 Nov) and 1st selection lists (public 17 Nov, private 18 Nov) are out. 1st lists added as `merit` rows year 2026 list `1st` (19 public, 34 private MBBS, Open merit) plus `list_trail`/`private_trail` list_no 1, with positions from `1ommbbsml26.php` / `finalommbbsmlprivatep26.php`. 2026 public lists live at `uhs.edu.pk/<n>selecionlistpublicomnall26.php`, private at `<n>selecionlistprivateom26.php`.
+- UHS 2026 campus names differ from 2025 for KMSMC, NSMC, UCMD, UMDC and Queens; map them to the 2025 names (see the rename map in this release's commit) before adding rows. New public colleges: Mianwali, Mandi Bahauddin (no college pages yet). New private: RYK.
+- Default view stays 2025 Final until the 2026 last list exists (`defaults.list` Final). `am_trail_year()` keeps the 2025 trail on list tools until 2026 has as many lists. For each later list: run uhs_closing.py, add trail rows, positions, update the live box.
+

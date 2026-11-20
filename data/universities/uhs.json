@@ -7,7 +7,7 @@
  "website": "https://uhs.edu.pk/",
  "calculator_path": "/mdcat-aggregate-calculator/",
  "meritlist_path": "/mdcat-merit-list/",
- "updated": "2026-10-31",
+ "updated": "2026-11-20",
  "_note": "Punjab public and private MBBS/BDS admissions run by UHS. Closing = lowest Open-merit aggregate per college in that selection list (scripts/uhs_closing.py). Program carries the sector so public and private colleges stay apart.",
  "table_note": "2024 MDCAT was marked out of 200, 2025 out of 180; aggregates are comparable, raw test marks are not.",
  "defaults": {
@@ -2426,9 +2426,645 @@
    "source_url": "https://uhs.edu.pk/1selecionlistprivatebdsom25.php",
    "position": 1257,
    "position_source_url": "https://www.uhs.edu.pk/finalombdsmlprivate25.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "closing": 95.3697,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 431,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "closing": 94.875,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 867,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "closing": 94.3917,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 1480,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "closing": 94.1889,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 1788,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "closing": 94.0131,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 2063,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "closing": 93.8972,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 2294,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "closing": 93.7121,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 2685,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "closing": 93.7106,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 2690,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "closing": 93.5636,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3009,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "closing": 93.5045,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3170,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "closing": 93.4773,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3261,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "closing": 93.4717,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3292,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "closing": 93.4394,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3382,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "closing": 93.4227,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3429,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "closing": 93.3694,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3617,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "closing": 93.3583,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3653,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "closing": 93.3561,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3661,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Maryam Nawaz Sharif Medical College, Mianwali",
+   "closing": 93.3121,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3810,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (public)",
+   "campus": "Medical College, University of Rasul, Mandi Bahauddin",
+   "closing": 93.297,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php",
+   "position": 3852,
+   "position_source_url": "https://www.uhs.edu.pk/1ommbbsml26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Al-Aleem Medical College, Lahore",
+   "closing": 91.6051,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 553,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Shalamar Medical & Dental College, Lahore",
+   "closing": 91.4768,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 585,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Sharif Medical & Dental College, Lahore",
+   "closing": 90.0909,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 946,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "FMH College of Medicine & Dentistry, Lahore",
+   "closing": 89.725,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 1037,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Lahore Medical & Dental College, Lahore",
+   "closing": 88.6528,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 1322,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical College, Rawalpindi",
+   "closing": 87.1167,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 1693,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical & Dental College, Lahore",
+   "closing": 87.0404,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 1717,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Rashid Latif Medical College, Lahore",
+   "closing": 86.2028,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 1924,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "University College of Medicine & Dentistry, Lahore (University of Lahore)",
+   "closing": 83.9361,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 2529,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Rahbar Medical & Dental College, Lahore",
+   "closing": 83.75,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 2578,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Watim Medical College, Rawalpindi",
+   "closing": 83.5364,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 2626,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Aziz Fatima Medical & Dental College, Faisalabad",
+   "closing": 83.5,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 2641,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Central Park Medical College, Lahore",
+   "closing": 82.5091,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 2892,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Abu Umara Medical & Dental College, Lahore",
+   "closing": 82.1639,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 2982,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Multan Medical & Dental College, Multan",
+   "closing": 81.5101,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3151,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "RLKU Medical & Dental College, Lahore",
+   "closing": 81.4972,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3155,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Avicenna Medical College, Lahore",
+   "closing": 81.4389,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3167,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Sialkot Medical College, Sialkot",
+   "closing": 81.425,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3171,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Continental Medical College, Lahore",
+   "closing": 81.1667,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3240,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Bakhtawar Amin Medical & Dental College, Multan",
+   "closing": 80.9091,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3323,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Azra Naheed Medical College (Superior University), Lahore",
+   "closing": 80.2222,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3523,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Pak Red Crescent Medical & Dental College, Lahore",
+   "closing": 79.0778,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3835,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "University Medical & Dental College, Faisalabad (For Women Only) (University of Faisalabad)",
+   "closing": 78.8722,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 3894,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Independent Medical College, Faisalabad",
+   "closing": 77.6167,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4247,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Islam Medical College, Sialkot",
+   "closing": 77.5861,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4256,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Abwa Medical College, Faisalabad",
+   "closing": 77.0253,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4400,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "RYK Medical & Dental College, Rahim Yar Khan",
+   "closing": 76.9737,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4421,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Amna Inayat Medical College, Sheikhupura",
+   "closing": 76.3212,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4588,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "M. Islam Medical College, Gujranwala",
+   "closing": 76.25,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4606,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Niazi Medical & Dental College, Sargodha",
+   "closing": 75.8833,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4722,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Queens Medical College Kasur (for females only)",
+   "closing": 75.8131,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4747,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Shahida Islam Medical College, Lodhran",
+   "closing": 75.7917,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4751,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Rai Medical College, Sargodha",
+   "closing": 75.6091,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4802,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
+  },
+  {
+   "year": 2026,
+   "list": "1st",
+   "category": "Open merit",
+   "program": "MBBS (private)",
+   "campus": "Sahara Medical College, Narowal",
+   "closing": 75.1354,
+   "field": "medical",
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php",
+   "position": 4932,
+   "position_source_url": "https://www.uhs.edu.pk/finalommbbsmlprivatep26.php"
   }
  ],
- "private_trail_note": "Private MBBS (lists 1-5) and private BDS (lists 1-3) 2025-26: lowest Open-merit aggregate per college in every UHS private selection list (scripts/uhs_closing.py, fetched 2026-11-12; list 1 and the last list match the 1st/Final and 1st/3rd merit rows). Used by the private college pages ([am_pcollege]), not by merit tables or the predictor.",
+ "private_trail_note": "Private MBBS (lists 1-5) and private BDS (lists 1-3) 2025-26: lowest Open-merit aggregate per college in every UHS private selection list (scripts/uhs_closing.py, fetched 2026-11-12; list 1 and the last list match the 1st/Final and 1st/3rd merit rows). Used by the private college pages ([am_pcollege]), not by merit tables or the predictor. Private MBBS 2026-27: list 1 added 2026-11-20 (1selecionlistprivateom26.php, 34 colleges); college pages keep the 2025 trail until the 2026 last list exists.",
  "private_trail": [
   {
    "year": 2025,
@@ -4181,9 +4817,281 @@
    "list_no": 5,
    "closing": 60.998,
    "source_url": "https://uhs.edu.pk/5selecionlistprivateom25.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Al-Aleem Medical College, Lahore",
+   "list_no": 1,
+   "closing": 91.6051,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Shalamar Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 91.4768,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Sharif Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 90.0909,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "FMH College of Medicine & Dentistry, Lahore",
+   "list_no": 1,
+   "closing": 89.725,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Lahore Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 88.6528,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical College, Rawalpindi",
+   "list_no": 1,
+   "closing": 87.1167,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Akhtar Saeed Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 87.0404,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Rashid Latif Medical College, Lahore",
+   "list_no": 1,
+   "closing": 86.2028,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "University College of Medicine & Dentistry, Lahore (University of Lahore)",
+   "list_no": 1,
+   "closing": 83.9361,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Rahbar Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 83.75,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Watim Medical College, Rawalpindi",
+   "list_no": 1,
+   "closing": 83.5364,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Aziz Fatima Medical & Dental College, Faisalabad",
+   "list_no": 1,
+   "closing": 83.5,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Central Park Medical College, Lahore",
+   "list_no": 1,
+   "closing": 82.5091,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Abu Umara Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 82.1639,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Multan Medical & Dental College, Multan",
+   "list_no": 1,
+   "closing": 81.5101,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "RLKU Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 81.4972,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Avicenna Medical College, Lahore",
+   "list_no": 1,
+   "closing": 81.4389,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Sialkot Medical College, Sialkot",
+   "list_no": 1,
+   "closing": 81.425,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Continental Medical College, Lahore",
+   "list_no": 1,
+   "closing": 81.1667,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Bakhtawar Amin Medical & Dental College, Multan",
+   "list_no": 1,
+   "closing": 80.9091,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Azra Naheed Medical College (Superior University), Lahore",
+   "list_no": 1,
+   "closing": 80.2222,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Pak Red Crescent Medical & Dental College, Lahore",
+   "list_no": 1,
+   "closing": 79.0778,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "University Medical & Dental College, Faisalabad (For Women Only) (University of Faisalabad)",
+   "list_no": 1,
+   "closing": 78.8722,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Independent Medical College, Faisalabad",
+   "list_no": 1,
+   "closing": 77.6167,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Islam Medical College, Sialkot",
+   "list_no": 1,
+   "closing": 77.5861,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Abwa Medical College, Faisalabad",
+   "list_no": 1,
+   "closing": 77.0253,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "RYK Medical & Dental College, Rahim Yar Khan",
+   "list_no": 1,
+   "closing": 76.9737,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Amna Inayat Medical College, Sheikhupura",
+   "list_no": 1,
+   "closing": 76.3212,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "M. Islam Medical College, Gujranwala",
+   "list_no": 1,
+   "closing": 76.25,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Niazi Medical & Dental College, Sargodha",
+   "list_no": 1,
+   "closing": 75.8833,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Queens Medical College Kasur (for females only)",
+   "list_no": 1,
+   "closing": 75.8131,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Shahida Islam Medical College, Lodhran",
+   "list_no": 1,
+   "closing": 75.7917,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Rai Medical College, Sargodha",
+   "list_no": 1,
+   "closing": 75.6091,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (private)",
+   "campus": "Sahara Medical College, Narowal",
+   "list_no": 1,
+   "closing": 75.1354,
+   "source_url": "https://uhs.edu.pk/1selecionlistprivateom26.php"
   }
  ],
- "list_trail_note": "Public MBBS 2025-26: lowest Open-merit aggregate per college in every UHS selection list 1-13 (scripts/uhs_closing.py, fetched 2026-11-01). List 13 = the Final rows in merit; list 1 = the 1st rows. Used by the college pages ([am_college]), not by merit tables or the predictor.",
+ "list_trail_note": "Public MBBS 2025-26: lowest Open-merit aggregate per college in every UHS selection list 1-13 (scripts/uhs_closing.py, fetched 2026-11-01). List 13 = the Final rows in merit; list 1 = the 1st rows. Used by the college pages ([am_college]), not by merit tables or the predictor. Public MBBS 2026-27: list 1 added 2026-11-20 (1selecionlistpublicomnall26.php, 19 colleges); trail tools show the season with the most lists (am_trail_year).",
  "list_trail": [
   {
    "year": 2025,
@@ -5952,6 +6860,158 @@
    "list_no": 13,
    "closing": 93.5439,
    "source_url": "https://uhs.edu.pk/13selecionlistpublicom25.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "King Edward Medical University (KEMC), Lahore",
+   "list_no": 1,
+   "closing": 95.3697,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Allama Iqbal Medical College (AIMC), Lahore",
+   "list_no": 1,
+   "closing": 94.875,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Services Institute of Medical Sciences (SIMS), Lahore",
+   "list_no": 1,
+   "closing": 94.3917,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Nishtar Medical College (NMC), Multan",
+   "list_no": 1,
+   "closing": 94.1889,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Rawalpindi Medical College (RMC), Rawalpindi",
+   "list_no": 1,
+   "closing": 94.0131,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Ameer-ud-Din Medical College (AMC), Lahore",
+   "list_no": 1,
+   "closing": 93.8972,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Punjab Medical College (PMC), Faisalabad",
+   "list_no": 1,
+   "closing": 93.7121,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Fatima Jinnah Medical College (FJMC), Lahore",
+   "list_no": 1,
+   "closing": 93.7106,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Quaid-e-Azam Medical College (QAMC), Bahawalpur",
+   "list_no": 1,
+   "closing": 93.5636,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Gujranwala Medical College (GMC), Gujranwala",
+   "list_no": 1,
+   "closing": 93.5045,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Sahiwal Medical College (SLMC), Sahiwal",
+   "list_no": 1,
+   "closing": 93.4773,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC)",
+   "list_no": 1,
+   "closing": 93.4717,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Nawaz Sharif Medical College, University of Gujrat (NSMC)",
+   "list_no": 1,
+   "closing": 93.4394,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Sargodha Medical College (SMC), Sargodha",
+   "list_no": 1,
+   "closing": 93.4227,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "D.G. Khan Medical College (DGMC), D.G Khan",
+   "list_no": 1,
+   "closing": 93.3694,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan",
+   "list_no": 1,
+   "closing": 93.3583,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Narowal Medical College, Narowal",
+   "list_no": 1,
+   "closing": 93.3561,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Maryam Nawaz Sharif Medical College, Mianwali",
+   "list_no": 1,
+   "closing": 93.3121,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
+  },
+  {
+   "year": 2026,
+   "program": "MBBS (public)",
+   "campus": "Medical College, University of Rasul, Mandi Bahauddin",
+   "list_no": 1,
+   "closing": 93.297,
+   "source_url": "https://uhs.edu.pk/1selecionlistpublicomnall26.php"
   }
  ]
 }

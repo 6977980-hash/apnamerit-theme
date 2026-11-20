@@ -2,6 +2,12 @@
   "_note": "Student-facing change log (idea 5, 2026-11-01). One entry per new official list parsed, new page or date change: date YYYY-MM-DD, title (<= 110 chars), text (one sentence), url (site path or https). Rendered by [am_updates] on /updates/ and as RSS at /updates/feed/. The owner posts each entry on the WhatsApp Channel (site.json social.whatsapp_channel). Add the newest entry anywhere; the page sorts by date.",
   "updates": [
     {
+      "date": "2026-11-20",
+      "title": "UHS 1st selection list 2026-27: college-wise closing merit for public and private MBBS",
+      "text": "KEMU closed at 95.37% (merit no. 431) and Mandi Bahauddin at 93.30% in the public 1st list; private colleges ranged from Al-Aleem 91.61% to Sahara 75.14%, all from the official UHS lists.",
+      "url": "/mdcat-merit-list/"
+    },
+    {
       "date": "2026-11-16",
       "title": "UHS final order of merit 2026-27 for public MBBS is out",
       "text": "UHS has published the final order of merit for public MBBS; open merit has the top 5,500 candidates, from 97.5747% at no. 1 to 92.6838% at no. 5,500, and the first selection list is due on 17 November.",

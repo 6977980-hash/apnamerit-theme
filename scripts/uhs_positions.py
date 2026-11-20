@@ -43,7 +43,9 @@ def order(url: str) -> dict[str, tuple[int, float]]:
     r = rows(url)
     hdr = r[0]
     h = {k: i for i, k in enumerate(hdr)}
-    return {x[h["User id"]]: (int(x[h["Sr #"]]), float(x[h["Aggregate"]])) for x in r[1:] if len(x) == len(hdr)}
+    uid = next(h[k] for k in ("User id", "Tracking ID") if k in h)  # 2026 pages say "Tracking ID", "Sr#"
+    sr = next(h[k] for k in ("Sr #", "Sr#") if k in h)
+    return {x[uid]: (int(x[sr]), float(x[h["Aggregate"]])) for x in r[1:] if len(x) == len(hdr)}
 
 
 def selected(url: str) -> list[tuple[str, str, float]]:
