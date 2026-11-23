@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.43.1 (2026-11-23)
+
+- GTM loads on the first scroll/tap/key/mouse move or 4 s after the load event (whichever is first). Loading it right after load cost Lighthouse mobile 4-8 points (TBT 230-330 ms of GTM + GA4 script; 100 without it).
+
 ## 0.43.0 (2026-11-23)
 
 - Google Tag Manager container `GTM-MNRN4VTX` (owner request), ID in `data/site.json` `gtm_id`, code in `inc/analytics.php`. Standard GTM pattern (dataLayer + `gtm.start` inline in `<head>`, noscript iframe after `<body>`), but `gtm.js` is requested only after the load event when the browser is idle, so it does not slow first paint. Not loaded on `/embed/<slug>/` widgets. The owner's pasted snippet had a `gtag()` stub; it is not needed for GTM and was left out.

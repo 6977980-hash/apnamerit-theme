@@ -3,8 +3,8 @@
  * Google Tag Manager (owner request 2026-11-23). Container ID lives in data/site.json `gtm_id`.
  *
  * Speed: the dataLayer and gtm.start time are set inline in <head>, but gtm.js itself is only
- * requested after the window load event, when the browser is idle, so it never competes with the
- * page's own CSS/JS or delays first paint. /embed/<slug>/ widgets have their own template without
+ * requested on the first interaction or 4 s after the load event, so it never competes with the
+ * page's own CSS/JS, first paint or the first tap. /embed/<slug>/ widgets have their own template without
  * wp_head(), so GTM never runs on other people's sites.
  */
 
@@ -24,10 +24,14 @@ add_action(
 			return;
 		}
 		$src = 'https://www.googletagmanager.com/gtm.js?id=' . $id;
+		// Load gtm.js on the first scroll/tap/key/mouse move, or 4 s after the load event, whichever
+		// comes first: real visitors are counted, but the ~300 ms of GTM + GA4 script work stays out of
+		// first paint and first input (Lighthouse TBT 230-330 ms when loaded right after load).
 		echo '<script>window.dataLayer=window.dataLayer||[];dataLayer.push({"gtm.start":Date.now(),event:"gtm.js"});'
-			. '(function(){function l(){var s=document.createElement("script");s.async=true;s.src=' . wp_json_encode( $src, JSON_UNESCAPED_SLASHES ) . ';document.head.appendChild(s)}'
-			. 'function i(){"requestIdleCallback" in window?requestIdleCallback(l,{timeout:2000}):setTimeout(l,1)}'
-			. '"complete"===document.readyState?i():addEventListener("load",i)})()</script>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput -- ID validated by am_gtm_id(), URL JSON-encoded
+			. '(function(){var d=0,e=["scroll","pointerdown","keydown","mousemove","touchstart"];function l(){if(d)return;d=1;e.forEach(function(n){removeEventListener(n,g,{passive:true})});'
+			. 'var s=document.createElement("script");s.async=true;s.src=' . wp_json_encode( $src, JSON_UNESCAPED_SLASHES ) . ';document.head.appendChild(s)}'
+			. 'function g(){setTimeout(l,50)}e.forEach(function(n){addEventListener(n,g,{passive:true})});'
+			. 'function t(){setTimeout(l,4000)}"complete"===document.readyState?t():addEventListener("load",t)})()</script>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput -- ID validated by am_gtm_id(), URL JSON-encoded
 	},
 	1
 );
