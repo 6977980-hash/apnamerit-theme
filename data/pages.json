@@ -301,7 +301,7 @@
     {
       "path": "/mdcat-merit-list/",
       "keyword": "mdcat merit list",
-      "title": "MDCAT Merit List {season_year}: College-wise Closing Merit {year:uhs}",
+      "title": "MDCAT Merit List {season_year}: College-wise Closing Merit {session:uhs}",
       "description": "MDCAT merit list: college-wise MBBS and BDS closing merit 2025 for all UHS Punjab public and private colleges, KEMU 94.87% to Narowal 93.51%, with 2024.",
       "h1": "MDCAT Merit List {season_year} & MBBS/BDS Closing Merit {year:uhs}",
       "crumb": "MDCAT merit list",
@@ -453,7 +453,7 @@
     {
       "path": "/mdcat-merit-list/kemu/",
       "keyword": "kemu merit",
-      "title": "KEMU Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "KEMU Merit {session:uhs}: MBBS Closing Merit by List",
       "description": "KEMU MBBS closing merit 2025: 94.87% in the final UHS list, 94.92% in the 1st list, 96.06% in 2024. Every list, rank and MDCAT needed. Official UHS data.",
       "h1": "King Edward Medical University (KEMC), Lahore MBBS Merit {year:uhs}",
       "crumb": "KEMU merit",
@@ -543,7 +543,7 @@
     {
       "path": "/mdcat-merit-list/aimc/",
       "keyword": "aimc merit",
-      "title": "AIMC Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "AIMC Merit {session:uhs}: MBBS Closing Merit by List",
       "description": "AIMC MBBS closing merit 2025: 94.45% in the final UHS list, 94.50% in the 1st list, 95.60% in 2024. Every list, rank and MDCAT needed. Official UHS data.",
       "h1": "Allama Iqbal Medical College (AIMC), Lahore MBBS Merit {year:uhs}",
       "crumb": "AIMC merit",
@@ -634,7 +634,7 @@
     {
       "path": "/mdcat-merit-list/sims/",
       "keyword": "sims merit",
-      "title": "SIMS Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "SIMS Merit {session:uhs}: MBBS Closing Merit by List",
       "description": "SIMS MBBS closing merit 2025: 94.23% in the final UHS list, 94.27% in the 1st list, 95.27% in 2024. Every list, rank and MDCAT needed. Official UHS data.",
       "h1": "Services Institute of Medical Sciences (SIMS), Lahore MBBS Merit {year:uhs}",
       "crumb": "SIMS merit",
@@ -725,7 +725,7 @@
     {
       "path": "/mdcat-merit-list/nishtar/",
       "keyword": "nishtar medical college merit",
-      "title": "Nishtar Medical College Merit {year:uhs}: MBBS Closing Merit",
+      "title": "Nishtar Medical College Merit {session:uhs}: MBBS Closing Merit",
       "description": "Nishtar Medical College MBBS closing merit 2025: 94.15% in the final UHS list, 94.20% in the 1st list, 95.14% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Nishtar Medical College (NMC), Multan MBBS Merit {year:uhs}",
       "crumb": "Nishtar Medical College merit",
@@ -816,7 +816,7 @@
     {
       "path": "/mdcat-merit-list/amc/",
       "keyword": "ameer-ud-din medical college merit",
-      "title": "Ameer-ud-Din Medical College Merit {year:uhs}: MBBS Closing Merit",
+      "title": "Ameer-ud-Din Medical College Merit {season_year}: MBBS Closing Merit",
       "description": "Ameer-ud-Din Medical College MBBS closing merit 2025: 94.01% in the final UHS list, 94.08% in the 1st list, 94.73% in 2024 Official UHS data.",
       "h1": "Ameer-ud-Din Medical College (AMC), Lahore MBBS Merit {year:uhs}",
       "crumb": "Ameer-ud-Din Medical College merit",
@@ -907,7 +907,7 @@
     {
       "path": "/mdcat-merit-list/rmc/",
       "keyword": "rmc rawalpindi merit",
-      "title": "RMC Rawalpindi Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "RMC Rawalpindi Merit {session:uhs}: MBBS Closing Merit by List",
       "description": "RMC Rawalpindi MBBS closing merit 2025: 93.93% in the final UHS list, 94.00% in the 1st list, 94.74% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Rawalpindi Medical College (RMC), Rawalpindi MBBS Merit {year:uhs}",
       "crumb": "RMC Rawalpindi merit",
@@ -998,7 +998,7 @@
     {
       "path": "/mdcat-merit-list/fjmc/",
       "keyword": "fjmc merit",
-      "title": "FJMC Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "FJMC Merit {session:uhs}: MBBS Closing Merit by List",
       "description": "FJMC MBBS closing merit 2025: 93.81% in the final UHS list, 93.87% in the 1st list, 94.66% in 2024. Every list, rank and MDCAT needed. Official UHS data.",
       "h1": "Fatima Jinnah Medical College (FJMC), Lahore MBBS Merit {year:uhs}",
       "crumb": "FJMC merit",
@@ -1089,7 +1089,7 @@
     {
       "path": "/mdcat-merit-list/pmc/",
       "keyword": "pmc faisalabad merit",
-      "title": "PMC Faisalabad Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "PMC Faisalabad Merit {session:uhs}: MBBS Closing Merit by List",
       "description": "PMC Faisalabad MBBS closing merit 2025: 93.79% in the final UHS list, 93.87% in the 1st list, 94.57% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Punjab Medical College (PMC), Faisalabad MBBS Merit {year:uhs}",
       "crumb": "PMC Faisalabad merit",
@@ -1180,7 +1180,7 @@
     {
       "path": "/mdcat-merit-list/qamc/",
       "keyword": "qamc bahawalpur merit",
-      "title": "QAMC Bahawalpur Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "QAMC Bahawalpur Merit {session:uhs}: MBBS Closing Merit by List",
       "description": "QAMC Bahawalpur MBBS closing merit 2025: 93.72% in the final UHS list, 93.81% in the 1st list, 94.53% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Quaid-e-Azam Medical College (QAMC), Bahawalpur MBBS Merit {year:uhs}",
       "crumb": "QAMC Bahawalpur merit",
@@ -1271,7 +1271,7 @@
     {
       "path": "/mdcat-merit-list/gmc/",
       "keyword": "gujranwala medical college merit",
-      "title": "Gujranwala Medical College Merit {year:uhs}: MBBS Closing Merit",
+      "title": "Gujranwala Medical College Merit {session:uhs}: MBBS Closing Merit",
       "description": "Gujranwala Medical College MBBS closing merit 2025: 93.67% in the final UHS list, 93.79% in the 1st list, 94.47% in 2024 Official UHS data. Updated.",
       "h1": "Gujranwala Medical College (GMC), Gujranwala MBBS Merit {year:uhs}",
       "crumb": "Gujranwala Medical College merit",
@@ -1362,7 +1362,7 @@
     {
       "path": "/mdcat-merit-list/slmc/",
       "keyword": "sahiwal medical college merit",
-      "title": "Sahiwal Medical College Merit {year:uhs}: MBBS Closing Merit",
+      "title": "Sahiwal Medical College Merit {session:uhs}: MBBS Closing Merit",
       "description": "Sahiwal Medical College MBBS closing merit 2025: 93.66% in the final UHS list, 93.76% in the 1st list, 94.43% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Sahiwal Medical College (SLMC), Sahiwal MBBS Merit {year:uhs}",
       "crumb": "Sahiwal Medical College merit",
@@ -1453,7 +1453,7 @@
     {
       "path": "/mdcat-merit-list/kmsmc/",
       "keyword": "kmsmc sialkot merit",
-      "title": "KMSMC Sialkot Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "KMSMC Sialkot Merit {session:uhs}: MBBS Closing Merit by List",
       "description": "KMSMC Sialkot MBBS closing merit 2025: 93.63% in the final UHS list, 93.74% in the 1st list, 94.40% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Khawaja Muhammad Safdar Medical College, Sialkot (KMSMC) MBBS Merit {year:uhs}",
       "crumb": "KMSMC Sialkot merit",
@@ -1544,7 +1544,7 @@
     {
       "path": "/mdcat-merit-list/nsmc/",
       "keyword": "nawaz sharif medical college merit",
-      "title": "Nawaz Sharif Medical College Merit {year:uhs}: MBBS Closing Merit",
+      "title": "Nawaz Sharif Medical College Merit {season_year}: MBBS Closing Merit",
       "description": "Nawaz Sharif Medical College MBBS closing merit 2025: 93.60% in the final UHS list, 93.71% in the 1st list, 94.35% in 2024 Official UHS data.",
       "h1": "Nawaz Sharif Medical College, University of Gujrat (NSMC) MBBS Merit {year:uhs}",
       "crumb": "Nawaz Sharif Medical College merit",
@@ -1635,7 +1635,7 @@
     {
       "path": "/mdcat-merit-list/smc/",
       "keyword": "sargodha medical college merit",
-      "title": "Sargodha Medical College Merit {year:uhs}: MBBS Closing Merit",
+      "title": "Sargodha Medical College Merit {session:uhs}: MBBS Closing Merit",
       "description": "Sargodha Medical College MBBS closing merit 2025: 93.59% in the final UHS list, 93.69% in the 1st list, 94.34% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Sargodha Medical College (SMC), Sargodha MBBS Merit {year:uhs}",
       "crumb": "Sargodha Medical College merit",
@@ -1726,7 +1726,7 @@
     {
       "path": "/mdcat-merit-list/szmc/",
       "keyword": "szmc rahim yar khan merit",
-      "title": "SZMC Rahim Yar Khan Merit {year:uhs}: MBBS Closing Merit by List",
+      "title": "SZMC Rahim Yar Khan Merit {season_year}: MBBS Closing Merit by List",
       "description": "SZMC Rahim Yar Khan MBBS closing merit 2025: 93.54% in the final UHS list, 93.64% in the 1st list, 94.32% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Sheikh Zayed Medical College (SZMC), Rahim Yar Khan MBBS Merit {year:uhs}",
       "crumb": "SZMC Rahim Yar Khan merit",
@@ -1817,7 +1817,7 @@
     {
       "path": "/mdcat-merit-list/dgmc/",
       "keyword": "dg khan medical college merit",
-      "title": "DG Khan Medical College Merit {year:uhs}: MBBS Closing Merit",
+      "title": "DG Khan Medical College Merit {session:uhs}: MBBS Closing Merit",
       "description": "DG Khan Medical College MBBS closing merit 2025: 93.53% in the final UHS list, 93.66% in the 1st list, 94.30% in 2024. Every list, rank and MDCAT needed.",
       "h1": "D.G. Khan Medical College (DGMC), D.G Khan MBBS Merit {year:uhs}",
       "crumb": "DG Khan Medical College merit",
@@ -1908,7 +1908,7 @@
     {
       "path": "/mdcat-merit-list/narowal/",
       "keyword": "narowal medical college merit",
-      "title": "Narowal Medical College Merit {year:uhs}: MBBS Closing Merit",
+      "title": "Narowal Medical College Merit {session:uhs}: MBBS Closing Merit",
       "description": "Narowal Medical College MBBS closing merit 2025: 93.51% in the final UHS list, 93.63% in the 1st list, 94.24% in 2024. Every list, rank and MDCAT needed.",
       "h1": "Narowal Medical College, Narowal MBBS Merit {year:uhs}",
       "crumb": "Narowal Medical College merit",
@@ -1998,7 +1998,7 @@
     {
       "path": "/mdcat-merit-list/al-aleem/",
       "keyword": "al-aleem medical college merit list",
-      "title": "Al-Aleem Medical College Merit List {year:uhs}: MBBS Closing Merit",
+      "title": "Al-Aleem Medical College Merit List {season_year}: MBBS Closing Merit",
       "description": "Al-Aleem Medical College merit list 2025: MBBS closed at 90.84% in the final UHS private list, 92.71% in the 1st list. Every list, rank and MDCAT needed.",
       "h1": "Al-Aleem Medical College, Lahore Merit List {year:uhs}",
       "crumb": "Al-Aleem Medical College merit",
@@ -2072,7 +2072,7 @@
     {
       "path": "/mdcat-merit-list/shalamar/",
       "keyword": "shalamar medical college merit list",
-      "title": "Shalamar Medical College Merit List {year:uhs}: MBBS Closing Merit",
+      "title": "Shalamar Medical College Merit List {season_year}: MBBS Closing Merit",
       "description": "Shalamar Medical College merit list 2025: MBBS closed at 86.34% in the final UHS private list, 90.64% in the 1st list. Every list, rank and MDCAT needed.",
       "h1": "Shalamar Medical & Dental College, Lahore Merit List {year:uhs}",
       "crumb": "Shalamar Medical College merit",
@@ -2146,7 +2146,7 @@
     {
       "path": "/mdcat-merit-list/rahbar/",
       "keyword": "rahbar medical college merit list",
-      "title": "Rahbar Medical College Merit List {year:uhs}: MBBS Closing Merit",
+      "title": "Rahbar Medical College Merit List {season_year}: MBBS Closing Merit",
       "description": "Rahbar Medical College merit list 2025: MBBS closed at 79.54% in the final UHS private list, 85.95% in the 1st list. Every list, rank and MDCAT needed.",
       "h1": "Rahbar Medical & Dental College, Lahore Merit List {year:uhs}",
       "crumb": "Rahbar Medical College merit",
@@ -2229,7 +2229,7 @@
     {
       "path": "/mdcat-merit-list/continental/",
       "keyword": "continental medical college merit list",
-      "title": "Continental Medical College Merit List {year:uhs}: Closing Merit",
+      "title": "Continental Medical College Merit List {season_year}: Closing Merit",
       "description": "Continental Medical College merit list 2025: MBBS closed at 76.88% in the final UHS private list, 85.33% in the 1st list Official data. Updated.",
       "h1": "Continental Medical College, Lahore Merit List {year:uhs}",
       "crumb": "Continental Medical College merit",
@@ -2303,7 +2303,7 @@
     {
       "path": "/mdcat-merit-list/independent/",
       "keyword": "independent medical college merit list",
-      "title": "Independent Medical College Merit List {year:uhs}: Closing Merit",
+      "title": "Independent Medical College Merit List {season_year}: Closing Merit",
       "description": "Independent Medical College merit list 2025: MBBS closed at 68.31% in the final UHS private list, 79.82% in the 1st list Official data. Updated.",
       "h1": "Independent Medical College, Faisalabad Merit List {year:uhs}",
       "crumb": "Independent Medical College merit",
@@ -2377,7 +2377,7 @@
     {
       "path": "/mdcat-merit-list/sahara/",
       "keyword": "sahara medical college merit list",
-      "title": "Sahara Medical College Merit List {year:uhs}: MBBS Closing Merit",
+      "title": "Sahara Medical College Merit List {season_year}: MBBS Closing Merit",
       "description": "Sahara Medical College merit list 2025: MBBS closed at 63.15% in the final UHS private list, 77.80% in the 1st list. Every list, rank and MDCAT needed.",
       "h1": "Sahara Medical College, Narowal Merit List {year:uhs}",
       "crumb": "Sahara Medical College merit",
@@ -2603,7 +2603,7 @@
     {
       "path": "/mdcat-merit-list/private/",
       "keyword": "private medical colleges merit list",
-      "title": "Private Medical Colleges Merit List {year:uhs}: College-wise",
+      "title": "Private Medical Colleges Merit List {session:uhs}: College-wise",
       "description": "Closing merit 2025-26 of all 33 private MBBS colleges in Punjab (UHS): Al-Aleem 90.84% to Queens Kasur 61.00% in the final list, with 1st-list merit.",
       "h1": "Private Medical Colleges Merit List {year:uhs} (Punjab)",
       "crumb": "Private MBBS merit",
@@ -2677,7 +2677,7 @@
     {
       "path": "/mdcat-merit-list/bds/",
       "keyword": "bds merit list",
-      "title": "BDS Merit List {year:uhs}: Closing Merit of Punjab Dental Colleges",
+      "title": "BDS Merit List {season_year}: Closing Merit of Punjab Dental Colleges",
       "description": "BDS closing merit 2025 in Punjab (UHS): public dental colleges 93.42% to 93.46%, private 73.13% to 55.87%, college-wise with 1st-list and final figures.",
       "h1": "BDS Merit List {year:uhs} (Punjab Dental Colleges)",
       "crumb": "BDS merit",

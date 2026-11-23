@@ -23,6 +23,14 @@ PREFIX = "/mdcat-merit-list/"
 TODAY = "2026-11-01"
 
 
+SESSION = "2026-27"  # rendered {session:uhs} (data/calendar.json seasons.uhs.session), for title length only
+
+
+def title_year(t: str) -> str:
+    """UHS page titles carry the current session (owner 2026-11-21): {session:uhs} if it fits, else {season_year}."""
+    full = t.replace("{y}", "{session:uhs}")
+    return full if len(full.replace("{session:uhs}", SESSION)) <= 60 else t.replace("{y}", "{season_year}")
+
 def pct(v: float) -> str:
     return f"{v:.2f}%"
 
@@ -133,8 +141,10 @@ def build(uhs: dict) -> list[dict]:
         out.append({
             "path": path,
             "keyword": f"{s.lower()} merit",
-            "title": next(t for t in (f"{s} Merit {{year:uhs}}: MBBS Closing Merit by List", f"{s} Merit {{year:uhs}}: MBBS Closing Merit")
-                          if len(t.replace("{year:uhs}", str(new))) <= 60 or "Closing Merit by" not in t),
+            # Title year = current UHS session (owner 2026-11-21); page figures keep their data year.
+            # Same wording as before; "2026-27" where it fits in 60 characters, else "2026" ({season_year}).
+            "title": title_year(next(t for t in (f"{s} Merit {{y}}: MBBS Closing Merit by List", f"{s} Merit {{y}}: MBBS Closing Merit")
+                                     if len(t.replace("{y}", "2025")) <= 60 or "Closing Merit by" not in t)),
             "description": desc,
             "h1": f"{campus} MBBS Merit {{year:uhs}}",
             "crumb": f"{s} merit",
@@ -268,8 +278,8 @@ def build_private(uni: dict, uhs: dict) -> list[dict]:
         out.append({
             "path": path,
             "keyword": f"{s.lower()} merit list",
-            "title": next(t for t in (f"{s} Merit List {tok}: MBBS Closing Merit", f"{s} Merit List {tok}: Closing Merit", f"{s} Merit {tok}")
-                          if len(t.replace(tok, str(year))) <= 60),
+            "title": (lambda t: t.replace("{y}", tok) if nums else title_year(t))(next(t for t in (f"{s} Merit List {{y}}: MBBS Closing Merit", f"{s} Merit List {{y}}: Closing Merit", f"{s} Merit {{y}}")
+                          if len(t.replace("{y}", str(year))) <= 60)),
             "description": desc,
             "h1": f"{campus} Merit List {tok}",
             "crumb": f"{s} merit",
