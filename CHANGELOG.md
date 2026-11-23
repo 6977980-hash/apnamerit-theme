@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.43.0 (2026-11-23)
+
+- Google Tag Manager container `GTM-MNRN4VTX` (owner request), ID in `data/site.json` `gtm_id`, code in `inc/analytics.php`. Standard GTM pattern (dataLayer + `gtm.start` inline in `<head>`, noscript iframe after `<body>`), but `gtm.js` is requested only after the load event when the browser is idle, so it does not slow first paint. Not loaded on `/embed/<slug>/` widgets. The owner's pasted snippet had a `gtag()` stub; it is not needed for GTM and was left out.
+- Privacy policy: "Cookies and analytics" section (GTM/Google Analytics cookies, opt-out), updated date 2026-11-23.
+
 ## 0.42.0 (2026-11-20)
 
 - UHS 2026-27 1st selection lists: open-merit closing aggregate for 19 public and 34 private MBBS colleges (`uhs.json` merit rows year 2026 list 1st, `list_trail` / `private_trail` list 1), with closing merit numbers from the 2026 Final Orders of Merit (public 1ommbbsml26.php, private finalommbbsmlprivatep26.php). Verified independently against the public open-merit page.
