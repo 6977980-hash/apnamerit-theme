@@ -125,12 +125,12 @@
   "seasons": {
     "uhs": {
       "live": {
-        "step": "First selection list (public and private MBBS)",
-        "date": "2026-11-17",
-        "checked": "2026-11-20T05:30+05:00",
-        "out": true,
-        "url": "https://uhs.edu.pk/1selectionlistpublicmbbs2026.php",
-        "note": "Private MBBS 1st list: https://uhs.edu.pk/1selectionlistprivatembbs2026.php. College-wise closing merit of the 1st list is in our MDCAT merit list. The second selection list is due on 23 November.",
+        "step": "Second selection list (public MBBS)",
+        "date": "2026-11-23",
+        "checked": "2026-11-23T23:20+05:00",
+        "out": false,
+        "url": "",
+        "note": "Not on the UHS website yet. The first selection lists are out: public https://uhs.edu.pk/1selectionlistpublicmbbs2026.php and private https://uhs.edu.pk/1selectionlistprivatembbs2026.php.",
         "guide": "/guides/not-selected-in-first-merit-list/"
       },
       "session": "2026-27",
