@@ -125,12 +125,12 @@
   "seasons": {
     "uhs": {
       "live": {
-        "step": "Second selection list (public MBBS)",
-        "date": "2026-11-23",
-        "checked": "2026-11-23T23:20+05:00",
+        "step": "Second selection list (public MBBS), still awaited",
+        "date": "2026-11-25",
+        "checked": "2026-11-25T18:00+05:00",
         "out": false,
         "url": "",
-        "note": "Not on the UHS website yet. The first selection lists are out: public https://uhs.edu.pk/1selectionlistpublicmbbs2026.php and private https://uhs.edu.pk/1selectionlistprivatembbs2026.php.",
+        "note": "Not on the UHS website yet (checked 25 November, 6 PM). The first selection lists are out: public https://uhs.edu.pk/1selectionlistpublicmbbs2026.php and private https://uhs.edu.pk/1selectionlistprivatembbs2026.php.",
         "guide": "/guides/not-selected-in-first-merit-list/"
       },
       "session": "2026-27",

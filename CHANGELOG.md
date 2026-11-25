@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.43.2 (2026-11-25)
+
+- UHS page titles show the current session (owner 2026-11-21, year only, no other wording): "2026-27" via `{session:uhs}` on the MDCAT hub, private colleges hub and public college pages; "2026" (`{season_year}`) where 2026-27 would pass 60 characters (BDS hub, private college pages, AMC, NSMC, SZMC). Descriptions keep their data year (they quote 2025 figures). `scripts/college_pages.py` `title_year()`.
+- Live box: UHS second selection list still awaited (checked 25 Nov).
+
 ## 0.43.1 (2026-11-23)
 
 - GTM loads on the first scroll/tap/key/mouse move or 4 s after the load event (whichever is first). Loading it right after load cost Lighthouse mobile 4-8 points (TBT 230-330 ms of GTM + GA4 script; 100 without it).
