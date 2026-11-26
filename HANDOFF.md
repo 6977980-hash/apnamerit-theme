@@ -6,6 +6,10 @@
 
 - Container `GTM-MNRN4VTX` from `data/site.json` `gtm_id` (empty = off), `inc/analytics.php`. gtm.js loads on first interaction or 4 s after load (v0.43.1; right after load cost Lighthouse 4-8 points); noscript iframe via `wp_body_open`. Not on `/embed/` widgets. Tags (GA4 etc.) are set up by the owner inside GTM, not in the theme: do not add a second gtag.js. Privacy policy updated.
 
+## GSC audit #2 P0 (v0.44.0, 2026-11-26)
+
+Report: project files `apnamerit.com/gsc/gsc-audit-2026-11-21.md`. CTR recheck 12-25 Nov vs 31 Oct-11 Nov: COMSATS 1.2% -> 2.3% (44 clicks), /merit-list/ 1% -> 2.8%; private/BDS CTR lower (2.7 -> 1.7%) because AI Overview impressions grew, positions same. Done: open-merit guide title/description (Urdu angle), percentage calculator common-marks tables + title, UHS private college pages link all public college pages (`inc/pcolleges.php`). Pending: 1st-2nd-final guide 2026 figures after the UHS 2026-27 2nd list. Next CTR recheck ~10 Dec for the two v0.44.0 titles.
+
 ## GSC audit fixes (v0.39.0-v0.41.0, 2026-11-12)
 Report: `/mnt/project-files/gsc-audit-2026-11-12.md`. Owner approved items 1-4, then 5-7.
 - **1 CTR titles/descriptions** (11 pages: COMSATS, KU, UET, PU, private, BDS, UET Taxila, /merit-list/, /mdcat-merit-list/, two guides). Re-check CTR in GSC after ~2 weeks before touching them again.
