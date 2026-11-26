@@ -6028,8 +6028,8 @@
     {
       "path": "/percentage-calculator/",
       "keyword": "fsc percentage calculator",
-      "title": "Matric & FSc Percentage Calculator (Marks to %)",
-      "description": "Free Matric and FSc percentage calculator: enter your marks and total (1100, 1200 or 550) to get your exact percentage, then work out your aggregate.",
+      "title": "Matric & FSc Percentage Calculator (950/1100 = 86.36%)",
+      "description": "Free Matric and FSc percentage calculator plus a ready table: 900, 950, 1000 out of 1100 or 1200 and FSc Part-I marks out of 550 as a percentage.",
       "h1": "Matric and FSc Percentage Calculator",
       "crumb": "Percentage calculator",
       "type": "content",
@@ -6039,7 +6039,7 @@
         "/aggregate-calculator/"
       ],
       "published": "2026-10-31",
-      "updated": "2026-10-31",
+      "updated": "2026-11-26",
       "subtitle": "Turn your Matric, FSc Part-I or full FSc marks into a percentage",
       "answer": "Your Matric or FSc percentage = marks obtained ÷ total marks × 100. For example, 1000 out of 1100 is 90.91%, and 480 out of 550 in FSc Part-I is 87.27%. Enter your marks below; universities then combine these percentages with an entry test into an aggregate.",
       "content_file": "percentage-calculator.html",
@@ -6907,8 +6907,8 @@
     {
       "path": "/guides/merit-vs-open-merit/",
       "keyword": "merit vs open merit",
-      "title": "Merit vs Open Merit: What Is the Difference?",
-      "description": "Merit vs open merit explained: what open merit seats are, how reserved and self-finance seats differ, with real UET, UHS and KU examples and figures.",
+      "title": "Open Merit Meaning in Urdu | Merit vs Open Merit",
+      "description": "Open merit ka matlab: seats given on aggregate alone, with no quota. Merit vs open merit vs self-finance explained with real UET, UHS and KU figures.",
       "h1": "Merit vs Open Merit: What Is the Difference?",
       "crumb": "Merit vs open merit",
       "type": "content",
@@ -6981,7 +6981,7 @@
         "/predictor/"
       ],
       "published": "2026-11-12",
-      "updated": "2026-11-12"
+      "updated": "2026-11-26"
     },
     {
       "path": "/guides/matric-fsc-aggregate/",

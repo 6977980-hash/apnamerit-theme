@@ -167,6 +167,14 @@ function am_sc_pcollege( $atts ): string {
 	if ( $links ) {
 		$html .= '<h2>Other private college merit pages</h2>' . $links;
 	}
+	// GSC audit 2026-11-21: private college pages get the most clicks; link the public college
+	// pages from them so Google crawls those (still "discovered - not indexed").
+	if ( 'uhs' === ( $uni['slug'] ?? '' ) && function_exists( 'am_college_links_html' ) ) {
+		$public = am_college_links_html( $uni, '', false );
+		if ( $public ) {
+			$html .= '<h2>Public MBBS college merit pages</h2>' . $public;
+		}
+	}
 	return $html;
 }
 

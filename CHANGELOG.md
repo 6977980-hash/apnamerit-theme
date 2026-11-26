@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.44.0 (2026-11-26)
+
+GSC audit 2026-11-21 P0 (after the 26 Nov CTR recheck; owner approved 2026-11-21):
+- /guides/merit-vs-open-merit/: title "Open Merit Meaning in Urdu | Merit vs Open Merit" and a Roman Urdu-led description (808 impr, pos 4.7, CTR 0.4% for "open merit meaning" queries).
+- /percentage-calculator/: ready tables of common marks out of 1100/1200 and FSc Part-I out of 550 as percentages; title shows 950/1100 = 86.36% (queries "950 out of 1100 as a percentage", 243 impr, 0 clicks).
+- UHS private college pages link every public MBBS college page ("Public MBBS college merit pages"), since public college pages are still "discovered - not indexed".
+- Not done yet: 1st-2nd-final guide 2026 figures wait for the UHS 2026-27 2nd list.
+
 ## 0.43.2 (2026-11-25)
 
 - UHS page titles show the current session (owner 2026-11-21, year only, no other wording): "2026-27" via `{session:uhs}` on the MDCAT hub, private colleges hub and public college pages; "2026" (`{season_year}`) where 2026-27 would pass 60 characters (BDS hub, private college pages, AMC, NSMC, SZMC). Descriptions keep their data year (they quote 2025 figures). `scripts/college_pages.py` `title_year()`.
